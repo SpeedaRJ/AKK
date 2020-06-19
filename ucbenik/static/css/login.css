@@ -1,0 +1,112 @@
+html, body {
+    height: 100%;
+    min-height: 100%;
+    background-color: #ffffec;
+}
+
+h3 {
+    color: white;
+    font-family: "Raleway ExtraBold";
+    margin: 0;
+    padding: 0;
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
+    color: #fbad18;
+    font-family: "Raleway Medium";
+}
+
+input {
+    border-radius: 45px !important;
+    background: #c1c0db !important;
+    font-family: "Raleway ExtraBold" !important;
+    border: none;
+    width: 100%;
+
+}
+
+input#Password {
+    -webkit-text-security: disc;
+}
+i{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #00a881;
+    font-family: "Raleway ExtraBold";
+    font-size: 1.5em;
+    width: 30%;
+    height: auto;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    border-radius: 999px;
+}
+
+.submitButton:hover {
+    color: #58309d;
+}
+
+.login {
+    text-align: left;
+    margin: auto;
+    width: 20%;
+    height: 60%;
+    min-width: 400px;
+    border-radius: 20%;
+    background: #58309d;
+
+}
+
+.form {
+    padding: 10% 10% 10%;
+}
+
+.shade {
+    margin-left: 20%;
+    height: 100%;
+    width: 100%;
+    background-color: #58469f;
+    -webkit-border-radius: 45% 20% 20% 45%;
+    -moz-border-radius: 50% 20% 20% 50%;
+}
+
+.inputElemenet {
+    margin-left: -20%;
+    padding: 10%;
+}
+
+.inputElemenet > h5 {
+    padding-bottom: 10px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.container:hover{
+    color: black;
+}
