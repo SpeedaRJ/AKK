@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     min-height: 100%;
     background-color: #ffffec;
+    overflow: hidden;
 }
 
 h3 {
@@ -65,7 +66,7 @@ i{
     min-width: 400px;
     border-radius: 20%;
     background: #58309d;
-
+    margin-top: 5%;
 }
 
 .form {
