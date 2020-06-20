@@ -60,12 +60,13 @@ i{
 
 .login {
     text-align: left;
+    margin: auto;
     width: 23%;
-    height: 35%;
+    height: 65%;
     min-width: 400px;
     border-radius: 20%;
     background: #58309d;
-    margin: 10% auto auto;
+    margin-top: 5%;
 }
 
 .form {
@@ -89,4 +90,42 @@ i{
 
 .inputElemenet > h5 {
     padding-bottom: 10px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+#mars::before, #venus::before {
+    font-size: 1.5em;
+}
+
+#mars:hover::before {
+    color: #fbad18;
+}
+
+#venus:hover::before {
+    color: #fbad18;
+}
+
+.gender {
+    display: flex;
+    padding-top: 2%;
 }

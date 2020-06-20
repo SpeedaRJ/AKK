@@ -2,8 +2,8 @@
 {% load static %}
 {% block custom_imports %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
-    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+    <script type="text/javascript" src="{% static 'js/register.js' %}"></script>
 {% endblock %}
 {% block main %}
     <div class="login">
@@ -11,9 +11,14 @@
             <form method="post" class="form">
                 {% csrf_token %}
                 <div class="inputElemenet">
-                    <h3>Name and Surname</h3>
-                    <h5>Ime in priimek</h5>
-                    <input id="FullName" type="text" autofocus class=" form-control inputFieldColor" name="FullName" required>
+                    <h3>Name</h3>
+                    <h5>Ime</h5>
+                    <input id="FullName" type="text" autofocus class=" form-control inputFieldColor" name="Name" required>
+                </div>
+                  <div class="inputElemenet">
+                    <h3>Age</h3>
+                    <h5>Starost</h5>
+                    <input id="Age" type="text" pattern="^[2-9]+[0-9]+$" autofocus class=" form-control inputFieldColor" name="Age" required>
                 </div>
                 <div class="inputElemenet">
                     <h3>E-mail</h3>
@@ -31,15 +36,21 @@
                         <h5>Izberi spol</h5>
                     </div>
                     <div style="justify-content: start" class="gender">
-                        <label class="container"><span class="checkmark"><i class="fa fa-mars" id="mars" style="font-size: 1.5em; font-weight: bolder; color: white;"></i></span>
-                            <input type="radio">
+                        <label class="container">
+                            <span class="checkmark"><i class="fa fa-mars" id="mars" style="font-size: 1.5em; font-weight: bolder; color: white;"></i></span>
                         </label>
-                        <label class="container"><span class="checkmark"><i class="fa fa-venus" id="venus" style="font-size: 1.5em; font-weight: bolder;  color: white;"></i></span>
-                            <input type="radio">
+                        <label class="container">
+                            <span class="checkmark"><i class="fa fa-venus" id="venus" style="font-size: 1.5em; font-weight: bolder;  color: white;"></i></span>
                         </label>
                     </div>
+                    <input type="hidden" name="Sex" id="Sex">
                 </div>
-                <button type="submit" class="btn submitButton">Register</button>
+                <div class="inputElemenet">
+                    <h5>Če že imate račnu se
+                        <a href="login">prijavite tukaj</a>
+                    </h5>
+                </div>
+                <button type="submit" id="RegisterButton" disabled class="btn submitButton">Register</button>
             </form>
         </div>
     </div>
