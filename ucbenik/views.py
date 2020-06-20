@@ -8,9 +8,15 @@ def home(request):
         print('Hello')
         return render(request, 'main.html')
     elif not request.user.is_authenticated:
-        return redirect('login')
+        return redirect('register')
 
+
+def register(request):
+    if request.method == 'GET':
+        return render(request, 'register.html')
+    elif request.method =='POST':
+        print("Hello")
 
 def login(request):
-    if request.method == 'GET':
-        return render(request, 'login.html')
+    if request.method == "GET":
+        return render(request, "login.html")

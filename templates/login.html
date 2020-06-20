@@ -9,11 +9,6 @@
             <form method="post" class="form">
                 {% csrf_token %}
                 <div class="inputElemenet">
-                    <h3>Name and Surname</h3>
-                    <h5>Ime in priimek</h5>
-                    <input id="FullName" type="text" autofocus class=" form-control inputFieldColor" name="FullName" required>
-                </div>
-                <div class="inputElemenet">
                     <h3>E-mail</h3>
                     <h5>Elektronski naslov</h5>
                     <input id="Email" type="text" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" class="form-control inputFieldColor" name="Email" required>
@@ -23,22 +18,8 @@
                     <h5>Geslo</h5>
                     <input id="Password" type="text" class="form-control inputFieldColor" name="Password" required>
                 </div>
-                <div class="inputElemenet" style="display: flex">
-                    <div style="justify-content: left">
-                        <h3>Choose your gender</h3>
-                        <h5>Izberi spol</h5>
-                    </div>
-                    <div style="justify-content: start">
-                        <label class="container"><span><i class="fa fa-mars" id="mars" style="font-size: 1.5em; font-weight: bolder; color: white;"></i></span>
-                            <input type="radio">
-                        </label>
-                        <label class="container"><span><i class="fa fa-venus" id="venus" style="font-size: 1.5em; font-weight: bolder;  color: white;"></i></span>
-                            <input type="radio">
-                        </label>
-                    </div>
-                </div>
+                <button type="submit" class="btn submitButton">Login</button>
             </form>
-            <button type="submit" class="btn submitButton">Register</button>
         </div>
     </div>
 {% endblock %}
