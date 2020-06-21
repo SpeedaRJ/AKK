@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "RalewayMed";
+  src: url('../fonts/Raleway-Medium.ttf');
+}
+
+#table td:nth-child(even) {
+    background-color: #3097c3;
+}
+
+#table td:nth-child(odd) {
+    background-color: #00a881;
+}
+
+#table td {
+    border-collapse: collapse;
+    border: 2px solid #ffffec;
+    padding: 5px;
+    padding-left: 3%;
+}
+
+#table {
+    width: 80%;
+    font-size: 1.5em;
+    font-family: "RalewayMed";
+    color: white;
+}

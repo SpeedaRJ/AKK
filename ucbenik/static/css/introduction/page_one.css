@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "RalewayMed";
+  src: url('../fonts/Raleway-Medium.ttf');
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.col-lg-8 > .container-fluid > .row {
+  margin: 5%;
+}
+
+.msg {
+  width: 66%;
+  min-height: 3vh;
+  padding: 2%;
+  color: #ffffec;
+  text-align: left;
+  font-size: 2vh;
+  border-radius: 25px 25px 25px 25px;
+  font-family: "RalewayMed";
+}
+
+.spoken {
+  border-radius: 25px 25px 25px 0;
+}
+
+.jenny {
+  float: left;
+  color: #ffffff;
+  background-color: #e6a454;
+}
+
+.user {
+  float: right;
+  color: #ffffff;
+  background-color: #3097c3;
+}
+
+.slo {
+  width: 50%;
+  margin-left: 16%;
+  color: #3097c3;
+  background-color: #21b0f330;
+}
+
+.translation {
+  width: 50%;
+  margin-left: 16%;
+  color: #3097c3;
+  background-color: #e4e3e8;
+}
+
+.instruction {
+  text-align: left;
+  padding-left: 5%;
+  width: 50%;
+  color: #3097c3;
+  background-color: #ffffec;
+  border-color: #3097c3;
+  border-style: solid;
+}
+
+#jenny {
+    padding-left: 5%;
+    position: sticky;
+    top: 0;
+}
+
+input {
+    border: none;
+    border-bottom: 3px white dashed;
+    background: #3097c3;
+    color: #ffffff;
+    width: 40%;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 3px white dashed;
+}
+
+.btn {
+    border: none;
+    background-color: #e6a454;
+    height: 10% !important;
+    width: 10% !important;
+    text-align: center;
+    padding: 0 !important;
+}
+
+#age_input {
+    width: 15% !important;
+}

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block main_imports %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/menus.css' %}" />
 <script type="text/javascript" src="{% static 'js/menus.js' %}"></script>
 {% endblock %}
@@ -71,12 +72,12 @@
         </div>
 
         <div class="row content">
-        {% block content %} {% endblock %}
+          {% block content %} {% endblock %}
         </div>
 
         <div class="row navigation">
-          <button class="next">Next</button>
-          <button class="back">Back</button>
+          <button class="next" onclick="window.location.href='{{ next }}'" type="button" id="next" disabled>Next</button>
+          <button class="back" onclick="window.location.href='{{ back }}'" type="button" id="back">Back</button>
         </div>
       </div>
 

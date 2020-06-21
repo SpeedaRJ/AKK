@@ -1,0 +1,75 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
+<script type="text/javascript" src="{% static 'js/introduction/page_five.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="col-lg-4" id="jenny">
+    <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" height="700px">
+</div>
+<div class="col-lg-8">
+    <div class="container-fluid messages">
+        <div class="row">
+            <div class="msg jenny">J: Zapiši si v zvezek!</div>
+        </div>
+        <div class="row">
+            <table id="table">
+                <tr>
+                    <td>
+                        My name is Jennifer.
+                    </td>
+                    <td>
+                        What is your name?
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        I am Jennifer.
+                    </td>
+                    <td>
+                        What is your nickname?
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       My nickname is Jenny.
+                    </td>
+                    <td>
+                        Who are you?
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       I am 50 years old.
+                    </td>
+                    <td>
+                        How old are you?
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       I was born in England.
+                    </td>
+                    <td>
+                        Where were you born?
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        I live in Slovenia.
+                    </td>
+                    <td>
+                        Where do you live?
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="msg jenny" style="background-color: #ebc35c"><p style="float: left; padding-left: 2%">my = moje</p>
+                <p style="float: right; padding-right: 2%">your = tvoje</p></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

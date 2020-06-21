@@ -133,7 +133,7 @@ button[class="titleB"]:hover {
 
 .navigation {
   padding: 2.5vh;
-  height: 10vh;
+  height: 10%;
 }
 
 .navigation:before {
@@ -142,15 +142,17 @@ button[class="titleB"]:hover {
 
 .row {
   margin: 0;
+  background-color: #ffffec;
 }
 
 .overlay {
-  height: 10vh;
+  height: 10%;
 }
 
 .content {
-  padding-top: 5vh;
-  height: 80vh;
+  padding-top: 3%;
+  height: 80%;
+  overflow-y: auto;
 }
 
 .container-fluid {

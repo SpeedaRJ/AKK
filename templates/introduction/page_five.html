@@ -1,0 +1,45 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/introduction/page_five.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="col-lg-4" id="jenny">
+    <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" height="700px">
+</div>
+<div class="col-lg-8">
+    <div class="container-fluid messages">
+        <div class="row">
+            <div class="msg jenny">J: Predstaviš se lahko na dva načina. Do zdaj sva se predstavila z uporabo oblike <b>Moje
+                ime je</b>.
+                Po angleško je ta oblika <b>My name is</b>. Lahko pa rečemo preprosto <b>Jaz sem</b>.
+            </div>
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: Hello. I am Jenny.</div>
+            <div class="msg jenny translation">Živjo. Jaz sem Jenny.</div>
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: Po obliki <b>My name is</b> se vprašamo tako: <br> <b>What is your name?</b> To
+                pomeni: Kako je tebi ime?
+                Po obliki <b>I am</b> se vprašamo tako: <br> <b>Who are you?</b> To pomeni: Kdo si ti.?
+            </div>
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: Besedo jaz vedno napišemo z
+                veliko začetnico, ne glede na mesto
+                v povedi. Poglej si primere.
+            </div>
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: I am Jenny.</div>
+            <div class="msg jenny translation">Jaz sem Jenny.</div>
+        </div>
+        <div class="row">
+            <div class="msg jenny">___ and I are friends.</div>
+            <div class="msg jenny translation">___ in jaz sva prijatelja.</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

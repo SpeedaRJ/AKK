@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login
 from ucbenik.models import User
 from ucbenik.CustomAuth import CustomAuth
 
@@ -26,7 +27,7 @@ def register(request):
         User.objects.create_user(email, password, First_name, Age, Sex)
 
 
-def login(request):
+def login_page(request):
     if request.method == "GET":
         return render(request, "login.html")
     if request.method == "POST":
@@ -36,9 +37,43 @@ def login(request):
         user = user_check.authenticate(username, password)
         print(user)
         if user is not None:
-            return redirect("/")
+            return redirect("/lesson_one/introduction/page_one")
 
 
-def introduction(request):
+def introduction_page_one(request):
     if request.method == "GET":
-        return render(request, "introduction.html", lesson_one)
+        return render(request, "introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "lesson_one": lesson_one})
+
+
+def introduction_page_two(request):
+    if request.method == "GET":
+        return render(request, "introduction/page_two.html", {"next": "/lesson_one/introduction/page_three",
+                                                              "back": "/lesson_one/introduction/page_one", "lesson_one": lesson_one})
+
+
+def introduction_page_three(request):
+    if request.method == "GET":
+        return render(request, "introduction/page_three.html", {"next": "/lesson_one/introduction/page_four",
+                                                              "back": "/lesson_one/introduction/page_two",
+                                                                "lesson_one": lesson_one})
+
+
+def introduction_page_four(request):
+    if request.method == "GET":
+        return render(request, "introduction/page_four.html", {"next": "/lesson_one/introduction/page_five",
+                                                              "back": "/lesson_one/introduction/page_three",
+                                                                "lesson_one": lesson_one})
+
+
+def introduction_page_five(request):
+    if request.method == "GET":
+        return render(request, "introduction/page_five.html", {"next": "/lesson_one/introduction/page_six",
+                                                              "back": "/lesson_one/introduction/page_four",
+                                                                "lesson_one": lesson_one})
+
+
+def introduction_page_six(request):
+    if request.method == "GET":
+        return render(request, "introduction/page_six.html", {"next": "/lesson_one/exercises/page_one",
+                                                              "back": "/lesson_one/introduction/page_five",
+                                                                "lesson_one": lesson_one})
