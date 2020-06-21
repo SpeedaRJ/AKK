@@ -27,5 +27,12 @@ urlpatterns = [
     path("lesson_one/introduction/page_three", views.introduction_page_three, name="introduction_page_three"),
     path("lesson_one/introduction/page_four", views.introduction_page_four, name="introduction_page_four"),
     path("lesson_one/introduction/page_five", views.introduction_page_five, name="introduction_page_five"),
-    path("lesson_one/introduction/page_six", views.introduction_page_six, name="introduction_page_six")
+    path("lesson_one/introduction/page_six", views.introduction_page_six, name="introduction_page_six"),
+    path("lesson_one/exercises/page_one", views.exercises_page_one, name="exercises_page_one"),
+    path("lesson_one/exercises/page_two", views.exercises_page_two, name="exercises_page_two"),
+    path("lesson_one/exercises/page_three", views.exercises_page_three, name="exercises_page_three"),
+    path("lesson_one/exercises/page_four", views.exercises_page_four, name="exercises_page_four"),
+    path("lesson_one/exercises/page_five", views.exercises_page_five, name="exercises_page_five"),
+    path("lesson_one/exercises/page_six", views.exercises_page_six, name="exercises_page_six"),
+    path("lesson_one/exercises/page_seven", views.exercises_page_seven, name="exercises_page_seven")
 ]
