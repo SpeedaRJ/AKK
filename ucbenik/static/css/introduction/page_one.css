@@ -10,7 +10,11 @@ p {
 }
 
 .col-lg-8 > .container-fluid > .row {
-  margin: 5%;
+  margin: 2%;
+}
+
+#home_country > .row {
+    margin: 2%;
 }
 
 .msg {
