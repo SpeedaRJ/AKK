@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %} {% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+{% endblock %} {% block main %}
+<div class="menu">
+  <div class="shade">
+    <h3>
+      Do you wish to download the textbook or <br />
+      proceed to the interactive textbook
+    </h3>
+    <button>Download textbook</button>
+    <button onclick="location.href='login'" type="button">
+      Got to the interactive textbook
+    </button>
+  </div>
+</div>
+{% endblock %}

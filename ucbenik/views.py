@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from ucbenik.models import User
 from ucbenik.CustomAuth import CustomAuth
 
+
 # Create your views here.
 def home(request):
     if request.method == 'GET':
-        return render(request, 'main.html')
+        return render(request, 'home.html')
     elif not request.user.is_authenticated:
         return redirect('register')
 
@@ -19,7 +20,7 @@ def register(request):
         First_name = request.POST['Name']
         Age = request.POST['Age']
         Sex = request.POST['Sex']
-        User.objects.create_user(email, password, First_name,Age,Sex)
+        User.objects.create_user(email, password, First_name, Age, Sex)
 
 
 def login(request):
