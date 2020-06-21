@@ -42,20 +42,20 @@ def login_page(request):
 
 def introduction_page_one(request):
     if request.method == "GET":
-        return render(request, "introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "lesson_one": lesson_one,
+        return render(request, "lesson1/introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Introduction"})
 
 
 def introduction_page_two(request):
     if request.method == "GET":
-        return render(request, "introduction/page_two.html", {"next": "/lesson_one/introduction/page_three",
+        return render(request, "lesson1/introduction/page_two.html", {"next": "/lesson_one/introduction/page_three",
                                                               "back": "/lesson_one/introduction/page_one", "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Introduction"})
 
 
 def introduction_page_three(request):
     if request.method == "GET":
-        return render(request, "introduction/page_three.html", {"next": "/lesson_one/introduction/page_four",
+        return render(request, "lesson1/introduction/page_three.html", {"next": "/lesson_one/introduction/page_four",
                                                               "back": "/lesson_one/introduction/page_two",
                                                                 "lesson_one": lesson_one,
                                                                 "lesson": "Lesson 1: About Me", "title": "Introduction"})
@@ -63,7 +63,7 @@ def introduction_page_three(request):
 
 def introduction_page_four(request):
     if request.method == "GET":
-        return render(request, "introduction/page_four.html", {"next": "/lesson_one/introduction/page_five",
+        return render(request, "lesson1/introduction/page_four.html", {"next": "/lesson_one/introduction/page_five",
                                                               "back": "/lesson_one/introduction/page_three",
                                                                 "lesson_one": lesson_one,
                                                                "lesson": "Lesson 1: About Me", "title": "Introduction"})
@@ -71,7 +71,7 @@ def introduction_page_four(request):
 
 def introduction_page_five(request):
     if request.method == "GET":
-        return render(request, "introduction/page_five.html", {"next": "/lesson_one/introduction/page_six",
+        return render(request, "lesson1/introduction/page_five.html", {"next": "/lesson_one/introduction/page_six",
                                                               "back": "/lesson_one/introduction/page_four",
                                                                 "lesson_one": lesson_one,
                                                                "lesson": "Lesson 1: About Me", "title": "Introduction"})
@@ -79,7 +79,7 @@ def introduction_page_five(request):
 
 def introduction_page_six(request):
     if request.method == "GET":
-        return render(request, "introduction/page_six.html", {"next": "/lesson_one/exercises/page_one",
+        return render(request, "lesson1/introduction/page_six.html", {"next": "/lesson_one/exercises/page_one",
                                                               "back": "/lesson_one/introduction/page_five",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Introduction"})
@@ -87,7 +87,7 @@ def introduction_page_six(request):
 
 def exercises_page_one(request):
     if request.method == "GET":
-        return render(request, "exercises/page_one.html", {"next": "/lesson_one/exercises/page_two",
+        return render(request, "lesson1/exercises/page_one.html", {"next": "/lesson_one/exercises/page_two",
                                                               "back": "/lesson_one/introduction/page_six",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -95,7 +95,7 @@ def exercises_page_one(request):
 
 def exercises_page_two(request):
     if request.method == "GET":
-        return render(request, "exercises/page_six.html", {"next": "/lesson_one/exercises/page_three",
+        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_three",
                                                               "back": "/lesson_one/exercises/page_one",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -103,7 +103,7 @@ def exercises_page_two(request):
 
 def exercises_page_three(request):
     if request.method == "GET":
-        return render(request, "exercises/page_six.html", {"next": "/lesson_one/exercises/page_four",
+        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_four",
                                                               "back": "/lesson_one/exercises/page_two",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -111,7 +111,7 @@ def exercises_page_three(request):
 
 def exercises_page_four(request):
     if request.method == "GET":
-        return render(request, "exercises/page_six.html", {"next": "/lesson_one/exercises/page_five",
+        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_five",
                                                               "back": "/lesson_one/exercises/page_three",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -119,7 +119,7 @@ def exercises_page_four(request):
 
 def exercises_page_five(request):
     if request.method == "GET":
-        return render(request, "exercises/page_six.html", {"next": "/lesson_one/exercises/page_six",
+        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_six",
                                                               "back": "/lesson_one/exercises/page_four",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -127,7 +127,7 @@ def exercises_page_five(request):
 
 def exercises_page_six(request):
     if request.method == "GET":
-        return render(request, "exercises/page_six.html", {"next": "/lesson_one/exercises/page_seven",
+        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_seven",
                                                               "back": "/lesson_one/exercises/page_five",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -135,7 +135,7 @@ def exercises_page_six(request):
 
 def exercises_page_seven(request):
     if request.method == "GET":
-        return render(request, "exercises/page_seven.html", {"next": "empty",
+        return render(request, "lesson1/exercises/page_seven.html", {"next": "empty",
                                                               "back": "/lesson_one/exercises/page_six",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
