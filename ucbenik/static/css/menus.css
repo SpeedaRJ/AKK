@@ -183,3 +183,7 @@ button[class="titleB"]:hover {
   font-size: 24px;
 }
 
+#next:disabled {
+    opacity: 0.65;
+}
+

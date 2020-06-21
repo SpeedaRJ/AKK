@@ -17,6 +17,10 @@ p {
     margin: 2%;
 }
 
+#nickname_input > .row {
+    margin: 2%;
+}
+
 .msg {
   width: 66%;
   min-height: 3vh;
