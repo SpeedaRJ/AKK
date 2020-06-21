@@ -1,115 +1,89 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block main_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/menus.css' %}" />
+<script type="text/javascript" src="{% static 'js/menus.js' %}"></script>
+{% endblock %}
 {% block main %}
     <div class="container-fluid">
-        <div class="col-lg-2" id="Menu">
-            <button class="titleB">Menu</button>
-            <ul>
-                <li class="main">
-                    <button>Lesson 1</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <li class="main">
-                    <button>Lesson 2</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <li class="main">
-                    <button>Lesson 3</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <li class="main">
-                    <button>Lesson 4</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <li class="main">
-                    <button>Lesson 5</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <button class="dictB">Dictionary</button>
+      <div class="col-lg-2" id="Menu">
+        <button class="titleB">Menu</button>
+        <ul>
+          <li class="main">
+            <button>Lesson 1</button>
+            <ul class="submenu">
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
             </ul>
+          </li>
+          <li class="main">
+            <button>Lesson 2</button>
+            <ul class="submenu">
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+            </ul>
+          </li>
+          <li class="main">
+            <button>Lesson 3</button>
+            <ul class="submenu">
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+            </ul>
+          </li>
+          <li class="main">
+            <button>Lesson 4</button>
+            <ul class="submenu">
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+            </ul>
+          </li>
+          <li class="main">
+            <button>Lesson 5</button>
+            <ul class="submenu">
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+              <li><button class="SB">Placeholder</button></li>
+            </ul>
+          </li>
+          <button class="dictB">Dictionary</button>
+        </ul>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="row overlay">
+          <div class="container-fluid">
+            <div class="col-lg-6">
+              <button class="lesson shadow"></button>
+              <button class="lesson">LESSON</button>
+            </div>
+            <div class="col-lg-6">
+              <button class="chapter shadow"></button>
+              <button class="chapter">CHAPTER</button>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-7">
-            <div class="row overlay">
-                <div class="container-fluid">
-                    <div class="col-lg-6">
-                        <button class="lesson shadow"></button>
-                        <button class="lesson">LESSON</button>
-                    </div>
-                    <div class="col-lg-6">
-                        <button class="chapter shadow"></button>
-                        <button class="chapter">CHAPTER</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row navigation">
-                <button class="next">NEXT</button>
-                <button class="back">BACK</button>
-            </div>
-            {% block content %}{% endblock %}
-            <div class="col-lg-3" id="Dicts">
-                <button>Irregular verbs</button>
-                <button>Users dictionary</button>
-                <button>Theory</button>
-            </div>
+
+        <div class="row content">
+        {% block content %} {% endblock %}
         </div>
+
+        <div class="row navigation">
+          <button class="next">Next</button>
+          <button class="back">Back</button>
+        </div>
+      </div>
+
+      <div class="col-lg-3" id="Dicts">
+        <button>Irregular verbs</button>
+        <button>Users dictionary</button>
+        <button>Theory</button>
+      </div>
     </div>
 {% endblock %}

@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from ucbenik.models import User
 from ucbenik.CustomAuth import CustomAuth
 
+lesson_one = {"Introduction": "introduction", "Exercises": "exercises", "Avatar": "avatar", "Numbers": "numbers",
+              "Colors": "colors", "Years": "years"}
+
 
 # Create your views here.
 def home(request):
@@ -34,3 +37,8 @@ def login(request):
         print(user)
         if user is not None:
             return redirect("/")
+
+
+def introduction(request):
+    if request.method == "GET":
+        return render(request, "introduction.html", lesson_one)

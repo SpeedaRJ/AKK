@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "RalewayEB";
+  src: url('../fonts/Raleway-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: "RalewayMed";
+  src: url('../fonts/Raleway-Medium.ttf');
+}
+
+@font-face {
+  font-family: "RalewayReg";
+  src: url('../fonts/Raleway-Regular.ttf');
+}
+
+body {
+  font-family: 'RalewayEB';
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  width: 100%;
+  height: 71px;
+  color: #ffffff;
+  border: none;
+  background-color: #3097c3;
+}
+
+button:focus {
+  outline-width: 0;
+}
+
+button:hover {
+  background-color: #ebc35c !important;
+}
+
+button[class="titleB"]:hover {
+  background-color: #00a881 !important;
+  cursor: default;
+}
+
+.submenu {
+  max-height: fit-content;
+  display: none;
+}
+
+.submenu > li > button {
+  height: 41px;
+  background-color: #4b5385;
+}
+
+.titleB {
+  background-color: #00a881;
+  font-size: 24px;
+}
+
+.dictB {
+  background-color: #e6a454;
+}
+
+
+.lesson {
+  position: absolute;
+  width: 70%;
+  left: 0;
+  background-color: #3097c3;
+
+  font-size: 24px;
+  border-radius: 0px 50px 50px 0px;
+}
+
+.lesson:hover {
+  background-color: #3097c3 !important;
+  cursor: default;
+}
+
+.chapter {
+  position: absolute;
+  right: 0;
+  width: 70%;
+  font-size: 24px;
+  float: right;
+  background-color: #e6a454;
+  border-radius: 50px 0px 0px 50px;
+}
+
+.chapter:hover {
+  background-color: #e6a454 !important;
+  cursor: default;
+}
+
+.shadow {
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+  top: 20px;
+  background-color: #dce6e0;
+  width: 80%;
+}
+
+.shadow:hover {
+  background-color: #dce6e0 !important;
+  cursor: default;
+}
+
+.next {
+  width: 20%;
+  height: 5vh;
+  margin-left: 50%;
+  margin-right: 5%;
+  background-color: #00a881;
+  border-radius: 50px 50px 50px 50px;
+  font-size: 30px;
+  position: sticky;
+  float: right;
+}
+
+.back {
+  width: 20%;
+  height: 5vh;
+  margin-left: 5%;
+  background-color: #6282B7;
+  border-radius: 50px 50px 50px 50px;
+  font-size: 3vh;
+  position: sticky;
+  float: left;
+}
+
+.navigation {
+  padding: 2.5vh;
+  height: 10vh;
+}
+
+.navigation:before {
+  content: none;
+}
+
+.row {
+  margin: 0;
+}
+
+.overlay {
+  height: 10vh;
+}
+
+.content {
+  padding-top: 5vh;
+  height: 80vh;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.container-fluid > .col-lg-7 {
+  padding: 0;
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.container-fluid > .col-lg-2,
+.col-lg-3 {
+  text-align: center;
+  padding: 0;
+  background-color: #e4e3e8;
+  height: 100vh;
+}
+
+.container-fluid > .col-lg-2 {
+  font-family: "RalewayEB";
+  font-size: 28.2px;
+}
+
+.container-fluid > .col-lg-3 {
+  font-family: "RalewayMed";
+  font-size: 24px;
+}
+
