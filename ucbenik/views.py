@@ -95,7 +95,7 @@ def exercises_page_one(request):
 
 def exercises_page_two(request):
     if request.method == "GET":
-        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_three",
+        return render(request, "lesson1/exercises/page_two.html", {"next": "/lesson_one/exercises/page_three",
                                                               "back": "/lesson_one/exercises/page_one",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -103,7 +103,7 @@ def exercises_page_two(request):
 
 def exercises_page_three(request):
     if request.method == "GET":
-        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_four",
+        return render(request, "lesson1/exercises/page_three.html", {"next": "/lesson_one/exercises/page_four",
                                                               "back": "/lesson_one/exercises/page_two",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -111,7 +111,7 @@ def exercises_page_three(request):
 
 def exercises_page_four(request):
     if request.method == "GET":
-        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_five",
+        return render(request, "lesson1/exercises/page_four.html", {"next": "/lesson_one/exercises/page_five",
                                                               "back": "/lesson_one/exercises/page_three",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})
@@ -119,7 +119,7 @@ def exercises_page_four(request):
 
 def exercises_page_five(request):
     if request.method == "GET":
-        return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_six",
+        return render(request, "lesson1/exercises/page_five.html", {"next": "/lesson_one/exercises/page_six",
                                                               "back": "/lesson_one/exercises/page_four",
                                                                 "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Exercises"})

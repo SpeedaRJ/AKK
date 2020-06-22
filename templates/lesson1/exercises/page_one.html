@@ -2,8 +2,76 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script> <!-- placeholder js so the button can fucntion -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<script type="text/javascript"
+        src="{% static 'js/exercises/page_one.js' %}"></script>
 {% endblock %}
 {% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row text">
+            <div class="msg jenny">J: Lets repeat.</div>
+            <div class="msg jenny translation">Ponoviva!</div>
+        </div>
+        <div class="row text inst">
+            <div class="msg user">1. Match.</div>
+            <div class="msg user slo ">Poveži.</div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/male_avatar/head/glasses/bald/green/full_beard.svg' %}" type="svg"
+             id="avatar">
+    </div>
+</div>
+
+<div class="row container">
+    <div class="col-lg-6 column">
+        <div class="row drops">
+            <div class="drop" id="name" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">Name</h6>
+            </div>
+        </div>
+        <div class="row drops">
+            <div class="drop" id="nickname" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">Nickname</h6>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 column">
+        <div class="row drops">
+            <div class="drop" id="age" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">Age</h6>
+            </div>
+        </div>
+        <div class="row drops">
+            <div class="drop" id="country" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">Country</h6>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row items" id="drag-origin">
+    <span onclick="toOrigin1(this)" class="draggable-word" id="name1" draggable="true"
+          ondragstart="drag(event)">James</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="name2" draggable="true"
+          ondragstart="drag(event)">Susan</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="name3" draggable="true"
+          ondragstart="drag(event)">Julliete</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="age1" draggable="true"
+          ondragstart="drag(event)">68</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="age2" draggable="true"
+          ondragstart="drag(event)">50</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="age3" draggable="true"
+          ondragstart="drag(event)">24</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="nickname1" draggable="true" ondragstart="drag(event)">Jamie</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="nickname2" draggable="true" ondragstart="drag(event)">Susie</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="nickname3" draggable="true" ondragstart="drag(event)">Jullie</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="country1" draggable="true" ondragstart="drag(event)">Spain</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="country2" draggable="true" ondragstart="drag(event)">Switzerland</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="country3" draggable="true" ondragstart="drag(event)">Australia</span>
+</div>
 
 {% endblock %}

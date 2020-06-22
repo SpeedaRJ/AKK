@@ -2,8 +2,63 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_two.css' %}"/>
+<script type="text/javascript" src="{% static 'js/exercises/page_two.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">2. Complete the sentences.</div>
+            <div class="msg user slo ">Dopolni povedi.</div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/male_avatar/head/glasses/bald/green/full_beard.svg' %}" type="svg"
+             id="avatar">
+    </div>
+</div>
+<div class="row text" id="working">
+    <div class="text">
+        <div class="row textblock">
+            <div class="number">1</div>
+            <p>My <input class=textarea size="5" onchange="solution(this,'name')"/> is Peter.</p>
+            <p>My <input class=textarea size="7" onchange="solution(this,'nickname')"/> is Pete.</p>
+            <p>I am 48 <input class=textarea size="4" onchange="solution(this,'years')"/> <input class=textarea
+                                                                                                 size="1"
+                                                                                                 onchange="solution(this,'old')"/>.
+            </p>
+            <p>I was <input class=textarea size="4" onchange="solution(this,'born')"/> in China.</p>
+            <p>Now I <input class=textarea size="4" onchange="solution(this,'live')"/> in South Korea.</p>
+            <br>
+        </div>
+        <div class="row textblock">
+            <div class="number">2</div>
+            <p>I <input class=textarea size="1" onchange="solution(this,'am')"/> Jessica.</p>
+            <p>My <input class=textarea size="7" onchange="solution(this,'nickname')"/> is Jess.</p>
+            <p>I am 79 <input class=textarea size="4" onchange="solution(this,'years')"/> <input class=textarea
+                                                                                                 size="1"
+                                                                                                 onchange="solution(this,'old')"/>.
+            </p>
+            <p>I was <input class=textarea size="4" onchange="solution(this,'born')"/> in Argentina.</p>
+            <p>Now I <input class=textarea size="4" onchange="solution(this,'live')"/> in Chille.</p>
+            <br>
+        </div>
+        <div class="row textblock">
+            <div class="number">3</div>
+            <p>My <input class=textarea size="4" onchange="solution(this,'name')"/> Janet.</p>
+            <p>My <input class=textarea size="7" onchange="solution(this,'nickname')"/> is Jan.</p>
+            <p>I am 33 <input class=textarea size="4" onchange="solution(this,'years')"/> <input class=textarea
+                                                                                                 onchange="solution(this,'old')"
+                                                                                                 size="1"/>.
+            </p>
+            <p>I was <input class=textarea size="4" onchange="solution(this,'born')"/> in Egypt.</p>
+            <p>Now I <input class=textarea size="4" onchange="solution(this,'live')"/> in Norway.</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
