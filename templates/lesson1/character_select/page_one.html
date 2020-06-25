@@ -45,7 +45,7 @@
             </div>
             <div class="row text space">
                 <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši svojo višino v cm.</div>
-                <div class="msg user">I am <input type="text" id="name_input" onfocusout="update_session({'height': this.value})"> cm tall.</div>
+                <div class="msg user">I am <input type="text" id="name_input" onfocusout="filterHeight(this.value)"> cm tall.</div>
                 {% if user.sex == 'M' %}
                     <div class="msg user slo">Visok sem <p class="slo_name">_____</p> cm.</div>
                 {% else %}

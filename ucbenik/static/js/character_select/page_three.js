@@ -62,29 +62,3 @@ function update_session(d) {
     });
 }
 
-function filterHeight(value) {
-    if(value >= "182"){
-        update_session({"height":"tall"});
-    }else{
-        update_session({"height":"small"});
-    }
-}
-
-function dynamic_name(e) {
-    let paras = document.getElementsByClassName("slo_name");
-    for (let x in paras) {
-        paras[x].innerHTML = e.target.value;
-        if (e.target.value === "") {
-            paras[x].innerHTML = "____";
-            document.getElementById("next").setAttribute("disabled", "disabled");
-        } else
-            document.getElementById("next").removeAttribute("disabled");
-    }
-}
-
-$(document).ready(function () {
-    document.getElementById("name_input").addEventListener("input", function (e) {
-        dynamic_name(e);
-    });
-
-});

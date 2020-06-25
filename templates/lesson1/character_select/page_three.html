@@ -1,0 +1,75 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_three.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/character_select/page_two.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.svg.es5.min.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="row" style="height: 100%;">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row text space">
+                <div class="msg jenny">J: My hair is short not long. And it is gray. What is your hair like?</div>
+                <div class="msg jenny translation">Moji lasje so kratki, ne dolgi. In sivi. Kakšni pa so tvoji lasje ?</div>
+            </div>
+            <div class="row text space">
+                <div class="msg jenny">J: I am quite fat now but I was slim when I was young</div>
+                <div class="msg jenny translation">Zdaj sem precej debela, vendar sem bila suha, ko sem bila mlada</div>
+            </div>
+            <div class="row text space">
+                <table id="table">
+                    <tr>
+                        <td>My hair is short.</td>
+                        <td>Moji lasje so kratki.</td>
+                    </tr>
+                    <tr>
+                        <td>My hair is long.</td>
+                        <td>Moji lasje so dolgi.</td>
+                    </tr>
+                    <tr>
+                        <td>I am bold.</td>
+                        <td>Plešast sem.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row text space">
+                <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
+                    <div style="display: flex;justify-content: space-evenly;">
+                        <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+                        {% if user.sex == "M" %}
+                            <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #d89f72;" ></button>
+                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;" ></button>
+                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffd39b;" ></button>
+                        {% else %}
+                            <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #d89f72;" ></button>
+                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;" ></button>
+                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffd39b;" ></button>
+                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #eed1bf;" ></button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="row text space">
+                <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
+                    <div style="display: flex;justify-content: space-evenly;">
+                        <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #231f20;" ></button>
+                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;" ></button>
+                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffebc6;" ></button>
+                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #c1c0db;" ></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+        </div>
+    </div>
+{% endblock %}
