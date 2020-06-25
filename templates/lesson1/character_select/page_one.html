@@ -3,6 +3,7 @@
 {% block custom_imports %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_three.css' %}"/>
     <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/character_select/page_one.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -14,13 +15,14 @@
             <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" id="jenny">
         </div>
         <div class="col-lg-6">
-            <div class="row text">
+            <div class="row text space">
                 <div class="msg jenny">J: Let's create your avatar.<br>Please choose your skin colour.</div>
                 <div class="msg jenny translation">Greva oblikovati tvojega avatarja.<br>Prosim izberi barvo kože.</div>
             </div>
-            <div class="row text">
+            <div class="row text space">
                 <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
                     <div style="display: flex;justify-content: space-evenly;">
+                        <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
                         <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #d89f72;" onclick="changeSkinColor(this)"></button>
                         <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;" onclick="changeSkinColor(this)"></button>
                         <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffd39b;" onclick="changeSkinColor(this)"></button>
@@ -28,18 +30,18 @@
                     </div>
                 </div>
             </div>
-            <div class="row text">
+            <div class="row text space">
                 <div class="msg jenny">J: Hey {{ user.first_name }}, tell me more about yourself.</div>
                 <div class="msg jenny translation">Hey {{ user.first_name }} povej mi kaj več o sebi.</div>
             </div>
-            <div class="row text">
+            <div class="row text space">
                 <div class="msg jenny">J: I am 167cm tall. How tall are you?</div>
-                {% if user.sex == 'M' %}
-                    <div class="msg jenny translation">Jaz sem visoka 167cm. Kako visok si ti?</div>
-                {% else %}
-                    <div class="msg jenny translation">Jaz sem visoka 167cm. Kako visoka si ti?</div>
-                {% endif %}
-
+                <div class="msg jenny translation">Jaz sem visoka 167cm. Kako visok si ti?</div>
+            </div>
+            <div class="row text space">
+                <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši svojo višino v cm.</div>
+                <div class="msg user">I am <input type="text" id="name_input"> cm tall.</div>
+                <div class="msg user slo">Visok sem <p class="slo_name">_____</p> cm.</div>
             </div>
         </div>
         <div class="col-lg-3">

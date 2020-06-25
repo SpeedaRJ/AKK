@@ -16,7 +16,12 @@ const pSBC = (p, c0, c1, l) => {
         }
         return x
     };
-    h = c0.length > 9, h = a ? c1.length > 9 ? true : c1 == "c" ? !h : false : h, f = this.pSBCr(c0), P = p < 0, t = c1 && c1 != "c" ? this.pSBCr(c1) : P ? {r: 0, g: 0, b: 0, a: -1} : {
+    h = c0.length > 9, h = a ? c1.length > 9 ? true : c1 == "c" ? !h : false : h, f = this.pSBCr(c0), P = p < 0, t = c1 && c1 != "c" ? this.pSBCr(c1) : P ? {
+        r: 0,
+        g: 0,
+        b: 0,
+        a: -1
+    } : {
         r: 255,
         g: 255,
         b: 255,
@@ -35,8 +40,41 @@ function changeSkinColor(e) {
     [].forEach.call(svg.querySelectorAll(".cls-4"), function (el) {
         el.setAttribute("style", "fill:" + e.style.backgroundColor + ";");
     });
-     [].forEach.call(svg.querySelectorAll(".cls-2"), function (el) {
-         console.log();
-        el.setAttribute("style", "fill:" + pSBC(0.15,e.style.backgroundColor) + ";");
+    [].forEach.call(svg.querySelectorAll(".cls-2"), function (el) {
+        el.setAttribute("style", "fill:" + pSBC(0.15, e.style.backgroundColor) + ";");
     });
+    let data = {
+        "neck": pSBC(0.15, e.style.backgroundColor),
+        "body": e.style.backgroundColor
+    };
+    update_session(data);
 }
+
+function update_session(d) {
+    $.ajax({
+        type: 'POST',
+        url:  "/update_session/",
+        data: {csrfmiddlewaretoken: window.CSRF_TOKEN,"d":d},
+        success: function () {
+            console.log("Success!");
+        }
+    })
+}
+
+function dynamic_name(e) {
+    let paras = document.getElementsByClassName("slo_name");
+    for (let x in paras) {
+        paras[x].innerHTML = e.target.value;
+        if (e.target.value === "") {
+            paras[x].innerHTML = "____";
+            document.getElementById("next").setAttribute("disabled", "disabled");
+        } else
+            document.getElementById("next").removeAttribute("disabled");
+    }
+}
+
+$(document).ready(function () {
+    document.getElementById("name_input").addEventListener("input", function (e) {
+        dynamic_name(e);
+    });
+});

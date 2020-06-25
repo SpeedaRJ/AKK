@@ -22,6 +22,10 @@ function drag(ev) {
 function drop(ev, el, limit) {
     if (el.children.length > limit) {
         try {
+<<<<<<< HEAD
+            element = el.children[1];
+            toOrigin1(element)
+=======
             let children = el.children;
             for(var i = 0; i < children.length; i++) {
                 if(children[i].classList !== undefined && children[i].className.includes("incorrect")) {
@@ -31,16 +35,28 @@ function drop(ev, el, limit) {
             }
             if(i === children.length && i > 1)
                 return;
+>>>>>>> fbdbd80d0dbfcf4c8e93011c6db9b3e3761ecf34
         } catch {
             return;
         }
     }
     var origin = document.getElementById('drag-origin');
+<<<<<<< HEAD
+    
+    /*
+    for (let i = 0; i < origin.children.length; i++) {
+        if (origin.children[i].id === ev.target.id) {
+            origin.children[i].hidden = true;
+        }
+    }
+    */
+=======
     /*for (let i = 0; i < origin.children.length; i++) {
         if (origin.children[i].id === ev.target.id) {
             origin.children[i].hidden = true;
         }
     }*/
+>>>>>>> fbdbd80d0dbfcf4c8e93011c6db9b3e3761ecf34
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
     //data.indexOf(el.id)
