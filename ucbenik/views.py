@@ -41,13 +41,12 @@ def login_page(request):
             return redirect("/lesson_one/introduction/page_one")
 
 
-def update_session(request):
+def update_session(request, what_to_update):
     if not request.is_ajax() or not request.method == 'POST':
         return HttpResponseNotAllowed(['POST'])
+    request.session[what_to_update] = request.POST['d[' + what_to_update + ']']
     for key, value in request.session.items():
         print('{} => {}'.format(key, value))
-    request.session['user_skin_color_neck'] = request.POST['d[neck]']
-    request.session['user_skin_color_body'] = request.POST['d[body]']
     return HttpResponse('ok')
 
 
@@ -154,9 +153,57 @@ def exercises_page_seven(request):
 
 def character_select_page_one(request):
     if request.method == "GET":
-        return render(request, "lesson1/character_select/page_one.html", {"next": "character_select/page_one.html",
+        return render(request, "lesson1/character_select/page_one.html", {"next": "/lesson_one/character_select/page_two",
                                                                           "back": "/lesson_one/exercises/page_seven",
                                                                           "lesson_one": lesson_one,
                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
 
+def character_select_page_two(request):
+    if request.method == "GET":
+        return render(request, "lesson1/character_select/page_two.html", {"next": "character_select/page_three",
+                                                                          "back": "/lesson1/character_select/page_one",
+                                                                          "lesson_one": lesson_one,
+                                                                          "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_one(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson1/numbers_select/page_two",
+                                                                 "back": "/lesson1/character_select/page_one",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_two(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson1/numbers_select/page_three",
+                                                                 "back": "/lesson1/numbers/page_one",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_three(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson1/numbers_select/page_four",
+                                                                 "back": "/lesson1/numbers/page_two",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_four(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson1/numbers_select/page_five",
+                                                                 "back": "/lesson1/numbers/page_three",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_five(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson1/numbers_select/page_six",
+                                                                 "back": "/lesson1/numbers/page_four",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_six(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_one.html", {"next": "#",
+                                                                 "back": "/lesson1/numbers/page_five",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
 
