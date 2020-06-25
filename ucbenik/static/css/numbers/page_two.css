@@ -1,0 +1,13 @@
+.help-table {
+    width: 60%;
+    float: left;
+    margin-left: 5%;
+    display: none;
+}  
+
+.tip {
+    width: 48% !important;
+    margin: 1%;
+    height: 4vh;
+    font-size: 2vh;
+}
