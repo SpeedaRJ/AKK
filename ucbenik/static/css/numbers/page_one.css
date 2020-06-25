@@ -1,0 +1,68 @@
+.col-lg-3 {
+    height: 60%;
+    width: 100%;
+    background-color: #ffffec;
+    overflow: hidden;
+}
+
+img {
+    height: auto;
+}
+
+#jenny {
+    width: 80%;
+}
+#character{
+    width: 80%;
+}
+#avatar {
+    width: 90%
+}
+
+.row {
+    height: 30%;
+}
+
+.text {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.row > .msg {
+    width: 100%;
+    padding-left: 10%
+}
+
+.translation {
+    margin: 0;
+}
+
+.inst {
+    padding-top: 6%;
+}
+
+.inst > .slo {
+    background-color: #e4e3e8;
+}
+
+.items {
+  min-height: 10%;
+  margin-left: 2% !important;
+}
+
+.container {
+    width: 100% !important;
+    margin-top: 2.5% !important;
+}
+
+.column  {
+  min-height: 35vh;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}

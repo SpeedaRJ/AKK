@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">J: Poglej si tabelo. 
+            </div>
+        </div>
+        <div class="help-table" id="help-table">
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>What</button>
+                <button class="col-lg-6 tip c2" disabled>Kaj</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>Who</button>
+                <button class="col-lg-6 tip c2" disabled>Kdo</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>How</button>
+                <button class="col-lg-6 tip c2" disabled>Kako</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>Where</button>
+                <button class="col-lg-6 tip c2" disabled>Kje</button>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">J: Če slediš zapisu vrstilnih števnikov, 
+                se ne moreš zmotiti!
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-3"></div>
+{% endblock %}
