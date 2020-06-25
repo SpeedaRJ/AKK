@@ -55,7 +55,11 @@
         </div>
         <div class="col-lg-3">
             {% if user.sex == 'M' %}
-                <object data="{% static 'svg/lesson1/male_avatar/body/glasses/tall/slim/short_hair/no_beard.svg' %}" type="image/svg+xml" id="character"></object>
+                {% if reqest.session.height >= 182 %}
+                    <object data="{% static 'svg/lesson1/male_avatar/body/glasses/tall/slim/short_hair/no_beard.svg' %}" type="image/svg+xml" id="character"></object>
+                {% else %}
+                    <object data="{% static 'svg/lesson1/male_avatar/body/glasses/short/slim/short_hair/no_beard.svg' %}" type="image/svg+xml" id="character"></object>
+                {% endif %}
             {% else %}
                 <object data="{% static 'svg/lesson1/female_avatar/body/glasses/short/slim/dress/long.svg' %}" type="image/svg+xml" id="character"></object>
             {% endif %}

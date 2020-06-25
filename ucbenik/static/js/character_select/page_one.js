@@ -45,20 +45,21 @@ function changeSkinColor(e) {
     });
     let data = {
         "neck": pSBC(0.15, e.style.backgroundColor),
-        "body": e.style.backgroundColor
     };
     update_session(data);
+    data = {
+        "body_color": e.style.backgroundColor
+    };
+    update_session(data);
+
 }
 
 function update_session(d) {
     $.ajax({
         type: 'POST',
-        url:  "/update_session/",
-        data: {csrfmiddlewaretoken: window.CSRF_TOKEN,"d":d},
-        success: function () {
-            console.log("Success!");
-        }
-    })
+        url:  "/update_session/"+Object.keys(d)[0],
+        data: {csrfmiddlewaretoken: window.CSRF_TOKEN,"d":d}
+    });
 }
 
 function dynamic_name(e) {
