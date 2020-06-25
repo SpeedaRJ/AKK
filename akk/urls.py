@@ -64,4 +64,13 @@ urlpatterns = [
     path("lesson_one/numbers/page_twenty", views.numbers_page_twenty, name="numbers_page_twenty"),
     path("lesson_one/numbers/page_twentyone", views.numbers_page_twentyone, name="numbers_page_twentyone"),
     path("lesson_one/numbers/page_twentytwo", views.numbers_page_twentytwo, name="numbers_page_twentytwo"),
+    path("lesson_one/colors/page_one", views.colors_page_one, name="colors_page_one"),
+    path("lesson_one/colors/page_two", views.colors_page_two, name="colors_page_two"),
+    path("lesson_one/colors/page_three", views.colors_page_three, name="colors_page_three"),
+    path("lesson_one/colors/page_four", views.colors_page_four, name="colors_page_four"),
+    path("lesson_one/colors/page_five", views.colors_page_five, name="colors_page_five"),
+    path("lesson_one/colors/page_six", views.colors_page_six, name="colors_page_six"),
+    path("lesson_one/colors/page_seven", views.colors_page_seven, name="colors_page_seven"),
+    path("lesson_one/colors/page_eight", views.colors_page_eight, name="colors_page_eight"),
+    path("lesson_one/colors/page_nine", views.colors_page_nine, name="colors_page_nine"),
 ]
