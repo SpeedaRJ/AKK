@@ -26,4 +26,5 @@ $(document).ready(function() {
     document.getElementById("venus").addEventListener("click", function(e) {
         selectGender(e);
     });
+    
 });

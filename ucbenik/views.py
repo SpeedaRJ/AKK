@@ -37,10 +37,13 @@ def login_page(request):
         user = user_check.authenticate(username, password)
         print(user)
         if user is not None:
+            print()
+            request.session['user'] = user.__dict__
             return redirect("/lesson_one/introduction/page_one")
 
 
 def introduction_page_one(request):
+    print(request.session['user'])
     if request.method == "GET":
         return render(request, "lesson1/introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "lesson_one": lesson_one,
                                                               "lesson": "Lesson 1: About Me", "title": "Introduction"})
