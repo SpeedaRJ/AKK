@@ -47,4 +47,4 @@ urlpatterns = [
     path("lesson_one/numbers/page_three", views.numbers_page_three, name="numbers_page_three"),
     path("lesson_one/numbers/page_four", views.numbers_page_four, name="numbers_page_four"),
     path("lesson_one/numbers/page_five", views.numbers_page_five, name="numbers_page_five"),
-    path("lesson_one/numbers/page_six", views.numbers_page_six, name="numbers_page_six"),
+    path("lesson_one/numbers/page_six", views.numbers_page_six, name="numbers_page_six")
