@@ -383,71 +383,71 @@ def numbers_page_twentytwo(request):
 
 def colors_page_one(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_one.html", {"next": "/lesson_one/numbers/page_two.html",
-                                                                "back": "/lesson_one/numbers/page_twentytwo.html",
+        return render(request, "lesson1/colors/page_one.html", {"next": "/lesson_one/colors/page_two",
+                                                                "back": "/lesson_one/colors/page_twentytwo",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 
 
 def colors_page_two(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_two.html", {"next": "/lesson_one/colors/page_three.html",
-                                                                "back": "/lesson_one/colors/page_one.html",
+        return render(request, "lesson1/colors/page_two.html", {"next": "/lesson_one/colors/page_three",
+                                                                "back": "/lesson_one/colors/page_one",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 
 
 def colors_page_three(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_three.html", {"next": "/lesson_one/colors/page_four.html",
-                                                                  "back": "/lesson_one/colors/page_two.html",
+        return render(request, "lesson1/colors/page_three.html", {"next": "/lesson_one/colors/page_four",
+                                                                  "back": "/lesson_one/colors/page_two",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 
 
 def colors_page_four(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_four.html", {"next": "/lesson_one/colors/page_five.html",
-                                                                 "back": "/lesson_one/colors/page_three.html",
+        return render(request, "lesson1/colors/page_four.html", {"next": "/lesson_one/colors/page_five",
+                                                                 "back": "/lesson_one/colors/page_three",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 
 
 def colors_page_five(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_five.html", {"next": "/lesson_one/colors/page_six.html",
-                                                                 "back": "/lesson_one/colors/page_four.html",
+        return render(request, "lesson1/colors/page_five.html", {"next": "/lesson_one/colors/page_six",
+                                                                 "back": "/lesson_one/colors/page_four",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 
 
 def colors_page_six(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_six.html", {"next": "/lesson_one/colors/page_seven.html",
-                                                                "back": "/lesson_one/colors/page_five.html",
+        return render(request, "lesson1/colors/page_six.html", {"next": "/lesson_one/colors/page_seven",
+                                                                "back": "/lesson_one/colors/page_five",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 
 
 def colors_page_seven(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_seven.html", {"next": "/lesson_one/colors/page_eight.html",
-                                                                  "back": "/lesson_one/colors/page_six.html",
+        return render(request, "lesson1/colors/page_seven.html", {"next": "/lesson_one/colors/page_eight",
+                                                                  "back": "/lesson_one/colors/page_six",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 
 
 def colors_page_eight(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_eight.html", {"next": "/lesson_one/colors/page_nine.html",
-                                                                  "back": "/lesson_one/colors/page_seven.html",
+        return render(request, "lesson1/colors/page_eight.html", {"next": "/lesson_one/colors/page_nine",
+                                                                  "back": "/lesson_one/colors/page_seven",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 
 
 def colors_page_nine(request):
     if request.method == "GET":
         return render(request, "lesson1/colors/page_nine.html", {"next": "/#",
-                                                                 "back": "/lesson_one/colors/page_nine.html",
+                                                                 "back": "/lesson_one/colors/page_nine",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Colors", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})

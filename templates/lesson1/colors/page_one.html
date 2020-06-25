@@ -2,7 +2,95 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+    </div>
+    <div class="col-lg-6">
+        <div class="row text">
+            <div class="msg jenny">J: Now let’s look at colours.</div>
+            <div class="msg jenny translation">Ponoviva!</div>
+        </div>
+        <div class="row text">
+            <div class="msg jenny">J: Click on the words, listen and repeat after me.</div>
+            <div class="msg jenny translation">Klikni na besede, poslušaj in ponovi za mano.</div>
+        </div>
+        <div id="table-div">
+            <table id="table">
+                <tr>
+                    <td class="color" style="background: #EE202E; color: #EE202E">_____</td>
+                    <td>Red</td>
+                    <td>Rdeča</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #F26524; color: #F26524">_____</td>
+                    <td>Orange</td>
+                    <td>Oranžna</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #F7ED38; color: #F7ED38">_____</td>
+                    <td>Yellow</td>
+                    <td>Oranžna</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #099E43; color: #099E43">_____</td>
+                    <td>Green</td>
+                    <td>Zelena</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #3097C3; color: #3097C3">_____</td>
+                    <td>Blue</td>
+                    <td>Modra</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #7A2A90; color: #7A2A90">_____</td>
+                    <td>Purple</td>
+                    <td>Zelena</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #EF509C; color: #EF509C">_____</td>
+                    <td>Pink</td>
+                    <td>Roza</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #231F20; color: #231F20">_____</td>
+                    <td>Black</td>
+                    <td>Črna</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #85837D; color: #85837D">_____</td>
+                    <td>Grey</td>
+                    <td>Siva</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #F8F8F8; color: #F8F8F8">_____</td>
+                    <td>White</td>
+                    <td>Bela</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #653614; color: #653614">_____</td>
+                    <td>Brown</td>
+                    <td>Rjava</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #FBAD18; color: #FBAD18">_____</td>
+                    <td>Gold</td>
+                    <td>Zlata</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #B6B2AC; color: #B6B2AC">_____</td>
+                    <td>Silver</td>
+                    <td>Srebrna</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+    </div>
+</div>
 {% endblock %}
