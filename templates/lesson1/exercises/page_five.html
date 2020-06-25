@@ -2,8 +2,67 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_five.css' %}"/>
+<script type="text/javascript" src="{% static 'js/exercises/page_five.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">5. Answer the questions with full sentences.</div>
+            <div class="msg user slo ">Odgovori na vprašanja s celimi povedmi.</div>
+        </div>
+        <div class="row text space" id="well_done" hidden>
+            <div class="msg jenny">J: Good job!</div>
+            <div class="msg jenny translation">Dobro ti gre!</div>
+        </div>
+    </div>
+</div>
+<div class="row text container">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <table>
+            <tr>
+                <td>J: What is your name?</td>
+            </tr>
+            <tr>
+                <td>U: <input class="textarea" type="text"
+                              onchange="solution(this, new RegExp('My name is {{user.first_name}}.'))"></td>
+            </tr>
+            <tr>
+                <td>J: What is your nickname?</td>
+            </tr>
+            <tr>
+                <td>U: <input class="textarea" type="text"
+                              onchange="solution(this, new RegExp('My nickname is \[A-Z][a-z]*\.'))"></td>
+            </tr>
+            <tr>
+                <td>J: How old are you?</td>
+            </tr>
+            <tr>
+                <td>U: <input class="textarea" type="text"
+                              onchange="solution(this, new RegExp('I am {{user.age}} years old.'))"></td>
+            </tr>
+            <tr>
+                <td>J: Where were you born?</td>
+            </tr>
+            <tr>
+                <td>U: <input class="textarea" type="text"
+                              onchange="solution(this, new RegExp('I was born in \[A-Z][a-z]*\.'))"></td>
+            </tr>
+            <tr>
+                <td>J: Where do you live?</td>
+            </tr>
+            <tr>
+                <td>U: <input class="textarea" type="text"
+                              onchange="solution(this, new RegExp('I live in \[A-Z][a-z]*\.'))"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
 {% endblock %}

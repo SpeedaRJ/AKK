@@ -94,12 +94,10 @@ img {
 
 .correct {
   background-color: #00A881;
-  margin: 1px;
 }
 
 .incorrect {
   background-color: #F15D2A;
-  margin: 1px;
 }
 
 .left {

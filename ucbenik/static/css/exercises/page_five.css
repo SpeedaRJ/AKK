@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "RalewayMed";
+  src: url('../fonts/Raleway-Medium.ttf');
+}
+
+table {
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    background: #C4E7E9 !important;
+    border-color: #3097C3;
+    width: 70%;
+}
+
+.space {
+    padding: 0;
+    padding-top: 10%;
+    width: 100%;
+}
+
+.nospace {
+    padding-top: 0;
+    width: 100%;
+}
+
+.text {
+    height: 60%;
+}
+
+.col-lg-6 {
+    height: 100%;
+}
+
+tr {
+    font-size: 1.5em;
+    font-family: "RalewayMed";
+    color: white;
+}
+
+tr:nth-child(even) > td{
+    background: #C4E7E9;
+    padding: 1%;
+    padding-left: 8%;
+    color: #3097C3;
+}
+
+tr:nth-child(odd) > td{
+    background: #3097C3;
+    padding: 1%;
+    padding-left: 5%;
+}
+
+.correct {
+  color: #00A881;
+}
+
+.incorrect {
+  color: #F15D2A;
+}
