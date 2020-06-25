@@ -14,7 +14,7 @@ function solution(el,solution) {
         if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter === 18)
+    if(counter === paras.length)
         document.getElementById("next").removeAttribute("disabled")
     else
         document.getElementById("next").setAttribute("disabled", "disabled");

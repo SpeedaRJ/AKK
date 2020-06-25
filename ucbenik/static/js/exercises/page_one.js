@@ -1,17 +1,9 @@
-let counter = 0;
-let added = [];
-
 function toOrigin1(el) {
     var origin = document.getElementById('drag-origin');
     if (origin === el.parentElement) return;
     origin.appendChild(el);
     sortItems();
-    if (added.includes(el.id))
-        counter--;
-    delete added[added.indexOf(el.id)];
-    if (counter < 12)
-        document.getElementById("next").setAttribute("disabled", "disabled");
-
+    checkCorrectness();
     //delete dragDropWordsMapping[el.id];
     //saveWordDrag();
 }
@@ -44,26 +36,17 @@ function drop(ev, el) {
     correct = data.search('^' + el.id + '[0-9]$') > -1;
     var child = document.getElementById(data);
     if (correct) {
-        if (!added.includes(data)) {
-            counter++;
-            added.push(data);
-        }
         child.classList.add('correct');
         child.classList.remove('incorrect');
     } else {
-        if (added.includes(data)) {
-            counter--;
-            delete added[added.indexOf(data)];
-        }
         child.classList.add('incorrect');
         child.classList.remove('correct');
     }
     el.classList.add('full');
     el.appendChild(child);
-    if (counter === 12)
-        document.getElementById("next").removeAttribute("disabled")
     //dragDropWordsMapping[data] = el.id;
     //saveWordDrag();
+    checkCorrectness();
 }
 
 function sortItems() {
@@ -78,7 +61,20 @@ function sortItems() {
         detatchedItem.classList = "draggable-word";
         origin.appendChild(detatchedItem);
     }
-    console.log(document.getElementById("drag-origin"));
+}
+
+function checkCorrectness() {
+    let items = document.getElementsByClassName("draggable-word")
+    let counter = 0;
+    for(let x = 0; x < items.length; x++) {
+        if(items[x].classList !== undefined && items[x].className.includes("correct") && !items[x].className.includes("incorrect"))
+            counter++;
+    }
+    if(counter === items.length) {
+        document.getElementById("next").removeAttribute("disabled")
+    } else {
+         document.getElementById("next").setAttribute("disabled", "disabled");
+    }
 }
 
 $(function () {
