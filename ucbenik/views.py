@@ -139,3 +139,11 @@ def exercises_page_seven(request):
                                                                      "back": "/lesson_one/exercises/page_six",
                                                                      "lesson_one": lesson_one,
                                                                      "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
+
+
+def character_select_page_one(request):
+    if request.method == "GET":
+        return render(request, "lesson1/character_select/page_one.html", {"next": "character_select/page_one.html",
+                                                                          "back": "/lesson_one/exercises/page_seven",
+                                                                          "lesson_one": lesson_one,
+                                                                          "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
