@@ -34,5 +34,6 @@ urlpatterns = [
     path("lesson_one/exercises/page_four", views.exercises_page_four, name="exercises_page_four"),
     path("lesson_one/exercises/page_five", views.exercises_page_five, name="exercises_page_five"),
     path("lesson_one/exercises/page_six", views.exercises_page_six, name="exercises_page_six"),
-    path("lesson_one/exercises/page_seven", views.exercises_page_seven, name="exercises_page_seven")
+    path("lesson_one/exercises/page_seven", views.exercises_page_seven, name="exercises_page_seven"),
+    path("lesson_one/character_select/page_one", views.character_select_page_one, name="character_select_page_one")
 ]
