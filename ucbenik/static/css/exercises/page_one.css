@@ -62,7 +62,10 @@ img {
 .drops {
   min-height: 18vh;
   max-height: 25vh;
-  margin-bottom: 2% !important;
+}
+
+.top {
+    margin-bottom: 4% !important;
 }
 
 .drop {
