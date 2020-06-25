@@ -1,28 +1,31 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-    <script type="text/javascript" src="{% static 'js/introduction/page_one.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
 {% endblock %}
 {% block content %}
-    <div class="col-lg-4" id="jenny">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" height="700px">
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
     </div>
-    <div class="col-lg-8">
-        <div class="container-fluid messages">
-            <div class="row">
-                <div class="msg jenny spoken">Hello. My name is Jenny. Nice to meet you.</div>
-                <div class="msg jenny translation">Živjo. Moje ime je Jenny. Me veseli.</div>
-            </div>
-            <div class="row">
-                <div class="msg jenny">Jenny: What is your name?</div>
-                <div class="msg jenny translation">Kaj je tvoje ime?</div>
-            </div>
-            <div class="row">
-                <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši svoje ime (name).</div>
-                <div class="msg user">My name is <input type="text" id="name_input">. Nice to meet you, too.</div>
-                <div class="msg user slo">Moje ime je <p class="slo_name">_____</p>. Tudi mene veseli.</div>
-            </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">J: Vrstilne števnike lahko zapišemo tudi 
+                s številom tako kot v slovenščini. 
+                Zapišemo število in nadpisano zapišemo 
+                zadnji dve črki izpisanega 
+                vrstilnega števnika. </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">J: Poglejva si vrstilni števnik PRVI. 
+                Naučila sva se, da se po angleško 
+                reče FIRST. First je vrstilni števnik 
+                števila 1, zato najprej zapišemo število 1. 
+                V besedi first sta zadnji dve črki ST, zato 
+                nadpisano dopišemo ST: 1st. </div>
         </div>
     </div>
+</div>
+<div class="col-lg-3"></div>
 {% endblock %}
