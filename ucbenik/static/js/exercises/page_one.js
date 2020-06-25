@@ -19,10 +19,13 @@ function drag(ev) {
     //ow.addClass('opora-done');
 }
 
-function drop(ev, el) {
-    if (el.children.length > 4) {
-        alert("Div is full")
-        return;
+function drop(ev, el, limit) {
+    if (el.children.length > limit) {
+        try {
+            toOrigin1(el.children[1])
+        } catch {
+            return;
+        }
     }
     var origin = document.getElementById('drag-origin');
     for (let i = 0; i < origin.children.length; i++) {

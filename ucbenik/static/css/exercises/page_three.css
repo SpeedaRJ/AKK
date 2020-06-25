@@ -1,0 +1,36 @@
+.space {
+    padding-top: 6%;
+    width: 100%;
+}
+
+.nospace {
+    padding-top: 0;
+    width: 100%;
+}
+
+.word-drops {
+    height: 8vh;
+}
+
+.drop-text {
+    position: absolute;
+    padding-top: 4px;
+  }
+
+.correct {
+    background-color: #00A881;
+    margin: 1px;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .incorrect {
+    background-color: #F15D2A;
+    margin: 1px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .items {
+    margin-left: auto !important;
+  }
