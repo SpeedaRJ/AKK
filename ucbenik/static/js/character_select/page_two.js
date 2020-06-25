@@ -62,29 +62,30 @@ function update_session(d) {
     });
 }
 
-function filterHeight(value) {
-    if(value >= "182"){
-        update_session({"height":"tall"});
-    }else{
-        update_session({"height":"small"});
-    }
+function color_from_previous_answers(data) {
+    let svg = document.getElementById("character").contentDocument.children[0];
 }
 
-function dynamic_name(e) {
+function translate(el) {
     let paras = document.getElementsByClassName("slo_name");
-    for (let x in paras) {
-        paras[x].innerHTML = e.target.value;
-        if (e.target.value === "") {
-            paras[x].innerHTML = "____";
-            document.getElementById("next").setAttribute("disabled", "disabled");
-        } else
-            document.getElementById("next").removeAttribute("disabled");
+    if(el.target.value.toString().trim().toLowerCase()==="fat"){
+        paras[0].innerHTML = "močnejše postave";
+        let data = {
+            "body_type":"fat"
+        };
+        update_session(data);
+    }else if(el.target.value.toString().trim().toLowerCase()==="slim"){
+        paras[0].innerHTML = "vitek";
+        let data = {
+            "body_type":"slim"
+        };
+        update_session(data);
     }
 }
 
 $(document).ready(function () {
     document.getElementById("name_input").addEventListener("input", function (e) {
-        dynamic_name(e);
+        translate(e);
     });
 
 });

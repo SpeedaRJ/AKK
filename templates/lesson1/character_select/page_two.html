@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_three.css' %}"/>
     <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/character_select/page_one.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/character_select/page_two.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/jquery.svg.es5.min.js' %}"></script>
 {% endblock %}
@@ -16,52 +16,50 @@
         </div>
         <div class="col-lg-6">
             <div class="row text space">
-                <div class="msg jenny">J: Let's create your avatar.<br>Please choose your skin colour.</div>
-                <div class="msg jenny translation">Greva oblikovati tvojega avatarja.<br>Prosim izberi barvo kože.</div>
-            </div>
-            <div class="row text space">
-                <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
-                    <div style="display: flex;justify-content: space-evenly;">
-                        <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
-                        <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #d89f72;" onclick="changeSkinColor(this)"></button>
-                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;" onclick="changeSkinColor(this)"></button>
-                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffd39b;" onclick="changeSkinColor(this)"></button>
-                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #eed1bf;" onclick="changeSkinColor(this)"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="row text space">
-                <div class="msg jenny">J: Hey {{ user.first_name }}, tell me more about yourself.</div>
-                <div class="msg jenny translation">Hey {{ user.first_name }} povej mi kaj več o sebi.</div>
-            </div>
-            <div class="row text space">
-                <div class="msg jenny">J: I am 167cm tall. How tall are you?</div>
-                {% if user.sex == 'M' %}
-                    <div class="msg jenny translation">Jaz sem visoka 167cm. Kako visok si ti?</div>
-                {% else %}
-                    <div class="msg jenny translation">Jaz sem visoka 167cm. Kako visoka si ti?</div>
+                {% if request.session.height >= "182" %}
+                    <div class="msg jenny">J: You are tall!</div>
+                    {% if user.sex == "M" %}
+                        <div class="msg jenny translation">Visok si!</div>
+                    {% else %}
+                        <div class="msg jenny translation">Visoka si!</div>
+                    {% endif %}
                 {% endif %}
-
             </div>
             <div class="row text space">
-                <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši svojo višino v cm.</div>
-                <div class="msg user">I am <input type="text" id="name_input" onfocusout="update_session({'height': this.value})"> cm tall.</div>
+                <div class="msg jenny">J: I am quite fat now but I was slim when I was young</div>
+                <div class="msg jenny translation">Zdaj sem precej debela, vendar sem bila suha, ko sem bila mlada</div>
+            </div>
+            <div class="row text space">
+                <div class="msg jenny">J: What about you? Are you fat or slim?</div>
                 {% if user.sex == 'M' %}
-                    <div class="msg user slo">Visok sem <p class="slo_name">_____</p> cm.</div>
+                    <div class="msg jenny translation">Kja pa ti? Si debel ali suh?</div>
                 {% else %}
-                    <div class="msg user slo">Visoka sem <p class="slo_name">_____</p> cm.</div>
+                    <div class="msg jenny translation">Kaj pa ti? Si debela ali suha?</div>
+                {% endif %}
+            </div>
+            <div class="row text space">
+                <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+                <div class="msg user">I am <input type="text" id="name_input" onfocusout="update_session({'body_type': this.value})"></div>
+                {% if user.sex == 'M' %}
+                    <div class="msg user slo">Jaz sem <p class="slo_name">_____</p></div>
+                {% else %}
+                    <div class="msg user slo">Jaz sem <p class="slo_name">_____</p></div>
                 {% endif %}
             </div>
         </div>
         <div class="col-lg-3">
             {% if user.sex == 'M' %}
-                {% if reqest.session.height >= 182 %}
+                {% if request.session.height >= "182" %}
                     <object data="{% static 'svg/lesson1/male_avatar/body/glasses/tall/slim/short_hair/no_beard.svg' %}" type="image/svg+xml" id="character"></object>
                 {% else %}
                     <object data="{% static 'svg/lesson1/male_avatar/body/glasses/short/slim/short_hair/no_beard.svg' %}" type="image/svg+xml" id="character"></object>
                 {% endif %}
             {% else %}
-                <object data="{% static 'svg/lesson1/female_avatar/body/glasses/short/slim/dress/long.svg' %}" type="image/svg+xml" id="character"></object>
+                {% if request.session.height >= "182" %}
+                    <object data="{% static 'svg/lesson1/female_avatar/body/glasses/tall/slim/dress/curly.svg' %}" type="image/svg+xml" id="character"></object>
+                {% else %}
+                    <object data="{% static 'svg/lesson1/female_avatar/body/glasses/short/slim/dress/curly.svg' %}" type="image/svg+xml" id="character"></object>
+                {% endif %}
             {% endif %}
         </div>
     </div>

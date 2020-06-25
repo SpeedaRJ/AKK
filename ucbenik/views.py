@@ -161,7 +161,21 @@ def character_select_page_one(request):
 
 def character_select_page_two(request):
     if request.method == "GET":
-        return render(request, "lesson1/character_select/page_two.html", {"next": "character_select/page_three",
-                                                                          "back": "/lesson1/character_select/page_one",
+        return render(request, "lesson1/character_select/page_two.html", {"next": "/lesson_one/character_select/page_three",
+                                                                          "back": "/lesson_one/character_select/page_one",
                                                                           "lesson_one": lesson_one,
                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+
+def character_select_page_three(request):
+    if request.method == "GET":
+        if request.session['user']['sex'] == "M":
+            src_ref = "svg/lesson1/male_avatar/body/glasses/"+request.session['height']+"/"+request.session['body_type']+"/short_hair/no_beard.svg"
+        else:
+            src_ref = "svg/lesson1/female_avatar/glasses/"+request.session['height']+"/"+request.session['body_type']+"/dress/bun.svg"
+
+        return render(request, "lesson1/character_select/page_three.html", {"next": "/lesson_one/character_select/page_four",
+                                                                            "back": "/lesson_one/character_select/page_two",
+                                                                            "lesson_one": lesson_one,
+                                                                            "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                            "src": src_ref})
