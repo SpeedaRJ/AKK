@@ -158,3 +158,5 @@ def character_select_page_one(request):
                                                                           "back": "/lesson_one/exercises/page_seven",
                                                                           "lesson_one": lesson_one,
                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+
