@@ -2,17 +2,21 @@
     padding: 0 !important;
 }
 
+.images {
+    display: flex;
+}
+
 img {
     width: 60%;
 }
 
 .svg {
-    height: 50%;
-    bottom: 0 !important;
+    height: 100%;
+    align-self: flex-end;
 }
 
 input {
-    background: #C4E7E9;
+    background: #C4E7E9 !important;
     border-color: #3097C3;
     width: 70%;
     margin-bottom: 2% !important;
@@ -35,4 +39,12 @@ input {
     color: #3097C3;
     text-align: center;
     padding:0;
+}
+
+.correct {
+  color: #00A881;
+}
+
+.incorrect {
+  color: #F15D2A;
 }
