@@ -1,0 +1,46 @@
+.text {
+    width: 73%;
+    float: right;
+    background-color: #e4e3e8;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    margin-right: 5%
+}
+
+p {
+    font-size: 2vh;
+}
+
+.help-table {
+    width: 60%;
+    float: left;
+    margin-left: 5%;
+    display: none;
+}  
+
+.c2 {
+    background-color: #00A881;
+}
+
+.hint {
+    position: absolute;
+    z-index: 2;
+    width: 6%;
+    margin-left: 57%;
+    margin-top: -3%
+}
+
+#hint1 {
+    display: block;
+}
+
+#hint2 {
+    display: none;
+}
+
+.tip {
+    width: 48% !important;
+    margin: 1%;
+    height: 4vh;
+    font-size: 2vh;
+}

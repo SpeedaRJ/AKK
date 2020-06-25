@@ -22,17 +22,21 @@ function drag(ev) {
 function drop(ev, el, limit) {
     if (el.children.length > limit) {
         try {
-            toOrigin1(el.children[1])
+            element = el.children[1];
+            toOrigin1(element)
         } catch {
             return;
         }
     }
     var origin = document.getElementById('drag-origin');
+    
+    /*
     for (let i = 0; i < origin.children.length; i++) {
         if (origin.children[i].id === ev.target.id) {
             origin.children[i].hidden = true;
         }
     }
+    */
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
     //data.indexOf(el.id)

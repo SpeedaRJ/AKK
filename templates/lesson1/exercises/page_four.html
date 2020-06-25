@@ -2,8 +2,57 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_two.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_four.css' %}"/>
+<script type="text/javascript" src="{% static 'js/exercises/page_two.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/exercises/page_four.js' %}"></script>
 {% endblock %}
 {% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">4. Write question words.</div>
+            <div class="msg user slo ">Oblikuj vprašalnice.</div>
+        </div>
+    </div>
+</div>
 
+<div class="row test">
+    <div class="col-lg-6">
+        <div class="text">
+            <p><input class=textarea size="5" onchange="solution(this,'What')"/> is you name?</p>
+            <p><input class=textarea size="5" onchange="solution(this,'Who')"/>are you?</p>
+            <p><input class=textarea size="5" onchange="solution(this,'What')"/>is your nickname?</p>
+            <p><input class=textarea size="5" onchange="solution(this,'How')"/>old are you?</p>
+            <p><input class=textarea size="5" onchange="solution(this,'Where')"/>were you born?</p>
+            <p><input class=textarea size="5" onchange="solution(this,'Where')"/>do you live?</p>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <img src="{% static 'svg/common/hint-open.svg' %}" type="svg" class="hint" id="hint2" onclick="show()">
+        <img src="{% static 'svg/common/hint-closed.svg' %}" type="svg" class="hint" id="hint1" onclick="hide()">
+        <div class="help-table" id="help-table">
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>What</button>
+                <button class="col-lg-6 tip c2" disabled>Kaj</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>Who</button>
+                <button class="col-lg-6 tip c2" disabled>Kdo</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>How</button>
+                <button class="col-lg-6 tip c2" disabled>Kako</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>Where</button>
+                <button class="col-lg-6 tip c2" disabled>Kje</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
