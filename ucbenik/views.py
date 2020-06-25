@@ -146,7 +146,7 @@ def exercises_page_six(request):
 
 def exercises_page_seven(request):
     if request.method == "GET":
-        return render(request, "lesson1/exercises/page_seven.html", {"next": "empty",
+        return render(request, "lesson1/exercises/page_seven.html", {"next": "/lesson_one/character_select/page_one",
                                                                      "back": "/lesson_one/exercises/page_six",
                                                                      "lesson_one": lesson_one,
                                                                      "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
