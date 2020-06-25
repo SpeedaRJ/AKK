@@ -22,21 +22,29 @@ function drag(ev) {
 function drop(ev, el, limit) {
     if (el.children.length > limit) {
         try {
-            toOrigin1(el.children[1])
+            let children = el.children;
+            for(var i = 0; i < children.length; i++) {
+                if(children[i].classList !== undefined && children[i].className.includes("incorrect")) {
+                    toOrigin1(children[i]);
+                    break;
+                }
+            }
+            if(i === children.length && i > 1)
+                return;
         } catch {
             return;
         }
     }
     var origin = document.getElementById('drag-origin');
-    for (let i = 0; i < origin.children.length; i++) {
+    /*for (let i = 0; i < origin.children.length; i++) {
         if (origin.children[i].id === ev.target.id) {
             origin.children[i].hidden = true;
         }
-    }
+    }*/
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
     //data.indexOf(el.id)
-    correct = data.search('^' + el.id + '[0-9]$') > -1;
+    correct = data.search('^' + el.id.substring(0, el.id.length-2) + '[0-9]$') > -1;
     var child = document.getElementById(data);
     if (correct) {
         child.classList.add('correct');

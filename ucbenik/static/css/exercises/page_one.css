@@ -52,7 +52,7 @@ img {
 
 .container {
     width: 100% !important;
-    margin-top: 3.5% !important;
+    margin-top: 2.5% !important;
 }
 
 .column  {
@@ -62,6 +62,7 @@ img {
 .drops {
   min-height: 18vh;
   max-height: 25vh;
+  margin-bottom: 2% !important;
 }
 
 .drop {
@@ -110,4 +111,7 @@ img {
 .right {
   float: right;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3c0e3457c0f63186a141b32327b90d08f575accf
