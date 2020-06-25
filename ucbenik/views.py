@@ -161,23 +161,55 @@ def character_select_page_one(request):
 
 def character_select_page_two(request):
     if request.method == "GET":
-        return render(request, "lesson1/character_select/page_two.html", {"next": "character_select/page_three",
+        return render(request, "lesson1/character_select/page_two.html", {"next": "/lesson_one/character_select/page_three",
                                                                           "back": "/lesson1/character_select/page_one",
+                                                                          "lesson_one": lesson_one,
+                                                                          "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+
+def character_select_page_three(request):
+    if request.method == "GET":
+        return render(request, "lesson1/character_select/page_three.html", {"next": "/lesson_one/character_select/page_four",
+                                                                          "back": "/lesson1/character_select/page_two",
+                                                                          "lesson_one": lesson_one,
+                                                                          "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+
+def character_select_page_four(request):
+    if request.method == "GET":
+        return render(request, "lesson1/character_select/page_four.html", {"next": "/lesson_one/character_select/page_five",
+                                                                          "back": "/lesson1/character_select/page_three",
+                                                                          "lesson_one": lesson_one,
+                                                                          "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+
+def character_select_page_five(request):
+    if request.method == "GET":
+        return render(request, "lesson1/character_select/page_five.html", {"next": "/lesson_one/character_select/page_six",
+                                                                          "back": "/lesson1/character_select/page_four",
+                                                                          "lesson_one": lesson_one,
+                                                                          "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+
+def character_select_page_six(request):
+    if request.method == "GET":
+        return render(request, "lesson1/character_select/page_six.html", {"next": "/lesson_one/numbers/page_one",
+                                                                          "back": "/lesson1/character_select/page_five",
                                                                           "lesson_one": lesson_one,
                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
 
 
 def numbers_page_one(request):
     if request.method == "GET":
-        return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson1/numbers_select/page_two",
-                                                                 "back": "#",
+        return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson1/numbers/page_two",
+                                                                 "back": "/lesson1/character_select/page_six",
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
 
 
 def numbers_page_two(request):
     if request.method == "GET":
-        return render(request, "lesson1/numbers/page_two.html", {"next": "/lesson1/numbers_select/page_three",
+        return render(request, "lesson1/numbers/page_two.html", {"next": "/lesson1/numbers/page_three",
                                                                  "back": "/lesson1/numbers/page_one",
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
@@ -185,7 +217,7 @@ def numbers_page_two(request):
 
 def numbers_page_three(request):
     if request.method == "GET":
-        return render(request, "lesson1/numbers/page_three.html", {"next": "/lesson1/numbers_select/page_four",
+        return render(request, "lesson1/numbers/page_three.html", {"next": "/lesson1/numbers/page_four",
                                                                  "back": "/lesson1/numbers/page_two",
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
@@ -193,7 +225,7 @@ def numbers_page_three(request):
 
 def numbers_page_four(request):
     if request.method == "GET":
-        return render(request, "lesson1/numbers/page_four.html", {"next": "/lesson1/numbers_select/page_five",
+        return render(request, "lesson1/numbers/page_four.html", {"next": "/lesson1/numbers/page_five",
                                                                  "back": "/lesson1/numbers/page_three",
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
@@ -201,7 +233,7 @@ def numbers_page_four(request):
 
 def numbers_page_five(request):
     if request.method == "GET":
-        return render(request, "lesson1/numbers/page_five.html", {"next": "/lesson1/numbers_select/page_six",
+        return render(request, "lesson1/numbers/page_five.html", {"next": "/lesson1/numbers/page_six",
                                                                  "back": "/lesson1/numbers/page_four",
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
