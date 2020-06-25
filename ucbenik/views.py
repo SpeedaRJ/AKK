@@ -1,3 +1,4 @@
+from django.http import HttpResponseNotAllowed, HttpResponse
 from django.shortcuts import render, redirect
 from ucbenik.models import User
 from ucbenik.CustomAuth import CustomAuth
@@ -38,6 +39,16 @@ def login_page(request):
         if user is not None:
             request.session['user'] = UserSerializer(user).data
             return redirect("/lesson_one/introduction/page_one")
+
+
+def update_session(request):
+    if not request.is_ajax() or not request.method == 'POST':
+        return HttpResponseNotAllowed(['POST'])
+    for key, value in request.session.items():
+        print('{} => {}'.format(key, value))
+    request.session['user_skin_color_neck'] = request.POST['d[neck]']
+    request.session['user_skin_color_body'] = request.POST['d[body]']
+    return HttpResponse('ok')
 
 
 def introduction_page_one(request):
