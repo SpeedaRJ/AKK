@@ -1,0 +1,33 @@
+.space {
+    padding: 0;
+    padding-top: 6%;
+    width: 100%;
+}
+
+.nospace {
+    padding-top: 0;
+    width: 100%;
+}
+
+#andre {
+    width: 28%;
+    padding-top: 5%;
+}
+
+.left {
+    text-align: right;
+}
+
+.right {
+    text-align: left;
+}
+
+.one {
+    background: #C4E7E9;
+    color: #3097C3;
+}
+
+.example {
+    padding-top: 25%;
+    width: 50%;
+}
