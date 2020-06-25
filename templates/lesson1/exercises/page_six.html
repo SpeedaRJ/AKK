@@ -2,8 +2,42 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_six.css' %}"/>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 {% endblock %}
 {% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace">
+            <div class="msg user">6. Imagine you are one of the persons below. What is your name? How old are you? Where do you live?</div>
+            {% if user.sex == 'M' %}
+                <div class="msg user slo">Vživi se v spodnje like in se predstavi. Kako ti je ime? Koliko si star? Kje živiš?</div>
+            {% else %}
+                <div class="msg user slo">Vživi se v spodnje like in se predstavi. Kako ti je ime? Koliko si stara? Kje živiš?</div>
+            {% endif %}
+        </div>
+        <div class="row text space">
+            <div class="msg jenny">J: Let’s look at an example.</div>
+            <div class="msg jenny translation">Poglejva si primer.</div>
+        </div>
+    </div>
+</div>
 
+<div class="row container">
+ <div class="container">
+     <div class="col-lg-6 left">
+         <img src="{% static 'svg/lesson1/exercises/SVG/andre.svg' %}" type="svg" id="andre">
+     </div>
+     <div class="col-lg-6 right">
+        <div class="row example">
+            <div class="msg user">Andre, 65, France</div>
+            <div class="msg user one">My name is / I am Andre. <br>I am 65 years old. <br>I live in France.</div>
+        </div>
+     </div>
+ </div>
+</div>
 {% endblock %}

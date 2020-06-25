@@ -2,8 +2,74 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_seven.css' %}"/>
 {% endblock %}
 {% block content %}
-
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="svg">
+                <img src="{% static 'svg/lesson1/exercises/SVG/danielle.svg' %}" type="svg">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="svg">
+                <img src="{% static 'svg/lesson1/exercises/SVG/andrew.svg' %}" type="svg">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="svg">
+                <img src="{% static 'svg/lesson1/exercises/SVG/sunita.svg' %}" type="svg">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="svg">
+                <img src="{% static 'svg/lesson1/exercises/SVG/anita.svg' %}" type="svg">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="example col-lg-3">
+            <div class="msg user">Danielle, 34, Italy</div>
+            <div class="msg user one"><input class="textarea" type="text"
+                                             onchange="solution(this, ''))">
+                <br><input class="textarea" type="text"
+                           onchange="solution(this, ''))">
+                <br><input class="textarea" type="text"
+                           onchange="solution(this, ''))">
+            </div>
+        </div>
+        <div class="example col-lg-3">
+            <div class="msg user">Andrew, 17, America</div>
+            <div class="msg user one"><input class="textarea" type="text"
+                                             onchange="solution(this, ''))">
+                <br><input class="textarea" type="text"
+                           onchange="solution(this, ''))">
+                <br><input class="textarea" type="text"
+                           onchange="solution(this, ''))">
+            </div>
+        </div>
+        <div class="example col-lg-3">
+            <div class="msg user">Sunita, 89, India</div>
+            <div class="msg user one"><input class="textarea" type="text"
+                                             onchange="solution(this, ''))">
+                <br><input class="textarea" type="text"
+                           onchange="solution(this, ''))">
+                <br><input class="textarea" type="text"
+                           onchange="solution(this, ''))">
+            </div>
+        </div>
+        <div class="example col-lg-3">
+            <div class="msg user">Anita, 50, Slovenia</div>
+            <div class="msg user one"><input class="textarea" type="text"
+                                             onchange="solution(this, ''))">
+                <br><input class="textarea" type="text"
+                           onchange="solution(this, ''))">
+                <br><input class="textarea" type="text"
+                           onchange="solution(this, ''))">
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

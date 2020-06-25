@@ -1,0 +1,38 @@
+.content {
+    padding: 0 !important;
+}
+
+img {
+    width: 60%;
+}
+
+.svg {
+    height: 50%;
+    bottom: 0 !important;
+}
+
+input {
+    background: #C4E7E9;
+    border-color: #3097C3;
+    width: 70%;
+    margin-bottom: 2% !important;
+}
+
+.example {
+    padding-top: 2% !important;
+    padding-left: 2% !important;
+    padding-left: 2% !important;
+}
+
+.user {
+    float: none;
+    width: 100%;
+    padding-left: 10%;
+}
+
+.one {
+    background: #C4E7E9;
+    color: #3097C3;
+    text-align: center;
+    padding:0;
+}
