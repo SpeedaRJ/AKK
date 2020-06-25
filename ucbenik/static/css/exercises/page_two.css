@@ -5,7 +5,7 @@
 .text {
   line-height: 100%;
   margin: auto;
-  width: 70%;
+  width: 100%;
   padding: 3%;
   background-color: #e4e3e8;
   border-radius: 10%;
@@ -14,13 +14,11 @@
 
 #working {
     padding-top: 0;
-    margin-left: 12%;
-    margin_right: auto;
 }
 
 .textblock {
-  height: 16vh;
-  margin-bottom: 1vh;
+  line-height: 60%;
+  height: 20%;
   background-color: #e4e3e8 !important;
 }
 
