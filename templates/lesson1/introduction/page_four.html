@@ -1,39 +1,43 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/introduction/page_four.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/introduction/page_four.js' %}"></script>
 {% endblock %}
 {% block content %}
-<div class="col-lg-4" id="jenny">
-    <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" height="700px">
-</div>
-<div class="col-lg-8">
-    <div class="container-fluid messages">
-        <div class="row">
-            <div class="msg jenny">J: Do you still live there?
-                <button class="btn" onclick="show_country(event)">Yes</button>
-                /
-                <button class="btn" onclick="show_country(event)">No</button>
-                .
-            </div>
-            <div class="msg jenny translation">Ali še tam živiš? Ja/Ne.</div>
-        </div>
-        <div style="display: none" id="home_country">
+    <div class="col-lg-4" id="jenny">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" height="700px">
+    </div>
+    <div class="col-lg-8">
+        <div class="container-fluid messages">
             <div class="row">
-                <div class="msg jenny">J: Where do you live now?</div>
-                <div class="msg jenny translation">Kje živiš sedaj?</div>
+                <div class="msg jenny">J: Do you still live there?
+                    <button class="btn" onclick="show_country(event)">Yes</button>
+                    /
+                    <button class="btn" onclick="show_country(event)">No</button>
+                    .
+                </div>
+                <div class="msg jenny translation">Ali še tam živiš? Ja/Ne.</div>
             </div>
-            <div class="row">
-                <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši državo v kateri živiš.</div>
-                <div class="msg user">I live in <input type="text" id="county_input">.</div>
-                <div class="msg user slo">Živim v <p id="slo_county">_____</p>.</div>
+            <div style="display: none" id="home_country">
+                <div class="row">
+                    <div class="msg jenny">J: Where do you live now?</div>
+                    <div class="msg jenny translation">Kje živiš sedaj?</div>
+                </div>
+                <div class="row">
+                    <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši državo v kateri živiš.</div>
+                    <div class="msg user">I live in <input type="text" id="county_input">.</div>
+                    <div class="msg user slo">Živim v <p id="slo_county">_____</p>.</div>
+                </div>
             </div>
-        </div>
-        <div class="row" style="display: none" id="welcome">
-            <div class="msg jenny">J: Great! Welcome to English: Step by Step!</div>
-            <div class="msg jenny translation">Super! Dobrodošel/a v Angleščina: korak za korakom.</div>
+            <div class="row" style="display: none" id="welcome">
+                <div class="msg jenny">J: Great! Welcome to English: Step by Step!</div>
+                {% if user.sex == 'M' %}
+                    <div class="msg jenny translation">Super! Dobrodošel v Angleščina: korak za korakom.</div>
+                {% else %}
+                     <div class="msg jenny translation">Super! Dobrodošla v Angleščina: korak za korakom.</div>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}

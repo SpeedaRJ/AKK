@@ -1,75 +1,79 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 {% endblock %}
 {% block content %}
-<div class="col-lg-4" id="jenny">
-    <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" height="700px">
-</div>
-<div class="col-lg-8">
-    <div class="container-fluid messages">
-        <div class="row">
-            <div class="msg jenny">J: Write in your notebook.</div>
-            <div class="msg jenny translation">Zapiši si v zvezek!</div>
-        </div>
-        <div class="row">
-            <table id="table">
-                <tr>
-                    <td>
-                        <b>My</b> name is Jennifer.
-                    </td>
-                    <td>
-                        What is <b>your</b> name?
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <b>I</b> am Jennifer.
-                    </td>
-                    <td>
-                        Who <b>are</b> you?
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                       My nickname is Jenny.
-                    </td>
-                    <td>
-                        What is your nickname?
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                       I am 50 years old.
-                    </td>
-                    <td>
-                        How old are you?
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                       I was born in England.
-                    </td>
-                    <td>
-                        Where were you born?
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        I live in Slovenia.
-                    </td>
-                    <td>
-                        Where do you live?
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="row">
-            <div class="msg jenny" style="background-color: #ebc35c">J: Be careful! / Bodi previden! <b>my = moje</b>; <b>your = tvoje</b></div>
+    <div class="col-lg-4" id="jenny">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" height="700px">
+    </div>
+    <div class="col-lg-8">
+        <div class="container-fluid messages">
+            <div class="row">
+                <div class="msg jenny">J: Write in your notebook.</div>
+                <div class="msg jenny translation">Zapiši si v zvezek!</div>
+            </div>
+            <div class="row">
+                <table id="table">
+                    <tr>
+                        <td>
+                            <b>My</b> name is Jennifer.
+                        </td>
+                        <td>
+                            What is <b>your</b> name?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>I</b> am Jennifer.
+                        </td>
+                        <td>
+                            Who <b>are</b> you?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            My nickname is Jenny.
+                        </td>
+                        <td>
+                            What is your nickname?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            I am 50 years old.
+                        </td>
+                        <td>
+                            How old are you?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            I was born in England.
+                        </td>
+                        <td>
+                            Where were you born?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            I live in Slovenia.
+                        </td>
+                        <td>
+                            Where do you live?
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row">
+                {% if user.sex == 'M' %}
+                    <div class="msg jenny" style="background-color: #ebc35c">J: Be careful! / Bodi previden! <b>my = moje</b>; <b>your = tvoje</b></div>
+                {% else %}
+                    <div class="msg jenny" style="background-color: #ebc35c">J: Be careful! / Bodi previdna! <b>my = moje</b>; <b>your = tvoje</b></div>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}

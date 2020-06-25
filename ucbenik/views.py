@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
 from ucbenik.models import User
 from ucbenik.CustomAuth import CustomAuth
 from .serializers import UserSerializer
@@ -42,17 +41,16 @@ def login_page(request):
 
 
 def introduction_page_one(request):
-    print(request.session['user'])
     if request.method == "GET":
         return render(request, "lesson1/introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "lesson_one": lesson_one,
-                                                                      "lesson": "Lesson 1: About Me", "title": "Introduction"})
+                                                                      "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_two(request):
     if request.method == "GET":
         return render(request, "lesson1/introduction/page_two.html", {"next": "/lesson_one/introduction/page_three",
                                                                       "back": "/lesson_one/introduction/page_one", "lesson_one": lesson_one,
-                                                                      "lesson": "Lesson 1: About Me", "title": "Introduction"})
+                                                                      "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_three(request):
@@ -60,7 +58,7 @@ def introduction_page_three(request):
         return render(request, "lesson1/introduction/page_three.html", {"next": "/lesson_one/introduction/page_four",
                                                                         "back": "/lesson_one/introduction/page_two",
                                                                         "lesson_one": lesson_one,
-                                                                        "lesson": "Lesson 1: About Me", "title": "Introduction"})
+                                                                        "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_four(request):
@@ -68,7 +66,7 @@ def introduction_page_four(request):
         return render(request, "lesson1/introduction/page_four.html", {"next": "/lesson_one/introduction/page_five",
                                                                        "back": "/lesson_one/introduction/page_three",
                                                                        "lesson_one": lesson_one,
-                                                                       "lesson": "Lesson 1: About Me", "title": "Introduction"})
+                                                                       "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_five(request):
@@ -76,7 +74,7 @@ def introduction_page_five(request):
         return render(request, "lesson1/introduction/page_five.html", {"next": "/lesson_one/introduction/page_six",
                                                                        "back": "/lesson_one/introduction/page_four",
                                                                        "lesson_one": lesson_one,
-                                                                       "lesson": "Lesson 1: About Me", "title": "Introduction"})
+                                                                       "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_six(request):
@@ -84,7 +82,7 @@ def introduction_page_six(request):
         return render(request, "lesson1/introduction/page_six.html", {"next": "/lesson_one/exercises/page_one",
                                                                       "back": "/lesson_one/introduction/page_five",
                                                                       "lesson_one": lesson_one,
-                                                                      "lesson": "Lesson 1: About Me", "title": "Introduction"})
+                                                                      "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def exercises_page_one(request):
@@ -92,7 +90,7 @@ def exercises_page_one(request):
         return render(request, "lesson1/exercises/page_one.html", {"next": "/lesson_one/exercises/page_two",
                                                                    "back": "/lesson_one/introduction/page_six",
                                                                    "lesson_one": lesson_one,
-                                                                   "lesson": "Lesson 1: About Me", "title": "Exercises"})
+                                                                   "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_two(request):
@@ -100,7 +98,7 @@ def exercises_page_two(request):
         return render(request, "lesson1/exercises/page_two.html", {"next": "/lesson_one/exercises/page_three",
                                                                    "back": "/lesson_one/exercises/page_one",
                                                                    "lesson_one": lesson_one,
-                                                                   "lesson": "Lesson 1: About Me", "title": "Exercises"})
+                                                                   "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_three(request):
@@ -108,7 +106,7 @@ def exercises_page_three(request):
         return render(request, "lesson1/exercises/page_three.html", {"next": "/lesson_one/exercises/page_four",
                                                                      "back": "/lesson_one/exercises/page_two",
                                                                      "lesson_one": lesson_one,
-                                                                     "lesson": "Lesson 1: About Me", "title": "Exercises"})
+                                                                     "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_four(request):
@@ -116,7 +114,7 @@ def exercises_page_four(request):
         return render(request, "lesson1/exercises/page_four.html", {"next": "/lesson_one/exercises/page_five",
                                                                     "back": "/lesson_one/exercises/page_three",
                                                                     "lesson_one": lesson_one,
-                                                                    "lesson": "Lesson 1: About Me", "title": "Exercises"})
+                                                                    "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_five(request):
@@ -124,7 +122,7 @@ def exercises_page_five(request):
         return render(request, "lesson1/exercises/page_five.html", {"next": "/lesson_one/exercises/page_six",
                                                                     "back": "/lesson_one/exercises/page_four",
                                                                     "lesson_one": lesson_one,
-                                                                    "lesson": "Lesson 1: About Me", "title": "Exercises"})
+                                                                    "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_six(request):
@@ -132,7 +130,7 @@ def exercises_page_six(request):
         return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_seven",
                                                                    "back": "/lesson_one/exercises/page_five",
                                                                    "lesson_one": lesson_one,
-                                                                   "lesson": "Lesson 1: About Me", "title": "Exercises"})
+                                                                   "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_seven(request):
@@ -140,4 +138,4 @@ def exercises_page_seven(request):
         return render(request, "lesson1/exercises/page_seven.html", {"next": "empty",
                                                                      "back": "/lesson_one/exercises/page_six",
                                                                      "lesson_one": lesson_one,
-                                                                     "lesson": "Lesson 1: About Me", "title": "Exercises"})
+                                                                     "lesson": "Lesson 1: About Me", "title": "Exercises", "user": request.session['user']})
