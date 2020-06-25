@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("register", views.register, name="register"),
     path("login", views.login_page, name="login"),
+    path("update_session/", views.update_session, name="update_session"),
     path("lesson_one/introduction/page_one", views.introduction_page_one, name="introduction_page_one"),
     path("lesson_one/introduction/page_two", views.introduction_page_two, name="introduction_page_two"),
     path("lesson_one/introduction/page_three", views.introduction_page_three, name="introduction_page_three"),
@@ -34,5 +35,6 @@ urlpatterns = [
     path("lesson_one/exercises/page_four", views.exercises_page_four, name="exercises_page_four"),
     path("lesson_one/exercises/page_five", views.exercises_page_five, name="exercises_page_five"),
     path("lesson_one/exercises/page_six", views.exercises_page_six, name="exercises_page_six"),
-    path("lesson_one/exercises/page_seven", views.exercises_page_seven, name="exercises_page_seven")
+    path("lesson_one/exercises/page_seven", views.exercises_page_seven, name="exercises_page_seven"),
+    path("lesson_one/character_select/page_one", views.character_select_page_one, name="character_select_page_one")
 ]
