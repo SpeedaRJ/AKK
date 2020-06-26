@@ -29,7 +29,7 @@ button {
   height: 71px;
   color: #ffffff;
   border: none;
-  background-color: #3097c3;
+  background-color: #6699CC;
 }
 
 button:focus {
@@ -56,12 +56,12 @@ button[class="titleB"]:hover {
 }
 
 .titleB {
-  background-color: #00a881;
+  background-color: #3E83D5;
   font-size: 24px;
 }
 
 .dictB {
-  background-color: #e6a454;
+  background-color: #3E83D5;
 }
 
 
@@ -69,14 +69,14 @@ button[class="titleB"]:hover {
   position: absolute;
   width: 70%;
   left: 0;
-  background-color: #3097c3;
+  background-color: #3E83D5;
 
   font-size: 24px;
   border-radius: 0px 50px 50px 0px;
 }
 
 .lesson:hover {
-  background-color: #3097c3 !important;
+  background-color: #3E83D5 !important;
   cursor: default;
 }
 

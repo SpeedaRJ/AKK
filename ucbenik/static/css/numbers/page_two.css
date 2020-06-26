@@ -1,13 +1,56 @@
-.help-table {
-    width: 60%;
-    float: left;
-    margin-left: 5%;
-    display: none;
-}  
-
-.tip {
-    width: 48% !important;
-    margin: 1%;
-    height: 4vh;
+.drop {
+    display: block;
+    margin: 0;
+    margin-bottom: 0;
+    border-radius: 25px;
+    background-color: #e4e3e8;
+    padding: 2vh;
     font-size: 2vh;
+    color: #3097C3;
+}
+  
+.draggable-word {
+    float: left;
+    font-size: 2vh;
+    padding: 1vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    margin: 3%;
+    border-radius: 25%/50%;
+    background-color: #3097C3;
+    color: #ffffff;
+}
+
+.correct {
+    background-color: #00A881;
+}
+
+.incorrect {
+    background-color: #F15D2A;
+}
+
+.drops {
+    height: 10vh;
+    margin-top: 10vh !important;
+}
+
+.items {
+    margin-top: 10vh !important;
+}
+
+#redo_b {
+    border: none;
+    width: 10%;
+    float: right;
+    height: 10%;
+    transform: translateY(-40%);
+    border-radius: 50%;
+}
+
+#redo_b:hover {
+    border: 3px black dotted;
+}
+
+input {
+   background-color: transparent;
 }

@@ -22,7 +22,7 @@ img {
     width: 80%;
 }
 
-.col-lg-6 {
+.main{
     text-align:center;
     height: 100%;
 }
@@ -53,12 +53,14 @@ table {
 
 td {
     background-color: #3097C3;
-    border: 0.5vh #ffffec solid;
+    border-collapse: collapse;
+    border: 3px #ffffec solid;
     color: white;
     font-family: "RalewayMed";
+    font-size: 1.5em;
 }
 
 table .color {
-    border-radius: 40% 0 0 40%;
+    border-radius: 50% 0 0 50%;
 }
 

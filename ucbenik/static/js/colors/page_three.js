@@ -1,11 +1,12 @@
+let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink", "Black", "Grey", "White", "Brown", "Gold", "Silver"];
+let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90", "#EF509C", "#231F20", "#85837D", "#F8F8F8", "#653614", "#FBAD18", "#B6B2AC"];
+
 function toOrigin1(el) {
     var origin = document.getElementById('drag-origin');
     if (origin === el.parentElement) return;
     origin.appendChild(el);
     sortItems();
     checkCorrectness();
-    //delete dragDropWordsMapping[el.id];
-    //saveWordDrag();
 }
 
 function allowDrop(ev) {
@@ -14,9 +15,6 @@ function allowDrop(ev) {
 
 function drag(ev) {
     ev.dataTransfer.setData("Text", ev.target.id);
-    //var ow = $('#drop-name');
-    //ow.find('#nedokoncano').hide();
-    //ow.addClass('opora-done');
 }
 
 function drop(ev, el, limit) {
@@ -36,11 +34,10 @@ function drop(ev, el, limit) {
         }
     }
     var origin = document.getElementById('drag-origin');
-    
+
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
-    //data.indexOf(el.id)
-    correct = data.search('^' + el.id.substring(0, el.id.length-2) + '[0-9]$') > -1;
+    correct = data.search("color" + el.id.substring(el.id.length-1)) > -1;
     var child = document.getElementById(data);
     if (correct) {
         child.classList.add('correct');
@@ -51,8 +48,6 @@ function drop(ev, el, limit) {
     }
     el.classList.add('full');
     el.appendChild(child);
-    //dragDropWordsMapping[data] = el.id;
-    //saveWordDrag();
     checkCorrectness();
 }
 
@@ -84,6 +79,37 @@ function checkCorrectness() {
     }
 }
 
+function setColors() {
+    let selected = [];
+    while (selected.length !== 5) {
+        let randomElement = colors[Math.floor(Math.random() * colors.length)];
+        if(!selected.includes(randomElement)) selected.push(randomElement);
+    }
+    let hex = [];
+    for(let color in selected) {
+        hex.push(hex_codes[colors.findIndex((element) => element === selected[color])]);
+    }
+    document.getElementById("color01").style.backgroundColor = hex[0];
+    document.getElementById("color02").style.backgroundColor = hex[1];
+    document.getElementById("color03").style.backgroundColor = hex[2];
+    document.getElementById("color04").style.backgroundColor = hex[3];
+    document.getElementById("color05").style.backgroundColor = hex[4];
+    document.getElementById("color1").innerHTML = selected[0];
+    document.getElementById("color2").innerHTML = selected[1];
+    document.getElementById("color3").innerHTML = selected[2];
+    document.getElementById("color4").innerHTML = selected[3];
+    document.getElementById("color5").innerHTML = selected[4];
+}
+
+function redo(e) {
+    let node = [].slice.call(document.getElementsByClassName("draggable-word"));
+    if(node.some((el) => el.className.includes("correct")))
+        [].forEach.call(node, function(el) {el.click(); console.log(el)});
+    setColors();
+}
+
+
 $(function () {
     sortItems();
+    setColors();
 });

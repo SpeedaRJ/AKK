@@ -33,9 +33,9 @@ function colorButtons(buttons) {
         element.innerHTML !== "Dictionary" &&
         element.className !== "SB"
       ) {
-        element.style.cssText = "background-color: #3097C3";
+        element.style.cssText = "background-color: #6699CC";
       } else if (element.innerHTML === "Dictionary") {
-        element.style.cssText = "background-color: #E6A454";
+        element.style.cssText = "background-color: #3E83D5";
       } else if (element.className === "SB") {
         element.style.cssText = "background-color: #4b5385";
       }

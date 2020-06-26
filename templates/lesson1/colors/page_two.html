@@ -2,7 +2,59 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_two.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+    </div>
+    <div class="col-lg-6 main">
+        <div class="row text">
+            <div class="msg jenny title"><b>Dodatno znanje</b></div>
+        </div>
+        <div class="row text">
+            <div class="msg jenny">J: Colours have different shades, which is why we put adjectives, such as <b>LIGHT</b>, <b>DARK</b> and <b>BRIGHT</b>, in front of them.</div>
+            <div class="msg jenny translation">Barve imajo različne odtenke, zato postavimo pred barvo pridevnike, kot so svetlo, temno in živo.</div>
+        </div>
+        <div id="table-div">
+            <table id="table_one">
+                <tr>
+                    <td>Light</td>
+                    <td>Svetlo</td>
+                </tr>
+                <tr>
+                    <td>Dark</td>
+                    <td>Temno</td>
+                </tr>
+                <tr>
+                    <td>Bright</td>
+                    <td>Živo</td>
+                </tr>
+            </table>
+             <table id="table_two">
+                <tr>
+                    <td class="color" style="background: #00BDCD; color: #00BDCD">_____</td>
+                    <td>Light blue</td>
+                    <td>Svetlo modra</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #0068AC; color: #0068AC">_____</td>
+                    <td>Dark blue</td>
+                    <td>Temno modra</td>
+                </tr>
+                <tr>
+                    <td class="color" style="background: #EF509C; color: #EF509C">_____</td>
+                    <td>Bright pink</td>
+                    <td>Živo roza</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+    </div>
+</div>
 {% endblock %}

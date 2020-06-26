@@ -1,0 +1,48 @@
+#avatar {
+    width: 70%;
+}
+
+.drop {
+    width: 70% !important;
+    min-width: 20%;
+    margin: 8%;
+    display: flex;
+    justify-content: center;
+    padding: 7%;
+}
+
+.items {
+    margin-left: 5% !important;
+    padding-top: 8%;
+}
+
+.draggable-word {
+    margin: 3%;
+    background-color: #E4E3E8;
+    color: #6282B7;
+}
+
+.correct {
+    color: #00A881;
+}
+
+.incorrect {
+    color: #F15D2A;
+}
+
+#redo_b {
+    border: none;
+    width: 10%;
+    float: right;
+    height: 10%;
+    transform: translateY(-40%);
+    border-radius: 50%;
+}
+
+#redo_b:hover {
+    border: 3px black dotted;
+}
+
+input {
+   background-color: transparent;
+}
