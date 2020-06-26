@@ -16,10 +16,18 @@ p {
     float: left;
     margin-left: 5%;
     display: none;
-}  
+}
+
+.tip:hover {
+    background-color: #6699CC !important;
+}
 
 .c2 {
     background-color: #00A881;
+}
+
+.c2:hover {
+    background-color: #00A881 !important;
 }
 
 .hint {
