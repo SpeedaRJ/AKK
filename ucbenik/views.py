@@ -44,10 +44,642 @@ def login_page(request):
 def update_session(request, what_to_update):
     if not request.is_ajax() or not request.method == 'POST':
         return HttpResponseNotAllowed(['POST'])
-    request.session[what_to_update] = request.POST['d[' + what_to_update + ']']
+    if what_to_update in request.session:
+        del request.session[what_to_update]
+        request.session[what_to_update] = request.POST['d[' + what_to_update + ']']
+    else:
+        request.session[what_to_update] = request.POST['d[' + what_to_update + ']']
     for key, value in request.session.items():
         print('{} => {}'.format(key, value))
     return HttpResponse('ok')
+
+
+def parts_of_picture_male(request, for_what_picture):
+    parts = {}
+    if for_what_picture == "glasses_short_fat_bald_fullbeared":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beared": ".cls-10"
+        }
+    elif for_what_picture == "glasses_short_fat_bald_goatee":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beared": ".cls-17"
+        }
+    elif for_what_picture == "glasses_short_fat_bald_mustache":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beared": ".cls-13"
+        }
+    elif for_what_picture == "glasses_short_fat_bald_nobeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+        }
+
+    elif for_what_picture == "glasses_short_fat_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "hair_color": ".cls-10",
+            "beard": ".cls-10"
+        }
+    elif for_what_picture == "glasses_short_fat_longhair_goatee":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beared": ".cls-17",
+            "hair_color": ".cls-17"
+        }
+    elif for_what_picture == "glasses_short_fat_longhair_mustache":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beared": ".cls-13",
+            "hair_color": ".cls-13"
+        }
+    elif for_what_picture == "glasses_short_fat_longhair_nobeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "hair_color": ".cls-6"
+        }
+    elif for_what_picture == "glasses_short_fat_shorthair_fullbeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beared": ".cls-6",
+            "hair_color": ".cls-6"
+        }
+    elif for_what_picture == "glasses_short_fat_shorthair_goatee":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beared": ".cls-16",
+            "hair_color": ".cls-16"
+        }
+    elif for_what_picture == "glasses_short_fat_shorthair_mustache":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beared": ".cls-9",
+            "hair_color": ".cls-9"
+        }
+    elif for_what_picture == "glasses_short_fat_shorthair_nobeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "hair_color": ".cls-15"
+        }
+    elif for_what_picture == "glasses_short_slim_bald_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-10",
+        }
+    elif for_what_picture == "glasses_short_slim_bald_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-17",
+        }
+    elif for_what_picture == "glasses_short_slim_bald_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-13",
+        }
+    elif for_what_picture == "glasses_short_slim_bald_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+        }
+    elif for_what_picture == "glasses_short_slim_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-10",
+            "beard": ".cls-10"
+        }
+    elif for_what_picture == "glasses_short_slim_longhair_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-17",
+            "beard": ".cls-17"
+        }
+    elif for_what_picture == "glasses_short_slim_longhair_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-13",
+            "beard": ".cls-13"
+        }
+    elif for_what_picture == "glasses_short_slim_longhair_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-17",
+        }
+    elif for_what_picture == "glasses_short_slim_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-10",
+            "beard": ".cls-10"
+        }
+    elif for_what_picture == "glasses_short_slim_shorthair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-5",
+            "beard": ".cls-5"
+        }
+    elif for_what_picture == "glasses_short_slim_shorthair_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-16",
+            "beard": ".cls-16"
+        }
+    elif for_what_picture == "glasses_short_slim_shorthair_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-8",
+            "beard": ".cls-8"
+        }
+    elif for_what_picture == "glasses_short_slim_shorthair_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-14",
+        }
+    elif for_what_picture == "glasses_tall_fat_bald_fullbeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-10"
+        }
+    elif for_what_picture == "glasses_tall_fat_bald_goatee":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-17"
+        }
+    elif for_what_picture == "glasses_tall_fat_bald_mustache":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-13"
+        }
+
+    elif for_what_picture == "glasses_tall_fat_bald_nobeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+        }
+    elif for_what_picture == "glasses_tall_fat_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-10",
+            "hair_color": ".cls-10"
+        }
+    elif for_what_picture == "glasses_tall_fat_longhair_goatee":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-17",
+            "hair_color": ".cls-17"
+        }
+    elif for_what_picture == "glasses_tall_fat_longhair_mustache":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-13",
+            "hair_color": ".cls-13"
+        }
+    elif for_what_picture == "glasses_tall_fat_longhair_nobeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-17"
+        }
+    elif for_what_picture == "glasses_tall_fat_shorthair_fullbeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-5",
+            "beard": ".cls-5",
+        }
+    elif for_what_picture == "glasses_tall_fat_shorthair_goatee":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-16",
+            "beard": ".cls-16",
+        }
+    elif for_what_picture == "glasses_tall_fat_shorthair_mustache":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-8",
+            "beard": ".cls-8",
+        }
+    elif for_what_picture == "glasses_tall_fat_shorthair_nobeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-14",
+        }
+    elif for_what_picture == "glasses_tall_slim_bald_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "beard": ".cls-5",
+        }
+    elif for_what_picture == "glasses_tall_slim_bald_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-17",
+        }
+    elif for_what_picture == "glasses_tall_slim_bald_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-13",
+        }
+    elif for_what_picture == "glasses_tall_slim_bald_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+        }
+    elif for_what_picture == "glasses_tall_slim_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "beard": ".cls-5",
+            "hair_color": ".cls-5",
+        }
+    elif for_what_picture == "glasses_tall_slim_longhair_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-17",
+            "hair_color": ".cls-17",
+        }
+    elif for_what_picture == "glasses_tall_slim_longhair_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-13",
+            "hair_color": ".cls-13",
+        }
+    elif for_what_picture == "glasses_tall_slim_longhair_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-17",
+        }
+    elif for_what_picture == "glasses_tall_slim_shorthair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "beard": ".cls-5",
+            "hair_color": ".cls-5",
+        }
+    elif for_what_picture == "glasses_tall_slim_shorthair_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-16",
+            "hair_color": ".cls-16",
+        }
+    elif for_what_picture == "glasses_tall_slim_shorthair_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "beard": ".cls-8",
+            "hair_color": ".cls-8",
+        }
+    elif for_what_picture == "glasses_tall_slim_shorthair_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-14",
+        }
+    elif for_what_picture == "noglasses_short_fat_bald_fullbeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-10",
+        }
+    elif for_what_picture == "noglasses_short_fat_bald_goatee":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_short_fat_bald_mustache":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-13",
+        }
+    elif for_what_picture == "noglasses_short_fat_bald_nobeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+        }
+    elif for_what_picture == "noglasses_short_fat_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-10",
+            "hair_color": ".cls-10",
+        }
+    elif for_what_picture == "noglasses_short_fat_longhair_goatee":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-15",
+            "hair_color": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_short_fat_longhair_mustache":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-13",
+            "hair_color": ".cls-13",
+        }
+    elif for_what_picture == "noglasses_short_fat_longhair_nobeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "hair_color": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_short_fat_shorthair_fullbeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-6",
+            "hair_color": ".cls-6",
+        }
+    elif for_what_picture == "noglasses_short_fat_shorthair_goatee":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-14",
+            "hair_color": ".cls-14",
+        }
+    elif for_what_picture == "noglasses_short_fat_shorthair_mustache":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "beard": ".cls-9",
+            "hair_color": ".cls-9",
+        }
+    elif for_what_picture == "noglasses_short_fat_shorthair_nobeard":
+        parts = {
+            "neck": ".cls-4",
+            "body_color": ".cls-3",
+            "hair_color": ".cls-13",
+        }
+    elif for_what_picture == "noglasses_short_slim_bald_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-10",
+        }
+    elif for_what_picture == "noglasses_short_slim_bald_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_short_slim_bald_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-13",
+        }
+    elif for_what_picture == "noglasses_short_slim_bald_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+        }
+    elif for_what_picture == "noglasses_short_slim_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-10",
+            "hair_color": ".cls-10",
+        }
+    elif for_what_picture == "noglasses_short_slim_longhair_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-15",
+            "hair_color": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_short_slim_longhair_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-13",
+            "hair_color": ".cls-13",
+        }
+    elif for_what_picture == "noglasses_short_slim_longhair_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_short_slim_shorthair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "beard": ".cls-5",
+            "hair_color": ".cls-5",
+        }
+    elif for_what_picture == "noglasses_short_slim_shorthair_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-14",
+            "hair_color": ".cls-14",
+        }
+    elif for_what_picture == "noglasses_short_slim_shorthair_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "beard": ".cls-8",
+            "hair_color": ".cls-8",
+        }
+    elif for_what_picture == "noglasses_short_slim_shorthair_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-12",
+        }
+    elif for_what_picture == "noglasses_tall_fat_bald_fullbeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-10",
+        }
+    elif for_what_picture == "noglasses_tall_fat_bald_goatee":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_tall_fat_bald_mustache":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-13",
+        }
+    elif for_what_picture == "noglasses_tall_fat_bald_nobeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+        }
+    elif for_what_picture == "noglasses_tall_fat_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-10",
+            "hair_color": ".cls-10",
+        }
+    elif for_what_picture == "noglasses_tall_fat_longhair_goatee":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-15",
+            "hair_color": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_tall_fat_longhair_mustache":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "beard": ".cls-13",
+            "hair_color": ".cls-13",
+        }
+    elif for_what_picture == "noglasses_tall_fat_longhair_nobeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_tall_fat_shorthair_fullbeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-5",
+        }
+    elif for_what_picture == "noglasses_tall_fat_shorthair_goatee":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-14",
+            "beard": ".cls-14",
+        }
+    elif for_what_picture == "noglasses_tall_fat_shorthair_mustache":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-8",
+            "beard": ".cls-8",
+        }
+    elif for_what_picture == "noglasses_tall_fat_shorthair_nobeard":
+        parts = {
+            "neck": ".cls-3",
+            "body_color": ".cls-2",
+            "hair_color": ".cls-12",
+        }
+    elif for_what_picture == "noglasses_tall_slim_bald_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "beard": ".cls-5",
+        }
+    elif for_what_picture == "noglasses_tall_slim_bald_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-15",
+        }
+    elif for_what_picture == "noglasses_tall_slim_bald_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-13",
+        }
+    elif for_what_picture == "noglasses_tall_slim_bald_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+        }
+    elif for_what_picture == "noglasses_tall_slim_longhair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "beard": ".cls-5",
+            "hair_color": ".cls-5"
+        }
+    elif for_what_picture == "noglasses_tall_slim_longhair_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-15",
+            "hair_color": ".cls-15"
+        }
+    elif for_what_picture == "noglasses_tall_slim_longhair_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "beard": ".cls-13",
+            "hair_color": ".cls-13"
+        }
+    elif for_what_picture == "noglasses_tall_slim_longhair_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-15"
+        }
+    elif for_what_picture == "noglasses_tall_slim_shorthair_fullbeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-5",
+            "beard": ".cls-5",
+        }
+    elif for_what_picture == "noglasses_tall_slim_shorthair_goatee":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-7",
+            "hair_color": ".cls-14",
+            "beard": ".cls-14",
+        }
+    elif for_what_picture == "noglasses_tall_slim_shorthair_mustache":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-8",
+            "beard": ".cls-8",
+        }
+    elif for_what_picture == "noglasses_tall_slim_shorthair_nobeard":
+        parts = {
+            "neck": ".cls-2",
+            "body_color": ".cls-4",
+            "hair_color": ".cls-12",
+        }
 
 
 def introduction_page_one(request):
@@ -162,15 +794,38 @@ def character_select_page_one(request):
 def character_select_page_two(request):
     if request.method == "GET":
         return render(request, "lesson1/character_select/page_two.html", {"next": "/lesson_one/character_select/page_three",
-                                                                          "back": "/lesson1/character_select/page_one",
+                                                                          "back": "/lesson_one/character_select/page_one",
                                                                           "lesson_one": lesson_one,
-                                                                          "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                          "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                          })
 
 
 def character_select_page_three(request):
     if request.method == "GET":
+        parts = {}
+        colors = {}
         if request.session['user']['sex'] == "M":
             src_ref = "svg/lesson1/male_avatar/body/glasses/" + request.session['height'] + "/" + request.session['body_type'] + "/short_hair/no_beard.svg"
+            if request.session['body_type'] == "slim":
+                colors = {
+                             ".cls-4": request.session['body_color'],
+                             ".cls-2": request.session['neck'],
+                         },
+                parts = {
+                    "body_color": ".cls-4",
+                    "neck": ".cls-2",
+                }
+            elif request.session['body_type'] == "fat":
+                colors = {
+                             ".cls-2": request.session['body_color'],
+                             ".cls-3": request.session['neck'],
+                             ".cls-14": request.session['hair_color'],
+                         },
+                parts = {
+                    "body_color": ".cls-2",
+                    "neck": ".cls-3",
+                    "hair_color": ".cls-14",
+                }
         else:
             src_ref = "svg/lesson1/female_avatar/glasses/" + request.session['height'] + "/" + request.session['body_type'] + "/dress/bun.svg"
 
@@ -178,7 +833,10 @@ def character_select_page_three(request):
                                                                             "back": "/lesson_one/character_select/page_two",
                                                                             "lesson_one": lesson_one,
                                                                             "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user'],
-                                                                            "src": src_ref})
+                                                                            "src": src_ref,
+                                                                            "colors": colors,
+                                                                            "parts": parts
+                                                                            })
 
 
 def character_select_page_four(request):

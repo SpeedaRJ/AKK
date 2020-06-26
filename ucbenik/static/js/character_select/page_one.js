@@ -41,10 +41,10 @@ function changeSkinColor(e) {
         el.setAttribute("style", "fill:" + e.style.backgroundColor + ";");
     });
     [].forEach.call(svg.querySelectorAll(".cls-2"), function (el) {
-        el.setAttribute("style", "fill:" + pSBC(0.15, e.style.backgroundColor) + ";");
+        el.setAttribute("style", "fill:" + pSBC(-0.15, e.style.backgroundColor) + ";");
     });
     let data = {
-        "neck": pSBC(0.15, e.style.backgroundColor),
+        "neck": pSBC(-0.15, e.style.backgroundColor),
     };
     update_session(data);
     data = {
@@ -55,6 +55,7 @@ function changeSkinColor(e) {
 }
 
 function update_session(d) {
+    $.ajaxSetup({async: false});
     $.ajax({
         type: 'POST',
         url: "/update_session/" + Object.keys(d)[0],
@@ -63,10 +64,10 @@ function update_session(d) {
 }
 
 function filterHeight(value) {
-    if(value >= "182"){
-        update_session({"height":"tall"});
-    }else{
-        update_session({"height":"small"});
+    if (value >= "182") {
+        update_session({"height": "tall"});
+    } else {
+        update_session({"height": "short"});
     }
 }
 
