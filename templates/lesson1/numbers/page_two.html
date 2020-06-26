@@ -19,32 +19,54 @@
             <div class="msg user slo">
                 Poveži števila s pravilnimi besedami.
             </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
         </div>
     </div>
     <div class="col-lg-3"></div>
 </div>
-<div class="row drops top" style="display: flex; justify-content: space-evenly;">
-    <div class="drop" ondrop="drop(event, this, 1, 'four')" ondragover="allowDrop(event)">
-        <h6 class="drop-text">4</h6>
-    </div>
-    <div class="drop" ondrop="drop(event, this, 1, 'one')" ondragover="allowDrop(event)">
-        <h6 class="drop-text">1</h6>
-    </div>
-    <div class="drop" ondrop="drop(event, this, 1, 'six')" ondragover="allowDrop(event)">
-        <h6 class="drop-text">6</h6>
-    </div>
-    <div class="drop" ondrop="drop(event, this, 1, 'eight')" ondragover="allowDrop(event)">
-        <h6 class="drop-text">8</h6>
-    </div>
-    <div class="drop" ondrop="drop(event, this, 1, 'ten')" ondragover="allowDrop(event)">
-        <h6 class="drop-text">10</h6>
+<div class="row container">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-1"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match05" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
     </div>
 </div>
-<div class="row items" id="drag-origin" style="display: flex; justify-content: space-evenly;">
-    <span onclick="toOrigin1(this)" class="draggable-word " id="one" draggable="true" ondragstart="drag(event)">one</span>
-    <span onclick="toOrigin1(this)" class="draggable-word" id="four" draggable="true" ondragstart="drag(event)">four</span>
-    <span onclick="toOrigin1(this)" class="draggable-word" id="six" draggable="true" ondragstart="drag(event)">six</span>
-    <span onclick="toOrigin1(this)" class="draggable-word" id="eight" draggable="true" ondragstart="drag(event)">eight</span>
-    <span onclick="toOrigin1(this)" class="draggable-word" id="ten" draggable="true" ondragstart="drag(event)">ten</span>
+<div class=" container-fluid">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="row items" id="drag-origin">
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match1" draggable="true"
+                  ondragstart="drag(event)">What</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match2" draggable="true"
+                  ondragstart="drag(event)">Who</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match3" draggable="true"
+                  ondragstart="drag(event)">What</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match4" draggable="true"
+                  ondragstart="drag(event)">How</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match5" draggable="true"
+                  ondragstart="drag(event)">Where</span>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
 </div>
 {% endblock %}
