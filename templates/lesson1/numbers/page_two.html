@@ -3,6 +3,8 @@
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_two.css' %}"/>
+<script type="text/javascript" src="{% static 'js/numbers/page_two.js' %}"></script>
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -11,33 +13,38 @@
     </div>
     <div class="col-lg-6">
         <div class="row inst">
-            <div class="msg jenny">J: Poglej si tabelo. 
+            <div class="msg user">
+                Connect the numbers with the correct words. 
             </div>
-        </div>
-        <div class="help-table" id="help-table">
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>What</button>
-                <button class="col-lg-6 tip c2" disabled>Kaj</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>Who</button>
-                <button class="col-lg-6 tip c2" disabled>Kdo</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>How</button>
-                <button class="col-lg-6 tip c2" disabled>Kako</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>Where</button>
-                <button class="col-lg-6 tip c2" disabled>Kje</button>
-            </div>
-        </div>
-        <div class="row inst">
-            <div class="msg jenny">J: Če slediš zapisu vrstilnih števnikov, 
-                se ne moreš zmotiti!
+            <div class="msg user slo">
+                Poveži števila s pravilnimi besedami.
             </div>
         </div>
     </div>
+    <div class="col-lg-3"></div>
 </div>
-<div class="col-lg-3"></div>
+<div class="row drops top" style="display: flex; justify-content: space-evenly;">
+    <div class="drop" ondrop="drop(event, this, 1, 'four')" ondragover="allowDrop(event)">
+        <h6 class="drop-text">4</h6>
+    </div>
+    <div class="drop" ondrop="drop(event, this, 1, 'one')" ondragover="allowDrop(event)">
+        <h6 class="drop-text">1</h6>
+    </div>
+    <div class="drop" ondrop="drop(event, this, 1, 'six')" ondragover="allowDrop(event)">
+        <h6 class="drop-text">6</h6>
+    </div>
+    <div class="drop" ondrop="drop(event, this, 1, 'eight')" ondragover="allowDrop(event)">
+        <h6 class="drop-text">8</h6>
+    </div>
+    <div class="drop" ondrop="drop(event, this, 1, 'ten')" ondragover="allowDrop(event)">
+        <h6 class="drop-text">10</h6>
+    </div>
+</div>
+<div class="row items" id="drag-origin" style="display: flex; justify-content: space-evenly;">
+    <span onclick="toOrigin1(this)" class="draggable-word " id="one" draggable="true" ondragstart="drag(event)">one</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="four" draggable="true" ondragstart="drag(event)">four</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="six" draggable="true" ondragstart="drag(event)">six</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="eight" draggable="true" ondragstart="drag(event)">eight</span>
+    <span onclick="toOrigin1(this)" class="draggable-word" id="ten" draggable="true" ondragstart="drag(event)">ten</span>
+</div>
 {% endblock %}

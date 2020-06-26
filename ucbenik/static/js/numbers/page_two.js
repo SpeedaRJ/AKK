@@ -19,7 +19,7 @@ function drag(ev) {
     //ow.addClass('opora-done');
 }
 
-function drop(ev, el, limit) {
+function drop(ev, el, limit, solution) {
     if (el.children.length > limit) {
         try {
             children = el.children;
@@ -36,11 +36,10 @@ function drop(ev, el, limit) {
         }
     }
     var origin = document.getElementById('drag-origin');
-    
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
     //data.indexOf(el.id)
-    correct = data.search('^' + el.id.substring(0, el.id.length-2) + '[0-9]$') > -1;
+    correct = data == solution;
     var child = document.getElementById(data);
     if (correct) {
         child.classList.add('correct');
