@@ -2,7 +2,73 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_three.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_three.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">1. Match.</div>
+            <div class="msg user slo ">Poveži.</div>
+        </div>
+        <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="avatar">
+    </div>
+</div>
+<div class="row container">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-1"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color05" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+<div class=" container-fluid">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="row items" id="drag-origin">
+            <span onclick="toOrigin1(this)" class="draggable-word" id="color1" draggable="true"
+                  ondragstart="drag(event)">What</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="color2" draggable="true"
+                  ondragstart="drag(event)">Who</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="color3" draggable="true"
+                  ondragstart="drag(event)">What</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="color4" draggable="true"
+                  ondragstart="drag(event)">How</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="color5" draggable="true"
+                  ondragstart="drag(event)">Where</span>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
 {% endblock %}

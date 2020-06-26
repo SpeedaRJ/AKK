@@ -45,7 +45,7 @@ p {
 .user {
   float: right;
   color: #ffffff;
-  background-color: #3097c3;
+  background-color: #3E83D5;
 }
 
 .slo {
@@ -81,7 +81,7 @@ p {
 input {
     border: none;
     border-bottom: 3px white dashed;
-    background: #3097c3;
+    background: #3E83D5;
     color: #ffffff;
     width: 40%;
 }

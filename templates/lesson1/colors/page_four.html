@@ -2,7 +2,54 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
 {% endblock %}
 {% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">2. What colour are they?</div>
+            <div class="msg user slo ">Kakšne barve so?</div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="avatar">
+    </div>
+</div>
+<div class="row container">
+    <div class="col-lg-4">
+        <div class="question">
+            The apple is:
+            <input type="radio" id="blue1" name="color1">
+            <label for="blue1">Blue</label><br>
+            <input type="radio" id="pink1" name="color1">
+            <label for="pink1">Pink</label><br>
+            <input type="radio" id="red1" name="color1">
+            <label for="red1">Red</label><br>
+        </div>
+        <div class="image">
+            <img src="{% static 'svg/lesson1/colors/SVG/apple.svg' %}">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="question">
 
+        </div>
+        <div class="image">
+
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="question">
+
+        </div>
+        <div class="image">
+
+        </div>
+    </div>
+</div>
 {% endblock %}
