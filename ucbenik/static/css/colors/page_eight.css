@@ -1,0 +1,23 @@
+#avatar {
+    width: 70%;
+}
+
+input {
+    background: transparent;
+    border-bottom: none;
+    border-radius: 30%;
+}
+
+.container {
+    height: 65%;
+}
+
+.column {
+    height: 100%;
+}
+
+.first {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}

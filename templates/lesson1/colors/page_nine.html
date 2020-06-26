@@ -2,7 +2,45 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_nine.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_nine.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">5. Name the colours in the flag.</div>
+            <div class="msg user slo ">Poimenuj barve v zastavi.</div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="avatar">
+    </div>
+</div>
+<div class="row container">
+    <div class="col-lg-6 column">
+        <div class="row first">
+            <img class="flag" src="{% static 'svg/lesson1/colors/SVG/jamaica.svg' %}">
+            <div class="input"><input class="answer" type="text" onchange="check(this, ['green', 'black', 'yellow'])"></div>
+        </div>
+        <div class="row first">
+            <img class="flag" src="{% static 'svg/lesson1/colors/SVG/slovenia.svg' %}">
+            <div class="input"><input class="answer" type="text" onchange="check(this, ['white', 'red', 'blue'])"></div>
+        </div>
+    </div>
+    <div class="col-lg-6 column">
+        <div class="row first">
+            <img class="flag" src="{% static 'svg/lesson1/colors/SVG/seychelles.svg' %}">
+            <div class="input"><input class="answer" type="text" onchange="check(this, ['blue', 'yellow', 'red', 'white', 'green'])"></div>
+        </div>
+        <div class="row first">
+            <img class="flag" src="{% static 'svg/lesson1/colors/SVG/south_sudan.svg' %}">
+            <div class="input"><input class="answer" type="text" onchange="check(this, ['blue', 'yellow', 'black', 'red', 'green', 'white'])"></div>
+        </div>
+    </div>
+</div>
 {% endblock %}

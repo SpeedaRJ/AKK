@@ -2,7 +2,49 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_eight.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_eight.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">4. Which pictures are green?</div>
+            <div class="msg user slo ">Katere slike so zelene?</div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="avatar">
+    </div>
+</div>
+<div class="row container">
+    <div class="col-lg-4 column">
+        <div class="row first">
+            <input type="image" src="{% static 'svg/lesson1/colors/SVG/grass.svg' %}" onclick="check(this, true)">
+        </div>
+        <div class="row first">
+            <input type="image" src="{% static 'svg/lesson1/colors/SVG/rock.svg' %}" onclick="check(this, false)">
+        </div>
+    </div>
+    <div class="col-lg-4 column">
+        <div class="row first">
+            <input type="image" src="{% static 'svg/lesson1/colors/SVG/hat.svg' %}" onclick="check(this, false)">
+        </div>
+        <div class="row first">
+            <input type="image" src="{% static 'svg/lesson1/colors/SVG/tree.svg' %}" onclick="check(this, true)">
+        </div>
+    </div>
+    <div class="col-lg-4 column">
+        <div class="row first">
+            <input type="image" src="{% static 'svg/lesson1/colors/SVG/house.svg' %}" onclick="check(this, false)">
+        </div>
+        <div class="row first">
+            <input type="image" src="{% static 'svg/lesson1/colors/SVG/shirt.svg' %}" onclick="check(this, true)">
+        </div>
+    </div>
+</div>
 {% endblock %}

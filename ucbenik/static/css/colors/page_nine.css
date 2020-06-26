@@ -1,0 +1,49 @@
+#avatar {
+    width: 70%;
+}
+
+.container {
+    height: 65%;
+}
+
+.column {
+    height: 100%;
+}
+
+.flag {
+    height: 60%;
+    width: 100%;
+}
+
+.first {
+    height: 50%;
+    text-align: center;
+}
+
+input {
+    margin-top: 1% !important;
+    height: 80%;
+    width: 60%;
+    background: #E4E3E8;
+    border-color: black;
+}
+
+.input {
+    margin-top: 3% !important;
+    border-radius: 40%;
+    height: 20%;
+    width: 50%;
+    font-size: 1.2em;
+    background: #E4E3E8 !important;
+    margin: auto;
+}
+
+.correct {
+    color: #00A881;
+    background: #E4E3E8 !important;
+}
+
+.incorrect {
+     color: #F15D2A;
+     background: #E4E3E8 !important;
+}
