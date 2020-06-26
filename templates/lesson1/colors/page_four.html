@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -24,31 +25,45 @@
     <div class="col-lg-4">
         <div class="question">
             The apple is:
-            <input type="radio" id="blue1" name="color1">
+            <input type="radio" id="blue1" name="color1" onclick="check(event, 'red')">
             <label for="blue1">Blue</label><br>
-            <input type="radio" id="pink1" name="color1">
+            <input type="radio" id="pink1" name="color1" onclick="check(event, 'red')">
             <label for="pink1">Pink</label><br>
-            <input type="radio" id="red1" name="color1">
+            <input type="radio" id="red1" name="color1" onclick="check(event, 'red')">
             <label for="red1">Red</label><br>
         </div>
         <div class="image">
             <img src="{% static 'svg/lesson1/colors/SVG/apple.svg' %}">
         </div>
     </div>
-    <div class="col-lg-4">
-        <div class="question">
-
-        </div>
-        <div class="image">
-
+    <div class="col-lg-4" style="flex-direction: column-reverse">
+        <div class="down">
+            <div class="question">
+                The sun is:
+                <input type="radio" id="white1" name="color2" onclick="check(event, 'yellow')">
+                <label for="white1">White</label><br>
+                <input type="radio" id="yellow1" name="color2" onclick="check(event, 'yellow')">
+                <label for="yellow1">Yellow</label><br>
+                <input type="radio" id="black1" name="color2" onclick="check(event, 'yellow')">
+                <label for="black1">Black</label><br>
+            </div>
+            <div class="image">
+                <img src="{% static 'svg/lesson1/colors/SVG/sun.svg' %}">
+            </div>
         </div>
     </div>
     <div class="col-lg-4">
         <div class="question">
-
+            The grass is:
+            <input type="radio" id="grey1" name="color3" onclick="check(event, 'green')">
+            <label for="grey1">Grey</label><br>
+            <input type="radio" id="green1" name="color3" onclick="check(event, 'green')">
+            <label for="green1">Green</label><br>
+            <input type="radio" id="gold1" name="color3" onclick="check(event, 'green')">
+            <label for="gold1">Gold</label><br>
         </div>
         <div class="image">
-
+            <img src="{% static 'svg/lesson1/colors/SVG/grass.svg' %}">
         </div>
     </div>
 </div>

@@ -31,35 +31,35 @@
             </tr>
             <tr>
                 <td>U: <input class="textarea" type="text"
-                              onchange="solution(this, new RegExp('My name is {{user.first_name}}.'))"></td>
+                              onchange="solution(this, new RegExp('^My name is {{user.first_name}}\.$'))"></td>
             </tr>
             <tr>
                 <td>J: What is your nickname?</td>
             </tr>
             <tr>
                 <td>U: <input class="textarea" type="text"
-                              onchange="solution(this, new RegExp('My nickname is \[A-Z][a-z]*\.'))"></td>
+                              onchange="solution(this, new RegExp('^My nickname is \[A-Z][a-z]*\\.$'))"></td>
             </tr>
             <tr>
                 <td>J: How old are you?</td>
             </tr>
             <tr>
                 <td>U: <input class="textarea" type="text"
-                              onchange="solution(this, new RegExp('I am {{user.age}} years old.'))"></td>
+                              onchange="solution(this, new RegExp('^I am {{user.age}} years old\.$'))"></td>
             </tr>
             <tr>
                 <td>J: Where were you born?</td>
             </tr>
             <tr>
                 <td>U: <input class="textarea" type="text"
-                              onchange="solution(this, new RegExp('I was born in \[A-Z][a-z]*\.'))"></td>
+                              onchange="solution(this, new RegExp('^I was born in \[A-Z][a-z]*\\.$'))"></td>
             </tr>
             <tr>
                 <td>J: Where do you live?</td>
             </tr>
             <tr>
                 <td>U: <input class="textarea" type="text"
-                              onchange="solution(this, new RegExp('I live in \[A-Z][a-z]*\.'))"></td>
+                              onchange="solution(this, new RegExp('^I live in \[A-Z][a-z]*\\.$'))"></td>
             </tr>
         </table>
     </div>

@@ -17,7 +17,7 @@
 
 .col-lg-4 {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 100%;
 }
 
@@ -25,4 +25,18 @@
     height: auto;
     width: 20%;
     margin: 20% 0 0 5%;
+}
+
+.down {
+    display: flex;
+    height: 35%;
+    justify-content: space-evenly;
+}
+
+.down > .question {
+    height: 100%;
+}
+
+.col-lg-2 {
+    height: 100%;
 }

@@ -2,7 +2,56 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">2. What colour are they?</div>
+            <div class="msg user slo ">Kakšne barve so?</div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="avatar">
+    </div>
+</div>
+<div class="row container">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4">
+        <div class="question">
+            The bat is:
+            <input type="radio" id="brown1" name="color1" onclick="check(event, 'black')">
+            <label for="brown1">Brown</label><br>
+            <input type="radio" id="blue1" name="color1" onclick="check(event, 'black')">
+            <label for="blue1">Blue</label><br>
+            <input type="radio" id="black1" name="color1" onclick="check(event, 'black')">
+            <label for="black1">Black</label><br>
+        </div>
+        <div class="image">
+            <img src="{% static 'svg/lesson1/colors/SVG/bat.svg' %}">
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4">
+        <div class="question">
+            The carrot is:
+            <input type="radio" id="red1" name="color2" onclick="check(event, 'orange')">
+            <label for="red1">Red</label><br>
+            <input type="radio" id="yellow1" name="color2" onclick="check(event, 'orange')">
+            <label for="yellow1">Yellow</label><br>
+            <input type="radio" id="orange1" name="color2" onclick="check(event, 'orange')">
+            <label for="orange1">Orange</label><br>
+        </div>
+        <div class="image">
+            <img src="{% static 'svg/lesson1/colors/SVG/carrot.svg' %}">
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
 {% endblock %}

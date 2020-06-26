@@ -2,7 +2,86 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_seven.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_seven.js' %}"></script>
 {% endblock %}
 {% block content %}
-
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">3. Name the colours.</div>
+            <div class="msg user slo ">Poimenuj barve.</div>
+        </div>
+        <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="avatar">
+    </div>
+</div>
+<div class="row container">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-1"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color01">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color02">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color03">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color04">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="color05">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+<div class="row container">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-1"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="answer1">
+                <input type="text" class="answer" onchange="solution(this)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="answer2" >
+                <input type="text" class="answer" onchange="solution(this)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="answer3">
+                <input type="text" class="answer" onchange="solution(this)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="answer4">
+                <input type="text" class="answer" onchange="solution(this)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="answer5">
+                <input type="text" class="answer" onchange="solution(this)">
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
 {% endblock %}
