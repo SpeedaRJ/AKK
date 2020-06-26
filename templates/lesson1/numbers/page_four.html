@@ -1,0 +1,65 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_four.css' %}"/>
+<script type="text/javascript" src="{% static 'js/numbers/page_four.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Count and write out the number.  
+            </div>
+            <div class="msg user slo">
+                Preštej in zapiši število z besedo.
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+<div class="row container tvs">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/tv_one.svg' %}" id="tv01" class="tv">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/tv_one.svg' %}" id="tv02" class="tv">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/tv_two.svg' %}" id="tv03" class="tv">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/tv_two.svg' %}" id="tv04" class="tv">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/tv_one.svg' %}" id="tv05" class="tv">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="row inst">
+                <div class="msg user slo" >
+                    <input id="textarea" class=textarea size="5" onchange="solution2(this)"/>
+                    <p id="solution2"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+<div class="row container cars">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/car.svg' %}" id="car01" class="car">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/car.svg' %}" id="car02" class="car">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/car.svg' %}" id="car03" class="car">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/car.svg' %}" id="car04" class="car">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/car.svg' %}" id="car05" class="car">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="row inst">
+                <div class="msg user slo" >
+                    <input id="textarea" class=textarea size="5" onchange="solution(this)"/>
+                    <p id="solution"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+{% endblock %}
