@@ -45,14 +45,21 @@
                     <div style="display: flex;justify-content: space-evenly;">
                         <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
                         {% if user.sex == "M" %}
-                            <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #d89f72;" ></button>
-                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;" ></button>
-                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffd39b;" ></button>
+                            <button id="short_hair" style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/short_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'M'); update_session({'hair_type':'short_hair'});"></button>
+                            <button id="long_hair" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/long_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'M');recolor();update_session({'hair_type':'long_hair'})"></button>
+                            <button id="bald" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/bald.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'bald'})"></button>
                         {% else %}
-                            <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #d89f72;" ></button>
-                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;" ></button>
-                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffd39b;" ></button>
-                            <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #eed1bf;" ></button>
+                            <button style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/medium_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'medium_hair'})"></button>
+                            <button style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/curly_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'curly_hair'})"></button>
+                            <button style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/bun_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'bun_hair'})"></button>
+                            <button style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/long_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'long_hair'})"></button>
                         {% endif %}
                     </div>
                 </div>
@@ -60,10 +67,16 @@
             <div class="row text space">
                 <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
                     <div style="display: flex;justify-content: space-evenly;">
-                        <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #231f20;" ></button>
-                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;" ></button>
-                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffebc6;" ></button>
-                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #c1c0db;" ></button>
+                        {{ colors|json_script:"colors" }}
+                        {{ parts|json_script:"parts" }}
+                        <button style="border-radius: 50%; width: 100px;height: 100px; background-color: #231f20;"
+                                onclick="recolorHair(this); update_session({'hair_color':this.style.backgroundColor})"></button>
+                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #643a00;"
+                                onclick="recolorHair(this); update_session({'hair_color':this.style.backgroundColor})"></button>
+                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #ffebc6;"
+                                onclick="recolorHair(this);update_session({'hair_color':this.style.backgroundColor})"></button>
+                        <button style="border-radius: 50%;  width: 100px;height: 100px; background-color: #c1c0db;"
+                                onclick="recolorHair(this);update_session({'hair_color':this.style.backgroundColor})"></button>
                     </div>
                 </div>
             </div>
@@ -72,4 +85,35 @@
             <object data="{% static src %}" type="image/svg+xml" id="character"></object>
         </div>
     </div>
+    <script>
+        function recolor() {
+            let svg = document.getElementById("character").contentDocument.children[0];
+            let colors = JSON.parse(document.getElementById("colors").textContent);
+            let parts = JSON.parse(document.getElementById("parts").textContent);
+            let querySelector = "";
+            [].forEach.call(Object.keys(parts),function (el) {
+               querySelector+=parts[el]+",";
+            });
+            [].forEach.call(svg.querySelectorAll(querySelector.substring(0,querySelector.length-1)), function (el) {
+                let el_list = el.classList;
+                if (el_list.value === parts["body_color"].replace(".","")) {
+                    el.setAttribute("style", "fill: " + colors[0][parts["body_color"]]);
+                } else if (el_list.value === parts["neck"].replace(".","")) {
+                    el.setAttribute("style", "fill: " + colors[0][parts["neck"]]);
+                } else if (el_list.value === parts["hair_color"]){
+                    el.setAttribute("style", "fill: " + colors[0][parts["hair_color"]]);
+                }
+            });
+        }
+        function recolorHair(e){
+            let svg = document.getElementById("character").contentDocument.children[0];
+            [].forEach.call(svg.querySelectorAll(".cls-14"),function (el) {
+                el.setAttribute("style","fill:"+e.style.backgroundColor);
+            });
+            recolor();
+        }
+        $( window ).on( "load",function(){
+            recolor();
+        })
+    </script>
 {% endblock %}

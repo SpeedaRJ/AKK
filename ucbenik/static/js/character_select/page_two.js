@@ -1,3 +1,5 @@
+const prepend = "http://127.0.0.1:8000/";
+
 const pSBC = (p, c0, c1, l) => {
     let r, g, b, P, f, t, h, i = parseInt, m = Math.round, a = typeof (c1) == "string";
     if (typeof (p) != "number" || p < -1 || p > 1 || typeof (c0) != "string" || (c0[0] != 'r' && c0[0] != '#') || (c1 && !a)) return null;
@@ -51,7 +53,6 @@ function changeSkinColor(e) {
         "body_color": e.style.backgroundColor
     };
     update_session(data);
-
 }
 
 function update_session(d) {
@@ -62,22 +63,55 @@ function update_session(d) {
     });
 }
 
-function color_from_previous_answers(data) {
-    let svg = document.getElementById("character").contentDocument.children[0];
+function changeHairStyle(el, sex) {
+    let svg = document.getElementById("character");
+    let url = svg.data.split("/");
+    const predict = (element) => element === "static";
+    let index = url.findIndex(predict);
+    let new_url = "";
+    if (url[url.findIndex((element) => element === "short_hair" || element === "long_hair" || element === "bald" || element === "bun.svg" || element === "curly.svg" || element === "long.svg" || element === "medium.svg")] === el.id) {
+        console.log("Hairstyle already selected");
+        return;
+    }
+    if (sex === "M") {
+        for (let i = index; i < url.length; i++) {
+            if (url[i] === "short_hair" || url[i] === "long_hair" || url[i] === "bald") {
+                new_url += el.id + "/";
+            } else {
+                if (i === url.length - 1) {
+                    new_url += url[i];
+                } else {
+                    new_url += url[i] + "/";
+                }
+            }
+        }
+    } else {
+        for (let i = index; i < url.length; i++) {
+            if (url[i] === "bun.svg" || url[i] === "curly.svg" || url[i] === "long.svg" || url[i] === "medium.svg") {
+                new_url += el.id;
+            } else {
+                new_url += url[i] + "/";
+            }
+        }
+    }
+    svg.data = prepend + new_url;
+    svg.addEventListener("load", function () {
+        recolor();
+    });
 }
 
 function translate(el) {
     let paras = document.getElementsByClassName("slo_name");
-    if(el.target.value.toString().trim().toLowerCase()==="fat"){
+    if (el.target.value.toString().trim().toLowerCase() === "fat") {
         paras[0].innerHTML = "močnejše postave";
         let data = {
-            "body_type":"fat"
+            "body_type": "fat"
         };
         update_session(data);
-    }else if(el.target.value.toString().trim().toLowerCase()==="slim"){
+    } else if (el.target.value.toString().trim().toLowerCase() === "slim") {
         paras[0].innerHTML = "vitek";
         let data = {
-            "body_type":"slim"
+            "body_type": "slim"
         };
         update_session(data);
     }
