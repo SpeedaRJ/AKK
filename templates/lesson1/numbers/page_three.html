@@ -1,0 +1,51 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_three.css' %}"/>
+<script type="text/javascript" src="{% static 'js/numbers/page_three.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Count and write out the number.  
+            </div>
+            <div class="msg user slo">
+                Preštej in zapiši število z besedo.
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+<div class="row container cats">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_beige.svg' %}" id="cat01" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_beige.svg' %}" id="cat02" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_black.svg' %}" id="cat03" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_brown.svg' %}" id="cat04" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_beige.svg' %}" id="cat05" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_brown.svg' %}" id="cat06" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_black.svg' %}" id="cat07" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_black.svg' %}" id="cat08" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_brown.svg' %}" id="cat09" class="cat">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/cat_beige.svg' %}" id="cat10" class="cat">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="row inst">
+                <div class="msg user slo" >
+                    <input id="textarea" class=textarea size="5" onchange="solution(this)"/>
+                    <p id="solution"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+{% endblock %}

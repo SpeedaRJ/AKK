@@ -1,0 +1,25 @@
+.cat {
+    display: none;
+    height: 75%
+}
+
+.cats {
+    text-align: center;
+}
+
+#redo_b {
+    border: none;
+    width: 10%;
+    float: right;
+    height: 10%;
+    transform: translateY(-40%);
+    border-radius: 50%;
+}
+
+#redo_b:hover {
+    border: 3px black dotted;
+}
+
+input {
+   background-color: transparent;
+}
