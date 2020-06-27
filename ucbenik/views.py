@@ -1105,7 +1105,15 @@ def colors_page_eight(request):
 
 def colors_page_nine(request):
     if request.method == "GET":
-        return render(request, "lesson1/colors/page_nine.html", {"next": "/#",
-                                                                 "back": "/lesson_one/colors/page_nine",
+        return render(request, "lesson1/colors/page_nine.html", {"next": "/lesson_one/years/page_one",
+                                                                 "back": "/lesson_one/colors/page_eight",
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+
+
+def years_page_one(request):
+    if request.method == "GET":
+        return render(request, "lesson1/years/page_one.html", {"next": "/#",
+                                                                 "back": "/lesson_one/colors/page_nine",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})

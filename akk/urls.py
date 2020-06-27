@@ -73,4 +73,5 @@ urlpatterns = [
     path("lesson_one/colors/page_seven", views.colors_page_seven, name="colors_page_seven"),
     path("lesson_one/colors/page_eight", views.colors_page_eight, name="colors_page_eight"),
     path("lesson_one/colors/page_nine", views.colors_page_nine, name="colors_page_nine"),
+    path("lesson_one/years/page_one", views.years_page_one, name="years_page_one"),
 ]
