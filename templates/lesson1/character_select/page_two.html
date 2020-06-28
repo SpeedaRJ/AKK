@@ -16,7 +16,7 @@
         </div>
         <div class="col-lg-6">
             <div class="row text space">
-                {% if request.session.height >= "182" %}
+                {% if request.session.height == "tall" %}
                     <div class="msg jenny">J: You are tall!</div>
                     {% if user.sex == "M" %}
                         <div class="msg jenny translation">Visok si!</div>
@@ -48,14 +48,39 @@
             </div>
         </div>
         <div class="col-lg-3">
+            {{ colors|json_script:"colors" }}
+            {{ parts|json_script:"parts" }}
+            <script>
+                function recolor() {
+                    let svg = document.getElementById("character").contentDocument.children[0];
+                    let colors = JSON.parse(document.getElementById("colors").textContent);
+                    let parts = JSON.parse(document.getElementById("parts").textContent);
+                    let querySelector = "";
+                    [].forEach.call(Object.keys(parts), function (el) {
+                        querySelector += parts[el] + ",";
+                    });
+                    console.log(colors);
+                    [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                        let el_list = el.id;
+                        if (/Koza/.test(el_list)) {
+                            el.setAttribute("style", "fill: "+colors['body_color']);
+                        }else if(/Vrat/.test(el_list)){
+                            el.setAttribute("style", "fill: "+ colors['neck']);
+                        }
+                    });
+                }
+                $(window).on("load", function () {
+                    recolor();
+                })
+            </script>
             {% if user.sex == 'M' %}
-                {% if request.session.height >= "182" %}
+                {% if request.session.height == "tall" %}
                     <object data="{% static 'svg/lesson1/male_avatar/body/glasses/tall/slim/short_hair/no_beard.svg' %}" type="image/svg+xml" id="character"></object>
                 {% else %}
                     <object data="{% static 'svg/lesson1/male_avatar/body/glasses/short/slim/short_hair/no_beard.svg' %}" type="image/svg+xml" id="character"></object>
                 {% endif %}
             {% else %}
-                {% if request.session.height >= "182" %}
+                {% if request.session.height == "tall" %}
                     <object data="{% static 'svg/lesson1/female_avatar/body/glasses/tall/slim/dress/curly.svg' %}" type="image/svg+xml" id="character"></object>
                 {% else %}
                     <object data="{% static 'svg/lesson1/female_avatar/body/glasses/short/slim/dress/curly.svg' %}" type="image/svg+xml" id="character"></object>

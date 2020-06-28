@@ -35,7 +35,7 @@
                         <td>Moji lasje so dolgi.</td>
                     </tr>
                     <tr>
-                        <td>I am bold.</td>
+                        <td>I am bald.</td>
                         <td>Plešast sem.</td>
                     </tr>
                 </table>
@@ -49,8 +49,10 @@
                                     onclick="changeHairStyle(this,'M'); update_session({'hair_type':'short_hair'});"></button>
                             <button id="long_hair" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/long_hair.svg" %}) no-repeat;"
                                     onclick="changeHairStyle(this,'M');recolor();update_session({'hair_type':'long_hair'})"></button>
-                            <button id="bald" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/bald.svg" %}) no-repeat;"
-                                    onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'bald'})"></button>
+                            <button id="patch" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/bald.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'patch'})"></button>
+                            <button id="bald" style="border-radius: 50%;  width: 100px;height: 100px;"
+                                    onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'bald'})">Bald</button>
                         {% else %}
                             <button style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/medium_hair.svg" %}) no-repeat;"
                                     onclick="changeHairStyle(this,'F');update_session({'hair_type':'medium_hair'})"></button>
@@ -91,23 +93,22 @@
             let colors = JSON.parse(document.getElementById("colors").textContent);
             let parts = JSON.parse(document.getElementById("parts").textContent);
             let querySelector = "";
-            [].forEach.call(Object.keys(parts),function (el) {
-               querySelector+=parts[el]+",";
+            [].forEach.call(Object.keys(parts), function (el) {
+                querySelector += parts[el] + ",";
             });
-            [].forEach.call(svg.querySelectorAll(querySelector.substring(0,querySelector.length-1)), function (el) {
-                let el_list = el.classList;
-                if (el_list.value === parts["body_color"].replace(".","")) {
-                    el.setAttribute("style", "fill: " + colors[0][parts["body_color"]]);
-                } else if (el_list.value === parts["neck"].replace(".","")) {
-                    el.setAttribute("style", "fill: " + colors[0][parts["neck"]]);
-                } else if (el_list.value === parts["hair_color"]){
-                    el.setAttribute("style", "fill: " + colors[0][parts["hair_color"]]);
+            [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                let el_list = el.id;
+                if (/Koza/.test(el_list)) {
+                    console.log(el);
+                    el.setAttribute("style", "fill: "+colors['body_color']);
+                }else if(/Vrat/.test(el_list)){
+                    el.setAttribute("style", "fill: "+ colors['neck']);
                 }
             });
         }
         function recolorHair(e){
             let svg = document.getElementById("character").contentDocument.children[0];
-            [].forEach.call(svg.querySelectorAll(".cls-14"),function (el) {
+            [].forEach.call(svg.querySelectorAll("[id^=Lasje]"),function (el) {
                 el.setAttribute("style","fill:"+e.style.backgroundColor);
             });
             recolor();

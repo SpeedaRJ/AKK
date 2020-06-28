@@ -1,0 +1,89 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_three.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/character_select/page_two.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.svg.es5.min.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="row" style="height: 100%;">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" id="jenny">
+        </div>
+        <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+        <div class="col-lg-6">
+            <div class="row text space">
+                {{ colors|json_script:"colors" }}
+                {{ parts|json_script:"parts" }}
+                <div class="msg jenny">J: Do you wear glasses?
+                    <button class="btn" onclick="changeGlasess(this)">Yes</button>
+                    /
+                    <button class="btn" onclick="changeGlasess(this)">No</button>
+                </div>
+                <div class="msg jenny translation">Ali nosiš očala? Ja/ne</div>
+            </div>
+            {% if user.sex == "M" %}
+                <div class="row text space">
+                    <div class="msg jenny">J: Do you have a beard or a mustache?
+                        <button class="btn" onclick="document.getElementById('beard_select').style.display='block'">Yes</button>
+                        /
+                        <button class="btn" onclick="document.getElementById('beard_select').style.display='none'; update_session({'beard':'no_beard'})">No</button>
+                    </div>
+                    <div class="msg jenny translation">Ali imaš brado ali brke? Ja/ne</div>
+                </div>
+                <div class="row text space" id="beard_select" style="display: none">
+                    <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
+                        <div style="display: flex;justify-content: space-evenly;">
+                            <button id="full_beard"
+                                    style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/full_beard.svg" %}) no-repeat;"
+                                    onclick="changeBeard(this); update_session({'beard':'full_beard'});"></button>
+                            <button id="mustache"
+                                    style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/mustache.svg" %}) center no-repeat;"
+                                    onclick="changeBeard(this); update_session({'beard':'mustache'});"></button>
+                            <button id="goatee" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/goatee.svg" %}) no-repeat;"
+                                    onclick="changeBeard(this); update_session({'beard':'goatee'});"></button>
+                            <button id="no_beard" style="border-radius: 50%;  width: 100px;height: 100px;"
+                                    onclick="changeBeard(this); update_session({'beard':'no_beard'});">None
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-lg-3">
+            <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+        </div>
+    </div>
+    <script>
+        function recolor() {
+            let svg = document.getElementById("character").contentDocument.children[0];
+            let colors = JSON.parse(document.getElementById("colors").textContent);
+            let parts = JSON.parse(document.getElementById("parts").textContent);
+            let querySelector = "";
+            [].forEach.call(Object.keys(parts), function (el) {
+                querySelector += parts[el] + ",";
+            });
+            [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                let el_list = el.id;
+                if (/Koza/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['body_color']);
+                } else if (/Vrat/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['neck']);
+                } else if (/Lasje/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Brada/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                }
+            });
+        }
+
+        $(window).on("load", function () {
+            recolor();
+        })
+    </script>
+{% endblock %}

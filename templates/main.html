@@ -13,9 +13,9 @@
           <li class="main">
             <button>Lesson 1</button>
             <ul class="submenu">
-              <li><button class="SB">Placeholder</button></li>
-              <li><button class="SB">Placeholder</button></li>
-              <li><button class="SB">Placeholder</button></li>
+                {% for item in lesson_one  %}
+                    <li><button class="SB">{{item}}</button></li>
+                {% endfor %}
             </ul>
           </li>
           <li class="main">

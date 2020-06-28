@@ -5,7 +5,7 @@ from ucbenik.CustomAuth import CustomAuth
 from .serializers import UserSerializer
 
 lesson_one = {"Introduction": "introduction", "Exercises": "exercises", "Avatar": "avatar", "Numbers": "numbers",
-              "Colors": "colors", "Years": "years"}
+              "Colors": "colors", "Years": "years", "Personal traits": "personal traits", "He she it": "he she it"}
 
 
 # Create your views here.
@@ -797,6 +797,14 @@ def character_select_page_two(request):
                                                                           "back": "/lesson_one/character_select/page_one",
                                                                           "lesson_one": lesson_one,
                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                          "parts": {
+                                                                              "body_color": "[id^=Koza]",
+                                                                              "neck": "[id^=Vrat]"
+                                                                          },
+                                                                          "colors": {
+                                                                              "body_color": request.session['body_color'],
+                                                                              "neck": request.session['neck']
+                                                                          }
                                                                           })
 
 
@@ -806,45 +814,42 @@ def character_select_page_three(request):
         colors = {}
         if request.session['user']['sex'] == "M":
             src_ref = "svg/lesson1/male_avatar/body/glasses/" + request.session['height'] + "/" + request.session['body_type'] + "/short_hair/no_beard.svg"
-            if request.session['body_type'] == "slim":
-                colors = {
-                             ".cls-4": request.session['body_color'],
-                             ".cls-2": request.session['neck'],
-                         },
-                parts = {
-                    "body_color": ".cls-4",
-                    "neck": ".cls-2",
-                }
-            elif request.session['body_type'] == "fat":
-                colors = {
-                             ".cls-2": request.session['body_color'],
-                             ".cls-3": request.session['neck'],
-                             ".cls-14": request.session['hair_color'],
-                         },
-                parts = {
-                    "body_color": ".cls-2",
-                    "neck": ".cls-3",
-                    "hair_color": ".cls-14",
-                }
-        else:
-            src_ref = "svg/lesson1/female_avatar/glasses/" + request.session['height'] + "/" + request.session['body_type'] + "/dress/bun.svg"
-
         return render(request, "lesson1/character_select/page_three.html", {"next": "/lesson_one/character_select/page_four",
                                                                             "back": "/lesson_one/character_select/page_two",
                                                                             "lesson_one": lesson_one,
                                                                             "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user'],
                                                                             "src": src_ref,
-                                                                            "colors": colors,
-                                                                            "parts": parts
+                                                                            "parts": {
+                                                                                "body_color": "[id^=Koza]",
+                                                                                "neck": "[id^=Vrat]"
+                                                                            },
+                                                                            "colors": {
+                                                                                "body_color": request.session['body_color'],
+                                                                                "neck": request.session['neck']
+                                                                            }
                                                                             })
 
 
 def character_select_page_four(request):
     if request.method == "GET":
+        if request.session['user']['sex'] == "M":
+            src_ref = "svg/lesson1/male_avatar/body/glasses/" + request.session['height'] + "/" + request.session['body_type'] + "/" + request.session['hair_type'] + "/no_beard.svg"
         return render(request, "lesson1/character_select/page_four.html", {"next": "/lesson_one/character_select/page_five",
-                                                                           "back": "/lesson1/character_select/page_three",
+                                                                           "back": "/lesson_one/character_select/page_three",
                                                                            "lesson_one": lesson_one,
-                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                           "src": src_ref,
+                                                                           "parts": {
+                                                                               "body_color": "[id^=Koza]",
+                                                                               "neck": "[id^=Vrat]",
+                                                                               "hair_color": "[id^=Lasje]",
+                                                                           },
+                                                                           "colors": {
+                                                                               "body_color": request.session['body_color'],
+                                                                               "neck": request.session['neck'],
+                                                                               "hair_color": request.session['hair_color']
+                                                                           }
+                                                                           })
 
 
 def character_select_page_five(request):
@@ -1114,6 +1119,6 @@ def colors_page_nine(request):
 def years_page_one(request):
     if request.method == "GET":
         return render(request, "lesson1/years/page_one.html", {"next": "/#",
-                                                                 "back": "/lesson_one/colors/page_nine",
-                                                                 "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                               "back": "/lesson_one/colors/page_nine",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})

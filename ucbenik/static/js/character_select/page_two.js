@@ -69,13 +69,13 @@ function changeHairStyle(el, sex) {
     const predict = (element) => element === "static";
     let index = url.findIndex(predict);
     let new_url = "";
-    if (url[url.findIndex((element) => element === "short_hair" || element === "long_hair" || element === "bald" || element === "bun.svg" || element === "curly.svg" || element === "long.svg" || element === "medium.svg")] === el.id) {
+    if (url[url.findIndex((element) => element === "short_hair" || element === "long_hair" || element === "bald" || element === "patch" || element === "bun.svg" || element === "curly.svg" || element === "long.svg" || element === "medium.svg")] === el.id) {
         console.log("Hairstyle already selected");
         return;
     }
     if (sex === "M") {
         for (let i = index; i < url.length; i++) {
-            if (url[i] === "short_hair" || url[i] === "long_hair" || url[i] === "bald") {
+            if (url[i] === "short_hair" || url[i] === "long_hair" || url[i] === "bald" || url[i] === "patch") {
                 new_url += el.id + "/";
             } else {
                 if (i === url.length - 1) {
@@ -98,6 +98,62 @@ function changeHairStyle(el, sex) {
     svg.addEventListener("load", function () {
         recolor();
     });
+}
+
+function changeBeard(el) {
+    let svg = document.getElementById("character");
+    let url = svg.data.split("/");
+    const predict = (element) => element === "static";
+    let index = url.findIndex(predict);
+    let new_url = "";
+    for (let i = index; i < url.length; i++) {
+        if (url[i] === "full_beard.svg" || url[i] === "mustache.svg" || url[i] === "goatee.svg" || url[i] === "no_beard.svg") {
+            new_url += el.id + ".svg";
+        } else {
+            new_url += url[i] + "/";
+        }
+    }
+    svg.data = prepend + new_url;
+    var type = el.id;
+    svg.addEventListener("load", function (el) {
+        recolor();
+        let element = el.target.contentDocument.children[0];
+        console.log(type);
+        let colors = JSON.parse(document.getElementById("colors").textContent);
+        [].forEach.call(element.querySelectorAll("[id=Brki]"), function (e) {
+            e.setAttribute("style", "fill: " + colors['hair_color']);
+        });
+        if (type === "full_beard") {
+            [].forEach.call(element.querySelectorAll("[id=Brada]"), function (e) {
+                e.setAttribute("style", "fill: " + colors['hair_color']);
+            });
+        }
+
+    }, {once: true});
+}
+
+function changeGlasess(el,sex) {
+    let svg = document.getElementById("character");
+    let url = svg.data.split("/");
+    let new_url="";
+    let index = url.findIndex((element) => element ==="static");
+    if (el.innerHTML === "Yes") {
+        url[8] = "glasses";
+    }else{
+        url[8] = "no_glasses";
+    }
+    for (let i = index; i < url.length; i++) {
+        if(i===url.length-1){
+            new_url+=url[i];
+        }else{
+            new_url+=url[i]+"/";
+        }
+    }
+    console.log(new_url);
+    svg.data =prepend+new_url;
+    svg.addEventListener("load",function () {
+        recolor();
+    },{once:true});
 }
 
 function translate(el) {

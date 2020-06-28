@@ -37,10 +37,10 @@ const pSBC = (p, c0, c1, l) => {
 
 function changeSkinColor(e) {
     let svg = document.getElementById("character").contentDocument.children[0];
-    [].forEach.call(svg.querySelectorAll(".cls-4"), function (el) {
+    [].forEach.call(svg.querySelectorAll("[id^=Koza]"), function (el) {
         el.setAttribute("style", "fill:" + e.style.backgroundColor + ";");
     });
-    [].forEach.call(svg.querySelectorAll(".cls-2"), function (el) {
+    [].forEach.call(svg.querySelectorAll("[id^=Vrat]"), function (el) {
         el.setAttribute("style", "fill:" + pSBC(-0.15, e.style.backgroundColor) + ";");
     });
     let data = {
