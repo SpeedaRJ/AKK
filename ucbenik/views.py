@@ -854,10 +854,39 @@ def character_select_page_four(request):
 
 def character_select_page_five(request):
     if request.method == "GET":
+        parts = {}
+        if request.session['user']['sex'] == "M":
+            src_ref = "svg/lesson1/male_avatar/body/" + request.session['glasses'] + "/" + request.session['height'] + "/" + request.session['body_type'] + "/" + request.session['hair_type'] + "/" \
+                      + request.session['beard'] + ".svg"
+            print(request.session['beard'])
+            if request.session['beard'] is "full_beard":
+                parts = {
+                    "body_color": "[id^=Koza]",
+                    "neck": "[id^=Vrat]",
+                    "hair_color": "[id^=Lasje]",
+                    "beard": "[id^=Brki],[id^=Brada]"
+                }
+            elif request.session['beard'] == "mustache" or request.session['beard'] == "goatee":
+                parts = {
+                    "body_color": "[id^=Koza]",
+                    "neck": "[id^=Vrat]",
+                    "hair_color": "[id^=Lasje]",
+                    "beard": "[id^=Brki]"
+                }
+            colors = {
+                "body_color": request.session['body_color'],
+                "neck": request.session['neck'],
+                "hair_color": request.session['hair_color']
+            }
+            print(parts)
         return render(request, "lesson1/character_select/page_five.html", {"next": "/lesson_one/character_select/page_six",
-                                                                           "back": "/lesson1/character_select/page_four",
+                                                                           "back": "/lesson_one/character_select/page_four",
                                                                            "lesson_one": lesson_one,
-                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                           "src": src_ref,
+                                                                           "parts": parts,
+                                                                           "colors": colors
+                                                                           })
 
 
 def character_select_page_six(request):

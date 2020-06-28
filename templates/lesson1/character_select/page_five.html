@@ -20,36 +20,22 @@
             <div class="row text space">
                 {{ colors|json_script:"colors" }}
                 {{ parts|json_script:"parts" }}
-                <div class="msg jenny">J: Do you wear glasses?
-                    <button class="btn" onclick="changeGlasess(this); update_session({'glasses' : 'glasses'})">Yes</button>
-                    /
-                    <button class="btn" onclick="changeGlasess(this); update_session({'glasses':'no_glasses'})">No</button>
-                </div>
-                <div class="msg jenny translation">Ali nosiš očala? Ja/ne</div>
+                <div class="msg jenny">J: Pick out your clothes.</div>
+                <div class="msg jenny translation">Izberi svoja oblačila.</div>
             </div>
             {% if user.sex == "M" %}
                 <div class="row text space">
-                    <div class="msg jenny">J: Do you have a beard or a mustache?
-                        <button class="btn" onclick="document.getElementById('beard_select').style.display='block'">Yes</button>
-                        /
-                        <button class="btn" onclick="document.getElementById('beard_select').style.display='none'; update_session({'beard':'no_beard'})">No</button>
-                    </div>
-                    <div class="msg jenny translation">Ali imaš brado ali brke? Ja/ne</div>
-                </div>
-                <div class="row text space" id="beard_select" style="display: none">
                     <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
                         <div style="display: flex;justify-content: space-evenly;">
-                            <button id="full_beard"
-                                    style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/full_beard.svg" %}) no-repeat;"
-                                    onclick="changeBeard(this); update_session({'beard':'full_beard'});"></button>
-                            <button id="mustache"
-                                    style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/mustache.svg" %}) center no-repeat;"
-                                    onclick="changeBeard(this); update_session({'beard':'mustache'});"></button>
-                            <button id="goatee" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/goatee.svg" %}) no-repeat;"
-                                    onclick="changeBeard(this); update_session({'beard':'goatee'});"></button>
-                            <button id="no_beard" style="border-radius: 50%;  width: 100px;height: 100px;"
-                                    onclick="changeBeard(this); update_session({'beard':'no_beard'});">None
-                            </button>
+                            <button id="red_suite"
+                                    style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/red_suite.svg" %}) center no-repeat;"
+                                    onclick="changeSuite(this); update_session({'suite_color':'rgb(145,44,70)'});update_session({'buttons_color':'rgb(120,18,28)'});update_session({'pants_color':'rgb(210,186,183)'});"></button>
+                            <button id="blue_suite"
+                                    style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/blue_suite.svg" %}) center no-repeat;"
+                                    onclick="changeSuite(this); update_session({'suite_color':'rgb(0,84,166)'}); update_session({'buttons_color':'rgb(0,61,123)'}); update_session({'pants_color':'rgb(123,175,222)'}) "></button>
+                            <button id="green_suite"
+                                    style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/green_suite.svg" %})center no-repeat;"
+                                    onclick="changeSuite(this);update_session({'suite_color':'rgb(0,168,129)'}); update_session({'buttons_color':'rgb(72,144,134)'}); update_session({'pants_color':'rgb(0,125,172)'})"></button>
                         </div>
                     </div>
                 </div>
@@ -77,6 +63,8 @@
                 } else if (/Lasje/.test(el_list)) {
                     el.setAttribute("style", "fill: " + colors['hair_color']);
                 } else if (/Brada/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Brki/.test(el_list)) {
                     el.setAttribute("style", "fill: " + colors['hair_color']);
                 }
             });
