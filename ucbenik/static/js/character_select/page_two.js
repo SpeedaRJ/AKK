@@ -87,17 +87,65 @@ function changeHairStyle(el, sex) {
         }
     } else {
         for (let i = index; i < url.length; i++) {
-            if (url[i] === "bun.svg" || url[i] === "curly.svg" || url[i] === "long.svg" || url[i] === "medium.svg") {
-                new_url += el.id;
+            if (i === url.length - 1) {
+                new_url += el.id + ".svg";
             } else {
                 new_url += url[i] + "/";
             }
         }
+        console.log(new_url);
     }
     svg.data = prepend + new_url;
     svg.addEventListener("load", function () {
         recolor();
     });
+}
+
+function changeDress(el, color, type) {
+    let svg = document.getElementById("character");
+    let url = svg.data.split("/");
+    let index = url.findIndex((element) => element === "static");
+    let new_url = "";
+    for (let i = index; i < url.length; i++) {
+        if (url[i] === "dress" || url[i] === "shirt") {
+            new_url += type + "/";
+        } else {
+            new_url += url[i] + "/";
+        }
+    }
+    new_url = new_url.substring(0, new_url.length - 1);
+    svg.data = prepend+new_url;
+    svg.addEventListener("load",function () {
+        recolor();
+        let elemenet = document.getElementById("character").contentDocument.children[0];
+        if (type ==="dress"){
+            if(color==="blue"){
+                [].forEach.call(elemenet.querySelectorAll("[id^=Obleka],[id^=cevlje]"),function (e) {
+                    e.setAttribute("style","fill: #0474BB");
+                });
+            }else{
+                [].forEach.call(elemenet.querySelectorAll("[id^=Obleka],[id^=cevlje]"),function (e) {
+                    e.setAttribute("style","fill: #CD9246");
+                });
+            }
+        }else{
+            if(color==="red"){
+                [].forEach.call(elemenet.querySelectorAll("[id^=Hlace],[id^=cevlje]"),function (e) {
+                    e.setAttribute("style","fill: #074368");
+                });
+                [].forEach.call(elemenet.querySelectorAll("[id^=Majica]"),function (e) {
+                    e.setAttribute("style","fill: #CC3333");
+                });
+            }else{
+                [].forEach.call(elemenet.querySelectorAll("[id^=Hlace],[id^=cevlje]"),function (e) {
+                    e.setAttribute("style","fill: #BBB7DC");
+                });
+                [].forEach.call(elemenet.querySelectorAll("[id^=Majica]"),function (e) {
+                    e.setAttribute("style","fill: #D16E81");
+                });
+            }
+        }
+    },{once:true});
 }
 
 function changeBeard(el) {
@@ -132,53 +180,53 @@ function changeBeard(el) {
     }, {once: true});
 }
 
-function changeGlasess(el,sex) {
+function changeGlasess(el, sex) {
     let svg = document.getElementById("character");
     let url = svg.data.split("/");
-    let new_url="";
-    let index = url.findIndex((element) => element ==="static");
+    let new_url = "";
+    let index = url.findIndex((element) => element === "static");
     if (el.innerHTML === "Yes") {
         url[8] = "glasses";
-    }else{
+    } else {
         url[8] = "no_glasses";
     }
     for (let i = index; i < url.length; i++) {
-        if(i===url.length-1){
-            new_url+=url[i];
-        }else{
-            new_url+=url[i]+"/";
+        if (i === url.length - 1) {
+            new_url += url[i];
+        } else {
+            new_url += url[i] + "/";
         }
     }
     console.log(new_url);
-    svg.data =prepend+new_url;
-    svg.addEventListener("load",function () {
+    svg.data = prepend + new_url;
+    svg.addEventListener("load", function () {
         recolor();
-    },{once:true});
+    }, {once: true});
 }
+
 function changeSuite(el) {
     let svg = document.getElementById("character").contentDocument.children[0];
     if (el.id === "red_suite") {
-        svg.querySelector("[id^=Pulover]").setAttribute("style","fill:"+"rgb(145,44,70)");
-        svg.querySelector("[id^=Hlace]").setAttribute("style","fill:"+"rgb(210,186,183)");
-        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"),function (e) {
-            e.setAttribute("style","fill:"+"rgb(120,18,28)");
+        svg.querySelector("[id^=Pulover]").setAttribute("style", "fill:" + "rgb(145,44,70)");
+        svg.querySelector("[id^=Hlace]").setAttribute("style", "fill:" + "rgb(210,186,183)");
+        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"), function (e) {
+            e.setAttribute("style", "fill:" + "rgb(120,18,28)");
         });
-    }
-    else if (el.id === "blue_suite") {
-        svg.querySelector("[id^=Pulover]").setAttribute("style","fill:"+"rgb(0,84,166)");
-        svg.querySelector("[id^=Hlace]").setAttribute("style","fill:"+"rgb(123,175,222)");
-        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"),function (e) {
-            e.setAttribute("style","fill:"+"rgb(0,61,123)");
+    } else if (el.id === "blue_suite") {
+        svg.querySelector("[id^=Pulover]").setAttribute("style", "fill:" + "rgb(0,84,166)");
+        svg.querySelector("[id^=Hlace]").setAttribute("style", "fill:" + "rgb(123,175,222)");
+        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"), function (e) {
+            e.setAttribute("style", "fill:" + "rgb(0,61,123)");
         });
-    }
-    else if (el.id === "green_suite") {
-        svg.querySelector("[id^=Pulover]").setAttribute("style","fill:"+"rgb(0,168,129)");
-        svg.querySelector("[id^=Hlace]").setAttribute("style","fill:"+"rgb(0,125,172)");
-        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"),function (e) {
-            e.setAttribute("style","fill:"+"rgb(72,144,134)");
+    } else if (el.id === "green_suite") {
+        svg.querySelector("[id^=Pulover]").setAttribute("style", "fill:" + "rgb(0,168,129)");
+        svg.querySelector("[id^=Hlace]").setAttribute("style", "fill:" + "rgb(0,125,172)");
+        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"), function (e) {
+            e.setAttribute("style", "fill:" + "rgb(72,144,134)");
         });
     }
 }
+
 function translate(el) {
     let paras = document.getElementsByClassName("slo_name");
     if (el.target.value.toString().trim().toLowerCase() === "fat") {

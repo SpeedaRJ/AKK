@@ -54,14 +54,14 @@
                             <button id="bald" style="border-radius: 50%;  width: 100px;height: 100px;"
                                     onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'bald'})">Bald</button>
                         {% else %}
-                            <button style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/medium_hair.svg" %}) no-repeat;"
-                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'medium_hair'})"></button>
-                            <button style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/curly_hair.svg" %}) no-repeat;"
-                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'curly_hair'})"></button>
-                            <button style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/bun_hair.svg" %}) no-repeat;"
-                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'bun_hair'})"></button>
-                            <button style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/long_hair.svg" %}) no-repeat;"
-                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'long_hair'})"></button>
+                            <button id="medium"style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/medium_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'medium'})"></button>
+                            <button id="curly" style=" border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/curly_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'curly'})"></button>
+                            <button id="bun"style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/bun_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'bun'})"></button>
+                            <button id="long" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/long_hair.svg" %}) no-repeat;"
+                                    onclick="changeHairStyle(this,'F');update_session({'hair_type':'long'})"></button>
                         {% endif %}
                     </div>
                 </div>
