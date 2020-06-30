@@ -45,16 +45,16 @@
                         <div style="display: flex;justify-content: space-evenly;">
                             <button id="red_shirt"
                                     style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/red_shirt.svg" %}) center no-repeat;"
-                                    onclick="changeDress(this,'red','shirt'); update_session({'shirt_color':'#CC3333'});update_session({'shoes_color':'#074368'});update_session({'pants_color':'#074368'});"></button>
+                                    onclick="changeDress(this,'red','shirt'); update_session({'shirt_color':'#CC3333'});update_session({'shoes_color':'#074368'});update_session({'pants_color':'#074368'});update_session({'wearing':'shirt'});"></button>
                             <button id="pink_shirt"
                                     style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/pink_shirt.svg" %}) center no-repeat;"
-                                    onclick="changeDress(this,'pink','shirt'); update_session({'shirt_color':'#D16E81'}); update_session({'shoes_color':'#BBB7DC'}); update_session({'pants_color':'#BBB7DC'}) "></button>
+                                    onclick="changeDress(this,'pink','shirt'); update_session({'shirt_color':'#D16E81'}); update_session({'shoes_color':'#BBB7DC'}); update_session({'pants_color':'#BBB7DC'});update_session({'wearing':'shirt'}); "></button>
                             <button id="orange_dress"
                                     style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/orange_dress.svg" %})center no-repeat;"
-                                    onclick="changeDress(this,'orange','dress');update_session({'dress_color':'#CD9246'}); update_session({'shoes':'#CD9246'});"></button>
+                                    onclick="changeDress(this,'orange','dress');update_session({'dress_color':'#CD9246'}); update_session({'shoes_color':'#CD9246'});update_session({'wearing':'dress'});"></button>
                             <button id="blue_dress"
                                     style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/blue_dress.svg" %})center no-repeat;"
-                                    onclick="changeDress(this,'blue','dress');update_session({'dress_color':'#0474BB'}); update_session({'shoes':'#0474BB'}); "></button>
+                                    onclick="changeDress(this,'blue','dress');update_session({'dress_color':'#0474BB'}); update_session({'shoes_color':'#0474BB'});update_session({'wearing':'dress'}); "></button>
                         </div>
                     </div>
                 </div>
@@ -88,8 +88,19 @@
                 }
             });
         }
+
+        function saveSessionAndNext() {
+            $.ajax({
+                type: 'POST',
+                url: "/save_session",
+                data: {csrfmiddlewaretoken: window.CSRF_TOKEN}
+            });
+            window.location.href ="{{ next }}";
+        }
+
         $(window).on("load", function () {
             recolor();
+            document.getElementById("next").setAttribute("onclick", "saveSessionAndNext()");
         })
     </script>
 {% endblock %}

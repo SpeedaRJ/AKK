@@ -23,6 +23,7 @@ urlpatterns = [
     path("register", views.register, name="register"),
     path("login", views.login_page, name="login"),
     path("update_session/<str:what_to_update>", views.update_session, name="update_session"),
+    path("save_session", views.save_session, name="save_session"),
     path("lesson_one/introduction/page_one", views.introduction_page_one, name="introduction_page_one"),
     path("lesson_one/introduction/page_two", views.introduction_page_two, name="introduction_page_two"),
     path("lesson_one/introduction/page_three", views.introduction_page_three, name="introduction_page_three"),

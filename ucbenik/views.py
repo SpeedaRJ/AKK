@@ -1,6 +1,6 @@
 from django.http import HttpResponseNotAllowed, HttpResponse
 from django.shortcuts import render, redirect
-from ucbenik.models import User
+from ucbenik.models import User, CharacterDataMen, CharacterDataWomen
 from ucbenik.CustomAuth import CustomAuth
 from .serializers import UserSerializer
 
@@ -55,6 +55,54 @@ def update_session(request, what_to_update):
     for key, value in request.session.items():
         print('{} => {}'.format(key, value))
     return HttpResponse('ok')
+
+
+def save_session(request):
+    if request.session['user']['sex'] == "M":
+        cs = CharacterDataMen(
+            user=User.objects.get_by_natural_key(request.session['user']['email']),
+            neck=request.session['neck'],
+            body_color=request.session['body_color'],
+            height=request.session['height'],
+            body_type=request.session['body_type'],
+            hair_color=request.session['hair_color'],
+            glasses=request.session['glasses'],
+            beard=request.session['beard'],
+            suite_color=request.session['suite_color']
+        )
+    else:
+        if request.session['wearing'] == "dress":
+            cs = CharacterDataWomen(
+                user=User.objects.get_by_natural_key(request.session['user']['email']),
+                neck=request.session['neck'],
+                body_color=request.session['body_color'],
+                height=request.session['height'],
+                body_type=request.session['body_type'],
+                hair_color=request.session['hair_color'],
+                glasses=request.session['glasses'],
+                dress_color=request.session['dress_color'],
+                shoes_color=request.session['shoes_color']
+            )
+        else:
+            cs = CharacterDataWomen(
+                user=User.objects.get_by_natural_key(request.session['user']['email']),
+                neck=request.session['neck'],
+                body_color=request.session['body_color'],
+                height=request.session['height'],
+                body_type=request.session['body_type'],
+                hair_color=request.session['hair_color'],
+                glasses=request.session['glasses'],
+                shoes_color=request.session['shoes_color'],
+                pants_color=request.session['pants_color'],
+                shirt_color=request.session['shirt_color']
+            )
+    try:
+        cs.save()
+        return HttpResponse('ok')
+    except NameError:
+        print(NameError)
+        return HttpResponse('error')
+
 
 
 def parts_of_picture_male(request, for_what_picture):
@@ -880,13 +928,21 @@ def character_select_page_five(request):
                     "hair_color": "[id^=Lasje]",
                     "beard": "[id^=Brki]"
                 }
+            elif request.session['beard'] == "no_beard":
+                parts = {
+                    "body_color": "[id^=Koza]",
+                    "neck": "[id^=Vrat]",
+                    "hair_color": "[id^=Lasje]",
+                }
+
             colors = {
                 "body_color": request.session['body_color'],
                 "neck": request.session['neck'],
                 "hair_color": request.session['hair_color']
             }
         else:
-            src_ref = "svg/lesson1/female_avatar/body/"+request.session['glasses']+"/" + request.session['height'] + "/" + request.session['body_type'] + "/dress/" + request.session['hair_type'] + ".svg"
+            src_ref = "svg/lesson1/female_avatar/body/" + request.session['glasses'] + "/" + request.session['height'] + "/" + request.session['body_type'] + "/dress/" + request.session[
+                'hair_type'] + ".svg"
             colors = {
                 "body_color": request.session['body_color'],
                 "neck": request.session['neck'],
