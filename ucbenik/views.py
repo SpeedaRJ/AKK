@@ -962,9 +962,10 @@ def character_select_page_five(request):
 
 
 def character_select_page_six(request):
+    global parts
     if request.method == "GET":
         if request.session['user']['sex'] == "M":
-            src_ref = "svg/lesson1/male_avatar/head/"+request.session['glasses']+"/"+request.session['hair_type']+"/"+request.session['beard']+".svg"
+            src_ref = "svg/lesson1/male_avatar/head/" + request.session['glasses'] + "/" + request.session['hair_type'] + "/" + request.session['beard'] + ".svg"
             if request.session['beard'] is "full_beard":
                 parts = {
                     "body_color": "[id^=Koza]",
@@ -998,14 +999,35 @@ def character_select_page_six(request):
                 "suite_color": request.session['suite_color']
             }
         else:
-            src_ref = "svg/lesson1/female_avatar/head/"+request.session['glasses']+"/"+request.session['hair_type']+".svg"
+            src_ref = "svg/lesson1/female_avatar/head/" + request.session['glasses'] + "/" + request.session['hair_type'] + ".svg"
+            if request.session['wearing'] == "dress":
+                colors = {
+                    "body_color": request.session['body_color'],
+                    "neck": request.session['neck'],
+                    "hair_color": request.session['hair_color'],
+                    "suite_color": request.session['dress_color']
+                }
+            else:
+                colors = {
+                    "body_color": request.session['body_color'],
+                    "neck": request.session['neck'],
+                    "hair_color": request.session['hair_color'],
+                    "suite_color": request.session['shirt_color']
+                }
+            parts = {
+                "body_color": "[id^=Koza]",
+                "neck": "[id^=Vrat]",
+                "hair_color": "[id^=Lasje]",
+                "shirt_color": "[id^=Majica]",
+                "Krog": "[id^=Krog]",
+            }
         return render(request, "lesson1/character_select/page_six.html", {"next": "/lesson_one/numbers/page_one",
                                                                           "back": "/lesson_one/character_select/page_five",
                                                                           "lesson_one": lesson_one,
                                                                           "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user'],
                                                                           "src": src_ref,
-                                                                          "parts":parts,
-                                                                          "colors":colors})
+                                                                          "parts": parts,
+                                                                          "colors": colors})
 
 
 def numbers_page_one(request):
