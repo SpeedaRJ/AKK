@@ -1,0 +1,89 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_two.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
+{% endblock %}
+{% block content %}
+    {{ colors|json_script:"colors" }}
+    {{ parts|json_script:"parts" }}
+    <div class="container">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6 main">
+            <div class="row text">
+                <div class="msg jenny">J: Zapiši si v zvezek!</div>
+            </div>
+            <div id="table-div">
+                <table id="table" style="width: 100%">
+                    <tr>
+                        <td>I am 176 cm tall.</td>
+                        <td>How tall are you?</td>
+                    </tr>
+                    <tr>
+                        <td>I am short / tall.</td>
+                        <td>Are you short or tall?</td>
+                    </tr>
+                    <tr>
+                        <td>I am fat / slim.</td>
+                        <td>Are you fat or slim?</td>
+                    </tr>
+                    <tr>
+                        <td>my hair is short.</td>
+                        <td rowspan="3">What is your hair like?</td>
+                    </tr>
+                    <tr>
+                        <td>my hair is long.</td>
+                    </tr>
+                    <tr>
+                        <td>I am bald.</td>
+                    </tr>
+                    <tr>
+                        <td>my hair is brown.</td>
+                        <td>What colour is your hair?</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+       <div class="col-lg-3">
+            <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+        </div>
+    </div>
+     <script>
+        function recolor() {
+            let svg = document.getElementById("character").contentDocument.children[0];
+            let colors = JSON.parse(document.getElementById("colors").textContent);
+            let parts = JSON.parse(document.getElementById("parts").textContent);
+            let querySelector = "";
+            [].forEach.call(Object.keys(parts), function (el) {
+                querySelector += parts[el] + ",";
+            });
+            [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                let el_list = el.id;
+                console.log(el_list);
+                if (/Koza/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['body_color']);
+                } else if (/Vrat/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['neck']);
+                } else if (/Lasje/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Brada/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Brki/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Krog/.test(el_list)){
+                    el.setAttribute("style", "stroke: " + colors['suite_color']);
+                } else if (/Pulover/.test(el_list)){
+                    el.setAttribute("style", "fill: " + colors['suite_color']);
+                }
+            });
+        }
+
+        $(window).on("load", function () {
+            recolor();
+        })
+    </script>
+{% endblock %}

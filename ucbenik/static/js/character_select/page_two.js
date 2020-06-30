@@ -59,7 +59,8 @@ function update_session(d) {
     $.ajax({
         type: 'POST',
         url: "/update_session/" + Object.keys(d)[0],
-        data: {csrfmiddlewaretoken: window.CSRF_TOKEN, "d": d}
+        data: {csrfmiddlewaretoken: window.CSRF_TOKEN, "d": d},
+        async:false
     });
 }
 
