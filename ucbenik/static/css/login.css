@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "RalewayEB";
+  src: url('../fonts/Raleway-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: "RalewayMed";
+  src: url('../fonts/Raleway-Medium.ttf');
+}
+
 html, body {
     height: 100%;
     min-height: 100%;
