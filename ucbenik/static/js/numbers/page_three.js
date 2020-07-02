@@ -41,6 +41,7 @@ function redo(e) {
         document.getElementById("solution").innerHTML = "cat."
     else
         document.getElementById("solution").innerHTML = "cats."
+    document.getElementById("textarea").value="";
 }
 
 function shuffle(a) {

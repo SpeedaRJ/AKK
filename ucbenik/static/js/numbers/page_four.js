@@ -42,6 +42,7 @@ function redo(e) {
     for(i=0; i < 5; i++) {
         document.getElementById(tvs[i]).style.display = "none";
     }
+    document.getElementById("textarea").value="";
 
     
     shuffle(tvs);
@@ -56,6 +57,7 @@ function redo(e) {
         document.getElementById("solution2").innerHTML = "tv."
     else
         document.getElementById("solution2").innerHTML = "tvs."
+    document.getElementById("textarea2").value="";
 }
 
 function shuffle(a) {
@@ -70,7 +72,6 @@ function shuffle(a) {
 }
 
 function solution(el) {
-    console.log(solutions[s1])
     if (el.value == solutions[s1]) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
@@ -81,7 +82,6 @@ function solution(el) {
 }
 
 function solution2(el) {
-    console.log(solutions[s2])
     if (el.value == solutions[s2]) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
