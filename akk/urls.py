@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("register", views.register, name="register"),
     path("login", views.login_page, name="login"),
+    path("logout", views.logout, name="logout"),
     path("update_session/<str:what_to_update>", views.update_session, name="update_session"),
     path("save_session", views.save_session, name="save_session"),
     path("lesson_one/introduction/page_one", views.introduction_page_one, name="introduction_page_one"),

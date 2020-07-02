@@ -44,6 +44,14 @@ def login_page(request):
             return redirect("/lesson_one/introduction/page_one")
 
 
+def logout(request):
+    if request.method == "GET":
+        for key, value in request.session.items():
+            print('{} => {}'.format(key, value))
+        request.session.flush()
+        return redirect("/")
+
+
 def update_session(request, what_to_update):
     if not request.is_ajax() or not request.method == 'POST':
         return HttpResponseNotAllowed(['POST'])
