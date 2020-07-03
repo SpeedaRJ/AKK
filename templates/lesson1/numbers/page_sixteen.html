@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_sixteen.css' %}"/>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 top">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Pazi! V angleščini se <p style="color:#D55225;font-weight: bold; margin:0">VEJICA</p> v številih 
+                ne uporablja za decimalko, temveč se 
+                uporablja za <p style="color:#D55225;font-weight: bold; margin:0">VEČJA ŠTEVILA</p>. 
+                Za <p style="color:#D55225;font-weight: bold; margin:0">DECIMALKO</p> se uporablja 
+                <p style="color:#D55225;font-weight: bold; margin:0">PIKA</p>. 
+                V slovenščini imamo ravno obratno. 
+                Milijon se tako zapiše 
+                v slovenščini 1.000.000, 
+                v angleščini pa 1,000,000. 
+                Decimalno število se v slovenščini 
+                zapiše 1,24, v angleščini pa 1.24.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

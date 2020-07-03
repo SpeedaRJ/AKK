@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_fifteen.css' %}"/>
+{% endblock %}
+{% block content %}
+<div class="row content">
+    <div class="col-lg-3 side">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Pri <p style="color:#D55225;font-weight: bold;margin:0">številih večjih od 100</p> ne uporabljamo
+                vezaja, temveč <p style="color:#D55225;font-weight: bold;margin:0">PRESLEDEK</p>: one hundred.
+                Med stoticami/tisočicami in 
+                deseticami/enicami postavimo 
+                besedo <p style="color:#D55225;font-weight: bold;margin:0">AND</p>, ki pomeni in.                  
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 side"></div>
+    <div class="col-lg-8 centre">
+        <div class="msg user full">
+            123 = one hundred <p style="color:#ebc35c;font-weight: bold;margin:0">and</p> twenty-three <br>
+            1.234 = one thousand two hundred <p style="color:#ebc35c;font-weight: bold;margin:0">and</p> thirty-four <br>
+            2004 = two thousand <p style="color:#ebc35c;font-weight: bold;margin:0">and</p> four <br>
+            123.456 = one hundred <p style="color:#ebc35c;font-weight: bold;margin:0">and</p> twenty-three thousand
+            four hundred <p style="color:#ebc35c;font-weight: bold;margin:0">and</p> fifty-six            
+        </div>
+    </div>
+</div>
+{% endblock %}

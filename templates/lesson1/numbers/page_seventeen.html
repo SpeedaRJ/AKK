@@ -1,0 +1,111 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_seventeen.css' %}"/>
+{% endblock %}
+{% block content %}
+<div class="row content">
+    <div class="col-lg-3 side">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <button class="numbers-button" id="button" onclick="showNumbers()">Numbers</button>
+    </div>
+    <div class="col-lg-3 side"></div>
+    <div class="col-lg-10 centre">
+        <div class="help-table" id="help-table">
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>0</button>
+                <button class="col-lg-6 tip c2">zero</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>1</button>
+                <button class="col-lg-6 tip c2">one</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>2</button>
+                <button class="col-lg-6 tip c2">two</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>3</button>
+                <button class="col-lg-6 tip c2">three</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>4</button>
+                <button class="col-lg-6 tip c2">four</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>5</button>
+                <button class="col-lg-6 tip c2">five</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>6</button>
+                <button class="col-lg-6 tip c2">six</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>7</button>
+                <button class="col-lg-6 tip c2">seven</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>8</button>
+                <button class="col-lg-6 tip c2">eight</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>9</button>
+                <button class="col-lg-6 tip c2">nine</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>10</button>
+                <button class="col-lg-6 tip c2">ten</button>
+            </div>
+        </div>
+        <div class="help-table" id="help-table">
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>0</button>
+                <button class="col-lg-6 tip c2">zero</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>1</button>
+                <button class="col-lg-6 tip c2">one</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>2</button>
+                <button class="col-lg-6 tip c2">two</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>3</button>
+                <button class="col-lg-6 tip c2">three</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>4</button>
+                <button class="col-lg-6 tip c2">four</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>5</button>
+                <button class="col-lg-6 tip c2">five</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>6</button>
+                <button class="col-lg-6 tip c2">six</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>7</button>
+                <button class="col-lg-6 tip c2">seven</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>8</button>
+                <button class="col-lg-6 tip c2">eight</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>9</button>
+                <button class="col-lg-6 tip c2">nine</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>10</button>
+                <button class="col-lg-6 tip c2">ten</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
