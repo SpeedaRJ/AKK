@@ -1,0 +1,76 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/numbers/page_one.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Now let’s look at the numbers from 
+                11 to 19. Click on the words, listen to the 
+                pronunciation and repeat after me.
+            </div>
+            <div class="msg jenny slo centre">
+                Zdaj si poglejva števila od 11 do 19. 
+                Klikni na besede, prisluhni izgovorjavi 
+                in ponovi za mano.
+            </div>
+        </div>
+        <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        <img src="{% static 'svg/common/listen_on.svg' %}" type="svg" class="listen" id="on">
+        <div class="help-table" id="help-table">
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>0</button>
+                <button class="col-lg-6 tip c2">zero</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>1</button>
+                <button class="col-lg-6 tip c2">one</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>2</button>
+                <button class="col-lg-6 tip c2">two</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>3</button>
+                <button class="col-lg-6 tip c2">three</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>4</button>
+                <button class="col-lg-6 tip c2">four</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>5</button>
+                <button class="col-lg-6 tip c2">five</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>6</button>
+                <button class="col-lg-6 tip c2">six</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>7</button>
+                <button class="col-lg-6 tip c2">seven</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>8</button>
+                <button class="col-lg-6 tip c2">eight</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>9</button>
+                <button class="col-lg-6 tip c2">nine</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>10</button>
+                <button class="col-lg-6 tip c2">ten</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

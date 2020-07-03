@@ -1,0 +1,51 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_eight.css' %}"/>
+<script type="text/javascript" src="{% static 'js/numbers/page_eight.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Count and write out the number.  
+            </div>
+            <div class="msg user slo">
+                Preštej in zapiši število z besedo.
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+<div class="row container objects1">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_black.svg' %}" id="obj1_01" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_pink.svg' %}" id="obj1_02" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_black.svg' %}" id="obj1_03" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_brown.svg' %}" id="obj1_04" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_pink.svg' %}" id="obj1_05" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_gray.svg' %}" id="obj1_06" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_brown.svg' %}" id="obj1_07" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_black.svg' %}" id="obj1_08" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_gray.svg' %}" id="obj1_09" class="obj1 space">
+    <img  src="{% static 'svg/lesson1/numbers/SVG/hat_brown.svg' %}" id="obj1_10" class="obj1 space">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="row inst">
+                <div class="msg user slo" >
+                    <input id="textarea" class="textarea" size="5" onchange="solution(this)"/>
+                    <p id="solution"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+{% endblock %}

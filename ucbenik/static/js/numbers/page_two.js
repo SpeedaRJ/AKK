@@ -1,5 +1,5 @@
-let colors = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
-let hex_codes = ["1","2","3","4","5","6","7","8","9","10"];
+let colors = ["one", "two", "three", "four ", "five ", "six", "seven", "eight", "nine", "ten"];
+let hex_codes = ["1 ","2   ","3     ","4     ","5     ","6    ","7     ","8    ","9    ","10   "];
 
 function toOrigin1(el) {
     var origin = document.getElementById('drag-origin');
@@ -37,7 +37,8 @@ function drop(ev, el, limit) {
 
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
-    correct = data.search("color" + el.id.substring(el.id.length-1)) > -1;
+    console.log(data);
+    correct = data.search(el.id.replace("0","")) > -1;
     var child = document.getElementById(data);
     if (correct) {
         child.classList.add('correct');

@@ -33,7 +33,6 @@ function redo(e) {
         car.style.display = "inline";
         s1=i;
     }
-    document.getElementById("textarea").innerHTML="";
     if (c < 2)
         document.getElementById("solution").innerHTML = "car."
     else
@@ -52,7 +51,6 @@ function redo(e) {
         tv.style.display = "inline";
         s2=i;
     }
-    document.getElementById("textarea").innerHTML="";
     if (c < 2)
         document.getElementById("solution2").innerHTML = "tv."
     else
