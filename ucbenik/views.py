@@ -585,8 +585,29 @@ def numbers_page_twentyone(request):
 
 def numbers_page_twentytwo(request):
     if request.method == "GET":
-        return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson_one/colors/page_one",
+        return render(request, "lesson1/numbers/page_twentytwo.html", {"next": "/lesson_one/colors/page_twentythree",
                                                                  "back": "/lesson_one/numbers/page_twentyone",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_twentythree(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_twentythree.html", {"next": "/lesson_one/colors/page_twentyfour",
+                                                                 "back": "/lesson_one/numbers/page_twentytwo",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_twentyfour(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_twentyfour.html", {"next": "/lesson_one/colors/page_twentyfive",
+                                                                 "back": "/lesson_one/numbers/page_twentythree",
+                                                                 "lesson_one": lesson_one,
+                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+
+def numbers_page_twentyfive(request):
+    if request.method == "GET":
+        return render(request, "lesson1/numbers/page_twentyfive.html", {"next": "/lesson_one/colors/page_one",
+                                                                 "back": "/lesson_one/numbers/page_twentyfour",
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
 
@@ -594,7 +615,7 @@ def numbers_page_twentytwo(request):
 def colors_page_one(request):
     if request.method == "GET":
         return render(request, "lesson1/colors/page_one.html", {"next": "/lesson_one/colors/page_two",
-                                                                "back": "/lesson_one/colors/page_twentytwo",
+                                                                "back": "/lesson_one/colors/page_twentyfive",
                                                                 "lesson_one": lesson_one,
                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
 

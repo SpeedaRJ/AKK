@@ -1,5 +1,4 @@
 let objects1 = [
-    "row0",
     "row1",
     "row2",
     "row3",
@@ -28,17 +27,10 @@ function redo(e) {
         children[0].classList.remove("correct");
         children[1].classList.remove("incorrect");
         children[1].classList.remove("correct");
-        if(Math.random()>0.5) {
-            children[0].children[0].style.display="none";
-            children[0].children[1].style.display="inline";
-            children[1].children[0].style.display="inline";
-            children[1].children[1].style.display="none";
-        } else {
-            children[0].children[1].style.display="none";
-            children[0].children[0].style.display="inline";
-            children[1].children[1].style.display="inline";
-            children[1].children[0].style.display="none";
-        }
+        children[0].children[1].style.display="none";
+        children[0].children[0].style.display="inline";
+        children[1].children[1].style.display="inline";
+        children[1].children[0].style.display="none";
     }
 }
 

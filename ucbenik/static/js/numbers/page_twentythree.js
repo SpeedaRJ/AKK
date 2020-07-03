@@ -9,7 +9,6 @@ let objects1 = [
     "row7",
     "row8",
     "row9",
-    "row10",
 ]
 
 
@@ -38,6 +37,7 @@ function redo(e) {
             children[0].children[0].style.display="inline";
             children[1].children[1].style.display="inline";
             children[1].children[0].style.display="none";
+            
         }
     }
 }
@@ -53,9 +53,9 @@ function shuffle(a) {
     return a;
 }
 
-function solution(el,solution) {
+function solution(el,solution, solution2) {
     let parent = el.parentElement;
-    if (el.value == solution) {
+    if (el.value == solution || el.value == solution2) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

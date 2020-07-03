@@ -1,0 +1,77 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_two.css' %}"/>
+<script type="text/javascript" src="{% static 'js/numbers/page_nineteen.js' %}"></script>
+<style>
+    .draggable-word {
+        margin: 0.1%;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Connect the cardinal and ordinal numbers.
+            </div>
+            <div class="msg user slo">
+                Poveži števila z vrstilnimi števniki. 
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+<div class="row container">
+    <div class="col-lg-8 column container">
+        <div class="col-lg-1"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="match05" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text"></h6>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+<div class=" container-fluid">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="row items" id="drag-origin">
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match1" draggable="true"
+                  ondragstart="drag(event)">What</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match2" draggable="true"
+                  ondragstart="drag(event)">Who</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match3" draggable="true"
+                  ondragstart="drag(event)">What</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match4" draggable="true"
+                  ondragstart="drag(event)">How</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match5" draggable="true"
+                  ondragstart="drag(event)">Where</span>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+{% endblock %}

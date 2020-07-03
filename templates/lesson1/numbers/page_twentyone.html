@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_sixteen.css' %}"/>
+{% endblock %}
+{% block content %}
+<div class="col-lg-3">
+    <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+</div>
+<div class="col-lg-6">
+    <div class="row inst">
+        <div class="msg jenny">
+            J: Vrstilne števnike lahko zapišemo tudi 
+            s številom tako kot v slovenščini. 
+            Zapišemo število in nadpisano zapišemo 
+            zadnji dve črki izpisanega 
+            vrstilnega števnika. 
+        </div>
+    </div>
+    <div class="row inst">
+        <div class="msg jenny">
+            J: Poglejva si vrstilni števnik <p style="color:#D55225;font-weight: bold; margin:0">PRVI</p>. 
+            Naučila sva se, da se po angleško 
+            reče <p style="color:#D55225;font-weight: bold; margin:0">FIRST</p>. First je vrstilni števnik 
+            števila 1, zato najprej zapišemo število <p style="color:#D55225;font-weight: bold; margin:0"></p>1. 
+            V besedi fir<p style="color:#D55225;font-weight: bold; margin:0">st</p> sta zadnji dve črki 
+            <p style="color:#D55225;font-weight: bold; margin:0">ST</p>, zato 
+            nadpisano dopišemo <p style="color:#D55225;font-weight: bold; margin:0">ST: 1st</p>. 
+        </div>
+    </div>
+</div>
+<div class="col-lg-3">
+    <!-- AVATAR -->
+</div>
+{% endblock %}

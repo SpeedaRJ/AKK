@@ -1,0 +1,51 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_sixteen.css' %}"/>
+{% endblock %}
+{% block content %}
+<div class="col-lg-3">
+    <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+</div>
+<div class="col-lg-6">
+    <div class="row inst">
+        <div class="msg jenny">
+            J: Ali si opazil, da imajo le prvi trije vrstilni
+            števniki posebno obliko končnice, 
+            medtem ko imajo vsi preostali
+            končnico -th? Prva tri števila imajo
+            posebne oblike vrstilnih števnikov, 
+            zato si je le-te treba posebej zapomniti.
+            Pri preostalih številih pa preprosto dodaš
+            končnico <p style="color:#D55225;font-weight: bold; margin:0">-TH</p>, da oblikuješ vrstilni števnik. 
+        </div>
+    </div>
+    <div class="row inst">
+        <div class="msg jenny">
+            J: Pazi! Pri številu <p style="color:#D55225;font-weight: bold; margin:0">5</p> se 
+            <p style="color:#D55225;font-weight: bold; margin:0">VE</p> spremeni v 
+            <p style="color:#D55225;font-weight: bold; margin:0">F</p>. 
+        </div>
+    </div>
+    <div class="row inst">
+        <div class="msg jenny">
+            J: Pazi! Pri številih <p style="color:#D55225;font-weight: bold; margin:0">9</p> se zapis števila konča
+            s črko <p style="color:#D55225;font-weight: bold; margin:0">E</p>. Ta črka 
+            <p style="color:#D55225;font-weight: bold; margin:0">IZGINE</p>, ko dodamo
+            končnico -th.
+        </div>
+    </div>
+    <div class="row inst">
+        <div class="msg jenny">
+            J: Pazi! Pri številu <p style="color:#D55225;font-weight: bold; margin:0">8</p> se zapis števila konča
+            s črko <p style="color:#D55225;font-weight: bold; margin:0">T</p> (eight), zato ko dodamo
+            končnico -th, ne ponovimo črke t,
+            vendar preprosto dopišemo samo <p style="color:#D55225;font-weight: bold; margin:0">-H</p>.
+        </div>
+    </div>
+</div>
+<div class="col-lg-3">
+    <!-- AVATAR -->
+</div>
+{% endblock %}
