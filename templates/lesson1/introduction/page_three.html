@@ -22,7 +22,12 @@
             <div class="row">
                 <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši svojo starost (age).</div>
                 <div class="msg user">I am <input type="text" id="age_input"> years old.</div>
-                <div class="msg user slo">Star/a sem <p id="slo_age">_____</p> let.</div>
+                {% if user.sex == 'M' %}
+                    <div class="msg user slo">Star sem <p id="slo_age">_____</p> let.</div>
+                {% else %}
+                    <div class="msg user slo">Stara sem <p id="slo_age">_____</p> let.</div>
+                {% endif %}
+
             </div>
             <div class="row">
                 <div class="msg jenny">J: I was born in England. Now i live in Slovenia.</div>
