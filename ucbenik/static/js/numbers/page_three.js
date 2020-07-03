@@ -35,12 +35,12 @@ function redo(e) {
         let cat = document.getElementById(cats[i]);
         cat.style.display = "inline";
     }
-    document.getElementById("textarea").innerHTML="";
     console.log(c);
     if (c < 2)
         document.getElementById("solution").innerHTML = "cat."
     else
         document.getElementById("solution").innerHTML = "cats."
+    document.getElementById("textarea").value="";
 }
 
 function shuffle(a) {

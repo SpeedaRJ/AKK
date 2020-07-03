@@ -1,9 +1,18 @@
-.cat {
+.obj2 {
     display: none;
-    width: 18%;
+    height: 30%
 }
 
-.cats {
+.objects2 {
+    text-align: center;
+}
+
+.obj1 {
+    display: none;
+    height: 30%
+}
+
+.objects1 {
     text-align: center;
 }
 
@@ -22,4 +31,16 @@
 
 input {
    background-color: transparent;
+}
+
+.correct {
+    color: #00A881;
+}
+
+.incorrect {
+    color: #F15D2A;
+}
+
+.space {
+    margin-left: 2vw;
 }
