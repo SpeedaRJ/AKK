@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/numbers/page_one.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">J: <p style="color:#D55225;font-weight: bold; margin:0">11, 12 in 13</p> imajo posebne oblike,
+                medtem ko ostalim številom preprosto 
+               dodamo končnico <p style="color:#D55225;font-weight: bold;margin:0">-TEEN</p>, podobno 
+               kot dodamo v slovenščini 
+               končnico <p style="color:#D55225;font-weight: bold;margin:0">-NAJST</p> 
+               (šest<p style="color:#D55225;font-weight: bold;margin:0">najst</p>).
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">Si imel kaj težav? Prav zato se uporablja
+                <p style="color:#D55225;font-weight: bold;margin:0">fifteen.</p>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">J: Pozorni moramo biti tudi pri <p style="color:#D55225;font-weight: bold;margin:0">18</p>, 
+                saj se konča s črko <p style="color:#D55225;font-weight: bold;margin:0">T</p>, 
+                zato le-te ne ponovimo.<br> <p style="color:#D55225;font-weight: bold;margin:0"><strike>EIGHTTEN</strike></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

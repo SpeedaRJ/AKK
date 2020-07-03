@@ -1128,7 +1128,7 @@ def numbers_page_eleven(request):
 
 def numbers_page_twelve(request):
     if request.method == "GET":
-        return render(request, "lesson1/numbers/page_twelve.html", {"next": "/lesson_one/numbers/page_tirteen",
+        return render(request, "lesson1/numbers/page_twelve.html", {"next": "/lesson_one/numbers/page_thirteen",
                                                                     "back": "/lesson_one/numbers/page_eleven",
                                                                     "lesson_one": lesson_one,
                                                                     "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})

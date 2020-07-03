@@ -1,0 +1,95 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_thirteen.css' %}"/>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Now let’s look at the numbers from 
+                11 to 19. Click on the words, listen to the 
+                pronunciation and repeat after me.
+            </div>
+            <div class="msg jenny slo centre">
+                Zdaj si poglejva števila od 11 do 19. 
+                Klikni na besede, prisluhni izgovorjavi 
+                in ponovi za mano.
+            </div>
+        </div>
+        <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        <img src="{% static 'svg/common/listen_on.svg' %}" type="svg" class="listen" id="on">
+        <div class="help-table" id="help-table">
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>20</button>
+                <button class="col-lg-6 tip c2">twenty</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>21</button>
+                <button class="col-lg-6 tip c2">twenty-one</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>30</button>
+                <button class="col-lg-6 tip c2">thirty</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>40</button>
+                <button class="col-lg-6 tip c2">forty</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>50</button>
+                <button class="col-lg-6 tip c2">fifty</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>60</button>
+                <button class="col-lg-6 tip c2">sixty</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>70</button>
+                <button class="col-lg-6 tip c2">seventy</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>80</button>
+                <button class="col-lg-6 tip c2">eighty</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>90</button>
+                <button class="col-lg-6 tip c2">ninety</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>100</button>
+                <button class="col-lg-6 tip c2">one hundred</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>500</button>
+                <button class="col-lg-6 tip c2">five hundred</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>1000</button>
+                <button class="col-lg-6 tip c2">one thousand</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>1500</button>
+                <button class="col-lg-6 tip c2">one thousand five hundred</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>1500</button>
+                <button class="col-lg-6 tip c2">fifteen hundred</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>100.000</button>
+                <button class="col-lg-6 tip c2">one hundred thousand</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip" disabled>1000.000</button>
+                <button class="col-lg-6 tip c2">one million</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
