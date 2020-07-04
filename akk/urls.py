@@ -18,7 +18,8 @@ from django.urls import path
 from ucbenik import views
 
 urlpatterns = [
-    path('', views.home, name="home"),
+    #path('', views.home, name="home"),
+    path('', views.login_page, name="home"),
     path('admin/', admin.site.urls),
     path("register", views.register, name="register"),
     path("login", views.login_page, name="login"),
@@ -79,4 +80,15 @@ urlpatterns = [
     path("lesson_one/colors/page_eight", views.colors_page_eight, name="colors_page_eight"),
     path("lesson_one/colors/page_nine", views.colors_page_nine, name="colors_page_nine"),
     path("lesson_one/years/page_one", views.years_page_one, name="years_page_one"),
+    path("lesson_one/years/page_two", views.years_page_two, name="years_page_two"),
+    path("lesson_one/years/page_three", views.years_page_three, name="years_page_three"),
+    path("lesson_one/years/page_four", views.years_page_four, name="years_page_four"),
+    path("lesson_one/years/page_five", views.years_page_five, name="years_page_five"),
+    path("lesson_one/years/page_six", views.years_page_six, name="years_page_six"),
+    path("lesson_one/years/page_seven", views.years_page_seven, name="years_page_seven"),
+    path("lesson_one/years/page_eight", views.years_page_eight, name="years_page_eight"),
+    path("lesson_one/years/page_nine", views.years_page_nine, name="years_page_nine"),
+    path("lesson_one/years/page_ten", views.years_page_ten, name="years_page_ten"),
+    path("lesson_one/years/page_eleven", views.years_page_eleven, name="years_page_eleven"),
+    path("lesson_one/years/page_twelve", views.years_page_twelve, name="years_page_twelve"),
 ]
