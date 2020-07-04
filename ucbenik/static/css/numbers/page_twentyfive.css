@@ -138,3 +138,41 @@ input {
 .incorrect {
     background-color: #F15D2A !important;
 }
+
+.dominos {
+    height: 50%;
+}
+
+.domino {
+    width: 13vh;
+    height: 6vh;
+    margin-top: 2vh;
+    margin-left: 2vh;
+}
+
+.domino-part {
+    width: 6vh;
+    height: 6vh;
+    background-color: #3B3A3E;
+    margin-left: 1px;
+    float:left;
+}
+
+.d-left {
+    border-radius: 1vh 0 0 1vh;
+    
+}
+
+.d-right {
+    border-radius: 0 1vh 1vh 0;
+}
+
+#drag-origin {
+    width: 25%;
+    float: right;
+}
+
+.connected {
+    margin-top: 0;
+    margin-bottom: 0;
+}
