@@ -1,0 +1,58 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                This is my friend Jim. <br>
+                He is tall, fat and has grey hair. <br>
+                He is unreliable, but kind and generous. <br>
+                What is your friend like? 
+            </div>
+            <div class="msg jenny slo centre">
+                To je moj prijatelj Jim. <br>
+                On je visok, debel in ima sive lasje.<br>
+                Je nezanesljiv, vendar je prijazen in radodaren.<br>
+                Kakšen je tvoj prijatelj?
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg user instruction spoken">
+                <b>Navodilo:</b> <br> Vpiši svoje ime (name).
+            </div>
+            <div class="msg user">
+                My friend is <input id="textarea" class=textarea/>,
+                <input id="textarea" class=textarea/> and
+                <input id="textarea" class=textarea/>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                Have you guessed it yet? <br>
+                We are learning how to talk about other
+                people and how to use 
+                <p style="color:#D55225;font-weight: bold; margin:0">HE,</p> 
+                <p style="color:#D55225;font-weight: bold; margin:0">SHE</p> and 
+                <p style="color:#D55225;font-weight: bold; margin:0">IT</p>.
+            </div>
+            <div class="msg jenny slo centre">
+                Si že uganil? Učiva se govoriti o drugi osebi in 
+                uporabljati zaimke HE(=ON), 
+                SHE(=ONA) in IT(=ONO).)
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+{% endblock %}

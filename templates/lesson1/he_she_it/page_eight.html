@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_three.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_eight.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                Fill in the missing forms of the verb 'to be'.
+            </div>
+            <div class="msg jenny slo centre">
+                Vstavi pravilno obliko glagola biti.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 full" id="fillin"></div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+{% endblock %}
