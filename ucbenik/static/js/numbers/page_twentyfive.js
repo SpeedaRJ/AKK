@@ -187,7 +187,6 @@ function checkCorrectness() {
 
 function redo(e) {
     Array.from(document.getElementsByClassName("domino")).forEach(function(item) {
-        console.log(item);
         if(item.id != "first" && item.id != "placeholder")
             toOrigin(item);
     });

@@ -1,0 +1,95 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Click on the words, listen to the pronunciation and repeat after me. 
+            </div>
+            <div class="msg jenny slo centre">
+                Klikni na besede, prisluhni izgovorjavi in ponovi za mano.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+    <div class="col-lg-4">
+        <div class="msg user trait">
+            smart = pameten
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        <div class="msg user trait">
+            stupid = neumen 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        <div class="msg user trait">
+            good = dober 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        <div class="msg user trait">
+            bad = slab
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="msg user trait">
+            funny = zabaven 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        
+        <div class="msg user trait">
+            outgoing = družaben
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+
+        <div class="msg user trait">
+            kind = prijazen 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        
+        <div class="msg user trait">
+            lazy = len 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="msg user trait">
+            shy = sramežljiv
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        <div class="msg user trait">
+            selfish = sebičen 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        <div class="msg user trait">
+            boring = dolgočasen
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="msg user trait w-auto">
+            generous = radodaren, velikodušen 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        <div class="msg user trait w-auto">
+            mean = neprijazen, nesramen 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+        
+        <div class="msg user trait w-auto">
+            hard-working = delaven 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        </div>
+    </div>
+</div>
+{% endblock %}

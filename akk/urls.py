@@ -91,4 +91,12 @@ urlpatterns = [
     path("lesson_one/years/page_ten", views.years_page_ten, name="years_page_ten"),
     path("lesson_one/years/page_eleven", views.years_page_eleven, name="years_page_eleven"),
     path("lesson_one/years/page_twelve", views.years_page_twelve, name="years_page_twelve"),
+    path("lesson_one/personal_traits/page_one", views.personal_traits_page_one, name="personal_traits_page_one"),
+    path("lesson_one/personal_traits/page_two", views.personal_traits_page_two, name="personal_traits_page_two"),
+    path("lesson_one/personal_traits/page_three", views.personal_traits_page_three, name="personal_traits_page_three"),
+    path("lesson_one/personal_traits/page_four", views.personal_traits_page_four, name="personal_traits_page_four"),
+    path("lesson_one/personal_traits/page_five", views.personal_traits_page_five, name="personal_traits_page_five"),
+    path("lesson_one/personal_traits/page_six", views.personal_traits_page_six, name="personal_traits_page_six"),
+    path("lesson_one/personal_traits/page_seven", views.personal_traits_page_seven, name="personal_traits_page_seven"),
+    path("lesson_one/personal_traits/page_eight", views.personal_traits_page_eight, name="personal_traits_page_eight"),
 ]

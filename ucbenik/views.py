@@ -690,7 +690,6 @@ def years_page_one(request):
                                                                "lesson_one": lesson_one,
                                                                "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
 
-
 def years_page_two(request):
     if request.method == "GET":
         return render(request, "lesson1/years/page_two.html", {"next": "/lesson_one/years/page_three",
@@ -773,8 +772,63 @@ def years_page_eleven(request):
 
 def years_page_twelve(request):
     if request.method == "GET":
-        return render(request, "lesson1/years/page_twelve.html", {"next": "/#",
+        return render(request, "lesson1/years/page_twelve.html", {"next": "/lesson_one/personal_traits/page_one",
                                                                "back": "/lesson_one/years/page_eleven",
                                                                "lesson_one": lesson_one,
                                                                "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
 
+def personal_traits_page_one(request):
+    if request.method == "GET":
+        return render(request, "lesson1/personal_traits/page_one.html", {"next": "/lesson_one/personal_traits/page_two",
+                                                               "back": "/lesson_one/years/page_twelve",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Personal Traits", "user": request.session['user']})
+
+def personal_traits_page_two(request):
+    if request.method == "GET":
+        return render(request, "lesson1/personal_traits/page_two.html", {"next": "/lesson_one/personal_traits/page_three",
+                                                               "back": "/lesson_one/personal_traits/page_one",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Personal Traits", "user": request.session['user']})
+
+def personal_traits_page_three(request):
+    if request.method == "GET":
+        return render(request, "lesson1/personal_traits/page_three.html", {"next": "/lesson_one/personal_traits/page_four",
+                                                               "back": "/lesson_one/personal_traits/page_two",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Personal Traits", "user": request.session['user']})
+
+def personal_traits_page_four(request):
+    if request.method == "GET":
+        return render(request, "lesson1/personal_traits/page_four.html", {"next": "/lesson_one/personal_traits/page_five",
+                                                               "back": "/lesson_one/personal_traits/page_three",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Personal Traits", "user": request.session['user']})
+
+def personal_traits_page_five(request):
+    if request.method == "GET":
+        return render(request, "lesson1/personal_traits/page_five.html", {"next": "/lesson_one/personal_traits/page_six",
+                                                               "back": "/lesson_one/personal_traits/page_four",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Personal Traits", "user": request.session['user']})
+
+def personal_traits_page_six(request):
+    if request.method == "GET":
+        return render(request, "lesson1/personal_traits/page_six.html", {"next": "/lesson_one/personal_traits/page_seven",
+                                                               "back": "/lesson_one/personal_traits/page_five",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Personal Traits", "user": request.session['user']})
+
+def personal_traits_page_seven(request):
+    if request.method == "GET":
+        return render(request, "lesson1/personal_traits/page_seven.html", {"next": "/lesson_one/personal_traits/page_eight",
+                                                               "back": "/lesson_one/personal_traits/page_six",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Personal Traits", "user": request.session['user']})
+
+def personal_traits_page_eight(request):
+    if request.method == "GET":
+        return render(request, "lesson1/personal_traits/page_eight.html", {"next": "/#",
+                                                               "back": "/lesson_one/personal_traits/page_seven",
+                                                               "lesson_one": lesson_one,
+                                                               "lesson": "Lesson 1: About Me", "title": "Personal Traits", "user": request.session['user']})
