@@ -106,12 +106,12 @@ function redo(e) {
     table.innerHTML="";
     for(i=0; i < 5; i++) {
         var n = Math.round(Math.random() * 100);
-        let word = numbers[n]
+        let word = numbers[n];
         let html = '<div class="help row"><button class="col-lg-6 tip" disabled id="num'+n+'"><p>'+n+
         '</p><input class="textarea" size="5" onchange="solution(this,'+n+
         ')"/></button><button class="col-lg-6 tip c2" id="word'+n+'"><p>'+word+
         '</p><input class="textarea" size="5" onchange="solution(this,'+"'"+word+"'"+
-        ')"/></button></div>'
+        ')"/></button></div>';
         table.innerHTML+=html;
         let item1 = document.getElementById("num"+n);
         let item2 = document.getElementById("word"+n);

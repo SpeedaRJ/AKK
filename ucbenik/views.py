@@ -420,7 +420,7 @@ def numbers_page_one(request):
         return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson_one/numbers/page_two",
                                                                  "back": "/lesson_one/character_select/page_six",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_two(request):
@@ -428,7 +428,7 @@ def numbers_page_two(request):
         return render(request, "lesson1/numbers/page_two.html", {"next": "/lesson_one/numbers/page_three",
                                                                  "back": "/lesson_one/numbers/page_one",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_three(request):
@@ -436,7 +436,7 @@ def numbers_page_three(request):
         return render(request, "lesson1/numbers/page_three.html", {"next": "/lesson_one/numbers/page_four",
                                                                    "back": "/lesson_one/numbers/page_two",
                                                                    "lesson_one": lesson_one,
-                                                                   "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                   "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_four(request):
@@ -444,7 +444,7 @@ def numbers_page_four(request):
         return render(request, "lesson1/numbers/page_four.html", {"next": "/lesson_one/numbers/page_five",
                                                                   "back": "/lesson_one/numbers/page_three",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_five(request):
@@ -452,7 +452,7 @@ def numbers_page_five(request):
         return render(request, "lesson1/numbers/page_five.html", {"next": "/lesson_one/numbers/page_six",
                                                                   "back": "/lesson_one/numbers/page_four",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_six(request):
@@ -460,7 +460,7 @@ def numbers_page_six(request):
         return render(request, "lesson1/numbers/page_six.html", {"next": "/lesson_one/numbers/page_seven",
                                                                  "back": "/lesson_one/numbers/page_five",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_seven(request):
@@ -468,7 +468,7 @@ def numbers_page_seven(request):
         return render(request, "lesson1/numbers/page_seven.html", {"next": "/lesson_one/numbers/page_eight",
                                                                    "back": "/lesson_one/numbers/page_six",
                                                                    "lesson_one": lesson_one,
-                                                                   "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                   "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_eight(request):
@@ -476,7 +476,7 @@ def numbers_page_eight(request):
         return render(request, "lesson1/numbers/page_eight.html", {"next": "/lesson_one/numbers/page_nine",
                                                                    "back": "/lesson_one/numbers/page_seven",
                                                                    "lesson_one": lesson_one,
-                                                                   "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                   "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_nine(request):
@@ -484,7 +484,7 @@ def numbers_page_nine(request):
         return render(request, "lesson1/numbers/page_nine.html", {"next": "/lesson_one/numbers/page_ten",
                                                                   "back": "/lesson_one/numbers/page_seven",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_ten(request):
@@ -492,7 +492,7 @@ def numbers_page_ten(request):
         return render(request, "lesson1/numbers/page_ten.html", {"next": "/lesson_one/numbers/page_eleven",
                                                                  "back": "/lesson_one/numbers/page_nine",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_eleven(request):
@@ -500,7 +500,7 @@ def numbers_page_eleven(request):
         return render(request, "lesson1/numbers/page_eleven.html", {"next": "/lesson_one/numbers/page_twelve",
                                                                     "back": "/lesson_one/numbers/page_ten",
                                                                     "lesson_one": lesson_one,
-                                                                    "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                    "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_twelve(request):
@@ -508,7 +508,7 @@ def numbers_page_twelve(request):
         return render(request, "lesson1/numbers/page_twelve.html", {"next": "/lesson_one/numbers/page_thirteen",
                                                                     "back": "/lesson_one/numbers/page_eleven",
                                                                     "lesson_one": lesson_one,
-                                                                    "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                    "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_thirteen(request):
@@ -516,7 +516,7 @@ def numbers_page_thirteen(request):
         return render(request, "lesson1/numbers/page_thirteen.html", {"next": "/lesson_one/numbers/page_fourteen",
                                                                       "back": "/lesson_one/numbers/page_twelve",
                                                                       "lesson_one": lesson_one,
-                                                                      "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                      "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_fourteen(request):
@@ -524,7 +524,7 @@ def numbers_page_fourteen(request):
         return render(request, "lesson1/numbers/page_fourteen.html", {"next": "/lesson_one/numbers/page_fifteen",
                                                                       "back": "/lesson_one/numbers/page_thirteen",
                                                                       "lesson_one": lesson_one,
-                                                                      "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                      "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_fifteen(request):
@@ -532,7 +532,7 @@ def numbers_page_fifteen(request):
         return render(request, "lesson1/numbers/page_fifteen.html", {"next": "/lesson_one/numbers/page_sixteen",
                                                                      "back": "/lesson_one/numbers/page_fourteen",
                                                                      "lesson_one": lesson_one,
-                                                                     "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                     "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_sixteen(request):
@@ -540,7 +540,7 @@ def numbers_page_sixteen(request):
         return render(request, "lesson1/numbers/page_sixteen.html", {"next": "/lesson_one/numbers/page_seventeen",
                                                                      "back": "/lesson_one/numbers/page_fifteen",
                                                                      "lesson_one": lesson_one,
-                                                                     "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                     "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_seventeen(request):
@@ -548,7 +548,7 @@ def numbers_page_seventeen(request):
         return render(request, "lesson1/numbers/page_seventeen.html", {"next": "/lesson_one/numbers/page_eighteen",
                                                                        "back": "/lesson_one/numbers/page_sixteen",
                                                                        "lesson_one": lesson_one,
-                                                                       "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                       "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_eighteen(request):
@@ -556,7 +556,7 @@ def numbers_page_eighteen(request):
         return render(request, "lesson1/numbers/page_eighteen.html", {"next": "/lesson_one/numbers/page_nineteen",
                                                                       "back": "/lesson_one/numbers/page_seventeen",
                                                                       "lesson_one": lesson_one,
-                                                                      "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                      "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_nineteen(request):
@@ -564,7 +564,7 @@ def numbers_page_nineteen(request):
         return render(request, "lesson1/numbers/page_nineteen.html", {"next": "/lesson_one/numbers/page_twenty",
                                                                       "back": "/lesson_one/numbers/page_eighteen",
                                                                       "lesson_one": lesson_one,
-                                                                      "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                      "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_twenty(request):
@@ -572,7 +572,7 @@ def numbers_page_twenty(request):
         return render(request, "lesson1/numbers/page_twenty.html", {"next": "/lesson_one/numbers/page_twentyone",
                                                                     "back": "/lesson_one/numbers/page_nineteen",
                                                                     "lesson_one": lesson_one,
-                                                                    "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                    "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_twentyone(request):
@@ -580,7 +580,7 @@ def numbers_page_twentyone(request):
         return render(request, "lesson1/numbers/page_twentyone.html", {"next": "/lesson_one/numbers/page_twentytwo",
                                                                        "back": "/lesson_one/numbers/page_twenty",
                                                                        "lesson_one": lesson_one,
-                                                                       "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                       "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def numbers_page_twentytwo(request):
@@ -588,28 +588,28 @@ def numbers_page_twentytwo(request):
         return render(request, "lesson1/numbers/page_twentytwo.html", {"next": "/lesson_one/colors/page_twentythree",
                                                                  "back": "/lesson_one/numbers/page_twentyone",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 def numbers_page_twentythree(request):
     if request.method == "GET":
         return render(request, "lesson1/numbers/page_twentythree.html", {"next": "/lesson_one/colors/page_twentyfour",
                                                                  "back": "/lesson_one/numbers/page_twentytwo",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 def numbers_page_twentyfour(request):
     if request.method == "GET":
-        return render(request, "lesson1/numbers/page_twentyfour.html", {"next": "/lesson_one/colors/page_twentyfive",
+        return render(request, "lesson1/numbers/page_twentyfour.html", {"next": "/lesson_one/numbers/page_twentyfive",
                                                                  "back": "/lesson_one/numbers/page_twentythree",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 def numbers_page_twentyfive(request):
     if request.method == "GET":
         return render(request, "lesson1/numbers/page_twentyfive.html", {"next": "/lesson_one/colors/page_one",
                                                                  "back": "/lesson_one/numbers/page_twentyfour",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Avatar", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Numbers", "user": request.session['user']})
 
 
 def colors_page_one(request):
