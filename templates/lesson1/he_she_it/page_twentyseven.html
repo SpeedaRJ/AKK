@@ -1,0 +1,68 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twentyseven.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny" id="instructions">
+                J: Kako pa tvorimo vprašanja z glagolom 
+                <p style="color:#D55225;font-weight: bold; margin:0">BITI</p>? 
+                Vprašalnice tvorimo tako, da na prvo mesto postavimo glagol. 
+                Sledi oseba in nato preostanek povedi.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="col-lg-2" style="padding: 0;">
+</div>
+<div class="col-lg-8">
+    <div class="help-table" id="help-table">
+        <div class="help row">
+            <button class="col-lg-6 tip c1" disabled>GLAGOL</button>
+            <button class="col-lg-6 tip c1" disabled>OSEBA </button>
+            <button class="col-lg-6 tip c1" disabled>OSTALO</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>Is</button>
+            <button class="col-lg-6 tip" disabled>he</button>
+            <button class="col-lg-6 tip" disabled>happy?</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>Are</button>
+            <button class="col-lg-6 tip" disabled>you</button>
+            <button class="col-lg-6 tip" disabled>fat?</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>Are</button>
+            <button class="col-lg-6 tip" disabled>you</button>
+            <button class="col-lg-6 tip" disabled>a teacher?</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>Is</button>
+            <button class="col-lg-6 tip" disabled>he</button>
+            <button class="col-lg-6 tip" disabled>the president?</button>
+        </div>
+    </div>
+</div>
+<div class="col-lg-6">
+    <div class="row inst">
+        <div class="msg jenny" style="margin-left: 50%">
+            J: Osnovna vprašanja vedno tvorimo s pomočjo <p style="color:#D55225;font-weight: bold; margin:0">TRDILNE OBLIKE</p>. 
+            Torej <p style="color:#D55225;font-weight: bold; margin:0">IS HE HAPPY</p>? in ne 
+            <p style="color:#D55225;font-weight: bold; margin:0">ISN'T HE HAPPY</p>?. 
+            Glagol je v vprašanju vedno v trdilni obliki.
+        </div>
+    </div>
+</div>
+{% endblock %}

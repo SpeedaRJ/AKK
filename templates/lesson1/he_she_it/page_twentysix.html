@@ -3,7 +3,6 @@
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 <script>
     function solution(el,solution) {
     let parent = el.parentElement;
@@ -20,24 +19,12 @@
         if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter === 3)
+    if(counter === 2)
         document.getElementById("next").removeAttribute("disabled")
     else
         document.getElementById("next").setAttribute("disabled", "disabled");
 }
 </script>
-<style>
-.blue {
-    background-color: #6282B7;
-    width: 50% !important;
-    float: left;
-}
-.green {
-    background-color: #00a881;
-    width: 50% !important;
-    float: left;
-}
-</style>
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -46,10 +33,14 @@
     </div>
     <div class="col-lg-6">
         <div class="row inst">
-            <div class="msg jenny">
-                J: Namesto zaimkov lahko uporabimo tudi 
-                osebna imena. Prav tako lahko osebna 
-                imena zamenjamo z zaimki. Poglejva. 
+            <div class="msg user">
+                Form sentences: He/She is not … 
+                Use the hints in the brackets. 
+                Use the short forms.
+            </div>
+            <div class="msg jenny slo centre">
+                Oblikuj povedi: Oseba ni … Pomagaj si z namigi 
+                v oklepajih. Uporabi kratke oblike.
             </div>
         </div>
     </div>
@@ -58,34 +49,25 @@
     </div>
 </div>
 <div class="container.fluid">
-    <div class="col-lg-2" style="text-align: center;">
+    <div class="col-lg-3">
     </div>
-    <div class="col-lg-4" style="text-align: center;">
+    <div class="col-lg-3" style="text-align: center;">
         <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
-    </div>
-    <div class="col-lg-4" style="text-align: center;">
-        <div class="row inst" style="margin-top: 10vh;">
-            <div class="row inst">
-                <div class="msg blue">
-                    <p style="color:#D55225;font-weight: bold; margin:0">Jim</p> is tall.
-                </div>
-                <div class="msg green">
-                    <p style="color:#D55225;font-weight: bold; margin:0">He</p> is plump.
-                </div>
-            </div>
-        </div>
-        <div class="row inst">
-            <div class="msg jenny">
-                J: Si videl, kaj sem naredila?
-                V drugi povedi nisem 
-                ponovila imena, pač pa 
-                sem osebo izrazila 
-                s pomočjo
-                osebnega zaimka. 
+        <div class="inst">
+            <div class="msg jenny slo" style="width: 100%;margin-left: 0;">
+                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
             </div>
         </div>
     </div>
-    <div class="col-lg-2" style="text-align: center;">
+    <div class="col-lg-3" style="text-align: center;">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" style="height:40vh;margin-top: 5vh">
+        <div class="inst" >
+            <div class="msg jenny slo" style="width: 100%;margin-left: 0;">
+                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
     </div>
 </div>
 {% endblock %}

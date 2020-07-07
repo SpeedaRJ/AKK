@@ -1,0 +1,81 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script>
+    function solution(el,solution) {
+    let parent = el.parentElement;
+    if (el.value == solution) {
+        parent.classList.remove("incorrect");
+        parent.classList.add("correct");
+    } else {
+        parent.classList.add("incorrect");
+        parent.classList.remove("correct");
+    }
+    let paras = document.getElementsByClassName("slo")
+    let counter = 0;
+    for(let x in paras) {
+        if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
+            counter++;
+    }
+    if(counter === 6)
+        document.getElementById("next").removeAttribute("disabled")
+    else
+        document.getElementById("next").setAttribute("disabled", "disabled");
+}
+</script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                These are George and Mary. Complete their descriptions.
+            </div>
+            <div class="msg jenny slo centre">
+                To sta George in Mary. Dopolni njuna opisa. 
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container.fluid">
+    <div class="col-lg-3" style="text-align: center;">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" style="height:40vh;margin-top: 5vh">
+    </div>
+    <div class="col-lg-6" style="text-align: center;">
+        <div class="inst" >
+            <div class="msg jenny slo" style="width: 90%; margin-left: 0; margin-top: 20%;">
+                George is
+                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                . He is
+                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                and
+                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                .
+            </div>
+        </div>
+        <div class="inst" >
+            <div class="msg jenny slo" style="width: 90%; margin-left: 10%; margin-top: 20%;">
+                Mary is
+                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                . She is
+                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                and
+                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                .
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" style="text-align: center;">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
+    </div>
+</div>
+{% endblock %}

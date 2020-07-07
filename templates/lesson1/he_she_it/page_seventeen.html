@@ -1,0 +1,94 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script>
+    function solution(el,solution) {
+    let parent = el.parentElement;
+    if (el.value == solution) {
+        parent.classList.remove("incorrect");
+        parent.classList.add("correct");
+    } else {
+        parent.classList.add("incorrect");
+        parent.classList.remove("correct");
+    }
+    let paras = document.getElementsByClassName("slo")
+    let counter = 0;
+    for(let x in paras) {
+        if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
+            counter++;
+    }
+    if(counter === 7)
+        document.getElementById("next").removeAttribute("disabled")
+    else
+        document.getElementById("next").setAttribute("disabled", "disabled");
+}
+</script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Complete the sentences with: I, you, he, she, it, we, you, they.
+            </div>
+            <div class="msg jenny slo centre">
+                Dopolni povedi z: I, you, he, she, it, we, you, they.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container.fluid">
+    <div class="col-lg-3" style="text-align: center;">
+    </div>
+    <div class="col-lg-6" style="text-align: center;">
+        <div class="inst" >
+            <div class="msg jenny slo" style="width: 80%; margin-left: 10%;">
+                Deborah is a teacher. 
+                <input class=textarea onchange="solution(this,'She')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                is a teacher.
+            </div>
+            <div class="msg jenny slo" style="width: 80%; margin-left: 10%;">
+                Martin is a mechanic.
+                <input class=textarea onchange="solution(this,'He')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                is a mechanic.
+            </div>
+            <div class="msg jenny slo" style="width: 80%; margin-left: 10%;">
+                Sally has got glasses.
+                <input class=textarea onchange="solution(this,'She')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                has got glasses.
+            </div>
+            <div class="msg jenny slo" style="width: 80%; margin-left: 10%;">
+                Tina is a dancer.
+                <input class=textarea onchange="solution(this,'She')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                is a dancer.
+            </div>
+            <div class="msg jenny slo" style="width: 80%; margin-left: 10%;">
+                Tom and Jerry are funny. 
+                <input class=textarea onchange="solution(this,'They')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                are funny. 
+            </div>
+            <div class="msg jenny slo" style="width: 80%; margin-left: 10%;">
+                My mum and I are tall
+                <input class=textarea onchange="solution(this,'We')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                are tall
+            </div>
+            <div class="msg jenny slo" style="width: 80%; margin-left: 10%;">
+                My boyfriend is handsome.
+                <input class=textarea onchange="solution(this,'He')" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                is handsome.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" style="text-align: center;">
+    </div>
+</div>
+{% endblock %}

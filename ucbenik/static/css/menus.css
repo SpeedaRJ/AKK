@@ -116,7 +116,7 @@ button[class="titleB"]:hover {
   margin-right: 5%;
   background-color: #00a881;
   border-radius: 50px 50px 50px 50px;
-  font-size: 30px;
+  font-size: 3vh;
   position: sticky;
   float: right;
 }
