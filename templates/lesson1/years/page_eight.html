@@ -3,50 +3,49 @@
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_eight.css' %}"/>
-<script type="text/javascript" src="{% static 'js/colors/page_eight.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
+<script type="text/javascript" src="{% static 'js/years/page_eight.js' %}"></script>
 {% endblock %}
 {% block content %}
 {{ colors|json_script:"colors" }}
 {{ parts|json_script:"parts" }}
-<div class="row">
+<div class="container">
     <div class="col-lg-3">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
     </div>
-    <div class="col-lg-6">
-        <div class="row inst nospace" id="inst">
-            <div class="msg user">4. Which pictures are green?</div>
-            <div class="msg user slo ">Katere slike so zelene?</div>
+    <div class="col-lg-6 main">
+        <div class="row text ">
+            <div class="msg jenny">J: Did you pronounce it correctly?
+                    <button class="btn" onclick="show_congratz(event)">Yes</button>
+                    /
+                    <button class="btn" onclick="show_congratz(event)">No</button>
+                    .
+                </div>
+                <div class="msg jenny translation">Si pravilno izgovoril? Ja/ne.</div>
+        </div>
+        <div class="row text inst" id="answer" style="display: none">
+            <div class="msg jenny"></div>
+            <div class="msg jenny translation"></div>
+        </div>
+        <div class="row text inst">
+            <div class="msg jenny">J: Pred letnicami uporabljamo predlog <b>IN</b>, ki pomeni <b>V</b>.
+            </div>
+        </div>
+        <div class="row text inst">
+            <div class="msg jenny">J: I was born <b>in</b> 1970.
+            </div>
+        </div>
+        <div class="row text inst">
+            <div class="msg jenny">J: Če sprašujemo po letnici, uporabimo vprašalnico <b>WHAT YEAR</b>.
+            </div>
+        </div>
+        <div class="row text inst">
+            <div class="msg jenny">J: <b>What year</b> were you born in?
+            </div>
         </div>
     </div>
     <div class="col-lg-3">
         <object data="{% static src %}" type="image/svg+xml" id="character"></object>
-    </div>
-</div>
-<div class="row container">
-    <div class="col-lg-4 column">
-        <div class="row first">
-            <input type="image" src="{% static 'svg/lesson1/colors/SVG/grass.svg' %}" onclick="check(this, true)">
-        </div>
-        <div class="row first">
-            <input type="image" src="{% static 'svg/lesson1/colors/SVG/rock.svg' %}" onclick="check(this, false)">
-        </div>
-    </div>
-    <div class="col-lg-4 column">
-        <div class="row first">
-            <input type="image" src="{% static 'svg/lesson1/colors/SVG/hat.svg' %}" onclick="check(this, false)">
-        </div>
-        <div class="row first">
-            <input type="image" src="{% static 'svg/lesson1/colors/SVG/tree.svg' %}" onclick="check(this, true)">
-        </div>
-    </div>
-    <div class="col-lg-4 column">
-        <div class="row first">
-            <input type="image" src="{% static 'svg/lesson1/colors/SVG/house.svg' %}" onclick="check(this, false)">
-        </div>
-        <div class="row first">
-            <input type="image" src="{% static 'svg/lesson1/colors/SVG/shirt.svg' %}" onclick="check(this, true)">
-        </div>
     </div>
 </div>
 <script>
