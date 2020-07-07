@@ -37,11 +37,11 @@ button:focus {
 }
 
 button:hover {
-  background-color: #ebc35c !important;
+  background-color: #ebc35c;
 }
 
 button[class="titleB"]:hover {
-  background-color: #3E83D5 !important;
+  background-color: #3E83D5;
   cursor: default;
 }
 
@@ -76,7 +76,7 @@ button[class="titleB"]:hover {
 }
 
 .lesson:hover {
-  background-color: #3E83D5 !important;
+  background-color: #3E83D5;
   cursor: default;
 }
 
@@ -193,4 +193,22 @@ button[class="titleB"]:hover {
   position: sticky;
   top: 0;
   height: 100%;
+}
+
+#Menu {
+    height: 100vh;
+}
+
+.logos {
+    bottom: 0;
+    position: absolute;
+}
+
+.logo {
+    width: 80px;
+}
+
+.logo1 {
+    height: 60px;
+    width: 60px;
 }

@@ -26,6 +26,7 @@ urlpatterns = [
     path("logout", views.logout, name="logout"),
     path("update_session/<str:what_to_update>", views.update_session, name="update_session"),
     path("save_session", views.save_session, name="save_session"),
+    path("lesson_one/title", views.lesson_one_title, name="title_one"),
     path("lesson_one/introduction/page_one", views.introduction_page_one, name="introduction_page_one"),
     path("lesson_one/introduction/page_two", views.introduction_page_two, name="introduction_page_two"),
     path("lesson_one/introduction/page_three", views.introduction_page_three, name="introduction_page_three"),
@@ -128,4 +129,7 @@ urlpatterns = [
     path("lesson_one/he_she_it/page_twentyeight", views.he_she_it_page_twentyeight, name="he_she_it_page_twentyeight"),
     path("lesson_one/he_she_it/page_twentynine", views.he_she_it_page_twentynine, name="he_she_it_page_twentynine"),
     path("lesson_one/he_she_it/page_thirty", views.he_she_it_page_thirty, name="he_she_it_page_thirty"),
+
+#Lesson3
+    path("lesson_three/title", views.lesson_three_title, name="title_three"),
 ]

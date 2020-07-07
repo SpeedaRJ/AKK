@@ -138,3 +138,37 @@ i{
     display: flex;
     padding-top: 2%;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+
+    margin-left: 10%;
+    margin-right: 10%;
+
+     text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+
+footer img{
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.logo1 {
+    height: 5%;
+    width: 5%;
+}
+
+.logo {
+    width: 7%;
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}

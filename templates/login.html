@@ -1,31 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block custom_imports %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 {% endblock %}
 {% block main %}
-    <div class="login">
-        <div class="shade" style="position: relative">
-            <form method="post" class="form">
-                {% csrf_token %}
-                <div class="inputElemenet">
-                    <h3>E-mail</h3>
-                    <h5>Elektronski naslov</h5>
-                    <input id="Email" type="text" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" class="form-control inputFieldColor" name="Email" required>
-                </div>
-                <div class="inputElemenet">
-                    <h3>Password</h3>
-                    <h5>Geslo</h5>
-                    <input id="Password" type="text" class="form-control inputFieldColor" name="Password" required>
-                </div>
+<div class="login">
+    <div class="shade" style="position: relative">
+        <form method="post" class="form">
+            {% csrf_token %}
+            <div class="inputElemenet">
+                <h3>E-mail</h3>
+                <h5>Elektronski naslov</h5>
+                <input id="Email" type="text" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                       class="form-control inputFieldColor" name="Email" required>
+            </div>
+            <div class="inputElemenet">
+                <h3>Password</h3>
+                <h5>Geslo</h5>
+                <input id="Password" type="text" class="form-control inputFieldColor" name="Password" required>
+            </div>
 
-                <div class="inputElemenet">
-                    <h5>Če še nimate računa se <a href="register">registrirajte tukaj!</a></h5>
-                </div>
+            <div class="inputElemenet">
+                <h5>Če še nimate računa se <a href="register">registrirajte tukaj!</a></h5>
+            </div>
 
-                <button type="submit" class="btn submitButton">Login</button>
-            </form>
-        </div>
+            <button type="submit" class="btn submitButton">Login</button>
+        </form>
     </div>
+</div>
+<footer>
+    <img src="{% static 'svg/common/logo/MIZS_logo.jpg' %}" class="logo">
+    <img src="{% static 'svg/common/logo/EKP_logo.jpg' %}" class="logo">
+    <img src="{% static 'svg/common/logo/SPRI_logo.jpg' %}" class="logo">
+    <img src="{% static 'svg/common/logo/UL_logo.png' %}" class="logo1">
+    <img src="{% static 'svg/common/logo/FF_logo.png' %}" class="logo1">
+    <img src="{% static 'svg/common/logo/FRI_logo.png' %}" class="logo1">
+    <img src="{% static 'svg/common/logo/ALUO_logo.jpg' %}" class="logo">
+    <span class="stretch"></span>
+</footer>
 {% endblock %}
