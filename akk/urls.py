@@ -113,8 +113,10 @@ urlpatterns = [
     path("lesson_one/he_she_it/page_twelve", views.he_she_it_page_twelve, name="he_she_it_page_twelve"),
     path("lesson_one/he_she_it/page_thirteen", views.he_she_it_page_thirteen, name="he_she_it_page_thirteen"),
     path("lesson_one/he_she_it/page_fourteen", views.he_she_it_page_fourteen, name="he_she_it_page_fourteen"),
-
-
-    #Lesson3
-
+    path("lesson_one/he_she_it/page_fifteen", views.he_she_it_page_fifteen, name="he_she_it_page_fifteen"),
+    path("lesson_one/he_she_it/page_sixteen", views.he_she_it_page_sixteen, name="he_she_it_page_sixteen"),
+    path("lesson_one/he_she_it/page_seventeen", views.he_she_it_page_seventeen, name="he_she_it_page_seventeen"),
+    path("lesson_one/he_she_it/page_eighteen", views.he_she_it_page_eighteen, name="he_she_it_page_eighteen"),
+    path("lesson_one/he_she_it/page_nineteen", views.he_she_it_page_nineteen, name="he_she_it_page_nineteen"),
+    path("lesson_one/he_she_it/page_twenty", views.he_she_it_page_twenty, name="he_she_it_page_twenty"),
 ]
