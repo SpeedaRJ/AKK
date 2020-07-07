@@ -748,7 +748,11 @@ def colors_page_one(request):
         return render(request, "lesson1/colors/page_one.html", {"next": "/lesson_one/colors/page_two",
                                                                 "back": "/lesson_one/colors/page_twentyfive",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                "src": src_ref,
+                                                                "parts": parts,
+                                                                "colors": colors
+                                                                })
 
 def colors_page_two(request):
     if request.method == "GET":
@@ -757,7 +761,11 @@ def colors_page_two(request):
         return render(request, "lesson1/colors/page_two.html", {"next": "/lesson_one/colors/page_three",
                                                                 "back": "/lesson_one/colors/page_one",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                "src": src_ref,
+                                                                "parts": parts,
+                                                                "colors": colors
+                                                                })
 
 def colors_page_three(request):
     if request.method == "GET":
@@ -766,7 +774,11 @@ def colors_page_three(request):
         return render(request, "lesson1/colors/page_three.html", {"next": "/lesson_one/colors/page_four",
                                                                   "back": "/lesson_one/colors/page_two",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
 
 def colors_page_four(request):
     if request.method == "GET":
@@ -775,7 +787,11 @@ def colors_page_four(request):
         return render(request, "lesson1/colors/page_four.html", {"next": "/lesson_one/colors/page_five",
                                                                  "back": "/lesson_one/colors/page_three",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                 "src": src_ref,
+                                                                 "parts": parts,
+                                                                 "colors": colors
+                                                                 })
 
 def colors_page_five(request):
     if request.method == "GET":
@@ -784,7 +800,11 @@ def colors_page_five(request):
         return render(request, "lesson1/colors/page_five.html", {"next": "/lesson_one/colors/page_six",
                                                                  "back": "/lesson_one/colors/page_four",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                 "src": src_ref,
+                                                                 "parts": parts,
+                                                                 "colors": colors
+                                                                 })
 
 def colors_page_six(request):
     if request.method == "GET":
@@ -793,7 +813,11 @@ def colors_page_six(request):
         return render(request, "lesson1/colors/page_six.html", {"next": "/lesson_one/colors/page_seven",
                                                                 "back": "/lesson_one/colors/page_five",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                "src": src_ref,
+                                                                "parts": parts,
+                                                                "colors": colors
+                                                                })
 
 def colors_page_seven(request):
     if request.method == "GET":
@@ -802,7 +826,11 @@ def colors_page_seven(request):
         return render(request, "lesson1/colors/page_seven.html", {"next": "/lesson_one/colors/page_eight",
                                                                   "back": "/lesson_one/colors/page_six",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
 
 def colors_page_eight(request):
     if request.method == "GET":
@@ -811,7 +839,11 @@ def colors_page_eight(request):
         return render(request, "lesson1/colors/page_eight.html", {"next": "/lesson_one/colors/page_nine",
                                                                   "back": "/lesson_one/colors/page_seven",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
 
 def colors_page_nine(request):
     if request.method == "GET":
@@ -820,7 +852,11 @@ def colors_page_nine(request):
         return render(request, "lesson1/colors/page_nine.html", {"next": "/lesson_one/years/page_one",
                                                                  "back": "/lesson_one/colors/page_eight",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Colours", "user": request.session['user'],
+                                                                 "src": src_ref,
+                                                                 "parts": parts,
+                                                                 "colors": colors
+                                                                 })
 
 def years_page_one(request):
     if request.method == "GET":
@@ -829,7 +865,11 @@ def years_page_one(request):
         return render(request, "lesson1/years/page_one.html", {"next": "/lesson_one/years/page_two",
                                                                "back": "/lesson_one/colors/page_nine",
                                                                "lesson_one": lesson_one,
-                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                               "src": src_ref,
+                                                               "parts": parts,
+                                                               "colors": colors
+                                                               })
 
 def years_page_two(request):
     if request.method == "GET":
@@ -838,7 +878,11 @@ def years_page_two(request):
         return render(request, "lesson1/years/page_two.html", {"next": "/lesson_one/years/page_three",
                                                                "back": "/lesson_one/years/page_one",
                                                                "lesson_one": lesson_one,
-                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                               "src": src_ref,
+                                                               "parts": parts,
+                                                               "colors": colors
+                                                               })
 
 def years_page_three(request):
     if request.method == "GET":
@@ -847,7 +891,11 @@ def years_page_three(request):
         return render(request, "lesson1/years/page_three.html", {"next": "/lesson_one/years/page_four",
                                                                  "back": "/lesson_one/years/page_two",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                                 "src": src_ref,
+                                                                 "parts": parts,
+                                                                 "colors": colors
+                                                                 })
 
 def years_page_four(request):
     if request.method == "GET":
@@ -856,7 +904,11 @@ def years_page_four(request):
         return render(request, "lesson1/years/page_four.html", {"next": "/lesson_one/years/page_five",
                                                                 "back": "/lesson_one/years/page_three",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                                "src": src_ref,
+                                                                "parts": parts,
+                                                                "colors": colors
+                                                                })
 
 def years_page_five(request):
     if request.method == "GET":
@@ -865,7 +917,11 @@ def years_page_five(request):
         return render(request, "lesson1/years/page_five.html", {"next": "/lesson_one/years/page_six",
                                                                 "back": "/lesson_one/years/page_four",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                                "src": src_ref,
+                                                                "parts": parts,
+                                                                "colors": colors
+                                                                })
 
 def years_page_six(request):
     if request.method == "GET":
@@ -874,7 +930,11 @@ def years_page_six(request):
         return render(request, "lesson1/years/page_six.html", {"next": "/lesson_one/years/page_seven",
                                                                "back": "/lesson_one/years/page_five",
                                                                "lesson_one": lesson_one,
-                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                               "src": src_ref,
+                                                               "parts": parts,
+                                                               "colors": colors
+                                                               })
 
 def years_page_seven(request):
     if request.method == "GET":
@@ -883,7 +943,11 @@ def years_page_seven(request):
         return render(request, "lesson1/years/page_seven.html", {"next": "/lesson_one/years/page_eight",
                                                                  "back": "/lesson_one/years/page_six",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                                 "src": src_ref,
+                                                                 "parts": parts,
+                                                                 "colors": colors
+                                                                 })
 
 def years_page_eight(request):
     if request.method == "GET":
@@ -892,7 +956,11 @@ def years_page_eight(request):
         return render(request, "lesson1/years/page_eight.html", {"next": "/lesson_one/years/page_nine",
                                                                  "back": "/lesson_one/years/page_seven",
                                                                  "lesson_one": lesson_one,
-                                                                 "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                                 "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                                 "src": src_ref,
+                                                                 "parts": parts,
+                                                                 "colors": colors
+                                                                 })
 
 def years_page_nine(request):
     if request.method == "GET":
@@ -901,7 +969,11 @@ def years_page_nine(request):
         return render(request, "lesson1/years/page_nine.html", {"next": "/lesson_one/years/page_ten",
                                                                 "back": "/lesson_one/years/page_eight",
                                                                 "lesson_one": lesson_one,
-                                                                "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                                "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                                "src": src_ref,
+                                                                "parts": parts,
+                                                                "colors": colors
+                                                                })
 
 def years_page_ten(request):
     if request.method == "GET":
@@ -910,7 +982,11 @@ def years_page_ten(request):
         return render(request, "lesson1/years/page_ten.html", {"next": "/lesson_one/years/page_eleven",
                                                                "back": "/lesson_one/colors/page_eight",
                                                                "lesson_one": lesson_one,
-                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                               "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                               "src": src_ref,
+                                                               "parts": parts,
+                                                               "colors": colors
+                                                               })
 
 def years_page_eleven(request):
     if request.method == "GET":
@@ -919,7 +995,11 @@ def years_page_eleven(request):
         return render(request, "lesson1/years/page_eleven.html", {"next": "/lesson_one/years/page_twelve",
                                                                   "back": "/lesson_one/colors/page_ten",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
 
 def years_page_twelve(request):
     if request.method == "GET":
@@ -928,7 +1008,11 @@ def years_page_twelve(request):
         return render(request, "lesson1/years/page_twelve.html", {"next": "/lesson_one/personal_traits/page_one",
                                                                   "back": "/lesson_one/years/page_eleven",
                                                                   "lesson_one": lesson_one,
-                                                                  "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user']})
+                                                                  "lesson": "Lesson 1: About Me", "title": "Years", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
 
 def personal_traits_page_one(request):
     if request.method == "GET":
