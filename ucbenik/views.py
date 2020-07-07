@@ -180,7 +180,7 @@ def getColorsAndParts(data_set, sex):
 def lesson_one_title(request):
     if request.method == "GET":
         return render(request, "lesson1/title_page.html", {"next": "/lesson_one/introduction/page_one", "back": "/", "lesson_one": lesson_one,
-                                                                      "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
+                                                                      "lesson": "Lesson 1: About Me", "title": "", "user": request.session['user']})
 
 
 
@@ -1439,3 +1439,9 @@ def he_she_it_page_twenty(request):
                                                                         "lesson_one": lesson_one,
                                                                         "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
 
+
+#Lesson3
+def lesson_three_title(request):
+    if request.method == "GET":
+        return render(request, "lesson3/title_page.html", {"next": "/", "back": "/", "lesson_one": lesson_one,
+                                                                      "lesson": "Lesson 3: Let's Eat", "title": "", "user": request.session['user']})

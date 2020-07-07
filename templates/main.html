@@ -8,7 +8,7 @@
 {% block main %}
 <div class="container-fluid">
     <div class="col-lg-2" id="Menu">
-        <button class="titleB">Menu</button>
+        <button class="titleB" disabled>Menu</button>
         <ul>
             <li class="main">
                 <button>Lesson 1</button>
@@ -103,12 +103,12 @@
         <div class="row overlay">
             <div class="container-fluid">
                 <div class="col-lg-6">
-                    <button class="lesson shadow"></button>
-                    <button class="lesson">{{ lesson }}</button>
+                    <button class="lesson shadow" disabled></button>
+                    <button class="lesson" disabled>{{ lesson }}</button>
                 </div>
                 <div class="col-lg-6">
-                    <button class="chapter shadow"></button>
-                    <button class="chapter">{{ title }}</button>
+                    <button class="chapter shadow" disabled></button>
+                    <button class="chapter" disabled>{{ title }}</button>
                 </div>
             </div>
         </div>
