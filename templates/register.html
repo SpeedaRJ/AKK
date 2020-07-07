@@ -1,68 +1,85 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block custom_imports %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="{% static 'js/register.js' %}"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="{% static 'js/register.js' %}"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
 {% endblock %}
 {% block main %}
-    <script>
+<script>
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
-    </script>
-    <div class="login">
-        <div class="shade" style="position: relative">
-            <form method="post" class="form">
-                {% csrf_token %}
-                <div class="inputElemenet">
-                    <h3>Name</h3>
-                    <h5>Ime</h5>
-                    <input id="FullName" type="text" autofocus class=" form-control inputFieldColor" name="Name" required>
+
+</script>
+<div class="login">
+    <div class="shade" style="position: relative">
+        <form method="post" class="form">
+            {% csrf_token %}
+            <div class="inputElemenet">
+                <h3>Name</h3>
+                <h5>Ime</h5>
+                <input id="FullName" type="text" autofocus class=" form-control inputFieldColor" name="Name" required>
+            </div>
+            <div class="inputElemenet">
+                <h3>Age</h3>
+                <h5>Starost</h5>
+                <input id="Age" type="text" pattern="^[2-9]+[0-9]+$" autofocus class=" form-control inputFieldColor"
+                       name="Age" required>
+            </div>
+            <div class="inputElemenet">
+                <h3>E-mail</h3>
+                <h5>Elektronski naslov</h5>
+                <input id="Email" type="text" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                       class="form-control inputFieldColor" name="Email" required>
+            </div>
+            <div class="inputElemenet">
+                <h3>Password</h3>
+                <h5>Geslo</h5>
+                <input id="Password" type="text" class="form-control inputFieldColor" name="Password" required>
+            </div>
+            <div class="inputElemenet" style="display: flex">
+                <div style="justify-content: left">
+                    <h3>Choose your gender</h3>
+                    <h5>Izberi spol</h5>
                 </div>
-                <div class="inputElemenet">
-                    <h3>Age</h3>
-                    <h5>Starost</h5>
-                    <input id="Age" type="text" pattern="^[2-9]+[0-9]+$" autofocus class=" form-control inputFieldColor" name="Age" required>
+                <div style="justify-content: start" class="gender">
+                    <label class="container ">
+                        <span class="checkmark"><i class="fa fa-mars" id="mars" data-toggle="tooltip"
+                                                   data-placement="bottom" title="Man (Moški)"
+                                                   style="font-size: 1.5em; font-weight: bolder; color: white;"></i></span>
+                    </label>
+                    <label class="container">
+                            <span class="checkmark" data-toggle="tooltip" data-placement="bottom"
+                                  title="Woman (Ženska)"><i class="fa fa-venus" id="venus"
+                                                            style="font-size: 1.5em; font-weight: bolder;  color: white;"></i></span>
+                    </label>
                 </div>
-                <div class="inputElemenet">
-                    <h3>E-mail</h3>
-                    <h5>Elektronski naslov</h5>
-                    <input id="Email" type="text" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" class="form-control inputFieldColor" name="Email" required>
-                </div>
-                <div class="inputElemenet">
-                    <h3>Password</h3>
-                    <h5>Geslo</h5>
-                    <input id="Password" type="text" class="form-control inputFieldColor" name="Password" required>
-                </div>
-                <div class="inputElemenet" style="display: flex">
-                    <div style="justify-content: left">
-                        <h3>Choose your gender</h3>
-                        <h5>Izberi spol</h5>
-                    </div>
-                    <div style="justify-content: start" class="gender">
-                        <label class="container ">
-                            <span class="checkmark"><i class="fa fa-mars" id="mars" data-toggle="tooltip" data-placement="bottom" title="Man (Moški)" style="font-size: 1.5em; font-weight: bolder; color: white;"></i></span>
-                        </label>
-                        <label class="container">
-                            <span class="checkmark" data-toggle="tooltip" data-placement="bottom" title="Woman (Ženska)"><i class="fa fa-venus" id="venus"
-                                                                                                                            style="font-size: 1.5em; font-weight: bolder;  color: white;"></i></span>
-                        </label>
-                    </div>
-                    <input type="hidden" name="Sex" id="Sex">
-                </div>
-                <div class="inputElemenet">
-                    <h5>Če že imate račun se
-                        <a href="login">prijavite tukaj</a>
-                    </h5>
-                </div>
-                <button type="submit" id="RegisterButton" disabled class="btn submitButton">Register</button>
-            </form>
-        </div>
+                <input type="hidden" name="Sex" id="Sex">
+            </div>
+            <div class="inputElemenet">
+                <h5>Če že imate račun se
+                    <a href="login">prijavite tukaj</a>
+                </h5>
+            </div>
+            <button type="submit" id="RegisterButton" disabled class="btn submitButton">Register</button>
+        </form>
     </div>
+</div>
+<footer>
+    <img src="{% static 'svg/common/logo/MIZS_logo.jpg' %}" class="logo">
+    <img src="{% static 'svg/common/logo/EKP_logo.jpg' %}" class="logo">
+    <img src="{% static 'svg/common/logo/SPRI_logo.jpg' %}" class="logo">
+    <img src="{% static 'svg/common/logo/UL_logo.png' %}" class="logo1">
+    <img src="{% static 'svg/common/logo/FF_logo.png' %}" class="logo1">
+    <img src="{% static 'svg/common/logo/FRI_logo.png' %}" class="logo1">
+    <img src="{% static 'svg/common/logo/ALUO_logo.jpg' %}" class="logo">
+    <span class="stretch"></span>
+</footer>
 {% endblock %}

@@ -48,7 +48,7 @@ def login_page(request):
             request.session.flush()
             request.session['user'] = UserSerializer(user).data
 
-            return redirect("/lesson_one/introduction/page_one")
+            return redirect("/lesson_one/title")
         elif user is None:
             return HttpResponse("404: User not found")
 
@@ -183,9 +183,15 @@ def getColorsAndParts(data_set, sex):
         return parts, colors
 
 
+def lesson_one_title(request):
+    if request.method == "GET":
+        return render(request, "lesson1/title_page.html", {"next": "/lesson_one/introduction/page_one", "back": "/", "lesson_one": lesson_one,
+                                                                      "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
+
+
 def introduction_page_one(request):
     if request.method == "GET":
-        return render(request, "lesson1/introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "lesson_one": lesson_one,
+        return render(request, "lesson1/introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "lesson1/title_page.html", "lesson_one": lesson_one,
                                                                       "lesson": "Lesson 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
@@ -1290,3 +1296,11 @@ def he_she_it_page_fourteen(request):
                                                                         "back": "/lesson_one/he_she_it/page_thirteen",
                                                                         "lesson_one": lesson_one,
                                                                         "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+
+
+
+
+
+
+#Lesson3

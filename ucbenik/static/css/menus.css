@@ -194,3 +194,21 @@ button[class="titleB"]:hover {
   top: 0;
   height: 100%;
 }
+
+#Menu {
+    height: 100vh;
+}
+
+.logos {
+    bottom: 0;
+    position: absolute;
+}
+
+.logo {
+    width: 80px;
+}
+
+.logo1 {
+    height: 60px;
+    width: 60px;
+}
