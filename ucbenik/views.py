@@ -47,6 +47,7 @@ def login_page(request):
         if user is not None:
             request.session.flush()
             request.session['user'] = UserSerializer(user).data
+
             return redirect("/lesson_one/introduction/page_one")
         elif user is None:
             return HttpResponse("404: User not found")
@@ -121,9 +122,9 @@ def save_session(request):
         return HttpResponse('error')
 
 
-def getColorsAndParts(request):
-    if request.session['user']['sex']=="M":
-        if request.session['beard'] is "full_beard":
+def getColorsAndParts(data_set, sex):
+    if sex == "M":
+        if data_set.beard is "full_beard":
             parts = {
                 "body_color": "[id^=Koza]",
                 "neck": "[id^=Vrat]",
@@ -132,7 +133,7 @@ def getColorsAndParts(request):
                 "Krog": "[id^=Krog]",
                 "Pulover": "[id^=Pulover]"
             }
-        elif request.session['beard'] == "mustache" or request.session['beard'] == "goatee":
+        elif data_set.beard is "full_beard" == "mustache" or data_set.beard == "goatee":
             parts = {
                 "body_color": "[id^=Koza]",
                 "neck": "[id^=Vrat]",
@@ -141,7 +142,7 @@ def getColorsAndParts(request):
                 "Krog": "[id^=Krog]",
                 "Pulover": "[id^=Pulover]"
             }
-        elif request.session['beard'] == "no_beard":
+        elif data_set.beard == "no_beard":
             parts = {
                 "body_color": "[id^=Koza]",
                 "neck": "[id^=Vrat]",
@@ -150,26 +151,27 @@ def getColorsAndParts(request):
                 "Pulover": "[id^=Pulover]"
             }
         colors = {
-            "body_color": request.session['body_color'],
-            "neck": request.session['neck'],
-            "hair_color": request.session['hair_color'],
-            "suite_color": request.session['suite_color']
+            "body_color": data_set.body_color,
+            "neck": data_set.neck,
+            "hair_color": data_set.hair_color,
+            "suite_color": data_set.suite_color
         }
         return parts, colors
+
     else:
-        if request.session['wearing'] == "dress":
+        if data_set.wearing == "dress":
             colors = {
-                "body_color": request.session['body_color'],
-                "neck": request.session['neck'],
-                "hair_color": request.session['hair_color'],
-                "suite_color": request.session['dress_color']
+                "body_color": data_set.body_color,
+                "neck": data_set.neck,
+                "hair_color": data_set.hair_color,
+                "suite_color": data_set.dress_color
             }
         else:
             colors = {
-                "body_color": request.session['body_color'],
-                "neck": request.session['neck'],
-                "hair_color": request.session['hair_color'],
-                "suite_color": request.session['shirt_color']
+                "body_color": data_set.body_color,
+                "neck": data_set.neck,
+                "hair_color": data_set.hair_color,
+                "suite_color": data_set.shirt_color
             }
         parts = {
             "body_color": "[id^=Koza]",
@@ -178,7 +180,7 @@ def getColorsAndParts(request):
             "shirt_color": "[id^=Majica]",
             "Krog": "[id^=Krog]",
         }
-        return parts,colors
+        return parts, colors
 
 
 def introduction_page_one(request):
@@ -426,10 +428,62 @@ def character_select_page_six(request):
     if request.method == "GET":
         if request.session['user']['sex'] == "M":
             src_ref = "svg/lesson1/male_avatar/head/" + request.session['glasses'] + "/" + request.session['hair_type'] + "/" + request.session['beard'] + ".svg"
-            parts, colors = getColorsAndParts(request)
+
+            if request.session['beard'] == "full_beard":
+                parts = {
+                    "body_color": "[id^=Koza]",
+                    "neck": "[id^=Vrat]",
+                    "hair_color": "[id^=Lasje]",
+                    "beard": "[id^=Brki],[id^=Brada]",
+                    "Krog": "[id^=Krog]",
+                    "Pulover": "[id^=Pulover]"
+                }
+            elif request.session['beard'] == "mustache" or request.session['beard'] == "goatee":
+                parts = {
+                    "body_color": "[id^=Koza]",
+                    "neck": "[id^=Vrat]",
+                    "hair_color": "[id^=Lasje]",
+                    "beard": "[id^=Brki]",
+                    "Krog": "[id^=Krog]",
+                    "Pulover": "[id^=Pulover]"
+                }
+            elif request.session['beard'] == "no_beard":
+                parts = {
+                    "body_color": "[id^=Koza]",
+                    "neck": "[id^=Vrat]",
+                    "hair_color": "[id^=Lasje]",
+                    "Krog": "[id^=Krog]",
+                    "Pulover": "[id^=Pulover]"
+                }
+            colors = {
+                "body_color": request.session['body_color'],
+                "neck": request.session['neck'],
+                "hair_color": request.session['hair_color'],
+                "suite_color": request.session['suite_color']
+            }
         else:
             src_ref = "svg/lesson1/female/head/" + request.session['glasses'] + "/" + request.session['hair_type'] + ".svg"
-            parts,colors = getColorsAndParts(request)
+            if request.session['wearing'] == "dress":
+                colors = {
+                    "body_color": request.session['body_color'],
+                    "neck": request.session['neck'],
+                    "hair_color": request.session['hair_color'],
+                    "suite_color": request.session['dress_color']
+                }
+            else:
+                colors = {
+                    "body_color": request.session['body_color'],
+                    "neck": request.session['neck'],
+                    "hair_color": request.session['hair_color'],
+                    "suite_color": request.session['shirt_color']
+                }
+            parts = {
+                "body_color": "[id^=Koza]",
+                "neck": "[id^=Vrat]",
+                "hair_color": "[id^=Lasje]",
+                "shirt_color": "[id^=Majica]",
+                "Krog": "[id^=Krog]",
+            }
         return render(request, "lesson1/character_select/page_six.html", {"next": "/lesson_one/numbers/page_one",
                                                                           "back": "/lesson_one/character_select/page_five",
                                                                           "lesson_one": lesson_one,
@@ -444,10 +498,10 @@ def numbers_page_one(request):
         if request.session['user']['sex'] == "M":
             data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
             src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(request)
+            parts, colors = getColorsAndParts(data_set, "M")
         else:
             data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(request)
+            parts, colors = getColorsAndParts(data_set, "W")
             src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson_one/numbers/page_two",
                                                                  "back": "/lesson_one/character_select/page_six",
