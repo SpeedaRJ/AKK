@@ -1,0 +1,125 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_ten.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
+{% endblock %}
+{% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+    </div>
+    <div class="col-lg-6 main">
+        <div class="row text ">
+            <div class="msg user">3. Choose the correct pronunciation.</div>
+            <div class="msg jenny translation">Izberi pravilno izgovorjavo.</div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+    </div>
+</div>
+<div class="row container-fluid">
+    <div class="col-lg-6">
+            <div class="row text working">
+            <div class="row" style="text-align: center"><p class="number">2000</p></div>
+            <div class="row qest">
+                <div class="question">
+                    <input type="radio" id="yes1" name="year1" onclick="check(event, 'yes')">
+                    <label for="yes1">two thousand</label><br>
+                    <input type="radio" id="no1" name="year1" onclick="check(event, 'yes')">
+                    <label for="no1">twenty thousand</label><br>
+                    <input type="radio" id="no2" name="year1" onclick="check(event, 'yes')">
+                    <label for="no2">twenty hundred</label><br>
+                </div>
+            </div>
+        </div>
+        <div class="row text working">
+            <div class="row" style="text-align: center"><p class="number">1914</p></div>
+            <div class="row qest">
+                <div class="question">
+                    <input type="radio" id="yes2" name="year2" onclick="check(event, 'yes')">
+                    <label for="yes2">nineteen fourteen</label><br>
+                    <input type="radio" id="no3" name="year2" onclick="check(event, 'yes')">
+                    <label for="no3">one thousand nine hundred and fourteen</label><br>
+                    <input type="radio" id="no4" name="year2" onclick="check(event, 'yes')">
+                    <label for="no4">nineteen oh four</label><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="row text working">
+            <div class="row" style="text-align: center"><p class="number">2020</p></div>
+            <div class="row qest">
+                <div class="question">
+                    <input type="radio" id="no5" name="year3" onclick="check(event, 'yes')">
+                    <label for="no5">two thousand and twenty</label><br>
+                    <input type="radio" id="yes3" name="year3" onclick="check(event, 'yes')">
+                    <label for="yes3">twenty twenty</label><br>
+                    <input type="radio" id="no6" name="year3" onclick="check(event, 'yes')">
+                    <label for="no6">twenty oh two</label><br>
+                </div>
+            </div>
+        </div>
+        <div class="row text working">
+            <div class="row" style="text-align: center"><p class="number">1908</p></div>
+            <div class="row qest">
+                <div class="question">
+                    <input type="radio" id="no7" name="year4" onclick="check(event, 'yes')">
+                    <label for="no7">nineteen eight</label><br>
+                    <input type="radio" id="no8" name="year4" onclick="check(event, 'yes')">
+                    <label for="no8">one thousand nine hundred and eight</label><br>
+                    <input type="radio" id="yes4" name="year4" onclick="check(event, 'yes')">
+                    <label for="yes4">nineteen oh eight</label><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
+
+            $(window).on("load", function () {
+                recolor();
+            });
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,19 @@
+.number {
+    font-size: 2.2em;
+    color: #3097C3;
+    margin-top: 2%;
+}
+
+.question {
+    margin: 0;
+    width: 100%;
+}
+
+.qest {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    width: 20%;
+}
