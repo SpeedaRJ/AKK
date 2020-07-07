@@ -31,6 +31,7 @@ class CharacterMetaData(models.Model):
     body_type = models.CharField(max_length=4)
     hair_color = models.CharField(max_length=30)
     glasses = models.CharField(max_length=30)
+    hair_type = models.CharField(max_length=30)
 
     class Meta:
         abstract = True

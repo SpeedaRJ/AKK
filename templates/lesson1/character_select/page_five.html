@@ -69,10 +69,12 @@
             let svg = document.getElementById("character").contentDocument.children[0];
             let colors = JSON.parse(document.getElementById("colors").textContent);
             let parts = JSON.parse(document.getElementById("parts").textContent);
+            console.log(parts,colors);
             let querySelector = "";
             [].forEach.call(Object.keys(parts), function (el) {
                 querySelector += parts[el] + ",";
             });
+            console.log(querySelector);
             [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
                 let el_list = el.id;
                 if (/Koza/.test(el_list)) {

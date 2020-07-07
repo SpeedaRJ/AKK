@@ -13,9 +13,9 @@
                 <li class="main">
                     <button>Lesson 1</button>
                     <ul class="submenu">
-                        {% for item in lesson_one %}
+                        {% for key,item in lesson_one.items %}
                             <li>
-                                <button class="SB">{{ item }}</button>
+                                <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
                             </li>
                         {% endfor %}
                     </ul>

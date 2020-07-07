@@ -52,7 +52,7 @@
                             <button id="patch" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/bald.svg" %}) no-repeat;"
                                     onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'patch'})"></button>
                             <button id="bald" style="border-radius: 50%;  width: 100px;height: 100px;"
-                                    onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'bald'})">Bald</button>
+                                    onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'bald'}); document.getElementById('color_buttons').style.display='none'; update_session({'hair_color':'#ffebc6'})">Bald</button>
                         {% else %}
                             <button id="medium"style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/medium_hair.svg" %}) no-repeat;"
                                     onclick="changeHairStyle(this,'F');update_session({'hair_type':'medium'})"></button>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row text space">
+            <div class="row text space" id="color_buttons">
                 <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
                     <div style="display: flex;justify-content: space-evenly;">
                         {{ colors|json_script:"colors" }}

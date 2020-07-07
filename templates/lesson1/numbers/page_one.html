@@ -1,89 +1,131 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/numbers/page_one.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/numbers/page_one.js' %}"></script>
 {% endblock %}
 {% block content %}
-<div class="row">
-    <div class="col-lg-3">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    {{ colors|json_script:"colors" }}
+    {{ parts|json_script:"parts" }}
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst">
+                <div class="msg jenny">J: Now let’s look at how
+                    English people count.
+                </div>
+                <div class="msg jenny slo centre">
+                    Zdaj si poglejva, kako Angleži štejejo.
+                </div>
+            </div>
+            <div class="row inst" id="instructions">
+                <div class="msg jenny">
+                    Spodaj imaš tabelo prvih desetih števil.
+                    Klikli na besede, prisluhni izgovorjavi in
+                    ponovi za mano. Števila si je treba zapomniti
+                    na pamet, tako da večkrat kot ponoviš,
+                    lažje ti bo. Srečno!
+                </div>
+                <div class="msg jenny slo centre">
+                    Spodaj imaš tabelo prvih desetih števil.
+                    Klikli na besede, prisluhni izgovorjavi in
+                    ponovi za mano. Števila si je treba zapomniti
+                    na pamet, tako da večkrat kot ponoviš,
+                    lažje ti bo. Srečno!
+                </div>
+                <button class="numbers-button" id="button" onclick="showNumbers()">Numbers</button>
+            </div>
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_on.svg' %}" type="svg" class="listen" id="on">
+            <div class="help-table" id="help-table">
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>0</button>
+                    <button class="col-lg-6 tip c2">zero</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>1</button>
+                    <button class="col-lg-6 tip c2">one</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>2</button>
+                    <button class="col-lg-6 tip c2">two</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>3</button>
+                    <button class="col-lg-6 tip c2">three</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>4</button>
+                    <button class="col-lg-6 tip c2">four</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>5</button>
+                    <button class="col-lg-6 tip c2">five</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>6</button>
+                    <button class="col-lg-6 tip c2">six</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>7</button>
+                    <button class="col-lg-6 tip c2">seven</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>8</button>
+                    <button class="col-lg-6 tip c2">eight</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>9</button>
+                    <button class="col-lg-6 tip c2">nine</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip" disabled>10</button>
+                    <button class="col-lg-6 tip c2">ten</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+        </div>
+        <script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
+
+            $(window).on("load", function () {
+                recolor();
+            });
+        </script>
     </div>
-    <div class="col-lg-6">
-        <div class="row inst">
-            <div class="msg jenny">J: Now let’s look at how 
-                English people count.
-            </div>
-            <div class="msg jenny slo centre">
-                Zdaj si poglejva, kako Angleži štejejo.
-            </div>
-        </div>
-        <div class="row inst" id="instructions">
-            <div class="msg jenny">
-                Spodaj imaš tabelo prvih desetih števil. 
-                Klikli na besede, prisluhni izgovorjavi in 
-                ponovi za mano. Števila si je treba zapomniti
-                 na pamet, tako da večkrat kot ponoviš, 
-                lažje ti bo. Srečno!
-            </div>
-            <div class="msg jenny slo centre">
-                Spodaj imaš tabelo prvih desetih števil. 
-                Klikli na besede, prisluhni izgovorjavi in 
-                ponovi za mano. Števila si je treba zapomniti
-                na pamet, tako da večkrat kot ponoviš, 
-                lažje ti bo. Srečno!
-            </div>
-            <button class="numbers-button" id="button" onclick="showNumbers()">Numbers</button>
-        </div>
-        <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
-        <img src="{% static 'svg/common/listen_on.svg' %}" type="svg" class="listen" id="on">
-        <div class="help-table" id="help-table">
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>0</button>
-                <button class="col-lg-6 tip c2">zero</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>1</button>
-                <button class="col-lg-6 tip c2">one</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>2</button>
-                <button class="col-lg-6 tip c2">two</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>3</button>
-                <button class="col-lg-6 tip c2">three</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>4</button>
-                <button class="col-lg-6 tip c2">four</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>5</button>
-                <button class="col-lg-6 tip c2">five</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>6</button>
-                <button class="col-lg-6 tip c2">six</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>7</button>
-                <button class="col-lg-6 tip c2">seven</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>8</button>
-                <button class="col-lg-6 tip c2">eight</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>9</button>
-                <button class="col-lg-6 tip c2">nine</button>
-            </div>
-            <div class="help row">
-                <button class="col-lg-6 tip" disabled>10</button>
-                <button class="col-lg-6 tip c2">ten</button>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}
