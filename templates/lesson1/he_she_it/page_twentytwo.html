@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_twentytwo.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Complete the text with short forms.  
+            </div>
+            <div class="msg jenny slo centre">
+                Dopolni besedilo z okrajšanimi oblikami.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container fluid">
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+    <div class="col-lg-10" style="text-align: center;">
+        <div class="row">
+            <img src="{% static 'svg/lesson1/he_she_it/three_people02.svg' %}" type="svg" style="width:50%">
+            <div class="row inst"style="width: 50%;margin-left:0;float:right;margin-top:10vh">
+                <div class="msg jenny slo">
+                    <input class=textarea onchange="solution(this,0)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            Agatha and <input class=textarea onchange="solution(this,1)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                            a writer. <input class=textarea onchange="solution(this,2)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            also a nurse in a hospital. <input class=textarea onchange="solution(this,3)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            the inspiration for many stories. <input class=textarea onchange="solution(this,4)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            often about poison and murder. <input class=textarea onchange="solution(this,5)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            Archibald. <input class=textarea onchange="solution(this,6)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            a colonel. We have a daughter. <input class=textarea onchange="solution(this,7)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            Rosalind. <input class=textarea onchange="solution(this,8)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            very kind. <input class=textarea onchange="solution(this,9)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                            very happy.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+</div>
+{% endblock %}

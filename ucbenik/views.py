@@ -1439,12 +1439,122 @@ def he_she_it_page_twenty(request):
                                                                         "lesson_one": lesson_one,
                                                                         "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
 
+def he_she_it_page_twentyone(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentyone.html", {"next": "/lesson_one/he_she_it/page_twentytwo",
+                                                                        "back": "/lesson_one/he_she_it/page_twenty",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_twentytwo(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentytwo.html", {"next": "/lesson_one/he_she_it/page_twentythree",
+                                                                        "back": "/lesson_one/he_she_it/page_twentyone",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_twentythree(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentythree.html", {"next": "/lesson_one/he_she_it/page_twentyfour",
+                                                                        "back": "/lesson_one/he_she_it/page_twentytwo",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_twentyfour(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentyfour.html", {"next": "/lesson_one/he_she_it/page_twentyfive",
+                                                                        "back": "/lesson_one/he_she_it/page_twentythree",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_twentyfive(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentyfive.html", {"next": "/lesson_one/he_she_it/page_twentysix",
+                                                                        "back": "/lesson_one/he_she_it/page_twentyfour",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_twentysix(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentysix.html", {"next": "/lesson_one/he_she_it/page_twentyseven",
+                                                                        "back": "/lesson_one/he_she_it/page_twentyfive",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_twentyseven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentyseven.html", {"next": "/lesson_one/he_she_it/page_twentyeight",
+                                                                        "back": "/lesson_one/he_she_it/page_twentysix",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_twentyeight(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentyeight.html", {"next": "/lesson_one/he_she_it/page_twentynine",
+                                                                        "back": "/lesson_one/he_she_it/page_twentyseven",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_twentynine(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_twentynine.html", {"next": "/lesson_one/he_she_it/page_thirty",
+                                                                        "back": "/lesson_one/he_she_it/page_twentyeight",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirty(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirty.html", {"next": "/lesson_one/he_she_it/page_thirtyone",
+                                                                        "back": "/lesson_one/he_she_it/page_twentynine",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
 
 #Lesson3
 def lesson_three_title(request):
     if request.method == "GET":
         return render(request, "lesson3/title_page.html", {"next": "lesson_three/pronouns/page_one", "back": "/", "lesson_one": lesson_one,
                                                                       "lesson": "Lesson 3: Let's Eat", "title": "", "user": request.session['user']})
+
 
 
 def pronouns_page_one(request):
