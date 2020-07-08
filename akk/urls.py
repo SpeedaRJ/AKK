@@ -122,4 +122,5 @@ urlpatterns = [
 
     #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
+    path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),
 ]

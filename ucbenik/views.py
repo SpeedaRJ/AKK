@@ -1443,5 +1443,27 @@ def he_she_it_page_twenty(request):
 #Lesson3
 def lesson_three_title(request):
     if request.method == "GET":
-        return render(request, "lesson3/title_page.html", {"next": "/", "back": "/", "lesson_one": lesson_one,
+        return render(request, "lesson3/title_page.html", {"next": "lesson_three/pronouns/page_one", "back": "/", "lesson_one": lesson_one,
                                                                       "lesson": "Lesson 3: Let's Eat", "title": "", "user": request.session['user']})
+
+
+def pronouns_page_one(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if request.session['user']['sex'] == "M":
+            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
+            parts, colors = getColorsAndParts(data_set, "M")
+        else:
+            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
+            parts, colors = getColorsAndParts(data_set, "W")
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
+        return render(request, "lesson3/pronouns/page_one.html", {"next": "/lesson_three/pronouns/page_one",
+                                                                  "back": "/lesson_three/title",
+                                                                  "lesson_one": lesson_one,
+                                                                  "lesson": "Lesson 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
