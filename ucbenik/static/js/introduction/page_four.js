@@ -2,9 +2,13 @@ function show_country(e) {
     document.getElementById("home_country").style.display = "none";
     if(e.target.innerHTML === "No") {
         document.getElementById("home_country").style.display = "block";
-        if(document.getElementById("county_input").innerHTML === "")
+        if(document.getElementById("county_input").value === "") {
             document.getElementById("next").setAttribute("disabled", "disabled");
             document.getElementById("welcome").style.display = "none";
+        } if(document.getElementById("county_input").value !== "") {
+            document.getElementById("next").removeAttribute("disabled");
+            document.getElementById("welcome").style.display = "block";
+        }
     }
     if(e.target.innerHTML === "Yes") {
         document.getElementById("welcome").style.display = "block";
@@ -19,8 +23,10 @@ function dynamic_country(e) {
         document.getElementById("next").setAttribute("disabled", "disabled");
         document.getElementById("welcome").style.display = "none";
     }
-    else
+    else {
         document.getElementById("next").removeAttribute("disabled");
+        document.getElementById("welcome").style.display = "block";
+    }
 }
 
 $(document).ready(function() {
