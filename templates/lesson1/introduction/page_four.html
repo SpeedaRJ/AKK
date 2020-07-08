@@ -16,12 +16,12 @@
                     /
                     <button class="btn" onclick="show_country(event)">No</button>
                     .
-                </div>
+                </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
                 <div class="msg jenny translation">Ali še tam živiš? Ja/Ne.</div>
             </div>
             <div style="display: none" id="home_country">
                 <div class="row">
-                    <div class="msg jenny">J: Where do you live now?</div>
+                    <div class="msg jenny">J: Where do you live now?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
                     <div class="msg jenny translation">Kje živiš sedaj?</div>
                 </div>
                 <div class="row">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="row" style="display: none" id="welcome">
-                <div class="msg jenny">J: Great! Welcome to English: Step by Step!</div>
+                <div class="msg jenny">J: Great! Welcome to English: Step by Step!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Super! Dobrodošel v Angleščina: korak za korakom.</div>
                 {% else %}

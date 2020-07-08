@@ -1,0 +1,37 @@
+.container {
+    height: 55%;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    width: auto;
+    height: 10%;
+    font-size: 1em;
+    background: transparent;
+    color: #446A85;
+    border-radius: 25%;
+    border: #3097c3 dotted 2px;
+}
+
+.selection:hover {
+    background: transparent !important;
+    border-color: white;
+}
+
+.correct {
+    color:
+}
+
+.correct {
+    color: #00A881 !important;
+    background: transparent;
+}
+
+.incorrect {
+    color: #F15D2A !important;
+    background: transparent;
+}

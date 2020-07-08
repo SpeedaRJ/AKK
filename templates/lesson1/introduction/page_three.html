@@ -5,7 +5,7 @@
     <script type="text/javascript" src="{% static 'js/introduction/page_three.js' %}"></script>
     <style>
         .msg {
-                font-size: 10px !important;
+                font-size: 1em !important;
             }
     </style>
 {% endblock %}
@@ -16,7 +16,7 @@
     <div class="col-lg-8">
         <div class="container-fluid messages">
             <div class="row">
-                <div class="msg jenny spoken">J: I am 50 years old. How old are you?</div>
+                <div class="msg jenny spoken">J: I am 50 years old. How old are you?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Stara sem 50 let. Koliko si ti star?</div>
                 {% else %}
@@ -35,11 +35,11 @@
 
             </div>
             <div class="row">
-                <div class="msg jenny">J: I was born in England. Now i live in Slovenia.</div>
+                <div class="msg jenny">J: I was born in England. Now i live in Slovenia.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
                 <div class="msg jenny translation">Rojena sem bil v Angliji. Zdaj živim v Sloveniji.</div>
             </div>
             <div class="row">
-                <div class="msg jenny spoken">Where were you born?</div>
+                <div class="msg jenny spoken">Where were you born?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Kje si bil/a ti rojen?</div>
                 {% else %}
