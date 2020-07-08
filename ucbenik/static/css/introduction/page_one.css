@@ -104,3 +104,20 @@ input:focus {
 #age_input {
     width: 15% !important;
 }
+
+.listen {
+    background: transparent;
+    border: none;
+    border-radius: 50px 50px 50px 50px;
+    height: 5%;
+    width: 5%;
+    transform: translateY(-25%);
+}
+
+.listen:hover {
+    border: dotted 3px black;
+}
+
+.listen:focus {
+    border: none;
+}
