@@ -16,7 +16,7 @@ table td:nth-child(odd) {
 table td {
     border-collapse: collapse;
     border: 2px solid #ffffec;
-    padding: 5px;
+    padding: 3px;
     padding-left: 3%;
 }
 
