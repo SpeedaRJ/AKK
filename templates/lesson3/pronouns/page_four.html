@@ -1,0 +1,201 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_four.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson3/pronouns/page_four.js' %}"></script>
+{% endblock %}
+{% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
+<div class="container">
+    <div class="container">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6 main">
+            <div id="conversation_one">
+                <div class="row inst nospace" style="padding: 0">
+                    <div class="msg user"><b>Personal pronouns - Osebni zaimki</b></div>
+                </div>
+                <div class="row inst space">
+                    <div class="msg jenny">J: You already know the personal pronouns in the first column. Let’s repeat
+                        them.
+                        Fill in their
+                        Slovenian translations.
+                    </div>
+                    <div class="msg jenny translation">Osebne zaimke v prvem stolpcu že znaš. Ponoviva jih. Dopiši
+                        slovenski
+                        prevod..
+                    </div>
+                </div>
+            </div>
+            <div id="conversation_two" hidden>
+                <div class="row inst space">
+                    <div class="msg jenny">J: Personal pronouns change when they follow a verb - in the object position.
+                        Take a look at
+                        the examples.
+                    </div>
+                    <div class="msg jenny translation">Osebni zaimki se spremenijo, ko sledijo glagolu - v vlogi
+                        predmeta. Poglej primere.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+        </div>
+    </div>
+    <div class="container" style="height: 90%;">
+        <div class="col-lg-6 tables">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Osebek</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td><input type="text" class="answer" onchange="solution(this, 'jaz')"></td>
+                    <td><b>I</b> am happy.</td>
+                </tr>
+                <tr>
+                    <td>you (ed.)</td>
+                    <td><input type="text" class="answer" onchange="solution(this, 'ti')"></td>
+                    <td><b>You</b> are happy.</td>
+                </tr>
+                <tr>
+                    <td>he</td>
+                    <td><input type="text" class="answer" onchange="solution(this, 'on')"></td>
+                    <td><b>He</b> is happy.</td>
+                </tr>
+                <tr>
+                    <td>she</td>
+                    <td><input type="text" class="answer" onchange="solution(this, 'ona')"></td>
+                    <td><b>She</b> is happy.</td>
+                </tr>
+                <tr>
+                    <td>it</td>
+                    <td><input type="text" class="answer" onchange="solution(this, 'ono')"></td>
+                    <td><b>It</b> is happy.</td>
+                </tr>
+                <tr>
+                    <td>we</td>
+                    <td><input type="text" class="answer" onchange="solution(this, 'mi')"></td>
+                    <td><b>We</b> are happy.</td>
+                </tr>
+                <tr>
+                    <td>you (mn.)</td>
+                    <td><input type="text" class="answer" onchange="solution(this, 'vi')"></td>
+                    <td><b>You</b> are happy.</td>
+                </tr>
+                <tr>
+                    <td>they</td>
+                    <td><input type="text" class="answer" onchange="solution(this, 'oni')"></td>
+                    <td><b>They</b> are happy.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-6 tables">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Predmet</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>me</td>
+                    <td>meni, mene</td>
+                    <td>She likes <b>me</b>.</td>
+                </tr>
+                <tr>
+                    <td>you</td>
+                    <td>tebi, tebe</td>
+                    <td>She likes <b>you</b>.</td>
+                </tr>
+                <tr>
+                    <td>him</td>
+                    <td>njemu, njega</td>
+                    <td>She likes <b>hie</b>.</td>
+                </tr>
+                <tr>
+                    <td>her</td>
+                    <td>njej, njo</td>
+                    <td>She likes <b>her</b>.</td>
+                </tr>
+                <tr>
+                    <td>it</td>
+                    <td>njemu, ono</td>
+                    <td>She likes <b>it</b>.</td>
+                </tr>
+                <tr>
+                    <td>us</td>
+                    <td>nam, nas</td>
+                    <td>She likes <b>ue</b>.</td>
+                </tr>
+                <tr>
+                    <td>you</td>
+                    <td>vam, vas</td>
+                    <td>She likes <b>you</b>.</td>
+                </tr>
+                <tr>
+                    <td>them</td>
+                    <td>njim, njih</td>
+                    <td>She likes <b>them</b>.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
+
+            $(window).on("load", function () {
+                recolor();
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+{% endblock %}

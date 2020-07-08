@@ -1,0 +1,50 @@
+.container {
+    height: 60%;
+}
+
+.tables {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 2% 2% 2% 2%;
+}
+
+th {
+    text-align: center !important;
+    background: #E6A454;
+}
+
+table {
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+}
+
+td {
+    background: #446A85;
+    width: 30%;
+}
+
+td > b {
+    color: #E6A454;
+}
+
+input {
+    background: #E4E3E8;
+    color: black !important;
+    width: 90%;
+    border-color: #6282B7;
+}
+
+.correct {
+    color: #00A881 !important;
+    background: #E4E3E8;
+}
+
+.incorrect {
+    color: #F15D2A !important;
+    background: #E4E3E8;
+}

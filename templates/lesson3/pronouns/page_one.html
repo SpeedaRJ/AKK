@@ -16,51 +16,28 @@
         <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
     </div>
     <div class="col-lg-6 main">
-        <div class="row inst nospace">
+        <div class="row inst nospace" style="height: 18%">
             <div class="msg user">PHONE CALL (‘telefonski klic’).</div>
             <input type="image" src="{% static 'svg/lesson3/pronouns/phone_on.svg' %}" id="redo_b" onclick="answer()">
         </div>
-        <div class="conversation">
+        <div id="conversation" hidden>
+            <div class="row inst space">
+                <div class="msg jenny">J: Hello {{user.first_name}}. How are you?</div>
+                <div class="msg jenny translation">Živijo {{user.first_name}}. Kako si?</div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">U: Hello. I am doing well. How are you?</div>
+                <div class="msg user slo ">Živijo. Vredu sem. Kako si ti?</div>
+            </div>
+
+            <div class="row inst space">
+                <div class="msg jenny">J: I am good. I’d like to ask you something.</div>
+                <div class="msg jenny translation">V redu sem. Nekaj te želim vprašati.</div>
+            </div>
             <div class="row inst nospace">
-            <div class="msg user">3. Drag and drop.</div>
-            <div class="msg user slo ">Prenesi in odloži.</div>
-        </div>
-        <div class="row text space">
-            <div class="msg jenny">J: Let’s do the first example together.</div>
-            <div class="msg jenny translation">Rešiva skupaj prvi primer.</div>
-        </div>
-        <div class="row inst nospace">
-            <div class="msg user">3. Drag and drop.</div>
-            <div class="msg user slo ">Prenesi in odloži.</div>
-        </div>
-        <div class="row text space">
-            <div class="msg jenny">J: Let’s do the first example together.</div>
-            <div class="msg jenny translation">Rešiva skupaj prvi primer.</div>
-        </div>
-        <div class="row inst nospace">
-            <div class="msg user">3. Drag and drop.</div>
-            <div class="msg user slo ">Prenesi in odloži.</div>
-        </div>
-        <div class="row text space">
-            <div class="msg jenny">J: Let’s do the first example together.</div>
-            <div class="msg jenny translation">Rešiva skupaj prvi primer.</div>
-        </div>
-        <div class="row inst nospace">
-            <div class="msg user">3. Drag and drop.</div>
-            <div class="msg user slo ">Prenesi in odloži.</div>
-        </div>
-        <div class="row text space">
-            <div class="msg jenny">J: Let’s do the first example together.</div>
-            <div class="msg jenny translation">Rešiva skupaj prvi primer.</div>
-        </div>
-        <div class="row inst nospace">
-            <div class="msg user">3. Drag and drop.</div>
-            <div class="msg user slo ">Prenesi in odloži.</div>
-        </div>
-        <div class="row text space">
-            <div class="msg jenny">J: Let’s do the first example together.</div>
-            <div class="msg jenny translation">Rešiva skupaj prvi primer.</div>
-        </div>
+                <div class="msg user">U: Go ahead.</div>
+                <div class="msg user slo ">Kar vprašaj.</div>
+            </div>
         </div>
     </div>
     <div class="col-lg-3">
@@ -103,6 +80,8 @@
             $(window).on("load", function () {
                 recolor();
             });
+
+
 
 
 </script>

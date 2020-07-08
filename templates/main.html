@@ -11,7 +11,7 @@
         <button class="titleB" disabled>Menu</button>
         <ul>
             <li class="main">
-                <button>Lesson 1</button>
+                <button class="mainB">Lesson 1</button>
                 <ul class="submenu">
                     {% for key,item in lesson_one.items %}
                     <li>
@@ -21,7 +21,7 @@
                 </ul>
             </li>
             <li class="main">
-                <button>Lesson 2</button>
+                <button class="mainB">Lesson 2</button>
                 <ul class="submenu">
                     <li>
                         <button class="SB">Placeholder</button>
@@ -41,7 +41,7 @@
                 </ul>
             </li>
             <li class="main">
-                <button>Lesson 3</button>
+                <button class="mainB">Lesson 3</button>
                 <ul class="submenu">
                     <li>
                         <button class="SB">Placeholder</button>
@@ -55,7 +55,7 @@
                 </ul>
             </li>
             <li class="main">
-                <button>Lesson 4</button>
+                <button class="mainB">Lesson 4</button>
                 <ul class="submenu">
                     <li>
                         <button class="SB">Placeholder</button>
@@ -72,7 +72,7 @@
                 </ul>
             </li>
             <li class="main">
-                <button>Lesson 5</button>
+                <button class="mainB">Lesson 5</button>
                 <ul class="submenu">
                     <li>
                         <button class="SB">Placeholder</button>
@@ -85,8 +85,8 @@
                     </li>
                 </ul>
             </li>
-            <button class="dictB">Dictionary</button>
-            <button class="SB" onclick="window.location.href='/logout'">Log out</button>
+            <button class="dictB" class="mainB">Dictionary</button>
+            <button class="SB mainB" onclick="window.location.href='/logout'">Log out</button>
         </ul>
         <div class="logos">
             <img src="{% static 'svg/common/logo/MIZS_logo.jpg' %}" class="logo">
@@ -125,9 +125,9 @@
     </div>
 
     <div class="col-lg-3" id="Dicts">
-        <button>Irregular verbs</button>
-        <button>Users dictionary</button>
-        <button>Theory</button>
+        <button class="mainB">Irregular verbs</button>
+        <button class="mainB">Users dictionary</button>
+        <button class="mainB">Theory</button>
     </div>
 </div>
 {% endblock %}

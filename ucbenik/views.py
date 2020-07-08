@@ -1569,8 +1569,96 @@ def pronouns_page_one(request):
             data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
             parts, colors = getColorsAndParts(data_set, "W")
             src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
-        return render(request, "lesson3/pronouns/page_one.html", {"next": "/lesson_three/pronouns/page_one",
+        return render(request, "lesson3/pronouns/page_one.html", {"next": "/lesson_three/pronouns/page_two",
                                                                   "back": "/lesson_three/title",
+                                                                  "lesson_one": lesson_one,
+                                                                  "lesson": "Lesson 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
+
+
+def pronouns_page_two(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if request.session['user']['sex'] == "M":
+            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
+            parts, colors = getColorsAndParts(data_set, "M")
+        else:
+            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
+            parts, colors = getColorsAndParts(data_set, "W")
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
+        return render(request, "lesson3/pronouns/page_two.html", {"next": "/lesson_three/pronouns/page_three",
+                                                                  "back": "/lesson_three/pronouns/page_one",
+                                                                  "lesson_one": lesson_one,
+                                                                  "lesson": "Lesson 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
+
+
+def pronouns_page_three(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if request.session['user']['sex'] == "M":
+            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
+            parts, colors = getColorsAndParts(data_set, "M")
+        else:
+            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
+            parts, colors = getColorsAndParts(data_set, "W")
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
+        return render(request, "lesson3/pronouns/page_three.html", {"next": "/lesson_three/pronouns/page_four",
+                                                                  "back": "/lesson_three/pronouns/page_two",
+                                                                  "lesson_one": lesson_one,
+                                                                  "lesson": "Lesson 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
+
+
+def pronouns_page_four(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if request.session['user']['sex'] == "M":
+            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
+            parts, colors = getColorsAndParts(data_set, "M")
+        else:
+            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
+            parts, colors = getColorsAndParts(data_set, "W")
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
+        return render(request, "lesson3/pronouns/page_four.html", {"next": "/lesson_three/pronouns/page_five",
+                                                                  "back": "/lesson_three/pronouns/page_three",
+                                                                  "lesson_one": lesson_one,
+                                                                  "lesson": "Lesson 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                  "src": src_ref,
+                                                                  "parts": parts,
+                                                                  "colors": colors
+                                                                  })
+
+
+def pronouns_page_five(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if request.session['user']['sex'] == "M":
+            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
+            parts, colors = getColorsAndParts(data_set, "M")
+        else:
+            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
+            parts, colors = getColorsAndParts(data_set, "W")
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
+        return render(request, "lesson3/pronouns/page_five.html", {"next": "/lesson_three/pronouns/page_five",
+                                                                  "back": "/lesson_three/pronouns/page_four",
                                                                   "lesson_one": lesson_one,
                                                                   "lesson": "Lesson 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                   "src": src_ref,

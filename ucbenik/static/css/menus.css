@@ -64,6 +64,13 @@ button[class="titleB"]:hover {
   background-color: #3E83D5;
 }
 
+.SB:hover {
+    background-color: #ebc35c !important;
+}
+
+.mainB:hover {
+    background-color: #ebc35c !important;
+}
 
 .lesson {
   position: absolute;
@@ -202,6 +209,7 @@ button[class="titleB"]:hover {
 .logos {
     bottom: 0;
     position: absolute;
+    z-index:-1;
 }
 
 .logo {

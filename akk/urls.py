@@ -133,4 +133,8 @@ urlpatterns = [
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),
+    path("lesson_three/pronouns/page_two", views.pronouns_page_two, name="pronouns_page_two"),
+    path("lesson_three/pronouns/page_three", views.pronouns_page_three, name="pronouns_page_three"),
+    path("lesson_three/pronouns/page_four", views.pronouns_page_four, name="pronouns_page_four"),
+    path("lesson_three/pronouns/page_five", views.pronouns_page_five, name="pronouns_page_five"),
 ]
