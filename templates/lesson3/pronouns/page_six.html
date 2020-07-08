@@ -1,0 +1,121 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_six.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson3/pronouns/page_six.js' %}"></script>
+{% endblock %}
+{% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
+<div class="container">
+    <div class="container">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6 main">
+            <div class="row inst space">
+                <div class="msg user">2. Choose the correct personal pronoun.</div>
+                <div class="msg user slo">Izberi pravilen osebni zaimek.</div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+        </div>
+    </div>
+    <div class="container main" style="height: 90%;">
+        <div class="msg jenny translation">Jane is a teacher.
+            <button class="selection" onclick="check(this, true)">She</button>
+            /
+            <button class="selection" onclick="check(this, false)">Her</button>
+            teaches chemistry.
+            The students like
+            <button class="selection" onclick="check(this, false)">she</button>
+            /
+            <button class="selection" onclick="check(this, true)">her</button>
+            . <br>
+            Megan and Fiona are best friends.
+            <button class="selection" onclick="check(this, false)">Them</button>
+            /
+            <button class="selection" onclick="check(this, true)">They</button>
+            are always together. You can’t see
+            <button class="selection" onclick="check(this, true)">them</button>
+            /
+            <button class="selection" onclick="check(this, false)">they</button>
+            apart. <br>
+            <button class="selection" onclick="check(this, true)">I</button>
+            /
+            <button class="selection" onclick="check(this, false)">me</button>
+            believe in ghosts. They visit
+            <button class="selection" onclick="check(this, false)">I</button>
+            /
+            <button class="selection" onclick="check(this, true)">me</button>
+            at night.
+            Did you hear about what happened to Peter?
+            <button class="selection" onclick="check(this, true)">He</button>
+            /
+            <button class="selection" onclick="check(this, false)">him</button>
+            had an accident. Let’s visit
+            <button class="selection" onclick="check(this, false)">he</button>
+            /
+            <button class="selection" onclick="check(this, true)">him</button>
+            in
+            the hospital. <br>
+            My friends and I often play after school.
+            <button class="selection" onclick="check(this, true)">We</button>
+            /
+            <button class="selection" onclick="check(this, false)">us</button>
+            play basketball. Sometimes the girls from
+            our class come and watch
+            <button class="selection" onclick="check(this, false)">we</button>
+            /
+            <button class="selection" onclick="check(this, true)">us</button>
+            . <br>
+        </div>
+    </div>
+</div>
+<script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
+
+            $(window).on("load", function () {
+                recolor();
+            });
+
+
+
+
+
+</script>
+{% endblock %}
