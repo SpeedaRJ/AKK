@@ -1,0 +1,85 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twenty.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Kako pa opišemo barvo las neke osebe? <br>
+                Do zdaj sva se naučila: 
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg user" style="background-color:#49A579;" >
+                        MY HAIR IS BROWN. 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg user">
+                        Moji lasje so rjavi. 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                Lahko pa rečemo: 
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg user" style="background-color:#49A579;" >
+                        I HAVE BROWN HAIR
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg user">
+                        Imam rjave lase. 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Tu sem uporabila glagol 
+                <p style="color:#D55225;font-weight: bold; margin:0">IMETI</p>, torej 
+                <p style="color:#D55225;font-weight: bold; margin:0">TO HAVE</p>. 
+                Oblika glagola za tretjo osebo 
+                ednine (he, she, it) se glasi: 
+                <p style="color:#D55225;font-weight: bold; margin:0">HAS</p>. 
+                Vsi ostali zaimki dobijo obliko 
+                <p style="color:#D55225;font-weight: bold; margin:0">HAVE</p>. 
+                Preveriva še v tabeli.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container fluid">
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+    <div class="col-lg-10" style="text-align: center;">
+        <div class="inst" id="aps">
+        </div>
+    </div>
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+</div>
+{% endblock %}

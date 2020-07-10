@@ -1,0 +1,115 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_forty.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_forty.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                What do people have? Drag and drop.
+            </div>
+            <div class="msg jenny slo centre">
+                Kaj imajo osebe? Prenesi in odloži.
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match01">
+            <img src="{% static 'svg/lesson1/he_she_it/man_circle01.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"  id="match02">
+            <img src="{% static 'svg/lesson1/he_she_it/woman_circle02.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match03">
+            <img src="{% static 'svg/lesson1/he_she_it/man_circle03.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match04">
+            <img src="{% static 'svg/lesson1/he_she_it/woman_circle04.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match05">
+            <img src="{% static 'svg/lesson1/he_she_it/man_circle05.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match06">
+            <img src="{% static 'svg/lesson1/he_she_it/woman_circle01.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match07">
+            <img src="{% static 'svg/lesson1/he_she_it/man_circle02.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match08">
+            <img src="{% static 'svg/lesson1/he_she_it/woman_circle03.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match09">
+            <img src="{% static 'svg/lesson1/he_she_it/man_circle04.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="drop"ondrop="drop(event, this, 1)" ondragover="allowDrop(event)" id="match10">
+            <img src="{% static 'svg/lesson1/he_she_it/woman_circle05.svg' %}" type="svg" >
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<div class="row" id="drag-origin">
+    <div class="trait" draggable="true" id="m01" ondragstart="drag(event)" onclick="toOrigin(this)">
+        He has a beard.
+    </div>
+    <div class="trait" draggable="true" id="m02" ondragstart="drag(event)" onclick="toOrigin(this)">
+        She has glasses.
+    </div>
+    <div class="trait" draggable="true" id="m03" ondragstart="drag(event)" onclick="toOrigin(this)">
+        He has black hair. 
+    </div>
+    <div class="trait" draggable="true" id="m04" ondragstart="drag(event)" onclick="toOrigin(this)">
+        She has short hair.
+    </div>
+    <div class="trait" draggable="true" id="m05" ondragstart="drag(event)" onclick="toOrigin(this)">
+        He has long hair.
+    </div>
+    <div class="trait" draggable="true" id="m06" ondragstart="drag(event)" onclick="toOrigin(this)">
+        She has curly hair.
+    </div>
+    <div class="trait" draggable="true" id="m07" ondragstart="drag(event)" onclick="toOrigin(this)">
+        He has a mustache.
+    </div>
+    <div class="trait" draggable="true" id="m08" ondragstart="drag(event)" onclick="toOrigin(this)">
+        She has straight hair.
+    </div>
+    <div class="trait" draggable="true" id="m09" ondragstart="drag(event)" onclick="toOrigin(this)">
+        He has grey hair.
+    </div>
+    <div class="trait" draggable="true" id="m10" ondragstart="drag(event)" onclick="toOrigin(this)">
+        She has orange hair.
+    </div>
+</div>
+{% endblock %}

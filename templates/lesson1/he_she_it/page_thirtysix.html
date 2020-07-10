@@ -1,0 +1,83 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_four.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Tu sem uporabila glagol <p style="color:#D55225;font-weight: bold; margin:0">IMETI</p>, torej 
+                <p style="color:#D55225;font-weight: bold; margin:0">TO HAVE</p>. Oblika glagola za tretjo osebo 
+                ednine (he, she, it) se glasi: <p style="color:#D55225;font-weight: bold; margin:0">HAS</p>. 
+                Vsi ostali zaimki dobijo obliko <p style="color:#D55225;font-weight: bold; margin:0">HAVE</p>. 
+                Preveriva še v tabeli.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="col-lg-2 full"></div>
+<div class="col-lg-8">
+    <div class="msg jenny header">
+        Ednina (Singular)
+    </div>
+    <div class="help-table" id="help-table">
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>1.	oseba</button>
+            <button class="col-lg-6 tip" disabled>I am</button>
+            <button class="col-lg-6 tip" disabled>Jaz sem</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>2.	oseba</button>
+            <button class="col-lg-6 tip" disabled>You are</button>
+            <button class="col-lg-6 tip" disabled>Ti si</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip c1" disabled>3.	oseba</button>
+            <button class="col-lg-6 tip" disabled>He is</button>
+            <button class="col-lg-6 tip" disabled>On je</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip c1" disabled></button>
+            <button class="col-lg-6 tip" disabled>She is</button>
+            <button class="col-lg-6 tip" disabled>Ona je</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip c1" disabled></button>
+            <button class="col-lg-6 tip" disabled>It is</button>
+            <button class="col-lg-6 tip" disabled>Ono je</button>
+        </div>
+    </div>
+
+    <div class="msg jenny header space">
+        Množina (Singular)
+    </div>
+    <div class="help-table" id="help-table">
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>1.	oseba</button>
+            <button class="col-lg-6 tip" disabled>We are</button>
+            <button class="col-lg-6 tip" disabled>Mi smo</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>2.	oseba</button>
+            <button class="col-lg-6 tip" disabled>You are</button>
+            <button class="col-lg-6 tip">Vi ste</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>3.	oseba</button>
+            <button class="col-lg-6 tip" disabled>They are</button>
+            <button class="col-lg-6 tip" disabled>Oni so</button>
+        </div>
+    </div>
+</div>
+<div class="col-lg-2 full"></div>
+{% endblock %}

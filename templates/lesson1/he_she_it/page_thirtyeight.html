@@ -1,0 +1,233 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_thirtyeight.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_thirtyeight.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Answer the following questions. <br>
+                Use long answers.                
+            </div>
+            <div class="msg jenny slo centre">
+                Odgovori na naslednja vprašanja. <br>
+                Uporabi dolge odgovore.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container fluid">
+    <div class="col-lg-3" style="text-align: center;">
+    </div>
+    <div class="col-lg-6" style="text-align: center;">
+        <div class="inst">
+            <div class="msg jenny slo in" style="width: 100%; margin:0">
+                a)	You(ed.) has <br>
+                b)	She has <br>
+                c)	He have <br>
+                d)	I has <br>
+                e)	We have <br>
+                f)	It have <br>
+                g)	I have <br>
+                h)	They have <br>
+                i)	You(mn.) have <br>
+                j)	She have <br>
+                k)	You (ed.) have <br>
+                l)	He has <br>
+                m)	We has <br>
+                n)	They has <br>
+                o)	You (mn.) has <br>	
+                p)	It has  <br>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" style="text-align: center;">
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                a)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                b)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                c)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                d)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                e)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                f)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                g)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                h)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                i)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                j)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                k)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                l)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                m)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                n)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" >
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                o)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                F
+            </div>
+        </div>
+        <div class="row inst" ">
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;">
+                p)
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_c(this)">
+                T
+            </div>
+            <div class="msg jenny slo in" style="width: 10%; margin:0;font-size: 1.5vh;padding:0.25vh 0;text-align: center;" onclick="toggle_i(this)">
+                F
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
