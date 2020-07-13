@@ -230,14 +230,14 @@ function changeSuite(el) {
 
 function translate(el) {
     let paras = document.getElementsByClassName("slo_name");
-    if (el.target.value.toString().trim().toLowerCase() === "fat") {
+    if (el.target.value.toString().trim().toLowerCase() === "plump") {
         paras[0].innerHTML = "močnejše postave";
         let data = {
             "body_type": "fat"
         };
         update_session(data);
-    } else if (el.target.value.toString().trim().toLowerCase() === "slim") {
-        paras[0].innerHTML = "vitek";
+    } else if (el.target.value.toString().trim().toLowerCase() === "slender") {
+        paras[0].innerHTML = "vitke postave";
         let data = {
             "body_type": "slim"
         };
@@ -249,5 +249,12 @@ $(document).ready(function () {
     document.getElementById("name_input").addEventListener("input", function (e) {
         translate(e);
     });
+    document.getElementById("name_input").addEventListener("foucusout",function (e) {
+        if(e.target.value ==="plump"){
+            update_session({'body_type': "fat"})
+        }else{
+            update_session({'body_type': "slim"})
+        }
 
+    })
 });

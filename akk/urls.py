@@ -129,6 +129,18 @@ urlpatterns = [
     path("lesson_one/he_she_it/page_twentyeight", views.he_she_it_page_twentyeight, name="he_she_it_page_twentyeight"),
     path("lesson_one/he_she_it/page_twentynine", views.he_she_it_page_twentynine, name="he_she_it_page_twentynine"),
     path("lesson_one/he_she_it/page_thirty", views.he_she_it_page_thirty, name="he_she_it_page_thirty"),
+    path("lesson_one/he_she_it/page_thirtyone", views.he_she_it_page_thirtyone, name="he_she_it_page_thirtyone"),
+    path("lesson_one/he_she_it/page_thirtytwo", views.he_she_it_page_thirtytwo, name="he_she_it_page_thirtytwo"),
+    path("lesson_one/he_she_it/page_thirtythree", views.he_she_it_page_thirtythree, name="he_she_it_page_thirtythree"),
+    path("lesson_one/he_she_it/page_thirtyfour", views.he_she_it_page_thirtyfour, name="he_she_it_page_thirtyfour"),
+    path("lesson_one/he_she_it/page_thirtyfive", views.he_she_it_page_thirtyfive, name="he_she_it_page_thirtyfive"),
+    path("lesson_one/he_she_it/page_thirtysix", views.he_she_it_page_thirtysix, name="he_she_it_page_thirtysix"),
+    path("lesson_one/he_she_it/page_thirtyseven", views.he_she_it_page_thirtyseven, name="he_she_it_page_thirtyseven"),
+    path("lesson_one/he_she_it/page_thirtyeight", views.he_she_it_page_thirtyeight, name="he_she_it_page_thirtyeight"),
+    path("lesson_one/he_she_it/page_thirtynine", views.he_she_it_page_thirtynine, name="he_she_it_page_thirtynine"),
+    path("lesson_one/he_she_it/page_forty", views.he_she_it_page_forty, name="he_she_it_page_forty"),
+    path("lesson_one/he_she_it/page_fortyone", views.he_she_it_page_fortyone, name="he_she_it_page_fortyone"),
+    path("lesson_one/he_she_it/page_fortytwo", views.he_she_it_page_fortytwo, name="he_she_it_page_fortytwo"),
 
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),

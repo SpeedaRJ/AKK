@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twenty.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_thirtyfour.js' %}"></script>
+<style>
+    .answer {
+        display:none
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Answer the following questions. <br>
+                Use long answers.                
+            </div>
+            <div class="msg jenny slo centre">
+                Odgovori na naslednja vprašanja. <br>
+                Uporabi dolge odgovore.
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container fluid">
+    <div class="col-lg-3" style="text-align: center;">
+    </div>
+    <div class="col-lg-6" style="text-align: center;">
+        <div class="inst" id="aps">
+            <div class="msg jenny slo in" style="width: 100%; margin:0">
+                She is happy. >><div class="answer" id="a0"> Question <input class=textarea onchange="solution(this,0)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><div class="answer" id="a6"> Negative sentence <input class=textarea onchange="solution(this,6)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><br>
+                He isn't fat. >><div class="answer" id="a1"> Affirmative sentence <input class=textarea onchange="solution(this,1)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><div class="answer" id="a7"> Question <input class=textarea onchange="solution(this,7)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><br>
+                I am tall. >><div class="answer" id="a2"> Negative sentence <input class=textarea onchange="solution(this,2)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><div class="answer" id="a8"> Question <input class=textarea onchange="solution(this,8)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><br>
+                Are you nice? >><div class="answer" id="a3"> Negative sentence <input class=textarea onchange="solution(this,3)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><div class="answer" id="a9"> Affirmative sentence <input class=textarea onchange="solution(this,9)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><br>
+                They are our relatives. >><div class="answer" id="a4"> Question <input class=textarea onchange="solution(this,4)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><div class="answer" id="a10"> Negative sentence <input class=textarea onchange="solution(this,10)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><br>
+                We aren't old. >><div class="answer" id="a5"> Question <input class=textarea onchange="solution(this,5)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><div class="answer" id="a11"> Affirmative sentence <input class=textarea onchange="solution(this,11)" style="border-color:#6282B7;background-color: transparent;width:100%;"/></div><br>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" style="text-align: center;">
+    </div>
+</div>
+{% endblock %}

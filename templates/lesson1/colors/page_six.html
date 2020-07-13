@@ -1,98 +1,100 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
-<script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
 {% endblock %}
 {% block content %}
-{{ colors|json_script:"colors" }}
-{{ parts|json_script:"parts" }}
-<div class="row">
-    <div class="col-lg-3">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
-    </div>
-    <div class="col-lg-6">
-        <div class="row inst nospace" id="inst">
-            <div class="msg user">2. What colour are they?</div>
-            <div class="msg user slo ">Kakšne barve so?</div>
+    {{ colors|json_script:"colors" }}
+    {{ parts|json_script:"parts" }}
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst nospace" id="inst">
+                <div class="msg user">2. What colour are they?</div>
+                <div class="msg user slo ">Kakšne barve so?</div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <object data="{% static src %}" type="image/svg+xml" id="character"></object>
         </div>
     </div>
-    <div class="col-lg-3">
-        <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+    <div class="row container">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+            <div class="question">
+                The bat is:
+                <br>
+                <input type="radio" id="brown1" name="color1" onclick="check(event, 'black')">
+                <label for="brown1">Brown</label><br>
+                <input type="radio" id="blue1" name="color1" onclick="check(event, 'black')">
+                <label for="blue1">Blue</label><br>
+                <input type="radio" id="black1" name="color1" onclick="check(event, 'black')">
+                <label for="black1">Black</label><br>
+            </div>
+            <div class="image">
+                <img src="{% static 'svg/lesson1/colors/SVG/bat.svg' %}">
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <div class="question">
+                The carrot is:
+                <br>
+                <input type="radio" id="red1" name="color2" onclick="check(event, 'orange')">
+                <label for="red1">Red</label><br>
+                <input type="radio" id="yellow1" name="color2" onclick="check(event, 'orange')">
+                <label for="yellow1">Yellow</label><br>
+                <input type="radio" id="orange1" name="color2" onclick="check(event, 'orange')">
+                <label for="orange1">Orange</label><br>
+            </div>
+            <div class="image">
+                <img src="{% static 'svg/lesson1/colors/SVG/carrot.svg' %}">
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
     </div>
-</div>
-<div class="row container">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-4">
-        <div class="question">
-            The bat is:
-            <input type="radio" id="brown1" name="color1" onclick="check(event, 'black')">
-            <label for="brown1">Brown</label><br>
-            <input type="radio" id="blue1" name="color1" onclick="check(event, 'black')">
-            <label for="blue1">Blue</label><br>
-            <input type="radio" id="black1" name="color1" onclick="check(event, 'black')">
-            <label for="black1">Black</label><br>
-        </div>
-        <div class="image">
-            <img src="{% static 'svg/lesson1/colors/SVG/bat.svg' %}">
-        </div>
-    </div>
-    <div class="col-lg-2"></div>
-    <div class="col-lg-4">
-        <div class="question">
-            The carrot is:
-            <input type="radio" id="red1" name="color2" onclick="check(event, 'orange')">
-            <label for="red1">Red</label><br>
-            <input type="radio" id="yellow1" name="color2" onclick="check(event, 'orange')">
-            <label for="yellow1">Yellow</label><br>
-            <input type="radio" id="orange1" name="color2" onclick="check(event, 'orange')">
-            <label for="orange1">Orange</label><br>
-        </div>
-        <div class="image">
-            <img src="{% static 'svg/lesson1/colors/SVG/carrot.svg' %}">
-        </div>
-    </div>
-    <div class="col-lg-1"></div>
-</div>
-<script>
-            function recolor() {
-                let svg = document.getElementById("character").contentDocument.children[0];
-                let colors = JSON.parse(document.getElementById("colors").textContent);
-                let parts = JSON.parse(document.getElementById("parts").textContent);
-                let querySelector = "";
-                [].forEach.call(Object.keys(parts), function (el) {
-                    querySelector += parts[el] + ",";
-                });
-                console.log(querySelector);
-                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
-                    let el_list = el.id;
-                    console.log(el_list);
-                    if (/Koza/.test(el_list)) {
-                        el.setAttribute("style", "fill: " + colors['body_color']);
-                    } else if (/Vrat/.test(el_list)) {
-                        el.setAttribute("style", "fill: " + colors['neck']);
-                    } else if (/Lasje/.test(el_list)) {
-                        el.setAttribute("style", "fill: " + colors['hair_color']);
-                    } else if (/Brada/.test(el_list)) {
-                        el.setAttribute("style", "fill: " + colors['hair_color']);
-                    } else if (/Brki/.test(el_list)) {
-                        el.setAttribute("style", "fill: " + colors['hair_color']);
-                    } else if (/Krog/.test(el_list)) {
-                        el.setAttribute("style", "stroke: " + colors['suite_color']);
-                    } else if (/Pulover/.test(el_list)) {
-                        el.setAttribute("style", "fill: " + colors['suite_color']);
-                    } else if (/Majica/.test(el_list)) {
-                        el.setAttribute("style", "fill: " + colors['suite_color']);
-                    }
-                });
-            }
-
-            $(window).on("load", function () {
-                recolor();
+    <script>
+        function recolor() {
+            let svg = document.getElementById("character").contentDocument.children[0];
+            let colors = JSON.parse(document.getElementById("colors").textContent);
+            let parts = JSON.parse(document.getElementById("parts").textContent);
+            let querySelector = "";
+            [].forEach.call(Object.keys(parts), function (el) {
+                querySelector += parts[el] + ",";
             });
+            console.log(querySelector);
+            [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                let el_list = el.id;
+                console.log(el_list);
+                if (/Koza/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['body_color']);
+                } else if (/Vrat/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['neck']);
+                } else if (/Lasje/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Brada/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Brki/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Krog/.test(el_list)) {
+                    el.setAttribute("style", "stroke: " + colors['suite_color']);
+                } else if (/Pulover/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['suite_color']);
+                } else if (/Majica/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['suite_color']);
+                }
+            });
+        }
+
+        $(window).on("load", function () {
+            recolor();
+        });
 
 
-</script>
+    </script>
 {% endblock %}

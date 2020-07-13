@@ -45,10 +45,11 @@ def login_page(request):
         if user is not None:
             request.session.flush()
             request.session['user'] = UserSerializer(user).data
-
             return redirect("/lesson_one/title")
         elif user is None:
-            return HttpResponse("404: User not found")
+            context = {'no_user': 'Napačno uporabniško ime ali geslo',
+                       'username' : username }
+            return render(request, "login.html", context) #HttpResponse("404: User not found")
 
 def logout(request):
     if request.method == "GET":
@@ -1548,6 +1549,139 @@ def he_she_it_page_thirty(request):
                                                                         "back": "/lesson_one/he_she_it/page_twentynine",
                                                                         "lesson_one": lesson_one,
                                                                         "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtyone(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtyone.html", {"next": "/lesson_one/he_she_it/page_thirtytwo",
+                                                                        "back": "/lesson_one/he_she_it/page_thirty",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtytwo(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtytwo.html", {"next": "/lesson_one/he_she_it/page_thirtythree",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtyone",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtythree(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtythree.html", {"next": "/lesson_one/he_she_it/page_thirtyfour",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtytwo",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtyfour(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtyfour.html", {"next": "/lesson_one/he_she_it/page_thirtyfive",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtythree",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtyfive(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtyfive.html", {"next": "/lesson_one/he_she_it/page_thirtysix",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtyfour",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtysix(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtysix.html", {"next": "/lesson_one/he_she_it/page_thirtyseven",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtyfive",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtyseven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtyseven.html", {"next": "/lesson_one/he_she_it/page_thirtyeight",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtysix",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtyeight(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtyeight.html", {"next": "/lesson_one/he_she_it/page_thirtynine",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtyseven",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_thirtynine(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_thirtynine.html", {"next": "/lesson_one/he_she_it/page_forty",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtyeight",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_forty(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_forty.html", {"next": "/lesson_one/he_she_it/page_fortyone",
+                                                                        "back": "/lesson_one/he_she_it/page_thirtynine",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_fortyone(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_fortyone.html", {"next": "/lesson_one/he_she_it/page_fortytwo",
+                                                                        "back": "/lesson_one/he_she_it/page_forty",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
+def he_she_it_page_fortytwo(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        if 'user' not in request.session:
+            return login_page(request)
+        return render(request, "lesson1/he_she_it/page_fortytwo.html", {"next": "/lesson_two",
+                                                                        "back": "/lesson_one/he_she_it/page_fortyone",
+                                                                        "lesson_one": lesson_one,
+                                                                        "lesson": "Lesson 1: About Me", "title": "He She It", "user": request.session['user']})
+
 
 #Lesson3
 def lesson_three_title(request):
