@@ -105,7 +105,7 @@ input:focus {
     width: 15% !important;
 }
 
-.listen {
+.listenToAng {
     background: transparent;
     border: none;
     border-radius: 50px 50px 50px 50px;
@@ -114,10 +114,15 @@ input:focus {
     transform: translateY(-25%);
 }
 
-.listen:hover {
+.listenToAng:hover {
     border: dotted 3px black;
 }
 
-.listen:focus {
+.listenToAng:focus {
     border: none;
+}
+
+.left {
+    float: left;
+    margin-left: 0;
 }

@@ -24,7 +24,7 @@
                     <button class="btn" onclick="changeGlasess(this); update_session({'glasses' : 'glasses'})">Yes</button>
                     /
                     <button class="btn" onclick="changeGlasess(this); update_session({'glasses':'no_glasses'})">No</button>
-                </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
+                </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <div class="msg jenny translation">Ali nosiš očala? Ja/ne</div>
             </div>
             {% if user.sex == "M" %}
@@ -33,7 +33,7 @@
                         <button class="btn" onclick="document.getElementById('beard_select').style.display='block'">Yes</button>
                         /
                         <button class="btn" onclick="document.getElementById('beard_select').style.display='none'; update_session({'beard':'no_beard'})">No</button>
-                    </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
+                    </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                     <div class="msg jenny translation">Ali imaš brado ali brke? Ja/ne</div>
                 </div>
                 <div class="row text space" id="beard_select" style="display: none">
