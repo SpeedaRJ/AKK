@@ -119,7 +119,7 @@ def save_session(request):
 
 def getColorsAndParts(data_set, sex):
     if sex == "M":
-        if data_set.beard is "full_beard":
+        if data_set.beard == "full_beard":
             parts = {
                 "body_color": "[id^=Koza]",
                 "neck": "[id^=Vrat]",
@@ -128,7 +128,7 @@ def getColorsAndParts(data_set, sex):
                 "Krog": "[id^=Krog]",
                 "Pulover": "[id^=Pulover]"
             }
-        elif data_set.beard is "full_beard" == "mustache" or data_set.beard == "goatee":
+        elif data_set.beard == "full_beard" or "mustache" or data_set.beard == "goatee":
             parts = {
                 "body_color": "[id^=Koza]",
                 "neck": "[id^=Vrat]",
