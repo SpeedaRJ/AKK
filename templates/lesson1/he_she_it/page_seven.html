@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Now that you know personal pronouns 
+                and the verb <p style="color:#D55225;font-weight: bold; margin:0">TO BE</p>, use this knowledge 
+                to describe a person.
+            </div>
+            <div class="msg jenny slo centre">
+                Zdaj, ko poznaš zaimke in različne oblike glagola 
+                BITI, uporabi to znanje za opisati osebo. 
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+{% endblock %}

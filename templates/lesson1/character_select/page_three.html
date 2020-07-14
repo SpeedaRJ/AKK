@@ -16,13 +16,9 @@
             <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" id="jenny">
         </div>
         <div class="col-lg-6">
-            <div class="row text space">
-                <div class="msg jenny">J: My hair is short not long. And it is gray. What is your hair like?</div>
+            <div class="row text nospace">
+                <div class="msg jenny">J: My hair is short not long. And it is gray. What is your hair like?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <div class="msg jenny translation">Moji lasje so kratki, ne dolgi. In sivi. Kakšni pa so tvoji lasje ?</div>
-            </div>
-            <div class="row text space">
-                <div class="msg jenny">J: I am quite fat now but I was slim when I was young</div>
-                <div class="msg jenny translation">Zdaj sem precej debela, vendar sem bila suha, ko sem bila mlada</div>
             </div>
             <div class="row text space">
                 <table id="table">
@@ -52,7 +48,7 @@
                             <button id="patch" style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/male/bald.svg" %}) no-repeat;"
                                     onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'patch'})"></button>
                             <button id="bald" style="border-radius: 50%;  width: 100px;height: 100px;"
-                                    onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'bald'})">Bald</button>
+                                    onclick="changeHairStyle(this, 'M'); recolor();update_session({'hair_type':'bald'}); document.getElementById('color_buttons').style.display='none'; update_session({'hair_color':'#ffebc6'})">Bald</button>
                         {% else %}
                             <button id="medium"style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/medium_hair.svg" %}) no-repeat;"
                                     onclick="changeHairStyle(this,'F');update_session({'hair_type':'medium'})"></button>
@@ -66,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row text space">
+            <div class="row text space" id="color_buttons">
                 <div class="msg jenny translation" style="display:flex;flex-direction: column; padding: 5px;">
                     <div style="display: flex;justify-content: space-evenly;">
                         {{ colors|json_script:"colors" }}

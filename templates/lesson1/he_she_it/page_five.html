@@ -1,0 +1,119 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_three.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_five.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                What is the meaning of the adjectives? Pick the right translation from the box.
+            </div>
+            <div class="msg jenny slo centre">
+                Kaj pomenijo pridevniki? Iz okvirčka izberi pravi slovenski ali angleški prevod.
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container">
+    <div class="col-lg-1 full">
+    </div>
+    <div class="col-lg-10 full">
+        <div class="col-lg-6" id="drag1">
+            <div class="drop" id="match01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m01" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Jaz
+                </div>
+            </div>
+            <div class="drop" id="match02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m02" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    I
+                </div>
+            </div>
+            <div class="drop" id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m03" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Ti
+                </div>
+            </div>
+            <div class="drop" id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m04" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    You(ed.)
+                </div>
+            </div>
+            <div class="drop" id="match05" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m05" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    He
+                </div>
+            </div>
+            <div class="drop" id="match06" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m06" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    On
+                </div>
+            </div>
+            <div class="drop" id="match07" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m07" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    She
+                </div>
+            </div>
+            <div class="drop" id="match08" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m08" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Ona
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" id="drag2">
+            <div class="drop" id="match11" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m11" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    It
+                </div>
+            </div>
+            <div class="drop" id="match12" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m12" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Ono
+                </div>
+            </div>
+            <div class="drop" id="match13" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m13" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    We
+                </div>
+            </div>
+            <div class="drop" id="match14" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m14" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Mi
+                </div>
+            </div>
+            <div class="drop" id="match15" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m15" ondragstart="drag(event)" onclick="toOrigin(this)"> 
+                    You(mn.)
+                </div>
+            </div>
+            <div class="drop" id="match16" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m16" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Vi
+                </div>
+            </div>
+            <div class="drop" id="match17" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m17" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    They
+                </div>
+            </div>
+            <div class="drop" id="match18" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" draggable="true" id="m18" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Oni
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 full"></div>
+</div>
+{% endblock %}

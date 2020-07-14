@@ -22,36 +22,40 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <!-- AVATAR -->>
+        <!-- AVATAR -->
     </div>
 </div>
 <div class="row dominos" id="dominos">
-    <div class="drop" id="match01" ondrop="drop(event, this, 10)" ondragover="allowDrop(event)">
-        <div class="domino">
+    <div class="drop" id="match01" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+        <div class="domino" id="first">
             <div class="domino-part d-left"></div>
-            <div class="domino-part d-right"></div>
+            <div class="domino-part d-right" id="d11"></div>
         </div>
-        <div class="domino" id="placeholder"></div>
+        <div class="domino connected" id="placeholder"></div>
     </div>
     <div id="drag-origin">
         <div class="domino" id="match1" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
-            <div class="domino-part d-left"></div>
-            <div class="domino-part d-right"></div>
+            <div class="domino-part d-left" id="d12"></div>
+            <div class="domino-part d-right" id="d21"></div>
         </div>
 
         <div class="domino" id="match2" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
-            <div class="domino-part d-left"></div>
-            <div class="domino-part d-right"></div>
+            <div class="domino-part d-left" id="d22"></div>
+            <div class="domino-part d-right" id="d31"></div>
         </div>
 
         <div class="domino" id="match3" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
-            <div class="domino-part d-left"></div>
-            <div class="domino-part d-right"></div>
+            <div class="domino-part d-left" id="d32"></div>
+            <div class="domino-part d-right" id="d41"></div>
         </div>
 
-        <div class="domino" id="match4" draggable="true" ondragstart="drag(event)" >
-            <div class="domino-part d-left"></div>
-            <div class="domino-part d-right"></div>
+        <div class="domino" id="match4" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+            <div class="domino-part d-left" id="d42"></div>
+            <div class="domino-part d-right"id="d51"></div>
+        </div>
+        <div class="domino" id="match5" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+            <div class="domino-part d-left" id="d52"></div>
+            <div class="domino-part d-right"id="d6"></div>
         </div>
     </div>
 </div>

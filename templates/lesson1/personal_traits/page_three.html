@@ -1,0 +1,74 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_three.css' %}"/>
+<script type="text/javascript" src="{% static 'js/personal_traits/page_three.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                What is the meaning of the adjectives? Pick the right translation from the box.
+            </div>
+            <div class="msg jenny slo centre">
+                Kaj pomenijo pridevniki? Iz okvirčka izberi pravi slovenski ali angleški prevod.
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container">
+    <div class="col-lg-3 full">
+        <div class="row inst">
+            <div class="msg jenny">
+                smart, <br>
+                stupid, <br> 
+                good, <br>
+                bad, <br>
+                hard-working, <br>
+                lazy, <br>
+                generous, <br>
+                selfish, <br>
+                kind, <br>
+                mean, <br>
+                funny, <br>
+                boring, <br>
+                outgoing, <br>
+                shy
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 full" id="fillin">
+    </div>
+    <div class="col-lg-3 full">
+        <div class="row inst">
+            <div class="msg jenny">
+                pameten, <br>
+                neumen, <br>
+                dober, <br>
+                slab, <br>
+                delaven,<br>
+                len, <br>
+                radodaren / <br>
+                velikodušen, <br>
+                sebičen, <br>
+                prijazen, <br>
+                neprijazen / <br>
+                nesramen, <br>
+                zabaven, <br>
+                dolgočasen, <br>
+                družaben, <br>
+                sramežljiv
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

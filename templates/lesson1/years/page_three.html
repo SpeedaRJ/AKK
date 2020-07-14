@@ -1,0 +1,86 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
+{% endblock %}
+{% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div class="row text ">
+            <div class="msg jenny">J: Pri letnicah, kjer sta druga in tretja števka 0 imamo dve možnosti. 2007 lahko
+                izgovorimo po
+                vzorocu letnice 1907: twenty oh seven. Lahko pa jo izgovorimo kot eno število: two thousand and
+                seven.
+            </div>
+        </div>
+        <div class="row text inst ">
+            <div class="msg user">Choose the correct pronunciation.</div>
+            <div class="msg user translation">Izberi pravilno izgovorjavo.</div>
+        </div>
+        <div class="row text working">
+            <div class="row" style="text-align: center"><p class="number">2001</p></div>
+            <div class="row qest">
+                <div class="question">
+                    <input type="radio" id="yes2" name="year" onclick="check(event, 'yes')">
+                    <label for="yes2">two thousand and one</label><br>
+                    <input type="radio" id="no" name="year" onclick="check(event, 'yes')">
+                    <label for="no">twenty one</label><br>
+                    <input type="radio" id="yes1" name="year" onclick="check(event, 'yes')">
+                    <label for="yes1">twenty oh one</label><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+    </div>
+</div>
+<script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
+
+            $(window).on("load", function () {
+                recolor();
+            });
+
+
+</script>
+{% endblock %}

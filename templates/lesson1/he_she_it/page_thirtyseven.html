@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Zdaj pa opišiva še Jima! Jim has short grey hair. He has a beard and glasses.
+            </div>
+            <div class="msg jenny slo centre">
+                J: Boš poskusil še ti?  Dopolni Jimov opis s pravilno obliko glagola 
+                <p style="color:#D55225;font-weight: bold; margin:0">TO HAVE</p>.
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg user">
+                Jim <input id="textarea" class=textarea style="width: 10%;"/>,
+                short grey hair. He <input id="textarea" class=textarea style="width: 10%;"/> 
+                a beard and glasses.
+            </div>
+            <div class="msg jenny">
+                J: Odlično. Zdaj pa poskusi rešiti še nekaj dodatnih nalog. 
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="col-lg-3" style="float: left;position: absolute;">
+    <img src="{% static 'svg/lesson1/he_she_it/jim.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
+</div>
+{% endblock %}

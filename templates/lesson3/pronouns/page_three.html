@@ -1,0 +1,81 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div class="conversation">
+            <div class="row inst nospace">
+                <div class="msg user">U: Alright. See you tomorrow.</div>
+                <div class="msg user slo ">Vredu. Se vidiva jutri.</div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">J: Goodbye.</div>
+                <div class="msg jenny translation">Adijo.</div>
+            </div>
+            <div class="row inst nospace">
+                <div class="msg user">U: Goodbye.</div>
+                <div class="msg user slo ">Adijo.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+    </div>
+</div>
+<script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
+
+            $(window).on("load", function () {
+                recolor();
+            });
+
+
+
+
+
+
+</script>
+{% endblock %}

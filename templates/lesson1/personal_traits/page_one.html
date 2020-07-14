@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: I am kind, reliable and funny. But sometimes I'm lazy. What are you like?
+            </div>
+            <div class="msg jenny slo centre">
+                Sem prijazna, zanesljiva in zabavna, vendar občasno lena. Kakšen si ti?
+            </div>
+            <div class="msg user">
+                I am
+                <input id="textarea" class=textarea size="5" onchange="solution(this)"/>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+    <div class="col-lg-4">
+        <div class="msg user trait">
+            smart = pameten
+        </div>
+        <div class="msg user trait">
+            stupid = neumen 
+        </div>
+        <div class="msg user trait">
+            good = dober 
+        </div>
+        <div class="msg user trait">
+            bad = slab
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="msg user trait">
+            funny = zabaven 
+        </div>
+        <div class="msg user trait">
+            hard-working = delaven 
+        </div>
+        <div class="msg user trait">
+            kind = prijazen 
+        </div>
+        
+        <div class="msg user trait">
+            lazy = len 
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="msg user trait">
+            shy = sramežljiv
+        </div>
+        <div class="msg user trait">
+            selfish = sebičen 
+        </div>
+        <div class="msg user trait">
+            boring = dolgočasen
+        </div>
+        <div class="msg user trait">
+            outgoing = družaben
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="msg user trait w-auto">
+            generous = radodaren, velikodušen 
+        </div>
+        <div class="msg user trait w-auto">
+            mean = neprijazen, nesramen 
+        </div>
+    </div>
+</div>
+{% endblock %}

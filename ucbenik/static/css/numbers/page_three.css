@@ -5,14 +5,15 @@
 
 .cats {
     text-align: center;
+    margin-top: 0 !important;
 }
 
 #redo_b {
     border: none;
-    width: 10%;
+    width: 7%;
     float: right;
-    height: 10%;
-    transform: translateY(-40%);
+    height: 7%;
+    transform: translate(-90%, 90%);
     border-radius: 50%;
 }
 

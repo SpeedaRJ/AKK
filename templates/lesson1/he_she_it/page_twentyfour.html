@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_twentyfour.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_twentyfour.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Use the short forms.  
+            </div>
+            <div class="msg jenny slo centre">
+                Pripiši krajšo obliko. 
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+        <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+        <img src="{% static 'svg/common/listen_on.svg' %}" type="svg" class="listen" id="on">
+        <div class="help-table" id="help-table">
+        </div>
+    </div>
+</div>
+{% endblock %}

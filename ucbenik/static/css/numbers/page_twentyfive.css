@@ -141,21 +141,29 @@ input {
 
 .dominos {
     height: 50%;
+    padding-left: 5vh;
 }
 
 .domino {
-    width: 13vh;
-    height: 6vh;
+    width: 17vh;
+    height: 8vh;
     margin-top: 2vh;
-    margin-left: 2vh;
 }
 
 .domino-part {
-    width: 6vh;
-    height: 6vh;
+    width: 8vh;
+    height: 8vh;
     background-color: #3B3A3E;
+    color: #ffffff;
     margin-left: 1px;
     float:left;
+    text-align: center;
+    display: table;
+}
+
+span {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .d-left {
@@ -175,4 +183,8 @@ input {
 .connected {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.drop {
+    position: absolute;
 }

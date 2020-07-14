@@ -1,0 +1,12 @@
+.drop {
+    width: 80% !important;
+    background: #446A85;
+}
+
+.drop-text {
+    color: white;
+}
+
+.draggable-word {
+    border: solid black 1px;
+}

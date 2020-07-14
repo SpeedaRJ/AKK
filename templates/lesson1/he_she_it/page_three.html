@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                Lahko pa govorimo tudi o več osebah. <br>
+                Takrat uporabljamo zaimek <p style="color:#D55225;font-weight: bold; margin:0">THEY (=oni)</p>. <br>
+                Zaimku <p style="color:#D55225;font-weight: bold; margin:0">THEY</p> sledi oblika glagola <br>
+                biti: <p style="color:#D55225;font-weight: bold; margin:0">'ARE'</p>. Torej: They are … Enako velja 
+                za zaimek <p style="color:#D55225;font-weight: bold; margin:0">WE(=mi)</p>. 
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                <p style="color:#D55225;font-weight: bold; margin:0">OPOZORILO</p>: Pazi na zaimek 
+                <p style="color:#D55225;font-weight: bold; margin:0">YOU</p>, 
+                ki ga lahko uporabljamo za ednino 
+                <p style="color:#D55225;font-weight: bold; margin:0">(=TI)</p> ali množino 
+                <p style="color:#D55225;font-weight: bold; margin:0">(=VI)</p>. V obeh 
+                primerih pa zaimku sledi glagol 'biti' 
+                v obliki <p style="color:#D55225;font-weight: bold; margin:0">'ARE'</p>'.  
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+{% endblock %}

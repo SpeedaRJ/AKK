@@ -7,6 +7,8 @@
 <script type="text/javascript" src="{% static 'js/colors/page_three.js' %}"></script>
 {% endblock %}
 {% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
 <div class="row">
     <div class="col-lg-3">
         <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
@@ -19,7 +21,7 @@
         <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
     </div>
     <div class="col-lg-3">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="avatar">
+        <object data="{% static src %}" type="image/svg+xml" id="character"></object>
     </div>
 </div>
 <div class="row container">
@@ -58,17 +60,56 @@
     <div class="col-lg-8">
         <div class="row items" id="drag-origin">
             <span onclick="toOrigin1(this)" class="draggable-word" id="color1" draggable="true"
-                  ondragstart="drag(event)">What</span>
+                  ondragstart="drag(event)"></span>
             <span onclick="toOrigin1(this)" class="draggable-word" id="color2" draggable="true"
-                  ondragstart="drag(event)">Who</span>
+                  ondragstart="drag(event)"></span>
             <span onclick="toOrigin1(this)" class="draggable-word" id="color3" draggable="true"
-                  ondragstart="drag(event)">What</span>
+                  ondragstart="drag(event)"></span>
             <span onclick="toOrigin1(this)" class="draggable-word" id="color4" draggable="true"
-                  ondragstart="drag(event)">How</span>
+                  ondragstart="drag(event)"></span>
             <span onclick="toOrigin1(this)" class="draggable-word" id="color5" draggable="true"
-                  ondragstart="drag(event)">Where</span>
+                  ondragstart="drag(event)"></span>
         </div>
     </div>
     <div class="col-lg-2"></div>
 </div>
+<script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
+
+            $(window).on("load", function () {
+                recolor();
+            });
+
+
+</script>
 {% endblock %}

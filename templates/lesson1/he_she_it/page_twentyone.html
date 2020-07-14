@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<style>
+    .blue {
+        background-color: #6282B7;
+        width: 30% !important;
+        float: right;
+        overflow-x: visible;
+    }
+    .green {
+        background-color: #00a881;
+        width: 30% !important;
+        float: right;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                Okrajšano glagolsko obliko lahko 
+                uporabljamo tudi ob osebnih imenih 
+                ali predmetih, ne le ob osebnih zaimkih. 
+                Poglejva si par primerov.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container fluid">
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+    <div class="col-lg-10" style="text-align: center;">
+        <div class="row inst">
+            <img src="{% static 'svg/lesson1/numbers/SVG/cat_brown.svg' %}" type="svg" style="width:40%">
+            <div class="msg green">
+                Kitty's happy. <br><br>
+                The cat's happy. <br><br>
+                My cat's happy. <br><br>
+                She's happy.
+            </div>
+            <div class="msg blue">
+                Kitty is happy. <br><br>
+                The cat is happy. <br><br>
+                My cat is happy. <br><br>
+                She is happy.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+</div>
+{% endblock %}

@@ -2,7 +2,93 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
 {% endblock %}
 {% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div class="row text ">
+            <div class="msg jenny">J: Let’s learn how to pronounce years.</div>
+            <div class="msg jenny translation">Poglejva, kako se izgovorijo letnice.</div>
+        </div>
+        <div class="row text inst">
+            <div class="msg jenny">J: Pri večini letnic izgovoriš prvi dve števki skupaj kot eno število in zadnji dve
+                števki kot drugo število.
+            </div>
+        </div>
+        <div class="row text inst">
+            <div class="msg jenny">J: 1970 se po tem vzorcu izgovori kot nineteen seventy, kar bi bilo po slovensko
+                devetnajst
+                sedemdeset.
+            </div>
+        </div>
+        <div class="row text inst ">
+            <div class="msg user">Choose the correct pronunciation.</div>
+            <div class="msg user translation">Izberi pravilno izgovorjavo.</div>
+        </div>
+        <div class="row text working">
+            <div class="row" style="text-align: center"><p class="number">1991</p></div>
+            <div class="row qest">
+                <div class="question">
+                    <input type="radio" id="no1" name="year" onclick="check(event, 'yes')">
+                    <label for="no1">one thousand and ninety-one</label><br>
+                    <input type="radio" id="yes" name="year" onclick="check(event, 'yes')">
+                    <label for="yes">nineteen ninety-one</label><br>
+                    <input type="radio" id="no2" name="year" onclick="check(event, 'yes')">
+                    <label for="no2">one nine nine one</label><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+    </div>
+</div>
+<script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
 
+            $(window).on("load", function () {
+                recolor();
+            });
+
+
+</script>
 {% endblock %}

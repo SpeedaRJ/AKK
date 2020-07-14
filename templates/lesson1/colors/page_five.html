@@ -1,70 +1,113 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
-<script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
 {% endblock %}
 {% block content %}
-<div class="row">
-    <div class="col-lg-3">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
-    </div>
-    <div class="col-lg-6">
-        <div class="row inst nospace" id="inst">
-            <div class="msg user">2. What colour are they?</div>
-            <div class="msg user slo ">Kakšne barve so?</div>
+    {{ colors|json_script:"colors" }}
+    {{ parts|json_script:"parts" }}
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst nospace" id="inst">
+                <div class="msg user">2. What colour are they?</div>
+                <div class="msg user slo ">Kakšne barve so?</div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <object data="{% static src %}" type="image/svg+xml" id="character"></object>
         </div>
     </div>
-    <div class="col-lg-3">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="avatar">
-    </div>
-</div>
-<div class="row container">
-    <div class="col-lg-4">
-        <div class="question">
-            The ring is:
-            <input type="radio" id="gold1" name="color1" onclick="check(event, 'gold')">
-            <label for="gold1">Gold</label><br>
-            <input type="radio" id="silver1" name="color1" onclick="check(event, 'gold')">
-            <label for="silver1">Silver</label><br>
-            <input type="radio" id="grey1" name="color1" onclick="check(event, 'gold')">
-            <label for="grey1">Grey</label><br>
-        </div>
-        <div class="image">
-            <img src="{% static 'svg/lesson1/colors/SVG/ring.svg' %}">
-        </div>
-    </div>
-    <div class="col-lg-4" style="flex-direction: column-reverse">
-        <div class="down">
+    <div class="row container">
+        <div class="col-lg-4">
             <div class="question">
-                The rock is:
-                <input type="radio" id="grey2" name="color2" onclick="check(event, 'grey')">
-                <label for="grey2">Grey</label><br>
-                <input type="radio" id="green1" name="color2" onclick="check(event, 'grey')">
-                <label for="green1">Green</label><br>
-                <input type="radio" id="pink1" name="color2" onclick="check(event, 'grey')">
-                <label for="pink1">Pink</label><br>
+                The ring is:
+                <br>
+                <input type="radio" id="gold1" name="color1" onclick="check(event, 'gold')">
+                <label for="gold1">Gold</label><br>
+                <input type="radio" id="silver1" name="color1" onclick="check(event, 'gold')">
+                <label for="silver1">Silver</label><br>
+                <input type="radio" id="grey1" name="color1" onclick="check(event, 'gold')">
+                <label for="grey1">Grey</label><br>
             </div>
             <div class="image">
-                <img src="{% static 'svg/lesson1/colors/SVG/rock.svg' %}">
+                <img src="{% static 'svg/lesson1/colors/SVG/ring.svg' %}">
+            </div>
+        </div>
+        <div class="col-lg-4" style="flex-direction: column-reverse">
+            <div class="down">
+                <div class="question">
+                    The rock is:
+                    <input type="radio" id="grey2" name="color2" onclick="check(event, 'grey')">
+                    <label for="grey2">Grey</label><br>
+                    <input type="radio" id="green1" name="color2" onclick="check(event, 'grey')">
+                    <label for="green1">Green</label><br>
+                    <input type="radio" id="pink1" name="color2" onclick="check(event, 'grey')">
+                    <label for="pink1">Pink</label><br>
+                </div>
+                <div class="image">
+                    <img src="{% static 'svg/lesson1/colors/SVG/rock.svg' %}">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="question">
+                The pig is:
+                <br>
+                <input type="radio" id="purple1" name="color3" onclick="check(event, 'pink')">
+                <label for="purple1">Purple</label><br>
+                <input type="radio" id="pink2" name="color3" onclick="check(event, 'pink')">
+                <label for="pink2">Pink</label><br>
+                <input type="radio" id="blue1" name="color3" onclick="check(event, 'pink')">
+                <label for="blue1">Blue</label><br>
+            </div>
+            <div class="image">
+                <img src="{% static 'svg/lesson1/colors/SVG/pig.svg' %}">
             </div>
         </div>
     </div>
-    <div class="col-lg-4">
-        <div class="question">
-            The pig is:
-            <input type="radio" id="purple1" name="color3" onclick="check(event, 'pink')">
-            <label for="purple1">Purple</label><br>
-            <input type="radio" id="pink2" name="color3" onclick="check(event, 'pink')">
-            <label for="pink2">Pink</label><br>
-            <input type="radio" id="blue1" name="color3" onclick="check(event, 'pink')">
-            <label for="blue1">Blue</label><br>
-        </div>
-        <div class="image">
-            <img src="{% static 'svg/lesson1/colors/SVG/pig.svg' %}">
-        </div>
-    </div>
-</div>
+    <script>
+        function recolor() {
+            let svg = document.getElementById("character").contentDocument.children[0];
+            let colors = JSON.parse(document.getElementById("colors").textContent);
+            let parts = JSON.parse(document.getElementById("parts").textContent);
+            let querySelector = "";
+            [].forEach.call(Object.keys(parts), function (el) {
+                querySelector += parts[el] + ",";
+            });
+            console.log(querySelector);
+            [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                let el_list = el.id;
+                console.log(el_list);
+                if (/Koza/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['body_color']);
+                } else if (/Vrat/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['neck']);
+                } else if (/Lasje/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Brada/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Brki/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Krog/.test(el_list)) {
+                    el.setAttribute("style", "stroke: " + colors['suite_color']);
+                } else if (/Pulover/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['suite_color']);
+                } else if (/Majica/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['suite_color']);
+                }
+            });
+        }
+
+        $(window).on("load", function () {
+            recolor();
+        });
+
+
+    </script>
 {% endblock %}

@@ -20,7 +20,7 @@
             <div class="row text space">
                 {{ colors|json_script:"colors" }}
                 {{ parts|json_script:"parts" }}
-                <div class="msg jenny">J: Pick out your clothes.</div>
+                <div class="msg jenny">J: Pick out your clothes.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <div class="msg jenny translation">Izberi svoja oblačila.</div>
             </div>
             {% if user.sex == "M" %}
@@ -69,10 +69,12 @@
             let svg = document.getElementById("character").contentDocument.children[0];
             let colors = JSON.parse(document.getElementById("colors").textContent);
             let parts = JSON.parse(document.getElementById("parts").textContent);
+            console.log(parts,colors);
             let querySelector = "";
             [].forEach.call(Object.keys(parts), function (el) {
                 querySelector += parts[el] + ",";
             });
+            console.log(querySelector);
             [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
                 let el_list = el.id;
                 if (/Koza/.test(el_list)) {

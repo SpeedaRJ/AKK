@@ -1,0 +1,95 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_forty.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_fortyone.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                What do people have? <br>
+                Form sentences by using the verb TO HAVE. 
+            </div>
+            <div class="msg jenny slo centre">
+                Kaj imajo osebe? <br>
+                Oblikuj povedi in uporabi glagol IMETI.
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/man_circle01.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/woman_circle02.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/man_circle03.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/woman_circle04.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/man_circle05.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/woman_circle01.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/man_circle02.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/woman_circle03.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/man_circle04.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <img src="{% static 'svg/lesson1/he_she_it/woman_circle05.svg' %}" type="svg" >
+        <div class="trait">
+            <input id="textarea" class=textarea style="width: 100%;"/> 
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+{% endblock %}

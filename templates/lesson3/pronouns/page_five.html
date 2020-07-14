@@ -1,0 +1,144 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_five.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson3/pronouns/page_five.js' %}"></script>
+{% endblock %}
+{% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">1. Match.</div>
+            <div class="msg user slo ">Poveži.</div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <object data="{% static src %}" type="image/svg+xml" id="character"></object>
+    </div>
+</div>
+<div class="row container">
+    <div class="row" style="height: 45%">
+        <div class="col-lg-2"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="him01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">he</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="it01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">it</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="us01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">we</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="me01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">I</h6>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div class="row" style="height: 45%">
+        <div class="col-lg-2"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="you01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">you (ed.)</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="you02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">you (mn.)</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="her01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">she</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="them01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">they</h6>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+<div class=" container-fluid">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="row items" id="drag-origin">
+            <span onclick="toOrigin1(this)" class="draggable-word" id="her1" draggable="true"
+                  ondragstart="drag(event)">her</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="him1" draggable="true"
+                  ondragstart="drag(event)">him</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="me1" draggable="true"
+                  ondragstart="drag(event)">me</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="us1" draggable="true"
+                  ondragstart="drag(event)">us</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="them1" draggable="true"
+                  ondragstart="drag(event)">them</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="you1" draggable="true"
+                  ondragstart="drag(event)">you</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="you2" draggable="true"
+                  ondragstart="drag(event)">you</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="it1" draggable="true"
+                  ondragstart="drag(event)">it</span>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<script>
+            function recolor() {
+                let svg = document.getElementById("character").contentDocument.children[0];
+                let colors = JSON.parse(document.getElementById("colors").textContent);
+                let parts = JSON.parse(document.getElementById("parts").textContent);
+                let querySelector = "";
+                [].forEach.call(Object.keys(parts), function (el) {
+                    querySelector += parts[el] + ",";
+                });
+                console.log(querySelector);
+                [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                    let el_list = el.id;
+                    console.log(el_list);
+                    if (/Koza/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['body_color']);
+                    } else if (/Vrat/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['neck']);
+                    } else if (/Lasje/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brada/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Brki/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    } else if (/Krog/.test(el_list)) {
+                        el.setAttribute("style", "stroke: " + colors['suite_color']);
+                    } else if (/Pulover/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    } else if (/Majica/.test(el_list)) {
+                        el.setAttribute("style", "fill: " + colors['suite_color']);
+                    }
+                });
+            }
+
+            $(window).on("load", function () {
+                recolor();
+            });
+
+
+
+
+
+</script>
+{% endblock %}

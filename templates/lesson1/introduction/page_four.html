@@ -6,7 +6,7 @@
 {% endblock %}
 {% block content %}
     <div class="col-lg-4" id="jenny-full">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" height="90%">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" style="height:90%">
     </div>
     <div class="col-lg-8">
         <div class="container-fluid messages">
@@ -16,12 +16,12 @@
                     /
                     <button class="btn" onclick="show_country(event)">No</button>
                     .
-                </div>
+                </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <div class="msg jenny translation">Ali še tam živiš? Ja/Ne.</div>
             </div>
             <div style="display: none" id="home_country">
                 <div class="row">
-                    <div class="msg jenny">J: Where do you live now?</div>
+                    <div class="msg jenny">J: Where do you live now?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                     <div class="msg jenny translation">Kje živiš sedaj?</div>
                 </div>
                 <div class="row">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="row" style="display: none" id="welcome">
-                <div class="msg jenny">J: Great! Welcome to English: Step by Step!</div>
+                <div class="msg jenny">J: Great! Welcome to English: Step by Step!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Super! Dobrodošel v Angleščina: korak za korakom.</div>
                 {% else %}

@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_three.css' %}"/>
+<script type="text/javascript" src="{% static 'js/personal_traits/page_three.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                Do you know how to spell (=črkovati) 
+                the adjectives? Try doing the
+                following exercises. 
+            </div>
+            <div class="msg jenny slo centre">
+                Si si že zapomnil zapis pridevnikov? 
+                Poskusi rešiti naslednje naloge.    
+            </div>
+        </div>
+        <div class="row inst" style="margin-top: 2vh;">
+            <div class="msg jenny">
+                What is the meaning of the adjectives?
+                Translate them into English or Slovene.
+            </div>
+            <div class="msg jenny slo centre">
+                Pripiši jim pravi slovenski ali angleški prevod. 
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container">
+    <div class="col-lg-3 full">
+    </div>
+    <div class="col-lg-6 full" id="fillin">
+    </div>
+    <div class="col-lg-3 full">
+    </div>
+</div>
+{% endblock %}

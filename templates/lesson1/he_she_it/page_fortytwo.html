@@ -1,0 +1,55 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_fortytwo.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg user">
+                Complete the text with short forms.  
+            </div>
+            <div class="msg jenny slo centre">
+                Dopolni besedilo z okrajšanimi oblikami.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container fluid">
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+    <div class="col-lg-10" style="text-align: center;">
+        <div class="row">
+            <img src="{% static 'svg/lesson1/he_she_it/three_people.svg' %}" type="svg" style="width:50%">
+            <div class="row inst"style="width: 50%;margin-left:0;float:right;">
+                <div class="msg jenny slo">
+                    Hi! My name is Greg. I 
+                    <input class=textarea onchange="solution(this,0)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    tall and fat. I <input class=textarea onchange="solution(this,1)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    glasses. I <input class=textarea onchange="solution(this,2)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                    short black hair. I <input class=textarea onchange="solution(this,3)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    happy. This is my friend Sally. She <input class=textarea onchange="solution(this,4)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                    short. She <input class=textarea onchange="solution(this,5)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    long curly hair. She <input class=textarea onchange="solution(this,6)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    glasses. This is her brother Sam. He <input class=textarea onchange="solution(this,7)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    tall. He <input class=textarea onchange="solution(this,8)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    a mustache. Sally and Sam <input class=textarea onchange="solution(this,9)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    slender. They <input class=textarea onchange="solution(this,10)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    blond hair. We are friends. We <input class=textarea onchange="solution(this,11)" style="border-color:#6282B7;background-color: transparent;width:30%"/> happy. 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_eighteen.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny" id="instructions">
+                Si vedel, da lahko glagole tudi zanikamo? 
+                To storimo tako, da jim dodamo nikalno 
+                besedo <p style="color:#D55225;font-weight: bold; margin:0">NOT</p>. Poznamo pa tudi krajšo 
+                obliko. Pri tem glagol <p style="color:#D55225;font-weight: bold; margin:0">BITI</p> in besedo 
+                <p style="color:#D55225;font-weight: bold; margin:0">NOT</p> združimo. Kratke in dolge oblike 
+                si poglejva v tabeli. 
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="col-lg-4 inst" style="padding: 0;">
+    <div class="msg jenny" style="width:100%;padding:2vh;margin-left: 1.5vw;">
+        Dolge oblike niso precej preproste. Celotni trdilni strukturi, ki jo že poznaš, dodamo 
+        <p style="color:#D55225;font-weight: bold; margin:0">NOT</p>. 
+        Pri kratkih oblikah pa se zadeve malce spremenijo. 
+        Enako ostane le pri prvi osebi, kjer tudi okrajšani obliki zgolj dodamo nikalnico 
+        <p style="color:#D55225;font-weight: bold; margin:0">NOT</p>, torej: 
+        <p style="color:#D55225;font-weight: bold; margin:0">I'M NOT. ARE NOT</p> skrajšamo v 
+        <p style="color:#D55225;font-weight: bold; margin:0">AREN'T</p> in 
+        <p style="color:#D55225;font-weight: bold; margin:0">IS NOT</p> skrajšamo v 
+        <p style="color:#D55225;font-weight: bold; margin:0">ISN'T</p>. 
+        Besedi torej povežemo v eno besedo, črko o v 
+        <p style="color:#D55225;font-weight: bold; margin:0">NOT</p>
+        pa zamenja apostrof. Tokrat se apostrof ne veže na osebo.
+    </div>
+</div>
+<div class="col-lg-8">
+    <div class="msg jenny header">
+        Ednina (Singular)
+    </div>
+    <div class="help-table" id="help-table">
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>1.	oseba</button>
+            <button class="col-lg-6 tip" disabled>I am <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>I'm <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>Jaz nisem</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>2.	oseba</button>
+            <button class="col-lg-6 tip" disabled>You are <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>You're <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>Ti nisi</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip c1" disabled>3.	oseba</button>
+            <button class="col-lg-6 tip" disabled>He is <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>He's <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>On je</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip c1" disabled></button>
+            <button class="col-lg-6 tip" disabled>She is <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>She's <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>Ona je</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip c1" disabled></button>
+            <button class="col-lg-6 tip" disabled>It is <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>It's <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>Ono je</button>
+        </div>
+    </div>
+
+    <div class="msg jenny header space">
+        Množina (Singular)
+    </div>
+    <div class="help-table" id="help-table">
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>1.	oseba</button>
+            <button class="col-lg-6 tip" disabled>We are <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>We're <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>Mi nismo</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>2.	oseba</button>
+            <button class="col-lg-6 tip" disabled>You are <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>You're <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip">Vi niste</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip" disabled>3.	oseba</button>
+            <button class="col-lg-6 tip" disabled>They are <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>They're <p style="color:#FFCF01; margin:0">not</p></button>
+            <button class="col-lg-6 tip" disabled>Oni niso</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_two.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
+    <script href="{% static 'js/enable_button.js' %}"></script>
 {% endblock %}
 {% block content %}
     {{ colors|json_script:"colors" }}
@@ -48,11 +49,11 @@
                 </table>
             </div>
         </div>
-       <div class="col-lg-3">
+        <div class="col-lg-3">
             <object data="{% static src %}" type="image/svg+xml" id="character"></object>
         </div>
     </div>
-     <script>
+    <script>
         function recolor() {
             let svg = document.getElementById("character").contentDocument.children[0];
             let colors = JSON.parse(document.getElementById("colors").textContent);
@@ -75,11 +76,11 @@
                     el.setAttribute("style", "fill: " + colors['hair_color']);
                 } else if (/Brki/.test(el_list)) {
                     el.setAttribute("style", "fill: " + colors['hair_color']);
-                } else if (/Krog/.test(el_list)){
+                } else if (/Krog/.test(el_list)) {
                     el.setAttribute("style", "stroke: " + colors['suite_color']);
-                } else if (/Pulover/.test(el_list)){
+                } else if (/Pulover/.test(el_list)) {
                     el.setAttribute("style", "fill: " + colors['suite_color']);
-                } else if(/Majica/.test(el_list)){
+                } else if (/Majica/.test(el_list)) {
                     el.setAttribute("style", "fill: " + colors['suite_color']);
                 }
             });
@@ -87,6 +88,7 @@
 
         $(window).on("load", function () {
             recolor();
-        })
+            document.getElementById("next").removeAttribute("disabled")
+        });
     </script>
 {% endblock %}

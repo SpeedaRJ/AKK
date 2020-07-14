@@ -1,0 +1,12 @@
+body {
+    overflow-y: hidden;
+}
+
+#redo_b {
+    height: 50%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+}

@@ -1,123 +1,133 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block main_imports %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/menus.css' %}"/>
-    <script type="text/javascript" src="{% static 'js/menus.js' %}"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/menus.css' %}"/>
+<script type="text/javascript" src="{% static 'js/menus.js' %}"></script>
 {% endblock %}
 {% block main %}
-    <div class="container-fluid">
-        <div class="col-lg-2" id="Menu">
-            <button class="titleB">Menu</button>
-            <ul>
-                <li class="main">
-                    <button>Lesson 1</button>
-                    <ul class="submenu">
-                        {% for item in lesson_one %}
-                            <li>
-                                <button class="SB">{{ item }}</button>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                <li class="main">
-                    <button>Lesson 2</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <li class="main">
-                    <button>Lesson 3</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <li class="main">
-                    <button>Lesson 4</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <li class="main">
-                    <button>Lesson 5</button>
-                    <ul class="submenu">
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                        <li>
-                            <button class="SB">Placeholder</button>
-                        </li>
-                    </ul>
-                </li>
-                <button class="dictB">Dictionary</button>
-                <button class="SB" onclick="window.location.href='/logout'">Log out</button>
-            </ul>
-        </div>
-
-        <div class="col-lg-7">
-            <div class="row overlay">
-                <div class="container-fluid">
-                    <div class="col-lg-6">
-                        <button class="lesson shadow"></button>
-                        <button class="lesson">{{ lesson }}</button>
-                    </div>
-                    <div class="col-lg-6">
-                        <button class="chapter shadow"></button>
-                        <button class="chapter">{{ title }}</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row content">
-                {% block content %} {% endblock %}
-            </div>
-
-            <div class="row navigation">
-                <button class="next" onclick="window.location.href='{{ next }}'" type="button" id="next" disabled>Next</button>
-                <button class="back" onclick="window.location.href='{{ back }}'" type="button" id="back">Back</button>
-            </div>
-        </div>
-
-        <div class="col-lg-3" id="Dicts">
-            <button>Irregular verbs</button>
-            <button>Users dictionary</button>
-            <button>Theory</button>
+<div class="container-fluid">
+    <div class="col-lg-2" id="Menu">
+        <button class="titleB" disabled>Menu</button>
+        <ul>
+            <li class="main">
+                <button class="mainB">Lesson 1</button>
+                <ul class="submenu">
+                    {% for key,item in lesson_one.items %}
+                    <li>
+                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li class="main">
+                <button class="mainB">Lesson 2</button>
+                <ul class="submenu">
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                </ul>
+            </li>
+            <li class="main">
+                <button class="mainB">Lesson 3</button>
+                <ul class="submenu">
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                </ul>
+            </li>
+            <li class="main">
+                <button class="mainB">Lesson 4</button>
+                <ul class="submenu">
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                </ul>
+            </li>
+            <li class="main">
+                <button class="mainB">Lesson 5</button>
+                <ul class="submenu">
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                    <li>
+                        <button class="SB">Placeholder</button>
+                    </li>
+                </ul>
+            </li>
+            <button class="dictB" class="mainB">Dictionary</button>
+            <button class="SB mainB" onclick="window.location.href='/logout'">Log out</button>
+        </ul>
+        <div class="logos">
+            <img src="{% static 'svg/common/logo/MIZS_logo.jpg' %}" class="logo">
+            <img src="{% static 'svg/common/logo/EKP_logo.jpg' %}" class="logo">
+            <img src="{% static 'svg/common/logo/SPRI_logo.jpg' %}" class="logo">
+            <img src="{% static 'svg/common/logo/UL_logo.svg' %}" class="logo1">
+            <img src="{% static 'svg/common/logo/FF_logo.svg' %}" class="logo1">
+            <img src="{% static 'svg/common/logo/FRI_logo.svg' %}" class="logo1">
+            <img src="{% static 'svg/common/logo/ALUO_logo.svg' %}" class="logo">
         </div>
     </div>
+
+    <div class="col-lg-7">
+        <div class="row overlay">
+            <div class="container-fluid">
+                <div class="col-lg-6">
+                    <button class="lesson shadow" disabled></button>
+                    <button class="lesson" disabled>{{ lesson }}</button>
+                </div>
+                <div class="col-lg-6">
+                    <button class="chapter shadow" disabled></button>
+                    <button class="chapter" disabled>{{ title }}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row content">
+            {% block content %} {% endblock %}
+        </div>
+
+        <div class="row navigation">
+            <button class="next" onclick="window.location.href='{{ next }}'" type="button" id="next" disabled>Next
+            </button>
+            <button class="back" onclick="window.location.href='{{ back }}'" type="button" id="back">Back</button>
+        </div>
+    </div>
+
+    <div class="col-lg-3" id="Dicts">
+        <button class="mainB">Irregular verbs</button>
+        <button class="mainB">Users dictionary</button>
+        <button class="mainB">Theory</button>
+    </div>
+</div>
 {% endblock %}

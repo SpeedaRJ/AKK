@@ -1,0 +1,118 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twenty.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Čas je za povzetek glagola biti. Pa poglejva še enkrat, kako se tvorijo trdilne, nikalne in vprašalne povedi ter odgovori.
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                TRDILNA POVED: 
+            </div>
+            <div class="msg user">
+                She is cute.
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg jenny">
+                        NIKALNA POVED: 
+                    </div>
+                    <div class="msg user" style="background-color:#49A579;" >
+                        She isn't cute.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg user">
+                        Zanikamo glagol biti.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg jenny">
+                        VPRAŠANJE:
+                    </div>
+                    <div class="msg user" style="background-color:#49A579;" >
+                        Is she cute?
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg user">
+                        Glagol postavimo na prvo mesto, sledi oseba, nato vse ostalo.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg jenny">
+                        KRATEK ODGOVOR:
+                    </div>
+                    <div class="msg user" style="background-color:#49A579;" >
+                        Yes, she is. / No, she isn't.  
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg user">
+                        Uporabimo zgolj osebo in glagol.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inst" style="position: absolute;">
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg jenny">
+                        DOLG ODGOVOR: 
+                    </div>
+                    <div class="msg user" style="background-color:#49A579;" >
+                        Yes, she is cute. / No, she isn't cute.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg user">
+                        Poleg osebe in glagola zapišemo še preostanek vprašanja.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container fluid">
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+    <div class="col-lg-10" style="text-align: center;">
+        <div class="inst" id="aps">
+        </div>
+    </div>
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+</div>
+{% endblock %}

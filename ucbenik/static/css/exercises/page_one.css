@@ -13,7 +13,7 @@ img {
     width: 80%;
 }
 #character{
-    width: 80%;
+    width: 90%;
 }
 #avatar {
     width: 90%
@@ -29,7 +29,7 @@ img {
 }
 
 .row > .msg {
-    width: 100%;
+    width: 90%;
     padding-left: 10%
 }
 

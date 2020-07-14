@@ -1,0 +1,132 @@
+.col-lg-3 {
+    width: 100%;
+    background-color: #ffffec;
+    overflow: hidden;
+}
+
+img {
+    height: auto;
+}
+
+#jenny {
+    width: 80%;
+}
+#character{
+    width: 80%;
+}
+#avatar {
+    width: 90%
+}
+
+.centre {
+    margin-left: 0;
+}
+
+.row {
+    height: 30%;
+}
+
+.text {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.row > .msg {
+    width: 100%;
+    padding-left: 10%
+}
+
+.translation {
+    margin: 0;
+}
+
+.inst {
+    padding-top: 6%;
+}
+
+.inst > .slo {
+    background-color: #e4e3e8;
+}
+
+.items {
+  min-height: 10%;
+  margin-left: 2% !important;
+}
+
+.container {
+    width: 100% !important;
+    margin-top: 2.5% !important;
+}
+
+.column  {
+  min-height: 35vh;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.listen {
+    width:3vh;
+    float: right;
+}
+
+.trait {
+    float: left;
+    min-width: 30%;
+    width: 100%;
+    margin-top: 3vh;
+    height: 4vh;
+    text-align: center;
+    padding: 0.75vh;
+}
+
+.w-auto {
+    width: auto;
+    margin-right: 5%;
+}
+
+.instruction {
+    width: 80% !important;
+}
+
+.full {
+    height: 50%;
+}
+
+.help-table {
+    width: 90%;
+    float: left;
+    margin-left: 5%;
+}  
+
+
+.tip {
+    width: 32% !important;
+    margin-right: 0.1vw;
+    margin-bottom: 0.1vh;
+    height: 4vh;
+    font-size: 2vh;
+}
+
+.tip:hover {
+    background-color: #6699CC !important;
+    color: #0D313D;
+}
+.c1 {
+    height: 4.1vh;
+    margin-bottom: 0;
+}
+
+.header {
+    margin-left: 5%;
+    border-radius: 0 25px 25px 0;
+}
+
+.space {
+    margin-top: 2vh;
+}

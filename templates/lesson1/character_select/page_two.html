@@ -17,7 +17,7 @@
         <div class="col-lg-6">
             <div class="row text space">
                 {% if request.session.height == "tall" %}
-                    <div class="msg jenny">J: You are tall!</div>
+                    <div class="msg jenny">J: You are tall!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                     {% if user.sex == "M" %}
                         <div class="msg jenny translation">Visok si!</div>
                     {% else %}
@@ -26,20 +26,20 @@
                 {% endif %}
             </div>
             <div class="row text space">
-                <div class="msg jenny">J: I am quite fat now but I was slim when I was young</div>
+                <div class="msg jenny">J: I am quite plump now but I was slender when I was young</div>
                 <div class="msg jenny translation">Zdaj sem precej debela, vendar sem bila suha, ko sem bila mlada</div>
             </div>
             <div class="row text space">
-                <div class="msg jenny">J: What about you? Are you fat or slim?</div>
+                <div class="msg jenny">J: What about you? Are you fat or slim?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 {% if user.sex == 'M' %}
-                    <div class="msg jenny translation">Kja pa ti? Si debel ali suh?</div>
+                    <div class="msg jenny translation">Kja pa ti? Si močnejše postave ali vitek?</div>
                 {% else %}
                     <div class="msg jenny translation">Kaj pa ti? Si debela ali suha?</div>
                 {% endif %}
             </div>
             <div class="row text space">
                 <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
-                <div class="msg user">I am <input type="text" id="name_input" onfocusout="update_session({'body_type': this.value})"></div>
+                <div class="msg user">I am <input type="text" id="name_input"></div>
                 {% if user.sex == 'M' %}
                     <div class="msg user slo">Jaz sem <p class="slo_name">_____</p></div>
                 {% else %}

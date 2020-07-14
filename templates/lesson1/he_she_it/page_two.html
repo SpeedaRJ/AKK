@@ -1,0 +1,45 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                Ko govorimo o nekom v tretji osebi, <br>
+                uporabljamo zaimka <p style="color:#D55225;font-weight: bold; margin:0">HE</p> in 
+                <p style="color:#D55225;font-weight: bold; margin:0">SHE</p> – <br>
+                odvisno od spola osebe. <br>
+                <p style="color:#D55225;font-weight: bold; margin:0">SHE</p> uporabljamo, ko govorimo o osebi
+                ženskega spola. <br>
+                <p style="color:#D55225;font-weight: bold; margin:0">HE</p> uporabljamo, 
+                ko govorimo o osebi moškega spola. <br>
+                <p style="color:#D55225;font-weight: bold; margin:0">IT</p> pa uporabljamo, ko govorimo o živalih,
+                predmetih.<br><br>
+
+                <p style="color:#D55225;font-weight: bold; margin:0">IZJEMA</p>: Če govorimo o hišnih ljubljenčkih,
+                le redko uporabimo <p style="color:#D55225;font-weight: bold; margin:0">IT</p>, 
+                saj poznamo spol in ime živali. 
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                Po he, she, it sledi oblika glagola biti <p style="color:#D55225;font-weight: bold; margin:0">'IS'</p>. <br>
+                Torej: He/she/it is …
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+
+<img src="{% static 'svg/lesson1/he_she_it/jim.svg' %}" type="svg" style="height:40vh;margin-top: 5h;">
+{% endblock %}

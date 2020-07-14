@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Can you describe your personality? <br>Let's check! What are you like? 
+            </div>
+            <div class="msg jenny slo centre">
+                Ali že znaš povedati svoje karakterne lastnosti? Preveriva! Kakšen si?
+            </div>
+            <div class="msg user" style="margin-top: 2vh;">
+                I am
+                <input id="textarea" class=textarea size="5" onchange="solution(this)"/>
+                ,
+                <input id="textarea" class=textarea size="5" onchange="solution(this)"/>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Great! Let's try one more thing. How would you ask me about my personality? 
+            </div>
+            <div class="msg jenny slo centre">
+                Odlično! Zdaj pa preizkusiva še eno stvar … Kako bi po karakternih značilnostih vprašal mene?
+            </div>
+            <div class="msg user" style="margin-top: 2vh;">
+                <input id="textarea" class=textarea size="15" onchange="solution(this)" style="width:90%"/>
+            </div>
+        </div>
+
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Awesome! You are doing great and I have a surprise for you! Meet my friend Jim.
+            </div>
+            <div class="msg jenny slo centre">
+                Super! Odlično ti že gre. Zato imam zate presenečenje! Spoznaj mojega prijatelja Jima.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+{% endblock %}

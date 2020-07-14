@@ -1,0 +1,80 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twenty.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst">
+            <div class="msg jenny">
+                J: Na vprašanja lahko odgovorimo na dolg ali kratek način. Poglejva si oba.
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                VPRAŠANJE
+            </div>
+            <div class="msg user">
+                Is she tall?
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg jenny">
+                        DOLG ODGOVOR:
+                    </div>
+                    <div class="msg user" style="background-color:#49A579;" >
+                        Yes, she's tall.
+                    </div>
+                    <div class="msg user" style="background-color:#49A579;">
+                        No, she is not tall.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="padding: 0;">
+                <div class="row inst">
+                    <div class="msg jenny">
+                        KRATEK ODGOVOR:
+                    </div>
+                    <div class="msg user" style="background-color:#49A579;">
+                        Yes, she is.
+                    </div>
+                    <div class="msg user" style="background-color:#49A579;">
+                        No, she isn't.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inst">
+            <div class="msg jenny">
+                Kot vidiva, je kratek odgovor sestavljen iz besede 
+                <p style="color:#D55225;font-weight: bold; margin:0">YES</p> ali 
+                <p style="color:#D55225;font-weight: bold; margin:0">NO</p>, 
+                čemur sledi vejica, nato pa zapišemo še osebo in glagol. 
+                Pri dolgem odgovoru pa dodamo še vse ostalo, kar je zapisano v vprašanju. 
+                Preizkusi svoje znanje tako, da odgovoriš na vprašanja v naslednji nalogi.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!--AVATAR-->
+    </div>
+</div>
+<div class="container fluid">
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+    <div class="col-lg-10" style="text-align: center;">
+        <div class="inst" id="aps">
+        </div>
+    </div>
+    <div class="col-lg-1" style="text-align: center;">
+    </div>
+</div>
+{% endblock %}
