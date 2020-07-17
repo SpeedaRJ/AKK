@@ -17,7 +17,7 @@
         <div class="col-lg-6">
             <div class="row text space">
                 {% if request.session.height == "tall" %}
-                    <div class="msg jenny">J: You are tall!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
+                    <div class="msg jenny">J: You are tall!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                     {% if user.sex == "M" %}
                         <div class="msg jenny translation">Visok si!</div>
                     {% else %}
@@ -30,7 +30,7 @@
                 <div class="msg jenny translation">Zdaj sem precej debela, vendar sem bila suha, ko sem bila mlada</div>
             </div>
             <div class="row text space">
-                <div class="msg jenny">J: What about you? Are you fat or slim?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
+                <div class="msg jenny">J: What about you? Are you fat or slim?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Kja pa ti? Si močnejše postave ali vitek?</div>
                 {% else %}

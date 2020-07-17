@@ -16,7 +16,7 @@
         </div>
         <div class="col-lg-6">
             <div class="row text nospace">
-                <div class="msg jenny">J: Let's create your avatar.<br>Please choose your skin colour.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
+                <div class="msg jenny">J: Let's create your avatar.<br>Please choose your skin colour.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <div class="msg jenny translation">Greva oblikovati tvojega avatarja.<br>Prosim izberi barvo kože.</div>
             </div>
             <div class="row text space">
@@ -31,11 +31,11 @@
                 </div>
             </div>
             <div class="row text space">
-                <div class="msg jenny">J: Hey {{ user.first_name }}, tell me more about yourself.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
+                <div class="msg jenny">J: Hey {{ user.first_name }}, tell me more about yourself.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <div class="msg jenny translation">Hey {{ user.first_name }} povej mi kaj več o sebi.</div>
             </div>
             <div class="row text space">
-                <div class="msg jenny">J: I am 167cm tall. How tall are you?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
+                <div class="msg jenny">J: I am 167cm tall. How tall are you?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Jaz sem visoka 167cm. Kako visok si ti?</div>
                 {% else %}

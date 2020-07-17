@@ -40,10 +40,9 @@
 
 #redo_b {
     border: none;
-    width: 10%;
-    float: right;
-    height: 10%;
-    transform: translateY(-40%);
+    width: 8%;
+    height: 8%;
+    transform: translate(-90%, 90%);
     border-radius: 50%;
 }
 
