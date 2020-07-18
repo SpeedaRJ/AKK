@@ -74,7 +74,18 @@ i{
     min-width: 400px;
     border-radius: 20%;
     background: #58309d;
-    margin: 10% auto auto;
+    margin: 10vh auto auto;
+}
+
+.tip {
+    text-align: center;
+    position: absolute;
+    width: 20vw;
+    border-radius: 20%;
+    padding: 2%;
+    background: #58309d;
+    right: 5vw;
+    top: 10vh;
 }
 
 .form {
