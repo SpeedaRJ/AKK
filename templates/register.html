@@ -15,42 +15,78 @@
 <script>
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
-        });
+            var password = document.getElementById("password")
+            , confirm_password = document.getElementById("confirm_password");
 
+            function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+        });
 </script>
+
+{% if sex  == 'M' %}
+<script>
+    $(function () {
+        selectGender({'target' : {'id' : 'mars'}})
+    });
+</script>
+{% elif sex == 'F' %}
+<script>
+    $(function () {
+        selectGender({'target' : {'id' : 'venus'}})
+    });
+</script>
+{% endif %}
+
 <div class="login">
     <div class="shade" style="position: relative">
         <form method="post" class="form">
             {% csrf_token %}
-            <div class="inputElemenet">
-                <h3>Name</h3>
-                <h5>Ime</h5>
-                <input id="FullName" type="text" autofocus class=" form-control inputFieldColor" name="Name" required>
+            <div class="row">
+                <div class="inputElemenet">
+                    <h3>Name</h3>
+                    <h5>Ime</h5>
+                    <input id="FullName" type="text" autofocus class=" form-control inputFieldColor" name="Name" value="{{ name }}" required>
+                </div>
+                <div class="inputElemenet right">
+                    <h3>Age</h3>
+                    <h5>Starost</h5>
+                    <input id="Age" type="text" pattern="^[2-9]+[0-9]+$" autofocus class=" form-control inputFieldColor"
+                        name="Age" value="{{ age }}" required>
+                </div>
             </div>
-            <div class="inputElemenet">
-                <h3>Age</h3>
-                <h5>Starost</h5>
-                <input id="Age" type="text" pattern="^[2-9]+[0-9]+$" autofocus class=" form-control inputFieldColor"
-                       name="Age" required>
-            </div>
-            <div class="inputElemenet">
+            <div class="inputElemenet full">
                 <h3>E-mail</h3>
                 <h5>Elektronski naslov</h5>
                 <input id="Email" type="text" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
                        class="form-control inputFieldColor" name="Email" required>
             </div>
-            <div class="inputElemenet">
-                <h3>Password</h3>
-                <h5>Geslo</h5>
-                <input id="Password" type="text" class="form-control inputFieldColor" name="Password" required>
+            <div class="row">
+                <div class="inputElemenet">
+                    <h3>Password</h3>
+                    <h5>Geslo</h5>
+                    <input id="password" type="text" class="form-control inputFieldColor" name="Password" required>
+                </div>
+                <div class="inputElemenet right">
+                    <h3>Confirm</h3>
+                    <h5>Potrdi Geslo</h5>
+                    <input id="confirm_password" type="text" class="form-control inputFieldColor" name="Password" required>
+                </div>
             </div>
-            <div class="inputElemenet" style="display: flex">
+            <div class="inputElemenet full" style="display: flex">
                 <div style="justify-content: left">
                     <h3>Choose your gender</h3>
                     <h5>Izberi spol</h5>
                 </div>
                 <div style="justify-content: start" class="gender">
-                    <label class="container ">
+                    <label class="container">
                         <span class="checkmark"><i class="fa fa-mars" id="mars" data-toggle="tooltip"
                                                    data-placement="bottom" title="Man (Moški)"
                                                    style="font-size: 1.5em; font-weight: bolder; color: white;"></i></span>
@@ -61,12 +97,11 @@
                                                             style="font-size: 1.5em; font-weight: bolder;  color: white;"></i></span>
                     </label>
                 </div>
-                <input type="hidden" name="Sex" id="Sex">
+                <input type="hidden" name="Sex" id="Sex" value=" {{sex}} ">
             </div>
+
             <div class="inputElemenet">
-                <h5>Če že imate račun se
-                    <a href="login">prijavite tukaj</a>
-                </h5>
+                <p style="color:#fbad18;text-align:center;margin-bottom:0;">{{ email_in_use }}</p>
             </div>
             <button type="submit" id="RegisterButton" disabled class="btn submitButton">Register</button>
         </form>

@@ -104,7 +104,7 @@ i{
 
 .inputElemenet {
     margin-left: -20%;
-    padding: 3.5%;
+    padding: 1.5%;
 }
 
 .inputElemenet > h5 {
@@ -143,4 +143,8 @@ footer img{
     display: inline-block;
     font-size: 0;
     line-height: 0
+}
+
+#SubmitButton {
+    z-index: 2;
 }

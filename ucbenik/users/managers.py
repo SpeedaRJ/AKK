@@ -1,6 +1,6 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.utils.translation import ugettext_lazy as _
-
+from django.core.mail import send_mail
 
 class CustomUserManager(BaseUserManager):
     """
@@ -21,6 +21,16 @@ class CustomUserManager(BaseUserManager):
         user = self.model(username=email,email=email, first_name=firstname, age=age, sex=sex)
         user.set_password(password)
         user.save()
+
+        # TODO: send succesful registration email
+        #send_mail(
+        #    'Dobrodošli v AKK',
+        #    f'Pozdravljeni,\nuspešno ste ustvarili vaš račun za akk.si.\nemail:{email}\ngeslo:{password}',
+        #    'MAIL@akk.si',
+        #    [email],
+        #    fail_silently=False,
+        #)
+
         return user
 
     def create_superuser(self, email, password):

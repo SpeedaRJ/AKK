@@ -18,11 +18,17 @@ class User(AbstractUser):
         (FEMALE, 'Female'))
     sex = models.CharField(max_length=1, choices=SEX)
     age = models.IntegerField(default=99)
-    objects = CustomUserManager()
     is_admin = models.BooleanField(default=False)
+    last_page = models.CharField(max_length=30, default='')
+
+    objects = CustomUserManager()
 
     def __str__(self):
         return self.first_name + " " + self.email + " " + self.sex + " " + str(self.age)
+
+    def set_last_page(self, last_page):
+        self.last_page = last_page
+        self.save()
 
 
 class CharacterMetaData(models.Model):

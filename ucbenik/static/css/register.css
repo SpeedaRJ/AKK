@@ -35,10 +35,14 @@ input {
     font-family: "RalewayEB" !important;
     border: none;
     width: 100%;
-    height: 10% !important;
+    height: 1.75rem;
 }
 
-input#Password {
+input#password {
+    -webkit-text-security: disc;
+}
+
+input#confirm_password {
     -webkit-text-security: disc;
 }
 
@@ -72,7 +76,7 @@ i{
     text-align: left;
     margin: auto;
     width: 23%;
-    min-width: 400px;
+    min-width: 33vw;
     border-radius: 20%;
     background: #58309d;
     margin-top: 3%;
@@ -95,6 +99,14 @@ i{
 .inputElemenet {
     margin-left: -20%;
     padding: 1.5%;
+}
+
+.full {
+    margin-left: -25%;
+}
+
+.right {
+    margin-left: 0;
 }
 
 .inputElemenet > h5 {
@@ -171,4 +183,8 @@ footer img{
     display: inline-block;
     font-size: 0;
     line-height: 0
+}
+
+#RegisterButton {
+    z-index: 2;
 }

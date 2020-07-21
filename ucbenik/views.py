@@ -9,7 +9,11 @@ lesson_one = {"Introduction": "/lesson_one/introduction/page_one", "Exercises": 
               "Personal traits": "/lesson_one/personal_traits/page_one", "He she it": "/lesson_one/he_she_it/page_one"}
 
 
-# Create your views here.
+def index(request):
+    if 'user' in request.session:
+        return redirect('lesson_one/title')
+    return redirect('login')
+
 def home(request):
     if request.method == 'GET':
         return render(request, 'home.html')
@@ -22,13 +26,18 @@ def register(request):
     elif request.method == 'POST':
         email = request.POST['Email']
         password = request.POST['Password']
-        First_name = request.POST['Name']
-        Age = request.POST['Age']
-        Sex = request.POST['Sex']
+        first_name = request.POST['Name']
+        age = request.POST['Age']
+        sex = request.POST['Sex']
         try:
-            user = User.objects.create_user(email, password, First_name, Age, Sex)
+            user = User.objects.create_user(email, password, first_name, age, sex)
         except:
-            return HttpResponse("409: Email already exists.")
+            context = {'email_in_use': 'Račun s tem email-om že obstaja.',
+                       'name' : first_name,
+                       'age' : age,
+                       'sex' : sex
+                       }
+            return render(request, 'register.html' , context)
         if user is not None:
             request.session.flush()
             request.session['user'] = UserSerializer(user).data
@@ -45,14 +54,19 @@ def login_page(request):
         if user is not None:
             request.session.flush()
             request.session['user'] = UserSerializer(user).data
-            return redirect("/lesson_one/title")
+            if user.last_page:
+                return redirect(user.last_page)
+            else: 
+                return redirect('/')
         elif user is None:
             context = {'no_user': 'Napačno uporabniško ime ali geslo',
                        'username' : username }
-            return render(request, "login.html", context) #HttpResponse("404: User not found")
+            return render(request, "login.html", context)
 
 def logout(request):
     if request.method == "GET":
+        user = User.objects.get(email=request.session['user']['email'])
+        user.set_last_page(request.META['QUERY_STRING'])
         request.session.flush()
         return redirect("/")
 

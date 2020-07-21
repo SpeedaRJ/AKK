@@ -19,7 +19,7 @@ from ucbenik import views
 
 urlpatterns = [
     #path('', views.home, name="home"),
-    path('', views.login_page, name="home"),
+    path('', views.index, name="home"),
     path('admin/', admin.site.urls),
     path("register", views.register, name="register"),
     path("login", views.login_page, name="login"),

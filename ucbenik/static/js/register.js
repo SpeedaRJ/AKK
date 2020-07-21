@@ -8,12 +8,12 @@ function selectGender(e) {
     }
     if(e.target.id === "mars") {
         gender = "male";
-        e.target.style.color = "aqua";
+        document.getElementById(e.target.id).style.color = "aqua";
         document.getElementById("venus").style.color = "white";
         document.getElementById("Sex").value="M";
     } else if(e.target.id === "venus") {
         gender = "female";
-        e.target.style.color = "aqua";
+        document.getElementById(e.target.id).style.color = "aqua";
         document.getElementById("mars").style.color = "white";
         document.getElementById("Sex").value="F";
     }
@@ -28,3 +28,4 @@ $(document).ready(function() {
     });
     
 });
+
