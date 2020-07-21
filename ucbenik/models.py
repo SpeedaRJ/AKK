@@ -19,6 +19,7 @@ class User(AbstractUser):
     sex = models.CharField(max_length=1, choices=SEX)
     age = models.IntegerField(default=99)
     objects = CustomUserManager()
+    is_admin = models.BooleanField(default=False)
 
     def __str__(self):
         return self.first_name + " " + self.email + " " + self.sex + " " + str(self.age)

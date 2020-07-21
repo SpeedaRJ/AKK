@@ -97,7 +97,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 AUTH_USER_MODEL = 'ucbenik.User'
-AUTHENTICATION_BACKENDS = 'ucbenik/apps.accounts.auth.CustomAuth'
+AUTHENTICATION_BACKENDS = ('ucbenik.CustomAuth.CustomAuth',)
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 

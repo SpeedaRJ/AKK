@@ -41,7 +41,7 @@ def login_page(request):
         username = request.POST['Email']
         password = request.POST['Password']
         user_check = CustomAuth()
-        user = user_check.authenticate(username, password)
+        user = user_check.authenticate(request, username, password)
         if user is not None:
             request.session.flush()
             request.session['user'] = UserSerializer(user).data
