@@ -16,15 +16,15 @@
     <div class="col-lg-8">
         <div class="container-fluid messages">
             <div class="row">
-                <div class="msg jenny">I was born in England. Now i live in Slovenia.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny">I was born in England. Now I live in Slovenia.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <div class="msg jenny translation">Rojena sem bil v Angliji. Zdaj živim v Sloveniji.</div>
             </div>
             <div class="row">
                 <div class="msg jenny spoken">Where were you born?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 {% if user.sex == 'M' %}
-                    <div class="msg jenny translation">Kje si bil/a ti rojen?</div>
+                    <div class="msg jenny translation">Kje si bil ti rojen?</div>
                 {% else %}
-                    <div class="msg jenny translation">Kje si bil/a ti rojena?</div>
+                    <div class="msg jenny translation">Kje si bila ti rojena?</div>
                 {% endif %}
             </div>
             <div class="row">
