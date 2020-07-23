@@ -51,15 +51,15 @@ def login_page(request):
         username = request.POST['Email']
         password = request.POST['Password']
         user_check = CustomAuth()
-        user = user_check.authenticate(request, username, password)
-        if user is not None:
+        try:
+            user = user_check.authenticate(request, username, password)
             request.session.flush()
             request.session['user'] = UserSerializer(user).data
             if user.last_page:
                 return redirect(user.last_page)
             else: 
                 return redirect('/')
-        elif user is None:
+        except:
             context = {'no_user': 'Napačno uporabniško ime ali geslo',
                        'username' : username }
             return render(request, "login.html", context)
