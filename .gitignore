@@ -6,3 +6,4 @@ ucbenik/temp
 *.pyc
 *.pyo
 .env
+akk/settings.py

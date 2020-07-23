@@ -1,79 +1,45 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
-    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 {% endblock %}
 {% block content %}
-    <div class="col-lg-4" id="jenny">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" style="height:90%">
-    </div>
-    <div class="col-lg-8">
-        <div class="container-fluid messages">
-            <div class="row">
-                <div class="msg jenny">J: Write in your notebook.</div>
-                <div class="msg jenny translation">Zapiši si v zvezek!</div>
-            </div>
-            <div class="row">
-                <table id="table">
-                    <tr>
-                        <td>
-                            <b>My</b> name is Jennifer.
-                        </td>
-                        <td>
-                            What is <b>your</b> name?
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>I</b> am Jennifer.
-                        </td>
-                        <td>
-                            Who <b>are</b> you?
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            My nickname is Jenny.
-                        </td>
-                        <td>
-                            What is your nickname?
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            I am 50 years old.
-                        </td>
-                        <td>
-                            How old are you?
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            I was born in England.
-                        </td>
-                        <td>
-                            Where were you born?
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            I live in Slovenia.
-                        </td>
-                        <td>
-                            Where do you live?
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="row">
-                {% if user.sex == 'M' %}
-                    <div class="msg jenny" style="background-color: #ebc35c">J: Be careful! / Bodi previden! <b>my = moje</b>; <b>your = tvoje</b></div>
-                {% else %}
-                    <div class="msg jenny" style="background-color: #ebc35c">J: Be careful! / Bodi previdna! <b>my = moje</b>; <b>your = tvoje</b></div>
-                {% endif %}
-            </div>
+<div class="col-lg-4" id="jenny-full">
+    <img src="{% static 'svg/lesson1/introduction/SVG/jenny-body.svg' %}" type="svg" style="height:90%">
+</div>
+<div class="col-lg-8">
+    <div class="container-fluid messages">
+        <div class="row">
+            <div class="msg jenny">J: Predstaviš se lahko na dva načina. <br>
+                Do zdaj sva se predstavila z uporabo oblike <b>Moje ime je</b>.
+                Po angleško je ta oblika <b>My name is</b>. <br> Lahko pa rečemo preprosto <b>Jaz sem</b>.
+            </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: Hello. <b>I am </b>Jenny.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <div class="msg jenny translation">Živjo. Jaz sem Jenny.</div>
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: Po obliki <b>My name is</b> se vprašamo tako: <br> <b>What is your name?</b>
+                <br> To pomeni: Kako je tebi ime?
+                Po obliki <b>I am</b> se vprašamo tako: <br> <b>Who are you?</b> To pomeni: Kdo si ti.?
+            </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: Besedo <b>jaz</b> vedno napišemo z
+                <b>veliko začetnico</b>, ne glede na mesto
+                v povedi. Poglej si primere.
+            </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: <b>I</b> am Jenny.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <div class="msg jenny translation">Jaz sem Jenny.</div>
+        </div>
+        <div class="row">
+            <div class="msg jenny">J: {{user.first_name}} and <b>I</b> are friends.</div>
+            <div class="msg jenny translation">{{user.first_name}} in jaz sva prijatelja.</div>
         </div>
     </div>
+</div>
 {% endblock %}
