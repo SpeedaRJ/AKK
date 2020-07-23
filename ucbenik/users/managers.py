@@ -21,15 +21,14 @@ class CustomUserManager(BaseUserManager):
         user = self.model(username=email,email=email, first_name=firstname, age=age, sex=sex)
         user.set_password(password)
         user.save()
-
-        # TODO: send succesful registration email
-        #send_mail(
-        #    'Dobrodošli v AKK',
-        #    f'Pozdravljeni,\nuspešno ste ustvarili vaš račun za akk.si.\nemail:{email}\ngeslo:{password}',
-        #    'MAIL@akk.si',
-        #    [email],
-        #    fail_silently=False,
-        #)
+        
+        send_mail(
+            'Dobrodošli v AKK',
+            f'Pozdravljeni,\nuspešno ste ustvarili vaš račun za akk.si.\nemail: {email}\ngeslo: {password}',
+            'info.akk.si@gmail.com',
+            [email],
+            fail_silently=False,
+        )
 
         return user
 

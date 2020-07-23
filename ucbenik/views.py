@@ -42,6 +42,7 @@ def register(request):
             request.session.flush()
             request.session['user'] = UserSerializer(user).data
             return redirect("/lesson_one/introduction/page_one")
+    return redirect("register")
 
 def login_page(request):
     if request.method == "GET":
