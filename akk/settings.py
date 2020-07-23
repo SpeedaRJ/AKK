@@ -24,7 +24,7 @@ SECRET_KEY = 'i-2ko&!kx&u^rh)(uz=_l+v^f%2-gu%=4dzj&a9sl(+2nyn&r+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['akk.si']
+ALLOWED_HOSTS = []
 
 # Application definition
 
