@@ -5,3 +5,4 @@ venv/
 ucbenik/temp
 *.pyc
 *.pyo
+.env

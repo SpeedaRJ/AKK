@@ -127,3 +127,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'info.akk.si'
 EMAIL_HOST_PASSWORD = 'geslozaakk'
 EMAIL_USE_TLS   = True
+
+#MIME TYPES ISSUE 
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
