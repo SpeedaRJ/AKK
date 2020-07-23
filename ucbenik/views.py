@@ -66,8 +66,11 @@ def login_page(request):
 
 def logout(request):
     if request.method == "GET":
-        user = User.objects.get(email=request.session['user']['email'])
-        user.set_last_page(request.META['QUERY_STRING'])
+        try:
+            user = User.objects.get(email=request.session['user']['email'])
+            user.set_last_page(request.META['QUERY_STRING'])
+        except:
+            print("logout without user??")
         request.session.flush()
         return redirect("/")
 
