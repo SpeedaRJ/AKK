@@ -20,7 +20,7 @@
             <div class="row text space">
                 {{ colors|json_script:"colors" }}
                 {{ parts|json_script:"parts" }}
-                <div class="msg jenny">J: Do you wear glasses?
+                <div class="msg jenny">Do you wear glasses?
                     <button class="btn" onclick="changeGlasess(this); update_session({'glasses' : 'glasses'})">Yes</button>
                     /
                     <button class="btn" onclick="changeGlasess(this); update_session({'glasses':'no_glasses'})">No</button>
@@ -29,7 +29,7 @@
             </div>
             {% if user.sex == "M" %}
                 <div class="row text space">
-                    <div class="msg jenny">J: Do you have a beard or a mustache?
+                    <div class="msg jenny">Do you have a beard or a mustache?
                         <button class="btn" onclick="document.getElementById('beard_select').style.display='block'">Yes</button>
                         /
                         <button class="btn" onclick="document.getElementById('beard_select').style.display='none'; update_session({'beard':'no_beard'})">No</button>

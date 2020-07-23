@@ -6,7 +6,7 @@ from .serializers import UserSerializer
 
 lesson_one = {"Introduction": "/lesson_one/introduction/page_one", "Appearance": "/lesson_one/character_select/page_one",
               "Numbers": "/lesson_one/numbers/page_one", "Colors": "/lesson_one/colors/page_one", "Years": "/lesson_one/years/page_one",
-              "Personal traits": "/lesson_one/personal_traits/page_one", "He she it": "/lesson_one/he_she_it/page_one"}
+              "Personality traits": "/lesson_one/personal_traits/page_one", "He she it": "/lesson_one/he_she_it/page_one"}
 
 
 def index(request):

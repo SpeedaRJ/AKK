@@ -20,7 +20,7 @@
             <div class="row text space">
                 {{ colors|json_script:"colors" }}
                 {{ parts|json_script:"parts" }}
-                <div class="msg jenny">J: Pick out your clothes.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny">Pick out your clothes.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <div class="msg jenny translation">Izberi svoja oblačila.</div>
             </div>
             {% if user.sex == "M" %}

@@ -11,7 +11,7 @@
     <div class="col-lg-8">
         <div class="container-fluid messages">
             <div class="row">
-                <div class="msg jenny">J: Do you still live there?
+                <div class="msg jenny">Do you still live there?
                     <button class="btn" onclick="show_country(event)">Yes</button>
                     /
                     <button class="btn" onclick="show_country(event)">No</button>
@@ -21,7 +21,7 @@
             </div>
             <div style="display: none" id="home_country">
                 <div class="row">
-                    <div class="msg jenny">J: Where do you live now?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    <div class="msg jenny">Where do you live now?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                     <div class="msg jenny translation">Kje živiš sedaj?</div>
                 </div>
                 <div class="row">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="row" style="display: none" id="welcome">
-                <div class="msg jenny">J: Great! Welcome to English: Step by Step!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny">Great! Welcome to English: Step by Step!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Super! Dobrodošel v Angleščina: korak za korakom.</div>
                 {% else %}
