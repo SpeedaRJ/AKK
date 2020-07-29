@@ -65,3 +65,17 @@ class CharacterDataMen(CharacterMetaData, models.Model):
     )
     beard = models.CharField(max_length=30)
     suite_color = models.CharField(max_length=30)
+
+class Solution(models.Model):
+    link = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    solved = models.BooleanField()
+
+    def __str__(self):
+        if self.solved:
+            return self.user.first_name + " - " + self.link + " - " + "solved"
+        return self.user.first_name + " - " + self.link + " - " + "unsolved"
+
+    def solve(self):
+        self.solved = True
+        self.save()

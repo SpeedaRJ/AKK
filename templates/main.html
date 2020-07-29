@@ -116,11 +116,15 @@
         <div class="row content">
             {% block content %} {% endblock %}
         </div>
-
         <div class="row navigation">
-            <button class="next" onclick="window.location.href='{{ next }}'" type="button" id="next" disabled>Next
-            </button>
+            <button class="next" onclick="window.location.href='{{ next }}'" type="button" id="next" disabled>Next</button>
             <button class="back" onclick="window.location.href='{{ back }}'" type="button" id="back">Back</button>
+            {% if solved %}
+            <button class="solved" onclick="window.location.href='{{ next }}'" type="button" id="next" disabled style="position: absolute;width: 48%;margin-top: -4vh;border-radius: 50px;">
+                You already solved this excersise, but feel free to practice some more :)
+            </button>
+            <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+            {% endif %}
         </div>
     </div>
 
