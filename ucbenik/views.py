@@ -223,7 +223,7 @@ def introduction_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), '/lesson_one/introduction/page_one')
+        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "lesson_one": lesson_one,
                                                                       "solved" : solution.solved,
                                                                       "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
@@ -237,7 +237,7 @@ def introduction_page_two(request):
             return login_page(request)
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), '/lesson_one/introduction/page_two')
+        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/introduction/page_two.html", {"next": "/lesson_one/introduction/page_three",
                                                                       "back": back, "solved" : solution.solved, 
                                                                       "lesson_one": lesson_one,
@@ -250,7 +250,7 @@ def introduction_page_three(request):
             return login_page(request)
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), '/lesson_one/introduction/page_three')
+        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/introduction/page_three.html", {"next": "/lesson_one/introduction/page_four",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -263,7 +263,7 @@ def introduction_page_four(request):
             return login_page(request)
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), '/lesson_one/introduction/page_four')
+        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/introduction/page_four.html", {"next": "/lesson_one/introduction/page_five",
                                                                        "back": back, "solved" : solution.solved,
                                                                        "lesson_one": lesson_one,
@@ -276,7 +276,7 @@ def introduction_page_five(request):
             return login_page(request)
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), '/lesson_one/introduction/page_five')
+        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/introduction/page_five.html", {"next": "/lesson_one/introduction/page_six",
                                                                        "back": back, "solved" : solution.solved,
                                                                        "lesson_one": lesson_one,
@@ -307,7 +307,7 @@ def exercises_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), '/lesson_one/exercises/page_one')
+        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/exercises/page_one.html", {"next": "/lesson_one/exercises/page_two",
                                                                    "back": "/lesson_one/introduction/page_seven",
                                                                    "lesson_one": lesson_one,
