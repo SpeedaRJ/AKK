@@ -204,6 +204,7 @@ button[class="titleB"]:hover {
 
 #Menu {
     height: 100vh;
+    overflow-y: hidden;
 }
 
 .logos {

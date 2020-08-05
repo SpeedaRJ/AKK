@@ -1435,7 +1435,6 @@ def years_page_twelve(request):
                                                                   "colors": colors
                                                                   })
 
-# TODO: #2 add solutions from here on @ValterH
 def personal_traits_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -1448,16 +1447,17 @@ def personal_traits_page_one(request):
                                                                          "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user']})
 
 def personal_traits_page_two(request):
+    back = "/lesson_one/personal_traits/page_one"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+            return redirect(back)
         return render(request, "lesson1/personal_traits/page_two.html", {"next": "/lesson_one/personal_traits/page_three",
-                                                                         "back": "/lesson_one/personal_traits/page_one",
-                                                                         "solved" : solution.solved,
-                                                                    "lesson_one": lesson_one,
+                                                                         "back": back, "lesson_one": lesson_one,
                                                                          "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user']})
 
+# TODO: #2 add solutions from here on @ValterH
 def personal_traits_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:

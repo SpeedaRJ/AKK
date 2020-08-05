@@ -10,6 +10,7 @@
     <div class="col-lg-2" id="Menu">
         <button class="titleB" disabled>Menu</button>
         <ul>
+            {% if lesson_one %}
             <li class="main">
                 <button class="mainB">Unit 1</button>
                 <ul class="submenu">
@@ -20,71 +21,91 @@
                     {% endfor %}
                 </ul>
             </li>
+            {% endif %}
+            {% if lesson_two %}
+            <li class="main">
+                <button class="mainB">Unit 2</button>
+                <ul class="submenu">
+                    {% for key,item in lesson_two.items %}
+                    <li>
+                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% else %}
             <li class="main">
                 <button class="mainB">Unit 2</button>
                 <ul class="submenu">
                     <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
+                        <button class="SB">Comming Soon</button>
                     </li>
                 </ul>
             </li>
+            {% endif %}
+            {% if lesson_three %}
+            <li class="main">
+                <button class="mainB">Unit 3</button>
+                <ul class="submenu">
+                    {% for key,item in lesson_three.items %}
+                    <li>
+                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% else %}
             <li class="main">
                 <button class="mainB">Unit 3</button>
                 <ul class="submenu">
                     <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
+                        <button class="SB">Comming Soon</button>
                     </li>
                 </ul>
             </li>
+            {% endif %}
+            {% if lesson_four %}
+            <li class="main">
+                <button class="mainB">Unit 4</button>
+                <ul class="submenu">
+                    {% for key,item in lesson_four.items %}
+                    <li>
+                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% else %}
             <li class="main">
                 <button class="mainB">Unit 4</button>
                 <ul class="submenu">
                     <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
+                        <button class="SB">Comming Soon</button>
                     </li>
                 </ul>
             </li>
+            {% endif %}
+            {% if lesson_five %}
+            <li class="main">
+                <button class="mainB">Unit 5</button>
+                <ul class="submenu">
+                    {% for key,item in lesson_five.items %}
+                    <li>
+                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% else %}
             <li class="main">
                 <button class="mainB">Unit 5</button>
                 <ul class="submenu">
                     <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
-                    </li>
-                    <li>
-                        <button class="SB">Placeholder</button>
+                        <button class="SB">Comming Soon</button>
                     </li>
                 </ul>
             </li>
+            {% endif %}
             <button class="dictB" class="mainB">Glossary</button>
             <button class="SB mainB" onclick="window.location.href='/logout?'+window.location.pathname">Log out</button>
         </ul>
