@@ -13,6 +13,7 @@ let objects1 = [
 
 
 function redo(e) {
+    clearTextareas()
     shuffle(objects1);
     /* hide all objects */
     for(i=0; i < objects1.length; i++) {
@@ -27,7 +28,7 @@ function redo(e) {
         children[0].classList.remove("correct");
         children[1].classList.remove("incorrect");
         children[1].classList.remove("correct");
-        if(Math.random()>0.5) {
+        if(Math.random() > 0.5) {
             children[0].children[0].style.display="none";
             children[0].children[1].style.display="inline";
             children[1].children[0].style.display="inline";
@@ -55,7 +56,7 @@ function shuffle(a) {
 
 function solution(el,solution, solution2) {
     let parent = el.parentElement;
-    if (el.value == solution || el.value == solution2) {
+    if (el.value.toLowerCase() == solution || el.value.toLowerCase() == solution2) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {
@@ -78,3 +79,10 @@ function solution(el,solution, solution2) {
 $(function(){
     redo();
 })
+
+function clearTextareas() {
+    inputs = document.getElementsByClassName('textarea');
+    for (var i in inputs) {
+        inputs[i].value = ""
+    }
+}

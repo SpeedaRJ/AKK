@@ -50,7 +50,7 @@ function redo(e) {
         document.getElementById(objects2[i]).style.display = "none";
     }
 
-    c = Math.random() * (objects1.length);
+    c = Math.floor(Math.random() * (objects1.length))+1;
     for(i=0; i < c; i++) {
         let car = document.getElementById(objects1[i]);
         car.style.display = "inline";
@@ -65,7 +65,7 @@ function redo(e) {
     
     document.getElementById("textarea").value="";
 
-    c = Math.random() * (objects2.length);
+    c = Math.floor(Math.random() * (objects2.length))+1;
     for(i=0; i < c; i++) {
         let tv = document.getElementById(objects2[i]);
         tv.style.display = "inline";
@@ -98,6 +98,7 @@ function solution(el) {
         el.classList.add("incorrect");
         el.classList.remove("correct");
     }
+    checkCorrectness()
 }
 
 function solution2(el) {
@@ -108,8 +109,23 @@ function solution2(el) {
         el.classList.add("incorrect");
         el.classList.remove("correct");
     }
+    checkCorrectness()
 }
 
 $(function(){
     redo();
 })
+
+function checkCorrectness() {
+    let items = document.getElementsByClassName("textarea");
+    let counter = 0;
+    for(let x = 0; x < items.length; x++) {
+        if(items[x].classList !== undefined && items[x].className.includes("correct") && !items[x].className.includes("incorrect"))
+            counter++;
+    }
+    if(counter === items.length) {
+        document.getElementById("next").removeAttribute("disabled")
+    } else {
+         document.getElementById("next").setAttribute("disabled", "disabled");
+    }
+}

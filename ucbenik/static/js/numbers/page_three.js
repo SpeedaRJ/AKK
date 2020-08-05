@@ -30,12 +30,11 @@ function redo(e) {
         document.getElementById(cats[i]).style.display = "none";
     }
     c = Math.random() * (11 - 1);
-    s = c;
+    s = parseInt(c);
     for(i=0; i < c; i++) {
         let cat = document.getElementById(cats[i]);
         cat.style.display = "inline";
     }
-    console.log(c);
     if (c < 2)
         document.getElementById("solution").innerHTML = "cat."
     else
@@ -58,9 +57,11 @@ function solution(el) {
     if (el.value == solutions[s]) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
+        document.getElementById("next").removeAttribute("disabled")
     } else {
         el.classList.add("incorrect");
         el.classList.remove("correct");
+        document.getElementById("next").setAttribute("disabled", "disabled");
     }
 }
 

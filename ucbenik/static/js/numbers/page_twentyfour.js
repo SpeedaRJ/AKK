@@ -131,7 +131,7 @@ function redo(e) {
 
 function solution(el,solution) {
     let parent = el.parentElement;
-    if (el.value.replace('fourty','forty') == solution) {
+    if (el.value.replace('fourty','forty').toLowerCase().replace("-","") == solution.replace("-","")) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {
@@ -154,3 +154,10 @@ function solution(el,solution) {
 $(function(){
     redo();
 })
+
+function clearTextareas() {
+    inputs = document.getElementsByClassName('textarea');
+    for (var i in inputs) {
+        inputs[i].value = ""
+    }
+}

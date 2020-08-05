@@ -37,7 +37,6 @@ function drop(ev, el, limit) {
 
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
-    console.log(data);
     correct = data.search(el.id.replace("0","")) > -1;
     var child = document.getElementById(data);
     if (correct) {
@@ -105,7 +104,7 @@ function setColors() {
 function redo(e) {
     let node = [].slice.call(document.getElementsByClassName("draggable-word"));
     if(node.some((el) => el.className.includes("correct")))
-        [].forEach.call(node, function(el) {el.click(); console.log(el)});
+        [].forEach.call(node, function(el) {el.click();});
     setColors();
 }
 

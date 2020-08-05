@@ -16,7 +16,7 @@ let numbers = [
     "fourteen",
     "fifteen",
     "sixteen",
-    "seventeen",
+    "seven-teen",
     "eighteen",
     "nineteen",
     "twenty",

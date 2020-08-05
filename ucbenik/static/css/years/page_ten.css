@@ -5,3 +5,19 @@
 img {
     width: 80%;
 }
+
+.number {
+    text-align: center;
+    width: 100%;
+}
+
+.question {
+    background-color: #E4E3E8;
+    max-height: 50%;
+    padding: 1%;
+    border-radius: 30%;
+}
+
+.space {
+    margin-top: 10%;
+}

@@ -136,9 +136,9 @@ input {
 }
 
 .correct:hover {
-    color:#00A881
+    background-color: #00A881 !important;
 }
 
 .incorrect:hover {
-    color: #F15D2A !important;
+    background-color: #F15D2A !important;
 }

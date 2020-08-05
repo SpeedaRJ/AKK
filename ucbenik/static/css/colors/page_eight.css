@@ -21,3 +21,11 @@ input {
     display: flex;
     justify-content: center;
 }
+
+.right {
+    border: thick #00A881 dotted !important;
+}
+
+.wrong {
+    border: thick #F15D2A dotted !important;
+}

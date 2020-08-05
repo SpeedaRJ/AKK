@@ -30,11 +30,11 @@ function colorButtons(buttons) {
     buttons.forEach((element) => {
       if (
         element != event.currentTarget &&
-        element.innerHTML !== "Dictionary" &&
+        element.innerHTML !== "Glossary" &&
         element.className !== "SB"
       ) {
         element.style.cssText = "background-color: #6699CC";
-      } else if (element.innerHTML === "Dictionary") {
+      } else if (element.innerHTML === "Glossary") {
         element.style.cssText = "background-color: #3E83D5";
       } else if (element.className === "SB") {
         element.style.cssText = "background-color: #4b5385";
