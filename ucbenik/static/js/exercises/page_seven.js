@@ -1,6 +1,6 @@
 function solution(el,solution) {
     if(el.className.includes("name")) {
-        if(el.value == solution.split("/")[0] || el.value == solution.split("/")[1]){
+        if(el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution.toLowerCase()+'\\.*\\!*\\?*$')){
             el.classList.remove("incorrect");
             el.classList.add("correct");
         } else {

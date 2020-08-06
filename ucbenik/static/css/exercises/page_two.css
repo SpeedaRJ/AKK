@@ -58,3 +58,17 @@ input:focus {
 .incorrect {
   color: #F15D2A;
 }
+
+#redo_b {
+  border: none;
+  width: 10%;
+  float: right;
+  height: 10%;
+  transform: translateY(-40%);
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+#redo_b:hover {
+  border: 3px black dotted;
+}

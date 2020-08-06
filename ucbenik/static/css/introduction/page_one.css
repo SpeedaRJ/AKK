@@ -3,6 +3,15 @@
   src: url('../fonts/Raleway-Medium.ttf');
 }
 
+#cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 p {
     margin: 0;
     padding: 0;
