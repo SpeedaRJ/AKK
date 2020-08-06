@@ -1,15 +1,15 @@
 let solutions = [
-    "Is she slender?",
-    "Is he fat?",
-    "Are you happy?",
-    "Are'nt they sad?",
-    "Am I short?",
-    "Are we tall?"
+    "Is she slender",
+    "Is he fat",
+    "Are you happy",
+    "Are they sad",
+    "Am I short",
+    "Are we tall"
 ]
 
 function solution(el,n) {
     let parent = el.parentElement;
-    if (el.value == solutions[n]) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').replace(/  +/g, ' ').match('^'+solutions[n].toLowerCase()+'\\?*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

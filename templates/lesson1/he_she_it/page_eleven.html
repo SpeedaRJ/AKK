@@ -3,28 +3,8 @@
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
-<script>
-    function solution(el,solution) {
-    let parent = el.parentElement;
-    if (el.value == solution) {
-        parent.classList.remove("incorrect");
-        parent.classList.add("correct");
-    } else {
-        parent.classList.add("incorrect");
-        parent.classList.remove("correct");
-    }
-    let paras = document.getElementsByClassName("slo")
-    let counter = 0;
-    for(let x in paras) {
-        if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
-            counter++;
-    }
-    if(counter === 2)
-        document.getElementById("next").removeAttribute("disabled")
-    else
-        document.getElementById("next").setAttribute("disabled", "disabled");
-}
-</script>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_nine.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -54,7 +34,7 @@
         <div class="inst" >
             <div class="msg jenny slo" style="margin-left: 25%;">
                 He is
-                <input class=textarea onchange="solution(this,'happy')" style="border-color:#6282B7;background-color: transparent;"/>
+                <input class=textarea onchange="solution(this,['happy','short'])" style="border-color:#6282B7;background-color: transparent;"/>
             </div>
         </div>
     </div>
@@ -63,7 +43,7 @@
         <div class="inst">
             <div class="msg jenny slo" style="margin-left: 25%;">
                 She is
-                <input class=textarea onchange="solution(this,'sad')" style="border-color:#6282B7;background-color: transparent;"/>
+                <input class=textarea onchange="solution(this,['sad','short'])" style="border-color:#6282B7;background-color: transparent;"/>
             </div>
         </div>
     </div>

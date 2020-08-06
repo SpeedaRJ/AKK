@@ -1,0 +1,62 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_twentyfive.css' %}"/>
+<script type="text/javascript" src="{% static 'js/numbers/page_twentyfive.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst" id="instructions">
+            <div class="msg user">
+                This page is not yet available! However you can play some dominoes if you wish :D
+            </div>
+            <div class="msg user slo">
+                Ta stran še ni na voljo! Če pa si želiš lahko igraš domine :D
+            </div>
+            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <!-- AVATAR -->
+    </div>
+</div>
+<div class="row dominos" id="dominos">
+    <div class="drop" id="match01" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+        <div class="domino" id="first">
+            <div class="domino-part d-left"></div>
+            <div class="domino-part d-right" id="d11"></div>
+        </div>
+        <div class="domino connected" id="placeholder"></div>
+    </div>
+    <div id="drag-origin">
+        <div class="domino" id="match1" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+            <div class="domino-part d-left" id="d12"></div>
+            <div class="domino-part d-right" id="d21"></div>
+        </div>
+
+        <div class="domino" id="match2" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+            <div class="domino-part d-left" id="d22"></div>
+            <div class="domino-part d-right" id="d31"></div>
+        </div>
+
+        <div class="domino" id="match3" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+            <div class="domino-part d-left" id="d32"></div>
+            <div class="domino-part d-right" id="d41"></div>
+        </div>
+
+        <div class="domino" id="match4" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+            <div class="domino-part d-left" id="d42"></div>
+            <div class="domino-part d-right"id="d51"></div>
+        </div>
+        <div class="domino" id="match5" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+            <div class="domino-part d-left" id="d52"></div>
+            <div class="domino-part d-right"id="d6"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -24,6 +24,7 @@ urlpatterns = [
     path("register", views.register, name="register"),
     path("login", views.login_page, name="login"),
     path("logout", views.logout, name="logout"),
+    path("comming_soon", views.comming_soon, name="comming_soon"),
     path("update_session/<str:what_to_update>", views.update_session, name="update_session"),
     path("save_session", views.save_session, name="save_session"),
     path("lesson_one/title", views.lesson_one_title, name="title_one"),

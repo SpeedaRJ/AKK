@@ -32,7 +32,7 @@ function redo(e) {
 
 function solution(el,s) {
     let parent = el.parentElement;
-    if (el.value == solutions[s]) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[s].toLowerCase())+'$') {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

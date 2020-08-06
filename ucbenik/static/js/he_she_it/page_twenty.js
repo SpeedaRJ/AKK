@@ -11,7 +11,7 @@ let solutions = [
 
 function solution(el,n) {
     let parent = el.parentElement;
-    if (el.value == solutions[n]) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[n].toLowerCase()+'$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

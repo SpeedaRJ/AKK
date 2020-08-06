@@ -29,7 +29,7 @@ function redo() {
 }
 
 function solution(el,n) {
-    if (el.value.match(solutions[n].join("|")) ) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[n].join("|").toLowerCase()+'\\.*\\!*$') ) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {

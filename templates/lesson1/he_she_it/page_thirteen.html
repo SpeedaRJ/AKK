@@ -3,28 +3,8 @@
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
-<script>
-    function solution(el,solution) {
-    let parent = el.parentElement;
-    if (el.value == solution) {
-        parent.classList.remove("incorrect");
-        parent.classList.add("correct");
-    } else {
-        parent.classList.add("incorrect");
-        parent.classList.remove("correct");
-    }
-    let paras = document.getElementsByClassName("slo")
-    let counter = 0;
-    for(let x in paras) {
-        if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
-            counter++;
-    }
-    if(counter === 4)
-        document.getElementById("next").removeAttribute("disabled")
-    else
-        document.getElementById("next").setAttribute("disabled", "disabled");
-}
-</script>
+<script type="text/javascript" src="{% static 'js/he_she_it/page_thirteen.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -50,7 +30,7 @@
         <img src="{% static 'svg/lesson1/he_she_it/man_full02.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
         <div class="inst" >
             <div class="msg jenny slo" style="width: 100%;margin-left: 0;">
-                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['plump','fat','happy','tall'], 'M')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
             </div>
         </div>
     </div>
@@ -58,7 +38,7 @@
         <img src="{% static 'svg/lesson1/he_she_it/man_full03.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
         <div class="inst">
             <div class="msg jenny slo" style="width: 100%;margin-left: 0;">
-                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['slender','slim','happy','tall'], 'M')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
             </div>
         </div>
     </div>
@@ -66,7 +46,7 @@
         <img src="{% static 'svg/lesson1/he_she_it/woman_tall.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
         <div class="inst" >
             <div class="msg jenny slo" style="width: 100%;margin-left: 0;">
-                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['tall', 'slender', 'slim', 'happy'], 'F')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
             </div>
         </div>
     </div>
@@ -74,7 +54,7 @@
         <img src="{% static 'svg/lesson1/he_she_it/woman_full_purple.svg' %}" type="svg" style="height:37vh;margin-top: 8vh;">
         <div class="inst" >
             <div class="msg jenny slo" style="width: 100%;margin-left: 0;">
-                <input class=textarea onchange="solution(this,'SOLUTION')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['slender', 'slim','short', 'happy'], 'F')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
             </div>
         </div>
     </div>

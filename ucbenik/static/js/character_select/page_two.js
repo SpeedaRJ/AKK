@@ -230,13 +230,13 @@ function changeSuite(el) {
 
 function translate(el) {
     let paras = document.getElementsByClassName("slo_name");
-    if (el.target.value.toString().trim().toLowerCase() === "plump") {
+    if (el.target.value.toString().trim().replace(/  +/g, ' ').toLowerCase() === "plump") {
         paras[0].innerHTML = "močnejše postave";
         let data = {
             "body_type": "fat"
         };
         update_session(data);
-    } else if (el.target.value.toString().trim().toLowerCase() === "slender") {
+    } else if (el.target.value.toString().trim().replace(/  +/g, ' ').toLowerCase() === "slender") {
         paras[0].innerHTML = "vitke postave";
         let data = {
             "body_type": "slim"
