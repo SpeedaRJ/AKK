@@ -19,9 +19,12 @@ img {
 }
 
 .row {
-    height: 33%;
+    height: 30%;
 }
 
+.row-33 {
+    height: 33%;
+}
 .text {
     padding-left: 2%;
     padding-right: 2%;

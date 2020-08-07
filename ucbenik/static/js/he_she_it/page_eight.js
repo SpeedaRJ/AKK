@@ -32,7 +32,7 @@ function redo() {
 
 function solution(el,solution) {
     let parent = el.parentElement;
-    if (el.value.replace('velikodušen','radodaren').replace('nesramen','neprijazen') == solution) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').replace('velikodušen','radodaren').replace('nesramen','neprijazen').match('^'+solution.toLowerCase()+'\.*\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

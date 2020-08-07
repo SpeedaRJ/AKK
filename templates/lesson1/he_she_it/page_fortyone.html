@@ -6,7 +6,7 @@
 <script type="text/javascript" src="{% static 'js/he_she_it/page_fortyone.js' %}"></script>
 {% endblock %}
 {% block content %}
-<div class="row">
+<div class="row-33">
     <div class="col-lg-3">
         <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
     </div>
@@ -23,8 +23,9 @@
             <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
         </div>
     </div>
+    {% include "character.html" %}
 </div>
-<div class="row">
+<div class="row-33">
     <div class="col-lg-1"></div>
     <div class="col-lg-2">
         <img src="{% static 'svg/lesson1/he_she_it/man_circle01.svg' %}" type="svg" >
@@ -58,7 +59,7 @@
     </div>
     <div class="col-lg-1"></div>
 </div>
-<div class="row">
+<div class="row-33">
     <div class="col-lg-1"></div>
     <div class="col-lg-2">
         <img src="{% static 'svg/lesson1/he_she_it/woman_circle01.svg' %}" type="svg" >

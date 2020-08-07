@@ -40,7 +40,7 @@ function redo(e) {
 
 function solution(el,solution) {
     let parent = el.parentElement;
-    if (el.value.replace("Vi ste", "Ti si").toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution+'\.*\!*$')) {
+    if (el.value.replace("Vi ste", "Ti si").toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution.toLowerCase()+'\.*\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {
