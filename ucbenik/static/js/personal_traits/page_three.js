@@ -19,7 +19,7 @@ var pri = [
     "neumen",
     "dober",
     "slab",
-    "deloven",
+    "delaven",
     "len",
     "radodaren",
     "sebičen",
@@ -56,7 +56,7 @@ function redo() {
 
 function solution(el,solution) {
     let parent = el.parentElement;
-    if (el.value.replace('velikodušen','radodaren').replace('nesramen','neprijazen').toLowerCase() == solution) {
+    if (el.value.toLowerCase().trim().replace('velikodušen','radodaren').replace('nesramen','neprijazen').replace(/  +/g, ' ').match('^'+solution+'\\.*\\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

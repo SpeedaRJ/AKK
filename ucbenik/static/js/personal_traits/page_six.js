@@ -47,7 +47,7 @@ function redo(e) {
 
 function solution(el,solution) {
     let parent = el.parentElement;
-    if (el.value.toLowerCase() == solution) {
+    if (el.value.toLowerCase().trim().replace("confident","outgoing").replace(/  +/g, ' ').match('^'+solution+'\\.*\\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {
