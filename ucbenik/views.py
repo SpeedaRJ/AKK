@@ -1304,22 +1304,11 @@ def colors_page_two(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if request.session['user']['sex'] == "M":
-            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(data_set, "M")
-        else:
-            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(data_set, "W")
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         return render(request, "lesson1/colors/page_two.html", {"next": "/lesson_one/colors/page_three",
                                                                 "back": "/lesson_one/colors/page_one",
                                                                 "lesson_one": lesson_one,
                                                                 "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
-                                                                "src": src_ref,
-                                                                "parts": parts,
-                                                                "colors": colors
+                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
 def colors_page_three(request):
@@ -1336,23 +1325,12 @@ def colors_page_three(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if request.session['user']['sex'] == "M":
-            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(data_set, "M")
-        else:
-            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(data_set, "W")
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/colors/page_three.html", {"next": "/lesson_one/colors/page_four",
                                                                   "back": "/lesson_one/colors/page_two",
                                                                   "solved" : solution.solved, "lesson_one": lesson_one,
                                                                   "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
-                                                                  "src": src_ref,
-                                                                  "parts": parts,
-                                                                  "colors": colors
+                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
 def colors_page_four(request):
@@ -1370,14 +1348,6 @@ def colors_page_four(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if request.session['user']['sex'] == "M":
-            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(data_set, "M")
-        else:
-            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(data_set, "W")
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
@@ -1385,10 +1355,7 @@ def colors_page_four(request):
                                                                  "back": back, "solved" : solution.solved,
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
-                                                                 "src": src_ref,
-                                                                 "parts": parts,
-                                                                 "colors": colors
+                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
 def colors_page_five(request):
@@ -1406,14 +1373,6 @@ def colors_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if request.session['user']['sex'] == "M":
-            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(data_set, "M")
-        else:
-            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(data_set, "W")
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
@@ -1421,10 +1380,7 @@ def colors_page_five(request):
                                                                  "back": back, "solved" : solution.solved,
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
-                                                                 "src": src_ref,
-                                                                 "parts": parts,
-                                                                 "colors": colors
+                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
 def colors_page_six(request):
@@ -1442,14 +1398,6 @@ def colors_page_six(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if request.session['user']['sex'] == "M":
-            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(data_set, "M")
-        else:
-            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(data_set, "W")
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
@@ -1457,10 +1405,7 @@ def colors_page_six(request):
                                                                 "back": back, "solved" : solution.solved,
                                                                 "lesson_one": lesson_one,
                                                                 "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
-                                                                "src": src_ref,
-                                                                "parts": parts,
-                                                                "colors": colors
+                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
 def colors_page_seven(request):
@@ -1478,14 +1423,6 @@ def colors_page_seven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if request.session['user']['sex'] == "M":
-            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(data_set, "M")
-        else:
-            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(data_set, "W")
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
@@ -1493,10 +1430,7 @@ def colors_page_seven(request):
                                                                   "back": back, "solved" : solution.solved, 
                                                                   "lesson_one": lesson_one,
                                                                   "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
-                                                                  "src": src_ref,
-                                                                  "parts": parts,
-                                                                  "colors": colors
+                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
 def colors_page_eight(request):
@@ -1514,14 +1448,6 @@ def colors_page_eight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if request.session['user']['sex'] == "M":
-            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(data_set, "M")
-        else:
-            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(data_set, "W")
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
@@ -1529,10 +1455,7 @@ def colors_page_eight(request):
                                                                   "back": back, "solved" : solution.solved,
                                                                   "lesson_one": lesson_one,
                                                                   "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
-                                                                  "src": src_ref,
-                                                                  "parts": parts,
-                                                                  "colors": colors
+                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
 def colors_page_nine(request):
@@ -1550,14 +1473,6 @@ def colors_page_nine(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if request.session['user']['sex'] == "M":
-            data_set = CharacterDataMen.objects.get(user=User.objects.get(email=request.session['user']['email']))
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-            parts, colors = getColorsAndParts(data_set, "M")
-        else:
-            data_set = CharacterDataWomen.objects.filter(user=request.session['user'])
-            parts, colors = getColorsAndParts(data_set, "W")
-            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
@@ -1565,10 +1480,7 @@ def colors_page_nine(request):
                                                                  "back": back, "solved" : solution.solved,
                                                                  "lesson_one": lesson_one,
                                                                  "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
-                                                                 "src": src_ref,
-                                                                 "parts": parts,
-                                                                 "colors": colors
+                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
 def years_page_one(request):
