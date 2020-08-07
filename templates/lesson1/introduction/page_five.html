@@ -3,6 +3,7 @@
 {% block custom_imports %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
     <script type="text/javascript" src="{% static 'js/introduction/page_four.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="col-lg-4" id="jenny-full">
@@ -16,12 +17,16 @@
                     /
                     <button class="btn" onclick="show_country(event)">No</button>
                     .
-                </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                </div> 
+                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a1" src="{% static 'audio/lesson1_jenny/introduction/9.mp3' %}"></audio>
                 <div class="msg jenny translation">Ali še tam živiš? Ja/Ne.</div>
             </div>
             <div style="display: none" id="home_country">
                 <div class="row">
-                    <div class="msg jenny">Where do you live now?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    <div class="msg jenny">Where do you live now?</div> 
+                    <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    <audio id="a2" src="{% static 'audio/lesson1_jenny/introduction/10.mp3' %}"></audio>
                     <div class="msg jenny translation">Kje živiš sedaj?</div>
                 </div>
                 <div class="row">
@@ -31,7 +36,9 @@
                 </div>
             </div>
             <div class="row" style="display: none" id="welcome">
-                <div class="msg jenny">Great! Welcome to English: Step by Step!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny">Great! Welcome to English: Step by Step!</div> 
+                <input type="image" onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a3" src="{% static 'audio/lesson1_jenny/introduction/11.mp3' %}"></audio>
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Super! Dobrodošel v Angleščina: korak za korakom.</div>
                 {% else %}

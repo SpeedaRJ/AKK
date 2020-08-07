@@ -3,6 +3,7 @@
 {% block custom_imports %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
     <script type="text/javascript" src="{% static 'js/introduction/page_one.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="col-lg-4" id="jenny-full">
@@ -11,12 +12,15 @@
     <div class="col-lg-8">
         <div class="container-fluid messages">
             <div class="row">
-                <div class="msg jenny spoken">Hello. My name is Jenny. Nice to meet you.</div><input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny spoken">Hello. My name is Jenny. Nice to meet you.</div>
+                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a1" src="{% static 'audio/lesson1_jenny/introduction/1.mp3' %}"></audio>
                 <div class="msg jenny translation">Živjo. Moje ime je Jenny. Me veseli.</div>
             </div>
             <div class="row">
-                <div class="msg jenny">Jenny: What is your name?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
-                <div class="msg jenny translation">Kaj je tvoje ime?</div>
+                <div class="msg jenny">Jenny: What is your name?</div>
+                <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a2" src="{% static 'audio/lesson1_jenny/introduction/2.mp3' %}"></audio><div class="msg jenny translation">Kaj je tvoje ime?</div>
             </div>
             <div class="row">
                 <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši svoje ime (name).</div>

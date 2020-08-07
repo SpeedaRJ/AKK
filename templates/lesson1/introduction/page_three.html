@@ -3,6 +3,7 @@
 {% block custom_imports %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
     <script type="text/javascript" src="{% static 'js/introduction/page_three.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
     <style>
         .msg {
                 font-size: 1em !important;
@@ -16,7 +17,9 @@
     <div class="col-lg-8">
         <div class="container-fluid messages">
             <div class="row">
-                <div class="msg jenny spoken">I am 50 years old. How old are you?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny spoken">I am 50 years old. How old are you?</div> 
+                <input type="image" onclick="play('a6')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a6" src="{% static 'audio/lesson1_jenny/introduction/6.mp3' %}"></audio>
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Stara sem 50 let. Koliko si ti star?</div>
                 {% else %}
