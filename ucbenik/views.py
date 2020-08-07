@@ -52,10 +52,17 @@ def get_refferer(request):
 
 def comming_soon(request):
     back = re.sub(r'[^/]*//[^/]*', '', request.META['HTTP_REFERER'])
+    if 'avatar' in request.session:
+        src_ref = request.session['avatar']['src_ref']
+        parts = request.session['avatar']['parts']
+        colors = request.session['avatar']['colors']
+    else:
+        src_ref , parts, colors = get_user_avatar(request.session['user'])
+        request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
     return render(request, "comming_soon.html", {"next": "/", "back": back,
                                                  "lesson_one": lesson_one,
                                                  "lesson": "Comming Soon", "title": "Comming Soon", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors})
+                                                 "src": src_ref, "parts": parts, "colors": colors})
 
 def index(request):
     if 'user' in request.session:
@@ -249,7 +256,7 @@ def lesson_one_title(request):
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/title_page.html", {"next": "/lesson_one/introduction/page_one", "back": "/", "solved" : solution.solved,
                                                                     "lesson_one": lesson_one,
-                                                                      "lesson": "Unit 1: About Me", "title": "", "user": request.session['user']})
+                                                                    "lesson": "Unit 1: About Me", "title": "", "user": request.session['user']})
 
 
 
@@ -452,7 +459,7 @@ def exercises_page_six(request):
         return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_seven",
                                                                    "back": back,
                                                                    "solved" : solution.solved,
-                                                                    "lesson_one": lesson_one,
+                                                                   "lesson_one": lesson_one,
                                                                    "lesson": "Unit 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 def exercises_page_seven(request):
@@ -727,7 +734,6 @@ def numbers_page_one(request):
         return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson_one/numbers/page_two",
                                                                  "back": "/lesson_one/character_select/page_six","lesson_one": lesson_one,
                                                                  "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors,
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def numbers_page_two(request):

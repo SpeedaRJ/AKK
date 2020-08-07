@@ -72,6 +72,20 @@ button[class="titleB"]:hover {
     background-color: #ebc35c !important;
 }
 
+.solved {
+  position: absolute;
+  z-index:2;width: 48%;
+  margin-left: -25%;
+  margin-top: 4vh;
+  border-radius: 50px;
+  font-size: 2vh;
+  background-color: rgb(235, 195, 92);
+  height: 15vh;
+  opacity: 75%;
+  border: thick #e6a454; 
+  border-style: solid;
+}
+
 .lesson {
   position: absolute;
   width: 70%;

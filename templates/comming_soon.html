@@ -21,9 +21,7 @@
             <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
         </div>
     </div>
-    <div class="col-lg-3">
-        <!-- AVATAR -->
-    </div>
+    {% include "character.html" %}
 </div>
 <div class="row dominos" id="dominos">
     <div class="drop" id="match01" ondrop="drop(event, this)" ondragover="allowDrop(event)">
