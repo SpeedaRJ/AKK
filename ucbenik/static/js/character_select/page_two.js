@@ -66,6 +66,7 @@ function update_session(d) {
 
 function changeHairStyle(el, sex) {
     let svg = document.getElementById("character");
+    console.log(svg)
     let url = svg.data.split("/");
     const predict = (element) => element === "static";
     let index = url.findIndex(predict);
@@ -97,6 +98,8 @@ function changeHairStyle(el, sex) {
         console.log(new_url);
     }
     svg.data = prepend + new_url;
+    console.log(svg)
+    console.log(svg.data)
     svg.addEventListener("load", function () {
         recolor();
     });

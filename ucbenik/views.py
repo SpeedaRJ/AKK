@@ -21,9 +21,9 @@ def get_user_avatar(user_dict):
         src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
         parts, colors = getColorsAndParts(data_set, "M")
     else:
-        data_set = CharacterDataWomen.objects.filter(user=user)
+        data_set = CharacterDataWomen.objects.get(user=user)
         parts, colors = getColorsAndParts(data_set, "W")
-        src_ref = "svg/lesson1/female_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + ".svg"
+        src_ref = "svg/lesson1/female_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + ".svg"
     return (src_ref, parts, colors)
 
 def get_or_create_solution(user, link):
@@ -199,7 +199,8 @@ def getColorsAndParts(data_set, sex):
                 "hair_color": "[id^=Lasje]",
                 "beard": "[id^=Brki],[id^=Brada]",
                 "Krog": "[id^=Krog]",
-                "Pulover": "[id^=Pulover]"
+                "Pulover": "[id^=Pulover]",
+                "Obrv1" : "[id^=Obrve]"
             }
         elif data_set.beard == "full_beard" or "mustache" or data_set.beard == "goatee":
             parts = {
@@ -208,7 +209,8 @@ def getColorsAndParts(data_set, sex):
                 "hair_color": "[id^=Lasje]",
                 "beard": "[id^=Brki]",
                 "Krog": "[id^=Krog]",
-                "Pulover": "[id^=Pulover]"
+                "Pulover": "[id^=Pulover]",
+                "Obrv1" : "[id^=Obrve]"
             }
         elif data_set.beard == "no_beard":
             parts = {
@@ -216,7 +218,8 @@ def getColorsAndParts(data_set, sex):
                 "neck": "[id^=Vrat]",
                 "hair_color": "[id^=Lasje]",
                 "Krog": "[id^=Krog]",
-                "Pulover": "[id^=Pulover]"
+                "Pulover": "[id^=Pulover]",
+                "Obrv1" : "[id^=Obrve]"
             }
         colors = {
             "body_color": data_set.body_color,
@@ -247,6 +250,7 @@ def getColorsAndParts(data_set, sex):
             "hair_color": "[id^=Lasje]",
             "shirt_color": "[id^=Majica]",
             "Krog": "[id^=Krog]",
+            "Obrv1" : "[id^=Obrve]"
         }
         return parts, colors
 
@@ -622,7 +626,6 @@ def character_select_page_five(request):
                 "neck": request.session['neck'],
                 "hair_color": request.session['hair_color']
             }
-            print(colors)
         else:
             src_ref = "svg/lesson1/female_avatar/body/" + request.session['glasses'] + "/" + request.session['height'] + "/" + request.session['body_type'] + "/dress/" + request.session[
                 'hair_type'] + ".svg"
@@ -687,7 +690,7 @@ def character_select_page_six(request):
                 "suite_color": request.session['suite_color']
             }
         else:
-            src_ref = "svg/lesson1/female/head/" + request.session['glasses'] + "/" + request.session['hair_type'] + ".svg"
+            src_ref = "svg/lesson1/female_avatar/head/" + request.session['glasses'] + "/" + request.session['hair_type'] + ".svg"
             if request.session['wearing'] == "dress":
                 colors = {
                     "body_color": request.session['body_color'],

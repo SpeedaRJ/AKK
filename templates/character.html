@@ -10,6 +10,7 @@
             let svg = document.getElementById("character").contentDocument.children[0];
             let colors = JSON.parse(document.getElementById("colors").textContent);
             let parts = JSON.parse(document.getElementById("parts").textContent);
+            console.log(parts)
             let querySelector = "";
             [].forEach.call(Object.keys(parts), function (el) {
                 querySelector += parts[el] + ",";
@@ -32,6 +33,16 @@
                     el.setAttribute("style", "fill: " + colors['suite_color']);
                 } else if (/Majica/.test(el_list)) {
                     el.setAttribute("style", "fill: " + colors['suite_color']);
+                } else if (/Obrve-4/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Obrve-2/.test(el_list)) {
+                    el.setAttribute("style", "fill: " + colors['hair_color']);
+                } else if (/Obrve$/.test(el_list)) {
+                    try{
+                        el.children[0].setAttribute("style", "fill: " + colors['hair_color']);
+                    } catch(e) {
+                        el.setAttribute("style", "fill: " + colors['hair_color']);
+                    }
                 }
             });
         }
