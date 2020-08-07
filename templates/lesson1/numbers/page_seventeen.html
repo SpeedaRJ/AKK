@@ -13,7 +13,9 @@
     <div class="col-lg-6">
         <button class="numbers-button" id="button">Dodatno znanje - Vrstilni števniki</button>
     </div>
-    <div class="col-lg-3 side"></div>
+    {% with class="side" %}
+        {% include "character.html" %}
+    {% endwith %}
     <div class="col-lg-10 centre">
         <div class="help-table" id="help-table">
             <div class="help row">

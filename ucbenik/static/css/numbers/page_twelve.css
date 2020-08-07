@@ -152,11 +152,3 @@ input {
 .incorrect {
     background-color: #F15D2A !important;
 }
-
-.correct:hover {
-    color:#00A881
-}
-
-.incorrect:hover {
-    color: #F15D2A !important;
-}

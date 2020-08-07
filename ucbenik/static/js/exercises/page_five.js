@@ -1,6 +1,6 @@
 function solution(el,solution) {
     let value = el.value.replace("Ž", "Z").replace("Č", "C").replace("Š", "S").replace("Ć", "C");
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution.replace('XX',"don't").toLowerCase()+'\\.*\\!*$')) {
+    if (value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution.replace('XX',"don't").toLowerCase()+'\\.*\\!*$')) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {

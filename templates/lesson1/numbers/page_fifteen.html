@@ -21,7 +21,9 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 side"></div>
+    {% with class="side" %}
+        {% include "character.html" %}
+    {% endwith %}
     <div class="col-lg-8 centre">
         <div class="msg user full">
             123 = one hundred <p style="color:#ebc35c;font-weight: bold;margin:0">and</p> twenty-three <br>

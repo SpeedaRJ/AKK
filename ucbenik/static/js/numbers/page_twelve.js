@@ -110,7 +110,7 @@ function shuffle(a) {
 function solution(el,solution) {
     let parent = el.parentElement;
     console.log(el.value.toLowerCase(), solution)
-    if (el.value.toLowerCase() == solution) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match(solution+'\\.*\\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

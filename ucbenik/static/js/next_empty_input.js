@@ -3,7 +3,8 @@ function checkTabPress(e) {
     e = e || event;
     if (e.keyCode == 9 || e.keyCode == 13) {
         $('input.textarea').each(function() {
-            if ( this.value === '' ) {
+            if ( this.value === '' && this.style.display != 'none') {
+                console.log(this)
                 this.focus();
                 return false;
             }

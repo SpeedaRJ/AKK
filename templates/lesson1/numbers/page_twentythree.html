@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_nine.css' %}"/>
 <script type="text/javascript" src="{% static 'js/numbers/page_twentythree.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -34,104 +35,105 @@
             <div class="help row" id="row0">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n0">10</p>
-                    <input id="textarea_n0" class="textarea" size="5" onchange="solution(this,'10')"/>
+                    <input id="textarea_n0" class="textarea" style="display:none" size="5" onchange="solution(this,'10')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">ten</p>
-                    <input id="textarea_d0" class="textarea" size="5" onchange="solution(this,'ten')"/>
+                    <input id="textarea_d0" class="textarea" style="display:none" size="5" onchange="solution(this,'ten')"/>
                 </button>
             </div>
             <div class="help row" id="row1">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n1">20</p>
-                    <input id="textarea_n1" class="textarea" size="5" onchange="solution(this,'20')"/>
+                    <input id="textarea_n1" class="textarea" style="display:none" size="5" onchange="solution(this,'20')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">twenty</p>
-                    <input id="textarea_d1" class="textarea" size="5" onchange="solution(this,'twenty')"/>
+                    <input id="textarea_d1" class="textarea" style="display:none" size="5" onchange="solution(this,'twenty')"/>
                 </button>
             </div>
             <div class="help row" id="row2">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n2">30</p>
-                    <input id="textarea_n2" class="textarea" size="5" onchange="solution(this,'30')"/>
+                    <input id="textarea_n2" class="textarea" style="display:none" size="5" onchange="solution(this,'30')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">thirty</p>
-                    <input id="textarea_d2" class="textarea" size="5" onchange="solution(this,'thirty')"/>
+                    <input id="textarea_d2" class="textarea" style="display:none" size="5" onchange="solution(this,'thirty')"/>
                 </button>
             </div>
             <div class="help row" id="row3">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n3">40</p>
-                    <input id="textarea_n3" class="textarea" size="5" onchange="solution(this,'40')"/>
+                    <input id="textarea_n3" class="textarea" style="display:none" size="5" onchange="solution(this,'40')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">fourty</p>
-                    <input id="textarea_d3" class="textarea" size="5" onchange="solution(this,'fourty','forty')"/>
+                    <input id="textarea_d3" class="textarea" style="display:none" size="5" onchange="solution(this,'fourty','forty')"/>
                 </button>
             </div>
             <div class="help row" id="row4">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n4">50</p>
-                    <input id="textarea_n4" class="textarea" size="5" onchange="solution(this,'50')"/>
+                    <input id="textarea_n4" class="textarea" style="display:none" size="5" onchange="solution(this,'50')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">fifty</p>
-                    <input id="textarea_d4" class="textarea" size="5" onchange="solution(this,'fifty')"/>
+                    <input id="textarea_d4" class="textarea" style="display:none" size="5" onchange="solution(this,'fifty')"/>
                 </button>
             </div>
             <div class="help row" id="row5">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n5">60</p>
-                    <input id="textarea_n5" class="textarea" size="5" onchange="solution(this,'60')"/>
+                    <input id="textarea_n5" class="textarea" style="display:none" size="5" onchange="solution(this,'60')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">sixty</p>
-                    <input id="textarea_d5" class="textarea" size="5" onchange="solution(this,'sixty')"/>
+                    <input id="textarea_d5" class="textarea" style="display:none" size="5" onchange="solution(this,'sixty')"/>
                 </button>
             </div>
             <div class="help row" id="row6">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n6">70</p>
-                    <input id="textarea_n6" class="textarea" size="5" onchange="solution(this,'70')"/>
+                    <input id="textarea_n6" class="textarea" style="display:none" size="5" onchange="solution(this,'70')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">seventy</p>
-                    <input id="textarea_d6" class="textarea" size="5" onchange="solution(this,'seventy')"/>
+                    <input id="textarea_d6" class="textarea" style="display:none" size="5" onchange="solution(this,'seventy')"/>
                 </button>
             </div>
             <div class="help row" id="row7">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n7">80</p>
-                    <input id="textarea_n7" class="textarea" size="5" onchange="solution(this,'80')"/>
+                    <input id="textarea_n7" class="textarea" style="display:none" size="5" onchange="solution(this,'80')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">eighty</p>
-                    <input id="textarea_d7" class="textarea" size="5" onchange="solution(this,'eighty')"/>
+                    <input id="textarea_d7" class="textarea" style="display:none" size="5" onchange="solution(this,'eighty')"/>
                 </button>
             </div>
             <div class="help row" id="row8">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n8">90</p>
-                    <input id="textarea_n8" class="textarea" size="5" onchange="solution(this,'90')"/>
+                    <input id="textarea_n8" class="textarea" style="display:none" size="5" onchange="solution(this,'90')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">ninety</p>
-                    <input id="textarea_d8" class="textarea" size="5" onchange="solution(this,'ninety')"/>
+                    <input id="textarea_d8" class="textarea" style="display:none" size="5" onchange="solution(this,'ninety')"/>
                 </button>
             </div>
             <div class="help row" id="row9">
                 <button class="col-lg-6 tip" disabled>
                     <p id="n9">100</p>
-                    <input id="textarea_n9" class="textarea" size="5" onchange="solution(this,'100')"/>
+                    <input id="textarea_n9" class="textarea" style="display:none" size="5" onchange="solution(this,'100')"/>
                 </button>
                 <button class="col-lg-6 tip c2">
                     <p id="t0">hundred</p>
-                    <input id="textarea_d9" class="textarea" size="5" onchange="solution(this,'hundred')"/>
+                    <input id="textarea_d9" class="textarea" style="display:none" size="5" onchange="solution(this,'hundred')"/>
                 </button>
             </div>
         </div>
     </div>
+    {% include "character.html" %}
 </div>
 {% endblock %}
