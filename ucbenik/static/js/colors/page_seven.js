@@ -3,7 +3,7 @@ let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90
 let answers = [];
 
 function solution(el) {
-    if(el.value.toLowerCase() === answers[el.parentNode.id.slice(-1) - 1].toLowerCase()) {
+    if(el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+answers[el.parentNode.id.slice(-1) - 1].toLowerCase()+'$')) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {

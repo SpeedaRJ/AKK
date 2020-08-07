@@ -91,7 +91,7 @@ function shuffle(a) {
 }
 
 function solution(el) {
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match(solutions[s1]+'\\.*\\!*$')) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[s1]+'\\.*\\!*$')) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {
@@ -102,7 +102,7 @@ function solution(el) {
 }
 
 function solution2(el) {
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match(solutions[s2]+'\\.*\\!*$')) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[s2]+'\\.*\\!*$')) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {

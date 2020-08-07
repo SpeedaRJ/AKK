@@ -54,7 +54,7 @@ function shuffle(a) {
 }
 
 function solution(el) {
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match(solutions[s]+'\\.*\\!*$')) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[s]+'\\.*\\!*$')) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
         document.getElementById("next").removeAttribute("disabled")

@@ -55,7 +55,7 @@ function shuffle(a) {
 
 function solution(el,solution) {
     let parent = el.parentElement;
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match(solution+'\\.*\\!*$')) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution+'\\.*\\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

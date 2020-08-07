@@ -1,6 +1,6 @@
 function check(el, solution) {
     let solved = false;
-    if(el.value.split(",").length === solution.length || el.value.split(" ").length === solution.length || el.value.split(".").length === solution.length ||
+    if(el.value.split(",").length === solution.length || el.value.split(/ +/g).length === solution.length || el.value.split(".").length === solution.length ||
         el.value.split("-").length === solution.length || el.value.split(";").length === solution.length || el.value.split(":").length === solution.length)
         solved = true;
     for(let x in solution) {
