@@ -3,14 +3,13 @@
 {{ parts|json_script:"parts" }}
 
 <div class="col-lg-3 {{ class }}">
-    <object data="{% static src %}" type="image/svg+xml" id="character" width="90%"></object>
+    <object data="{% static src %}" type="image/svg+xml" id="character" width="80%"></object>
     <div id="cover"></div>
     <script>
         function recolor() {
             let svg = document.getElementById("character").contentDocument.children[0];
             let colors = JSON.parse(document.getElementById("colors").textContent);
             let parts = JSON.parse(document.getElementById("parts").textContent);
-            console.log(parts)
             let querySelector = "";
             [].forEach.call(Object.keys(parts), function (el) {
                 querySelector += parts[el] + ",";
