@@ -1,7 +1,12 @@
+@font-face {
+    font-family: "RalewayMed";
+    src: url('../fonts/Raleway-Medium.ttf');
+  }
+  
 .disclaimer {
     min-width: 300px;
     border-radius: 20%;
-    padding: 2%;
+    padding: 4%;
     background: #58309d;
     color: #ffffec;
     position: absolute;
