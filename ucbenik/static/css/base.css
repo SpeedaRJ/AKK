@@ -1,0 +1,25 @@
+.disclaimer {
+    min-width: 300px;
+    border-radius: 20%;
+    padding: 2%;
+    background: #58309d;
+    color: #ffffec;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.mobile-version {
+    position: absolute;
+    text-align: center;
+    display:none;
+    z-index: 10;
+    background-color: #ffffec;
+}
+
+@media only screen and (max-width: 1200px) {
+    .mobile-version {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}

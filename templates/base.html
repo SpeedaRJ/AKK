@@ -19,11 +19,25 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <title>{{ title }}</title>
     {% block custom_imports %}{% endblock %}
     {% block main_imports %}{% endblock %}
 </head>
 <body>
+    <div class="mobile-version" style="width: 100%;height: 100%;">
+        <div class="disclaimer">
+            <h3>
+                The mobile version is not available yet.<br> 
+                Please, use a computer.<br>
+                If you are using a tablet try flipping the screen 90°.
+                <br><br>
+                Mobilna verzija še ni na voljo.<br>
+                Prosim uporabite računalnik.<br>
+                Če uporabljate tablični računalnik poskusite obrniti zaslon za 90°.
+            </h3>
+        </div>
+    </div>
 {% block main %}{% endblock %}
 </body>
 </html>
