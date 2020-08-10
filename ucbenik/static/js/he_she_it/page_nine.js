@@ -2,7 +2,7 @@ function solution(el,solutions) {
     let parent = el.parentElement;
     for (var i = 0; i < solutions.length; i++) {
         var solution = solutions[i];
-        if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution+'\.*\!*$')) {
+        if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution.toLowerCase()+'\.*\!*$')) {
             parent.classList.remove("incorrect");
             parent.classList.add("correct");
             break;
