@@ -26,9 +26,13 @@ img {
     text-align:center;
     height: 100%;
 }
-
 .msg {
-    width: 100%;
+    width: 90%;
+    padding-left: 10%;
+}
+
+.inst {
+    padding-top: 6%;
 }
 
 .jenny {
@@ -36,19 +40,17 @@ img {
     padding-left: 5%;
 }
 
-.text {
-    margin-bottom: 3% !important;
-}
-
 #table-div {
     width: 100%;
-    height: 70%
+    height: 70%;
+    padding-top: 6%
 }
 
 table {
     width: 90%;
     margin: auto;
-    height: 100%
+    height: 100%;
+    float: left;
 }
 
 td {

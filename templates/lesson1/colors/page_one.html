@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}"/>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -11,80 +13,95 @@
         <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
     </div>
     <div class="col-lg-6 main">
-        <div class="row text">
+        <div class="row">
             <div class="msg jenny">Now let’s look at colours.</div>
-            <div class="msg jenny translation">Ponoviva!</div>
+            <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/colors/1.mp3' %}"></audio>
+            <div class="msg jenny translation">Zdaj si poglejva barve.</div>
         </div>
-        <div class="row text">
+        <div class="row inst">
             <div class="msg jenny">Click on the words, listen and repeat after me.</div>
             <div class="msg jenny translation">Klikni na besede, poslušaj in ponovi za mano.</div>
         </div>
         <div id="table-div">
             <table id="table">
                 <tr>
-                    <td class="color" style="background: #EE202E; color: #EE202E">_____</td>
-                    <td>Red</td>
-                    <td>Rdeča</td>
+                    <td onclick="play('a2')" class="color" style="background: #EE202E; color: #EE202E">_____</td>
+                    <td onclick="play('a2')">Red</td>
+                    <td onclick="play('a2')">Rdeča</td>
+                    <audio id="a2" src="{% static 'audio/lesson1_jenny/colors/2.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #F26524; color: #F26524">_____</td>
-                    <td>Orange</td>
-                    <td>Oranžna</td>
+                    <td onclick="play('a3')" class="color" style="background: #F26524; color: #F26524">_____</td>
+                    <td onclick="play('a3')">Orange</td>
+                    <td onclick="play('a3')">Oranžna</td>
+                    <audio id="a3" src="{% static 'audio/lesson1_jenny/colors/3.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #F7ED38; color: #F7ED38">_____</td>
-                    <td>Yellow</td>
-                    <td>Oranžna</td>
+                    <td onclick="play('a4')" class="color" style="background: #F7ED38; color: #F7ED38">_____</td>
+                    <td onclick="play('a4')">Yellow</td>
+                    <td onclick="play('a4')">Rumena</td>
+                    <audio id="a4" src="{% static 'audio/lesson1_jenny/colors/4.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #099E43; color: #099E43">_____</td>
-                    <td>Green</td>
-                    <td>Zelena</td>
+                    <td onclick="play('a5')" class="color" style="background: #099E43; color: #099E43">_____</td>
+                    <td onclick="play('a5')">Green</td>
+                    <td onclick="play('a5')">Zelena</td>
+                    <audio id="a5" src="{% static 'audio/lesson1_jenny/colors/5.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #3097C3; color: #3097C3">_____</td>
-                    <td>Blue</td>
-                    <td>Modra</td>
+                    <td onclick="play('a6')" class="color" style="background: #3097C3; color: #3097C3">_____</td>
+                    <td onclick="play('a6')">Blue</td>
+                    <td onclick="play('a6')">Modra</td>
+                    <audio id="a6" src="{% static 'audio/lesson1_jenny/colors/6.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #7A2A90; color: #7A2A90">_____</td>
-                    <td>Purple</td>
-                    <td>Zelena</td>
+                    <td onclick="play('a7')" class="color" style="background: #7A2A90; color: #7A2A90">_____</td>
+                    <td onclick="play('a7')">Purple</td>
+                    <td onclick="play('a7')">Vijolična</td>
+                    <audio id="a7" src="{% static 'audio/lesson1_jenny/colors/7.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #EF509C; color: #EF509C">_____</td>
-                    <td>Pink</td>
-                    <td>Roza</td>
+                    <td onclick="play('a8')" class="color" style="background: #EF509C; color: #EF509C">_____</td>
+                    <td onclick="play('a8')">Pink</td>
+                    <td onclick="play('a8')">Roza</td>
+                    <audio id="a8" src="{% static 'audio/lesson1_jenny/colors/8.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #231F20; color: #231F20">_____</td>
-                    <td>Black</td>
-                    <td>Črna</td>
+                    <td onclick="play('a9')" class="color" style="background: #231F20; color: #231F20">_____</td>
+                    <td onclick="play('a9')">Black</td>
+                    <td onclick="play('a9')">Črna</td>
+                    <audio id="a9" src="{% static 'audio/lesson1_jenny/colors/9.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #85837D; color: #85837D">_____</td>
-                    <td>Grey</td>
-                    <td>Siva</td>
+                    <td onclick="play('a10')" class="color" style="background: #85837D; color: #85837D">_____</td>
+                    <td onclick="play('a10')">Grey</td>
+                    <td onclick="play('a10')">Siva</td>
+                    <audio id="a10" src="{% static 'audio/lesson1_jenny/colors/10.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #F8F8F8; color: #F8F8F8">_____</td>
-                    <td>White</td>
-                    <td>Bela</td>
+                    <td onclick="play('a11')" class="color" style="background: #F8F8F8; color: #F8F8F8">_____</td>
+                    <td onclick="play('a11')">White</td>
+                    <td onclick="play('a11')">Bela</td>
+                    <audio id="a11" src="{% static 'audio/lesson1_jenny/colors/11.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #653614; color: #653614">_____</td>
-                    <td>Brown</td>
-                    <td>Rjava</td>
+                    <td onclick="play('a12')" class="color" style="background: #653614; color: #653614">_____</td>
+                    <td onclick="play('a12')">Brown</td>
+                    <td onclick="play('a12')">Rjava</td>
+                    <audio id="a12" src="{% static 'audio/lesson1_jenny/colors/12.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #FBAD18; color: #FBAD18">_____</td>
-                    <td>Gold</td>
-                    <td>Zlata</td>
+                    <td onclick="play('a13')" class="color" style="background: #FBAD18; color: #FBAD18">_____</td>
+                    <td onclick="play('a13')">Gold</td>
+                    <td onclick="play('a13')">Zlata</td>
+                    <audio id="a13" src="{% static 'audio/lesson1_jenny/colors/13.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td class="color" style="background: #B6B2AC; color: #B6B2AC">_____</td>
-                    <td>Silver</td>
-                    <td>Srebrna</td>
+                    <td onclick="play('a14')" class="color" style="background: #B6B2AC; color: #B6B2AC">_____</td>
+                    <td onclick="play('a14')">Silver</td>
+                    <td onclick="play('a14')">Srebrna</td>
+                    <audio id="a14" src="{% static 'audio/lesson1_jenny/colors/14.mp3' %}"></audio>
                 </tr>
             </table>
         </div>
