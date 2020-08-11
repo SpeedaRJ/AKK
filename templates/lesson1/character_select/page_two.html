@@ -8,6 +8,7 @@
     <script type="text/javascript" src="{% static 'js/character_select/page_two.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/jquery.svg.es5.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="row" style="height: 100%;">
@@ -17,20 +18,35 @@
         <div class="col-lg-6">
             <div class="row text space">
                 {% if request.session.height == "tall" %}
-                    <div class="msg jenny">You are tall!</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    <div class="msg jenny">You are tall!</div> 
+                    <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    <audio id="a1" src="{% static 'audio/lesson1_jenny/character_select/4.1.mp3' %}"></audio>
                     {% if user.sex == "M" %}
                         <div class="msg jenny translation">Visok si!</div>
                     {% else %}
                         <div class="msg jenny translation">Visoka si!</div>
+                    {% endif %}
+                {% else %}
+                    <div class="msg jenny">You are short!</div> 
+                    <input type="image" onclick="play('a11')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    <audio id="a11" src="{% static 'audio/lesson1_jenny/character_select/4.2.mp3' %}"></audio>
+                    {% if user.sex == "M" %}
+                        <div class="msg jenny translation">Si nižje rasti!</div>
+                    {% else %}
+                        <div class="msg jenny translation">Si višje rasti!</div>
                     {% endif %}
                 {% endif %}
             </div>
             <div class="row text space">
                 <div class="msg jenny">I am quite plump now but I was slender when I was young</div>
                 <div class="msg jenny translation">Zdaj sem precej debela, vendar sem bila suha, ko sem bila mlada</div>
+                <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a2" src="{% static 'audio/lesson1_jenny/character_select/5.mp3' %}"></audio>
             </div>
             <div class="row text space">
-                <div class="msg jenny">What about you? Are you fat or slim?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny">What about you? Are you fat or slim?</div> 
+                <input type="image" onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a3" src="{% static 'audio/lesson1_jenny/character_select/6.mp3' %}"></audio>
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Kja pa ti? Si močnejše postave ali vitek?</div>
                 {% else %}

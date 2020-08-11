@@ -233,13 +233,13 @@ function changeSuite(el) {
 
 function translate(el) {
     let paras = document.getElementsByClassName("slo_name");
-    if (el.target.value.toString().trim().replace(/  +/g, ' ').toLowerCase() === "plump") {
+    if (el.target.value.toLowerCase().replace(/ +/g,"").match("^plump|fat$")) {
         paras[0].innerHTML = "močnejše postave";
         let data = {
             "body_type": "fat"
         };
         update_session(data);
-    } else if (el.target.value.toString().trim().replace(/  +/g, ' ').toLowerCase() === "slender") {
+    } else if (el.target.value.toString().trim().replace(/ +/g, '').toLowerCase().match("^slender|slim$")) {
         paras[0].innerHTML = "vitke postave";
         let data = {
             "body_type": "slim"
@@ -253,7 +253,7 @@ $(document).ready(function () {
         translate(e);
     });
     document.getElementById("name_input").addEventListener("foucusout",function (e) {
-        if(e.target.value ==="plump"){
+        if(e.target.value.toLowerCase().replace(/ +/g,"").match("^plump|fat$")){
             update_session({'body_type': "fat"})
         }else{
             update_session({'body_type': "slim"})

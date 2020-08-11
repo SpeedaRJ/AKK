@@ -9,6 +9,7 @@
     <script type="text/javascript" src="{% static 'js/character_select/page_two.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/jquery.svg.es5.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="row" style="height: 100%;">
@@ -24,7 +25,9 @@
                     <button class="btn" onclick="changeGlasess(this); update_session({'glasses' : 'glasses'})">Yes</button>
                     /
                     <button class="btn" onclick="changeGlasess(this); update_session({'glasses':'no_glasses'})">No</button>
-                </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                </div> 
+                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a1" src="{% static 'audio/lesson1_jenny/character_select/8.mp3' %}"></audio>
                 <div class="msg jenny translation">Ali nosiš očala? Ja/ne</div>
             </div>
             {% if user.sex == "M" %}
@@ -33,7 +36,9 @@
                         <button class="btn" onclick="document.getElementById('beard_select').style.display='block'">Yes</button>
                         /
                         <button class="btn" onclick="document.getElementById('beard_select').style.display='none'; update_session({'beard':'no_beard'})">No</button>
-                    </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    </div>
+                    <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    <audio id="a2" src="{% static 'audio/lesson1_jenny/character_select/9.mp3' %}"></audio>
                     <div class="msg jenny translation">Ali imaš brado ali brke? Ja/ne</div>
                 </div>
                 <div class="row text space" id="beard_select" style="display: none">

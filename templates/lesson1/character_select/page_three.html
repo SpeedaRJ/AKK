@@ -9,6 +9,7 @@
     <script type="text/javascript" src="{% static 'js/character_select/page_two.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/jquery.svg.es5.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="row" style="height: 100%;">
@@ -17,7 +18,9 @@
         </div>
         <div class="col-lg-6">
             <div class="row text nospace">
-                <div class="msg jenny">My hair is short not long. And it is gray. What is your hair like?</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny">My hair is short not long. And it is brown. What is your hair like?</div> 
+                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a1" src="{% static 'audio/lesson1_jenny/character_select/7.mp3' %}"></audio>
                 <div class="msg jenny translation">Moji lasje so kratki, ne dolgi. In sivi. Kakšni pa so tvoji lasje ?</div>
             </div>
             <div class="row text space">

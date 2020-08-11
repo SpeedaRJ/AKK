@@ -9,6 +9,7 @@
     <script type="text/javascript" src="{% static 'js/character_select/page_two.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/jquery.svg.es5.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="row" style="height: 100%;">
@@ -20,7 +21,9 @@
             <div class="row text space">
                 {{ colors|json_script:"colors" }}
                 {{ parts|json_script:"parts" }}
-                <div class="msg jenny">Pick out your clothes.</div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <div class="msg jenny">Pick out your clothes.</div> 
+                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a1" src="{% static 'audio/lesson1_jenny/character_select/10.mp3' %}"></audio>
                 <div class="msg jenny translation">Izberi svoja oblačila.</div>
             </div>
             {% if user.sex == "M" %}
