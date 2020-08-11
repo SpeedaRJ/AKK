@@ -9,10 +9,7 @@ from .serializers import UserSerializer
 
 lesson_one = {"Introduction": "/lesson_one/introduction/page_one", "Appearance": "/lesson_one/character_select/page_one",
               "Numbers": "/lesson_one/numbers/page_one", "Colours": "/lesson_one/colors/page_one", "Years": "/lesson_one/years/page_one",
-              "Personality traits": "/lesson_one/personal_traits/page_one", "He, she, it": "/lesson_one/he_she_it/page_one"}
-
-# TODO: #1 write get_user_avatar method and add it to all? views @creativ10
-# also mogoče bi blo smiselno, da je avatar skrit dokler se loada ( da ne spreminja barve)
+              "Personality Traits": "/lesson_one/personal_traits/page_one", "He, She, It": "/lesson_one/he_she_it/page_one"}
 
 def get_user_avatar(user_dict):
     user=User.objects.get(email=user_dict['email'])
@@ -257,8 +254,7 @@ def getColorsAndParts(data_set, sex):
 
 def lesson_one_title(request):
     if request.method == "GET":
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
-        return render(request, "lesson1/title_page.html", {"next": "/lesson_one/introduction/page_one", "back": "/", "solved" : solution.solved,
+        return render(request, "lesson1/title_page.html", {"next": "/lesson_one/introduction/page_one", "back": "/", 
                                                                     "lesson_one": lesson_one,
                                                                     "lesson": "Unit 1: About Me", "title": "", "user": request.session['user']})
 
@@ -491,8 +487,12 @@ def character_select_page_one(request):
         if not get_refferer(request):
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not save_solution(user, back):
             return redirect(back)
+        user.add_chapter('Appearance')
+        request.session['user'] = UserSerializer(user).data
+        print(user.chapters)
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/character_select/page_one.html", {"next": "/lesson_one/character_select/page_two",
                                                                           "back": back, "solved" : solution.solved,
@@ -712,6 +712,7 @@ def character_select_page_six(request):
                 "shirt_color": "[id^=Majica]",
                 "Krog": "[id^=Krog]",
             }
+        
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/character_select/page_six.html", {"next": "/lesson_one/numbers/page_one",
                                                                           "back": "/lesson_one/character_select/page_five",
@@ -719,6 +720,8 @@ def character_select_page_six(request):
                                                                           "lesson_one": lesson_one,
                                                                           "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
                                                                           "src": src_ref, "parts": parts, "colors": colors})
+
+#NUMBERS 
 
 def numbers_page_one(request):
     if request.method == "GET":
@@ -734,6 +737,9 @@ def numbers_page_one(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        user = User.objects.get(email=request.session['user']['email'])
+        user.add_chapter('Numbers')
+        request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson_one/numbers/page_two",
                                                                  "back": "/lesson_one/character_select/page_six","lesson_one": lesson_one,
                                                                  "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
@@ -1274,6 +1280,7 @@ def numbers_page_twentyfive(request):
                                                                         "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
+#COLORS
 
 def colors_page_one(request):
     back = "/lesson_one/numbers/page_twentyfive"
@@ -1290,8 +1297,11 @@ def colors_page_one(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not save_solution(user, back):
             return redirect(back)
+        user.add_chapter('Colours')
+        request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/colors/page_one.html", {"next": "/lesson_one/colors/page_two",
                                                                 "back": back,
                                                                 "lesson_one": lesson_one,
@@ -1492,6 +1502,8 @@ def colors_page_nine(request):
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
+#YEARS
+
 def years_page_one(request):
     back = "/lesson_one/colors/page_nine"
     if request.method == "GET":
@@ -1507,8 +1519,11 @@ def years_page_one(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not save_solution(user, back):
             return redirect(back)
+        user.add_chapter('Years')
+        request.session['user'] = UserSerializer(user).data
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/years/page_one.html", {"next": "/lesson_one/years/page_two",
                                                                "back": back, "solved" : solution.solved,
@@ -1769,6 +1784,8 @@ def years_page_twelve(request):
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
+#PERSONAL TRAITS
+
 def personal_traits_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -1784,6 +1801,9 @@ def personal_traits_page_one(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        user = User.objects.get(email=request.session['user']['email'])
+        user.add_chapter('Personality Traits')
+        request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/personal_traits/page_one.html", {"next": "/lesson_one/personal_traits/page_two",
                                                                          "back": "/lesson_one/years/page_twelve",
                                                                          "solved" : solution.solved,
@@ -1946,12 +1966,15 @@ def he_she_it_page_one(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not save_solution(user, back):
             return redirect(back)
+        user.add_chapter('He, She, It')
+        request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/he_she_it/page_one.html", {"next": "/lesson_one/he_she_it/page_two",
                                                                    "back": back, "lesson_one": lesson_one,
                                                                    "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors})
+                                                                    "src": src_ref, "parts": parts, "colors": colors})
 
 def he_she_it_page_two(request):
     if request.method == "GET":

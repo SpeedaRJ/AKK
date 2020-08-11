@@ -7,3 +7,4 @@ class UserSerializer(serializers.Serializer):
     first_name = serializers.CharField()
     sex = serializers.CharField()
     age = serializers.IntegerField()
+    chapters = serializers.CharField()

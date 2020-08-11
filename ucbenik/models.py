@@ -1,3 +1,5 @@
+import json
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
@@ -20,6 +22,7 @@ class User(AbstractUser):
     age = models.IntegerField(default=99)
     is_admin = models.BooleanField(default=False)
     last_page = models.CharField(max_length=30, default='')
+    chapters = models.CharField(max_length=200, default='Introduction')
 
     objects = CustomUserManager()
 
@@ -28,6 +31,12 @@ class User(AbstractUser):
 
     def set_last_page(self, last_page):
         self.last_page = last_page
+        self.save()
+
+    def add_chapter(self, chapter):
+        if chapter in self.chapters:
+            return
+        self.chapters += f',{chapter}'
         self.save()
 
 

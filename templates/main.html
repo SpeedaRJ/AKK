@@ -10,13 +10,19 @@
     <div class="col-lg-2" id="Menu">
         <button class="titleB" disabled>Menu</button>
         <ul>
+            
             {% if lesson_one %}
             <li class="main">
                 <button class="mainB">Unit 1</button>
                 <ul class="submenu">
                     {% for key,item in lesson_one.items %}
                     <li>
-                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                        <button class="SB" onclick="window.location.href='{{ item }}'" 
+                        {% if key in user.chapters %}
+                        {% else %}
+                        disabled
+                        {% endif %}
+                        >{{ key }}</button>
                     </li>
                     {% endfor %}
                 </ul>
