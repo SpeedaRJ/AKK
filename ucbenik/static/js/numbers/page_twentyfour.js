@@ -131,7 +131,7 @@ function redo(e) {
 
 function solution(el,solution) {
     let parent = el.parentElement;
-    if (el.value.replace('fourty','forty').replace(/-*/g," ").toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution.toString().replace("-","")+'|'+solution.toString().replace("-"," ")+'\\.*\\!*$')) {
+    if (el.value.replace('fourty','forty').replace(/-+/g," ").toLowerCase().trim().replace(/ +/g, ' ').match('^'+solution.toString().replace("-","")+'|'+solution.toString().replace("-"," ")+'\\.*\\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

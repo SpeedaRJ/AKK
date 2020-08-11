@@ -40,11 +40,13 @@
 
 #redo_b {
     border: none;
-    width: 8%;
-    height: 8%;
-    transform: translate(-90%, 90%);
-    border-radius: 50%;
+    width: 10%;
+    float: right;
+    height: 10%;
+    transform: translate(-50%, 25%);
+    border-radius: 50%
 }
+
 
 #redo_b:hover {
     border: 3px black dotted;
@@ -52,4 +54,12 @@
 
 input {
    background-color: transparent;
+}
+
+.user {
+    float: left;
+}
+
+.slo {
+    margin-left: 0;
 }

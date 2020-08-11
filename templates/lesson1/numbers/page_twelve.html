@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_twelve.css' %}"/>
 <script type="text/javascript" src="{% static 'js/numbers/page_twelve.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -16,7 +17,7 @@
             <div class="msg jenny">
                 Complete the table by adding the 
                 numbers or words.
-            </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            </div>
             <div class="msg jenny slo centre">
                 Dopolni tabelo tako, da vstaviš števila ali besede. 
             </div>
@@ -130,13 +131,15 @@
         <div class="row inst">
             <div class="msg jenny">Got it? Let’s try it with all the numbers 
                 we’ve learned so far. 
-            </div> <input type="image" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            </div> 
             <div class="msg jenny slo centre">
                 Že obvladaš? Preizkusiva se z vsemi 
                 naučenimi števili do sedaj. 
             </div>
             <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
         </div>
+        <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+        <audio id="a1" src="{% static 'audio/lesson1_jenny/numbers/24.mp3' %}"></audio>
         <div class="help-table" id="help-table">
             <div class="help row" id="row0">
                 <button class="col-lg-6 tip" disabled>
