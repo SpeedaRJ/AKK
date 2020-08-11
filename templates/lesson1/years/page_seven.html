@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/years/page_seven.css' %}"/>
 <script type="text/javascript" src="{% static 'js/years/page_seven.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -16,6 +18,8 @@
         </div>
         <div class="row text ">
             <div class="msg jenny">I was born in 1970. What year were you born in?</div>
+            <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/years/2.mp3' %}"></audio>
             {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Rojena sem bila leta 1970. Katerega leta si bil ti rojen?</div>
                 {% else %}
@@ -33,10 +37,15 @@
         </div>
         <div class="row text inst">
             <div class="msg jenny">First, read it out yourself.</div>
+            <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a2" src="{% static 'audio/lesson1_jenny/years/3.mp3' %}"></audio>
             <div class="msg jenny translation">Najprej sam preberi letnico.</div>
         </div>
         <div class="row text inst">
             <div class="msg jenny">Now, listen.</div>
+            <input type="image" onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a3" src="{% static 'audio/lesson1_jenny/years/4.mp3' %}"></audio>
+            <input type="image" onclick="tts('year_input')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
             <div class="msg jenny translation">Zdaj poslušaj.</div>
         </div>
     </div>

@@ -163,8 +163,12 @@
                         document.getElementById("next").removeAttribute("disabled");
                         //alert( "You have already solved this exercise but feel free to do it again.\nTo nalogo ste že rešili, vendar jo lahko brez oklevanja ponovite." );
                     });
+                    
+                    function hide(el) {
+                        el.style.display = "none"
+                    }
                 </script>
-                <button class="solved" type="button" disabled>
+                <button onclick = "hide(this)" id="solved" class="solved" type="button">
                     You have already solved this exercise<br>
                     however feel free to do it again.<br>
                     To nalogo si že rešil{% if user.sex == 'F' %}a{% endif %},<br>

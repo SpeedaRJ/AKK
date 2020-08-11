@@ -22,3 +22,16 @@ $(function () {
     setYears();
     document.getElementById("next").removeAttribute("disabled");
 });
+
+function tts(el) {
+    if ('speechSynthesis' in window) {
+      var msg = new SpeechSynthesisUtterance();
+      msg.text = el.innerHTML;
+      if (!msg.text)
+        msg.text = "Please enter a value."
+      window.speechSynthesis.speak(msg);
+     }else{
+       // Speech Synthesis Not Supported 😣
+       alert("Sorry, your browser doesn't support text to speech!");
+     }
+  }

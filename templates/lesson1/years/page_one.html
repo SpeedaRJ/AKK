@@ -6,6 +6,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/years/page_one.css' %}"/>
 <script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -15,6 +17,8 @@
     <div class="col-lg-6 main">
         <div class="row text ">
             <div class="msg jenny">Let’s learn how to pronounce years.</div>
+            <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/years/1.mp3' %}"></audio>
             <div class="msg jenny translation">Poglejva, kako se izgovorijo letnice.</div>
         </div>
         <div class="row text inst">

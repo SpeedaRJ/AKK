@@ -20,11 +20,11 @@
             <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
         </div>
         <div class="row working" style="margin-top: 8%;">
-            <div class="row" style="text-align: center"><p class="number" id="one">1991</p></div>
-            <div class="row" style="text-align: center"><p class="number" id="two">1991</p></div>
-            <div class="row" style="text-align: center"><p class="number" id="three">1991</p></div>
-            <div class="row" style="text-align: center"><p class="number" id="four">1991</p></div>
-            <div class="row" style="text-align: center"><p class="number" id="five">1991</p></div>
+            <div class="row" style="text-align: center"><p class="number" id="one" onclick="tts(this)">1991</p></div>
+            <div class="row" style="text-align: center"><p class="number" id="two" onclick="tts(this)">1991</p></div>
+            <div class="row" style="text-align: center"><p class="number" id="three" onclick="tts(this)">1991</p></div>
+            <div class="row" style="text-align: center"><p class="number" id="four" onclick="tts(this)">1991</p></div>
+            <div class="row" style="text-align: center"><p class="number" id="five" onclick="tts(this)">1991</p></div>
         </div>
     </div>
     {% include "character.html" %}
