@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_twentytwo.css' %}"/>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -17,47 +19,56 @@
             </div>
         </div>
         <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
-        <img src="{% static 'svg/common/listen_on.svg' %}" type="svg" class="listen" id="on">
         <div class="help-table" id="help-table">
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>first</button>
-                <button class="col-lg-6 tip c2">1<sup>st</sup></button>
+                <button onclick="play('a1')" class="col-lg-6 tip">first</button>
+                <button onclick="play('a1')" class="col-lg-6 tip c2">1<sup>st</sup></button>
+                <audio id="a1" src="{% static 'audio/lesson1_jenny/numbers/VS1.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>second</button>
-                <button class="col-lg-6 tip c2">2<sup>nd</sup></button>
+                <button onclick="play('a2')" class="col-lg-6 tip">second</button>
+                <button onclick="play('a2')" class="col-lg-6 tip c2">2<sup>nd</sup></button>
+                <audio id="a2" src="{% static 'audio/lesson1_jenny/numbers/VS2.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>third</button>
-                <button class="col-lg-6 tip c2">3<sup>rd</sup></button>
+                <button onclick="play('a3')" class="col-lg-6 tip">third</button>
+                <button onclick="play('a3')" class="col-lg-6 tip c2">3<sup>rd</sup></button>
+                <audio id="a3" src="{% static 'audio/lesson1_jenny/numbers/VS3.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>fourth</button>
-                <button class="col-lg-6 tip c2">4<sup>th</sup></button>
+                <button onclick="play('a4')" class="col-lg-6 tip">fourth</button>
+                <button onclick="play('a4')" class="col-lg-6 tip c2">4<sup>th</sup></button>
+                <audio id="a4" src="{% static 'audio/lesson1_jenny/numbers/VS4.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>fifth</button>
-                <button class="col-lg-6 tip c2">5<sup>th</sup></button>
+                <button onclick="play('a5')" class="col-lg-6 tip">fifth</button>
+                <button onclick="play('a5')" class="col-lg-6 tip c2">5<sup>th</sup></button>
+                <audio id="a5" src="{% static 'audio/lesson1_jenny/numbers/VS5.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>sixth</button>
-                <button class="col-lg-6 tip c2">6<sup>th</sup></button>
+                <button onclick="play('a6')" class="col-lg-6 tip">sixth</button>
+                <button onclick="play('a6')" class="col-lg-6 tip c2">6<sup>th</sup></button>
+                <audio id="a6" src="{% static 'audio/lesson1_jenny/numbers/VS6.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>seventh</button>
-                <button class="col-lg-6 tip c2">7<sup>th</sup></button>
+                <button onclick="play('a7')" class="col-lg-6 tip">seventh</button>
+                <button onclick="play('a7')" class="col-lg-6 tip c2">7<sup>th</sup></button>
+                <audio id="a7" src="{% static 'audio/lesson1_jenny/numbers/VS7.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>eightht</button>
-                <button class="col-lg-6 tip c2">8<sup>th</sup></button>
+                <button onclick="play('a8')" class="col-lg-6 tip">eightht</button>
+                <button onclick="play('a8')" class="col-lg-6 tip c2">8<sup>th</sup></button>
+                <audio id="a8" src="{% static 'audio/lesson1_jenny/numbers/VS8.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>ninth</button>
-                <button class="col-lg-6 tip c2">9<sup>th</sup></button>
+                <button onclick="play('a9')" class="col-lg-6 tip">ninth</button>
+                <button onclick="play('a9')" class="col-lg-6 tip c2">9<sup>th</sup></button>
+                <audio id="a9" src="{% static 'audio/lesson1_jenny/numbers/VS9.mp3' %}"></audio>
             </div>
             <div class="help row">
-                <button class="col-lg-6 tip" disabled>tenth</button>
-                <button class="col-lg-6 tip c2">10<sup>th</sup></button>
+                <button onclick="play('a10')" class="col-lg-6 tip">tenth</button>
+                <button onclick="play('a10')" class="col-lg-6 tip c2">10<sup>th</sup></button>
+                <audio id="a10" src="{% static 'audio/lesson1_jenny/numbers/VS10.mp3' %}"></audio>
             </div>
         </div>
         <div class="row inst">

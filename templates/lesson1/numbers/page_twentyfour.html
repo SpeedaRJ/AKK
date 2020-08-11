@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_twentyfour.css' %}"/>
 <script type="text/javascript" src="{% static 'js/numbers/page_twentyfour.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -16,6 +18,8 @@
             <div class="msg jenny">
                 Now let’s try it with all the numbers below 100.
             </div>
+            <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/numbers/43.mp3' %}"></audio>
             <div class="msg jenny slo centre">
                 Zdaj pa se preizkusiva z vsemi števili pod 100.
             </div>
