@@ -1967,9 +1967,9 @@ def he_she_it_page_one(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         user = User.objects.get(email=request.session['user']['email'])
-        if not save_solution(user, back):
+        if not save_solution(user, back): # marks the previous excersise as solved
             return redirect(back)
-        user.add_chapter('He, She, It')
+        user.add_chapter('He, She, It') #unlocks the chapter in the menu
         request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/he_she_it/page_one.html", {"next": "/lesson_one/he_she_it/page_two",
                                                                    "back": back, "lesson_one": lesson_one,

@@ -34,7 +34,13 @@
                 <ul class="submenu">
                     {% for key,item in lesson_two.items %}
                     <li>
-                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                        <button class="SB" onclick="window.location.href='{{ item }}'"
+                        {% if key in user.chapters %}
+                        {% else %}
+                        disabled
+                        {% endif %}>
+                            {{ key }}
+                        </button>
                     </li>
                     {% endfor %}
                 </ul>
@@ -55,7 +61,13 @@
                 <ul class="submenu">
                     {% for key,item in lesson_three.items %}
                     <li>
-                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                        <button class="SB" onclick="window.location.href='{{ item }}'"
+                        {% if key in user.chapters %}
+                        {% else %}
+                        disabled
+                        {% endif %}>
+                            {{ key }}
+                        </button>
                     </li>
                     {% endfor %}
                 </ul>
@@ -76,7 +88,13 @@
                 <ul class="submenu">
                     {% for key,item in lesson_four.items %}
                     <li>
-                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                        <button class="SB" onclick="window.location.href='{{ item }}'"
+                        {% if key in user.chapters %}
+                        {% else %}
+                        disabled
+                        {% endif %}>
+                            {{ key }}
+                        </button>
                     </li>
                     {% endfor %}
                 </ul>
@@ -97,7 +115,13 @@
                 <ul class="submenu">
                     {% for key,item in lesson_five.items %}
                     <li>
-                        <button class="SB" onclick="window.location.href='{{ item }}'">{{ key }}</button>
+                        <button class="SB" onclick="window.location.href='{{ item }}'"
+                        {% if key in user.chapters %}
+                        {% else %}
+                        disabled
+                        {% endif %}>
+                            {{ key }}
+                        </button>
                     </li>
                     {% endfor %}
                 </ul>
