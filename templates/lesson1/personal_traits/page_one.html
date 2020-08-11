@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}"/>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -15,6 +17,8 @@
             <div class="msg jenny">
                 I am kind, reliable and funny. But sometimes I'm lazy. What are you like?
             </div>
+            <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/personal_traits/1.mp3' %}"></audio>
             <div class="msg jenny slo centre">
                 Sem prijazna, zanesljiva in zabavna, vendar občasno lena. Kakšen si ti?
             </div>

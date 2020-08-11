@@ -1727,7 +1727,7 @@ def years_page_ten(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/years/page_ten.html", {"next": "/lesson_one/years/page_eleven",
-                                                               "back": "/lesson_one/colors/page_eight",
+                                                               "back": "/lesson_one/years/page_nine",
                                                                "solved" : solution.solved,
                                                                "lesson_one": lesson_one,
                                                                "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
