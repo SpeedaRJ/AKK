@@ -267,7 +267,10 @@ def introduction_page_one(request):
         if not get_refferer(request):
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        user = User.objects.get(email=request.session['user']['email'])
+        solution = get_or_create_solution(user, request.path)
+        user.add_chapter('Introduction')
+        request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "solved" : solution.solved,
                                                                     "lesson_one": lesson_one,
                                                                     "solved" : solution.solved,
