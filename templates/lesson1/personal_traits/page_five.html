@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_three.css' %}"/>
 <script type="text/javascript" src="{% static 'js/personal_traits/page_three.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -17,6 +19,8 @@
                 the adjectives? Try doing the
                 following exercises. 
             </div>
+            <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/personal_traits/3.mp3' %}"></audio>
             <div class="msg jenny slo centre">
                 Si si že zapomnil zapis pridevnikov? 
                 Poskusi rešiti naslednje naloge.    

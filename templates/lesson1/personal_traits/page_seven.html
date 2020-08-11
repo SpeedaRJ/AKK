@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}"/>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -15,6 +17,8 @@
             <div class="msg jenny">
                 Can you describe your personality? <br>Let's check! What are you like? 
             </div>
+            <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/personal_traits/4.mp3' %}"></audio>
             <div class="msg jenny slo centre">
                 Ali že znaš povedati svoje karakterne lastnosti? Preveriva! Kakšen si?
             </div>
@@ -29,6 +33,8 @@
             <div class="msg jenny">
                 Great! Let's try one more thing. How would you ask me about my personality? 
             </div>
+            <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a2" src="{% static 'audio/lesson1_jenny/personal_traits/5.mp3' %}"></audio>
             <div class="msg jenny slo centre">
                 Odlično! Zdaj pa preizkusiva še eno stvar … Kako bi po karakternih značilnostih vprašal mene?
             </div>
@@ -41,6 +47,8 @@
             <div class="msg jenny">
                 Awesome! You are doing great and I have a surprise for you! Meet my friend Jim.
             </div>
+            <input type="image" onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a3" src="{% static 'audio/lesson1_jenny/personal_traits/6.mp3' %}"></audio>
             <div class="msg jenny slo centre">
                 Super! Odlično ti že gre. Zato imam zate presenečenje! Spoznaj mojega prijatelja Jima.
             </div>

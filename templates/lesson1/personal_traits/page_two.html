@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}"/>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+
 {% endblock %}
 {% block content %}
 <div class="row">
@@ -13,8 +15,10 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg jenny">
-                Click on the words, listen to the pronunciation and repeat after me. 
+                Click on the words, listen and repeat after me. 
             </div>
+            <input type="image" onclick="play('a0')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+            <audio id="a0" src="{% static 'audio/lesson1_jenny/personal_traits/2.mp3' %}"></audio>
             <div class="msg jenny slo centre">
                 Klikni na besede, prisluhni izgovorjavi in ponovi za mano.
             </div>
@@ -24,69 +28,83 @@
     <div class="col-lg-4">
         <div class="msg user trait">
             smart = pameten
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a1')">
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/personal_traits/Smart.mp3' %}"></audio>
         </div>
         <div class="msg user trait">
             stupid = neumen 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a2')">
+            <audio id="a2" src="{% static 'audio/lesson1_jenny/personal_traits/Stupid.mp3' %}"></audio>
         </div>
         <div class="msg user trait">
             good = dober 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a3')">
+            <audio id="a3" src="{% static 'audio/lesson1_jenny/personal_traits/Good.mp3' %}"></audio>
         </div>
         <div class="msg user trait">
             bad = slab
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a4')">
+            <audio id="a4" src="{% static 'audio/lesson1_jenny/personal_traits/Bad.mp3' %}"></audio>
         </div>
     </div>
     <div class="col-lg-4">
         <div class="msg user trait">
             funny = zabaven 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a5')">
+            <audio id="a5" src="{% static 'audio/lesson1_jenny/personal_traits/Funny.mp3' %}"></audio>
         </div>
         
         <div class="msg user trait">
             outgoing = družaben
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a6')">
+            <audio id="a6" src="{% static 'audio/lesson1_jenny/personal_traits/Outgoing.mp3' %}"></audio>
         </div>
 
         <div class="msg user trait">
             kind = prijazen 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a7')">
+            <audio id="a7" src="{% static 'audio/lesson1_jenny/personal_traits/Kind.mp3' %}"></audio>
         </div>
         
         <div class="msg user trait">
             lazy = len 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a8')">
+            <audio id="a8" src="{% static 'audio/lesson1_jenny/personal_traits/Lazy.mp3' %}"></audio>
         </div>
     </div>
     <div class="col-lg-4">
         <div class="msg user trait">
             shy = sramežljiv
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a9')">
+            <audio id="a9" src="{% static 'audio/lesson1_jenny/personal_traits/Shy.mp3' %}"></audio>
         </div>
         <div class="msg user trait">
             selfish = sebičen 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a10')">
+            <audio id="a10" src="{% static 'audio/lesson1_jenny/personal_traits/Selfish.mp3' %}"></audio>
         </div>
         <div class="msg user trait">
             boring = dolgočasen
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a11')">
+            <audio id="a11" src="{% static 'audio/lesson1_jenny/personal_traits/Boring.mp3' %}"></audio>
         </div>
     </div>
     <div class="col-lg-12">
         <div class="msg user trait w-auto">
             generous = radodaren, velikodušen 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a12')">
+            <audio id="a12" src="{% static 'audio/lesson1_jenny/personal_traits/Generous.mp3' %}"></audio>
         </div>
         <div class="msg user trait w-auto">
             mean = neprijazen, nesramen 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a13')">
+            <audio id="a13" src="{% static 'audio/lesson1_jenny/personal_traits/Mean.mp3' %}"></audio>
         </div>
         
         <div class="msg user trait w-auto">
             hard-working = delaven 
-            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off" onclick="play('a14')">
+            <audio id="a14" src="{% static 'audio/lesson1_jenny/personal_traits/HardWorking.mp3' %}"></audio>
         </div>
     </div>
 </div>
