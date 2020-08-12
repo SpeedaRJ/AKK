@@ -35,6 +35,125 @@ const pSBC = (p, c0, c1, l) => {
     else return "#" + (4294967296 + r * 16777216 + g * 65536 + b * 256 + (f ? m(a * 255) : 0)).toString(16).slice(1, f ? undefined : -2)
 };
 
+const prepend = "http://127.0.0.1:8000/";
+        function select(el) {
+            let colors = document.getElementsByClassName("color");
+            for (var item of colors) {
+                if("unselected" in item.classList)
+                    continue
+                else
+                    item.classList.add("unselected")
+                    item.classList.remove("selected");
+            }
+            el.classList.remove("unselected");
+            el.classList.add("selected");
+            recolorHair();
+        }
+        function recolor() {
+            try {
+                var svg = document.getElementById("character").contentDocument.children[0];
+            } catch(e) {
+                setTimeout(function (){
+                    recolor()
+                }, 500);
+                return
+            }
+            let colors = JSON.parse(document.getElementById("colors").textContent);
+            let parts = JSON.parse(document.getElementById("parts").textContent);
+            let querySelector = "";
+            [].forEach.call(Object.keys(parts), function (el) {
+                querySelector += parts[el] + ",";
+            });
+            [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
+                let el_list = el.id;
+                if (/Koza/.test(el_list)) {
+                    el.setAttribute("style", "fill: "+colors['body_color']);
+                }else if(/Vrat/.test(el_list)){
+                    el.setAttribute("style", "fill: "+ colors['neck']);
+                }
+            });
+            recolorHair();
+        }
+        function recolorHair(){
+            try {
+                var svg = document.getElementById("character").contentDocument.children[0];
+            } catch(e) {
+                setTimeout(function (){
+                    recolorHair()
+                }, 500);
+                return
+            }
+            let color = document.getElementsByClassName("selected")[0].style.backgroundColor;
+
+            [].forEach.call(svg.querySelectorAll("[id^=Lasje]"),function (el) {
+                el.setAttribute("style","fill:"+color);
+            });
+
+            [].forEach.call(svg.querySelectorAll("[id^=Obrve]"),function (el) {
+                try{
+                    el.children[0].setAttribute("style", "fill: " + color);
+                } catch(e) {
+                    el.setAttribute("style", "fill: " + color);
+                }
+            });
+
+            [].forEach.call(svg.querySelectorAll("[id^=obrve]"),function (el) {
+                try{
+                    el.children[0].setAttribute("style", "fill: " + color);
+                } catch(e) {
+                    el.setAttribute("style", "fill: " + color);
+                }
+            });
+
+            [].forEach.call(svg.querySelectorAll("[id^=Obrve-2]"),function (el) {
+                el.setAttribute("style","fill:"+color);
+            });
+
+            [].forEach.call(svg.querySelectorAll("[id^=Obrve-4]"),function (el) {
+                el.setAttribute("style","fill:"+color);
+            });
+        }
+        $(window).on( "load",function(){
+            recolor();
+        })
+
+        function changeHairStyle(el, sex) {
+            let svg = document.getElementById("character");
+            let url = svg.data.split("/");
+            const predict = (element) => element === "static";
+            let index = url.findIndex(predict);
+            let new_url = "";
+            if (url[url.findIndex((element) => element === "short_hair" || element === "long_hair" || element === "bald" || element === "patch" || element === "bun.svg" || element === "curly.svg" || element === "long.svg" || element === "medium.svg")] === el.id) {
+                //console.log("Hairstyle already selected");
+                return;
+            }
+            if (sex === "M") {
+                for (let i = index; i < url.length; i++) {
+                    if (url[i] === "short_hair" || url[i] === "long_hair" || url[i] === "bald" || url[i] === "patch") {
+                        new_url += el.id + "/";
+                    } else {
+                        if (i === url.length - 1) {
+                            new_url += url[i];
+                        } else {
+                            new_url += url[i] + "/";
+                        }
+                    }
+                }
+            } else {
+                for (let i = index; i < url.length; i++) {
+                    if (i === url.length - 1) {
+                        new_url += el.id + ".svg";
+                    } else {
+                        new_url += url[i] + "/";
+                    }
+                }
+            }
+            svg.data = prepend + new_url;
+            svg.addEventListener("reload", function () {
+                recolor();
+            });
+        }
+
 function changeSkinColor(e) {
     let svg = document.getElementById("character").contentDocument.children[0];
     [].forEach.call(svg.querySelectorAll(".cls-4"), function (el) {
@@ -52,6 +171,16 @@ function changeSkinColor(e) {
     };
     update_session(data);
 
+}
+
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function update(d) {
+    update_session(d)
+    await(timeout(500));
+    location.reload();
 }
 
 function update_session(d) {

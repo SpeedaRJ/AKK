@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_three.css' %}"/>
     <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/character_select/page_two.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/character_select/page_five.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/jquery.svg.es5.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
@@ -48,16 +48,16 @@
                         <div style="display: flex;justify-content: space-evenly;">
                             <button id="red_shirt"
                                     style="border-radius: 50%; width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/red_shirt.svg" %}) center no-repeat;"
-                                    onclick="changeDress(this,'red','shirt'); update_session({'shirt_color':'#CC3333'});update_session({'shoes_color':'#074368'});update_session({'pants_color':'#074368'});update_session({'wearing':'shirt'});"></button>
+                                    onclick="update_session({'shirt_color':'rgb(204, 51, 51)'});update_session({'shoes_color':'rgb(7, 67, 104)'});update_session({'pants_color':'rgb(7, 67, 104)'});update_session({'wearing':'shirt'}); window.location.href='?wearing=shirt&shirt_color=rgb(204, 51, 51)&pants_color=rgb(7, 67, 104)&shoes_color=rgb(7, 67, 104)'"></button>
                             <button id="pink_shirt"
                                     style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/pink_shirt.svg" %}) center no-repeat;"
-                                    onclick="changeDress(this,'pink','shirt'); update_session({'shirt_color':'#D16E81'}); update_session({'shoes_color':'#BBB7DC'}); update_session({'pants_color':'#BBB7DC'});update_session({'wearing':'shirt'}); "></button>
+                                    onclick="update_session({'shirt_color':'rgb(209, 110, 129)'}); update_session({'shoes_color':'rgb(187, 183, 220)'}); update_session({'pants_color':'rgb(187, 183, 220)'});update_session({'wearing':'shirt'}); window.location.href='?wearing=shirt&shirt_color=rgb(209, 110, 129)&pants_color=rgb(187, 183, 220)&shoes_color=rgb(187, 183, 220)'"></button>
                             <button id="orange_dress"
                                     style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/orange_dress.svg" %})center no-repeat;"
-                                    onclick="changeDress(this,'orange','dress');update_session({'dress_color':'#CD9246'}); update_session({'shoes_color':'#CD9246'});update_session({'wearing':'dress'});"></button>
+                                    onclick="update_session({'dress_color':'rgb(205, 146, 70)'}); update_session({'shoes_color':'rgb(205, 146, 70)'});update_session({'wearing':'dress'}); window.location.href='?wearing=dress&dress_color=rgb(205, 146, 70)&shoes_color=rgb(205, 146, 70)'"></button>
                             <button id="blue_dress"
                                     style="border-radius: 50%;  width: 100px;height: 100px; background:url({% static "svg/lesson1/character_select/female/blue_dress.svg" %})center no-repeat;"
-                                    onclick="changeDress(this,'blue','dress');update_session({'dress_color':'#0474BB'}); update_session({'shoes_color':'#0474BB'});update_session({'wearing':'dress'}); "></button>
+                                    onclick="update_session({'dress_color':'rgb(4, 116, 187)'}); update_session({'shoes_color':'rgb(4, 116, 187)'});update_session({'wearing':'dress'}); window.location.href='?wearing=dress&shoes_color=rgb(4, 116, 187)&dress_color=rgb(4, 116, 187)'"></button>
                         </div>
                     </div>
                 </div>
@@ -68,41 +68,19 @@
         </div>
     </div>
     <script>
-        function recolor() {
-            let svg = document.getElementById("character").contentDocument.children[0];
-            let colors = JSON.parse(document.getElementById("colors").textContent);
-            let parts = JSON.parse(document.getElementById("parts").textContent);
-            console.log(parts,colors);
-            let querySelector = "";
-            [].forEach.call(Object.keys(parts), function (el) {
-                querySelector += parts[el] + ",";
-            });
-            console.log(querySelector);
-            [].forEach.call(svg.querySelectorAll(querySelector.substring(0, querySelector.length - 1)), function (el) {
-                let el_list = el.id;
-                if (/Koza/.test(el_list)) {
-                    el.setAttribute("style", "fill: " + colors['body_color']);
-                } else if (/Vrat/.test(el_list)) {
-                    el.setAttribute("style", "fill: " + colors['neck']);
-                } else if (/Lasje/.test(el_list)) {
-                    el.setAttribute("style", "fill: " + colors['hair_color']);
-                } else if (/Brada/.test(el_list)) {
-                    el.setAttribute("style", "fill: " + colors['hair_color']);
-                } else if (/Brki/.test(el_list)) {
-                    el.setAttribute("style", "fill: " + colors['hair_color']);
-                }
-            });
+        function timeout(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
         }
-
-        function saveSessionAndNext() {
+        async function saveSessionAndNext() {
             $.ajax({
                 type: 'POST',
                 url: "/save_session",
                 data: {csrfmiddlewaretoken: window.CSRF_TOKEN}
             });
+            await(timeout(500))
             window.location.href ="{{ next }}";
         }
-
+        
         $(window).on("load", function () {
             recolor();
             document.getElementById("next").setAttribute("onclick", "saveSessionAndNext()");

@@ -64,47 +64,6 @@ function update_session(d) {
     });
 }
 
-function changeHairStyle(el, sex) {
-    let svg = document.getElementById("character");
-    console.log(svg)
-    let url = svg.data.split("/");
-    const predict = (element) => element === "static";
-    let index = url.findIndex(predict);
-    let new_url = "";
-    if (url[url.findIndex((element) => element === "short_hair" || element === "long_hair" || element === "bald" || element === "patch" || element === "bun.svg" || element === "curly.svg" || element === "long.svg" || element === "medium.svg")] === el.id) {
-        console.log("Hairstyle already selected");
-        return;
-    }
-    if (sex === "M") {
-        for (let i = index; i < url.length; i++) {
-            if (url[i] === "short_hair" || url[i] === "long_hair" || url[i] === "bald" || url[i] === "patch") {
-                new_url += el.id + "/";
-            } else {
-                if (i === url.length - 1) {
-                    new_url += url[i];
-                } else {
-                    new_url += url[i] + "/";
-                }
-            }
-        }
-    } else {
-        for (let i = index; i < url.length; i++) {
-            if (i === url.length - 1) {
-                new_url += el.id + ".svg";
-            } else {
-                new_url += url[i] + "/";
-            }
-        }
-        console.log(new_url);
-    }
-    svg.data = prepend + new_url;
-    console.log(svg)
-    console.log(svg.data)
-    svg.addEventListener("load", function () {
-        recolor();
-    });
-}
-
 function changeDress(el, color, type) {
     let svg = document.getElementById("character");
     let url = svg.data.split("/");
@@ -170,7 +129,6 @@ function changeBeard(el) {
     svg.addEventListener("load", function (el) {
         recolor();
         let element = el.target.contentDocument.children[0];
-        console.log(type);
         let colors = JSON.parse(document.getElementById("colors").textContent);
         [].forEach.call(element.querySelectorAll("[id=Brki]"), function (e) {
             e.setAttribute("style", "fill: " + colors['hair_color']);
@@ -201,7 +159,6 @@ function changeGlasess(el, sex) {
             new_url += url[i] + "/";
         }
     }
-    console.log(new_url);
     svg.data = prepend + new_url;
     svg.addEventListener("load", function () {
         recolor();
