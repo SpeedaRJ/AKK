@@ -19,15 +19,15 @@ p {
 }
 
 .col-lg-8 > .container-fluid > .row {
-  margin: 2%;
+  margin: 1%;
 }
 
 #home_country > .row {
-    margin: 2%;
+    margin: 1%;
 }
 
 #nickname_input > .row {
-    margin: 2%;
+    margin: 1%;
 }
 
 .msg {
