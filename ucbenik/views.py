@@ -111,10 +111,15 @@ def login_page(request):
                 return redirect(user.last_page)
             else: 
                 return redirect('/')
-        except:
-            context = {'no_user': 'Napačno uporabniško ime ali geslo',
-                       'username' : username }
-            return render(request, "login.html", context)
+        except User.DoesNotExist:
+            try:
+                context = {'no_user': 'Vaš uporabniški račun še ne obstaja.Najprej se registrirajte.',
+                           'username' : username }
+                return render(request, "login.html", context)
+            except User.DoesNotExist:
+                context = {'no_user': 'Napačno geslo',
+                            'username' : username }
+                return render(request, "login.html", context)
 
 def logout(request):
     if request.method == "GET":
