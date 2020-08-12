@@ -165,29 +165,6 @@ function changeGlasess(el, sex) {
     }, {once: true});
 }
 
-function changeSuite(el) {
-    let svg = document.getElementById("character").contentDocument.children[0];
-    if (el.id === "red_suite") {
-        svg.querySelector("[id^=Pulover]").setAttribute("style", "fill:" + "rgb(145,44,70)");
-        svg.querySelector("[id^=Hlace]").setAttribute("style", "fill:" + "rgb(210,186,183)");
-        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"), function (e) {
-            e.setAttribute("style", "fill:" + "rgb(120,18,28)");
-        });
-    } else if (el.id === "blue_suite") {
-        svg.querySelector("[id^=Pulover]").setAttribute("style", "fill:" + "rgb(0,84,166)");
-        svg.querySelector("[id^=Hlace]").setAttribute("style", "fill:" + "rgb(123,175,222)");
-        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"), function (e) {
-            e.setAttribute("style", "fill:" + "rgb(0,61,123)");
-        });
-    } else if (el.id === "green_suite") {
-        svg.querySelector("[id^=Pulover]").setAttribute("style", "fill:" + "rgb(0,168,129)");
-        svg.querySelector("[id^=Hlace]").setAttribute("style", "fill:" + "rgb(0,125,172)");
-        [].forEach.call(svg.querySelectorAll("[id^=Gumb]"), function (e) {
-            e.setAttribute("style", "fill:" + "rgb(72,144,134)");
-        });
-    }
-}
-
 function translate(el) {
     let paras = document.getElementsByClassName("slo_name");
     if (el.target.value.toLowerCase().replace(/ +/g,"").match("^plump|fat$")) {
