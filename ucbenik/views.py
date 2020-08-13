@@ -22,14 +22,19 @@ def save_avatar(session):
 
 def get_user_avatar(user_dict):
     user=User.objects.get(email=user_dict['email'])
-    if user_dict['sex'] == "M":
-        data_set = CharacterDataMen.objects.get(user=user)
-        src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
-        parts, colors = getColorsAndParts(data_set, "M")
-    else:
-        data_set = CharacterDataWomen.objects.get(user=user)
-        parts, colors = getColorsAndParts(data_set, "W")
-        src_ref = "svg/lesson1/female_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + ".svg"
+    try:
+        if user_dict['sex'] == "M":
+            data_set = CharacterDataMen.objects.get(user=user)
+            src_ref = "svg/lesson1/male_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + "/" + data_set.beard + ".svg"
+            parts, colors = getColorsAndParts(data_set, "M")
+        else:
+            data_set = CharacterDataWomen.objects.get(user=user)
+            parts, colors = getColorsAndParts(data_set, "W")
+            src_ref = "svg/lesson1/female_avatar/head/" + data_set.glasses + "/" + data_set.hair_type + ".svg"
+    except:
+        parts = {}
+        colors = {}
+        src_ref = ""
     return (src_ref, parts, colors)
 
 def get_or_create_solution(user, link):
