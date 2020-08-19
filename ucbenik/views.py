@@ -321,10 +321,10 @@ def introduction_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        user = User.objects.get(email=request.session['user']['email'])
         solution = get_or_create_solution(user, request.path)
         user.add_chapter('Introduction')
         request.session['user'] = UserSerializer(user).data
@@ -340,12 +340,13 @@ def introduction_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/introduction/page_two.html", {"next": "/lesson_one/introduction/page_three",
                                                                       "back": back, "solved" : solution.solved,
                                                                       "lesson_one": lesson_one,
@@ -356,12 +357,13 @@ def introduction_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/introduction/page_three.html", {"next": "/lesson_one/introduction/page_four",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -372,12 +374,13 @@ def introduction_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/introduction/page_four.html", {"next": "/lesson_one/introduction/page_five",
                                                                        "back": back, "solved" : solution.solved,
                                                                        "lesson_one": lesson_one,
@@ -388,12 +391,13 @@ def introduction_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/introduction/page_five.html", {"next": "/lesson_one/introduction/page_six",
                                                                        "back": back, "solved" : solution.solved,
                                                                        "lesson_one": lesson_one,
@@ -404,10 +408,11 @@ def introduction_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/introduction/page_six.html", {"next": "/lesson_one/introduction/page_seven",
                                                                       "back": back,
@@ -418,7 +423,8 @@ def introduction_page_seven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         return render(request, "lesson1/introduction/page_seven.html", {"next": "/lesson_one/exercises/page_one",
@@ -430,10 +436,11 @@ def exercises_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/exercises/page_one.html", {"next": "/lesson_one/exercises/page_two",
                                                                    "back": "/lesson_one/introduction/page_seven",
                                                                    "solved" : solution.solved,
@@ -445,11 +452,12 @@ def exercises_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/exercises/page_two.html", {"next": "/lesson_one/exercises/page_three",
                                                                    "back": back, "solved" : solution.solved,
                                                                    "lesson_one": lesson_one,
@@ -460,12 +468,13 @@ def exercises_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/exercises/page_three.html", {"next": "/lesson_one/exercises/page_four",
                                                                      "back": back, "solved" : solution.solved,
                                                                      "lesson_one": lesson_one,
@@ -476,12 +485,13 @@ def exercises_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/exercises/page_four.html", {"next": "/lesson_one/exercises/page_five",
                                                                     "back": back,
                                                                     "solved" : solution.solved,
@@ -493,12 +503,13 @@ def exercises_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/exercises/page_five.html", {"next": "/lesson_one/exercises/page_six",
                                                                     "back": back,
                                                                     "solved" : solution.solved,
@@ -510,12 +521,13 @@ def exercises_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/exercises/page_six.html", {"next": "/lesson_one/exercises/page_seven",
                                                                    "back": back,
                                                                    "solved" : solution.solved,
@@ -527,12 +539,13 @@ def exercises_page_seven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/exercises/page_seven.html", {"next": "/lesson_one/character_select/page_one",
                                                                      "back": back,
                                                                      "solved" : solution.solved,
@@ -544,15 +557,16 @@ def character_select_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        user = User.objects.get(email=request.session['user']['email'])
-        if not save_solution(user, back):
+        user = user
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         user.add_chapter('Appearance')
         request.session['user'] = UserSerializer(user).data
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/character_select/page_one.html", {"next": "/lesson_one/character_select/page_two",
                                                                           "back": back, "solved" : solution.solved,
                                                                           "lesson_one": lesson_one,
@@ -562,7 +576,8 @@ def character_select_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'neck' in request.session:
@@ -590,7 +605,8 @@ def character_select_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         parts = {}
@@ -629,10 +645,8 @@ def character_select_page_three(request):
             else:
                 hair_type = 'long'
             src_ref = f"svg/lesson1/female_avatar/body/glasses/{height}/{body_type}/dress/{hair_type}.svg"
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/character_select/page_three.html", {"next": "/lesson_one/character_select/page_four",
                                                                             "back": "/lesson_one/character_select/page_two",
-                                                                            "solved" : solution.solved,
                                                                             "lesson_one": lesson_one,
                                                                             "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
                                                                             "src": src_ref,
@@ -651,7 +665,8 @@ def character_select_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'hair_color' in request.session:
@@ -694,10 +709,9 @@ def character_select_page_four(request):
                 "neck": request.session['neck'],
                 "hair_color": request.session['hair_color']
             }
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/character_select/page_four.html", {"next": "/lesson_one/character_select/page_five",
                                                                            "back": "/lesson_one/character_select/page_three",
-                                                                           "solved" : solution.solved, "lesson_one": lesson_one,
+                                                                           "lesson_one": lesson_one,
                                                                            "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
                                                                            "src": src_ref,
                                                                            "parts": {
@@ -715,7 +729,8 @@ def character_select_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         parts = {}
@@ -812,7 +827,8 @@ def character_select_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         user = request.session['user']
@@ -833,7 +849,8 @@ def numbers_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -843,7 +860,7 @@ def numbers_page_one(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        user = User.objects.get(email=request.session['user']['email'])
+        user = user
         user.add_chapter('Numbers')
         request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson_one/numbers/page_two",
@@ -855,7 +872,8 @@ def numbers_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -865,7 +883,7 @@ def numbers_page_two(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_two.html", {"next": "/lesson_one/numbers/page_three",
                                                                  "back": "/lesson_one/numbers/page_one",
                                                                  "solved" : solution.solved,
@@ -878,7 +896,8 @@ def numbers_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -888,9 +907,9 @@ def numbers_page_three(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_three.html", {"next": "/lesson_one/numbers/page_four",
                                                                    "back": back, "solved" : solution.solved,
                                                                    "lesson_one": lesson_one,
@@ -902,7 +921,8 @@ def numbers_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -912,9 +932,9 @@ def numbers_page_four(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_four.html", {"next": "/lesson_one/numbers/page_five",
                                                                   "back": back, "solved" : solution.solved,
                                                                   "lesson_one": lesson_one,
@@ -926,7 +946,8 @@ def numbers_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -936,9 +957,9 @@ def numbers_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_five.html", {"next": "/lesson_one/numbers/page_six",
                                                                   "back": back, "solved" : solution.solved,
                                                                   "lesson_one": lesson_one,
@@ -950,7 +971,8 @@ def numbers_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -960,9 +982,9 @@ def numbers_page_six(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_six.html", {"next": "/lesson_one/numbers/page_seven",
                                                                  "back": back,
                                                                  "solved" : solution.solved,
@@ -975,7 +997,8 @@ def numbers_page_seven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -985,9 +1008,9 @@ def numbers_page_seven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_seven.html", {"next": "/lesson_one/numbers/page_eight",
                                                                    "back": back, "solved" : solution.solved,
                                                                    "lesson_one": lesson_one,
@@ -999,7 +1022,8 @@ def numbers_page_eight(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1009,9 +1033,9 @@ def numbers_page_eight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_eight.html", {"next": "/lesson_one/numbers/page_nine",
                                                                    "back": back, "solved" : solution.solved,
                                                                    "lesson_one": lesson_one,
@@ -1023,7 +1047,8 @@ def numbers_page_nine(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1033,9 +1058,9 @@ def numbers_page_nine(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_nine.html", {"next": "/lesson_one/numbers/page_ten",
                                                                   "back": back, "solved" : solution.solved,
                                                                   "lesson_one": lesson_one,
@@ -1047,7 +1072,8 @@ def numbers_page_ten(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1057,7 +1083,7 @@ def numbers_page_ten(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/numbers/page_ten.html", {"next": "/lesson_one/numbers/page_eleven",
                                                                  "back": back,
@@ -1070,7 +1096,8 @@ def numbers_page_eleven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1090,7 +1117,8 @@ def numbers_page_twelve(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1100,7 +1128,7 @@ def numbers_page_twelve(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_twelve.html", {"next": "/lesson_one/numbers/page_thirteen",
                                                                     "back": "/lesson_one/numbers/page_eleven",
                                                                     "solved" : solution.solved, "lesson_one": lesson_one,
@@ -1112,7 +1140,8 @@ def numbers_page_thirteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1122,7 +1151,7 @@ def numbers_page_thirteen(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/numbers/page_thirteen.html", {"next": "/lesson_one/numbers/page_fourteen",
                                                                       "back": back, "lesson_one": lesson_one,
@@ -1133,7 +1162,8 @@ def numbers_page_fourteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1153,7 +1183,8 @@ def numbers_page_fifteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1173,7 +1204,8 @@ def numbers_page_sixteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1193,7 +1225,8 @@ def numbers_page_seventeen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1213,7 +1246,8 @@ def numbers_page_eighteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1233,7 +1267,8 @@ def numbers_page_nineteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1243,7 +1278,7 @@ def numbers_page_nineteen(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_nineteen.html", {"next": "/lesson_one/numbers/page_twenty",
                                                                       "back": "/lesson_one/numbers/page_eighteen",
                                                                       "solved" : solution.solved, "lesson_one": lesson_one,
@@ -1255,7 +1290,8 @@ def numbers_page_twenty(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1265,9 +1301,9 @@ def numbers_page_twenty(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_twenty.html", {"next": "/lesson_one/numbers/page_twentyone",
                                                                     "back": back, "solved" : solution.solved,
                                                                     "lesson_one": lesson_one,
@@ -1279,7 +1315,8 @@ def numbers_page_twentyone(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1289,7 +1326,7 @@ def numbers_page_twentyone(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/numbers/page_twentyone.html", {"next": "/lesson_one/numbers/page_twentytwo",
                                                                        "back": back, "lesson_one": lesson_one,
@@ -1300,7 +1337,8 @@ def numbers_page_twentytwo(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1320,7 +1358,8 @@ def numbers_page_twentythree(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1330,7 +1369,7 @@ def numbers_page_twentythree(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_twentythree.html", {"next": "/lesson_one/numbers/page_twentyfour",
                                                                          "back": "/lesson_one/numbers/page_twentytwo",
                                                                          "solved" : solution.solved,
@@ -1343,7 +1382,8 @@ def numbers_page_twentyfour(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1353,9 +1393,9 @@ def numbers_page_twentyfour(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_twentyfour.html", {"next": "/lesson_one/numbers/page_twentyfive",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -1367,7 +1407,8 @@ def numbers_page_twentyfive(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1377,9 +1418,9 @@ def numbers_page_twentyfive(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_twentyfive.html", {"next": "/lesson_one/colors/page_one",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -1393,7 +1434,8 @@ def colors_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1403,8 +1445,8 @@ def colors_page_one(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        user = User.objects.get(email=request.session['user']['email'])
-        if not save_solution(user, back):
+        user = user
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         user.add_chapter('Colours')
         request.session['user'] = UserSerializer(user).data
@@ -1419,7 +1461,8 @@ def colors_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1440,7 +1483,8 @@ def colors_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1450,7 +1494,7 @@ def colors_page_three(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/colors/page_three.html", {"next": "/lesson_one/colors/page_four",
                                                                   "back": "/lesson_one/colors/page_two",
                                                                   "solved" : solution.solved, "lesson_one": lesson_one,
@@ -1463,7 +1507,8 @@ def colors_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1473,7 +1518,7 @@ def colors_page_four(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
         return render(request, "lesson1/colors/page_four.html", {"next": "/lesson_one/colors/page_five",
@@ -1488,7 +1533,8 @@ def colors_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1498,9 +1544,9 @@ def colors_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/colors/page_five.html", {"next": "/lesson_one/colors/page_six",
                                                                  "back": back, "solved" : solution.solved,
                                                                  "lesson_one": lesson_one,
@@ -1513,7 +1559,8 @@ def colors_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1523,9 +1570,9 @@ def colors_page_six(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/colors/page_six.html", {"next": "/lesson_one/colors/page_seven",
                                                                 "back": back, "solved" : solution.solved,
                                                                 "lesson_one": lesson_one,
@@ -1538,7 +1585,8 @@ def colors_page_seven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1548,9 +1596,9 @@ def colors_page_seven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/colors/page_seven.html", {"next": "/lesson_one/colors/page_eight",
                                                                   "back": back, "solved" : solution.solved, 
                                                                   "lesson_one": lesson_one,
@@ -1563,7 +1611,8 @@ def colors_page_eight(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1573,9 +1622,9 @@ def colors_page_eight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/colors/page_eight.html", {"next": "/lesson_one/colors/page_nine",
                                                                   "back": back, "solved" : solution.solved,
                                                                   "lesson_one": lesson_one,
@@ -1588,7 +1637,8 @@ def colors_page_nine(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1598,9 +1648,9 @@ def colors_page_nine(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/colors/page_nine.html", {"next": "/lesson_one/years/page_one",
                                                                  "back": back, "solved" : solution.solved,
                                                                  "lesson_one": lesson_one,
@@ -1615,7 +1665,8 @@ def years_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1626,11 +1677,11 @@ def years_page_one(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         user = User.objects.get(email=request.session['user']['email'])
-        if not save_solution(user, back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         user.add_chapter('Years')
         request.session['user'] = UserSerializer(user).data
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_one.html", {"next": "/lesson_one/years/page_two",
                                                                "back": back, "solved" : solution.solved,
                                                                "lesson_one": lesson_one,
@@ -1643,7 +1694,8 @@ def years_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1653,7 +1705,7 @@ def years_page_two(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_two.html", {"next": "/lesson_one/years/page_three",
                                                                "back": back, "solved" : solution.solved,
                                                                "lesson_one": lesson_one,
@@ -1666,7 +1718,8 @@ def years_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1676,7 +1729,7 @@ def years_page_three(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_three.html", {"next": "/lesson_one/years/page_four",
                                                                  "back": back, "solved" : solution.solved,
                                                                  "lesson_one": lesson_one,
@@ -1689,7 +1742,8 @@ def years_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1699,7 +1753,7 @@ def years_page_four(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_four.html", {"next": "/lesson_one/years/page_five",
                                                                 "back": back, "solved" : solution.solved,
                                                                 "lesson_one": lesson_one,
@@ -1712,7 +1766,8 @@ def years_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1722,7 +1777,7 @@ def years_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_five.html", {"next": "/lesson_one/years/page_six",
                                                                 "back": back, "solved" : solution.solved,
                                                                 "lesson_one": lesson_one,
@@ -1735,7 +1790,8 @@ def years_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1755,7 +1811,8 @@ def years_page_seven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1765,7 +1822,7 @@ def years_page_seven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_seven.html", {"next": "/lesson_one/years/page_eight",
                                                                  "back": "/lesson_one/years/page_six", 
                                                                  "solved" : solution.solved, "lesson_one": lesson_one,
@@ -1778,7 +1835,8 @@ def years_page_eight(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1788,7 +1846,7 @@ def years_page_eight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_eight.html", {"next": "/lesson_one/years/page_nine",
                                                                  "back": back, "solved" : solution.solved,
                                                                  "lesson_one": lesson_one,
@@ -1801,7 +1859,8 @@ def years_page_nine(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1821,7 +1880,8 @@ def years_page_ten(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1831,7 +1891,7 @@ def years_page_ten(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_ten.html", {"next": "/lesson_one/years/page_eleven",
                                                                "back": "/lesson_one/years/page_nine",
                                                                "solved" : solution.solved,
@@ -1845,7 +1905,8 @@ def years_page_eleven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1855,9 +1916,9 @@ def years_page_eleven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_eleven.html", {"next": "/lesson_one/years/page_twelve",
                                                                   "back": back, "solved" : solution.solved,
                                                                   "lesson_one": lesson_one,
@@ -1870,7 +1931,8 @@ def years_page_twelve(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1880,9 +1942,9 @@ def years_page_twelve(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_twelve.html", {"next": "/lesson_one/personal_traits/page_one",
                                                                   "back": back, "solved" : solution.solved,
                                                                   "lesson_one": lesson_one,
@@ -1896,7 +1958,8 @@ def personal_traits_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1906,8 +1969,7 @@ def personal_traits_page_one(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
-        user = User.objects.get(email=request.session['user']['email'])
+        solution = get_or_create_solution(user, request.path)
         user.add_chapter('Personality Traits')
         request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/personal_traits/page_one.html", {"next": "/lesson_one/personal_traits/page_two",
@@ -1922,7 +1984,8 @@ def personal_traits_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1932,7 +1995,7 @@ def personal_traits_page_two(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/personal_traits/page_two.html", {"next": "/lesson_one/personal_traits/page_three",
                                                                          "back": back, "lesson_one": lesson_one,
@@ -1944,7 +2007,8 @@ def personal_traits_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1954,7 +2018,7 @@ def personal_traits_page_three(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/personal_traits/page_three.html", {"next": "/lesson_one/personal_traits/page_four",
                                                                            "back": "/lesson_one/personal_traits/page_two",
                                                                            "solved" : solution.solved, "lesson_one": lesson_one,
@@ -1966,7 +2030,8 @@ def personal_traits_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -1976,9 +2041,9 @@ def personal_traits_page_four(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/personal_traits/page_four.html", {"next": "/lesson_one/personal_traits/page_five",
                                                                           "back": back, "solved" : solution.solved,
                                                                           "lesson_one": lesson_one,
@@ -1990,7 +2055,8 @@ def personal_traits_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2000,9 +2066,9 @@ def personal_traits_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/personal_traits/page_five.html", {"next": "/lesson_one/personal_traits/page_six",
                                                                           "back": back, "solved" : solution.solved,
                                                                           "lesson_one": lesson_one,
@@ -2014,7 +2080,8 @@ def personal_traits_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2024,9 +2091,9 @@ def personal_traits_page_six(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/personal_traits/page_six.html", {"next": "/lesson_one/personal_traits/page_seven",
                                                                          "back": back, "solved" : solution.solved,
                                                                          "lesson_one": lesson_one,
@@ -2038,7 +2105,8 @@ def personal_traits_page_seven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2048,9 +2116,9 @@ def personal_traits_page_seven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/personal_traits/page_seven.html", {"next": "/lesson_one/he_she_it/page_one",
                                                                            "back": back, "solved" : solution.solved,
                                                                            "lesson_one": lesson_one,
@@ -2062,7 +2130,8 @@ def he_she_it_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2073,7 +2142,7 @@ def he_she_it_page_one(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         user = User.objects.get(email=request.session['user']['email'])
-        if not save_solution(user, back): # marks the previous excersise as solved
+        if not save_solution(user, back) and not user.is_staff: # marks the previous excersise as solved
             return redirect(back)
         user.add_chapter('He, She, It') #unlocks the chapter in the menu
         request.session['user'] = UserSerializer(user).data
@@ -2086,7 +2155,8 @@ def he_she_it_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2106,7 +2176,8 @@ def he_she_it_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2126,7 +2197,8 @@ def he_she_it_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2146,7 +2218,8 @@ def he_she_it_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2156,7 +2229,7 @@ def he_she_it_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_five.html", {"next": "/lesson_one/he_she_it/page_six",
                                                                     "back": "/lesson_one/he_she_it/page_four",
                                                                     "solved" : solution.solved,
@@ -2169,7 +2242,8 @@ def he_she_it_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2179,9 +2253,9 @@ def he_she_it_page_six(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_six.html", {"next": "/lesson_one/he_she_it/page_seven",
                                                                    "back": back, "solved" : solution.solved,
                                                                    "lesson_one": lesson_one,
@@ -2193,7 +2267,8 @@ def he_she_it_page_seven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2203,7 +2278,7 @@ def he_she_it_page_seven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_seven.html", {"next": "/lesson_one/he_she_it/page_eight",
                                                                      "back": back, "lesson_one": lesson_one,
@@ -2214,7 +2289,8 @@ def he_she_it_page_eight(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2224,7 +2300,7 @@ def he_she_it_page_eight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_eight.html", {"next": "/lesson_one/he_she_it/page_nine",
                                                                      "back": "/lesson_one/he_she_it/page_seven",
                                                                      "solved" : solution.solved,
@@ -2237,7 +2313,8 @@ def he_she_it_page_nine(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2247,9 +2324,9 @@ def he_she_it_page_nine(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_nine.html", {"next": "/lesson_one/he_she_it/page_ten",
                                                                     "back": back, "solved" : solution.solved,
                                                                     "lesson_one": lesson_one,
@@ -2261,7 +2338,8 @@ def he_she_it_page_ten(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2271,9 +2349,9 @@ def he_she_it_page_ten(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_ten.html", {"next": "/lesson_one/he_she_it/page_eleven",
                                                                    "back": back, "solved" : solution.solved,
                                                                    "lesson_one": lesson_one,
@@ -2285,7 +2363,8 @@ def he_she_it_page_eleven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2295,9 +2374,9 @@ def he_she_it_page_eleven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_eleven.html", {"next": "/lesson_one/he_she_it/page_twelve",
                                                                       "back": back, "solved" : solution.solved,
                                                                       "lesson_one": lesson_one,
@@ -2309,7 +2388,8 @@ def he_she_it_page_twelve(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2319,9 +2399,9 @@ def he_she_it_page_twelve(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_twelve.html", {"next": "/lesson_one/he_she_it/page_thirteen",
                                                                       "back": back, "solved" : solution.solved,
                                                                       "lesson_one": lesson_one,
@@ -2333,7 +2413,8 @@ def he_she_it_page_thirteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2343,9 +2424,9 @@ def he_she_it_page_thirteen(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_thirteen.html", {"next": "/lesson_one/he_she_it/page_fourteen",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -2357,7 +2438,8 @@ def he_she_it_page_fourteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2367,9 +2449,9 @@ def he_she_it_page_fourteen(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_fourteen.html", {"next": "/lesson_one/he_she_it/page_fifteen",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -2382,7 +2464,8 @@ def he_she_it_page_fifteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2392,7 +2475,7 @@ def he_she_it_page_fifteen(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_fifteen.html", {"next": "/lesson_one/he_she_it/page_sixteen",
                                                                         "back": back, "lesson_one": lesson_one,
@@ -2403,7 +2486,8 @@ def he_she_it_page_sixteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2413,7 +2497,7 @@ def he_she_it_page_sixteen(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_sixteen.html", {"next": "/lesson_one/he_she_it/page_seventeen",
                                                                         "back": "/lesson_one/he_she_it/page_fifteen",
                                                                         "solved" : solution.solved,
@@ -2426,7 +2510,8 @@ def he_she_it_page_seventeen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2436,9 +2521,9 @@ def he_she_it_page_seventeen(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_seventeen.html", {"next": "/lesson_one/he_she_it/page_eighteen",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -2450,7 +2535,8 @@ def he_she_it_page_eighteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2460,7 +2546,7 @@ def he_she_it_page_eighteen(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_eighteen.html", {"next": "/lesson_one/he_she_it/page_nineteen",
                                                                         "back": back, "lesson_one": lesson_one,
@@ -2471,7 +2557,8 @@ def he_she_it_page_nineteen(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2491,7 +2578,8 @@ def he_she_it_page_twenty(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2503,7 +2591,8 @@ def he_she_it_page_twenty(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2513,7 +2602,7 @@ def he_she_it_page_twenty(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_twenty.html", {"next": "/lesson_one/he_she_it/page_twentyone",
                                                                         "back": "/lesson_one/he_she_it/page_nineteen",
                                                                         "solved" : solution.solved,
@@ -2526,7 +2615,8 @@ def he_she_it_page_twentyone(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2536,7 +2626,7 @@ def he_she_it_page_twentyone(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_twentyone.html", {"next": "/lesson_one/he_she_it/page_twentytwo",
                                                                         "back": back, "lesson_one": lesson_one,
@@ -2547,7 +2637,8 @@ def he_she_it_page_twentytwo(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2557,7 +2648,7 @@ def he_she_it_page_twentytwo(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_twentytwo.html", {"next": "/lesson_one/he_she_it/page_twentythree",
                                                                         "back": "/lesson_one/he_she_it/page_twentyone",
                                                                         "solved" : solution.solved,
@@ -2570,7 +2661,8 @@ def he_she_it_page_twentythree(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2580,7 +2672,7 @@ def he_she_it_page_twentythree(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_twentythree.html", {"next": "/lesson_one/he_she_it/page_twentyfour",
                                                                         "back": back, "lesson_one": lesson_one,
@@ -2591,7 +2683,8 @@ def he_she_it_page_twentyfour(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2601,7 +2694,7 @@ def he_she_it_page_twentyfour(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_twentyfour.html", {"next": "/lesson_one/he_she_it/page_twentyfive",
                                                                         "back": "/lesson_one/he_she_it/page_twentythree",
                                                                         "solved" : solution.solved,
@@ -2614,7 +2707,8 @@ def he_she_it_page_twentyfive(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2624,9 +2718,9 @@ def he_she_it_page_twentyfive(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_twentyfive.html", {"next": "/lesson_one/he_she_it/page_twentysix",
                                                                         "back": back, "solved" : solution.solved, 
                                                                         "lesson_one": lesson_one,
@@ -2638,7 +2732,8 @@ def he_she_it_page_twentysix(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2650,7 +2745,7 @@ def he_she_it_page_twentysix(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_twentysix.html", {"next": "/lesson_one/he_she_it/page_twentyseven",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -2662,7 +2757,8 @@ def he_she_it_page_twentyseven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2672,7 +2768,7 @@ def he_she_it_page_twentyseven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_twentyseven.html", {"next": "/lesson_one/he_she_it/page_twentyeight",
                                                                         "back": back, "lesson_one": lesson_one,
@@ -2683,7 +2779,8 @@ def he_she_it_page_twentyeight(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2693,7 +2790,7 @@ def he_she_it_page_twentyeight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_twentyeight.html", {"next": "/lesson_one/he_she_it/page_twentynine",
                                                                         "back": "/lesson_one/he_she_it/page_twentyseven",
                                                                         "solved" : solution.solved,
@@ -2706,7 +2803,8 @@ def he_she_it_page_twentynine(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2716,7 +2814,7 @@ def he_she_it_page_twentynine(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_twentynine.html", {"next": "/lesson_one/he_she_it/page_thirty",
                                                                           "back": back, "lesson_one": lesson_one,
@@ -2727,7 +2825,8 @@ def he_she_it_page_thirty(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2747,7 +2846,8 @@ def he_she_it_page_thirtyone(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2757,7 +2857,7 @@ def he_she_it_page_thirtyone(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_thirtyone.html", {"next": "/lesson_one/he_she_it/page_thirtytwo",
                                                                         "back": "/lesson_one/he_she_it/page_thirty",
                                                                         "solved" : solution.solved, "lesson_one": lesson_one,
@@ -2769,7 +2869,8 @@ def he_she_it_page_thirtytwo(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2779,9 +2880,9 @@ def he_she_it_page_thirtytwo(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_thirtytwo.html", {"next": "/lesson_one/he_she_it/page_thirtythree",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -2793,7 +2894,8 @@ def he_she_it_page_thirtythree(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2803,7 +2905,7 @@ def he_she_it_page_thirtythree(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_thirtythree.html", {"next": "/lesson_one/he_she_it/page_thirtyfour",
                                                                            "back": back, "lesson_one": lesson_one,
@@ -2815,7 +2917,8 @@ def he_she_it_page_thirtyfour(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2825,9 +2928,9 @@ def he_she_it_page_thirtyfour(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_thirtyfour.html", {"next": "/lesson_one/he_she_it/page_thirtyfive",
                                                                           "back": back, "solved" : solution.solved,
                                                                           "lesson_one": lesson_one,
@@ -2839,7 +2942,8 @@ def he_she_it_page_thirtyfive(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2849,7 +2953,7 @@ def he_she_it_page_thirtyfive(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_thirtyfive.html", {"next": "/lesson_one/he_she_it/page_thirtysix",
                                                                           "back": back, "lesson_one": lesson_one,
@@ -2860,7 +2964,8 @@ def he_she_it_page_thirtysix(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2880,7 +2985,8 @@ def he_she_it_page_thirtyseven(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2900,7 +3006,8 @@ def he_she_it_page_thirtyeight(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2910,7 +3017,7 @@ def he_she_it_page_thirtyeight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_thirtyeight.html", {"next": "/lesson_one/he_she_it/page_thirtynine",
                                                                            "back": "/lesson_one/he_she_it/page_thirtyseven",
                                                                            "solved" : solution.solved, "lesson_one": lesson_one,
@@ -2922,7 +3029,8 @@ def he_she_it_page_thirtynine(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2932,9 +3040,9 @@ def he_she_it_page_thirtynine(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_thirtynine.html", {"next": "/lesson_one/he_she_it/page_forty",
                                                                           "back": back, "solved" : solution.solved,
                                                                           "lesson_one": lesson_one,
@@ -2946,7 +3054,8 @@ def he_she_it_page_forty(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2956,9 +3065,9 @@ def he_she_it_page_forty(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_forty.html", {"next": "/lesson_one/he_she_it/page_fortyone",
                                                                      "back": back, "solved" : solution.solved,
                                                                      "lesson_one": lesson_one,
@@ -2970,7 +3079,8 @@ def he_she_it_page_fortyone(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -2980,9 +3090,9 @@ def he_she_it_page_fortyone(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_fortyone.html", {"next": "/lesson_one/he_she_it/page_fortytwo",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -2994,7 +3104,8 @@ def he_she_it_page_fortytwo(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -3004,9 +3115,9 @@ def he_she_it_page_fortytwo(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        if not save_solution(User.objects.get(email=request.session['user']['email']), back):
+        if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        solution = get_or_create_solution(User.objects.get(email=request.session['user']['email']), request.path)
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/he_she_it/page_fortytwo.html", {"next": "/comming_soon",
                                                                         "back": back, "solved" : solution.solved,
                                                                         "lesson_one": lesson_one,
@@ -3028,7 +3139,8 @@ def pronouns_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -3051,7 +3163,8 @@ def pronouns_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -3074,7 +3187,8 @@ def pronouns_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -3097,7 +3211,8 @@ def pronouns_page_four(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -3120,7 +3235,8 @@ def pronouns_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
@@ -3143,7 +3259,8 @@ def pronouns_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
-        if not get_refferer(request):
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
         if 'avatar' in request.session:
