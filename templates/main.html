@@ -18,7 +18,7 @@
                     {% for key,item in lesson_one.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'" 
-                        {% if key in user.chapters %}
+                        {% if user.is_staff or key in user.chapters %}
                         {% else %}
                         disabled
                         {% endif %}
