@@ -1,15 +1,10 @@
 function check(el, solution) {
-    let solved = false;
-    if(el.value.split(",").length === solution.length || el.value.split(/ +/g).length === solution.length || el.value.split(".").length === solution.length ||
-        el.value.split("-").length === solution.length || el.value.split(";").length === solution.length || el.value.split(":").length === solution.length)
-        solved = true;
+    let solved = 0;
     for(let x in solution) {
-        if(!el.value.toLowerCase().includes(solution[x])){
-            solved = false;
-            break;
-        }
+        if(el.value.toLowerCase().includes(solution[x]))
+            solved++;
     }
-    if(solved) {
+    if(solved == solution.length) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {

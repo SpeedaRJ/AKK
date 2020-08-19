@@ -3,7 +3,7 @@
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/personal_traits/page_seven.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 
 {% endblock %}
@@ -29,7 +29,7 @@
                 <input  class=textarea size="5"/>
             </div>
         </div>
-        <div class="row inst">
+        <div class="row inst" hidden id="div_two">
             <div class="msg jenny">
                 Great! Let's try one more thing. How would you ask me about my personality? 
             </div>
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="row inst">
+        <div class="row inst" hidden id="div_three">
             <div class="msg jenny">
                 Awesome! You are doing great and I have a surprise for you! Meet my friend Jim.
             </div>

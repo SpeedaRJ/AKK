@@ -1,5 +1,5 @@
 .drop {
-    display: block;
+    display: flex;
     margin: 0;
     margin-bottom: 0;
     border-radius: 25px;

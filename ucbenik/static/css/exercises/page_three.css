@@ -38,3 +38,11 @@
     padding-top: 7%;
     text-align: center;
 }
+
+.user {
+    float: left !important;
+}
+
+.slo {
+    margin-left: 0 !important;
+}
