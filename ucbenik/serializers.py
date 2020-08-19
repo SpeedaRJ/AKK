@@ -8,3 +8,4 @@ class UserSerializer(serializers.Serializer):
     sex = serializers.CharField()
     age = serializers.IntegerField()
     chapters = serializers.CharField()
+    is_staff = serializers.BooleanField()
