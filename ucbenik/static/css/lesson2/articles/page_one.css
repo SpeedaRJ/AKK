@@ -1,0 +1,18 @@
+.orange {
+    color:#D55225
+}
+
+.purple {
+    color:#511C74
+}
+
+.title {
+    border-radius: 50px;
+    background-color: #511C74;
+    font-size: 4vh;
+    max-height: 5vh;
+}
+
+.trans {
+    background-color: #e4e3e8;
+}

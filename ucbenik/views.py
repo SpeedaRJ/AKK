@@ -3440,12 +3440,57 @@ def day_week_month_page_twelve(request):
                                                                            "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
+def articles_page_one(request):
+    back = "/lesson_two/day_week_month/page_twelve"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        return render(request, "lesson2/articles/page_one.html", {"next": "/lesson_two/articles/page_two",
+                                                                  "back": back, "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+def articles_page_two(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/articles/page_two.html", {"next": "/lesson_two/articles/page_three",
+                                                                  "back": "/lesson_two/articles/page_one", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
 # UNIT 3
 def lesson_three_title(request):
     if request.method == "GET":
         return render(request, "lesson3/title_page.html", {"next": "lesson_three/pronouns/page_one", "back": "/",
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 3: Let's Eat", "title": "", "user": request.session['user']})
+                                                                    "lesson": "Unit 2: Let's Eat", "title": "", "user": request.session['user']})
 
 def pronouns_page_one(request):
     if request.method == "GET":
