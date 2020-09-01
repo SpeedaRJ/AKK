@@ -3439,8 +3439,7 @@ def pronouns_page_two(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         return render(request, "lesson3/pronouns/page_two.html", {"next": "/lesson_three/pronouns/page_three",
                                                                   "back": "/lesson_three/pronouns/page_one",
-                                                                  "solved" : solution.solved,
-                                                                    "lessons": lessons,
+                                                                  "lessons": lessons,
                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                   })
@@ -3462,11 +3461,10 @@ def pronouns_page_three(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         return render(request, "lesson3/pronouns/page_three.html", {"next": "/lesson_three/pronouns/page_four",
-                                                                  "back": "/lesson_three/pronouns/page_two",
-                                                                  "solved" : solution.solved,
+                                                                    "back": "/lesson_three/pronouns/page_two",
                                                                     "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
 
@@ -3485,12 +3483,13 @@ def pronouns_page_four(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path) # @SpeedaRJ če je contextu (ta dict spodej) solution dodaj ta stavek
         return render(request, "lesson3/pronouns/page_four.html", {"next": "/lesson_three/pronouns/page_five",
-                                                                  "back": "/lesson_three/pronouns/page_three",
-                                                                  "solved" : solution.solved,
-                                                                    "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors
+                                                                   "back": "/lesson_three/pronouns/page_three",
+                                                                   "solved" : solution.solved,
+                                                                   "lessons": lessons,
+                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
 
@@ -3509,12 +3508,13 @@ def pronouns_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/pronouns/page_five.html", {"next": "/lesson_three/pronouns/page_six",
-                                                                  "back": "/lesson_three/pronouns/page_four",
-                                                                  "solved" : solution.solved,
-                                                                    "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors
+                                                                   "back": "/lesson_three/pronouns/page_four",
+                                                                   "solved" : solution.solved,
+                                                                   "lessons": lessons,
+                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
 
@@ -3533,10 +3533,11 @@ def pronouns_page_six(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/pronouns/page_six.html", {"next": "/lesson_three/pronouns/page_six",
                                                                   "back": "/lesson_three/pronouns/page_five",
                                                                   "solved" : solution.solved,
-                                                                    "lessons": lessons,
+                                                                  "lessons": lessons,
                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
-                                                                 "src": src_ref, "parts": parts, "colors": colors
+                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                   })
