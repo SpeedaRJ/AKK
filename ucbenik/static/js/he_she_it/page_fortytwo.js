@@ -8,14 +8,14 @@ let solutions = [
     ["has","wears"],
     ["is"],
     ["has"],
-    ["are"],
+    ["is"],
     ["have"],
     ["are"],
 ]
 
 function solution(el,n) {
-    console.log(el.value,solutions[n])
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[n].join().toLowerCase()+'\\.*\\!*\\?*$')) {
+    console.log('^'+solutions[n].join().toLowerCase()+'\\.*\\!*\\?*$')
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[n].join('|').toLowerCase()+'\\.*\\!*\\?*$')) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {

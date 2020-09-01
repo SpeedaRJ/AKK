@@ -11,11 +11,11 @@
         <button class="titleB" disabled>Menu</button>
         <ul>
             
-            {% if lesson_one %}
+            {% if  lessons.lesson_one %}
             <li class="main">
                 <button class="mainB">Unit 1</button>
                 <ul class="submenu">
-                    {% for key,item in lesson_one.items %}
+                    {% for key,item in lessons.lesson_one.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'" 
                         {% if user.is_staff or key in user.chapters %}
@@ -27,19 +27,20 @@
                     {% endfor %}
                 </ul>
             </li>
+            {% else %}
             {% endif %}
-            {% if lesson_two %}
+            {% if lessons.lesson_two %}
             <li class="main">
                 <button class="mainB">Unit 2</button>
                 <ul class="submenu">
-                    {% for key,item in lesson_two.items %}
+                    {% for key,item in lessons.lesson_two.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'"
                         {% if key in user.chapters %}
                         {% else %}
                         disabled
                         {% endif %}>
-                            {{ key }}
+                            {{ key }} 
                         </button>
                     </li>
                     {% endfor %}
@@ -50,16 +51,16 @@
                 <button class="mainB">Unit 2</button>
                 <ul class="submenu">
                     <li>
-                        <button class="SB" onclick="window.location.href='/comming_soon'">Comming Soon</button>
+                        <button class="SB" onclick="window.location.href='/coming_soon'">Coming Soon</button>
                     </li>
                 </ul>
             </li>
             {% endif %}
-            {% if lesson_three %}
+            {% if lessons.lesson_three %}
             <li class="main">
                 <button class="mainB">Unit 3</button>
                 <ul class="submenu">
-                    {% for key,item in lesson_three.items %}
+                    {% for key,item in lessons.lesson_three.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'"
                         {% if key in user.chapters %}
@@ -77,16 +78,16 @@
                 <button class="mainB">Unit 3</button>
                 <ul class="submenu">
                     <li>
-                        <button class="SB" onclick="window.location.href='/comming_soon'">Comming Soon</button>
+                        <button class="SB" onclick="window.location.href='/coming_soon'">Coming Soon</button>
                     </li>
                 </ul>
             </li>
             {% endif %}
-            {% if lesson_four %}
+            {% if lessons.lesson_four %}
             <li class="main">
                 <button class="mainB">Unit 4</button>
                 <ul class="submenu">
-                    {% for key,item in lesson_four.items %}
+                    {% for key,item in lessons.lesson_four.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'"
                         {% if key in user.chapters %}
@@ -104,16 +105,16 @@
                 <button class="mainB">Unit 4</button>
                 <ul class="submenu">
                     <li>
-                        <button class="SB" onclick="window.location.href='/comming_soon'">Comming Soon</button>
+                        <button class="SB" onclick="window.location.href='/coming_soon'">Coming Soon</button>
                     </li>
                 </ul>
             </li>
             {% endif %}
-            {% if lesson_five %}
+            {% if lessons.lesson_five %}
             <li class="main">
                 <button class="mainB">Unit 5</button>
                 <ul class="submenu">
-                    {% for key,item in lesson_five.items %}
+                    {% for key,item in lessons.lesson_five.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'"
                         {% if key in user.chapters %}
@@ -131,7 +132,7 @@
                 <button class="mainB">Unit 5</button>
                 <ul class="submenu">
                     <li>
-                        <button class="SB" onclick="window.location.href='/comming_soon'">Comming Soon</button>
+                        <button class="SB" onclick="window.location.href='/coming_soon'">Coming Soon</button>
                     </li>
                 </ul>
             </li>

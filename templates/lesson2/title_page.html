@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/title.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/recolour_common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="titles">
+    <button class="title" disabled>Lesson 02</button><br>
+    <div class="subTitle"><button class="title trans" disabled>Lekcija 02</button></div>
+</div>
+{% endblock %}

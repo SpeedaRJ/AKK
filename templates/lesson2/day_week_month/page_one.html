@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson3/pronouns/page_one.js' %}"></script>
+{% endblock %}
+{% block content %}
+{{ colors|json_script:"colors" }}
+{{ parts|json_script:"parts" }}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div class="row inst nospace" style="height: 18%">
+            <div class="msg user">PHONE CALL (‘telefonski klic’).</div>
+            <input type="image" src="{% static 'svg/lesson3/pronouns/phone_on.svg' %}" id="redo_b" onclick="answer()">
+        </div>
+        <div id="conversation" hidden>
+            <div class="row inst space">
+                <div class="msg jenny">J: Hello {{user.first_name}}. How are you?</div>
+                <div class="msg jenny translation">Živijo {{user.first_name}}. Kako si?</div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">U: Hello. I am doing well. How are you?</div>
+                <div class="msg user slo ">Živijo. Vredu sem. Kako si ti?</div>
+            </div>
+
+            <div class="row inst space">
+                <div class="msg jenny">J: I am good. I’d like to ask you something.</div>
+                <div class="msg jenny translation">V redu sem. Nekaj te želim vprašati.</div>
+            </div>
+            <div class="row inst nospace">
+                <div class="msg user">U: Go ahead.</div>
+                <div class="msg user slo ">Kar vprašaj.</div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

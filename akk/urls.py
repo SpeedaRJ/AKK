@@ -24,7 +24,7 @@ urlpatterns = [
     path("register", views.register, name="register"),
     path("login", views.login_page, name="login"),
     path("logout", views.logout, name="logout"),
-    path("comming_soon", views.comming_soon, name="comming_soon"),
+    path("coming_soon", views.coming_soon, name="coming_soon"),
     path("update_session/<str:what_to_update>", views.update_session, name="update_session"),
     path("save_session", views.save_session, name="save_session"),
     path("lesson_one/title", views.lesson_one_title, name="title_one"),
@@ -143,7 +143,18 @@ urlpatterns = [
     path("lesson_one/he_she_it/page_forty", views.he_she_it_page_forty, name="he_she_it_page_forty"),
     path("lesson_one/he_she_it/page_fortyone", views.he_she_it_page_fortyone, name="he_she_it_page_fortyone"),
     path("lesson_one/he_she_it/page_fortytwo", views.he_she_it_page_fortytwo, name="he_she_it_page_fortytwo"),
-
+#Lesson2
+    path("lesson_two/title", views.lesson_two_title, name="title_two"),   
+    path("lesson_two/day_week_month/page_one", views.day_week_month_page_one, name="day_week_month_page_one"),   
+    path("lesson_two/day_week_month/page_two", views.day_week_month_page_two, name="day_week_month_page_two"),   
+    path("lesson_two/day_week_month/page_three", views.day_week_month_page_three, name="day_week_month_page_three"),   
+    path("lesson_two/day_week_month/page_four", views.day_week_month_page_four, name="day_week_month_page_four"),   
+    path("lesson_two/day_week_month/page_five", views.day_week_month_page_five, name="day_week_month_page_five"),   
+    path("lesson_two/day_week_month/page_six", views.day_week_month_page_six, name="day_week_month_page_six"),   
+    path("lesson_two/day_week_month/page_seven", views.day_week_month_page_seven, name="day_week_month_page_seven"),   
+    path("lesson_two/day_week_month/page_eight", views.day_week_month_page_eight, name="day_week_month_page_eight"),   
+    path("lesson_two/day_week_month/page_nine", views.day_week_month_page_nine, name="day_week_month_page_nine"),   
+    path("lesson_two/day_week_month/page_ten", views.day_week_month_page_ten, name="day_week_month_page_ten"),   
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),
