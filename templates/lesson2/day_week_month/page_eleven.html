@@ -1,0 +1,159 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_five.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/day_week_month/page_eleven.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Translate.
+                </div>
+                <div class="msg jenny translation">
+                    Prevedi.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="container">
+    <div class="col-lg-3 full"></div>
+    <div class="col-lg-6">
+        <div style="width: 90%;float: left;margin-left: 5%;">
+            <div class="help row" id="row0">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n0">January</p>
+                    <input class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'January')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t0">januar</p>
+                    <input class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'januar')"/>
+                </button>
+            </div>
+            <div class="help row" id="row1">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n1">February</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'February')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t1">februar</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'februar')"/>
+                </button>
+            </div>
+            <div class="help row" id="row2">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n2">March</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'March')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t2">marec</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'marec')"/>
+                </button>
+            </div>
+            <div class="help row" id="row3">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n3">April</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'April')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t3">april</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'april')"/>
+                </button>
+            </div>
+            <div class="help row" id="row4">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n4">May</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'May')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t4">maj</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'maj')"/>
+                </button>
+            </div>
+            <div class="help row" id="row5">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n5">June</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'June')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t5">junij</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'junij')"/>
+                </button>
+            </div>
+            <div class="help row" id="row6">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n6">July</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'July')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t7">julij</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'julij')"/>
+                </button>
+            </div>
+            <div class="help row" id="row7">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n6">August</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'August')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t7">avgust</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'avgust')"/>
+                </button>
+            </div>
+            <div class="help row" id="row8">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n6">September</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'September')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t7">september</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'september')"/>
+                </button>
+            </div>
+            <div class="help row" id="row9">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n6">October</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'October')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t7">oktober</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'oktober')"/>
+                </button>
+            </div>
+            <div class="help row" id="row10">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n6">November</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'November')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t7">november</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'november')"/>
+                </button>
+            </div>
+            <div class="help row" id="row11">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n6">December</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'December')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t7">december</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'december')"/>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 full"></div>
+</div>
+{% endblock %}

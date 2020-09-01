@@ -1,0 +1,109 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_five.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/day_week_month/page_six.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Translate.
+                </div>
+                <div class="msg jenny translation">
+                    Prevedi.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="container">
+    <div class="col-lg-3 full"></div>
+    <div class="col-lg-6">
+        <div class="help-table" id="help-table">
+            <div class="help row" id="row0">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n0">Monday</p>
+                    <input class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'Monday')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t0">ponedeljek</p>
+                    <input class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'ponedeljek')"/>
+                </button>
+            </div>
+            <div class="help row" id="row1">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n1">Tuesday</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'Tuesday')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t1">torek</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'torek')"/>
+                </button>
+            </div>
+            <div class="help row" id="row2">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n2">Wednesday</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'Wednesday')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t2">sreda</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'sreda')"/>
+                </button>
+            </div>
+            <div class="help row" id="row3">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n3">Thursday</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'Thursday')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t3">četrtek</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'četrtek')"/>
+                </button>
+            </div>
+            <div class="help row" id="row4">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n4">Friday</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'Friday')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t4">petek</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'petek')"/>
+                </button>
+            </div>
+            <div class="help row" id="row5">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n5">Saturday</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'Saturday')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t5">sobota</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'sobota')"/>
+                </button>
+            </div>
+            <div class="help row" id="row6">
+                <button class="col-lg-6 tip" disabled>
+                    <p id="n6">Sunday</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'Sunday')"/>
+                </button>
+                <button class="col-lg-6 tip c2">
+                    <p id="t7">nedelja</p>
+                    <input  class="textarea" style="display:none;width:80%" size="5" onchange="solution(this,'nedelja')"/>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 full"></div>
+</div>
+{% endblock %}

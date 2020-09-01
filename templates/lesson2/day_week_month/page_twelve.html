@@ -1,0 +1,110 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_ten.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/day_week_month/page_seven.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Complete the order. Write.
+                </div>
+                <div class="msg jenny translation">
+                    Dopolni zaporedje. Zapiši.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="container">
+    <div class="col-lg-1 full">
+    </div>
+    <div class="col-lg-10">
+        <div class="schedule lt" id="origin01">
+            <div class="msg user trait" id="m01">
+                <p>January</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'January')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin02">
+            <div class="msg user trait" id="m02">
+                <p>February</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'February')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin03">
+            <div class="msg user trait" id="m03">
+                <p>March</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'March')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin04">
+            <div class="msg user trait" id="m04">
+                <p>April</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'April')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin05">
+            <div class="msg user trait" id="m05">
+                <p>May</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'May')"/>
+            </div>
+        </div>
+        <div class="schedule rt" id="origin06">
+            <div class="msg user trait" id="m06">
+                <p>June</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'June')"/>
+            </div>
+        </div>
+        <div class="schedule lb" id="origin07">
+            <div class="msg user trait" id="m07">
+                <p>July</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'July')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin08">
+            <div class="msg user trait" id="m08">
+                <p>August</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'August')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin9">
+            <div class="msg user trait" id="m09">
+                <p>September</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'September')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin10">
+            <div class="msg user trait" id="m10">
+                <p>October</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'October')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin11">
+            <div class="msg user trait" id="m11">
+                <p>November</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'November')"/>
+            </div>
+        </div>
+        <div class="schedule rb" id="origin12">
+            <div class="msg user trait" id="m12">
+                <p>December</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'December')"/>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-1 full"></div>
+</div>
+{% endblock %}

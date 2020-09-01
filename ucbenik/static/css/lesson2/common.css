@@ -1,0 +1,75 @@
+.titleB {
+    background: #58469F !important;
+}
+
+.titleB:hover {
+    background: #58469F !important;
+}
+
+.lesson {
+    background: #58469F !important;
+}
+
+.shadow {
+    background: #dce6e0 !important;
+}
+
+.lesson:hover {
+    background: #58469F;
+}
+
+.user, .months-button {
+    background: #58469F;
+}
+
+input {
+    background: transparent;
+}
+
+.row > .msg {
+    width: 90%;
+    padding-left: 10%;
+}
+
+.inst {
+    padding-top: 6%;
+}
+
+.translation {
+    margin: 0;
+}
+
+.container {
+    width: 100% !important;
+    margin-top: 2.5% !important;
+}
+
+.row {
+    height: 30%;
+}
+
+.correct, .correct:hover{
+    background-color: #00A881;
+}
+
+.incorrect,.incorrect:hover {
+    background-color: #F15D2A;
+}
+
+#jenny {
+    width: 80%;
+}
+
+#redo_b {
+    border: none;
+    width: 10%;
+    float: right;
+    height: 10%;
+    transform: translateY(-40%);
+    border-radius: 50%;
+}
+
+#redo_b:hover {
+    border: 3px black dotted;
+}
+

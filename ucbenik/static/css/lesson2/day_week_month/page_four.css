@@ -1,0 +1,13 @@
+.trait {
+    width: 50%;
+    text-align: center;
+    margin:0;
+}
+.drop {
+    width: 100%;
+    min-height: 6vh;
+}
+
+.slo {
+    background-color: #E4E3E8 !important;
+}

@@ -10,7 +10,7 @@ from .serializers import UserSerializer
 lessons = { "lesson_one" : {"Introduction": "/lesson_one/introduction/page_one", "Appearance": "/lesson_one/character_select/page_one",
                             "Numbers": "/lesson_one/numbers/page_one", "Colours": "/lesson_one/colors/page_one", "Years": "/lesson_one/years/page_one",
                             "Personality Traits": "/lesson_one/personal_traits/page_one", "He, She, It": "/lesson_one/he_she_it/page_one"},
-                            "lesson_two" : {"Day Week Month" : "/lesson_two/day_week_month/page_one"}
+                            "lesson_two" : {"Day Week Month" : "/lesson_two/day_week_month/page_one", "Articles":"/lesson_two/articles/page_one"}
 }
 
 def save_avatar(session):
@@ -3163,7 +3163,7 @@ def day_week_month_page_one(request):
                                                                         "back": "/lesson_two/title",
                                                                         "solved" : solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -3183,12 +3183,11 @@ def day_week_month_page_two(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
+        return render(request, "lesson2/day_week_month/page_two.html", {"next": "/lesson_two/day_week_month/page_three",
+                                                                        "back": "/lesson_two/day_week_month/page_one",
                                                                         "solved" : solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -3207,14 +3206,11 @@ def day_week_month_page_three(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(user, request.path)
-        user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
-                                                                        "solved" : solution.solved,
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts, "colors": colors
+        return render(request, "lesson2/day_week_month/page_three.html", {"next": "/lesson_two/day_week_month/page_four",
+                                                                          "back": "/lesson_two/day_week_month/page_two",
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
 def day_week_month_page_four(request):
@@ -3233,16 +3229,15 @@ def day_week_month_page_four(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
-                                                                        "solved" : solution.solved,
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts, "colors": colors
+        return render(request, "lesson2/day_week_month/page_four.html", {"next": "/lesson_two/day_week_month/page_five",
+                                                                          "back": "/lesson_two/day_week_month/page_three",
+                                                                          "lessons": lessons, "solved" : solution.solved,
+                                                                          "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
 def day_week_month_page_five(request):
+    back = "/lesson_two/day_week_month/page_four"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -3257,17 +3252,18 @@ def day_week_month_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
-                                                                        "solved" : solution.solved,
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts, "colors": colors
+        return render(request, "lesson2/day_week_month/page_five.html", {"next": "/lesson_two/day_week_month/page_six",
+                                                                         "back": back,
+                                                                         "lessons": lessons, "solved" : solution.solved,
+                                                                         "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
 def day_week_month_page_six(request):
+    back = "/lesson_two/day_week_month/page_five"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -3282,17 +3278,18 @@ def day_week_month_page_six(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
-                                                                        "solved" : solution.solved,
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+        return render(request, "lesson2/day_week_month/page_six.html", {"next": "/lesson_two/day_week_month/page_seven",
+                                                                        "back": back,
+                                                                        "lessons": lessons, "solved" : solution.solved,
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
 def day_week_month_page_seven(request):
+    back = "/lesson_two/day_week_month/page_six"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -3307,17 +3304,18 @@ def day_week_month_page_seven(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
-                                                                        "solved" : solution.solved,
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+        return render(request, "lesson2/day_week_month/page_seven.html", {"next": "/lesson_two/day_week_month/page_eight",
+                                                                        "back": back,
+                                                                        "lessons": lessons, "solved" : solution.solved,
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
 def day_week_month_page_eight(request):
+    back = "/lesson_two/day_week_month/page_seven"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -3332,15 +3330,14 @@ def day_week_month_page_eight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        solution = get_or_create_solution(user, request.path)
-        user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
-                                                                        "solved" : solution.solved,
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        return render(request, "lesson2/day_week_month/page_eight.html", {"next": "/lesson_two/day_week_month/page_nine",
+                                                                        "back": back,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
-                                                                        })                                                                    
+                                                                        })                                                                  
 
 def day_week_month_page_nine(request):
     if request.method == "GET":
@@ -3358,16 +3355,15 @@ def day_week_month_page_nine(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
-                                                                        "solved" : solution.solved,
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+        return render(request, "lesson2/day_week_month/page_nine.html", {"next": "/lesson_two/day_week_month/page_ten",
+                                                                        "back": "/lesson_two/day_week_month/page_eight",
+                                                                        "lessons": lessons, "solved" : solution.solved,
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
 def day_week_month_page_ten(request):
+    back = "/lesson_two/day_week_month/page_nine"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -3382,14 +3378,66 @@ def day_week_month_page_ten(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         solution = get_or_create_solution(user, request.path)
         user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_one.html", {"next": "/lesson_two/day_week_month/page_two",
-                                                                        "back": "/lesson_two/title",
-                                                                        "solved" : solution.solved,
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
+        return render(request, "lesson2/day_week_month/page_ten.html", {"next": "/lesson_two/day_week_month/page_eleven",
+                                                                        "back": back, "lessons": lessons, "solved" : solution.solved,
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
+                                                                        })
+
+def day_week_month_page_eleven(request):
+    back = "/lesson_two/day_week_month/page_ten"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        solution = get_or_create_solution(user, request.path)
+        user.add_chapter('Day Week Month')
+        return render(request, "lesson2/day_week_month/page_eleven.html", {"next": "/lesson_two/day_week_month/page_twelve",
+                                                                           "back": back, "lessons": lessons, "solved" : solution.solved,
+                                                                           "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors
+                                                                        })
+
+def day_week_month_page_twelve(request):
+    back = "/lesson_two/day_week_month/page_eleven"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        solution = get_or_create_solution(user, request.path)
+        user.add_chapter('Day Week Month')
+        return render(request, "lesson2/day_week_month/page_twelve.html", {"next": "/lesson_two/articles/page_one",
+                                                                           "back": back, "lessons": lessons, "solved" : solution.solved,
+                                                                           "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
 # UNIT 3

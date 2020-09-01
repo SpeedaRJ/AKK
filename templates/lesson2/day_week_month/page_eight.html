@@ -1,0 +1,111 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/day_week_month/page_eight.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        <div class="row inst space top">
+            <div class="msg jenny">
+                Look, the first letter of the month is always capitalised, just like with the days. 
+            </div>
+            <div class="msg jenny translation">
+                Poglej, prva črka imena meseca je vedno velika, tako kot pri imenih dnevov.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space" id="instructions">
+                <div class="msg jenny">
+                    Let's look at the table with the months. Click on the months, listen and repeat. Be careful, the spelling is similar but not the same as in Slovenian, but the pronunciation is different.
+                </div>
+                <div class="msg jenny translation">
+                    Poglejva tabelo z mesecu. Klikni na mesece, poslušaj in ponovi. Pazi, zapis je podoben kot v slovenščini, ne pa enak, izgovorjava pa je drugačna.
+                </div>
+                <button class="msg jenny months-button" id="button" style="text-align:center; margin-top: 5vh; font-size: 3em; padding-left: 0;" onclick="showMonths()">Months</button>
+            </div>
+            <div class="help-table" id="help-table" style="display:none;">
+                <div class="help row">
+                    <button  onclick="play('a3')" class="col-lg-6 tip">Monday<img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button>
+                    <button onclick="play('a3')" class="col-lg-6 tip ">januar</button>
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button  onclick="play('a4')" class="col-lg-6 tip">February<img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button  onclick="play('a4')" class="col-lg-6 tip ">februar</button>
+                    <audio id="a4" src="{% static 'audio/lesson2/day_week_month/2.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a5')" class="col-lg-6 tip">March<img onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a5')" class="col-lg-6 tip ">marc</button>
+                    <audio id="a5" src="{% static 'audio/lesson1/day_week_month/3.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a6')" class="col-lg-6 tip">April<img onclick="play('a6')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a6')" class="col-lg-6 tip ">april</button>
+                    <audio id="a6" src="{% static 'audio/lesson1/day_week_month/4.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a7')" class="col-lg-6 tip">May<img onclick="play('a7')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a7')" class="col-lg-6 tip ">maj</button>
+                    <audio id="a7" src="{% static 'audio/lesson1/day_week_month/5.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a8')" class="col-lg-6 tip">June<img onclick="play('a8')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a8')" class="col-lg-6 tip ">junij</button>
+                    <audio id="a8" src="{% static 'audio/lesson1/day_week_month/6.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a9')" class="col-lg-6 tip">July<img onclick="play('a9')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a9')" class="col-lg-6 tip ">julij</button>
+                    <audio id="a9" src="{% static 'audio/lesson1/day_week_month/7.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a10')" class="col-lg-6 tip">August<img onclick="play('a10')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a10')" class="col-lg-6 tip ">avgust</button>
+                    <audio id="a10" src="{% static 'audio/lesson1/day_week_month/7.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a11')" class="col-lg-6 tip">September<img onclick="play('a11')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a11')" class="col-lg-6 tip ">september</button>
+                    <audio id="a11" src="{% static 'audio/lesson1/day_week_month/7.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a12')" class="col-lg-6 tip">October<img onclick="play('a12')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a12')" class="col-lg-6 tip ">oktober</button>
+                    <audio id="a12" src="{% static 'audio/lesson1/day_week_month/7.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a13')" class="col-lg-6 tip">November<img onclick="play('a13')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a13')" class="col-lg-6 tip ">november</button>
+                    <audio id="a13" src="{% static 'audio/lesson1/day_week_month/7.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a14')" class="col-lg-6 tip">December<img onclick="play('a14')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a14')" class="col-lg-6 tip ">december</button>
+                    <audio id="a14" src="{% static 'audio/lesson1/day_week_month/7.mp3' %}"></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+    <div class="col-lg-3">
+        <div class="row inst space top">
+            <div class="msg jenny">
+                Let’s see how well you know the names of the months.
+            </div>
+            <div class="msg jenny translation">
+                Poglejva, kako dobro poznaš imena mesecev.
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

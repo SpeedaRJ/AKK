@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_five.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/day_week_month/page_five.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Complete the order. Drag and drop.
+                </div>
+                <div class="msg jenny translation">
+                    Dopolni zaporedje. Povleci in spusti.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="container">
+    <div class="col-lg-1 full">
+    </div>
+    <div class="col-lg-10">
+        <div class="schedule l" id="match01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match05" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match06" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule r" id="match07" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div id="drags">
+            <div class="origin" id="origin01" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m01" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Monday
+                </div>
+            </div>
+            <div class="origin" id="origin02" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m02" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Tuesday
+                </div>
+            </div>
+            <div class="origin" id="origin03" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m03" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Wednesday
+                </div>
+            </div>
+            <div class="origin" id="origin04" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m04" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Thursday
+                </div>
+            </div>
+            <div class="origin" id="origin05" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m05" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Friday
+                </div>
+            </div>
+            <div class="origin" id="origin06" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m06" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Saturday
+                </div>
+            </div>
+            <div class="origin" id="origin07" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m07" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Sunday
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-1 full"></div>
+</div>
+{% endblock %}

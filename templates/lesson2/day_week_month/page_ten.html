@@ -1,0 +1,112 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_ten.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/day_week_month/page_five.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Which months are missing?
+                </div>
+                <div class="msg jenny translation">
+                    Kateri meseci manjkajo?
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="container">
+    <div class="col-lg-1 full">
+    </div>
+    <div class="col-lg-10">
+        <div class="schedule lt" id="match01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match05" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule rt" id="match06" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule lb" id="match07" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match08" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match09" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match10" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule" id="match11" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div class="schedule rb" id="match12" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"></div>
+        <div id="drags">
+            <div class="origin" id="origin01" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m01" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    January
+                </div>
+            </div>
+            <div class="origin" id="origin02" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m02" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    February
+                </div>
+            </div>
+            <div class="origin" id="origin03" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m03" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    March
+                </div>
+            </div>
+            <div class="origin" id="origin04" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m04" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    April
+                </div>
+            </div>
+            <div class="origin" id="origin05" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m05" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    May
+                </div>
+            </div>
+            <div class="origin" id="origin06" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m06" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    June
+                </div>
+            </div>
+            <div class="origin" id="origin07" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m07" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    July
+                </div>
+            </div>
+            <div class="origin" id="origin08" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m08" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    August
+                </div>
+            </div>
+            <div class="origin" id="origin09" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m09" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    September
+                </div>
+            </div>
+            <div class="origin" id="origin10" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m10" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    October
+                </div>
+            </div>
+            <div class="origin" id="origin11" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m11" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    November
+                </div>
+            </div>
+            <div class="origin" id="origin12" ondragover="allowDrop(event)">
+                <div class="msg user trait unmatched" draggable="true" id="m12" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    December
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-1 full"></div>
+</div>
+{% endblock %}

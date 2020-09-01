@@ -1,0 +1,111 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_four.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/day_week_month/page_four.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Match.
+                </div>
+                <div class="msg jenny translation">
+                    Poveži.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="container">
+    <div class="col-lg-1 full">
+    </div>
+    <div class="col-lg-10 full">
+        <div class="col-lg-6" id="drag1">
+            <div class="drop" id="match01">
+                <div class="msg user trait" draggable="true" id="m01" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Monday
+                </div>
+            </div>
+            <div class="drop" id="match02">
+                <div class="msg user trait" draggable="true" id="m02" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Tuesday
+                </div>
+            </div>
+            <div class="drop" id="match03">
+                <div class="msg user trait" draggable="true" id="m03" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Wednesday
+                </div>
+            </div>
+            <div class="drop" id="match04">
+                <div class="msg user trait" draggable="true" id="m04" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Thursday
+                </div>
+            </div>
+            <div class="drop" id="match05">
+                <div class="msg user trait" draggable="true" id="m05" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Friday
+                </div>
+            </div>
+            <div class="drop" id="match06">
+                <div class="msg user trait" draggable="true" id="m06" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Saturday
+                </div>
+            </div>
+            <div class="drop" id="match07">
+                <div class="msg user trait" draggable="true" id="m07" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    Sunday
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" id="drag2">
+            <div class="drop" id="match01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait slo slo"id="m11">
+                    Ponedeljek
+                </div>
+            </div>
+            <div class="drop" id="match02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait slo slo"id="m12">
+                    Torek
+                </div>
+            </div>
+            <div class="drop" id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait slo slo"id="m13">
+                    Sreda
+                </div>
+            </div>
+            <div class="drop" id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait slo slo"id="m14">
+                    Četrtek
+                </div>
+            </div>
+            <div class="drop" id="match05" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait slo slo"id="m15"> 
+                    Petek
+                </div>
+            </div>
+            <div class="drop" id="match06" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait slo slo"id="m16">
+                    Sobota
+                </div>
+            </div>
+            <div class="drop" id="match07" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait slo slo"id="m17">
+                    Nedelja
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 full"></div>
+</div>
+{% endblock %}

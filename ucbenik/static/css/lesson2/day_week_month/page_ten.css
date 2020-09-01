@@ -1,0 +1,41 @@
+.trait {
+    width: 90%;
+    text-align: center;
+}
+
+.drop {
+    width: 100%;
+    min-height: 6vh;
+}
+
+.schedule {
+    width: 16.5%;
+    background-color: #E4E3E8;
+    padding-top: 1.5vh;
+    height: 6vh;
+    float:left;
+}
+
+.origin {
+    width: 14%;
+    padding-top: 1.5vh;
+    height: 6vh;
+    float:left;
+}
+
+.lt {
+    border-radius: 50px 0 0 0;
+}
+
+.lb {
+    border-radius: 0 0 0 50px;
+}
+
+.rt {
+    border-radius: 0 50px 0 0;
+}
+
+.rb {
+    border-radius: 0 0 50px 0;
+}
+

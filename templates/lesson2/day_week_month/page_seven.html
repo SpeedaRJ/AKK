@@ -1,0 +1,80 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_five.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/day_week_month/page_seven.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Which days are missing?
+                </div>
+                <div class="msg jenny translation">
+                    Kateri dnevi manjkajo?
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="container">
+    <div class="col-lg-1 full">
+    </div>
+    <div class="col-lg-10">
+        <div class="schedule l" id="origin01">
+            <div class="msg user trait" id="m01">
+                <p>Monday</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'Monday')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin02">
+            <div class="msg user trait" id="m02">
+                <p>Tuesday</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'Tuesday')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin03">
+            <div class="msg user trait" id="m03">
+                <p>Wednesday</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'Wednesday')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin04">
+            <div class="msg user trait" id="m04">
+                <p>Thursday</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'Thursday')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin05">
+            <div class="msg user trait" id="m05">
+                <p>Friday</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'Friday')"/>
+            </div>
+        </div>
+        <div class="schedule" id="origin06">
+            <div class="msg user trait" id="m06">
+                <p>Saturday</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'Saturday')"/>
+            </div>
+        </div>
+        <div class="schedule r" id="origin07">
+            <div class="msg user trait" id="m07">
+                <p>Sunday</p>
+                <input class="textarea empty" style="display:none;width:80%" size="5" onchange="solution(this,'Sunday')"/>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-1 full"></div>
+</div>
+{% endblock %}

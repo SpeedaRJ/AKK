@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Tuesday and torek sound softer than Thursday and četrtek.
+                </div>
+                <div class="msg jenny translation">
+                    Tuesday in torek imata mehkejše glasove kot četrtek in Thursday
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    And now for the weekend. Sunday has the word 'sun' in it. So, it is a sunny day, when people usually have free time.
+                </div>
+                <div class="msg jenny translation">
+                    In zdaj še vikend. Sunday vsebuje besedico 'sun', ki pomeni sonce. Nedelja je torej sončen dan, ko smo običajno prosti.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

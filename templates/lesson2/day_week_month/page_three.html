@@ -1,0 +1,76 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/day_week_month/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Let's look at the table with the days again. Click on the days and listen.
+                </div>
+                <div class="msg jenny translation">
+                    Poglejva ponovno tabelo z dnevi. Klikni na dneve in poslušaj.
+                </div>
+            </div>
+            <div class="help-table" id="help-table">
+                <div class="help row">
+                    <button  onclick="play('a3')" class="col-lg-6 tip">Monday<img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button>
+                    <button onclick="play('a3')" class="col-lg-6 tip ">ponedeljek</button>
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button  onclick="play('a4')" class="col-lg-6 tip">Tuesday<img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button  onclick="play('a4')" class="col-lg-6 tip ">torek</button>
+                    <audio id="a4" src="{% static 'audio/lesson2/day_week_month/2.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a5')" class="col-lg-6 tip">Wednesday<img onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a5')" class="col-lg-6 tip ">sreda</button>
+                    <audio id="a5" src="{% static 'audio/lesson1/day_week_month/3.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a6')" class="col-lg-6 tip">Thursday<img onclick="play('a6')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a6')" class="col-lg-6 tip ">četrtek</button>
+                    <audio id="a6" src="{% static 'audio/lesson1/day_week_month/4.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a7')" class="col-lg-6 tip">Friday<img onclick="play('a7')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a7')" class="col-lg-6 tip ">petek</button>
+                    <audio id="a7" src="{% static 'audio/lesson1/day_week_month/5.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a8')" class="col-lg-6 tip">Saturday<img onclick="play('a8')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a8')" class="col-lg-6 tip ">sobota</button>
+                    <audio id="a8" src="{% static 'audio/lesson1/day_week_month/6.mp3' %}"></audio>
+                </div>
+                <div class="help row">
+                    <button onclick="play('a9')" class="col-lg-6 tip">Sunday<img onclick="play('a9')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"></button></button>
+                    <button onclick="play('a9')" class="col-lg-6 tip ">nedelja</button>
+                    <audio id="a9" src="{% static 'audio/lesson1/day_week_month/7.mp3' %}"></audio>
+                </div>
+            </div>
+
+            <div class="row inst space top">
+                <div class="msg jenny">
+                    Now, let's see if you remember the days.
+                </div>
+                <div class="msg jenny translation">
+                    Zdaj pa poglejva, ali si si zapomnil dneve. 
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

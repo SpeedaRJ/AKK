@@ -154,7 +154,9 @@ urlpatterns = [
     path("lesson_two/day_week_month/page_seven", views.day_week_month_page_seven, name="day_week_month_page_seven"),   
     path("lesson_two/day_week_month/page_eight", views.day_week_month_page_eight, name="day_week_month_page_eight"),   
     path("lesson_two/day_week_month/page_nine", views.day_week_month_page_nine, name="day_week_month_page_nine"),   
-    path("lesson_two/day_week_month/page_ten", views.day_week_month_page_ten, name="day_week_month_page_ten"),   
+    path("lesson_two/day_week_month/page_ten", views.day_week_month_page_ten, name="day_week_month_page_ten"),
+    path("lesson_two/day_week_month/page_eleven", views.day_week_month_page_eleven, name="day_week_month_page_eleven"),
+    path("lesson_two/day_week_month/page_twelve", views.day_week_month_page_twelve, name="day_week_month_page_twelve"),   
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),

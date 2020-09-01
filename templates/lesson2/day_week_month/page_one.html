@@ -2,41 +2,47 @@
 {% load static %}
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_three.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/lesson3/pronouns/page_one.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 {% endblock %}
 {% block content %}
-{{ colors|json_script:"colors" }}
-{{ parts|json_script:"parts" }}
 <div class="container">
     <div class="col-lg-3">
         <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
     </div>
     <div class="col-lg-6 main">
-        <div class="row inst nospace" style="height: 18%">
-            <div class="msg user">PHONE CALL (‘telefonski klic’).</div>
-            <input type="image" src="{% static 'svg/lesson3/pronouns/phone_on.svg' %}" id="redo_b" onclick="answer()">
-        </div>
-        <div id="conversation" hidden>
+        <div id="conversation">
             <div class="row inst space">
-                <div class="msg jenny">J: Hello {{user.first_name}}. How are you?</div>
-                <div class="msg jenny translation">Živijo {{user.first_name}}. Kako si?</div>
+                <div class="msg jenny">Let's learn the days of the week.</div>
+                <div class="msg jenny translation">Naučiva se dneve v tednu.</div>
             </div>
             <div class="row inst space">
-                <div class="msg user">U: Hello. I am doing well. How are you?</div>
-                <div class="msg user slo ">Živijo. Vredu sem. Kako si ti?</div>
+                <div class="msg jenny">
+                    Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
+                </div>
+                <div class="msg jenny translation">
+                    Ponedeljek, torek, sreda, četrtek, petek, sobota, nedelja.
+                </div>
             </div>
-
             <div class="row inst space">
-                <div class="msg jenny">J: I am good. I’d like to ask you something.</div>
-                <div class="msg jenny translation">V redu sem. Nekaj te želim vprašati.</div>
+                <div class="msg jenny">
+                    In English the days are capitalised.
+                </div>
+                <div class="msg jenny translation">
+                    V angleščini pišemo dneve z veliko začetnico.
+                </div>
             </div>
-            <div class="row inst nospace">
-                <div class="msg user">U: Go ahead.</div>
-                <div class="msg user slo ">Kar vprašaj.</div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Be careful not to mix up Tuesday and Thursday <br>
+                    or Saturday and Sunday because they start with the same letter. <br>
+                    Do you want to know how I remember the difference between them?
+                </div>
+                <div class="msg jenny translation">
+                    Pazi, da ne zamešaš torka in četrtka ali sobote <br>
+                    in nedelje, ker se v angleščini začnejo z isto črko.<br>
+                    Te zanima, kako si jaz zapomnim razliko med njimi?
+                </div>
             </div>
         </div>
     </div>
