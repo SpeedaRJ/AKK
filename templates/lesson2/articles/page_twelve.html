@@ -1,0 +1,58 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <button class="title" style="font-size: 1em;" disabled>Dodatno znanje - dodatna pravila za rabo členov</button>
+                <div class="msg jenny">
+                    Določni člen vedno uporabljamo z:
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"> </div>
+    <div class="col-lg-8">
+        <div id="conversation">
+            <div class="row">
+                <div class="msg user" style="float:left;width:50%;">
+                    glasbili
+                </div>
+                <div class="msg jenny">
+                    He plays <pr class="orange">the piano</pr>. / Igra klavir.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user" style="float:left;width:50%;">
+                    geografskimi točkami, rekami, oceani, morji
+                </div>
+                <div class="msg jenny">
+                    He climbed <pr class="orange">the Alps</pr>. / Preplezal je Alpe. <br>
+                    This is <pr class="orange">the river Ljubljanica</pr>. / To je reka Ljubljanica. <br>
+                    Where is <pr class="orange">the Atlantic Ocean</pr>? / Kje je atlantski ocean?
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user" style="float:left;width:50%;">
+                    stranmi neba (north, south, east, west – sever, jug, vzhod, zahod)
+                </div>
+                <div class="msg jenny">
+                    Austria is to <pr class="orange">the north</pr>.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"> </div>
+</div>
+{% endblock %}

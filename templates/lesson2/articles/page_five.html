@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    The wait is <pr class="orange">an </pr>hour.
+                </div>
+                <div class="msg jenny translation">
+                    Eno uro je za čakati.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Beseda 'hour' se izgovori 'aur', torej začne s samoglasniškim glasom. Da se izognemo izgovorjavi dveh samoglasnikov zapored, vstavimo črko N:<pr class="orange"> an hour</pr>.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    This is <pr class="orange">a</pr> university.
+                </div>
+                <div class="msg jenny translation">
+                    To je univerza.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Zapis besede university se začne s samoglasnikom, vendar se beseda začne z glasom 'j', zato ostane člen A: <pr class="orange">a university</pr>.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}

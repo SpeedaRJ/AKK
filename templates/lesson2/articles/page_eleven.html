@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Pred samostalnikom je lahko tudi pridevnik. V tem primeru pride člen pred pridevnikom. Poglejva par primerov.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"> </div>
+    <div class="col-lg-8">
+        <div id="conversation">
+            <div class="row">
+                <div class="msg jenny" style="text-align: center;">
+                    This is <pr class="orange">a</pr> big house. / To je velika hiša.  <br>	
+                    She is <pr class="orange">a</pr> pretty girl. / Lepo dekle je.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"> </div>
+</div>
+{% endblock %}

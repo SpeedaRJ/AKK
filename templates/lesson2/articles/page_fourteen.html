@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/articles/page_seven.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="msg user" style="float:unset">
+                    Complete the sentences with articles. Where there is no article, leave it blank.
+                </div>
+                <div class="msg jenny translation">
+                    Dopolni povedi s členi. Kjer ni člena pusti prazno.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+            <div id="conversation">
+                <div class="row"> 
+                    <div class="msg user" style="float:unset">
+                        Igra violino.
+                    </div>
+                    <div class="msg jenny translation">
+                        He plays ­­<input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')">  violin.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Zapri okno.
+                    </div>
+                    <div class="msg jenny translation">
+                        Close <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')">  window.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Si lahko sposodim svinčnik?
+                    </div>
+                    <div class="msg jenny translation">
+                        Can I borrow <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'a')">  pencil?
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Nil je najdaljša reka na svetu.
+                    </div>
+                    <div class="msg jenny translation">
+                        <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')">  Nile is <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')">  longest river in the world.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Mesto je proti zahodu.
+                    </div>
+                    <div class="msg jenny translation">
+                        <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')">  city is to <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')">  west.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Pisateljica je.
+                    </div>
+                    <div class="msg jenny translation">
+                        She is <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'a')">  writer.
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

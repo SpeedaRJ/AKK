@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Kdaj pa uporabimo <pr class="orange">AN</pr>? <pr class="orange">AN</pr> uporabimo, ko se izgovorjava samostalnika začne s samoglasniškim glasom <pr class="orange">(a, e, i, o, u)</pr>. V ostalih primerih uporabljamo <pr class="orange">A</pr>.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    This is <pr class="orange">an</pr> apple. 
+                </div>
+                <div class="msg jenny translation">
+                    To je jabolko.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Prvi glas v besedi 'apple' je široki e in ker je težko izgovoriti dva samoglasniška glasova skupaj, med njima vstavimo 'n': <pr class="orange">an apple</pr>.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Pozorni moramo biti na izgovorjavo.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}

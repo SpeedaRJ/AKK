@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/articles/page_twentytwo.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user" style="width:100%">
+                    Change the sentences from singular to plural.
+                </div>
+                <div class="msg jenny translation" style="width:100%">
+                    Stavke v ednini spremeni v množino.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"></div>
+    <div class="col-lg-8">
+        <div class="row inst space" id="conversation"> 
+            
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+{% endblock %}

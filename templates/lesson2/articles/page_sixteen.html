@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Nedoločni člen uporabljamo le z ednino, medtem ko določni člen uporabljamo tako z ednino kot z množino.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    He gave me <pr class="orange">a </pr> flower.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    <pr class="purple">The </pr> TV is broken.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    <pr class="purple">The </pr> flowers are pretty.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Če se samostalnik v ednini konča s črko -y, se lahko v množini zgodi dvoje. 
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Če pred -<pr class="orange">y</pr> stoji <pr class="orange">soglasnik</pr>, se -<pr class="orange">y</pr> spremeni v -<pr class="orange">ie</pr>. Temu dodamo še -<pr class="orange">s</pr>.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"> </div>
+    <div class="col-lg-8">
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user">
+                    a family -->  famil<pr class="orange">ies</pr>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">
+                    a baby --> bab<pr class="orange">ies</pr>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user">
+                    a lady --> lad<pr class="orange">ies</pr>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">
+                    a story -->  stor<pr class="orange">ies</pr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3 full"></div>
+    <div class="col-lg-6 full">
+        <div class="row inst space">
+            <div class="msg jenny">
+                Če pred -<pr class="orange">y</pr> stoji <pr class="orange">samoglasnik</pr>, potem se -<pr class="orange">y</pr> ne spremeni, pač pa besedo iz ednine spremenimo v množino preprosto tako, da ji dodamo -<pr class="orange">s</pr>.
+            </div>
+        </div>
+        <div class="col-lg-6" style="padding:0;">
+            <div class="row inst space">
+                <div class="msg user">
+                    a play -->  pla<pr class="orange">ys</pr>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">
+                    a way -->  wa<pr class="orange">ys</pr>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" style="padding:0;">
+            <div class="row inst space">
+                <div class="msg user">
+                    a boy -->  bo<pr class="orange">ys</pr>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">
+                    a monkey -->  monke<pr class="orange">ys</pr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 full"></div>
+</div>
+{% endblock %}

@@ -56,6 +56,18 @@ input {
     background-color: #F15D2A;
 }
 
+.correct-text {
+    color: #00A881;
+}
+
+.incorrect-text {
+    color: #F15D2A !important;
+}
+
+.filled {
+    color: unset;
+}
+
 #jenny {
     width: 80%;
 }
@@ -72,4 +84,6 @@ input {
 #redo_b:hover {
     border: 3px black dotted;
 }
+
+
 

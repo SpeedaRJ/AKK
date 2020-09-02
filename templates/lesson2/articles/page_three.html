@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    I want to watch <pr class="orange">a</pr> film. Did you watch <pr class="purple">the</pr> film about <pr class="purple"the</pr> queen?
+                </div>
+                <div class="msg jenny translation"> Hočem pogledati film. Si gledal tisti film o kraljici?</div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Film je kategorija. Ne govorimo o specifičnem filmu. V drugi povedi govorimo o točno določenem filmu o točno določeni kraljici.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Would you like a drink? 
+                </div>
+                <div class="msg jenny translation">
+                    Bi želel kaj za piti?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Pijača je kategorija.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/articles/page_seven.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="msg user" style="float:unset">
+                    Complete the sentences with articles. Where there is no article, leave it blank.
+                </div>
+                <div class="msg jenny translation">
+                    Dopolni povedi s členi. Kjer ni člena pusti prazno.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+            <div id="conversation">
+                <div class="row inst">
+                    <div class="msg jenny translation">
+                        I want to go to <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> France. / Želim iti v Francijo. <br>
+                        He plays <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')"> cello. / Igra violončelo.     <br>
+                        He plays <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> baseball. / Igra baseball.   <br>
+                        <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> Paris is beautiful. / Paris je prelep.   <br>
+                        The library is on <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')"> Tito Street. / Knjižnica je na Titovi ulici.     <br>
+                        Mom cooked <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> dinner. / Mami je skuhala kosilo.<br>
+                        It is hard to learn <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> Slovenian. / Težko se je naučiti slovenščino. <br>
+                        <input class="textarea  correct-text filledyy" style="width:10%" type="text" onchange="solution(this, '')"> English is my favourite subject. / Angleščina je moj najljubši predmet. <br>
+                        <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')"> Pacific Ocean is the largest ocean. / Tihi ocean je največji ocean. <br>
+                        <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> Sava is a river in Europe. / Sava je reka v Evropi.       <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

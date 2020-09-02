@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/articles/page_seven.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="msg user" style="float:unset">
+                    Complete the sentences with articles. Where there is no article, leave it blank.
+                </div>
+                <div class="msg jenny translation">
+                    Dopolni povedi s členi. Kjer ni člena pusti prazno.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+            <div id="conversation">
+                <div class="row inst">
+                    <div class="msg jenny translation">
+                        He is <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'an')"> artist. / Umetnik je. <br>
+                        His birthday is on <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> Saturday. / V soboto ima rojstni dan. <br>
+                        School starts in <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> September. / Šola se začne septembra.<br>
+                        When is <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> Easter? / Kdaj je velika noč?<br>
+                        Wish me <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> luck. / Zaželi mi srečo.     <br>
+                        <input class="textarea  correct-text filled" style="width:10%" type="text" onchange="solution(this, '')"> death is a difficult topic. / Smrt je težka tema.<br>
+                        Give me <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')"> money. / Daj mi denar.  <br>
+                        He is <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')"> thief. / Tat je. <br>
+                        Give me <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'a')"> chance. / Daj mi priložnost.<br>
+                        I need <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'a')"> shirt. / Rabim majico. <br>
+                        Where is <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'the')"> cat? / Kje je mačka? <br>
+                        This is <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'a')"> dog. / To je pes.<br>
+                        <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'The')"> dog’s name is Frankie. / Psu je ime Frankie.<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

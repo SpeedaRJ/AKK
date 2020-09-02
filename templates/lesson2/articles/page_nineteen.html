@@ -1,0 +1,72 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Če se samostalnik konča na -<pr class="orange">f</pr> ali -<pr class="orange">fe</pr>, 
+                    omenjeni končnici v množinski obliki izpustimo in ju nadomestimo s končnico -<pr class="orange">ves</pr>. 
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"> </div>
+    <div class="col-lg-8">
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user">
+                    a knife -->   kni<pr class="orange">ves</pr>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user">
+                    a wife -->   wi<pr class="orange">ves</pr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3 full"></div>
+    <div class="col-lg-6 full">
+        <div class="row inst space">
+            <div class="msg user" style="width: 50%;margin-right:25%">
+                a scarf -->   scar<pr class="orange">ves</pr>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny">
+                Obstajajo pa tudi izjeme, za katere ne velja nobeno pravilo. To so: 
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg user" style="width: 50%;margin-right:25%">
+                a child --> children <br>
+                a woman --> women<br>
+                a man--> men<br>
+                a person --> people<br>
+                a tooth --> teeth<br>
+                a foot --> feet<br>
+                a mouse --> mice<br>
+                a fish --> fish<br>
+                a deer --> deer<br>
+                a sheep --> sheep  <br>                  
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 full"></div>
+</div>
+{% endblock %}

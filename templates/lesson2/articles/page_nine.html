@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Pri nekaterih samostalnikih ne rabimo člena. Člena ne uporabimo:
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"> </div>
+    <div class="col-lg-8">
+        <div id="conversation">
+            <div class="row">
+                <div class="msg user" style="float:left;width:50%;">
+                    z neštevnimi samostalniki
+                </div>
+                <div class="msg jenny">
+                    Add <pr class="orange">salt</pr>. / Dodaj sol. <br>
+                    People drink <pr class="orange">water</pr>. / Ljudje pijejo vodo. <br>
+                    I need more <pr class="orange">information</pr>. / Potrebujem več informacij. 
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user" style="float:left;width:50%;">
+                    z abstraktnimi pojmi
+                </div>
+                <div class="msg jenny">
+                    What is <pr class="orange">love</pr>? / Kaj je ljubezen?
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user" style="float:left;width:50%;">
+                    z dnevi, meseci, prazniki
+                </div>
+                <div class="msg jenny">
+                    Tomorrow is <pr class="orange">Friday</pr>. / Jutri je petek.<br>
+                    I was born in <pr class="orange">February</pr>. / Rojen sem bil februarja.<br>
+                    Do you celebrate <pr class="orange">>Christmas</pr>? / Ali praznuješ Božič?  
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"> </div>
+</div>
+{% endblock %}

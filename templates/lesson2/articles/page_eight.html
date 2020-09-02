@@ -1,0 +1,83 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/articles/page_seven.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="msg user" style="float:unset">
+                    Complete the phrases with indefinite articles (a, an).
+                </div>
+                <div class="msg jenny translation">
+                    Dopolni fraze z nedoločnimi členi (a, an).
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+            <div id="conversation">
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Učitelj je.
+                    </div>
+                    <div class="msg jenny translation">
+                        He is <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'a')"> teacher.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Želiš balon?
+                    </div>
+                    <div class="msg jenny translation">
+                        Do you want <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'a')"> balloon?
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Poštena oseba je.
+                    </div>
+                    <div class="msg jenny translation">
+                        She is 
+                        <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'an')"> honest person. 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Je to sova?
+                    </div>
+                    <div class="msg jenny translation">
+                        Is that 
+                        <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'an')"> owl?
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Slovenija je evropska država.
+                    </div>
+                    <div class="msg jenny translation">
+                        Slovenia is 
+                        <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'a')"> European country.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:unset">
+                        Želim si sladoled.
+                    </div>
+                    <div class="msg jenny translation">
+                        I want 
+                        <input class="textarea" style="width:10%" type="text" onchange="solution(this, 'an')"> ice-cream.
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Besede v množini nimajo člena.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Angleščina dvojine ne pozna. Če v angleščini govorimo o dveh osebah ali predmetih, uporabimo množinsko obliko. Poglej si primer:
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"></div>
+    <div class="col-lg-8">
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user">
+                    2 boys = 2 fanta <br>
+                    3 boys = 3 fantje
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user">
+                    2 dogs = 2 psa <br>
+                    3 dogs = 3 psi
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3 full">
+        <div class="row inst space">
+            <div class="msg jenny">
+                Ne pozabi, da moraš pri samostalnikih v množini uporabiti tudi glagol v množinski obliki. Poglej si primer in se spomni tega, kar že veš:
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 full">
+        <div class="row inst space">
+            <div class="msg user" style="width:100%;">
+                A dog is happy. --> Glagol is uporabljamo pri ednini.
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg user" style="width:100%;">
+                Dogs are happy. -->  Pri množini uporabljamo glagol are.
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny">
+                Let’s do some exercises and see how good you are at making plural forms.
+            </div>
+            <div class="msg jenny translation">
+                Let’s do some exercises and see how good you are at making plural forms.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 full"></div>
+</div>
+{% endblock %}

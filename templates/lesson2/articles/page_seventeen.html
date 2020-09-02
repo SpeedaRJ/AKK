@@ -1,0 +1,106 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <button class="title" style="font-size: 1em;" disabled>Plural / Množina</button>
+                <div class="msg jenny">
+                    Kako pa vemo, da je samostalnik v množini?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    V angleščini samostalniku, ko ga pretvarjamo v množino, dodamo končnico -s:
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"> </div>
+    <div class="col-lg-8">
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user">
+                    a dog --> dog<pr class="orange">s</pr>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user">
+                    an apple --> apple<pr class="orange">s</pr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3 full">
+        <div class="row inst space">
+            <div class="msg jenny">
+                V nekaterih primerih moramo samostalnikom v množini dodati končnico -<pr class="orange">es</pr>. 
+                To dodamo, kadar se samostalnik v ednini konča na: -<pr class="orange"></pr>s</pr>, -<pr class="orange">ss</pr>, 
+                -<pr class="orange">ch</pr>, -<pr class="orange">sh</pr>, -<pr class="orange">x</pr> ali -<pr class="orange">o</pr>.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 full">
+        <div class="row inst space">
+            <div class="msg jenny">
+                To je osnovno pravilo, seveda pa obstajajo še posebnosti in izjeme. 
+            </div>
+        </div>
+        <div class="col-lg-6" style="padding:0;"">
+            <div class="row inst space">
+                <div class="msg user">
+                    a bus --> bus<pr class="orange">es</pr>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">
+                    a kiss --> kiss<pr class="orange">es</pr>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">
+                    a box --> box<pr class="orange">es</pr>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" style="padding:0;">
+            <div class="row inst space">
+                <div class="msg user">
+                    a church --> church<pr class="orange">es</pr>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">
+                    a brush -->  brush<pr class="orange">es</pr>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user">
+                    a tomato -->  tomato<pr class="orange">es</pr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 full">
+        <div class="row inst space">
+            <div class="msg" style="height:100%;background-color:#D55225;">
+                Pozor! To ne velja za samostalnike, kjer pred o-jem stoji samoglasnik.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
