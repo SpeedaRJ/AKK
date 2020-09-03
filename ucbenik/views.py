@@ -7,10 +7,16 @@ from ucbenik.models import User, CharacterDataMen, CharacterDataWomen, Solution
 from ucbenik.CustomAuth import CustomAuth
 from .serializers import UserSerializer
 
-lessons = { "lesson_one" : {"Introduction": "/lesson_one/introduction/page_one", "Appearance": "/lesson_one/character_select/page_one",
-                            "Numbers": "/lesson_one/numbers/page_one", "Colours": "/lesson_one/colors/page_one", "Years": "/lesson_one/years/page_one",
-                            "Personality Traits": "/lesson_one/personal_traits/page_one", "He, She, It": "/lesson_one/he_she_it/page_one"},
-                            "lesson_two" : {"Day Week Month" : "/lesson_two/day_week_month/page_one", "Articles":"/lesson_two/articles/page_one"}
+lessons = { "lesson_one" : {"Introduction": "/lesson_one/introduction/page_one", 
+                            "Appearance": "/lesson_one/character_select/page_one",
+                            "Numbers": "/lesson_one/numbers/page_one", 
+                            "Colours": "/lesson_one/colors/page_one", 
+                            "Years": "/lesson_one/years/page_one",
+                            "Personality Traits": "/lesson_one/personal_traits/page_one", 
+                            "He, She, It": "/lesson_one/he_she_it/page_one"},
+            "lesson_two" : {"Day Week Month" : "/lesson_two/day_week_month/page_one", 
+                            "Articles":"/lesson_two/articles/page_one",
+                            "Family Members":"/lesson_two/family/page_one"}
 }
 
 def save_avatar(session):
@@ -675,7 +681,7 @@ def character_select_page_four(request):
         if 'hair_color' in request.session:
             hair_color = request.session['hair_color']
         else:
-            return redirec('/lesson_one/character_select/page_three')
+            return redirect('/lesson_one/character_select/page_three')
         if 'height' in request.session:
             height = request.session['height']
         else:
@@ -3963,6 +3969,221 @@ def articles_page_twentythree(request):
                                                                           "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
+def family_page_one(request):
+    back = "/lesson_two/articles/page_twentythree"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        user.add_chapter('Family Members')
+        return render(request, "lesson2/family/page_one.html", {"next": "/lesson_two/family/page_two",
+                                                                     "back": back, "lessons": lessons,
+                                                                     "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                      "src": src_ref, "parts": parts, "colors": colors
+                                                                      })
+
+def family_page_two(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_two.html", {"next": "/lesson_two/family/page_three",
+                                                                "back": "/lesson_two/family/page_one", "lessons": lessons,
+                                                                "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                "src": src_ref, "parts": parts, "colors": colors
+                                                                })
+
+def family_page_three(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_three.html", {"next": "/lesson_two/family/page_four",
+                                                                  "back": "/lesson_two/family/page_two", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+def family_page_four(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_four.html", {"next": "/lesson_two/family/page_five",
+                                                                  "back": "/lesson_two/family/page_three", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+def family_page_five(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_five.html", {"next": "/lesson_two/family/page_six",
+                                                                  "back": "/lesson_two/family/page_four", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+def family_page_six(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_six.html", {"next": "/lesson_two/family/page_seven",
+                                                                  "back": "/lesson_two/family/page_five", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+def family_page_seven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_seven.html", {"next": "/lesson_two/family/page_eight",
+                                                                  "back": "/lesson_two/family/page_six", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+def family_page_eight(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_eight.html", {"next": "/lesson_two/family/page_ninex",
+                                                                  "back": "/lesson_two/family/page_seven", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+def family_page_nine(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_nine.html", {"next": "/lesson_two/family/page_ten",
+                                                                  "back": "/lesson_two/family/page_eight", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+def family_page_ten(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/family/page_ten.html", {"next": "/lesson_two/family/page_eleven",
+                                                                  "back": "/lesson_two/family/page_nine", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+
 # UNIT 3
 def lesson_three_title(request):
     if request.method == "GET":
@@ -3992,7 +4213,6 @@ def pronouns_page_one(request):
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
-
 def pronouns_page_two(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -4015,7 +4235,6 @@ def pronouns_page_two(request):
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
-
 def pronouns_page_three(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -4037,7 +4256,6 @@ def pronouns_page_three(request):
                                                                     "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                   })
-
 
 def pronouns_page_four(request):
     if request.method == "GET":
@@ -4063,7 +4281,6 @@ def pronouns_page_four(request):
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
-
 def pronouns_page_five(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -4087,7 +4304,6 @@ def pronouns_page_five(request):
                                                                    "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                   })
-
 
 def pronouns_page_six(request):
     if request.method == "GET":

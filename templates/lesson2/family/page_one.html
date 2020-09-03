@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny full-width">
+                    Hello {{ user.first_name }}. I have to tell you something important! Today is my birthday and my family is coming to visit me in the afternoon. So, it is time for you to meet my family. 
+                </div>
+                <div class="msg jenny translation full-width">
+                    Živijo {{ user.first_name }}. Moram ti povedati nekaj pomembnega! Danes imam rojstni dan in popoldne me pride obiskati moja družina. Torej je čas, da spoznaš mojo družino.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg user full-width" style="float:unset;">
+                    This is my family. Repeat after me. 
+                </div>
+                <div class="msg jenny translation full-width">
+                    To je moja družina. Ponovi za mano.
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'svg/lesson2/family_members/family members 01.svg' %}" type="svg" class="full-width">
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}

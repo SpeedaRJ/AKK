@@ -1,0 +1,73 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny full-width">
+                    Did you notice this sentence: “I am John’s wife”?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Svojino lahko izrazimo z uporabo apostrofa in črke s: 
+                </div>
+            </div>
+        
+            <img src="{% static 'svg/lesson2/family_members/s.png' %}" type="svg" class="icon">
+
+            <div class="row inst space">
+                <div class="msg jenny full-width" style="float:unset;">
+                    Ko napišemo John’s wife, pravimo da je Johnova žena. 
+                </div>
+                <div class="msg jenny full-width">
+                    Poglejva si še par primerov.
+                </div>
+            </div>
+
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-2 full"> </div>
+    <div class="col-lg-8">
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width" style="float:unset;">
+                    This is Josie’s cat.
+                </div>
+                <div class="msg user full-width">
+                    Where is the cat’s toy?
+                </div>
+                <div class="msg user full-width">
+                    This is Mary’s house.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny translation full-width" style="float:unset;">
+                    To je Josijina mačka.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Kje je od mačke igrača?
+                </div>
+                <div class="msg jenny translation full-width">
+                    To je Maryjina hiša.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2"> </div>
+</div>
+{% endblock %}

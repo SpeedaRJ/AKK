@@ -1,0 +1,108 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    This is my family. Repeat after me. 
+                </div>
+                <div class="msg jenny translation full-width">
+                    To je moja družina. Ponovi za mano.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-10">
+        <div class="col-lg-6">
+            <img src="{% static 'svg/lesson2/family_members/family members 01.svg' %}" type="svg" class="full-width">
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    I have a husband. His name is John. 
+                    <img onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a1" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Imam moža. Njegovo ime je John.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    I am John’s wife.
+                    <img onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a2" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Jaz sem Johnova žena.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    I have a son. His name is Richard.
+                    <img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Imam sina. Ime mu je Richard.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    I have a daughter. Her name is Mary.
+                    <img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a4" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Imam hčer. Ime ji je Mary.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    John and I are parents to Richard and Mary.
+                    <img onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a5" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    John in jaz sva Richardova in Maryjina starša.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    I am Richard and Mary’s mother.
+                    <img onclick="play('a6')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a6" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Jaz sem Richardova in Maryjina mati.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    John is Richard and Mary’s father.
+                    <img onclick="play('a7')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a7" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    John je Richardov in Maryjin oče.
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-1"> </div>
+</div>
+{% endblock %}

@@ -181,6 +181,17 @@ urlpatterns = [
     path("lesson_two/articles/page_twentyone", views.articles_page_twentyone, name="articles_page_twentyone"), 
     path("lesson_two/articles/page_twentytwo", views.articles_page_twentytwo, name="articles_page_twentytwo"), 
     path("lesson_two/articles/page_twentythree", views.articles_page_twentythree, name="articles_page_twentythree"), 
+    path("lesson_two/family/page_one", views.family_page_one, name="family_page_one"), 
+    path("lesson_two/family/page_two", views.family_page_two, name="family_page_two"), 
+    path("lesson_two/family/page_three", views.family_page_three, name="family_page_three"), 
+    path("lesson_two/family/page_four", views.family_page_four, name="family_page_four"), 
+    path("lesson_two/family/page_five", views.family_page_five, name="family_page_five"), 
+    path("lesson_two/family/page_six", views.family_page_six, name="family_page_six"), 
+    path("lesson_two/family/page_seven", views.family_page_seven, name="family_page_seven"), 
+    path("lesson_two/family/page_eight", views.family_page_eight, name="family_page_eight"), 
+    path("lesson_two/family/page_nine", views.family_page_nine, name="family_page_nine"), 
+    path("lesson_two/family/page_ten", views.family_page_ten, name="family_page_ten"), 
+
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),

@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny full-width" style="float:unset;">
+                    Now, our kids are older and have their own families. Mary went to university. Richard went to work after high school. 
+                    At work he met Samantha, my daughter-in-law.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Zdaj sta najina otroka starejša in imata svoji družini. Mary je šla na univerzo. Richard je  po srednji šoli šel delati. V službi je spoznal Samantho, mojo snaho. 
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user full-width" style="float:unset;">
+                    Daughter-in-law = snaha
+                </div> 
+                <div class="msg jenny translation full-width">
+                    Daughter = hči <br>
+                    In law = v zakonu <br>
+                    ta izraz uporabljamo za priženjene oziroma primožene sorodnike. 
+                </div>
+            </div>
+            <div class="row inst">
+                <div class="msg user full-width" style="float:unset;">
+                    Daughter-in-law = snaha
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    Son-in-law = zet
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    Sister-in-law = svakinja
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    Brother-in-law = svak
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}
