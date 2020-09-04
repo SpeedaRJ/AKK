@@ -14,43 +14,38 @@
         </div>
         <div class="col-lg-6">
             <div class="row inst space">
-                <div class="msg jenny full-width" style="float:unset;">
-                    Now, our kids are older and have their own families. Mary went to university. Richard went to work after high school. 
-                    At work he met Samantha, my daughter-in-law.
+                <div class="msg user full-width">
+                    Click on <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, listen and repeat after me.
                 </div>
                 <div class="msg jenny translation full-width">
-                    Zdaj sta najina otroka starejša in imata svoji družini. Mary je šla na univerzo. Richard je  po srednji šoli šel delati. V službi je spoznal Samantho, mojo snaho. 
-                </div>
-            </div>
-            <div class="row inst space">
-                <div class="msg user full-width" style="float:unset;">
-                    Daughter-in-law = snaha
-                </div> 
-                <div class="msg jenny translation full-width">
-                    Daughter = hči <br>
-                    In law = v zakonu <br>
-                    ta izraz uporabljamo za priženjene oziroma primožene sorodnike. 
+                    Klikli na <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, poslušaj in ponovi za mano.
                 </div>
             </div>
             <div class="row inst">
                 <div class="msg user full-width" style="float:unset;">
-                    Daughter-in-law = snaha
+                    My husband will be a great-grandfather. 
+                    <img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"><br>
+                    Moj mož bo pradedek.
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
                 </div>
             </div>
             <div class="row">
                 <div class="msg user full-width" style="float:unset;">
-                    Son-in-law = zet
+                    We will both be great-grandparents. 
+                    <img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"><br> 
+                    Oba bova prastarša. 
+                    <audio id="a4" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
                 </div>
             </div>
             <div class="row">
                 <div class="msg user full-width" style="float:unset;">
-                    Sister-in-law = svakinja
+                    great-grandparents = prababica in pradedek
+                    <img onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a5" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
                 </div>
             </div>
-            <div class="row">
-                <div class="msg user full-width" style="float:unset;">
-                    Brother-in-law = svak
-                </div>
+            <div class="row inst">
+                <img src="{% static 'svg/lesson2/family_members/family_members04.svg' %}" type="svg" class="full-width">
             </div>
         </div>
         {% include "character.html" %}

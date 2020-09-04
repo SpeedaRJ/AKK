@@ -191,6 +191,9 @@ urlpatterns = [
     path("lesson_two/family/page_eight", views.family_page_eight, name="family_page_eight"), 
     path("lesson_two/family/page_nine", views.family_page_nine, name="family_page_nine"), 
     path("lesson_two/family/page_ten", views.family_page_ten, name="family_page_ten"), 
+    path("lesson_two/family/page_eleven", views.family_page_eleven, name="family_page_eleven"), 
+    path("lesson_two/family/page_twelve", views.family_page_twelve, name="family_page_twelve"), 
+    path("lesson_two/family/page_thirteen", views.family_page_thirteen, name="family_page_thirteen"), 
 
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),

@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Click on <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, listen and repeat after me.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Klikli na <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, poslušaj in ponovi za mano.
+                </div>
+            </div>
+            <div class="row inst">
+                <div class="msg user full-width" style="float:unset;">
+                    My daughter has a husband, Luke.<img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"><br>Moja hči ima moža, Luka.
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    We meet once a month for dinner.<img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"><br>Enkrat na mesec se dobimo za kosilo.
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    My grandchildren are growing up so fast.<img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"><br>Moja vnuka zelo hitro odraščata.
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    They will soon finish school and have their own families.<img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"><br>Kmalu bosta končala šolo in imela svoji lastni družini. 
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    When my grandchildren have children, I will be a great-grandmother. <img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton"><br>Ko bosta moja vnuka imela otroke, bom prababica. 
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

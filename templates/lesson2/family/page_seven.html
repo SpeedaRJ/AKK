@@ -1,0 +1,125 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/family/page_seven.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    This is the rest of my family. Click on <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, listen and repeat after me.
+                </div>
+                <div class="msg jenny translation full-width">
+                    To je preostanek moje družine. Klikli na <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, poslušaj in ponovi za mano.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-10">
+        <div class="col-lg-6">
+            <img src="{% static 'svg/lesson2/family_members/family_members02.svg' %}" type="svg" class="full-width">
+        </div>
+        <div class="col-lg-6">
+            <div id="first-part">
+                <div class="row">
+                    <div class="msg user full-width" style="float:unset;">
+                        My son has a wife.<br>Moj sin ima ženo.
+                        <img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                        <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user full-width" style="float:unset;">
+                        Her name is Samantha.<br>Njeno ime je Samantha.
+                        <img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                        <audio id="a4" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user full-width" style="float:unset;">
+                        She is my daughter-in-law.<br>Ona je moja snaha.
+                        <img onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                        <audio id="a5" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user full-width" style="float:unset;">
+                        They have a son.<br>Imata sina.
+                        <img onclick="play('a6')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                        <audio id="a6" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user full-width" style="float:unset;">
+                        His name is Toby.<br>Njegovo ime je Toby.
+                        <img onclick="play('a7')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                        <audio id="a7" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user full-width" style="float:unset;">
+                        He is my first grandchild, my grandson.<br>On je moj prvi vnuk. 
+                        <img onclick="play('a7')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                        <audio id="a7" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                    </div>
+                </div>
+        </div>
+        <div id="second-part" style="display: none;">
+            <div class="row">
+                <div class="msg jenny full-width" style="float:unset;">
+                    I am Toby’s grandmother and my husband is his grandfather. / Jaz sem Tobyjeva babica, moj mož pa je njegov dedek. 
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user full-width" style="float:unset;">
+                    Grand = je predpona, ki označuje eno generacijo razlike.
+                    <img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a4" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    grandchild = vnuk, vnukinja
+                    <img onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a5" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    grandchildren = vnuki
+                    <img onclick="play('a6')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a6" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    Grandson = vnuk (m.)
+                    <img onclick="play('a7')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a7" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    Granddaughter = vnukinja
+                    <img onclick="play('a7')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a7" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+            </div>
+    </div>
+            <button class="next" style="width:33%; margin-right:33%; margin-top:1vh;background-color:#58469F" onclick="next(this)" type="button">Next</button>
+        </div>
+        
+    </div>
+    <div class="col-lg-1"> </div>
+</div>
+{% endblock %}

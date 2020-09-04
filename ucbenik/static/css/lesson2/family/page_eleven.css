@@ -1,0 +1,26 @@
+.full-width {
+    width: 100% !important;
+}
+
+.listenButton {
+    height: 3vh;
+    float: right;
+}
+
+.icon {
+    width:33%;
+    margin-left: 33%;
+    margin-top: 6%;
+}
+
+.draggable-portrait {
+    width: 100%;
+}
+
+.ftrow {
+    height: 25%;
+}
+
+.ftcol {
+    height: 100%;
+}

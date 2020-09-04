@@ -4135,7 +4135,7 @@ def family_page_eight(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
-        return render(request, "lesson2/family/page_eight.html", {"next": "/lesson_two/family/page_ninex",
+        return render(request, "lesson2/family/page_eight.html", {"next": "/lesson_two/family/page_nine",
                                                                   "back": "/lesson_two/family/page_seven", "lessons": lessons,
                                                                   "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
@@ -4182,6 +4182,79 @@ def family_page_ten(request):
                                                                   "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
+
+def family_page_eleven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson2/family/page_eleven.html", {"next": "/lesson_two/family/page_twelve",
+                                                                   "back": "/lesson_two/family/page_ten", 
+                                                                   "lessons": lessons, "solved" : solution.solved,
+                                                                   "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                   "src": src_ref, "parts": parts, "colors": colors
+                                                                   })
+
+def family_page_twelve(request):
+    back = "/lesson_two/family/page_eleven"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson2/family/page_twelve.html", {"next": "/lesson_two/family/page_thirteen",
+                                                                   "back": back, "lessons": lessons, "solved" : solution.solved,
+                                                                   "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                   "src": src_ref, "parts": parts, "colors": colors
+                                                                   })
+
+def family_page_thirteen(request):
+    back = "/lesson_two/family/page_twelve"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson2/family/page_thirteen.html", {"next": "/lesson_two/family/page_fourteen",
+                                                                   "back": back, "lessons": lessons, "solved" : solution.solved,
+                                                                   "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
+                                                                   "src": src_ref, "parts": parts, "colors": colors
+                                                                   })
 
 
 # UNIT 3

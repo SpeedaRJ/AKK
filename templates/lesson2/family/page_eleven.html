@@ -1,0 +1,92 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_eleven.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Now you know my family members. Drag and drop the names of the family members onto the family tree.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Zdaj poznaš moje družinske člane. Prenesi in odloži imena družinskih članov na družinsko drevo. 
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="row">
+        <div class="col-lg-2 full">
+            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                <img src="{% static 'svg/lesson2/family_members/husband_1.svg' %}" type="svg">
+            </div>
+            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                <img src="{% static 'svg/lesson2/family_members/daughter_in_law.svg' %}" type="svg">
+            </div>
+            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                <img src="{% static 'svg/lesson2/family_members/son.svg' %}" type="svg">
+            </div>
+            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                <img src="{% static 'svg/lesson2/family_members/grandson.svg' %}" type="svg">
+            </div>
+        </div>
+        <div class="col-lg-8 ftcol">
+            <div class="col-lg-3 ftcol">
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+            </div>
+            <div class="col-lg-3 ftcol">
+                <div class="ftrow">
+                    <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                        <img src="{% static 'svg/lesson2/family_members/circle.png' %}" type="svg">
+                    </div>
+                </div>
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+            </div>
+            <div class="col-lg-3 ftcol">
+                <div class="ftrow">
+                    <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                        <img src="{% static 'svg/lesson2/family_members/jenny.svg' %}" type="svg">
+                    </div>
+                </div>
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+            </div>
+            <div class="col-lg-3 ftcol">
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+                <div class="ftrow"></div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                <img src="{% static 'svg/lesson2/family_members/daughter.svg' %}" type="svg">
+            </div>
+            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                <img src="{% static 'svg/lesson2/family_members/son_in_law.svg' %}" type="svg">
+            </div>
+            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                <img src="{% static 'svg/lesson2/family_members/grandaughter01.svg' %}" type="svg">
+            </div>
+            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event)">
+                <img src="{% static 'svg/lesson2/family_members/grandaughter02.svg' %}" type="svg">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
