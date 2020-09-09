@@ -24,3 +24,11 @@
 input {
    background-color: transparent;
 }
+
+.correct {
+    color: #00A881;
+}
+
+.incorrect {
+    color: #F15D2A;
+}

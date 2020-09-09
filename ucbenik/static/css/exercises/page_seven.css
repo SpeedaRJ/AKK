@@ -48,3 +48,12 @@ input {
 .incorrect {
   color: #F15D2A;
 }
+
+#redo_b:hover {
+    border: 3px black dotted;
+}
+
+#redo_b {
+    margin-left: 1vw;
+    border-radius: 50%;
+}

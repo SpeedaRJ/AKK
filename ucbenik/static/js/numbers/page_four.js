@@ -52,9 +52,9 @@ function redo(e) {
         s2=i;
     }
     if (c < 2)
-        document.getElementById("solution2").innerHTML = "tv."
+        document.getElementById("solution2").innerHTML = "TV."
     else
-        document.getElementById("solution2").innerHTML = "tvs."
+        document.getElementById("solution2").innerHTML = "TVs."
     document.getElementById("textarea2").value="";
 }
 

@@ -33,11 +33,11 @@ function colorButtons(buttons) {
         element.innerHTML !== "Glossary" &&
         element.className !== "SB"
       ) {
-        element.style.cssText = "background-color: #6699CC";
+        element.style.background = "#6699CC";
       } else if (element.innerHTML === "Glossary") {
-        element.style.cssText = "background-color: #3E83D5";
+        element.style.background = "#3E83D5";
       } else if (element.className === "SB") {
-        element.style.cssText = "background-color: #4b5385";
+        element.style.background = "#4b5385";
       }
     });
     event.currentTarget.style.cssText = "background-color: #EBC35C";

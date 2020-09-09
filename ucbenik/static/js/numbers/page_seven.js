@@ -73,9 +73,9 @@ function redo(e) {
     }
     document.getElementById("textarea2").value="";
     if (c < 2)
-        document.getElementById("solution2").innerHTML = "shirt."
+        document.getElementById("solution2").innerHTML = "T-shirt."
     else
-        document.getElementById("solution2").innerHTML = "shirts."
+        document.getElementById("solution2").innerHTML = "T-shirts."
     document.getElementById("textarea2").value="";
 }
 

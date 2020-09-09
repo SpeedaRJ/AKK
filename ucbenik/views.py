@@ -27,7 +27,6 @@ def save_avatar(session):
         avatar = CharacterDataMen(user=user, glasses=session['glasses'], hair_type = session['hair_type'], beard = session['beard'], body_type= session['body_type'])
     avatar.save()
 
-
 def get_user_avatar(user_dict):
     user=User.objects.get(email=user_dict['email'])
     try:
@@ -68,7 +67,6 @@ def get_refferer(request):
         return False
     return True
     
-
 def coming_soon(request):
     back = re.sub(r'[^/]*//[^/]*', '', request.META['HTTP_REFERER'])
     if 'avatar' in request.session:
@@ -324,8 +322,6 @@ def lesson_one_title(request):
                                                                     "lessons": lessons,
                                                                     "lesson": "Unit 1: About Me", "title": "", "user": request.session['user']})
 
-
-
 def introduction_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -341,8 +337,6 @@ def introduction_page_one(request):
                                                                     "lessons": lessons,
                                                                     "solved" : solution.solved,
                                                                     "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
-
-
 
 def introduction_page_two(request):
     back = "/lesson_one/introduction/page_one"
@@ -436,8 +430,21 @@ def introduction_page_seven(request):
         if not get_refferer(request) and not user.is_staff:
             return redirect(request.session['last_page'])
         request.session['last_page'] = request.path
-        return render(request, "lesson1/introduction/page_seven.html", {"next": "/lesson_one/exercises/page_one",
+        return render(request, "lesson1/introduction/page_seven.html", {"next": "/lesson_one/introduction/page_eight",
                                                                       "back": "/lesson_one/introduction/page_six",
+                                                                      "lessons": lessons,
+                                                                      "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
+
+def introduction_page_eight(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        return render(request, "lesson1/introduction/page_eight.html", {"next": "/lesson_one/exercises/page_one",
+                                                                      "back": "/lesson_one/introduction/page_seven",
                                                                       "lessons": lessons,
                                                                       "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
@@ -1437,7 +1444,6 @@ def numbers_page_twentyfive(request):
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 #COLORS
-
 def colors_page_one(request):
     back = "/lesson_one/numbers/page_twentyfive"
     if request.method == "GET":
@@ -1668,7 +1674,6 @@ def colors_page_nine(request):
                                                                  })
 
 #YEARS
-
 def years_page_one(request):
     back = "/lesson_one/colors/page_nine"
     if request.method == "GET":
@@ -1962,7 +1967,6 @@ def years_page_twelve(request):
                                                                   })
 
 #PERSONAL TRAITS
-
 def personal_traits_page_one(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -2010,7 +2014,6 @@ def personal_traits_page_two(request):
                                                                          "back": back, "lessons": lessons,
                                                                          "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
-
 
 def personal_traits_page_three(request):
     if request.method == "GET":
@@ -2466,7 +2469,6 @@ def he_she_it_page_fourteen(request):
                                                                         "lessons": lessons,
                                                                         "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
-
 
 def he_she_it_page_fifteen(request):
     back = "/lesson_one/he_she_it/page_fourteen"

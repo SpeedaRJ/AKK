@@ -43,7 +43,7 @@ img {
 #table-div {
     width: 100%;
     height: 70%;
-    padding-top: 6%
+    padding-top: 3%
 }
 
 table {
@@ -65,4 +65,3 @@ td {
 table .color {
     border-radius: 50% 0 0 50%;
 }
-

@@ -18,13 +18,13 @@
         <div class="container-fluid messages">
             <div class="row">
                 <div class="msg jenny">I was born in England. Now I live in Slovenia.</div>
-                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng2">
                 <audio id="a1" src="{% static 'audio/lesson1_jenny/introduction/7.mp3' %}"></audio>
                 <div class="msg jenny translation">Rojena sem bil v Angliji. Zdaj živim v Sloveniji.</div>
             </div>
             <div class="row">
                 <div class="msg jenny spoken">Where were you born?</div>
-                <input type="image" onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <input type="image" onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng2">
                 <audio id="a5" src="{% static 'audio/lesson1_jenny/introduction/8.mp3' %}"></audio>
             {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Kje si bil ti rojen?</div>

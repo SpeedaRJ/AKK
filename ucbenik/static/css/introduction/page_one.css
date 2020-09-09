@@ -117,9 +117,18 @@ input:focus {
     background: transparent;
     border: none;
     border-radius: 50px 50px 50px 50px;
-    height: 5%;
-    width: 5%;
+    height: 7%;
+    width: 7%;
     transform: translateY(-25%);
+}
+
+.listenToAng2 {
+  background: transparent;
+  border: none;
+  border-radius: 50px 50px 50px 50px;
+  height: 5%;
+  width: 5%;
+  transform: translateY(-25%);
 }
 
 .listenToAng:hover {

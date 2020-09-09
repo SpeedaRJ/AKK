@@ -8,59 +8,80 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-    <div class="row images">
-        <div class="col-lg-3 svg">
+    <div class="help row" style="margin-bottom: 1vh;">
+        <button class="col-lg-3"></button>
+        <button class="col-lg-3 tip" disabled style="background-color: #e6a454; border-radius: 50px;">
+            Click 
+            <img src="{% static 'svg/common/redo.svg' %}" type="svg" style="width: 1em;">
+            to redo excersise. <br>
+            Klikni <img src="{% static 'svg/common/redo.svg' %}" type="svg" style="width: 1em;">
+            da ponoviš vajo.
+        </button>
+        <div class="col-lg-1">
+            <img src="{% static 'svg/common/redo.svg' %}" type="svg" id="redo_b" style="width: 2em;" onclick="redo()">
+        </div>
+        <button class="col-lg-3 tip" disabled style="background-color: #e6a454; border-radius: 50px;">
+            Write 1 sentence per line. <br>
+            Napiši 1 stavek na vrstico.
+        </button>
+    </div>
+    <div class="row" id="images">
+        <div class="col-lg-4">
+            <img src="{% static 'svg/lesson1/exercises/SVG/andre.svg' %}" type="svg" style="display: none;">
+        </div>
+        <div class="col-lg-3 svg" id="c0">
             <img src="{% static 'svg/lesson1/exercises/SVG/danielle.svg' %}" type="svg">
         </div>
-        <div class="col-lg-3 svg">
+        <div class="col-lg-3 svg" id="c1">
             <img src="{% static 'svg/lesson1/exercises/SVG/andrew.svg' %}" type="svg">
         </div>
-        <div class="col-lg-3 svg">
+        <div class="col-lg-3 svg" id="c2">
             <img src="{% static 'svg/lesson1/exercises/SVG/sunita.svg' %}" type="svg">
         </div>
-        <div class="col-lg-3 svg">
+        <div class="col-lg-3 svg" id="c3">
             <img src="{% static 'svg/lesson1/exercises/SVG/anita.svg' %}" type="svg">
         </div>
     </div>
-    <div class="row">
-        <div class="example col-lg-3">
+    <div class="row" id="examples">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-3 example" id="e0">
             <div class="msg user">Danielle, 34, Italy</div>
             <div class="msg user one"><input class="textarea name" type="text"
-                                             onchange="solution1(this)">
+                                            onchange="solution1(this)">
                 <br><input class="textarea" type="text"
-                           onchange="solution1(this)">
+                        onchange="solution1(this)">
                 <br><input class="textarea" type="text"
-                           onchange="solution1(this)">
+                        onchange="solution1(this)">
             </div>
         </div>
-        <div class="example col-lg-3">
+        <div class="col-lg-3 example" id="e1">
             <div class="msg user">Andrew, 71, America</div>
             <div class="msg user one"><input class="textarea name" type="text"
-                                             onchange="solution2(this)">
+                                            onchange="solution2(this)">
                 <br><input class="textarea" type="text"
-                           onchange="solution2(this)">
+                        onchange="solution2(this)">
                 <br><input class="textarea" type="text"
-                           onchange="solution2(this)">
+                        onchange="solution2(this)">
             </div>
         </div>
-        <div class="example col-lg-3">
+        <div class="col-lg-3 example" id="e2">
             <div class="msg user">Sunita, 89, India</div>
             <div class="msg user one"><input class="textarea name" type="text"
-                                             onchange="solution3(this)">
+                                            onchange="solution3(this)">
                 <br><input class="textarea" type="text"
-                           onchange="solution3(this)">
+                        onchange="solution3(this)">
                 <br><input class="textarea" type="text"
-                           onchange="solution3(this)">
+                        onchange="solution3(this)">
             </div>
         </div>
-        <div class="example col-lg-3">
+        <div class="col-lg-3 example" id="e3">
             <div class="msg user">Anita, 50, Slovenia</div>
             <div class="msg user one"><input class="textarea name" type="text"
-                                             onchange="solution4(this)">
+                                            onchange="solution4(this)">
                 <br><input class="textarea" type="text"
-                           onchange="solution4(this)">
+                        onchange="solution4(this)">
                 <br><input class="textarea" type="text"
-                           onchange="solution4(this)">
+                        onchange="solution4(this)">
             </div>
         </div>
     </div>

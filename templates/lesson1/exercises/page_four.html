@@ -33,8 +33,15 @@
         </div>
     </div>
     <div class="col-lg-6">
-        <img src="{% static 'svg/common/hint-open.svg' %}" type="svg" class="hint" id="hint2" onclick="show()">
-        <img src="{% static 'svg/common/hint-closed.svg' %}" type="svg" class="hint" id="hint1" onclick="hide()">
+        <img src="{% static 'svg/common/hint-open.svg' %}" type="svg" class="hint" id="hint2" onclick="showHint()">
+        <img src="{% static 'svg/common/hint-closed.svg' %}" type="svg" class="hint" id="hint1" onclick="hideHint()">
+        <div class="help row" id="hint3">
+            <button class="col-lg-6 tip" disabled style="background-color: #e6a454; margin-top: -2vh;">
+                Click 
+                <img src="{% static 'svg/common/hint-closed.svg' %}" type="svg" style="height: 2em;">
+                to get help
+            </button>
+        </div>
         <div class="help-table" id="help-table">
             <div class="help row">
                 <button class="col-lg-6 tip" disabled>What</button>

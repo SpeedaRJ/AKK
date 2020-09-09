@@ -100,8 +100,31 @@ function checkCorrectness() {
         if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter === paras.length)
+    if(counter === 3)
         document.getElementById("next").removeAttribute("disabled")
     else
         document.getElementById("next").setAttribute("disabled", "disabled");
+}
+
+$(function(){
+    redo();
+})
+
+function redo(e) {
+    var c = Math.floor(Math.random() * 3);
+    var chars = document.getElementsByClassName('svg');
+    var descriptions = document.getElementsByClassName('example');
+    Array.from(chars).forEach((element) => {
+        element.style.display="none";
+    });
+    Array.from(descriptions).forEach((element) => {
+        element.style.display="none";
+    });
+    Array.from(document.getElementsByClassName('textarea')).forEach((element) => {
+        element.value="";
+        element.classList.remove("correct");
+        element.classList.remove("incorrect");
+    });
+    document.getElementById("c"+c).style.display="block";
+    document.getElementById("e"+c).style.display="block";
 }
