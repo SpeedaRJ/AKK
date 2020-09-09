@@ -30,6 +30,7 @@ button {
   color: #ffffff;
   border: none;
   background-color: #6699CC;
+  font-size: 0.8em;
 }
 
 button:focus {
@@ -51,7 +52,7 @@ button[class="titleB"]:hover {
 }
 
 .submenu > li > button {
-  height: 41px;
+  height: 2em;
   background-color: #4b5385;
 }
 
@@ -80,8 +81,7 @@ button[class="titleB"]:hover {
   border-radius: 50px;
   font-size: 2vh;
   background-color: rgb(235, 195, 92);
-  height: 15vh;
-  opacity: 75%;
+  height: 20vh;
   border: thick #e6a454; 
   border-style: solid;
 }
@@ -234,4 +234,9 @@ button[class="titleB"]:hover {
 .logo1 {
     height: 60px;
     width: 60px;
+}
+
+.SB {
+  font-size: 0.6em;
+  text-align: left;
 }

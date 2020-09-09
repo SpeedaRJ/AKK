@@ -14,13 +14,41 @@
 }
 
 .draggable-portrait {
-    width: 100%;
+    width: 5vw;
 }
 
 .ftrow {
-    height: 25%;
+    height: 12vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
 
 .ftcol {
+    height: 100%;
+}
+
+.ftrow {
+    height:22vh;
+    text-align: center;
+}
+
+
+.ftree {
+    height: 60vh;
+    position: absolute;
+    z-index: 0;
+}
+
+.content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.center {
+    margin-left: 50%;
+    width: 100%;
+}
+
+.drop {
     height: 100%;
 }
