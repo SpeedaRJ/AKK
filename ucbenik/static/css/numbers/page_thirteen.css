@@ -13,4 +13,9 @@
     height: 2.8vh !important;;
     font-size: 1em !important;;
     padding: 0;
+    width: 38% !important;
+}
+
+.c2 {
+    width: 61% !important;
 }

@@ -13,343 +13,347 @@
         <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
     </div>
     <div class="col-lg-6">
-        <div class="row inst">
-            <div class="msg jenny">
-                Complete the table by adding the 
-                numbers or words.
+        <div id="table1">
+            <div class="row inst">
+                <div class="msg jenny">
+                    Complete the table by adding the 
+                    numbers or words.
+                </div>
+                <div class="msg jenny slo centre">
+                    Dopolni tabelo tako, da vstaviš števila ali besede. 
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b2" onclick="redo2()">
             </div>
-            <div class="msg jenny slo centre">
-                Dopolni tabelo tako, da vstaviš števila ali besede. 
+            <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
+            <img src="{% static 'svg/common/listen_on.svg' %}" type="svg" class="listen" id="on">
+            <div class="help-table" id="help-table2">
+                <div class="help row" id="row112">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n112">11</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'11')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t112">eleven</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eleven')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row122">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n122">12</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'12')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t122">twelve</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'twelve')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row132">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n132">13</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'13')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t132">thirteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'thirteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row142">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n142">14</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'14')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t142">fourteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'fourteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row152">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n152">15</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'15')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t152">fifteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'fifteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row162">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n162">16</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'16')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t162">sixteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'sixteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row172">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n127">17</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'17')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t172">seventeen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'seventeen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row182">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n182">18</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'18')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t182">eighteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eighteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row192">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n192">19</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'19')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t192">nineteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'nineteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row202">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n202">20</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'20')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t202">twenty</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'twenty')"/>
+                    </button>
+                </div>
             </div>
-            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b2" onclick="redo2()">
         </div>
-        <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
-        <img src="{% static 'svg/common/listen_on.svg' %}" type="svg" class="listen" id="on">
-        <div class="help-table" id="help-table2">
-            <div class="help row" id="row112">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n112">11</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'11')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t112">eleven</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eleven')"/>
-                </button>
+        <div id="table2" style="display:none">
+            <!-- ALL NUMBERS -->
+            <div class="row inst">
+                <div class="msg jenny">Got it? Let’s try it with all the numbers 
+                    we’ve learned so far. 
+                </div> 
+                <div class="msg jenny slo centre">
+                    Že obvladaš? Preizkusiva se z vsemi 
+                    naučenimi števili do sedaj. 
+                </div>
+                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <audio id="a1" src="{% static 'audio/lesson1_jenny/numbers/24.mp3' %}"></audio>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
             </div>
-            <div class="help row" id="row122">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n122">12</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'12')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t122">twelve</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'twelve')"/>
-                </button>
-            </div>
-            <div class="help row" id="row132">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n132">13</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'13')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t132">thirteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'thirteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row142">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n142">14</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'14')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t142">fourteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'fourteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row152">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n152">15</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'15')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t152">fifteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'fifteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row162">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n162">16</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'16')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t162">sixteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'sixteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row172">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n127">17</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'17')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t172">seventeen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'seventeen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row182">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n182">18</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'18')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t182">eighteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eighteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row192">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n192">19</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'19')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t192">nineteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'nineteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row202">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n202">20</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'20')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t202">twenty</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'twenty')"/>
-                </button>
-            </div>
-        </div>
-        <!-- ALL NUMBERS -->
-        <div class="row inst">
-            <div class="msg jenny">Got it? Let’s try it with all the numbers 
-                we’ve learned so far. 
-            </div> 
-            <div class="msg jenny slo centre">
-                Že obvladaš? Preizkusiva se z vsemi 
-                naučenimi števili do sedaj. 
-            </div>
-            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
-        </div>
-        <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
-        <audio id="a1" src="{% static 'audio/lesson1_jenny/numbers/24.mp3' %}"></audio>
-        <div class="help-table" id="help-table">
-            <div class="help row" id="row0">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n0">0</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'0')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">zero</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'zero')"/>
-                </button>
-            </div>
-            <div class="help row" id="row1">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n1">1</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'1')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">one</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'one')"/>
-                </button>
-            </div>
-            <div class="help row" id="row2">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n2">2</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'2')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">two</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'two')"/>
-                </button>
-            </div>
-            <div class="help row" id="row3">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n3">3</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'3')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">three</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'three')"/>
-                </button>
-            </div>
-            <div class="help row" id="row4">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n4">4</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'4')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">four</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'four')"/>
-                </button>
-            </div>
-            <div class="help row" id="row5">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n5">5</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'5')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">five</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'five')"/>
-                </button>
-            </div>
-            <div class="help row" id="row6">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n6">6</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'6')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">six</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'six')"/>
-                </button>
-            </div>
-            <div class="help row" id="row7">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n7">7</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'7')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">seven</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'seven')"/>
-                </button>
-            </div>
-            <div class="help row" id="row8">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n8">8</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'8')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">eight</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eight')"/>
-                </button>
-            </div>
-            <div class="help row" id="row9">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n9">9</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'9')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">nine</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'nine')"/>
-                </button>
-            </div>
-            <div class="help row" id="row10">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n10">10</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'10')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">ten</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'ten')"/>
-                </button>
-            </div>
-            <div class="help row" id="row11">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n1">11</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'11')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">eleven</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eleven')"/>
-                </button>
-            </div>
-            <div class="help row" id="row12">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n2">12</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'12')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">twelve</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'twelve')"/>
-                </button>
-            </div>
-            <div class="help row" id="row13">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n3">13</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'13')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">thirteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'thirteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row14">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n4">14</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'14')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">fourteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'fourteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row15">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n5">15</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'15')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">fifteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'fifteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row16">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n6">16</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'16')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">sixteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'sixteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row17">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n7">17</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'17')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">seventeen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'seventeen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row18">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n8">18</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'18')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">eighteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eighteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row19">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n9">19</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'19')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">nineteen</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'nineteen')"/>
-                </button>
-            </div>
-            <div class="help row" id="row20">
-                <button class="col-lg-6 tip" disabled>
-                    <p id="n10">20</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'20')"/>
-                </button>
-                <button class="col-lg-6 tip c2">
-                    <p id="t0">twenty</p>
-                    <input  class="textarea" style="display:none" size="5" onchange="solution(this,'twenty')"/>
-                </button>
+            <div class="help-table" id="help-table">
+                <div class="help row" id="row0">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n0">0</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'0')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">zero</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'zero')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row1">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n1">1</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'1')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">one</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'one')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row2">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n2">2</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'2')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">two</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'two')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row3">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n3">3</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'3')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">three</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'three')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row4">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n4">4</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'4')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">four</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'four')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row5">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n5">5</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'5')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">five</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'five')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row6">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n6">6</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'6')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">six</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'six')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row7">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n7">7</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'7')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">seven</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'seven')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row8">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n8">8</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'8')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">eight</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eight')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row9">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n9">9</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'9')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">nine</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'nine')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row10">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n10">10</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'10')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">ten</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'ten')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row11">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n1">11</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'11')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">eleven</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eleven')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row12">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n2">12</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'12')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">twelve</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'twelve')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row13">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n3">13</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'13')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">thirteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'thirteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row14">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n4">14</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'14')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">fourteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'fourteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row15">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n5">15</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'15')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">fifteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'fifteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row16">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n6">16</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'16')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">sixteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'sixteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row17">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n7">17</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'17')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">seventeen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'seventeen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row18">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n8">18</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'18')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">eighteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'eighteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row19">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n9">19</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'19')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">nineteen</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'nineteen')"/>
+                    </button>
+                </div>
+                <div class="help row" id="row20">
+                    <button class="col-lg-6 tip" disabled>
+                        <p id="n10">20</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'20')"/>
+                    </button>
+                    <button class="col-lg-6 tip c2">
+                        <p id="t0">twenty</p>
+                        <input  class="textarea" style="display:none" size="5" onchange="solution(this,'twenty')"/>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

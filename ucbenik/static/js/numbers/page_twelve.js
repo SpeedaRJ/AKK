@@ -109,7 +109,6 @@ function shuffle(a) {
 
 function solution(el,solution) {
     let parent = el.parentElement;
-    console.log(el.value.toLowerCase(), solution)
     if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution+'\\.*\\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
@@ -123,10 +122,22 @@ function solution(el,solution) {
         if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter === 10)
-        document.getElementById("next").removeAttribute("disabled")
-    else
-        document.getElementById("next").setAttribute("disabled", "disabled");
+    
+    var next = document.getElementById("next");
+    if(counter === 5) {
+        next.setAttribute('onclick',"display2()");
+        next.removeAttribute("disabled");
+    } else if (counter === 10) {
+        next.setAttribute('onclick',"window.location.href='/lesson_one/numbers/page_thirteen'");
+        next.removeAttribute("disabled");
+    } else {
+        next.setAttribute("disabled", "disabled");
+    }
+}
+
+function display2() {
+    document.getElementById("table1").style.display="none";
+    document.getElementById("table2").style.display="block";
 }
 
 

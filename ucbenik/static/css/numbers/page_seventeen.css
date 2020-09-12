@@ -31,7 +31,7 @@ img {
     margin-left: 0;
 }
 
-.numbers-button {
+.numbers-button, .numbers-button:hover {
     font-size: 2vh;
     margin-top: 6vh;
     border-radius: 4%/25%;
@@ -83,7 +83,7 @@ img {
     font-weight: normal;
 }  
 
-.tip {
+.tip, .tip:hover{
     width: 49% !important;
     margin: 0.5%;
     height: 4vh;
@@ -91,7 +91,7 @@ img {
     background-color: #00A881;
 }
 
-.title {
+.title, .title:hover {
     background-color: #3E83D5;
 }
 

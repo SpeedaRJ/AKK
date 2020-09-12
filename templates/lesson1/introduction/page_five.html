@@ -18,26 +18,26 @@
                     <button class="btn" onclick="show_country(event)">No</button>
                     .
                 </div> 
-                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng2">
                 <audio id="a1" src="{% static 'audio/lesson1_jenny/introduction/9.mp3' %}"></audio>
                 <div class="msg jenny translation">Ali še tam živiš? Ja/Ne.</div>
             </div>
             <div style="display: none" id="home_country">
                 <div class="row">
                     <div class="msg jenny">Where do you live now?</div> 
-                    <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                    <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng2">
                     <audio id="a2" src="{% static 'audio/lesson1_jenny/introduction/10.mp3' %}"></audio>
                     <div class="msg jenny translation">Kje živiš sedaj?</div>
                 </div>
                 <div class="row">
-                    <div class="msg user instruction spoken"><b>Navodilo:</b> <br> Vpiši državo v kateri živiš.</div>
+                    <div class="msg user instruction spoken"><p style="color:#D55225;font-weight: bold;margin:0">Navodilo:</p> <br> Vpiši državo v kateri živiš.</div>
                     <div class="msg user">I live in <input type="text" id="county_input">.</div>
                     <div class="msg user slo">Živim v <p id="slo_county">_____</p>.</div>
                 </div>
             </div>
             <div class="row" style="display: none" id="welcome">
                 <div class="msg jenny">Great! Welcome to English: Step by Step!</div> 
-                <input type="image" onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
+                <input type="image" onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng2">
                 <audio id="a3" src="{% static 'audio/lesson1_jenny/introduction/11.mp3' %}"></audio>
                 {% if user.sex == 'M' %}
                     <div class="msg jenny translation">Super! Dobrodošel v Angleščina: korak za korakom.</div>
