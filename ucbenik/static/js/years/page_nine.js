@@ -23,15 +23,19 @@ $(function () {
     document.getElementById("next").removeAttribute("disabled");
 });
 
+
 function tts(el) {
     if ('speechSynthesis' in window) {
-      var msg = new SpeechSynthesisUtterance();
-      msg.text = el.innerHTML;
-      if (!msg.text)
-        msg.text = "Please enter a value."
-      window.speechSynthesis.speak(msg);
-     }else{
-       // Speech Synthesis Not Supported 😣
-       alert("Sorry, your browser doesn't support text to speech!");
-     }
-  }
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = "year" + el.innerHTML;
+        msg.volume = 0.5; // From 0 to 1
+        msg.rate = 1; // From 0.1 to 10
+        msg.pitch = 2; // From 0 to 2
+        if (!msg.text)
+            msg.text = "Please enter a value."
+        window.speechSynthesis.speak(msg);
+    } else{
+        // Speech Synthesis Not Supported 😣
+        alert("Sorry, your browser doesn't support text to speech!");
+    }
+}

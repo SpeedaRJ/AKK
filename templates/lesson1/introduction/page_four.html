@@ -34,9 +34,9 @@
             </div>
             <div class="row">
                 {% if user.sex == 'M' %}
-                    <div class="msg user instruction spoken"><p style="color:#D55225;font-weight: bold;margin:0">Navodilo:</p> <br> Vpiši državo, v kateri si bil rojen.</div>
+                    <div class="msg user instruction spoken"><p style="font-weight: bold;margin:0">Navodilo:</p> <br> Vpiši državo, v kateri si bil rojen.</div>
                 {% else %}
-                    <div class="msg user instruction spoken"><p style="color:#D55225;font-weight: bold;margin:0">Navodilo:</p> <br> Vpiši državo, v kateri si bila rojena.</div>
+                    <div class="msg user instruction spoken"><p style="font-weight: bold;margin:0">Navodilo:</p> <br> Vpiši državo, v kateri si bila rojena.</div>
                 {% endif %}
                 <div class="msg user">I was born in <input type="text" id="birth_place_input">.</div>
                 {% if user.sex == 'M' %}

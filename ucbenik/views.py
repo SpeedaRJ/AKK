@@ -879,12 +879,15 @@ def numbers_page_one(request):
         user = user
         user.add_chapter('Numbers')
         request.session['user'] = UserSerializer(user).data
+        solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson_one/numbers/page_two",
-                                                                 "back": "/lesson_one/character_select/page_six","lessons": lessons,
+                                                                 "back": "/lesson_one/character_select/page_six",
+                                                                 "lessons": lessons, "solved" : solution.solved,
                                                                  "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def numbers_page_two(request):
+    back = "/lesson_one/numbers/page_one"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -900,8 +903,10 @@ def numbers_page_two(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         return render(request, "lesson1/numbers/page_two.html", {"next": "/lesson_one/numbers/page_three",
-                                                                 "back": "/lesson_one/numbers/page_one",
+                                                                 "back": back,
                                                                  "solved" : solution.solved,
                                                                  "lessons": lessons,
                                                                  "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
@@ -1720,6 +1725,8 @@ def years_page_two(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         return render(request, "lesson1/years/page_two.html", {"next": "/lesson_one/years/page_three",
                                                                "back": back, "solved" : solution.solved,
                                                                "lessons": lessons,
@@ -1743,6 +1750,8 @@ def years_page_three(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_three.html", {"next": "/lesson_one/years/page_four",
                                                                  "back": back, "solved" : solution.solved,
@@ -1767,6 +1776,8 @@ def years_page_four(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_four.html", {"next": "/lesson_one/years/page_five",
                                                                 "back": back, "solved" : solution.solved,
@@ -1791,6 +1802,8 @@ def years_page_five(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson1/years/page_five.html", {"next": "/lesson_one/years/page_six",
                                                                 "back": back, "solved" : solution.solved,
@@ -1815,6 +1828,8 @@ def years_page_six(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         return render(request, "lesson1/years/page_six.html", {"next": "/lesson_one/years/page_seven",
                                                                "back": back, "lessons": lessons,
                                                                "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
@@ -1861,6 +1876,8 @@ def years_page_eight(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         return render(request, "lesson1/years/page_eight.html", {"next": "/lesson_one/years/page_nine",
                                                                  "back": back, "solved" : solution.solved,
                                                                  "lessons": lessons,
@@ -1884,6 +1901,8 @@ def years_page_nine(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
         return render(request, "lesson1/years/page_nine.html", {"next": "/lesson_one/years/page_ten",
                                                                 "back": back, "lessons": lessons,
                                                                 "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
@@ -1989,7 +2008,7 @@ def personal_traits_page_one(request):
                                                                          "back": "/lesson_one/years/page_twelve",
                                                                          "solved" : solution.solved,
                                                                     "lessons": lessons,
-                                                                         "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user'],
+                                                                         "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def personal_traits_page_two(request):
@@ -2012,7 +2031,7 @@ def personal_traits_page_two(request):
             return redirect(back)
         return render(request, "lesson1/personal_traits/page_two.html", {"next": "/lesson_one/personal_traits/page_three",
                                                                          "back": back, "lessons": lessons,
-                                                                         "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user'],
+                                                                         "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def personal_traits_page_three(request):
@@ -2034,7 +2053,7 @@ def personal_traits_page_three(request):
         return render(request, "lesson1/personal_traits/page_three.html", {"next": "/lesson_one/personal_traits/page_four",
                                                                            "back": "/lesson_one/personal_traits/page_two",
                                                                            "solved" : solution.solved, "lessons": lessons,
-                                                                           "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user'],
+                                                                           "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def personal_traits_page_four(request):
@@ -2059,7 +2078,7 @@ def personal_traits_page_four(request):
         return render(request, "lesson1/personal_traits/page_four.html", {"next": "/lesson_one/personal_traits/page_five",
                                                                           "back": back, "solved" : solution.solved,
                                                                           "lessons": lessons,
-                                                                          "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user'],
+                                                                          "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def personal_traits_page_five(request):
@@ -2084,7 +2103,7 @@ def personal_traits_page_five(request):
         return render(request, "lesson1/personal_traits/page_five.html", {"next": "/lesson_one/personal_traits/page_six",
                                                                           "back": back, "solved" : solution.solved,
                                                                           "lessons": lessons,
-                                                                          "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user'],
+                                                                          "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def personal_traits_page_six(request):
@@ -2109,7 +2128,7 @@ def personal_traits_page_six(request):
         return render(request, "lesson1/personal_traits/page_six.html", {"next": "/lesson_one/personal_traits/page_seven",
                                                                          "back": back, "solved" : solution.solved,
                                                                          "lessons": lessons,
-                                                                         "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user'],
+                                                                         "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def personal_traits_page_seven(request):
@@ -2134,7 +2153,7 @@ def personal_traits_page_seven(request):
         return render(request, "lesson1/personal_traits/page_seven.html", {"next": "/lesson_one/he_she_it/page_one",
                                                                            "back": back, "solved" : solution.solved,
                                                                            "lessons": lessons,
-                                                                           "lesson": "Unit 1: About Me", "title": "Personal Traits", "user": request.session['user'],
+                                                                           "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 def he_she_it_page_one(request):

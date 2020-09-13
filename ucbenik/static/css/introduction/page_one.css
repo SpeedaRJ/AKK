@@ -117,8 +117,7 @@ input:focus {
     background: transparent;
     border: none;
     border-radius: 50px 50px 50px 50px;
-    height: 7%;
-    width: 7%;
+    width: 9%;
     transform: translateY(-25%);
 }
 

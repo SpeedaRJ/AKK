@@ -123,3 +123,7 @@ img {
 .drop {
     height: 6vh;
 }
+
+.draggable:hover {
+    cursor:pointer;
+}

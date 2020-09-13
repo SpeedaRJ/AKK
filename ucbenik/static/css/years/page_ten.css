@@ -15,7 +15,12 @@ img {
     background-color: #E4E3E8;
     max-height: 50%;
     padding: 1%;
+    padding-left: 5%;
     border-radius: 30%;
+}
+
+.question > input {
+    width: 5%;
 }
 
 .space {

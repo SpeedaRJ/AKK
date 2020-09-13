@@ -42,7 +42,7 @@ img {
 
 #table-div {
     width: 100%;
-    height: 70%;
+    height: 50vh;
     padding-top: 3%
 }
 
@@ -64,4 +64,9 @@ td {
 
 table .color {
     border-radius: 50% 0 0 50%;
+}
+
+td:hover {
+    background-color: rgb(235, 195, 92);
+    cursor: pointer;
 }

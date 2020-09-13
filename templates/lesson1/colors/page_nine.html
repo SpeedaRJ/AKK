@@ -19,25 +19,38 @@
     </div>
     {% include "character.html" %}
 </div>
-<div class="row container">
+<div class="row container" style="margin-top: unset !important;">
     <div class="col-lg-6 column">
         <div class="row first">
             <img class="flag" src="{% static 'svg/lesson1/colors/SVG/jamaica.svg' %}">
-            <div class="input"><input class="answer" type="text" onchange="check(this, ['green', 'black', 'yellow'])"></div>
+            <div class="input"><input style="border-color: green;color: green;" class="answer" type="text" onchange="check(this, ['green'])"></div>
+            <div class="input"><input style="border-color: black;color:black" class="answer" type="text" onchange="check(this, ['black'])"></div>
+            <div class="input"><input style="border-color: yellow;color:yellow" class="answer" type="text" onchange="check(this, ['yellow'])"></div>
         </div>
         <div class="row first">
-            <img class="flag" src="{% static 'svg/lesson1/colors/SVG/slovenia.svg' %}">
-            <div class="input"><input class="answer" type="text" onchange="check(this, ['white', 'red', 'blue'])"></div>
+            <img class="flag" src="{% static 'svg/lesson1/colors/SVG/seychelles.svg' %}">
+            <div class="input"><input style="border-color: blue;color: blue;" class="answer" type="text" onchange="check(this, ['blue'])"></div>
+            <div class="input"><input style="border-color: yellow;color: yellow;" class="answer" type="text" onchange="check(this, ['yellow'])"></div>
+            <div class="input"><input style="border-color: red;color: red;" class="answer" type="text" onchange="check(this, ['red'])"></div>
+            <div class="input"><input style="border-color: white;color: white;" class="answer" type="text" onchange="check(this, ['white'])"></div>
+            <div class="input"><input style="border-color: green;color: green;" class="answer" type="text" onchange="check(this, ['green'])"></div>
         </div>
     </div>
     <div class="col-lg-6 column">
         <div class="row first">
-            <img class="flag" src="{% static 'svg/lesson1/colors/SVG/seychelles.svg' %}">
-            <div class="input"><input class="answer" type="text" onchange="check(this, ['blue', 'yellow', 'red', 'white', 'green'])"></div>
+            <img class="flag" src="{% static 'svg/lesson1/colors/SVG/slovenia.svg' %}">
+            <div class="input"><input style="border-color: white;color: white;" class="answer" type="text" onchange="check(this, ['white'])"></div>
+            <div class="input"><input style="border-color: red;color: red;" class="answer" type="text" onchange="check(this, ['red'])"></div>
+            <div class="input"><input style="border-color: blue;color: blue;" class="answer" type="text" onchange="check(this, ['blue'])"></div>
         </div>
         <div class="row first">
             <img class="flag" src="{% static 'svg/lesson1/colors/SVG/south_sudan.svg' %}">
-            <div class="input"><input class="answer" type="text" onchange="check(this, ['blue', 'yellow', 'black', 'red', 'green', 'white'])"></div>
+            <div class="input"><input style="border-color: blue;color: blue;" class="answer" type="text" onchange="check(this, ['blue',])"></div>
+            <div class="input"><input style="border-color: yellow;color: yellow;" class="answer" type="text" onchange="check(this, ['yellow'])"></div>
+            <div class="input"><input style="border-color: black;color: black;" class="answer" type="text" onchange="check(this, ['black'])"></div>
+            <div class="input"><input style="border-color: red;color: red;" class="answer" type="text" onchange="check(this, ['red'])"></div>
+            <div class="input"><input style="border-color: green;color: green;" class="answer" type="text" onchange="check(this, ['green'])"></div>
+            <div class="input"><input style="border-color: white;color: white;" class="answer" type="text" onchange="check(this, ['white'])"></div>
         </div>
     </div>
 </div>
