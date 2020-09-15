@@ -14,7 +14,16 @@
 }
 
 .draggable-portrait {
-    width: 5vw;
+    width: 5.5vw;
+    border-radius: 50%;
+}
+
+.correct, .incorrect {
+    margin-left: 5%;
+}
+
+.middle {
+    height: 23vh;
 }
 
 .ftrow {
