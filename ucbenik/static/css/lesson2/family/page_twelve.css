@@ -1,0 +1,73 @@
+.full-width {
+    width: 100% !important;
+}
+
+.listenButton {
+    height: 3vh;
+    float: right;
+}
+
+.icon {
+    width:33%;
+    margin-left: 33%;
+    margin-top: 6%;
+}
+
+.textarea {
+    width: 80%;
+}
+
+.draggable-portrait {
+    width: 5.5vw;
+    border-radius: 50%;
+}
+
+.familyname {
+    float:left;
+    width: 5.5vw;
+    padding: 5%;
+}
+
+.correct, .incorrect {
+    margin-left: 5%;
+}
+
+.middle {
+    height: 23vh;
+}
+
+.ftrow {
+    height: 12vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.ftcol {
+    height: 100%;
+}
+
+.ftrow {
+    height:22vh;
+    text-align: center;
+}
+
+
+.ftree {
+    height: 60vh;
+    position: absolute;
+    z-index: 0;
+}
+
+.content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.center {
+    margin-left: 50%;
+    width: 100%;
+}
+
+.drop {
+    height: 100%;
+}
