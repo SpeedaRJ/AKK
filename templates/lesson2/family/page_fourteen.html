@@ -1,0 +1,109 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_fourteen.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Now make your family tree.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Zdaj naredi svoje družinsko drevo. 
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-3">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Mother
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Father
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Daughter
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Son
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Grandson
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Granddaughter
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Daughter-in-law
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Son-in-law
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Stepmother
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Stepdaughter
+                </div>
+                <div class="msg user full-width" style="padding:3.1%;">
+                    Stepson
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+                <div class="msg jenny translation full-width">
+                    <input class="textarea" type="text" style="width:90%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_fourteen.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/lesson2/family/page_fifteen.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Describe your family.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Opiši svojo družino.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny translation full-width">
+                    I have a __<u>daughter</u>__. __<u>her</u>__ name is __<u>Mary</u>__.
+                </div>
+                <div class="msg jenny translation full-width">
+                    I have a <input class="textarea" type="text" style="width:20%">. 
+                    <input class="textarea" type="text" style="width:20%"> name is 
+                    <input class="textarea" type="text" style="width:20%">. 
+                </div>
+                <div class="msg jenny translation full-width">
+                    I have a <input class="textarea" type="text" style="width:20%">. 
+                    <input class="textarea" type="text"  style="width:20%"> name is 
+                    <input class="textarea" type="text"  style="width:20%">. 
+                </div>
+            </div>
+            <div class="row" id="fam"></div>
+            <div style="text-align: center;">
+                <img src="{% static 'svg/lesson2/family_members/plus_blue.svg' %}" type="svg" id="add" onclick="add(this)">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}

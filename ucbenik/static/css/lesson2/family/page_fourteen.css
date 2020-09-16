@@ -1,0 +1,23 @@
+.full-width {
+    width: 100% !important;
+}
+
+.listenButton {
+    height: 3vh;
+    float: right;
+}
+
+.icon {
+    width:33%;
+    margin-left: 33%;
+    margin-top: 6%;
+}
+
+#add {
+    width: 2vw;
+    position: absolute;
+}
+
+#add:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,55 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny full-width">
+                    Everybody has a different family tree. My friend Jim divorced his first wife. 
+                    After that, he married Christina. Cristina brought her son Alex into the family. 
+                </div>
+                <div class="msg jenny translation full-width">
+                    Vsi imamo drugačno družinsko drevo. Moj prijatelj Jim se je razšel s svojo prvo ženo. 
+                    Po tem se je poročil s Christino. Christina je v družino pripeljala svojega sina Alexa. 
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny full-width">
+                    Alex is Jim’s <p style="color:#D55225;font-weight: bold; margin:0">stepson</p>. Jim is Alex’s <p style="color:#D55225;font-weight: bold; margin:0">stepfather</p>. 
+                </div>
+                <div class="msg jenny translation full-width">
+                    Alex je Jimov pastorek. Jim je Alexov očim.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny full-width">
+                    Jim brought his daughter Susie into the family. 
+                    Susie is Christina’s <p style="color:#D55225;font-weight: bold; margin:0">stepdaughter</p> and Christina is Susie’s <p style="color:#D55225;font-weight: bold; margin:0">stepmother</p>.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Jim je v družino pripeljal svojo hčerko Susie. 
+                    Susie je Christinina pastorka in Christina je Susijina mačeha
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}
