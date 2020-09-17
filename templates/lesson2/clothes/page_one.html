@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/clothes/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny full-width">
+                    Today is my birthday. My family is coming over for dinner. I have to get dressed. Help me decide what to wear.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Danes je moj rojstni dan. Moja družina pride na kosilo. Moram se obleči. Pomagaj mi izbrati, kaj obleči.  (Pomagaj mi izbrati, kaj naj oblečem.)
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny full-width">
+                    Open the wardrobe and let's see what I have.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Odpri omaro in poglejva, kaj imam.
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'svg/lesson2/clothes/clothes01.svg' %}" type="svg" style="width:70%;margin-left:15%;">
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}

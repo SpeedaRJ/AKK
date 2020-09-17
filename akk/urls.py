@@ -199,6 +199,23 @@ urlpatterns = [
     path("lesson_two/family/page_fifteen", views.family_page_fifteen, name="family_page_fifteen"),
     path("lesson_two/family/page_sixteen", views.family_page_sixteen, name="family_page_sixteen"), 
 
+    path("lesson_two/clothes/page_one", views.clothes_page_one, name="clothes_page_one"),
+    path("lesson_two/clothes/page_two", views.clothes_page_two, name="clothes_page_two"),
+    path("lesson_two/clothes/page_three", views.clothes_page_three, name="clothes_page_three"),
+    path("lesson_two/clothes/page_four", views.clothes_page_four, name="clothes_page_four"),
+    path("lesson_two/clothes/page_five", views.clothes_page_five, name="clothes_page_five"),
+    path("lesson_two/clothes/page_six", views.clothes_page_six, name="clothes_page_six"),
+    path("lesson_two/clothes/page_seven", views.clothes_page_seven, name="clothes_page_seven"),
+    path("lesson_two/clothes/page_eight", views.clothes_page_eight, name="clothes_page_eight"),
+    path("lesson_two/clothes/page_nine", views.clothes_page_nine, name="clothes_page_nine"),
+    path("lesson_two/clothes/page_ten", views.clothes_page_ten, name="clothes_page_ten"),
+    path("lesson_two/clothes/page_eleven", views.clothes_page_eleven, name="clothes_page_eleven"),
+    path("lesson_two/clothes/page_twelve", views.clothes_page_twelve, name="clothes_page_twelve"),
+    path("lesson_two/clothes/page_thirteen", views.clothes_page_thirteen, name="clothes_page_thirteen"),
+    path("lesson_two/clothes/page_fourteen", views.clothes_page_fourteen, name="clothes_page_fourteen"),
+    path("lesson_two/clothes/page_fifteen", views.clothes_page_fifteen, name="clothes_page_fifteen"),
+
+
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),

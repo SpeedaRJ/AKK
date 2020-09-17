@@ -1,0 +1,160 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/clothes/page_twelve.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/clothes/page_three.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8" style="margin-bottom: 2vh;">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Drag and drop the numbers to the correct piece of clothing
+                </div>
+                <div class="msg jenny translation full-width">
+                    Prenesi in odloži številke k pravim oblačilom. 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-10">
+        <div class="row">
+            <img src="{% static 'svg/lesson2/clothes/clothes06.svg' %}" type="svg" class="full-width">
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="drop" id="drag01">
+                    <div class="msg user trait" style="width:unset;" id="m01" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        1.
+                    </div>
+                </div>
+                <div class="drop" id="drag02">
+                    <div class="msg user trait" style="width:unset;" id="m02" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        2.
+                    </div>
+                </div>
+                <div class="drop" id="drag03">
+                    <div class="msg user trait" style="width:unset;" id="m03" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        3.
+                    </div>
+                </div>
+                <div class="drop" id="drag04">
+                    <div class="msg user trait"  style="width:unset;" id="m04" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        4.
+                    </div>
+                </div>
+                <div class="drop" id="drag05">
+                    <div class="msg user trait" style="width:unset;" id="m05" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        5.
+                    </div>
+                </div>
+                <div class="drop" id="drag06">
+                    <div class="msg user trait" style="width:unset;" id="m06" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        6.
+                    </div>
+                </div>
+                <div class="drop" id="drag07">
+                    <div class="msg user trait" style="width:unset;" id="m07" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        7.
+                    </div>
+                </div>
+                <div class="drop" id="drag08">
+                    <div class="msg user trait"  style="width:unset;" id="m08" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        8.
+                    </div>
+                </div>
+                <div class="drop" id="drag09" >
+                    <div class="msg user trait" style="width:unset;" id="m09" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        9.
+                    </div>
+                </div>
+                <div class="drop" id="drag10">
+                    <div class="msg user trait" style="width:unset;" id="m10" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        10.
+                    </div>
+                </div>
+                <div class="drop" id="drag11">
+                    <div class="msg user trait" style="width:unset;" id="m11" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        11.
+                    </div>
+                </div>
+                <div class="drop" id="drag12">
+                    <div class="msg user trait"  style="width:unset;" id="m12" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        12.
+                    </div>
+                </div>
+                <div class="drop" id="drag13" >
+                    <div class="msg user trait" style="width:unset;" id="m13" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        13.
+                    </div>
+                </div>
+                <div class="drop" id="drag14">
+                    <div class="msg user trait" style="width:unset;" id="m14" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        14.
+                    </div>
+                </div>
+                <div class="drop" id="drag15">
+                    <div class="msg user trait" style="width:unset;" id="m15" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        15.
+                    </div>
+                </div>
+                <div class="drop" id="drag16">
+                    <div class="msg user trait"  style="width:unset;" id="m16" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        16.
+                    </div>
+                </div>
+                <div class="drop" id="drag17">
+                    <div class="msg user trait" style="width:unset;" id="m17" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        17.
+                    </div>
+                </div>
+                <div class="drop" id="drag18">
+                    <div class="msg user trait"  style="width:unset;" id="m18" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        18.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="drag"  id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                    <div class="msg jenny translation trait slo">
+                        sweater
+                    </div>
+                </div>
+                <div class="drag"  id="match07" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                    <div class="msg jenny translation trait slo">
+                        hat
+                    </div>
+                </div>
+                <div class="drag"  id="match09" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"> 
+                    <div class="msg jenny translation trait slo">
+                        scarf
+                    </div>
+                </div>
+                <div class="drag"  id="match18" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                    <div class="msg jenny translation trait slo">
+                        socks
+                    </div>
+                </div>
+                <div class="drag"  id="match12" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"> 
+                    <div class="msg jenny translation trait slo">
+                        shoes
+                    </div>
+                </div>
+                <div class="drag"  id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)"> 
+                    <div class="msg jenny translation trait slo">
+                        boots
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-1"> </div>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/clothes/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Click on <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, listen and repeat after me.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Klikli na <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">,poslušaj in ponovi za mano. 
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-10">
+        <div class="col-lg-6">
+            <img src="{% static 'svg/lesson2/clothes/clothes03.svg' %}" type="svg" class="full-width">
+            
+            <img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:18%;top:63%;">
+            
+            <img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:47%;top:36%;">
+            
+            <img onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:33%;top:89%">
+            
+            <img onclick="play('a6')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:68%;top:52%">
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    1. I wear <p style="color:#FBB040;font-weight:bold;margin:0">boots</p> when it's raining.
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Škornje obujem, ko dežuje
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    2. I wear a <p style="color:#FBB040;font-weight:bold;margin:0">coat</p> when it's cold outside.
+                    <audio id="a4" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Plašč oblečem, ko je zunaj mrzlo.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    3. I wear <p style="color:#FBB040;font-weight:bold;margin:0">gloves</p> when it snows.
+                    <audio id="a5" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Rokavice nosim, ko sneži.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    4. I wear a <p style="color:#FBB040;font-weight:bold;margin:0">scarf</p> to protect my neck from the wind. 
+                    <audio id="a6" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Šal nosim, da zavarujem svoj vrat pred vetrom..
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-1"> </div>
+</div>
+{% endblock %}

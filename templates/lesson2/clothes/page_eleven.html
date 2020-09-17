@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/clothes/page_three.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/clothes/page_three.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Drag and drop
+                </div>
+                <div class="msg jenny translation full-width">
+                    Prenesi in odloži. 
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-10">
+        <div class="col-lg-6">
+            <img src="{% static 'svg/lesson2/clothes/clothes05.svg' %}" type="svg" class="full-width">
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-6">
+                <div class="drop" id="match01"  ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                    <div class="msg user trait" style="width:unset;">
+                        1.
+                    </div>
+                </div>
+                <div class="drop" id="match02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                    <div class="msg user trait" style="width:unset;">
+                        2.
+                    </div>
+                </div>
+                <div class="drop" id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                    <div class="msg user trait" style="width:unset;">
+                        3.
+                    </div>
+                </div>
+                <div class="drop" id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                    <div class="msg user trait"  style="width:unset;">
+                        4.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="drop"  id="drag03"> 
+                    <div class="msg jenny translation trait slo"id="m03" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        sweater
+                    </div>
+                </div>
+                <div class="drop"  id="drag01">
+                    <div class="msg jenny translation trait slo"id="m01" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        tie
+                    </div>
+                </div>
+                <div class="drop"  id="drag04">
+                    <div class="msg jenny translation trait slo"id="m04" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        jeans
+                    </div>
+                </div>
+                <div class="drop"  id="drag02">
+                    <div class="msg jenny translation trait slo"id="m02" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                        suit
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-1"> </div>
+</div>
+{% endblock %}

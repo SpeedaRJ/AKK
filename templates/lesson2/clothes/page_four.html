@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/clothes/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Click on <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, listen and repeat after me.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Klikli na <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">,poslušaj in ponovi za mano. 
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-10">
+        <div class="col-lg-6">
+            <img src="{% static 'svg/lesson2/clothes/clothes02.svg' %}" type="svg" class="full-width">
+            
+            <img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:24%;top:60%;">
+            
+            <img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:48%;top:54%;">
+            
+            <img onclick="play('a5')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:35%;top:85%">
+            
+            <img onclick="play('a6')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:70%;top:43%">
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    1.  I wear a <p style="color:#FBB040;font-weight:bold;margin:0">T-shirt</p> when I go hiking.
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Majico oblečem, ko grem na pohod. 
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    2. I wear a <p style="color:#FBB040;font-weight:bold;margin:0">skirt</p> when it is hot.
+                    <audio id="a4" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Krilo oblečem, ko je vroče.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    3. I wear <p style="color:#FBB040;font-weight:bold;margin:0">socks</p> when my feet are cold.
+                    <audio id="a5" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Nogavice obujem, ko me zebe v noge. 
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    4. I wear <p style="color:#FBB040;font-weight:bold;margin:0">shorts </p> in the summer. 
+                    <audio id="a6" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Kratke hlače oblečem poleti.
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-1"> </div>
+</div>
+{% endblock %}

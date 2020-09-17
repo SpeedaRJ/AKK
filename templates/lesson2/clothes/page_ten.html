@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/clothes/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Click on <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">, listen and repeat after me.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Klikli na <img src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">,poslušaj in ponovi za mano. 
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-10">
+        <div class="col-lg-6">
+            <img src="{% static 'svg/lesson2/clothes/clothes05.svg' %}" type="svg" class="full-width">
+            
+            <img onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:18%;top:58%;">
+            
+            <img onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:39%;top:82%">
+
+            <img onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:58%;top:6%;">
+            
+            <img onclick="play('a4')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton" style="position:absolute;left:63%;top:88%">
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    1. My husband wears a <p style="color:#FBB040;font-weight:bold;margin:0">tie</p> when he needs to dress formally. 
+                    <audio id="a1" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Moj mož si nadane kravato, ko gre na uradni dogodek. 
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    2. He wears a <p style="color:#FBB040;font-weight:bold;margin:0">suit</p> when he goes to a wedding. 
+                    <audio id="a3" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    On obleče obleko, ko gre na poroko. 
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    3. I wear a <p style="color:#FBB040;font-weight:bold;margin:0">sweater</p> under my coat in the winter. 
+                    <audio id="a2" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Pozimi nosim pod plaščem pulover.
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg user full-width" style="float:unset;">
+                    4. I put on <p style="color:#FBB040;font-weight:bold;margin:0">jeans</p> when I go for a walk and an ice cream. 
+                    <audio id="a4" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg jenny translation full-width">
+                    Kavbojke oblečem, ko grem na sprehod in na sladoled. 
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-1"> </div>
+</div>
+{% endblock %}

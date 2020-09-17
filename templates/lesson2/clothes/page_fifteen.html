@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/clothes/page_fifteen.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/clothes/page_fifteen.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6" style="margin-bottom: 2vh;">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Complete the sentences
+                </div>
+                <div class="msg jenny translation full-width">
+                    Dopolni povedi.
+                </div>
+            </div>
+            <div class="row">
+                <img src="{% static 'svg/lesson2/clothes/clothes06.svg' %}" type="svg" class="full-width">
+                <div class="inst">
+                    <div class="msg jenny translation" style="width: 100%; margin:0">
+                        When I go to a wedding, I wear a<input class=textarea onchange="solution(this,'dress')" style="border-color:#6282B7;background-color: transparent;width:30%;"/>. <br>
+                        In the winter I wear <input class=textarea onchange="solution(this,'gloves')" style="border-color:#6282B7;background-color: transparent;width:30%;"/>. <br>
+                        When it is raining, I wear <input class=textarea onchange="solution(this,'boots')" style="border-color:#6282B7;background-color: transparent;width:30%;"/>. <br>
+                        When it is cold, I wear a<input class=textarea onchange="solution(this,'jacket')" style="border-color:#6282B7;background-color: transparent;width:30%;"/>. <br>
+                        When it is windy, I wear a<input class=textarea onchange="solution(this,'coat')" style="border-color:#6282B7;background-color: transparent;width:30%;"/>.  <br>
+                        In the autumn I wear a<input class=textarea onchange="solution(this,'sweater')" style="border-color:#6282B7;background-color: transparent;width:30%;"/>. <br>
+                        When I go for a walk, I wear <input class=textarea onchange="solution(this,'trainers')" style="border-color:#6282B7;background-color: transparent;width:30%;"/>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
