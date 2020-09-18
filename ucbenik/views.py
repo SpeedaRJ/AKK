@@ -5032,7 +5032,7 @@ def present_simple_page_four(request):
                                                                           })
 
 def present_simple_page_five(request):
-    back = "/lesson_two/present_simple/page_four",
+    back = "/lesson_two/present_simple/page_four"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -5079,7 +5079,7 @@ def present_simple_page_six(request):
                                                                         })
 
 def present_simple_page_seven(request):
-    back = "/lesson_two/present_simple/page_six",
+    back = "/lesson_two/present_simple/page_six"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -5126,7 +5126,7 @@ def present_simple_page_eight(request):
                                                                         })
 
 def present_simple_page_nine(request):
-    back = "/lesson_two/present_simple/page_eight",
+    back = "/lesson_two/present_simple/page_eight"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -5194,7 +5194,7 @@ def present_simple_page_eleven(request):
                                                                            })
 
 def present_simple_page_twelve(request):
-    back = "/lesson_two/present_simple/page_eleven",
+    back = "/lesson_two/present_simple/page_eleven"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -5211,12 +5211,121 @@ def present_simple_page_twelve(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson2/present_simple/page_twelve.html", {"next": "/coming_soon",
+        return render(request, "lesson2/present_simple/page_twelve.html", {"next": "/lesson_two/present_simple/page_thirteen",
                                                                            "back": back, "lessons": lessons,
                                                                            "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
                                                                            "src": src_ref, "parts": parts, "colors": colors
                                                                           })
 
+def present_simple_page_thirteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/present_simple/page_thirteen.html", {"next": "/lesson_two/present_simple/page_fourteen",
+                                                                             "back": "/lesson_two/present_simple/page_twelve", "lessons": lessons,
+                                                                             "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                             "src": src_ref, "parts": parts, "colors": colors
+                                                                            })
+
+def present_simple_page_fourteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/present_simple/page_fourteen.html", {"next": "/lesson_two/present_simple/page_fifteen",
+                                                                             "back": "/lesson_two/present_simple/page_thirteen", "lessons": lessons,
+                                                                             "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                             "src": src_ref, "parts": parts, "colors": colors
+                                                                            })
+
+def present_simple_page_fifteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        return render(request, "lesson2/present_simple/page_fifteen.html", {"next": "/lesson_two/present_simple/page_sixteen",
+                                                                            "back": "/lesson_two/present_simple/page_fourteen", "lessons": lessons,
+                                                                            "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                            "src": src_ref, "parts": parts, "colors": colors
+                                                                            })
+
+def present_simple_page_sixteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson2/present_simple/page_sixteen.html", {"next": "/lesson_two/present_simple/page_seventeen",
+                                                                            "back": "/lesson_two/present_simple/page_fifteen", 
+                                                                            "lessons": lessons, "solved":solution.solved,
+                                                                            "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                            "src": src_ref, "parts": parts, "colors": colors
+                                                                           })
+
+def present_simple_page_seventeen(request):
+    back = "/lesson_two/present_simple/page_sixteen"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref , parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        return render(request, "lesson2/present_simple/page_seventeen.html", {"next": "/lesson_three/title",
+                                                                              "back": back, "lessons": lessons,
+                                                                              "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                              "src": src_ref, "parts": parts, "colors": colors
+                                                                             })
 # UNIT 3
 def lesson_three_title(request):
     if request.method == "GET":

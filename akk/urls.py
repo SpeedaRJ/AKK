@@ -236,6 +236,11 @@ urlpatterns = [
     path("lesson_two/present_simple/page_ten", views.present_simple_page_ten, name="present_simple_page_ten"),
     path("lesson_two/present_simple/page_eleven", views.present_simple_page_eleven, name="present_simple_page_eleven"),
     path("lesson_two/present_simple/page_twelve", views.present_simple_page_twelve, name="present_simple_page_twelve"),
+    path("lesson_two/present_simple/page_thirteen", views.present_simple_page_thirteen, name="present_simple_page_thirteen"),
+    path("lesson_two/present_simple/page_fourteen", views.present_simple_page_fourteen, name="present_simple_page_fourteen"),
+    path("lesson_two/present_simple/page_fifteen", views.present_simple_page_fifteen, name="present_simple_page_fifteen"),
+    path("lesson_two/present_simple/page_sixteen", views.present_simple_page_sixteen, name="present_simple_page_sixteen"),
+    path("lesson_two/present_simple/page_seventeen", views.present_simple_page_seventeen, name="present_simple_page_seventeen"),
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),
