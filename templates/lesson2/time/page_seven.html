@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        <div class="row" style="margin-top: 30%;">
+            <div class="msg user" style="width: 80%;padding:4%;;;">
+                It’s 10 minutes <pr style="color:#E6A454">to</pr> ...
+            </div>
+            <div class="msg jenny">
+                Ko povemo, koliko je ura, po navadi zaokrožimo uro na 5 minut. <br>
+                Za prve pol ure uporabimo <pr class="highlight">PAST (= čez)</pr>, <br>
+                za zadnje pol ure pa uporabimo predlog <pr class="highlight">TO (= do)</pr>.
+            </div>
+            <div class="msg user" style="width: 80%;padding:4%;;;">
+                It’s 20 minutes <pr style="color:#E6A454">to</pr> ...
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Now let’s look at a clock.
+                </div>
+                <div class="msg jenny translation">
+                    Zdaj si poglejva uro.
+                </div>
+            </div>
+            <div class="msg user time" style="left: -15%;top: 25%;">
+                It’s 5 minutes <pr style="color:#E6A454">to</pr> ...
+            </div>
+            
+            <div class="msg user time" style="left: -15%;top: 95%;">
+                It’s 25 minutes <pr style="color:#E6A454">to</pr> ...
+            </div>
+            <div class="msg user time" style="left: 75%;top: 25%;">
+                It’s 5 minutes <pr style="color:#E6A454">past</pr> ...
+            </div>
+            <div class="msg user time" style="left: 92%;top: 41%;">
+                It’s 10 minutes <pr style="color:#E6A454">past</pr> ...
+            </div>
+            <div class="msg user time" style="left: 92%;top: 80%;">
+                It’s 20 minutes <pr style="color:#E6A454">past</pr> ...
+            </div>
+            <div class="msg user time" style="left: 75%;top: 95%;">
+                It’s 25 minutes <pr style="color:#E6A454">past</pr> ...
+            </div>
+            <img src="{% static 'svg/lesson2/time/clock05.svg' %}" type="svg" style="margin-top: 5vh;">
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

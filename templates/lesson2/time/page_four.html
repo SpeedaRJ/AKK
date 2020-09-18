@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        <div class="row" style="margin-top: 15vh;">
+            <div class="msg jenny">
+                Ob 15:15 bi rekel, da je ura četrt čez 3: It is <pr class="highlight">A QUARTER PAST</pr> three. 
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Now let’s look at a clock.
+                </div>
+                <div class="msg jenny translation">
+                    Zdaj si poglejva uro.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user" style="width: 50%; margin-left:25%; float:left;">
+                    It’s a quarter past...
+                </div>
+            </div>
+            <img src="{% static 'svg/lesson2/time/clock02.svg' %}" type="svg">
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/clothes/page_fifteen.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/time/page_ten.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    What time is it? Write out the numbers.
+                </div>
+                <div class="msg jenny translation">
+                    Koliko je ura? Zapiši števila z besedo.
+                </div>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny translation" style="width: 100%; margin:0">
+                12:00 p.m. <input class=textarea onchange="solution(this,'noon')" style="border-color:#6282B7;background-color: transparent;width:50%;"/>. <br>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny translation" style="width: 100%; margin:0">
+                12:00 a.m <input class=textarea onchange="solution(this,'midnight')" style="border-color:#6282B7;background-color: transparent;width:50%;"/>. <br>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny translation" style="width: 100%; margin:0">
+                12:15 p.m. <input class=textarea onchange="solution(this,'quarter past noon')" style="border-color:#6282B7;background-color: transparent;width:50%;"/>. <br>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny translation" style="width: 100%; margin:0">
+                12:30 p.m. <input class=textarea onchange="solution(this,'half past noon')" style="border-color:#6282B7;background-color: transparent;width:50%;"/>. <br>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny translation" style="width: 100%; margin:0">
+                12:45 p.m. <input class=textarea onchange="solution(this,'quarter to one')" style="border-color:#6282B7;background-color: transparent;width:50%;"/>. <br>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny translation" style="width: 100%; margin:0">
+                1:05 p.m.  <input class=textarea onchange="solution(this,'five past one')" style="border-color:#6282B7;background-color: transparent;width:50%;"/>. <br>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny translation" style="width: 100%; margin:0">
+                1:15 p.m.  <input class=textarea onchange="solution(this,'quarter past one')" style="border-color:#6282B7;background-color: transparent;width:50%;"/>. <br>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

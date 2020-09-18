@@ -1,0 +1,78 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        <div class="row" style="margin-top: 15vh;">
+            <div class="msg jenny">
+                Ob 00:00 lahko rečemo, da je polnoč.<br> 
+                V angleščini se za polnoč reče <pr class="highlight">MIDNIGHT</pr>. <br> 
+                Ob 12:00 lahko rečemo, da je opoldne. <br> 
+                V angleščini se opoldne reče <pr class="highlight">NOON</pr>.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Let’s look at how English people tell time.
+                </div>
+                <div class="msg jenny translation">
+                    Poglejva si, kako Angleži berejo uro.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Angleži uporabljajo 12-urni sistem in ne 24-urnega kot mi. To pomeni, da vedno rečejo, da je ura toliko, kolikor pravi ura. Da nakažejo, da je dopoldan, uporabijo a.m., za popoldan pa uporabijo p.m. Poglejva si par primerov.
+                </div>
+            </div>
+            <div class="help-table" id="help-table">
+                <div class="help row">
+                    <button class="col-lg-6 header">24-hour</button>
+                    <button class="col-lg-6 header">12-hour</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">00:00</button></button>
+                    <button class="col-lg-6 tip ">12:00 a.m</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">00:01</button></button>
+                    <button class="col-lg-6 tip ">12:01 a.m.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">01:00</button></button>
+                    <button class="col-lg-6 tip ">1:00 a.m.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">12:00</button></button>
+                    <button class="col-lg-6 tip ">12:00 p.m.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">17:30</button></button>
+                    <button class="col-lg-6 tip ">5:30 p.m.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">23:00</button></button>
+                    <button class="col-lg-6 tip ">11:00 p.m.</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

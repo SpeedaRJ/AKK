@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Če želiš povedati točno uro namesto zaokrožene, najpogosteje prebereš uro in zatem celo število minut. 
+                    Lahko pa tudi uporabiš predlog <pr class="highlight">PAST</pr> ali <pr class="highlight">TO</pr>. Poglejva si par primerov.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+    <div class="col-lg-10" style="margin-top:10vh;margin-left:4vw;">
+        <div class="col-lg-6" style="padding: 0;">
+            <div class="col-lg-2 full" style="padding: 0;">
+                <div class="row">
+                    <div class="msg user" style="width: 100%;">
+                        14:37 
+                    </div>
+                </div>
+                <div class="row" style="margin-top:2vh;">
+                    <div class="msg user" style="width: 100%;">
+                        16:02  
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10"  style="padding: 0;">
+                <div class="row">
+                    <div class="msg jenny" style="width: 100%;">
+                        It is two thirty-seven.  
+                    </div>
+                </div>
+                <div class="row" style="margin-top:2vh;">
+                    <div class="msg jenny" style="width: 100%;">
+                        It is four oh two.   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" style="padding: 0;">
+            <div class="col-lg-2 full" style="padding: 0;">
+                <div class="row">
+                    <div class="msg user" style="width: 100%;">
+                        or 
+                    </div>
+                </div>
+                <div class="row" style="margin-top:2vh;">
+                    <div class="msg user" style="width: 100%;">
+                        or 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10"  style="padding: 0;">
+                <div class="row">
+                    <div class="msg jenny" style="width: 100%;">
+                        It is twenty-three minutes to three.
+                    </div>
+                </div>
+                <div class="row" style="margin-top:2vh;">
+                    <div class="msg jenny" style="width: 100%;">
+                        It is two minutes past four.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

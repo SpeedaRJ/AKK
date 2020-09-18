@@ -1,0 +1,104 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_nine.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/time/page_nine.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Match.
+                </div>
+                <div class="msg jenny translation">
+                    Poveži.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" style="padding: 0;">
+            <div class="drop" id="match01"  ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait">
+                    00:00 
+                </div>
+            </div>
+            <div class="drop" id="match02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait">
+                    03:00
+                </div>
+            </div>
+            <div class="drop" id="match03" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait">
+                    12:00
+                </div>
+            </div>
+            <div class="drop" id="match04" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" >
+                    14:00
+                </div>
+            </div>
+            <div class="drop" id="match05" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" >
+                    16:00 
+                </div>
+            </div>
+            <div class="drop" id="match06" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" >
+                    20:00 
+                </div>
+            </div>
+            <div class="drop" id="match07" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <div class="msg user trait" >
+                    23:00 
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" style="padding: 0;">
+            <div class="drop"  id="drag05">
+                <div class="msg jenny trait grey"id="m05" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    4:00 p.m.
+                </div>
+            </div>
+            <div class="drop"  id="drag06">
+                <div class="msg jenny trait grey"id="m06" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    8:00 p.m.
+                </div>
+            </div>
+            <div class="drop"  id="drag03"> 
+                <div class="msg jenny trait grey"id="m03" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    12:00 p.m.
+                </div>
+            </div>
+            <div class="drop"  id="drag01">
+                <div class="msg jenny trait grey"id="m01" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    12:00 a.m.
+                </div>
+            </div>
+            <div class="drop"  id="drag04">
+                <div class="msg jenny trait grey"id="m04" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    2:00 p.m.
+                </div>
+            </div>
+            <div class="drop"  id="drag02">
+                <div class="msg jenny trait grey"id="m02" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    3:00 a.m.
+                </div>
+            </div>
+            <div class="drop"  id="drag07">
+                <div class="msg jenny trait grey"id="m07" draggable="true" ondragstart="drag(event)" onclick="toOrigin(this)">
+                    11:00 p.m.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

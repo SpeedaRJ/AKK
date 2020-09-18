@@ -214,6 +214,17 @@ urlpatterns = [
     path("lesson_two/clothes/page_thirteen", views.clothes_page_thirteen, name="clothes_page_thirteen"),
     path("lesson_two/clothes/page_fourteen", views.clothes_page_fourteen, name="clothes_page_fourteen"),
     path("lesson_two/clothes/page_fifteen", views.clothes_page_fifteen, name="clothes_page_fifteen"),
+    path("lesson_two/time/page_one", views.time_page_one, name="time_page_one"),
+    path("lesson_two/time/page_two", views.time_page_two, name="time_page_two"),
+    path("lesson_two/time/page_three", views.time_page_three, name="time_page_three"),
+    path("lesson_two/time/page_four", views.time_page_four, name="time_page_four"),
+    path("lesson_two/time/page_five", views.time_page_five, name="time_page_five"),
+    path("lesson_two/time/page_six", views.time_page_six, name="time_page_six"),
+    path("lesson_two/time/page_seven", views.time_page_seven, name="time_page_seven"),
+    path("lesson_two/time/page_eight", views.time_page_eight, name="time_page_eight"),
+    path("lesson_two/time/page_nine", views.time_page_nine, name="time_page_nine"),
+    path("lesson_two/time/page_ten", views.time_page_ten, name="time_page_ten"),
+
 
 
 #Lesson3

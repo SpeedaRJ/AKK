@@ -47,7 +47,7 @@ function checkCorrectness() {
         if(items[x].classList !== undefined && items[x].className.includes("correct") && !items[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter == document.getElementsByClassName("trait").length/2 || counter == 6) {
+    if(counter == document.getElementsByClassName("trait").length/2) {
         document.getElementById("next").removeAttribute("disabled")
     } else {
          document.getElementById("next").setAttribute("disabled", "disabled");

@@ -1,0 +1,68 @@
+.help-table {
+    width: 90%;
+    float: left;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+}  
+
+.tip, .tip:hover {
+    cursor: unset;
+    width: 48% !important;
+    margin: 0.5%;
+    height: 4vh;
+    font-size: 2vh;
+    background: #58469F;
+}
+
+.header, .header:hover {
+    cursor: unset;
+    width: 48% !important;
+    margin: 0.5%;
+    height: 4vh;
+    font-size: 2vh;
+    background: #E6A454;
+}
+
+
+.listen {
+    width: 10%;
+    margin-left: 75%;
+    position: absolute;
+    margin-top: 5%;
+    z-index: 2;
+    display:none;
+}
+
+.listenButton {
+    background: transparent;
+    border: none;
+    border-radius: 50px 50px 50px 50px;
+    height: 80%;
+    width: 30%;
+    bottom: 10%;
+    float: right;
+}
+
+.time {
+    width: 39% !important;
+    float:left;
+    position: absolute;
+}
+
+.drop {
+    height:4vh;
+}
+
+.grey {
+    background-color: #e4e3e8;
+    color: #3097c3;
+}
+
+.trait {
+    width: 50%;
+}
+
+.correct, .incorrect {
+    color: #ffffff;
+}

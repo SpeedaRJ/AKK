@@ -1,0 +1,61 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">
+                    Write in your notebook.
+                </div>
+                <div class="msg jenny translation">
+                    Zapiši si v zvezek.
+                </div>
+            </div>
+            <div class="help-table" id="help-table">
+                <div class="help row">
+                    <button class="col-lg-6 tip">jutro / dopoldne</button></button>
+                    <button class="col-lg-6 header ">morning</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">poldne</button></button>
+                    <button class="col-lg-6 header ">noon</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">dan</button></button>
+                    <button class="col-lg-6 header ">day</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">popoldne</button></button>
+                    <button class="col-lg-6 header ">afternoon</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">polnoč</button></button>
+                    <button class="col-lg-6 header ">midnight</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">noč</button></button>
+                    <button class="col-lg-6 header ">night</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

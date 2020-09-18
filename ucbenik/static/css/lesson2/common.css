@@ -39,6 +39,11 @@ input {
     margin: 0;
 }
 
+.highlight {
+    color:#D55225;
+    font-weight: bold;
+}
+
 .container {
     width: 100% !important;
     margin-top: 2.5% !important;
