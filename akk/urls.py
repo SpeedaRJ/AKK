@@ -224,9 +224,18 @@ urlpatterns = [
     path("lesson_two/time/page_eight", views.time_page_eight, name="time_page_eight"),
     path("lesson_two/time/page_nine", views.time_page_nine, name="time_page_nine"),
     path("lesson_two/time/page_ten", views.time_page_ten, name="time_page_ten"),
-
-
-
+    path("lesson_two/present_simple/page_one", views.present_simple_page_one, name="present_simple_page_one"),
+    path("lesson_two/present_simple/page_two", views.present_simple_page_two, name="present_simple_page_two"),
+    path("lesson_two/present_simple/page_three", views.present_simple_page_three, name="present_simple_page_three"),
+    path("lesson_two/present_simple/page_four", views.present_simple_page_four, name="present_simple_page_four"),
+    path("lesson_two/present_simple/page_five", views.present_simple_page_five, name="present_simple_page_five"),
+    path("lesson_two/present_simple/page_six", views.present_simple_page_six, name="present_simple_page_six"),
+    path("lesson_two/present_simple/page_seven", views.present_simple_page_seven, name="present_simple_page_seven"),
+    path("lesson_two/present_simple/page_eight", views.present_simple_page_eight, name="present_simple_page_eight"),
+    path("lesson_two/present_simple/page_nine", views.present_simple_page_nine, name="present_simple_page_nine"),
+    path("lesson_two/present_simple/page_ten", views.present_simple_page_ten, name="present_simple_page_ten"),
+    path("lesson_two/present_simple/page_eleven", views.present_simple_page_eleven, name="present_simple_page_eleven"),
+    path("lesson_two/present_simple/page_twelve", views.present_simple_page_twelve, name="present_simple_page_twelve"),
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),

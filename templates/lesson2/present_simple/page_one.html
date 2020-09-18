@@ -1,0 +1,57 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    Now, we are going to learn some grammar.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Zdaj se bova naučila nekaj slovnice.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    When we talk about the present, our routines, habits, everyday activities, states and general truths we use a tense called Present Simple.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Ko govorimo o sedanjosti, dnevnih rutinah, navadah, vsakodnevnih aktivnostih, stanjih in splošnih resnicah, uporabimo čas, ki se imenuje Present Simple (sedanjik).
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    Here is an example for each category: 
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    <pr class="highlight">habits</pr>: I never drink milk. <br>
+                    <pr class="highlight">everyday activities</pr>: I go to school every day. <br>
+                    <pr class="highlight">states</pr>: I like flowers.<br>
+                    <pr class="highlight">general truths</pr>: I breathe through my nose. <br>
+                </div>
+                <div class="msg full-width user">
+                    <pr class="yellow">navade</pr>: Nikoli ne pijem mleka. <br>
+                    <pr class="yellow">vsakodnevne aktivnosti</pr>: Vsak dan  grem v šolo. <br>
+                    <pr class="yellow">stanje</pr>: Všeč so mi rože. <br>
+                    <pr class="yellow">splošne resnice</pr>: Diham skozi nos.  <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}
