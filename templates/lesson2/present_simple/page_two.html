@@ -1,0 +1,80 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    We form sentences like this: <br>
+                    <pr class="highlight">person + verb + the rest.</pr>
+                </div>
+                <div class="msg full-width jenny translation">
+                    Povedi tvorimo tako: <br> 
+                    oseba + glagol + ostalo.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="col-lg-6" style="padding:0;">
+                    <div class="row">
+                        <div class="msg full-width user">
+                            Here is an example:  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" style="padding:0;">
+                    <div class="row">
+                        <div class="msg full-width jenny">
+                            I    drive    a car
+                        </div>
+                    </div>
+                </div>
+                <div class="msg full-width jenny translation">
+                    Tukaj je primer: Vozim avto.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width user">
+                    The words and phrases that help us recognize the Present Simple are: 
+                    <pr class="yellow">always, never, sometimes, often, rarely, usually, every day, every week, ...</pr> 
+                </div>
+                <div class="msg full-width jenny translation">
+                    Besede, ki nam pomagajo prepoznati in tvoriti Present Simple so: 
+                    vedno, nikoli, včasih, pogosto, redko, ponavadi, vsak dan, vsak teden, …
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="col-lg-6" style="padding:0;">
+                    <div class="row">
+                        <div class="msg full-width user">
+                            Here is an example:  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" style="padding:0;">
+                    <div class="row">
+                        <div class="msg full-width jenny">
+                            I    drive    to work   <pr class="highlight">every day</pr>.
+                        </div>
+                    </div>
+                </div>
+                <div class="msg full-width jenny translation">
+                    Tukaj je primer: Na delo se vozim vsak dan.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}
