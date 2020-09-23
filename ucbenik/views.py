@@ -19,7 +19,8 @@ lessons = { "lesson_one" : {"Introduction": "/lesson_one/introduction/page_one",
                             "Family Members":"/lesson_two/family/page_one",
                             "Clothes":"/lesson_two/clothes/page_one",
                             "Time":"/lesson_two/time/page_one",
-                            "Present Simple":"/lesson_two/present_simple/page_one"}
+                            "Present Simple":"/lesson_two/present_simple/page_one"},
+            "lesson_three" : {"Pronouns" : "/lesson_three/pronouns/page_one"}
 }
 
 def save_avatar(session):
@@ -5024,8 +5025,8 @@ def present_simple_page_four(request):
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/present_simple/page_three.html", {"next": "/lesson_two/present_simple/page_four",
-                                                                          "back": "/lesson_two/present_simple/page_two", 
+        return render(request, "lesson2/present_simple/page_four.html", {"next": "/lesson_two/present_simple/page_five",
+                                                                          "back": "/lesson_two/present_simple/page_three", 
                                                                           "lessons": lessons, "solved":solution.solved,
                                                                           "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
                                                                           "src": src_ref, "parts": parts, "colors": colors
@@ -5329,9 +5330,11 @@ def present_simple_page_seventeen(request):
 # UNIT 3
 def lesson_three_title(request):
     if request.method == "GET":
-        return render(request, "lesson3/title_page.html", {"next": "lesson_three/pronouns/page_one", "back": "/",
-                                                                    "lessons": lessons,
-                                                                    "lesson": "Unit 2: Let's Eat", "title": "", "user": request.session['user']})
+        return render(request, "lesson3/title_page.html", {"next": "lesson_three/pronouns/page_one", 
+                                                           "back": "lesson_two/present_simple/page_seventeen",
+                                                           "lessons": lessons,
+                                                           "lesson": "Unit 2: Let's Eat", "title": "", "user": request.session['user']
+                                                           })
 
 def pronouns_page_one(request):
     if request.method == "GET":
@@ -5348,6 +5351,7 @@ def pronouns_page_one(request):
         else:
             src_ref , parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts' : parts, 'colors': colors}
+        user.add_chapter("Pronouns")
         return render(request, "lesson3/pronouns/page_one.html", {"next": "/lesson_three/pronouns/page_two",
                                                                   "back": "/lesson_three/title",
                                                                   "lessons": lessons,

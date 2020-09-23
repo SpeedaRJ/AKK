@@ -1,0 +1,61 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row">
+                <div class="msg jenny">
+                    The verb <pr class="highlight">TO BE</pr> is an exception. You already know how to make it negative. Let’s repeat.
+                </div>
+                <div class="msg jenny translation">
+                    Glagol BITI je izjema. Nikalno obliko že poznaš. Ponoviva.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="col-lg-2" style="min-height: 1vh;"></div>
+<div class="col-lg-8">
+    <div style="width:100%">
+        <div class="help row">
+            <button class="col-lg-6 tip">I</button>
+            <button class="col-lg-6 tip ">I <pr style="color: #E6A454;">am not </pr>wrong.</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">you</button>
+            <button class="col-lg-6 tip ">You <pr style="color: #E6A454;">are not </pr>wrong.</button>
+            
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">he/she/it</button>
+            <button class="col-lg-6 tip ">He/She/It <pr style="color: #E6A454;">is not </pr>wrong.</button>
+            
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">we</button>
+            <button class="col-lg-6 tip ">We <pr style="color: #E6A454;">are not </pr>wrong.</button>
+            
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">you</button>
+            <button class="col-lg-6 tip ">You <pr style="color: #E6A454;">are not </pr>wrong.</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">they</button>
+            <button class="col-lg-6 tip ">They <pr style="color: #E6A454;">are not </pr>wrong.</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

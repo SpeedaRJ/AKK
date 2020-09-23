@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    When we make negative sentences, we use the structure <pr class="highlight">“do not”</pr> or shorter <pr class="highlight">“don’t”</pr> before the verb.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Ko tvorimo nikalne povedi, pred glagolom uporabljamo strukturo “do not” ali krajše “don’t”. 
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="col-lg-8" style="padding:0;">
+                    <div class="row">
+                        <div class="msg full-width user">
+                            I don’t drive a car.
+                        </div>
+                        <div class="msg full-width jenny translation">
+                            Ne vozim avta
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" style="padding:0;min-height: 1vh;">
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    Before the third person singular we use the structure <pr class="highlight">“does not”</pr> or shorter <pr class="higlhight">“doesn’t”</pr>.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Pred tretjo osebo ednine uporabimo strukturo “does not” ali krajše “doesn’t”.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

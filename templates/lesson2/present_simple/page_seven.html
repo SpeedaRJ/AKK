@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    If a verb ends in -y and if there is a consonant preceding the -y, the -y turns into -ies in the third person singular.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Če se glagol konča z -y in če pred -y stoji soglasnik, se -y v tretji osebi ednine spremeni v -ies.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="col-lg-8" style="padding:0;">
+                    <div class="row">
+                        <div class="msg full-width user">
+                            I cr<pr style="color: #E6A454;">y</pr> if you punch me. 
+                        </div>
+                        <div class="msg full-width jenny translation">
+                            Jaz jočem, če me udariš.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="msg full-width user">
+                            He cr<pr style="color: #E6A454;">ies</pr> if you punch him.
+                        </div>
+                        <div class="msg full-width jenny translation">
+                            Joče, če ga udariš.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" style="padding:0;min-height: 1vh;">
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    Verbs ending in -y, when the -y is preceded by a vowel, the usual -s suffix is added in third person singular.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Pri glagolih, ki se končajo na -y in pri katerih pred -y stoji samoglasnik, se pri tretji osebi ednine doda končnica -s.
+                </div>
+                <div class="msg full-width jenny">
+                    I play the violin. She plays the piano.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

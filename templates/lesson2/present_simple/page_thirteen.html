@@ -1,0 +1,58 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    Questions
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    The word order in questions is the following:  <br>
+                    <pr class="highlight">DO + PERSON + VERB + THE REST? </pr>
+                </div>
+                <div class="msg full-width jenny translation">
+                    Besedni vrstni red v vprašanjih je naslednji:
+                    DO + OSEBA + GLAGOL + OSTALO? 
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg full-width jenny">
+                    Here’s an example: 
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user full-width">
+                    DO + PERSON + VERB + THE REST? 
+                </div>
+                <div class="msg full-width jenny">
+                    Do        you	    play      football?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    There are two forms of questions: <pr class="highlight">yes/no questions</pr> and <pr class="highlight">wh-questions</pr>.
+                </div>
+                <div class="msg full-width user">
+                    Poznamo dve obliki vprašanj: ja/ne vprašanja in wh-vprašanja.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

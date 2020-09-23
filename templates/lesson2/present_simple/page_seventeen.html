@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    Si opazil, da so glagoli v slovarju v obliki: to + glagol? 
+                    Glagoli so predstavljeni v obliki nedoločnika. 
+                    To je osnovna oblika glagola. 
+                    Glagole v nedoločniku boš lahko zasledil, ko boš imel dva glagola enega za drugim. 
+                    Poglejva primer.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width user">
+                    I forgot <pr style="color:#E6A454">to call</pr> him.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Pozabil{% if user.sex == "F" %}a{%endif%}  sem ga poklicati.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

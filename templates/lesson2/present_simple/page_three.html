@@ -1,0 +1,97 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div style="width:90%">
+            <div class="help row">
+                <button class="col-lg-6 tip">always</button>
+                <button class="col-lg-6 tip ">vedno</button>
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip">never</button>
+                <button class="col-lg-6 tip ">nikoli</button>
+                
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip">sometimes</button>
+                <button class="col-lg-6 tip ">včasih</button>
+                
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip">often</button>
+                <button class="col-lg-6 tip ">pogosto</button>
+                
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip">rarely</button>
+                <button class="col-lg-6 tip ">redko</button>
+                
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip">usually</button>
+                <button class="col-lg-6 tip ">ponavadi</button> 
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip">every day</button>
+                <button class="col-lg-6 tip ">vsak dan</button> 
+            </div>
+            <div class="help row">
+                <button class="col-lg-6 tip">every week</button>
+                <button class="col-lg-6 tip ">vsak teden</button> 
+            </div>
+        </div>
+        <div id="conversation">
+            <div class="row">
+                <div class="msg jenny">
+                    Let’s look at the verb <pr class="highlight">WORK</pr>
+                </div>
+                <div class="msg jenny translation">
+                    Poglejva si glagol delati.
+                </div>
+            </div>
+            <div style="width:90%">
+                <div class="help row">
+                    <button class="col-lg-6 tip">I</button>
+                    <button class="col-lg-6 tip ">I work.</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">you</button>
+                    <button class="col-lg-6 tip ">You work.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">he/she/it</button>
+                    <button class="col-lg-6 tip ">He/She/It works.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">we</button>
+                    <button class="col-lg-6 tip ">We work.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">you</button>
+                    <button class="col-lg-6 tip ">You work.</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">they</button>
+                    <button class="col-lg-6 tip ">They work.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

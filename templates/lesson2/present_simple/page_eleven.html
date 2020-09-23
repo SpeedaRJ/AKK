@@ -1,0 +1,65 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/present_simple/page_eleven.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row">
+                <div class="msg user" style="width: 100%;">
+                    Make the sentences negative. Use “do not” or “does not”. 
+                </div>
+                <div class="msg jenny translation" style="width: 100%;">
+                    Trdilne povedi pretvori v nikalne. Uporabi ‘do not’ ali ‘does not’.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user" style="width: 100%;">
+                    Primer: I like animals. I don’t like animals.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny translation" style="width: 100%;">
+                    I love my parents. <input class="textarea" onchange="solution(this, 'I doXX love my parents')" type="text" style="width:50%;text-align:center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg jenny translation" style="width: 100%;">
+                    You miss him. <input class="textarea" onchange="solution(this, 'You doXX miss him')" type="text" style="width:50%;text-align:center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg jenny translation" style="width: 100%;">
+                    She likes to listens to music. <input class="textarea" onchange="solution(this, 'She doesXX like to listens to music')" type="text" style="width:50%;text-align:center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg jenny translation" style="width: 100%;">
+                    He plays the guitar. <input class="textarea" onchange="solution(this, 'He doesXX play the guitar')" type="text" style="width:50%;text-align:center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg jenny translation" style="width: 100%;">
+                    The cat sleeps all day.  <input class="textarea" onchange="solution(this, 'The cat doesXX sleep all day')" type="text" style="width:50%;text-align:center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg jenny translation" style="width: 100%;">
+                    We eat lunch together.   <input class="textarea" onchange="solution(this, 'We doXX eat lunch together')" type="text" style="width:50%;text-align:center">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

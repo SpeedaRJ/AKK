@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    When adding -s, we need to be careful if the verb ends in -s, -ss, -x, -o, -ch or -sh. <br>
+                    In that case, we add the suffix -es and pronounce the end of the word as ‘iz’ not ‘s’.  <br>
+                    Here are two examples: She kisses him every day. He always brushes his teeth.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Ko dodajamo končnico -s, moramo paziti, če se glagol konča na -s, -ss, -x, -o, -ch ali -sh. <br>
+                    V tem primeru dodamo končnico -es in izgovorimo konec besede kot ‘iz’, ne kot ‘s’. <br>
+                    Tukaj je primer: Poljubi ga vsak dan. Vedno si umije zobe.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

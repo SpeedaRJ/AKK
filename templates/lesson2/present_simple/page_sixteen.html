@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/present_simple/page_sixteen.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row">
+                <div class="msg user" style="width: 100%;">
+                    Form questions.
+                </div>
+                <div class="msg jenny translation" style="width: 100%;">
+                    Oblikuj vprašanja.
+                </div>
+                <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
+            </div>
+            <div class="row inst space">
+                <div class="msg user" style="width: 100%;">
+                    Example: I like music. Do you like music?
+                </div>
+            </div>
+        </div>
+        <div id="questions" style="margin-top: 2vh;">
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

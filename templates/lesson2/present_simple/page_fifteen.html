@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    The verb TO BE is an exception. The structure is: <br>
+                    <pr class="highlight">AM/IS/ARE + PERSON + THE REST? </pr>
+                </div>
+                <div class="msg full-width jenny translation">
+                    Glagol BITI je izjema. Struktura je: <br>
+                    AM/IS/ARE + OSEBA + OSTALO? 
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+    <div class="col-lg-1" style="min-height: 1vh;"></div>
+    <div class="col-lg-10">
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg full-width user">
+                    TO BE
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    I am young.	
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg full-width jenny">
+                    He is young.	
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg full-width jenny">
+                    They are young.	
+                </div>		
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg full-width user">
+                    AM/IS/ARE + PERSON + THE REST?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    Am 		  I 	   young?
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg full-width jenny">
+                    Is		  he	   young?
+                </div>		
+            </div>
+            <div class="row">
+                <div class="msg full-width jenny">
+                    Are      they      young?			
+                </div>
+            </div>
+        </div>		
+    </div>
+</div>
+
+{% endblock %}

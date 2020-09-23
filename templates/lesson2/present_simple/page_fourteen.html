@@ -1,0 +1,64 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/present_simple/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6 main">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg full-width jenny">
+                    Yes/no questions are questions you can answer with yes or no.  
+                    To answer yes/no questions, you can use the short form:  <br>
+                    Yes, I do.     No, I do not./No, I don’t,  <br>
+                    or the long form:  <br>
+                    Yes, I do play football.    No, I do not play football./No, I don’t play football.  <br>
+                </div>
+                <div class="msg full-width jenny translation">
+                    Ja/ne vprašanja so vprašanja, na katera lahko odgovoriš z ja ali ne. <br>
+                    Za odgovore na omenjena vprašanja lahko uporabimo kratko ali dolgo obliko. 
+                </div>
+            </div>
+            <div class="row">
+                <div class="msg full-width jenny">
+                    In questions, the third person singular does not get the -s suffix.
+                </div>
+                <div class="msg full-width jenny translation">
+                    Pri vprašanjih glagol za tretjo osebo ednine nima končnice -s.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="col-lg-6" style="padding:0">
+                    <div style="height: 20vh;background-color:#58469F;text-align:center;color:#ffffff;border:#ffffff 2px solid;">
+                        Do you play football?
+                    </div>
+                </div>
+                <div class="col-lg-6" style="padding:0">
+                    <div style="height: 5vh;background-color:#58469F;color:#ffffff;border:#ffffff 2px solid;">
+                        Yes, I do.
+                    </div>
+                    <div style="height: 5vh;background-color:#58469F;color:#ffffff;border:#ffffff 2px solid;">
+                        No, I do not.
+                    </div>
+                    <div style="height: 5vh;background-color:#58469F;color:#ffffff;border:#ffffff 2px solid;">
+                        Yes, I do play football.
+                    </div>
+                    <div style="height: 5vh;background-color:#58469F;color:#ffffff;border:#ffffff 2px solid;">
+                        No, I do not play football.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

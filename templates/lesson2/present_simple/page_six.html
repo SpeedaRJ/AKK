@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson2/present_simple/page_four.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row">
+                <div class="msg user" style="width: 100%;">
+                    Complete the table with the verb. 
+                </div>
+                <div class="msg jenny translation" style="width: 100%;">
+                    Dopolni tabelo z glagolom.
+                </div>
+            </div>
+            <div style="width:100%;margin-top:10%">
+                <div class="help row">
+                    <button class="col-lg-6 tip">I</button>
+                    <button class="col-lg-6 tip ">I <pr style="color: #E6A454;">go</pr> to school.</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">you</button>
+                    <button class="col-lg-6 tip ">You <input class="textarea" onchange="solution(this, 'go')" type="text" style="width:35%;text-align:center"> to school.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">he/she/it</button>
+                    <button class="col-lg-6 tip ">He/she/it <input class="textarea" onchange="solution(this, 'goes')" type="text" style="width:35%;text-align:center"> to school.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">we</button>
+                    <button class="col-lg-6 tip ">We <input class="textarea" onchange="solution(this, 'go')" type="text" style="width:35%;text-align:center"> to school.</button>
+                    
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">you</button>
+                    <button class="col-lg-6 tip ">You <input class="textarea" onchange="solution(this, 'go')" type="text" style="width:35%;text-align:center"> to school.</button>
+                </div>
+                <div class="help row">
+                    <button class="col-lg-6 tip">they</button>
+                    <button class="col-lg-6 tip ">They <input class="textarea" onchange="solution(this, 'go')" type="text" style="width:35%;text-align:center"> to school.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+
+{% endblock %}

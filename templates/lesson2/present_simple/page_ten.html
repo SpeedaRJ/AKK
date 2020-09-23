@@ -1,0 +1,61 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/time/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row">
+                <div class="msg jenny">
+                    We do not add the -s with the third person singular when the verb is negated. Example: She doesn’t <pr class="highlight">eat</pr> meat.
+                </div>
+                <div class="msg jenny translation">
+                    Ko zanikamo glagol, ne dodamo končnice -s pri tretji osebi ednine. Primer: Ne je mesa.
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="col-lg-2" style="min-height: 1vh;"></div>
+<div class="col-lg-8">
+    <div style="width:100%">
+        <div class="help row">
+            <button class="col-lg-6 tip">I</button>
+            <button class="col-lg-6 tip ">I <pr style="color: #E6A454;">don’t eat</pr> meat.</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">you</button>
+            <button class="col-lg-6 tip ">You <pr style="color: #E6A454;">don’t eat</pr> meat.</button>
+            
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">he/she/it</button>
+            <button class="col-lg-6 tip ">He/She/It <pr style="color: #E6A454;">doesn’t eat</pr> meat.</button>
+            
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">we</button>
+            <button class="col-lg-6 tip ">We <pr style="color: #E6A454;">don’t eat</pr> meat.</button>
+            
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">you</button>
+            <button class="col-lg-6 tip ">You <pr style="color: #E6A454;">don’t eat</pr> meat.</button>
+        </div>
+        <div class="help row">
+            <button class="col-lg-6 tip">they</button>
+            <button class="col-lg-6 tip ">They <pr style="color: #E6A454;">don’t eat</pr> meat.</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
