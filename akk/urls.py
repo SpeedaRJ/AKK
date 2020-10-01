@@ -27,6 +27,7 @@ urlpatterns = [
     path("coming_soon", views.coming_soon, name="coming_soon"),
     path("update_session/<str:what_to_update>", views.update_session, name="update_session"),
     path("save_session", views.save_session, name="save_session"),
+    path("glossary", views.glossary, name="glossary"),
     path("lesson_one/title", views.lesson_one_title, name="title_one"),
     path("lesson_one/introduction/page_one", views.introduction_page_one, name="introduction_page_one"),
     path("lesson_one/introduction/page_two", views.introduction_page_two, name="introduction_page_two"),
