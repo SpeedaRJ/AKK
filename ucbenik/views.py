@@ -5560,7 +5560,7 @@ def lesson_three_title(request):
         return render(request, "lesson3/title_page.html", {"next": "lesson_three/pronouns/page_one",
                                                            "back": "lesson_two/present_simple/page_seventeen",
                                                            "lessons": lessons,
-                                                           "lesson": "Unit 2: Let's Eat", "title": "", "user": request.session['user']
+                                                           "lesson": "Unit 3: Let's Eat", "title": "", "user": request.session['user']
                                                            })
 
 
@@ -5710,19 +5710,19 @@ def pronouns_page_six(request):
 
 
 def glossary(request):
-    if request.get_full_path().split("/")[1] is "introduction":
-        return JsonResponse({"hello": "zivijo", "name": "ime", "nickname": "vzdevek", "age": "starost", "country": "država",
+    if request.get_full_path().split("/")[2] == "introduction":
+        return JsonResponse({"hello": "živijo", "name": "ime", "nickname": "vzdevek", "age": "starost", "country": "država",
                              "I": "jaz", "you": "ti", "yes": "ja", "no": "ne", "my": "moj", "your": "tvoj", "year": "leto", "old": "star",
                              "born": "rojen", "to live": "živeti", "Slovenia": "Slovenija", "who": "kdo", "what": "kaj", "where": "kje",
                              "how": "kako", "person": "oseba", "notebook": "zvezek"})
-    elif request.get_full_path().split("/")[1] is "character_select":
+    elif request.get_full_path().split("/")[2] == "character_select":
         return JsonResponse({"vocabulary": {"to choose": "izbrati", "skin": "koža", "colour": "barva", "tall": "visok", "short": "nizek, kratek",
                                             "plump": "močnejše postave", "slender": "vitek", "hair": "lasje", "long": "dolg", "brown": "rjava",
                                             "beard": "brada", "mustache": "brki", "to wear": "nositi", "glasses": "očala", "to pick": "izbrati",
                                             "clothes": "oblačila"},
                              "additional": {"fat": "debel", "thin": "suh", "slim": "vitek"}
                              })
-    elif request.get_full_path().split("/")[1] is "numbers":
+    elif request.get_full_path().split("/")[2] == "numbers":
         return JsonResponse({"vocabulary": {"number": "število", "to count": "šteti", "zero": "nič", "one": "ena", "two": "dve", "three": "tri",
                                             "four": "štiri", "five": "pet", "six": "šest", "seven": "sedem", "eight": "osem", "nine": "devet",
                                             "ten": "deset", "eleven": "enajst", "twelve": "dvanajst", "thirteen": "trinjast", "fourteen": "štirinajst",
@@ -5735,17 +5735,17 @@ def glossary(request):
                                             "eighth": "osmi", "ninth": "deveti", "tenth": "deseti"}
                              }
                             )
-    elif request.get_full_path().split("/")[1] is "colors":
+    elif request.get_full_path().split("/")[2] == "colors":
         return JsonResponse({"vocabulary": {"to look": "gledati", "colour": "barva", "to click": "klikati", "word": "beseda",
                                             "to listen": "poslušati", "to repeat": "ponoviti", "red": "rdeča", "orange": "oranžna",
                                             "yellow": "rumena", "green": "zelena", "blue": "modra", "purple": "vijolična", "pink": "roza",
                                             "black": "črna", "grey": "siva", "white": "bela", "brown": "rjava", "gold": "zlata", "silver": "srebrna"},
                              "additional": {"shade": "odtenek", "adjective": "pridevnik", "light": "svetel", "dark": "temen", "bright": "živ"}
                              })
-    elif request.get_full_path().split("/")[1] is "years":
+    elif request.get_full_path().split("/")[2] == "years":
         return JsonResponse({"year": "leto", "to learn": "učiti se", "to pronounce": "izgovoriti", "correct": "pravilen",
                              "and": "in", "in": "v", "to read": "brati", "to say": "reči", "to hear": "slišati"})
-    elif request.get_full_path().split("/")[1] is "personal_traits":
+    elif request.get_full_path().split("/")[2] == "personal_traits":
         return JsonResponse({"personality": "osebnost", "trait": "lastnost, značilnost", "short": "nizek, kratek",
                              "plump": "močnejše postave", "smart": "pameten", "stupid": "neumen", "good": "dober", "bad": "slab",
                              "hard-working": "delaven", "lazy": "len", "generous": "radodaren, velikodušen", "selfish": "sebičen",
@@ -5754,7 +5754,7 @@ def glossary(request):
                              "opposite": "nasprotje", "to describe": "opisati", "to try": "poskusiti", "to ask": "vprašati",
                              "awesome": "super", "surprise": "presenečenje", "to meet": "spoznati", "friend": "prijatelj",
                              "translation": "prevod"})
-    elif request.get_full_path().split("/")[1] is "he_she_it":
+    elif request.get_full_path().split("/")[2] == "he_she_it":
         return JsonResponse({"I": "jaz", "you (ed.)": "ti", "he": "on", "she": "ona", "it": "ono", "we": "mi",
                              "you (mn.)": "vi", "they": "oni", "to be": "biti", "to talk": "govoriti", "people": "ljudje",
                              "to use": "uporabiti", "to check": "preveriti", "to complete": "zaključiti", "pronoun": "zaimek",

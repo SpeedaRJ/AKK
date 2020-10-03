@@ -1,0 +1,20 @@
+.glossary_element {
+    font-size: 20px;
+    background: rgb(75, 83, 133);
+    padding: 1%;
+    color: white;
+}
+
+.glossary_element span i {
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+#glossary {
+    height: 35vh;
+    overflow-y: auto;
+}
+
+#glossary li {
+    margin: 1%;
+}

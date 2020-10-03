@@ -3,6 +3,7 @@
 {% block main_imports %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/menus.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/glossary.css' %}"/>
 <script type="text/javascript" src="{% static 'js/menus.js' %}"></script>
 {% endblock %}
 {% block main %}
@@ -195,9 +196,15 @@
     </div>
 
     <div class="col-lg-3" id="Dicts">
-        <button class="mainB" style="display:none;">Irregular verbs</button>
-        <button class="mainB">My Glossary</button>
-        <button class="mainB">Grammar Focus</button>
+        <ul>
+            <li><button class="mainB" style="display:none;">Irregular verbs</button></li>
+            <li><button class="mainB" id="gButton">My Glossary</button>
+                    <ul id="glossary" hidden>
+
+                    </ul>
+            </li>
+            <li><button class="mainB">Grammar Focus</button></li>
+        </ul>
     </div>
 </div>
 {% endblock %}
