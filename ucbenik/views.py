@@ -5711,10 +5711,11 @@ def pronouns_page_six(request):
 
 def glossary(request):
     if request.get_full_path().split("/")[2] == "introduction":
-        return JsonResponse({"hello": "živijo", "name": "ime", "nickname": "vzdevek", "age": "starost", "country": "država",
-                             "I": "jaz", "you": "ti", "yes": "ja", "no": "ne", "my": "moj", "your": "tvoj", "year": "leto", "old": "star",
-                             "born": "rojen", "to live": "živeti", "Slovenia": "Slovenija", "who": "kdo", "what": "kaj", "where": "kje",
-                             "how": "kako", "person": "oseba", "notebook": "zvezek"})
+        return JsonResponse({"vocabulary": {"hello": "živijo", "name": "ime", "nickname": "vzdevek", "age": "starost", "country": "država",
+                                            "I": "jaz", "you": "ti", "yes": "ja", "no": "ne", "my": "moj", "your": "tvoj", "year": "leto", "old": "star",
+                                            "born": "rojen", "to live": "živeti", "Slovenia": "Slovenija", "who": "kdo", "what": "kaj", "where": "kje",
+                                            "how": "kako", "person": "oseba", "notebook": "zvezek"}
+                             })
     elif request.get_full_path().split("/")[2] == "character_select":
         return JsonResponse({"vocabulary": {"to choose": "izbrati", "skin": "koža", "colour": "barva", "tall": "visok", "short": "nizek, kratek",
                                             "plump": "močnejše postave", "slender": "vitek", "hair": "lasje", "long": "dolg", "brown": "rjava",
@@ -5743,22 +5744,37 @@ def glossary(request):
                              "additional": {"shade": "odtenek", "adjective": "pridevnik", "light": "svetel", "dark": "temen", "bright": "živ"}
                              })
     elif request.get_full_path().split("/")[2] == "years":
-        return JsonResponse({"year": "leto", "to learn": "učiti se", "to pronounce": "izgovoriti", "correct": "pravilen",
-                             "and": "in", "in": "v", "to read": "brati", "to say": "reči", "to hear": "slišati"})
+        return JsonResponse({"vocabulary": {"year": "leto", "to learn": "učiti se", "to pronounce": "izgovoriti", "correct": "pravilen",
+                                            "and": "in", "in": "v", "to read": "brati", "to say": "reči", "to hear": "slišati"},
+                             "rules": {
+                                 "rule1": "Pred letnicami uporabljamo predlog IN, ki pomeni V.",
+                                 "rule2": "Če sprašujemo po letnici, uporabimo vprašalnico WHAT YEAR."
+                             }
+                             })
     elif request.get_full_path().split("/")[2] == "personal_traits":
-        return JsonResponse({"personality": "osebnost", "trait": "lastnost, značilnost", "short": "nizek, kratek",
-                             "plump": "močnejše postave", "smart": "pameten", "stupid": "neumen", "good": "dober", "bad": "slab",
-                             "hard-working": "delaven", "lazy": "len", "generous": "radodaren, velikodušen", "selfish": "sebičen",
-                             "kind": "prijazen", "mean": "neprijazen, nesramen", "funny": "zabaven", "boring": "dolgočasen",
-                             "outgoing": "družaben", "shy": "sramežljiv", "reliable": "zanesljiv", "unreliable": "nezanesljiv",
-                             "opposite": "nasprotje", "to describe": "opisati", "to try": "poskusiti", "to ask": "vprašati",
-                             "awesome": "super", "surprise": "presenečenje", "to meet": "spoznati", "friend": "prijatelj",
-                             "translation": "prevod"})
+        return JsonResponse({"vocabulary": {"personality": "osebnost", "trait": "lastnost, značilnost", "short": "nizek, kratek",
+                                            "plump": "močnejše postave", "smart": "pameten", "stupid": "neumen", "good": "dober", "bad": "slab",
+                                            "hard-working": "delaven", "lazy": "len", "generous": "radodaren, velikodušen", "selfish": "sebičen",
+                                            "kind": "prijazen", "mean": "neprijazen, nesramen", "funny": "zabaven", "boring": "dolgočasen",
+                                            "outgoing": "družaben", "shy": "sramežljiv", "reliable": "zanesljiv", "unreliable": "nezanesljiv",
+                                            "opposite": "nasprotje", "to describe": "opisati", "to try": "poskusiti", "to ask": "vprašati",
+                                            "awesome": "super", "surprise": "presenečenje", "to meet": "spoznati", "friend": "prijatelj",
+                                            "translation": "prevod"}
+                             })
     elif request.get_full_path().split("/")[2] == "he_she_it":
-        return JsonResponse({"I": "jaz", "you (ed.)": "ti", "he": "on", "she": "ona", "it": "ono", "we": "mi",
-                             "you (mn.)": "vi", "they": "oni", "to be": "biti", "to talk": "govoriti", "people": "ljudje",
-                             "to use": "uporabiti", "to check": "preveriti", "to complete": "zaključiti", "pronoun": "zaimek",
-                             "knowledge": "znanje", "happy": "srečen", "sad": "žalosten", "bald": "plešast", "sentence": "poved",
-                             "form": "oblika", "text": "besedilo", "question": "vprašanje", "answer": "odgovor", "affirmative": "trdilen",
-                             "negative": "nikalen", "to have": "imeti", "singular": "ednina",
-                             "plural": "množina", "verb": "glagol", "true": "resničen, pravilen", "false": "napačen"})
+        return JsonResponse({"vocabulary": {"I": "jaz", "you (ed.)": "ti", "he": "on", "she": "ona", "it": "ono", "we": "mi",
+                                            "you (mn.)": "vi", "they": "oni", "to be": "biti", "to talk": "govoriti", "people": "ljudje",
+                                            "to use": "uporabiti", "to check": "preveriti", "to complete": "zaključiti", "pronoun": "zaimek",
+                                            "knowledge": "znanje", "happy": "srečen", "sad": "žalosten", "bald": "plešast", "sentence": "poved",
+                                            "form": "oblika", "text": "besedilo", "question": "vprašanje", "answer": "odgovor", "affirmative": "trdilen",
+                                            "negative": "nikalen", "to have": "imeti", "singular": "ednina",
+                                            "plural": "množina", "verb": "glagol", "true": "resničen, pravilen", "false": "napačen"},
+                             "rules": {
+                                 "rule1": "Ko govorimo o nekom v tretji osebi, uporabljamo zaimka HE in SHE – odvisno od spola osebe. SHE uporabljamo, ko govorimo o osebi ženskega spola. HE "
+                                          "uporabljamo, ko govorimo o osebi moškega spola. IT pa uporabljamo, ko govorimo o živalih, predmetih, … IZJEMA: Če govorimo o hišnih  ljubljenčkih, "
+                                          "le redko uporabimo IT, saj poznamo spol in ime živali.",
+                                 "rule2": "Namesto zaimkov lahko uporabimo tudi osebna imena. Prav tako lahko osebna imena zamenjamo z zaimki.",
+                                 "rule3": "Okrajšano glagolsko obliko lahko uporabljamo tudi ob osebnih imenih ali predmetih, ne le ob osebnih zaimkih.",
+                                 "rule4": "Osnovna vprašanja vedno tvorimo s pomočjo TRDILNE OBLIKE. Torej IS HE HAPPY? in ne ISN'T HAPPY?. Glagol je v vprašanju vedno v trdilni obliki."
+                             }
+                             })
