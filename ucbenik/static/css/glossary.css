@@ -11,8 +11,19 @@
 }
 
 #glossary {
-    height: 35vh;
+    height: 37vh;
     overflow-y: auto;
+    background: #e4e3e8;
+}
+
+#rules {
+    height: 37vh;
+    overflow-y: auto;
+    background: #e4e3e8;
+}
+
+#rules li {
+    margin: 1%;
 }
 
 #glossary li {

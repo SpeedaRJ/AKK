@@ -13,7 +13,8 @@ $( document ).ready(function() {
     url: "/glossary/introduction",
     success: function(result) {
         let glossary = document.getElementById("glossary");
-        for(var x in result){
+        let vocab = result["vocabulary"]
+        for(var x in vocab){
             var node = document.createElement("li");
             var arrow = document.createElement("i");
             var span = document.createElement("span");
@@ -22,7 +23,7 @@ $( document ).ready(function() {
             node.innerHTML = x + " ";
             span.appendChild(arrow);
             node.appendChild(span);
-            node.innerHTML += " " + result[x];
+            node.innerHTML += " " + vocab[x];
             node.classList.add("glossary_element");
             glossary.appendChild(node);
         }
