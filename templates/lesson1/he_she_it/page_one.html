@@ -1,15 +1,15 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/he_she_it/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/he_she_it/glossary.js' %}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
 <div class="row">
     <div class="col-lg-3">
-        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
     </div>
     <div class="col-lg-6">
         <div class="row inst">
@@ -17,7 +17,7 @@
                 This is my friend Jim. <br>
                 He is tall, fat and has grey hair. <br>
                 He is unreliable, but kind and generous. <br>
-                What is your friend like? 
+                What is your friend like?
             </div>
             <div class="msg jenny slo centre">
                 To je moj prijatelj Jim. <br>
@@ -28,7 +28,8 @@
         </div>
         <div class="row inst">
             <div class="msg user instruction spoken">
-                <p style="font-weight: bold;margin:0">Navodilo:</p> <br> Vpiši svoje ime (name).
+                <p style="font-weight: bold;margin:0">Navodilo:</p> <br> Izberi si prijatelja iz svojega
+                življenja in vstavi pridevnike, ki ga opisujejo.
             </div>
             <div class="msg user">
                 My friend is <input class=textarea/>,
@@ -40,14 +41,14 @@
             <div class="msg jenny">
                 Have you guessed it yet? <br>
                 We are learning how to talk about other
-                people and how to use 
-                <p style="color:#D55225;font-weight: bold; margin:0">HE,</p> 
-                <p style="color:#D55225;font-weight: bold; margin:0">SHE</p> and 
+                people and how to use
+                <p style="color:#D55225;font-weight: bold; margin:0">HE,</p>
+                <p style="color:#D55225;font-weight: bold; margin:0">SHE</p> and
                 <p style="color:#D55225;font-weight: bold; margin:0">IT</p>.
             </div>
             <div class="msg jenny slo centre">
-                Si že uganil? Učiva se govoriti o drugi osebi in 
-                uporabljati zaimke HE(=ON), 
+                Si že uganil? Učiva se govoriti o drugi osebi in
+                uporabljati zaimke HE(=ON),
                 SHE(=ONA) in IT(=ONO).)
             </div>
         </div>
@@ -55,5 +56,5 @@
     {% include "character.html" %}
 </div>
 
-<img src="{% static 'svg/lesson1/he_she_it/jim.svg' %}" type="svg" style="height:40vh;margin-top: 5h;">
+<img src="{% static 'svg/lesson1/he_she_it/jim.svg' %}" style="height:40vh;margin-top: 5h;" type="svg">
 {% endblock %}

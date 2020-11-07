@@ -29,10 +29,13 @@
     <div class="col-lg-10" style="text-align: center;">
         <div class="row">
             <img src="{% static 'svg/lesson1/he_she_it/three_people02.svg' %}" type="svg" style="width:50%">
-            <div class="row inst"style="width: 50%;margin-left:0;float:right;margin-top:10vh">
+            <div class="row inst" style="width: 50%;margin-left:0;float:right;">
+                <div class="msg jenny slo" style="margin-bottom: 2%;">
+                    I am Agatha and I am a writer. I am also a nurse in a hospital. My work is the inspiration for many stories. They are often about poison and murder. My husband is Archibald. He is a colonel. We have a daughter. Her name is Rosalind. She is very kind. We are very happy.
+                </div>
                 <div class="msg jenny slo">
-                    <input class=textarea onchange="solution(this,0)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            Agatha and <input class=textarea onchange="solution(this,1)" style="border-color:#6282B7;background-color: transparent;width:30%"/> 
+                    <input id= "S1" class="textarea correct" style="border-color:#6282B7;background-color: transparent;width:30%" disabled/>
+                            Agatha and <input id="S2" class="textarea correct" style="border-color:#6282B7;background-color: transparent;width:30%" disabled/>
                             a writer. <input class=textarea onchange="solution(this,2)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
                             also a nurse in a hospital. <input class=textarea onchange="solution(this,3)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
                             the inspiration for many stories. <input class=textarea onchange="solution(this,4)" style="border-color:#6282B7;background-color: transparent;width:30%"/>

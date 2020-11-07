@@ -2,12 +2,12 @@ let solutions = [
     "I'm",
     "I'm",
     "I'm",
-    "it's",
-    "they're",
-    "This's",
+    "My work's
+    "They're",
+    "My husband's",
     "He's",
+    "Her name's",
     "She's",
-    "she's",
     "We're"
 ]
 
@@ -31,3 +31,10 @@ function solution(el,n) {
     else
         document.getElementById("next").setAttribute("disabled", "disabled");
 }
+
+$(document).ready(function() {
+    $("#S1").val("I'm");
+    $("#S2").val("I'm");
+    $("#S1").attr("readonly", true);
+    $("#S2").attr("readonly", true);
+})
