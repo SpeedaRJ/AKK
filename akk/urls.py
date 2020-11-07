@@ -257,4 +257,5 @@ urlpatterns = [
     path("lesson_three/pronouns/page_four", views.pronouns_page_four, name="pronouns_page_four"),
     path("lesson_three/pronouns/page_five", views.pronouns_page_five, name="pronouns_page_five"),
     path("lesson_three/pronouns/page_six", views.pronouns_page_six, name="pronouns_page_six"),
+    path("lesson_three/pronouns/page_seven", views.pronouns_page_six, name="pronouns_page_seven"),
 ]
