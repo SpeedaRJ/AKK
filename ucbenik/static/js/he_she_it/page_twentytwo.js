@@ -2,7 +2,7 @@ let solutions = [
     "I'm",
     "I'm",
     "I'm",
-    "My work's
+    "My work's",
     "They're",
     "My husband's",
     "He's",
