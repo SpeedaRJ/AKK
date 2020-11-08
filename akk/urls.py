@@ -250,6 +250,8 @@ urlpatterns = [
     path("lesson_two/present_simple/page_sixteen", views.present_simple_page_sixteen, name="present_simple_page_sixteen"),
     path("lesson_two/present_simple/page_seventeen", views.present_simple_page_seventeen, name="present_simple_page_seventeen"),
     path("lesson_two/daily_routines/page_one", views.daily_routines_page_one, name="daily_routines_page_one"),
+    path("lesson_two/daily_routines/page_two", views.daily_routines_page_two, name="daily_routines_page_two"),
+    path("lesson_two/daily_routines/page_three", views.daily_routines_page_three, name="daily_routines_page_three"),
 #Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),

@@ -1,0 +1,112 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/daily_routines/page_three.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/lesson2/daily_routines/page_three.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width" style="text-align: center">
+                    1. Click on all the verbs in the text.
+                </div>
+                <div class="msg translation full-width" style="text-align: center">
+                    Klikni na vse glagole v besedilu.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4" style="margin-top: 4%;">
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">get up</span>
+                <span onclick="check(this, false)">at</span> <span onclick="check(this, false)">seven</span> <span
+                        onclick="check(this, false)">o’clock.</span></p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">brush</span>
+                <span onclick="check(this, false)">my</span> <span onclick="check(this, false)">teeth</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">comb</span>
+                <span onclick="check(this, false)">my</span> <span onclick="check(this, false)">hair</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">get</span>
+                <span onclick="check(this, false)">dressed</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">have</span>
+                <span onclick="check(this, false)">breakfast</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">read</span> <span
+                    onclick="check(this, false)">the</span> <span onclick="check(this, false)">newspaper</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">go</span>
+                <span onclick="check(this, false)">to</span> <span onclick="check(this, false)">work</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">work</span>.
+            </p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">eat</span>
+                <span onclick="check(this, false)">a snack</span>.</p>
+        </div>
+        <div class="col-lg-4" style="margin-top: 4%;">
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">arrive</span>
+                <span onclick="check(this, false)">home</span> <span onclick="check(this, false)">at</span> <span
+                        onclick="check(this, false)">half</span> <span onclick="check(this, false)">past</span> <span
+                        onclick="check(this, false)">four</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">make</span>
+                <span onclick="check(this, false)">lunch</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">have</span>
+                <span onclick="check(this, false)">lunch</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">do</span> <span
+                    onclick="check(this, false)">the dishes</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">take</span>
+                <span onclick="check(this, false)">a shower</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">watch</span>
+                <span onclick="check(this, false)">TV</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">read</span>
+                <span onclick="check(this, false)">a book</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">have</span>
+                <span onclick="check(this, false)">dinner</span>.</p>
+
+            <p class="msg user full-width line"><span onclick="check(this, false)">I</span> <span
+                    onclick="check(this, true)">go</span> <span
+                    onclick="check(this, false)">to</span> <span onclick="check(this, false)">bed</span> <span
+                    onclick="check(this, false)">at</span>
+                <span onclick="check(this, false)">eleven</span> <span onclick="check(this, false)">o'clock</span>.</p>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+{% endblock %}

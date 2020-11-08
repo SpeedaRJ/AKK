@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/daily_routines/page_two.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="msg jenny" style="text-align: center">
+                In English, it is more common to use have with meals instead of eat: have breakfast, have lunch,
+                have dinner. It is also more common to say you make a meal instead of cook a meal.
+            </div>
+            <div class="msg translation" style="text-align: center">
+                V angleščini se z obroki pogosteje uporablja glagol imeti kot glagol jesti: imeti zajtrk, imeti
+                kosilo, imeti večerjo. Pogosteje se tudi reče, da narediš obrok, namesto da skuhaš obrok.
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}
