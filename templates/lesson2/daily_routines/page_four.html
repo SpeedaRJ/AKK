@@ -1,0 +1,111 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/daily_routines/page_five.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width" style="text-align: center; width: 100%; padding-left: 2%;">
+                    2. Drag and drop the verbs into the text.
+                </div>
+                <div class="msg translation full-width" style="text-align: center;">
+                    Prenesi in odloži glagole v besedilo.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3" style="margin-top: 4%;">
+            <p class="msg user full-width line">I get up at seven o’clock.</p>
+
+            <p class="msg user full-width line">I brush my teeth.</p>
+
+            <p class="msg user full-width line">I comb my hair.</p>
+
+            <p class="msg user full-width line">I get dressed.</p>
+
+            <p class="msg user full-width line">I have breakfast.</p>
+
+            <p class="msg user full-width line">I read the newspaper.</p>
+
+            <p class="msg user full-width line">I go to work.</p>
+
+            <p class="msg user full-width line">I work.</p>
+
+            <p class="msg user full-width line">I eat a snack.</p>
+        </div>
+        <div class="col-lg-3" style="margin-top: 4%;">
+            <p class="msg user full-width line">I arrive home at half past four.</p>
+
+            <p class="msg user full-width line">I make lunch.</p>
+
+            <p class="msg user full-width line">I have lunch.</p>
+
+            <p class="msg user full-width line">I do the dishes.</p>
+
+            <p class="msg user full-width line">I take a shower.</p>
+
+            <p class="msg user full-width line">I watch TV.</p>
+
+            <p class="msg user full-width line">I read a book.</p>
+
+            <p class="msg user full-width line">I have dinner.</p>
+
+            <p class="msg user full-width line">I go to bed at eleven o'clock.</p>
+        </div>
+        <div class="col-lg-2">
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match1" draggable="true"
+                  ondragstart="drag(event)">What</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match2" draggable="true"
+                  ondragstart="drag(event)">Who</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match3" draggable="true"
+                  ondragstart="drag(event)">What</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match4" draggable="true"
+                  ondragstart="drag(event)">How</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match5" draggable="true"
+                  ondragstart="drag(event)">Where</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match6" draggable="true"
+                  ondragstart="drag(event)">What</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match7" draggable="true"
+                  ondragstart="drag(event)">Who</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match8" draggable="true"
+                  ondragstart="drag(event)">What</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match9" draggable="true"
+                  ondragstart="drag(event)">How</span> <br>
+        </div>
+        <div class="col-lg-2">
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match10" draggable="true"
+                  ondragstart="drag(event)">What</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match11" draggable="true"
+                  ondragstart="drag(event)">Who</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match12" draggable="true"
+                  ondragstart="drag(event)">What</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match13" draggable="true"
+                  ondragstart="drag(event)">How</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match14" draggable="true"
+                  ondragstart="drag(event)">Where</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match15" draggable="true"
+                  ondragstart="drag(event)">What</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match16" draggable="true"
+                  ondragstart="drag(event)">Who</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match17" draggable="true"
+                  ondragstart="drag(event)">What</span> <br>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="match18" draggable="true"
+                  ondragstart="drag(event)">How</span> <br>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+{% endblock %}

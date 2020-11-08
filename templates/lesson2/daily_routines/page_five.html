@@ -1,0 +1,62 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/daily_routines/page_three.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width" style="text-align: center; font-size: 18px; padding-left: 0">
+                    Family routine during vacations.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user full-width" style="text-align: center;">
+                    We wake up at nine o’clock. We brush our teeth. We have breakfast. We go to the beach. We have
+                    lunch in a restaurant. We take a nap. We go for a walk. We go to a concert. We have dinner. We play
+                    cards. We go to bed around midnight.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny full-width" style="text-align: center; width: 100%; padding-left: 2%;">
+                    People do a lot of different things. Look at the pictures below.
+                </div>
+                <div class="msg translation full-width" style="text-align: center;">
+                    Ljudje delajo različne stvari. Poglej si spodnje slike.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user full-width" style="text-align: center;">
+                    I use the computer. <br>
+                    I go to the gym. <br>
+                    I draw. <br>
+                    I paint. <br>
+                    I visit my family. <br>
+                    I work in the garden. <br>
+                    I go shopping. <br>
+                    I walk the dog. <br>
+                    I feed the cat. <br>
+                    I call a friend. <br>
+                    I clean the house. <br>
+                    I cook. <br>
+                    I listen to music. <br>
+                    I play board games. <br>
+                    I go for a walk. <br>
+                    I go out with my friends. <br>
+                    I work out. <br>
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

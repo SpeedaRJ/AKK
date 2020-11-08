@@ -5936,6 +5936,57 @@ def daily_routines_page_three(request):
                        })
 
 
+def daily_routines_page_four(request):
+    back = "/lesson_two/daily_routines/page_three"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson2/daily_routines/page_four.html",
+                      {"next": "/lesson_two/daily_routines/page_five",
+                       "back": back, "lessons": lessons, "solved": solution.solved,
+                       "lesson": "Unit 2", "title": "Daily Routines", "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def daily_routines_page_five(request):
+    back = "/lesson_two/daily_routines/page_four"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson2/daily_routines/page_five.html",
+                      {"next": "/lesson_two/daily_routines/page_five",
+                       "back": back, "lessons": lessons, "solved": solution.solved,
+                       "lesson": "Unit 2", "title": "Daily Routines", "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+
 # UNIT 3
 def lesson_three_title(request):
     if request.method == "GET":

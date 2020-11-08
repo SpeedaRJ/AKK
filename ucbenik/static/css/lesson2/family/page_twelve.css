@@ -28,22 +28,28 @@
     padding: 5%;
 }
 
-.correct, .incorrect {
-    margin-left: 5%;
+.correct {
+    background: #58469F;
+    color: #00A881;
 }
 
-.middle {
-    height: 23vh;
+.incorrect {
+    background: #58469F;
+    color: #F15D2A;
+}
+
+.correct:hover, .incorrect:hover {
+    background: #58469F;
+}
+
+.correct, .incorrect {
+    margin-left: 5%;
 }
 
 .ftrow {
     height: 12vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
-}
-
-.ftcol {
-    height: 100%;
 }
 
 .ftrow {
@@ -53,7 +59,7 @@
 
 
 .ftree {
-    height: 60vh;
+    height: 56vh;
     position: absolute;
     z-index: 0;
 }
@@ -63,11 +69,27 @@
     padding: 0 !important;
 }
 
-.center {
-    margin-left: 50%;
-    width: 100%;
-}
-
 .drop {
     height: 100%;
+}
+
+.tree-row {
+    height: 36%;
+    padding-top: 1%;
+}
+
+.tree-row .col-lg-3{
+    padding-left: 1.2%;
+}
+
+.left {
+    right:2.6%;
+}
+
+.left2 {
+    left: -4%;
+}
+
+.left3 {
+    right: 8%;
 }

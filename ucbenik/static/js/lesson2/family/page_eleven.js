@@ -58,13 +58,13 @@ function shuffle(el) {
 }
 
 function checkCorrectness() {
-    let items = document.getElementsByClassName("trait")
+    let items = document.getElementsByClassName("draggable-portrait")
     let counter = 0;
     for(let x = 0; x < items.length; x++) {
         if(items[x].classList !== undefined && items[x].className.includes("correct") && !items[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter === 10) {
+    if(counter === 8) {
         document.getElementById("next").removeAttribute("disabled")
     } else {
          document.getElementById("next").setAttribute("disabled", "disabled");

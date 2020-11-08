@@ -1,17 +1,17 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_twelve.css' %}"/>
-<script type="text/javascript" src="{% static 'js/lesson2/family/page_twelve.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/next_empty_input.js' %}"></script>
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/family/page_twelve.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/lesson2/family/page_twelve.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/next_empty_input.js' %}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
         </div>
         <div class="col-lg-6">
             <div class="row inst space">
@@ -19,7 +19,7 @@
                     Write the names of the family members onto the family tree.
                 </div>
                 <div class="msg jenny translation full-width">
-                    Napiši imena družinskih članov na družinsko drevo. 
+                    Napiši imena družinskih članov na družinsko drevo.
                 </div>
             </div>
         </div>
@@ -32,97 +32,105 @@
         -->
         <div class="col-lg-2 full"></div>
         <div class="col-lg-8 ftree">
-            <img src="{% static 'svg/lesson2/family_members/family_tree.svg' %}" type="svg" class="ftree">
-            <div class="col-lg-3">
-                <div class="ftrow">
+            <object class=ftree data="{% static 'svg/lesson2/family_members/family_tree.svg' %}"
+                    type="image/svg+xml"></object>
+            <div class="row tree-row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-3 left">
+                    <div class="ftrow">
+                        <div class="drop">
+                            <div class="draggable-portrait">
+                                <img src="{% static 'svg/lesson2/family_members/husband_1.svg' %}" type="svg">
+                            </div>
+                            <div class="msg user familyname">
+                                <input class="textarea" onchange="solution(this, 'john')" type="text">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ftrow middle">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-3"></div>
+            </div>
+            <div class="row tree-row">
+                <div class="col-lg-3">
                     <div class="drop">
                         <div class="draggable-portrait">
                             <img src="{% static 'svg/lesson2/family_members/daughter_in_law.svg' %}" type="svg">
                         </div>
                         <div class="msg user familyname">
-                            <input class="textarea" type="text" onchange="solution(this)">
+                            <input class="textarea" onchange="solution(this, 'samantha')" type="text">
                         </div>
                     </div>
                 </div>
-                <div class="ftrow center">
-                    <div class="drop">
-                        <div class="draggable-portrait">
-                            <img src="{% static 'svg/lesson2/family_members/grandson.svg' %}" type="svg">
-                        </div>
-                        <div class="msg user familyname">
-                            <input class="textarea" type="text" onchange="solution(this)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="ftrow">
-                    <div class="drop">
-                        <div class="draggable-portrait">
-                            <img src="{% static 'svg/lesson2/family_members/husband_1.svg' %}" type="svg">
-                        </div>
-                        <div class="msg user familyname">
-                            <input class="textarea" type="text" onchange="solution(this)">
-                        </div>
-                    </div>
-                </div>
-                <div class="ftrow  middle">
+
+                <div class="col-lg-3 left">
                     <div class="drop">
                         <div class="draggable-portrait">
                             <img src="{% static 'svg/lesson2/family_members/son.svg' %}" type="svg">
                         </div>
                         <div class="msg user familyname">
-                            <input class="textarea" type="text" onchange="solution(this)">
+                            <input class="textarea" onchange="solution(this, 'richard')" type="text">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="ftrow">
-                </div>
-                <div class="ftrow  middle">
+
+
+                <div class="col-lg-3 left">
                     <div class="drop">
                         <div class="draggable-portrait">
                             <img src="{% static 'svg/lesson2/family_members/daughter.svg' %}" type="svg">
                         </div>
                         <div class="msg user familyname">
-                            <input class="textarea" type="text" onchange="solution(this)">
+                            <input class="textarea" onchange="solution(this, 'mary')" type="text">
                         </div>
                     </div>
                 </div>
-                <div class="ftrow">
+
+                <div class="col-lg-3 left3">
+                    <div class="drop">
+                        <div class="draggable-portrait">
+                            <img src="{% static 'svg/lesson2/family_members/son_in_law.svg' %}" type="svg">
+                        </div>
+                        <div class="msg user familyname">
+                            <input class="textarea" onchange="solution(this, 'luke')" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row tree-row bottom">
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-3 left2">
+                    <div class="drop">
+                        <div class="draggable-portrait">
+                            <img src="{% static 'svg/lesson2/family_members/grandson.svg' %}" type="svg">
+                        </div>
+                        <div class="msg user familyname">
+                            <input class="textarea" onchange="solution(this, 'toby')" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-3 left">
                     <div class="drop">
                         <div class="draggable-portrait">
                             <img src="{% static 'svg/lesson2/family_members/grandaughter01.svg' %}" type="svg">
                         </div>
                         <div class="msg user familyname">
-                            <input class="textarea" type="text" onchange="solution(this)">
+                            <input class="textarea" onchange="solution(this, 'tina')" type="text">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="ftrow">
-                </div>
-                <div class="ftrow  middle">
-                    <div class="drop"> 
-                        <div class="draggable-portrait">
-                            <img src="{% static 'svg/lesson2/family_members/son_in_law.svg' %}" type="svg">
-                        </div>
-                        <div class="msg user familyname">
-                            <input class="textarea" type="text" onchange="solution(this)">
-                        </div>
-                    </div>
-                </div>
-                <div class="ftrow">
+
+                <div class="col-lg-3 left3">
                     <div class="drop">
                         <div class="draggable-portrait">
                             <img src="{% static 'svg/lesson2/family_members/grandaughter02.svg' %}" type="svg">
                         </div>
                         <div class="msg user familyname">
-                            <input class="textarea" type="text" onchange="solution(this)">
+                            <input class="textarea" onchange="solution(this, 'kelly')" type="text">
                         </div>
                     </div>
                 </div>

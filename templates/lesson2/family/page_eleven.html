@@ -1,16 +1,16 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_eleven.css' %}"/>
-<script type="text/javascript" src="{% static 'js/lesson2/family/page_eleven.js' %}"></script>
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/family/page_eleven.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/lesson2/family/page_eleven.js' %}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
         </div>
         <div class="col-lg-6">
             <div class="row inst space">
@@ -18,7 +18,7 @@
                     Now you know my family members. Drag and drop the family members onto the family tree.
                 </div>
                 <div class="msg jenny translation full-width">
-                    Zdaj poznaš moje družinske člane. Prenesi in odloži družinske člane na družinsko drevo. 
+                    Zdaj poznaš moje družinske člane. Prenesi in odloži družinske člane na družinsko drevo.
                 </div>
             </div>
         </div>
@@ -30,80 +30,98 @@
             update styling
         -->
         <div class="col-lg-2 full" id="origin">
-            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event, this)" id="m02">
+            <div class="draggable-portrait" draggable="true" id="m02" onclick="toOrigin(this)"
+                 ondragstart="drag(event, this)">
                 <img src="{% static 'svg/lesson2/family_members/husband_1.svg' %}" type="svg">
             </div>
-            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event, this)" id="m01">
+            <div class="draggable-portrait" draggable="true" id="m01" onclick="toOrigin(this)"
+                 ondragstart="drag(event, this)">
                 <img src="{% static 'svg/lesson2/family_members/daughter_in_law.svg' %}" type="svg">
             </div>
-            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event, this)" id="m03">
+            <div class="draggable-portrait" draggable="true" id="m03" onclick="toOrigin(this)"
+                 ondragstart="drag(event, this)">
                 <img src="{% static 'svg/lesson2/family_members/son.svg' %}" type="svg">
             </div>
-            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event, this)" id="m04">
+            <div class="draggable-portrait" draggable="true" id="m04" onclick="toOrigin(this)"
+                 ondragstart="drag(event, this)">
                 <img src="{% static 'svg/lesson2/family_members/grandson.svg' %}" type="svg">
             </div>
         </div>
         <div class="col-lg-8 ftree">
-            <img src="{% static 'svg/lesson2/family_members/family_tree.svg' %}" type="svg" class="ftree">
-            <div class="col-lg-3">
-                <div class="ftrow">
+            <object class=ftree data="{% static 'svg/lesson2/family_members/family_tree.svg' %}"
+                    type="image/svg+xml"></object>
+            <div class="row tree-row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-3">
+                    <div class="drop" id="match02" ondragover="allowDrop(event)" ondrop="drop(event, this)"></div>
                 </div>
-                <div class="ftrow middle">
-                    <div class="drop"ondrop="drop(event, this)" ondragover="allowDrop(event)" id="match01">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-3"></div>
+            </div>
+            <div class="row tree-row">
+                <div class="col-lg-3">
+                    <div class="drop" id="match01" ondragover="allowDrop(event)" ondrop="drop(event, this)">
                     </div>
                 </div>
-                <div class="ftrow center">
-                    <div class="drop"ondrop="drop(event, this)" ondragover="allowDrop(event)" id="match04">
+
+                <div class="col-lg-3">
+                    <div class="drop" id="match03" ondragover="allowDrop(event)"
+                         ondrop="drop(event, this)">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 left">
+                    <div class="drop" id="match05" ondragover="allowDrop(event)" ondrop="drop(event, this)">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 left3">
+                    <div class="drop" id="match07" ondragover="allowDrop(event)" ondrop="drop(event, this)">
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="ftrow">
-                    <div class="drop"ondrop="drop(event, this)" ondragover="allowDrop(event)" id="match02">
+            <div class="row tree-row bottom">
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-3 left2">
+                    <div class="drop" id="match04" ondragover="allowDrop(event)" ondrop="drop(event, this)">
                     </div>
                 </div>
-                <div class="ftrow  middle">
-                    <div class="drop"ondrop="drop(event, this)" ondragover="allowDrop(event)"id="match03">
+
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-3 left">
+                    <div class="drop" id="match06" ondragover="allowDrop(event)"
+                         ondrop="drop(event, this)">
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="ftrow">
-                </div>
-                <div class="ftrow  middle">
-                    <div class="drop"ondrop="drop(event, this)" ondragover="allowDrop(event)" id="match05">
-                    </div>
-                </div>
-                <div class="ftrow">
-                    <div class="drop"ondrop="drop(event, this)" ondragover="allowDrop(event)" id="match06">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="ftrow">
-                </div>
-                <div class="ftrow  middle">
-                    <div class="drop"ondrop="drop(event, this)" ondragover="allowDrop(event)" id="match07"> 
-                    </div>
-                </div>
-                <div class="ftrow">
-                    <div class="drop"ondrop="drop(event, this)" ondragover="allowDrop(event)" id="match08">
+
+                <div class="col-lg-3 left3">
+                    <div class="drop" id="match08" ondragover="allowDrop(event)"
+                         ondrop="drop(event, this)">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-2"  id="origin2">
-            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event, this)" id="m05">
+        <div class="col-lg-2" id="origin2">
+            <div class="draggable-portrait" draggable="true" id="m05" onclick="toOrigin(this)"
+                 ondragstart="drag(event, this)">
                 <img src="{% static 'svg/lesson2/family_members/daughter.svg' %}" type="svg">
             </div>
-            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event, this)" id="m07">
+            <div class="draggable-portrait" draggable="true" id="m07" onclick="toOrigin(this)"
+                 ondragstart="drag(event, this)">
                 <img src="{% static 'svg/lesson2/family_members/son_in_law.svg' %}" type="svg">
             </div>
-            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event, this)" id="m06">
-                <img src="{% static 'svg/lesson2/family_members/grandaughter01.svg' %}" type="svg">
+            <div class="draggable-portrait" draggable="true" id="m06" onclick="toOrigin(this)"
+                 ondragstart="drag(event, this)">
+                <img src="{% static 'svg/lesson2/family_members/grandaughter01.svg' %}"
+                     type="svg">
             </div>
-            <div onclick="toOrigin(this)" class="draggable-portrait" draggable="true" ondragstart="drag(event, this)" id="m08">
-                <img src="{% static 'svg/lesson2/family_members/grandaughter02.svg' %}" type="svg">
+            <div class="draggable-portrait" draggable="true" id="m08" onclick="toOrigin(this)"
+                 ondragstart="drag(event, this)">
+                <img src="{% static 'svg/lesson2/family_members/grandaughter02.svg' %}"
+                     type="svg">
             </div>
         </div>
     </div>
