@@ -1,0 +1,55 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/daily_routines/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width" style="text-align: center; font-size: 18px; padding-left: 0">
+                    Jenny’s daily (week day) routine.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="text-align: center">
+            <div class="main-working">
+                <div>
+                    <p class="msg user full-width line">I <span class="color">get up</span> at seven o’clock.</p>
+                    <object class="img-visual" data="{% static 'svg/lesson2/daily_routines/sun.svg' %}"
+                            type="image/svg+xml"></object>
+                </div>
+                <div>
+                    <p class="msg user full-width line">I <span class="color">brush</span> my teeth.</p>
+                    <object class="img-visual" data="{% static 'svg/lesson2/daily_routines/brush.svg' %}"
+                            type="image/svg+xml"></object>
+                </div>
+                <div>
+                    <p class="msg user full-width line">I <span class="color">comb</span> my hair.</p>
+                    <object class="img-visual" data="{% static 'svg/lesson2/daily_routines/hairbrush.svg' %}"
+                            type="image/svg+xml"></object>
+                </div>
+                <div>
+                    <p class="msg user full-width line">I <span class="color">get</span> dressed.</p>
+                    <object class="img-visual" data="{% static 'svg/lesson2/daily_routines/shirt.svg' %}"
+                            type="image/svg+xml"></object>
+                </div>
+            </div>
+            <button class="next" id="next-list" type="button">Next</button>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+{% endblock %}
