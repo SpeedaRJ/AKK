@@ -26,7 +26,6 @@ function solution(el,n) {
         if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
             counter++;
     }
-    console.log(counter)
     if(counter === solutions.length)
         document.getElementById("next").removeAttribute("disabled")
     else
