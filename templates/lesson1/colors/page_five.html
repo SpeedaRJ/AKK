@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
     <script type="text/javascript" src="{% static 'js/colors/page_four.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/colors/glossary.js' %}"></script>
 {% endblock %}
 {% block content %}
     <div class="row">
@@ -63,8 +64,8 @@
                 <input type="radio" id="blue1" name="color3" onclick="check(event, 'pink')">
                 <label for="blue1">blue</label><br>
             </div>
-            <div class="image">
-                <img src="{% static 'svg/lesson1/colors/SVG/pig.svg' %}" style="width: 7vw;">
+            <div class="image" style="margin-left: 0">
+                <img src="{% static 'svg/lesson1/colors/SVG/pig.svg' %}" style="width: 170%;">
             </div>
         </div>
     </div>

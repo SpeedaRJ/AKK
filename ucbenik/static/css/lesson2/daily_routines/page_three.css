@@ -1,0 +1,34 @@
+.user {
+    padding-left: 2% !important;
+    width: 100% !important;
+    padding: 2%;
+}
+
+.translation {
+    padding-left: 2% !important;
+    width: 100% !important;
+    padding: 2%;
+    margin-top: 7%;
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+.correct {
+    background: #58469F;
+    color: #00A881;
+}
+
+.incorrect {
+    background: #58469F;
+    color: #F15D2A;
+}
+
+.correct:hover {
+    background: #58469F;
+}
+
+.incorrect:hover {
+    background: #58469F;
+}

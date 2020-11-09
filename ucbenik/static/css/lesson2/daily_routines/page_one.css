@@ -1,0 +1,25 @@
+.main-working {
+    padding-right: 25%;
+}
+
+.line {
+    width: 60%;
+    float: left;
+    margin: 6%;
+    text-align: center;
+}
+
+#next-list {
+    background-color: #58469F;
+    margin-right: 38% !important;
+    margin-top: 2%;
+}
+
+.img-visual {
+    height: 40%;
+    width: 20%;
+}
+
+.color {
+    color: #e6a454;
+}

@@ -72,10 +72,9 @@ img {
 }
 
 .fill {
-    float: left;
-    margin-left: 4vw;
     margin-top: 2vh;
-    width:auto;
+    margin-right: 12.5%;
+    width:75%;
     text-align: center;
 }
 

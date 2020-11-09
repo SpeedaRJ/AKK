@@ -1,0 +1,9 @@
+p {
+    float: left !important;
+    width: 85% !important;
+}
+
+.translation {
+    width: 100% !important;
+    margin-top: 7%;
+}
