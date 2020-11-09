@@ -3,8 +3,8 @@ import re
 from django.http import HttpResponseNotAllowed, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
-from ucbenik.CustomAuth import CustomAuth
 from ucbenik.models import User, CharacterDataMen, CharacterDataWomen, Solution
+from ucbenik.CustomAuth import CustomAuth
 from .serializers import UserSerializer
 
 lessons = {"lesson_one": {"Introduction": "/lesson_one/introduction/page_one",
@@ -19,8 +19,7 @@ lessons = {"lesson_one": {"Introduction": "/lesson_one/introduction/page_one",
                           "Family Members": "/lesson_two/family/page_one",
                           "Clothes": "/lesson_two/clothes/page_one",
                           "Time": "/lesson_two/time/page_one",
-                          "Present Simple": "/lesson_two/present_simple/page_one",
-                          "Daily Routines": "lesson_two/daily_rountine/page_one"},
+                          "Present Simple": "/lesson_two/present_simple/page_one"},
            "lesson_three": {"Pronouns": "/lesson_three/pronouns/page_one"}
            }
 
@@ -28,11 +27,9 @@ lessons = {"lesson_one": {"Introduction": "/lesson_one/introduction/page_one",
 def save_avatar(session):
     user = User.objects.get(email=session['user']['email'])
     if user.sex == 'F':
-        avatar = CharacterDataWomen(user=user, glasses=session['glasses'], hair_type=session['hair_type'],
-                                    body_type=session['body_type'])
+        avatar = CharacterDataWomen(user=user, glasses=session['glasses'], hair_type=session['hair_type'], body_type=session['body_type'])
     else:
-        avatar = CharacterDataMen(user=user, glasses=session['glasses'], hair_type=session['hair_type'],
-                                  beard=session['beard'], body_type=session['body_type'])
+        avatar = CharacterDataMen(user=user, glasses=session['glasses'], hair_type=session['hair_type'], beard=session['beard'], body_type=session['body_type'])
     avatar.save()
 
 
@@ -91,8 +88,7 @@ def coming_soon(request):
         request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
     return render(request, "coming_soon.html", {"next": "/", "back": back,
                                                 "lessons": lessons,
-                                                "lesson": "Coming Soon", "title": "Coming Soon",
-                                                "user": request.session['user'],
+                                                "lesson": "Coming Soon", "title": "Coming Soon", "user": request.session['user'],
                                                 "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -343,8 +339,7 @@ def lesson_one_title(request):
     if request.method == "GET":
         return render(request, "lesson1/title_page.html", {"next": "/lesson_one/introduction/page_one", "back": "/",
                                                            "lessons": lessons,
-                                                           "lesson": "Unit 1: About Me", "title": "",
-                                                           "user": request.session['user']})
+                                                           "lesson": "Unit 1: About Me", "title": "", "user": request.session['user']})
 
 
 def introduction_page_one(request):
@@ -358,11 +353,10 @@ def introduction_page_one(request):
         solution = get_or_create_solution(user, request.path)
         user.add_chapter('Introduction')
         request.session['user'] = UserSerializer(user).data
-        return render(request, "lesson1/introduction/page_one.html",
-                      {"next": "/lesson_one/introduction/page_two", "back": "/", "solved": solution.solved,
-                       "lessons": lessons,
-                       "solved": solution.solved,
-                       "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
+        return render(request, "lesson1/introduction/page_one.html", {"next": "/lesson_one/introduction/page_two", "back": "/", "solved": solution.solved,
+                                                                      "lessons": lessons,
+                                                                      "solved": solution.solved,
+                                                                      "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_two(request):
@@ -380,9 +374,7 @@ def introduction_page_two(request):
         return render(request, "lesson1/introduction/page_two.html", {"next": "/lesson_one/introduction/page_three",
                                                                       "back": back, "solved": solution.solved,
                                                                       "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me",
-                                                                      "title": "Introduction",
-                                                                      "user": request.session['user']})
+                                                                      "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_three(request):
@@ -400,9 +392,7 @@ def introduction_page_three(request):
         return render(request, "lesson1/introduction/page_three.html", {"next": "/lesson_one/introduction/page_four",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "Introduction",
-                                                                        "user": request.session['user']})
+                                                                        "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_four(request):
@@ -420,9 +410,7 @@ def introduction_page_four(request):
         return render(request, "lesson1/introduction/page_four.html", {"next": "/lesson_one/introduction/page_five",
                                                                        "back": back, "solved": solution.solved,
                                                                        "lessons": lessons,
-                                                                       "lesson": "Unit 1: About Me",
-                                                                       "title": "Introduction",
-                                                                       "user": request.session['user']})
+                                                                       "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_five(request):
@@ -440,9 +428,7 @@ def introduction_page_five(request):
         return render(request, "lesson1/introduction/page_five.html", {"next": "/lesson_one/introduction/page_six",
                                                                        "back": back, "solved": solution.solved,
                                                                        "lessons": lessons,
-                                                                       "lesson": "Unit 1: About Me",
-                                                                       "title": "Introduction",
-                                                                       "user": request.session['user']})
+                                                                       "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_six(request):
@@ -459,9 +445,7 @@ def introduction_page_six(request):
         return render(request, "lesson1/introduction/page_six.html", {"next": "/lesson_one/introduction/page_seven",
                                                                       "back": back,
                                                                       "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me",
-                                                                      "title": "Introduction",
-                                                                      "user": request.session['user']})
+                                                                      "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_seven(request):
@@ -475,9 +459,7 @@ def introduction_page_seven(request):
         return render(request, "lesson1/introduction/page_seven.html", {"next": "/lesson_one/introduction/page_eight",
                                                                         "back": "/lesson_one/introduction/page_six",
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "Introduction",
-                                                                        "user": request.session['user']})
+                                                                        "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def introduction_page_eight(request):
@@ -491,9 +473,7 @@ def introduction_page_eight(request):
         return render(request, "lesson1/introduction/page_eight.html", {"next": "/lesson_one/exercises/page_one",
                                                                         "back": "/lesson_one/introduction/page_seven",
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "Introduction",
-                                                                        "user": request.session['user']})
+                                                                        "lesson": "Unit 1: About Me", "title": "Introduction", "user": request.session['user']})
 
 
 def exercises_page_one(request):
@@ -509,8 +489,7 @@ def exercises_page_one(request):
                                                                    "back": "/lesson_one/introduction/page_seven",
                                                                    "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "Exercises",
-                                                                   "user": request.session['user']})
+                                                                   "lesson": "Unit 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_two(request):
@@ -527,8 +506,7 @@ def exercises_page_two(request):
         return render(request, "lesson1/exercises/page_two.html", {"next": "/lesson_one/exercises/page_three",
                                                                    "back": back, "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "Exercises",
-                                                                   "user": request.session['user']})
+                                                                   "lesson": "Unit 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_three(request):
@@ -546,8 +524,7 @@ def exercises_page_three(request):
         return render(request, "lesson1/exercises/page_three.html", {"next": "/lesson_one/exercises/page_four",
                                                                      "back": back, "solved": solution.solved,
                                                                      "lessons": lessons,
-                                                                     "lesson": "Unit 1: About Me", "title": "Exercises",
-                                                                     "user": request.session['user']})
+                                                                     "lesson": "Unit 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_four(request):
@@ -566,8 +543,7 @@ def exercises_page_four(request):
                                                                     "back": back,
                                                                     "solved": solution.solved,
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 1: About Me", "title": "Exercises",
-                                                                    "user": request.session['user']})
+                                                                    "lesson": "Unit 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_five(request):
@@ -586,8 +562,7 @@ def exercises_page_five(request):
                                                                     "back": back,
                                                                     "solved": solution.solved,
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 1: About Me", "title": "Exercises",
-                                                                    "user": request.session['user']})
+                                                                    "lesson": "Unit 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_six(request):
@@ -606,8 +581,7 @@ def exercises_page_six(request):
                                                                    "back": back,
                                                                    "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "Exercises",
-                                                                   "user": request.session['user']})
+                                                                   "lesson": "Unit 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def exercises_page_seven(request):
@@ -626,8 +600,7 @@ def exercises_page_seven(request):
                                                                      "back": back,
                                                                      "solved": solution.solved,
                                                                      "lessons": lessons,
-                                                                     "lesson": "Unit 1: About Me", "title": "Exercises",
-                                                                     "user": request.session['user']})
+                                                                     "lesson": "Unit 1: About Me", "title": "Exercises", "user": request.session['user']})
 
 
 def character_select_page_one(request):
@@ -645,11 +618,10 @@ def character_select_page_one(request):
         user.add_chapter('Appearance')
         request.session['user'] = UserSerializer(user).data
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/character_select/page_one.html",
-                      {"next": "/lesson_one/character_select/page_two",
-                       "back": back, "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user']})
+        return render(request, "lesson1/character_select/page_one.html", {"next": "/lesson_one/character_select/page_two",
+                                                                          "back": back, "solved": solution.solved,
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user']})
 
 
 def character_select_page_two(request):
@@ -668,19 +640,18 @@ def character_select_page_two(request):
             body_color = request.session['body_color']
         else:
             return redirect('/lesson_one/character_select/page_one')
-        return render(request, "lesson1/character_select/page_two.html",
-                      {"next": "/lesson_one/character_select/page_three",
-                       "back": "/lesson_one/character_select/page_one",
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
-                       "parts": {
-                           "body_color": "[id^=Koza]",
-                           "neck": "[id^=Vrat]"
-                       },
-                       "colors": {
-                           "body_color": body_color,
-                           "neck": neck
-                       }})
+        return render(request, "lesson1/character_select/page_two.html", {"next": "/lesson_one/character_select/page_three",
+                                                                          "back": "/lesson_one/character_select/page_one",
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                          "parts": {
+                                                                              "body_color": "[id^=Koza]",
+                                                                              "neck": "[id^=Vrat]"
+                                                                          },
+                                                                          "colors": {
+                                                                              "body_color": body_color,
+                                                                              "neck": neck
+                                                                          }})
 
 
 def character_select_page_three(request):
@@ -727,22 +698,21 @@ def character_select_page_three(request):
             else:
                 hair_type = 'long'
             src_ref = f"svg/lesson1/female_avatar/body/glasses/{height}/{body_type}/dress/{hair_type}.svg"
-        return render(request, "lesson1/character_select/page_three.html",
-                      {"next": "/lesson_one/character_select/page_four",
-                       "back": "/lesson_one/character_select/page_two",
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
-                       "src": src_ref,
-                       "parts": {
-                           "body_color": "[id^=Koza]",
-                           "neck": "[id^=Vrat]"
-                       },
-                       "colors": {
-                           "body_color": body_color,
-                           "neck": neck
-                       },
-                       "hair_type": hair_type,
-                       "hair_color": hair_color})
+        return render(request, "lesson1/character_select/page_three.html", {"next": "/lesson_one/character_select/page_four",
+                                                                            "back": "/lesson_one/character_select/page_two",
+                                                                            "lessons": lessons,
+                                                                            "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                            "src": src_ref,
+                                                                            "parts": {
+                                                                                "body_color": "[id^=Koza]",
+                                                                                "neck": "[id^=Vrat]"
+                                                                            },
+                                                                            "colors": {
+                                                                                "body_color": body_color,
+                                                                                "neck": neck
+                                                                            },
+                                                                            "hair_type": hair_type,
+                                                                            "hair_color": hair_color})
 
 
 def character_select_page_four(request):
@@ -793,22 +763,21 @@ def character_select_page_four(request):
                 "neck": request.session['neck'],
                 "hair_color": request.session['hair_color']
             }
-        return render(request, "lesson1/character_select/page_four.html",
-                      {"next": "/lesson_one/character_select/page_five",
-                       "back": "/lesson_one/character_select/page_three",
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
-                       "src": src_ref,
-                       "parts": {
-                           "body_color": "[id^=Koza]",
-                           "neck": "[id^=Vrat]",
-                           "hair_color": "[id^=Lasje]",
-                           "Obrv1": "[id^=Obrve]",
-                           "beard": "[id^=Brada]",
-                           "mustache": "[id^=Brki]",
-                       },
-                       "colors": colors
-                       })
+        return render(request, "lesson1/character_select/page_four.html", {"next": "/lesson_one/character_select/page_five",
+                                                                           "back": "/lesson_one/character_select/page_three",
+                                                                           "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                           "src": src_ref,
+                                                                           "parts": {
+                                                                               "body_color": "[id^=Koza]",
+                                                                               "neck": "[id^=Vrat]",
+                                                                               "hair_color": "[id^=Lasje]",
+                                                                               "Obrv1": "[id^=Obrve]",
+                                                                               "beard": "[id^=Brada]",
+                                                                               "mustache": "[id^=Brki]",
+                                                                           },
+                                                                           "colors": colors
+                                                                           })
 
 
 def character_select_page_five(request):
@@ -902,13 +871,12 @@ def character_select_page_five(request):
                 request.session["shirt_color"] = request.GET.get('shirt_color')
                 parts["shirt"] = "[id^=Majica]"
                 parts["pants"] = "[id^=Hlace]"
-        return render(request, "lesson1/character_select/page_five.html",
-                      {"next": "/lesson_one/character_select/page_six",
-                       "back": "/lesson_one/character_select/page_four",
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson1/character_select/page_five.html", {"next": "/lesson_one/character_select/page_six",
+                                                                           "back": "/lesson_one/character_select/page_four",
+                                                                           "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "Avatar", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors
+                                                                           })
 
 
 def character_select_page_six(request):
@@ -928,10 +896,8 @@ def character_select_page_six(request):
         return render(request, "lesson1/character_select/page_six.html", {"next": "/lesson_one/numbers/page_one",
                                                                           "back": "/lesson_one/character_select/page_five",
                                                                           "lessons": lessons,
-                                                                          "lesson": "Unit 1: About Me",
-                                                                          "title": "Avatar", "user": user,
-                                                                          "src": src_ref, "parts": parts,
-                                                                          "colors": colors})
+                                                                          "lesson": "Unit 1: About Me", "title": "Avatar", "user": user,
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 # NUMBERS
@@ -958,8 +924,7 @@ def numbers_page_one(request):
         return render(request, "lesson1/numbers/page_one.html", {"next": "/lesson_one/numbers/page_two",
                                                                  "back": "/lesson_one/character_select/page_six",
                                                                  "lessons": lessons, "solved": solution.solved,
-                                                                 "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -986,8 +951,7 @@ def numbers_page_two(request):
                                                                  "back": back,
                                                                  "solved": solution.solved,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1013,8 +977,7 @@ def numbers_page_three(request):
         return render(request, "lesson1/numbers/page_three.html", {"next": "/lesson_one/numbers/page_four",
                                                                    "back": back, "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1040,8 +1003,7 @@ def numbers_page_four(request):
         return render(request, "lesson1/numbers/page_four.html", {"next": "/lesson_one/numbers/page_five",
                                                                   "back": back, "solved": solution.solved,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1067,8 +1029,7 @@ def numbers_page_five(request):
         return render(request, "lesson1/numbers/page_five.html", {"next": "/lesson_one/numbers/page_six",
                                                                   "back": back, "solved": solution.solved,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1095,8 +1056,7 @@ def numbers_page_six(request):
                                                                  "back": back,
                                                                  "solved": solution.solved,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1122,8 +1082,7 @@ def numbers_page_seven(request):
         return render(request, "lesson1/numbers/page_seven.html", {"next": "/lesson_one/numbers/page_eight",
                                                                    "back": back, "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1149,8 +1108,7 @@ def numbers_page_eight(request):
         return render(request, "lesson1/numbers/page_eight.html", {"next": "/lesson_one/numbers/page_nine",
                                                                    "back": back, "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1176,8 +1134,7 @@ def numbers_page_nine(request):
         return render(request, "lesson1/numbers/page_nine.html", {"next": "/lesson_one/numbers/page_ten",
                                                                   "back": back, "solved": solution.solved,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1202,8 +1159,7 @@ def numbers_page_ten(request):
         return render(request, "lesson1/numbers/page_ten.html", {"next": "/lesson_one/numbers/page_eleven",
                                                                  "back": back,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1226,8 +1182,7 @@ def numbers_page_eleven(request):
         return render(request, "lesson1/numbers/page_eleven.html", {"next": "/lesson_one/numbers/page_twelve",
                                                                     "back": back,
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1250,8 +1205,7 @@ def numbers_page_twelve(request):
         return render(request, "lesson1/numbers/page_twelve.html", {"next": "/lesson_one/numbers/page_thirteen",
                                                                     "back": "/lesson_one/numbers/page_eleven",
                                                                     "solved": solution.solved, "lessons": lessons,
-                                                                    "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1275,8 +1229,7 @@ def numbers_page_thirteen(request):
             return redirect(back)
         return render(request, "lesson1/numbers/page_thirteen.html", {"next": "/lesson_one/numbers/page_fourteen",
                                                                       "back": back, "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1298,8 +1251,7 @@ def numbers_page_fourteen(request):
         return render(request, "lesson1/numbers/page_fourteen.html", {"next": "/lesson_one/numbers/page_fifteen",
                                                                       "back": "/lesson_one/numbers/page_thirteen",
                                                                       "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1321,8 +1273,7 @@ def numbers_page_fifteen(request):
         return render(request, "lesson1/numbers/page_fifteen.html", {"next": "/lesson_one/numbers/page_sixteen",
                                                                      "back": "/lesson_one/numbers/page_fourteen",
                                                                      "lessons": lessons,
-                                                                     "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                     "user": request.session['user'],
+                                                                     "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1344,8 +1295,7 @@ def numbers_page_sixteen(request):
         return render(request, "lesson1/numbers/page_sixteen.html", {"next": "/lesson_one/numbers/page_seventeen",
                                                                      "back": "/lesson_one/numbers/page_fifteen",
                                                                      "lessons": lessons,
-                                                                     "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                     "user": request.session['user'],
+                                                                     "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1367,10 +1317,8 @@ def numbers_page_seventeen(request):
         return render(request, "lesson1/numbers/page_seventeen.html", {"next": "/lesson_one/numbers/page_eighteen",
                                                                        "back": "/lesson_one/numbers/page_sixteen",
                                                                        "lessons": lessons,
-                                                                       "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                       "user": request.session['user'],
-                                                                       "src": src_ref, "parts": parts,
-                                                                       "colors": colors})
+                                                                       "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
 def numbers_page_eighteen(request):
@@ -1391,8 +1339,7 @@ def numbers_page_eighteen(request):
         return render(request, "lesson1/numbers/page_eighteen.html", {"next": "/lesson_one/numbers/page_nineteen",
                                                                       "back": "/lesson_one/numbers/page_seventeen",
                                                                       "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1415,8 +1362,7 @@ def numbers_page_nineteen(request):
         return render(request, "lesson1/numbers/page_nineteen.html", {"next": "/lesson_one/numbers/page_twenty",
                                                                       "back": "/lesson_one/numbers/page_eighteen",
                                                                       "solved": solution.solved, "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1442,8 +1388,7 @@ def numbers_page_twenty(request):
         return render(request, "lesson1/numbers/page_twenty.html", {"next": "/lesson_one/numbers/page_twentyone",
                                                                     "back": back, "solved": solution.solved,
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -1467,10 +1412,8 @@ def numbers_page_twentyone(request):
             return redirect(back)
         return render(request, "lesson1/numbers/page_twentyone.html", {"next": "/lesson_one/numbers/page_twentytwo",
                                                                        "back": back, "lessons": lessons,
-                                                                       "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                       "user": request.session['user'],
-                                                                       "src": src_ref, "parts": parts,
-                                                                       "colors": colors})
+                                                                       "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
 def numbers_page_twentytwo(request):
@@ -1491,10 +1434,8 @@ def numbers_page_twentytwo(request):
         return render(request, "lesson1/numbers/page_twentytwo.html", {"next": "/lesson_one/numbers/page_twentythree",
                                                                        "back": "/lesson_one/numbers/page_twentyone",
                                                                        "lessons": lessons,
-                                                                       "lesson": "Unit 1: About Me", "title": "Numbers",
-                                                                       "user": request.session['user'],
-                                                                       "src": src_ref, "parts": parts,
-                                                                       "colors": colors})
+                                                                       "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
 def numbers_page_twentythree(request):
@@ -1517,11 +1458,8 @@ def numbers_page_twentythree(request):
                                                                          "back": "/lesson_one/numbers/page_twentytwo",
                                                                          "solved": solution.solved,
                                                                          "lessons": lessons,
-                                                                         "lesson": "Unit 1: About Me",
-                                                                         "title": "Numbers",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors})
+                                                                         "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def numbers_page_twentyfour(request):
@@ -1546,11 +1484,8 @@ def numbers_page_twentyfour(request):
         return render(request, "lesson1/numbers/page_twentyfour.html", {"next": "/lesson_one/numbers/page_twentyfive",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "Numbers",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts,
-                                                                        "colors": colors})
+                                                                        "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors})
 
 
 def numbers_page_twentyfive(request):
@@ -1575,11 +1510,8 @@ def numbers_page_twentyfive(request):
         return render(request, "lesson1/numbers/page_twentyfive.html", {"next": "/lesson_one/colors/page_one",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "Numbers",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts,
-                                                                        "colors": colors})
+                                                                        "lesson": "Unit 1: About Me", "title": "Numbers", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors})
 
 
 # COLORS
@@ -1607,8 +1539,7 @@ def colors_page_one(request):
         return render(request, "lesson1/colors/page_one.html", {"next": "/lesson_one/colors/page_two",
                                                                 "back": back,
                                                                 "lessons": lessons,
-                                                                "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -1631,8 +1562,7 @@ def colors_page_two(request):
         return render(request, "lesson1/colors/page_two.html", {"next": "/lesson_one/colors/page_three",
                                                                 "back": "/lesson_one/colors/page_one",
                                                                 "lessons": lessons,
-                                                                "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -1656,8 +1586,7 @@ def colors_page_three(request):
         return render(request, "lesson1/colors/page_three.html", {"next": "/lesson_one/colors/page_four",
                                                                   "back": "/lesson_one/colors/page_two",
                                                                   "solved": solution.solved, "lessons": lessons,
-                                                                  "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -1684,8 +1613,7 @@ def colors_page_four(request):
         return render(request, "lesson1/colors/page_four.html", {"next": "/lesson_one/colors/page_five",
                                                                  "back": back, "solved": solution.solved,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -1712,8 +1640,7 @@ def colors_page_five(request):
         return render(request, "lesson1/colors/page_five.html", {"next": "/lesson_one/colors/page_six",
                                                                  "back": back, "solved": solution.solved,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -1740,8 +1667,7 @@ def colors_page_six(request):
         return render(request, "lesson1/colors/page_six.html", {"next": "/lesson_one/colors/page_seven",
                                                                 "back": back, "solved": solution.solved,
                                                                 "lessons": lessons,
-                                                                "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -1768,8 +1694,7 @@ def colors_page_seven(request):
         return render(request, "lesson1/colors/page_seven.html", {"next": "/lesson_one/colors/page_eight",
                                                                   "back": back, "solved": solution.solved,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -1796,8 +1721,7 @@ def colors_page_eight(request):
         return render(request, "lesson1/colors/page_eight.html", {"next": "/lesson_one/colors/page_nine",
                                                                   "back": back, "solved": solution.solved,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -1824,8 +1748,7 @@ def colors_page_nine(request):
         return render(request, "lesson1/colors/page_nine.html", {"next": "/lesson_one/years/page_one",
                                                                  "back": back, "solved": solution.solved,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Colours",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Colours", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -1856,8 +1779,7 @@ def years_page_one(request):
         return render(request, "lesson1/years/page_one.html", {"next": "/lesson_one/years/page_two",
                                                                "back": back, "solved": solution.solved,
                                                                "lessons": lessons,
-                                                               "lesson": "Unit 1: About Me", "title": "Years",
-                                                               "user": request.session['user'],
+                                                               "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                })
 
@@ -1884,8 +1806,7 @@ def years_page_two(request):
         return render(request, "lesson1/years/page_two.html", {"next": "/lesson_one/years/page_three",
                                                                "back": back, "solved": solution.solved,
                                                                "lessons": lessons,
-                                                               "lesson": "Unit 1: About Me", "title": "Years",
-                                                               "user": request.session['user'],
+                                                               "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                })
 
@@ -1912,8 +1833,7 @@ def years_page_three(request):
         return render(request, "lesson1/years/page_three.html", {"next": "/lesson_one/years/page_four",
                                                                  "back": back, "solved": solution.solved,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Years",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -1940,8 +1860,7 @@ def years_page_four(request):
         return render(request, "lesson1/years/page_four.html", {"next": "/lesson_one/years/page_five",
                                                                 "back": back, "solved": solution.solved,
                                                                 "lessons": lessons,
-                                                                "lesson": "Unit 1: About Me", "title": "Years",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -1968,8 +1887,7 @@ def years_page_five(request):
         return render(request, "lesson1/years/page_five.html", {"next": "/lesson_one/years/page_six",
                                                                 "back": back, "solved": solution.solved,
                                                                 "lessons": lessons,
-                                                                "lesson": "Unit 1: About Me", "title": "Years",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -1994,8 +1912,7 @@ def years_page_six(request):
             return redirect(back)
         return render(request, "lesson1/years/page_six.html", {"next": "/lesson_one/years/page_seven",
                                                                "back": back, "lessons": lessons,
-                                                               "lesson": "Unit 1: About Me", "title": "Years",
-                                                               "user": request.session['user'],
+                                                               "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                })
 
@@ -2019,8 +1936,7 @@ def years_page_seven(request):
         return render(request, "lesson1/years/page_seven.html", {"next": "/lesson_one/years/page_eight",
                                                                  "back": "/lesson_one/years/page_six",
                                                                  "solved": solution.solved, "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Years",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -2047,8 +1963,7 @@ def years_page_eight(request):
         return render(request, "lesson1/years/page_eight.html", {"next": "/lesson_one/years/page_nine",
                                                                  "back": back, "solved": solution.solved,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 1: About Me", "title": "Years",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -2073,8 +1988,7 @@ def years_page_nine(request):
             return redirect(back)
         return render(request, "lesson1/years/page_nine.html", {"next": "/lesson_one/years/page_ten",
                                                                 "back": back, "lessons": lessons,
-                                                                "lesson": "Unit 1: About Me", "title": "Years",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -2099,8 +2013,7 @@ def years_page_ten(request):
                                                                "back": "/lesson_one/years/page_nine",
                                                                "solved": solution.solved,
                                                                "lessons": lessons,
-                                                               "lesson": "Unit 1: About Me", "title": "Years",
-                                                               "user": request.session['user'],
+                                                               "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                })
 
@@ -2127,8 +2040,7 @@ def years_page_eleven(request):
         return render(request, "lesson1/years/page_eleven.html", {"next": "/lesson_one/years/page_twelve",
                                                                   "back": back, "solved": solution.solved,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 1: About Me", "title": "Years",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -2155,8 +2067,7 @@ def years_page_twelve(request):
         return render(request, "lesson1/years/page_twelve.html", {"next": "/lesson_one/personal_traits/page_one",
                                                                   "back": back, "solved": solution.solved,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 1: About Me", "title": "Years",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 1: About Me", "title": "Years", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -2184,11 +2095,8 @@ def personal_traits_page_one(request):
                                                                          "back": "/lesson_one/years/page_twelve",
                                                                          "solved": solution.solved,
                                                                          "lessons": lessons,
-                                                                         "lesson": "Unit 1: About Me",
-                                                                         "title": "Personality Traits",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors})
+                                                                         "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def personal_traits_page_two(request):
@@ -2209,11 +2117,10 @@ def personal_traits_page_two(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson1/personal_traits/page_two.html",
-                      {"next": "/lesson_one/personal_traits/page_three",
-                       "back": back, "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/personal_traits/page_two.html", {"next": "/lesson_one/personal_traits/page_three",
+                                                                         "back": back, "lessons": lessons,
+                                                                         "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def personal_traits_page_three(request):
@@ -2232,12 +2139,11 @@ def personal_traits_page_three(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/personal_traits/page_three.html",
-                      {"next": "/lesson_one/personal_traits/page_four",
-                       "back": "/lesson_one/personal_traits/page_two",
-                       "solved": solution.solved, "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/personal_traits/page_three.html", {"next": "/lesson_one/personal_traits/page_four",
+                                                                           "back": "/lesson_one/personal_traits/page_two",
+                                                                           "solved": solution.solved, "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors})
 
 
 def personal_traits_page_four(request):
@@ -2259,12 +2165,11 @@ def personal_traits_page_four(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/personal_traits/page_four.html",
-                      {"next": "/lesson_one/personal_traits/page_five",
-                       "back": back, "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/personal_traits/page_four.html", {"next": "/lesson_one/personal_traits/page_five",
+                                                                          "back": back, "solved": solution.solved,
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 def personal_traits_page_five(request):
@@ -2286,12 +2191,11 @@ def personal_traits_page_five(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/personal_traits/page_five.html",
-                      {"next": "/lesson_one/personal_traits/page_six",
-                       "back": back, "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/personal_traits/page_five.html", {"next": "/lesson_one/personal_traits/page_six",
+                                                                          "back": back, "solved": solution.solved,
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 def personal_traits_page_six(request):
@@ -2313,12 +2217,11 @@ def personal_traits_page_six(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/personal_traits/page_six.html",
-                      {"next": "/lesson_one/personal_traits/page_seven",
-                       "back": back, "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/personal_traits/page_six.html", {"next": "/lesson_one/personal_traits/page_seven",
+                                                                         "back": back, "solved": solution.solved,
+                                                                         "lessons": lessons,
+                                                                         "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def personal_traits_page_seven(request):
@@ -2343,11 +2246,8 @@ def personal_traits_page_seven(request):
         return render(request, "lesson1/personal_traits/page_seven.html", {"next": "/lesson_one/he_she_it/page_one",
                                                                            "back": back, "solved": solution.solved,
                                                                            "lessons": lessons,
-                                                                           "lesson": "Unit 1: About Me",
-                                                                           "title": "Personality Traits",
-                                                                           "user": request.session['user'],
-                                                                           "src": src_ref, "parts": parts,
-                                                                           "colors": colors})
+                                                                           "lesson": "Unit 1: About Me", "title": "Personality Traits", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_one(request):
@@ -2373,8 +2273,7 @@ def he_she_it_page_one(request):
         request.session['user'] = UserSerializer(user).data
         return render(request, "lesson1/he_she_it/page_one.html", {"next": "/lesson_one/he_she_it/page_two",
                                                                    "back": back, "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2396,8 +2295,7 @@ def he_she_it_page_two(request):
         return render(request, "lesson1/he_she_it/page_two.html", {"next": "/lesson_one/he_she_it/page_three",
                                                                    "back": "/lesson_one/he_she_it/page_one",
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2419,8 +2317,7 @@ def he_she_it_page_three(request):
         return render(request, "lesson1/he_she_it/page_three.html", {"next": "/lesson_one/he_she_it/page_four",
                                                                      "back": "/lesson_one/he_she_it/page_two",
                                                                      "lessons": lessons,
-                                                                     "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                     "user": request.session['user'],
+                                                                     "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2442,8 +2339,7 @@ def he_she_it_page_four(request):
         return render(request, "lesson1/he_she_it/page_four.html", {"next": "/lesson_one/he_she_it/page_five",
                                                                     "back": "/lesson_one/he_she_it/page_three",
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2467,8 +2363,7 @@ def he_she_it_page_five(request):
                                                                     "back": "/lesson_one/he_she_it/page_four",
                                                                     "solved": solution.solved,
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2494,8 +2389,7 @@ def he_she_it_page_six(request):
         return render(request, "lesson1/he_she_it/page_six.html", {"next": "/lesson_one/he_she_it/page_seven",
                                                                    "back": back, "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2519,8 +2413,7 @@ def he_she_it_page_seven(request):
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_seven.html", {"next": "/lesson_one/he_she_it/page_eight",
                                                                      "back": back, "lessons": lessons,
-                                                                     "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                     "user": request.session['user'],
+                                                                     "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2544,8 +2437,7 @@ def he_she_it_page_eight(request):
                                                                      "back": "/lesson_one/he_she_it/page_seven",
                                                                      "solved": solution.solved,
                                                                      "lessons": lessons,
-                                                                     "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                     "user": request.session['user'],
+                                                                     "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2571,8 +2463,7 @@ def he_she_it_page_nine(request):
         return render(request, "lesson1/he_she_it/page_nine.html", {"next": "/lesson_one/he_she_it/page_ten",
                                                                     "back": back, "solved": solution.solved,
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2598,8 +2489,7 @@ def he_she_it_page_ten(request):
         return render(request, "lesson1/he_she_it/page_ten.html", {"next": "/lesson_one/he_she_it/page_eleven",
                                                                    "back": back, "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2625,9 +2515,7 @@ def he_she_it_page_eleven(request):
         return render(request, "lesson1/he_she_it/page_eleven.html", {"next": "/lesson_one/he_she_it/page_twelve",
                                                                       "back": back, "solved": solution.solved,
                                                                       "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me",
-                                                                      "title": "He She It",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2653,9 +2541,7 @@ def he_she_it_page_twelve(request):
         return render(request, "lesson1/he_she_it/page_twelve.html", {"next": "/lesson_one/he_she_it/page_thirteen",
                                                                       "back": back, "solved": solution.solved,
                                                                       "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me",
-                                                                      "title": "He She It",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2681,11 +2567,8 @@ def he_she_it_page_thirteen(request):
         return render(request, "lesson1/he_she_it/page_thirteen.html", {"next": "/lesson_one/he_she_it/page_fourteen",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "He She It",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts,
-                                                                        "colors": colors})
+                                                                        "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_fourteen(request):
@@ -2710,11 +2593,8 @@ def he_she_it_page_fourteen(request):
         return render(request, "lesson1/he_she_it/page_fourteen.html", {"next": "/lesson_one/he_she_it/page_fifteen",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "He She It",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts,
-                                                                        "colors": colors})
+                                                                        "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_fifteen(request):
@@ -2737,11 +2617,8 @@ def he_she_it_page_fifteen(request):
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_fifteen.html", {"next": "/lesson_one/he_she_it/page_sixteen",
                                                                        "back": back, "lessons": lessons,
-                                                                       "lesson": "Unit 1: About Me",
-                                                                       "title": "He She It",
-                                                                       "user": request.session['user'],
-                                                                       "src": src_ref, "parts": parts,
-                                                                       "colors": colors})
+                                                                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_sixteen(request):
@@ -2764,11 +2641,8 @@ def he_she_it_page_sixteen(request):
                                                                        "back": "/lesson_one/he_she_it/page_fifteen",
                                                                        "solved": solution.solved,
                                                                        "lessons": lessons,
-                                                                       "lesson": "Unit 1: About Me",
-                                                                       "title": "He She It",
-                                                                       "user": request.session['user'],
-                                                                       "src": src_ref, "parts": parts,
-                                                                       "colors": colors})
+                                                                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_seventeen(request):
@@ -2793,11 +2667,8 @@ def he_she_it_page_seventeen(request):
         return render(request, "lesson1/he_she_it/page_seventeen.html", {"next": "/lesson_one/he_she_it/page_eighteen",
                                                                          "back": back, "solved": solution.solved,
                                                                          "lessons": lessons,
-                                                                         "lesson": "Unit 1: About Me",
-                                                                         "title": "He She It",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors})
+                                                                         "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_eighteen(request):
@@ -2820,11 +2691,8 @@ def he_she_it_page_eighteen(request):
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_eighteen.html", {"next": "/lesson_one/he_she_it/page_nineteen",
                                                                         "back": back, "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "He She It",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts,
-                                                                        "colors": colors})
+                                                                        "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_nineteen(request):
@@ -2845,11 +2713,8 @@ def he_she_it_page_nineteen(request):
         return render(request, "lesson1/he_she_it/page_nineteen.html", {"next": "/lesson_one/he_she_it/page_twenty",
                                                                         "back": "/lesson_one/he_she_it/page_eighteen",
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "He She It",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts,
-                                                                        "colors": colors})
+                                                                        "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twenty(request):
@@ -2885,9 +2750,7 @@ def he_she_it_page_twenty(request):
                                                                       "back": "/lesson_one/he_she_it/page_nineteen",
                                                                       "solved": solution.solved,
                                                                       "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me",
-                                                                      "title": "He She It",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -2911,11 +2774,8 @@ def he_she_it_page_twentyone(request):
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_twentyone.html", {"next": "/lesson_one/he_she_it/page_twentytwo",
                                                                          "back": back, "lessons": lessons,
-                                                                         "lesson": "Unit 1: About Me",
-                                                                         "title": "He She It",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors})
+                                                                         "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twentytwo(request):
@@ -2934,13 +2794,12 @@ def he_she_it_page_twentytwo(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_twentytwo.html",
-                      {"next": "/lesson_one/he_she_it/page_twentythree",
-                       "back": "/lesson_one/he_she_it/page_twentyone",
-                       "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_twentytwo.html", {"next": "/lesson_one/he_she_it/page_twentythree",
+                                                                         "back": "/lesson_one/he_she_it/page_twentyone",
+                                                                         "solved": solution.solved,
+                                                                         "lessons": lessons,
+                                                                         "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twentythree(request):
@@ -2961,11 +2820,10 @@ def he_she_it_page_twentythree(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson1/he_she_it/page_twentythree.html",
-                      {"next": "/lesson_one/he_she_it/page_twentyfour",
-                       "back": back, "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_twentythree.html", {"next": "/lesson_one/he_she_it/page_twentyfour",
+                                                                           "back": back, "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twentyfour(request):
@@ -2984,13 +2842,12 @@ def he_she_it_page_twentyfour(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_twentyfour.html",
-                      {"next": "/lesson_one/he_she_it/page_twentyfive",
-                       "back": "/lesson_one/he_she_it/page_twentythree",
-                       "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_twentyfour.html", {"next": "/lesson_one/he_she_it/page_twentyfive",
+                                                                          "back": "/lesson_one/he_she_it/page_twentythree",
+                                                                          "solved": solution.solved,
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twentyfive(request):
@@ -3012,12 +2869,11 @@ def he_she_it_page_twentyfive(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_twentyfive.html",
-                      {"next": "/lesson_one/he_she_it/page_twentysix",
-                       "back": back, "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_twentyfive.html", {"next": "/lesson_one/he_she_it/page_twentysix",
+                                                                          "back": back, "solved": solution.solved,
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twentysix(request):
@@ -3039,12 +2895,11 @@ def he_she_it_page_twentysix(request):
         if not save_solution(User.objects.get(email=request.session['user']['email']), back):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_twentysix.html",
-                      {"next": "/lesson_one/he_she_it/page_twentyseven",
-                       "back": back, "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_twentysix.html", {"next": "/lesson_one/he_she_it/page_twentyseven",
+                                                                         "back": back, "solved": solution.solved,
+                                                                         "lessons": lessons,
+                                                                         "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twentyseven(request):
@@ -3065,11 +2920,10 @@ def he_she_it_page_twentyseven(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson1/he_she_it/page_twentyseven.html",
-                      {"next": "/lesson_one/he_she_it/page_twentyeight",
-                       "back": back, "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_twentyseven.html", {"next": "/lesson_one/he_she_it/page_twentyeight",
+                                                                           "back": back, "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twentyeight(request):
@@ -3088,13 +2942,12 @@ def he_she_it_page_twentyeight(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_twentyeight.html",
-                      {"next": "/lesson_one/he_she_it/page_twentynine",
-                       "back": "/lesson_one/he_she_it/page_twentyseven",
-                       "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_twentyeight.html", {"next": "/lesson_one/he_she_it/page_twentynine",
+                                                                           "back": "/lesson_one/he_she_it/page_twentyseven",
+                                                                           "solved": solution.solved,
+                                                                           "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_twentynine(request):
@@ -3117,11 +2970,8 @@ def he_she_it_page_twentynine(request):
             return redirect(back)
         return render(request, "lesson1/he_she_it/page_twentynine.html", {"next": "/lesson_one/he_she_it/page_thirty",
                                                                           "back": back, "lessons": lessons,
-                                                                          "lesson": "Unit 1: About Me",
-                                                                          "title": "He She It",
-                                                                          "user": request.session['user'],
-                                                                          "src": src_ref, "parts": parts,
-                                                                          "colors": colors})
+                                                                          "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirty(request):
@@ -3142,9 +2992,7 @@ def he_she_it_page_thirty(request):
         return render(request, "lesson1/he_she_it/page_thirty.html", {"next": "/lesson_one/he_she_it/page_thirtyone",
                                                                       "back": "/lesson_one/he_she_it/page_twentynine",
                                                                       "lessons": lessons,
-                                                                      "lesson": "Unit 1: About Me",
-                                                                      "title": "He She It",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -3167,11 +3015,8 @@ def he_she_it_page_thirtyone(request):
         return render(request, "lesson1/he_she_it/page_thirtyone.html", {"next": "/lesson_one/he_she_it/page_thirtytwo",
                                                                          "back": "/lesson_one/he_she_it/page_thirty",
                                                                          "solved": solution.solved, "lessons": lessons,
-                                                                         "lesson": "Unit 1: About Me",
-                                                                         "title": "He She It",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors})
+                                                                         "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirtytwo(request):
@@ -3193,12 +3038,11 @@ def he_she_it_page_thirtytwo(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_thirtytwo.html",
-                      {"next": "/lesson_one/he_she_it/page_thirtythree",
-                       "back": back, "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_thirtytwo.html", {"next": "/lesson_one/he_she_it/page_thirtythree",
+                                                                         "back": back, "solved": solution.solved,
+                                                                         "lessons": lessons,
+                                                                         "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirtythree(request):
@@ -3219,11 +3063,10 @@ def he_she_it_page_thirtythree(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson1/he_she_it/page_thirtythree.html",
-                      {"next": "/lesson_one/he_she_it/page_thirtyfour",
-                       "back": back, "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_thirtythree.html", {"next": "/lesson_one/he_she_it/page_thirtyfour",
+                                                                           "back": back, "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirtyfour(request):
@@ -3245,12 +3088,11 @@ def he_she_it_page_thirtyfour(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_thirtyfour.html",
-                      {"next": "/lesson_one/he_she_it/page_thirtyfive",
-                       "back": back, "solved": solution.solved,
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_thirtyfour.html", {"next": "/lesson_one/he_she_it/page_thirtyfive",
+                                                                          "back": back, "solved": solution.solved,
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirtyfive(request):
@@ -3271,11 +3113,10 @@ def he_she_it_page_thirtyfive(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson1/he_she_it/page_thirtyfive.html",
-                      {"next": "/lesson_one/he_she_it/page_thirtysix",
-                       "back": back, "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_thirtyfive.html", {"next": "/lesson_one/he_she_it/page_thirtysix",
+                                                                          "back": back, "lessons": lessons,
+                                                                          "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirtysix(request):
@@ -3293,12 +3134,11 @@ def he_she_it_page_thirtysix(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson1/he_she_it/page_thirtysix.html",
-                      {"next": "/lesson_one/he_she_it/page_thirtyseven",
-                       "back": "/lesson_one/he_she_it/page_thirtyfive",
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_thirtysix.html", {"next": "/lesson_one/he_she_it/page_thirtyseven",
+                                                                         "back": "/lesson_one/he_she_it/page_thirtyfive",
+                                                                         "lessons": lessons,
+                                                                         "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirtyseven(request):
@@ -3316,12 +3156,11 @@ def he_she_it_page_thirtyseven(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson1/he_she_it/page_thirtyseven.html",
-                      {"next": "/lesson_one/he_she_it/page_thirtyeight",
-                       "back": "/lesson_one/he_she_it/page_thirtysix",
-                       "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_thirtyseven.html", {"next": "/lesson_one/he_she_it/page_thirtyeight",
+                                                                           "back": "/lesson_one/he_she_it/page_thirtysix",
+                                                                           "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirtyeight(request):
@@ -3340,12 +3179,11 @@ def he_she_it_page_thirtyeight(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_thirtyeight.html",
-                      {"next": "/lesson_one/he_she_it/page_thirtynine",
-                       "back": "/lesson_one/he_she_it/page_thirtyseven",
-                       "solved": solution.solved, "lessons": lessons,
-                       "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors})
+        return render(request, "lesson1/he_she_it/page_thirtyeight.html", {"next": "/lesson_one/he_she_it/page_thirtynine",
+                                                                           "back": "/lesson_one/he_she_it/page_thirtyseven",
+                                                                           "solved": solution.solved, "lessons": lessons,
+                                                                           "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_thirtynine(request):
@@ -3370,11 +3208,8 @@ def he_she_it_page_thirtynine(request):
         return render(request, "lesson1/he_she_it/page_thirtynine.html", {"next": "/lesson_one/he_she_it/page_forty",
                                                                           "back": back, "solved": solution.solved,
                                                                           "lessons": lessons,
-                                                                          "lesson": "Unit 1: About Me",
-                                                                          "title": "He She It",
-                                                                          "user": request.session['user'],
-                                                                          "src": src_ref, "parts": parts,
-                                                                          "colors": colors})
+                                                                          "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_forty(request):
@@ -3399,8 +3234,7 @@ def he_she_it_page_forty(request):
         return render(request, "lesson1/he_she_it/page_forty.html", {"next": "/lesson_one/he_she_it/page_fortyone",
                                                                      "back": back, "solved": solution.solved,
                                                                      "lessons": lessons,
-                                                                     "lesson": "Unit 1: About Me", "title": "He She It",
-                                                                     "user": request.session['user'],
+                                                                     "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors})
 
 
@@ -3426,11 +3260,8 @@ def he_she_it_page_fortyone(request):
         return render(request, "lesson1/he_she_it/page_fortyone.html", {"next": "/lesson_one/he_she_it/page_fortytwo",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "He She It",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts,
-                                                                        "colors": colors})
+                                                                        "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors})
 
 
 def he_she_it_page_fortytwo(request):
@@ -3455,11 +3286,8 @@ def he_she_it_page_fortytwo(request):
         return render(request, "lesson1/he_she_it/page_fortytwo.html", {"next": "/lesson_two/title",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 1: About Me",
-                                                                        "title": "He She It",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts,
-                                                                        "colors": colors})
+                                                                        "lesson": "Unit 1: About Me", "title": "He She It", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors})
 
 
 # UNIT 2
@@ -3473,10 +3301,9 @@ def lesson_two_title(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         if request.method == "GET":
-            return render(request, "lesson2/title_page.html",
-                          {"next": "/lesson_two/day_week_month/page_one", "back": back,
-                           "lessons": lessons,
-                           "lesson": "Unit 2", "title": "", "user": request.session['user']})
+            return render(request, "lesson2/title_page.html", {"next": "/lesson_two/day_week_month/page_one", "back": back,
+                                                               "lessons": lessons,
+                                                               "lesson": "Unit 2", "title": "", "user": request.session['user']})
 
 
 def day_week_month_page_one(request):
@@ -3500,8 +3327,7 @@ def day_week_month_page_one(request):
                                                                         "back": "/lesson_two/title",
                                                                         "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Day Week Month",
-                                                                        "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -3526,8 +3352,7 @@ def day_week_month_page_two(request):
                                                                         "back": "/lesson_two/day_week_month/page_one",
                                                                         "solved": solution.solved,
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Day Week Month",
-                                                                        "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -3547,13 +3372,12 @@ def day_week_month_page_three(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/day_week_month/page_three.html",
-                      {"next": "/lesson_two/day_week_month/page_four",
-                       "back": "/lesson_two/day_week_month/page_two",
-                       "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/day_week_month/page_three.html", {"next": "/lesson_two/day_week_month/page_four",
+                                                                          "back": "/lesson_two/day_week_month/page_two",
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
+                                                                          })
 
 
 def day_week_month_page_four(request):
@@ -3575,10 +3399,8 @@ def day_week_month_page_four(request):
         return render(request, "lesson2/day_week_month/page_four.html", {"next": "/lesson_two/day_week_month/page_five",
                                                                          "back": "/lesson_two/day_week_month/page_three",
                                                                          "lessons": lessons, "solved": solution.solved,
-                                                                         "lesson": "Unit 2", "title": "Day Week Month",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors
+                                                                         "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                          })
 
 
@@ -3604,10 +3426,8 @@ def day_week_month_page_five(request):
         return render(request, "lesson2/day_week_month/page_five.html", {"next": "/lesson_two/day_week_month/page_six",
                                                                          "back": back,
                                                                          "lessons": lessons, "solved": solution.solved,
-                                                                         "lesson": "Unit 2", "title": "Day Week Month",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors
+                                                                         "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                          })
 
 
@@ -3633,8 +3453,7 @@ def day_week_month_page_six(request):
         return render(request, "lesson2/day_week_month/page_six.html", {"next": "/lesson_two/day_week_month/page_seven",
                                                                         "back": back,
                                                                         "lessons": lessons, "solved": solution.solved,
-                                                                        "lesson": "Unit 2", "title": "Day Week Month",
-                                                                        "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -3658,13 +3477,12 @@ def day_week_month_page_seven(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/day_week_month/page_seven.html",
-                      {"next": "/lesson_two/day_week_month/page_eight",
-                       "back": back,
-                       "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/day_week_month/page_seven.html", {"next": "/lesson_two/day_week_month/page_eight",
+                                                                          "back": back,
+                                                                          "lessons": lessons, "solved": solution.solved,
+                                                                          "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
+                                                                          })
 
 
 def day_week_month_page_eight(request):
@@ -3685,13 +3503,12 @@ def day_week_month_page_eight(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson2/day_week_month/page_eight.html",
-                      {"next": "/lesson_two/day_week_month/page_nine",
-                       "back": back,
-                       "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/day_week_month/page_eight.html", {"next": "/lesson_two/day_week_month/page_nine",
+                                                                          "back": back,
+                                                                          "lessons": lessons,
+                                                                          "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
+                                                                          })
 
 
 def day_week_month_page_nine(request):
@@ -3713,10 +3530,8 @@ def day_week_month_page_nine(request):
         return render(request, "lesson2/day_week_month/page_nine.html", {"next": "/lesson_two/day_week_month/page_ten",
                                                                          "back": "/lesson_two/day_week_month/page_eight",
                                                                          "lessons": lessons, "solved": solution.solved,
-                                                                         "lesson": "Unit 2", "title": "Day Week Month",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors
+                                                                         "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                          })
 
 
@@ -3740,12 +3555,11 @@ def day_week_month_page_ten(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_ten.html",
-                      {"next": "/lesson_two/day_week_month/page_eleven",
-                       "back": back, "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/day_week_month/page_ten.html", {"next": "/lesson_two/day_week_month/page_eleven",
+                                                                        "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                        "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors
+                                                                        })
 
 
 def day_week_month_page_eleven(request):
@@ -3768,12 +3582,11 @@ def day_week_month_page_eleven(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         user.add_chapter('Day Week Month')
-        return render(request, "lesson2/day_week_month/page_eleven.html",
-                      {"next": "/lesson_two/day_week_month/page_twelve",
-                       "back": back, "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/day_week_month/page_eleven.html", {"next": "/lesson_two/day_week_month/page_twelve",
+                                                                           "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                           "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors
+                                                                           })
 
 
 def day_week_month_page_twelve(request):
@@ -3797,13 +3610,9 @@ def day_week_month_page_twelve(request):
         solution = get_or_create_solution(user, request.path)
         user.add_chapter('Day Week Month')
         return render(request, "lesson2/day_week_month/page_twelve.html", {"next": "/lesson_two/articles/page_one",
-                                                                           "back": back, "lessons": lessons,
-                                                                           "solved": solution.solved,
-                                                                           "lesson": "Unit 2",
-                                                                           "title": "Day Week Month",
-                                                                           "user": request.session['user'],
-                                                                           "src": src_ref, "parts": parts,
-                                                                           "colors": colors
+                                                                           "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                           "lesson": "Unit 2", "title": "Day Week Month", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors
                                                                            })
 
 
@@ -3828,8 +3637,7 @@ def articles_page_one(request):
         user.add_chapter('Articles')
         return render(request, "lesson2/articles/page_one.html", {"next": "/lesson_two/articles/page_two",
                                                                   "back": back, "lessons": lessons,
-                                                                  "lesson": "Unit 2", "title": "Articles",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -3850,10 +3658,8 @@ def articles_page_two(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_two.html", {"next": "/lesson_two/articles/page_three",
-                                                                  "back": "/lesson_two/articles/page_one",
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 2", "title": "Articles",
-                                                                  "user": request.session['user'],
+                                                                  "back": "/lesson_two/articles/page_one", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -3874,10 +3680,8 @@ def articles_page_three(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_three.html", {"next": "/lesson_two/articles/page_four",
-                                                                    "back": "/lesson_two/articles/page_two",
-                                                                    "lessons": lessons,
-                                                                    "lesson": "Unit 2", "title": "Articles",
-                                                                    "user": request.session['user'],
+                                                                    "back": "/lesson_two/articles/page_two", "lessons": lessons,
+                                                                    "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
@@ -3898,10 +3702,8 @@ def articles_page_four(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_four.html", {"next": "/lesson_two/articles/page_five",
-                                                                   "back": "/lesson_two/articles/page_three",
-                                                                   "lessons": lessons,
-                                                                   "lesson": "Unit 2", "title": "Articles",
-                                                                   "user": request.session['user'],
+                                                                   "back": "/lesson_two/articles/page_three", "lessons": lessons,
+                                                                   "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -3922,10 +3724,8 @@ def articles_page_five(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_five.html", {"next": "/lesson_two/articles/page_six",
-                                                                   "back": "/lesson_two/articles/page_four",
-                                                                   "lessons": lessons,
-                                                                   "lesson": "Unit 2", "title": "Articles",
-                                                                   "user": request.session['user'],
+                                                                   "back": "/lesson_two/articles/page_four", "lessons": lessons,
+                                                                   "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -3946,10 +3746,8 @@ def articles_page_six(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_six.html", {"next": "/lesson_two/articles/page_seven",
-                                                                  "back": "/lesson_two/articles/page_five",
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 2", "title": "Articles",
-                                                                  "user": request.session['user'],
+                                                                  "back": "/lesson_two/articles/page_five", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -3971,11 +3769,9 @@ def articles_page_seven(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/articles/page_seven.html", {"next": "/lesson_two/articles/page_eight",
-                                                                    "back": "/lesson_two/articles/page_six",
-                                                                    "lessons": lessons,
+                                                                    "back": "/lesson_two/articles/page_six", "lessons": lessons,
                                                                     "solved": solution.solved,
-                                                                    "lesson": "Unit 2", "title": "Articles",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
@@ -4002,8 +3798,7 @@ def articles_page_eight(request):
         return render(request, "lesson2/articles/page_eight.html", {"next": "/lesson_two/articles/page_nine",
                                                                     "back": back, "lessons": lessons,
                                                                     "solved": solution.solved,
-                                                                    "lesson": "Unit 2", "title": "Articles",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
@@ -4028,8 +3823,7 @@ def articles_page_nine(request):
             return redirect(back)
         return render(request, "lesson2/articles/page_nine.html", {"next": "/lesson_two/articles/page_ten",
                                                                    "back": back, "lessons": lessons,
-                                                                   "lesson": "Unit 2", "title": "Articles",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -4053,8 +3847,7 @@ def articles_page_ten(request):
         return render(request, "lesson2/articles/page_ten.html", {"next": "/lesson_two/articles/page_eleven",
                                                                   "back": "/lesson_two/articles/page_nine",
                                                                   "solved": solution.solved, "lessons": lessons,
-                                                                  "lesson": "Unit 2", "title": "Articles",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -4079,8 +3872,7 @@ def articles_page_eleven(request):
             return redirect(back)
         return render(request, "lesson2/articles/page_eleven.html", {"next": "/lesson_two/articles/page_twelve",
                                                                      "back": back, "lessons": lessons,
-                                                                     "lesson": "Unit 2", "title": "Articles",
-                                                                     "user": request.session['user'],
+                                                                     "lesson": "Unit 2", "title": "Articles", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors
                                                                      })
 
@@ -4101,10 +3893,8 @@ def articles_page_twelve(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_twelve.html", {"next": "/lesson_two/articles/page_thirteen",
-                                                                     "back": "/lesson_two/articles/page_eleven",
-                                                                     "lessons": lessons,
-                                                                     "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                     "user": request.session['user'],
+                                                                     "back": "/lesson_two/articles/page_eleven", "lessons": lessons,
+                                                                     "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors
                                                                      })
 
@@ -4125,10 +3915,8 @@ def articles_page_thirteen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_thirteen.html", {"next": "/lesson_two/articles/page_fourteen",
-                                                                       "back": "/lesson_two/articles/page_twelve",
-                                                                       "lessons": lessons,
-                                                                       "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                       "user": request.session['user'],
+                                                                       "back": "/lesson_two/articles/page_twelve", "lessons": lessons,
+                                                                       "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                        "src": src_ref, "parts": parts, "colors": colors
                                                                        })
 
@@ -4152,8 +3940,7 @@ def articles_page_fourteen(request):
         return render(request, "lesson2/articles/page_fourteen.html", {"next": "/lesson_two/articles/page_fifteen",
                                                                        "back": "/lesson_two/articles/page_thirteen",
                                                                        "lessons": lessons, "solved": solution.solved,
-                                                                       "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                       "user": request.session['user'],
+                                                                       "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                        "src": src_ref, "parts": parts, "colors": colors
                                                                        })
 
@@ -4178,10 +3965,8 @@ def articles_page_fifteen(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/articles/page_fifteen.html", {"next": "/lesson_two/articles/page_sixteen",
-                                                                      "back": back, "lessons": lessons,
-                                                                      "solved": solution.solved,
-                                                                      "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                      "user": request.session['user'],
+                                                                      "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                      "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors
                                                                       })
 
@@ -4206,8 +3991,7 @@ def articles_page_sixteen(request):
             return redirect(back)
         return render(request, "lesson2/articles/page_sixteen.html", {"next": "/lesson_two/articles/page_seventeen",
                                                                       "back": back, "lessons": lessons,
-                                                                      "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors
                                                                       })
 
@@ -4228,10 +4012,8 @@ def articles_page_seventeen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_seventeen.html", {"next": "/lesson_two/articles/page_eighteen",
-                                                                        "back": "/lesson_two/articles/page_sixteen",
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                        "user": request.session['user'],
+                                                                        "back": "/lesson_two/articles/page_sixteen", "lessons": lessons,
+                                                                        "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -4252,10 +4034,8 @@ def articles_page_eighteen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_eighteen.html", {"next": "/lesson_two/articles/page_nineteen",
-                                                                       "back": "/lesson_two/articles/page_seventeen",
-                                                                       "lessons": lessons,
-                                                                       "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                       "user": request.session['user'],
+                                                                       "back": "/lesson_two/articles/page_seventeen", "lessons": lessons,
+                                                                       "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                        "src": src_ref, "parts": parts, "colors": colors
                                                                        })
 
@@ -4276,10 +4056,8 @@ def articles_page_nineteen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_nineteen.html", {"next": "/lesson_two/articles/page_twenty",
-                                                                       "back": "/lesson_two/articles/page_eighteen",
-                                                                       "lessons": lessons,
-                                                                       "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                       "user": request.session['user'],
+                                                                       "back": "/lesson_two/articles/page_eighteen", "lessons": lessons,
+                                                                       "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                        "src": src_ref, "parts": parts, "colors": colors
                                                                        })
 
@@ -4300,10 +4078,8 @@ def articles_page_twenty(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/articles/page_twenty.html", {"next": "/lesson_two/articles/page_twentyone",
-                                                                     "back": "/lesson_two/articles/page_nineteen",
-                                                                     "lessons": lessons,
-                                                                     "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                     "user": request.session['user'],
+                                                                     "back": "/lesson_two/articles/page_nineteen", "lessons": lessons,
+                                                                     "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors
                                                                      })
 
@@ -4327,8 +4103,7 @@ def articles_page_twentyone(request):
         return render(request, "lesson2/articles/page_twentyone.html", {"next": "/lesson_two/articles/page_twentytwo",
                                                                         "back": "/lesson_two/articles/page_twenty",
                                                                         "solved": solution.solved, "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                        "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -4355,8 +4130,7 @@ def articles_page_twentytwo(request):
         return render(request, "lesson2/articles/page_twentytwo.html", {"next": "/lesson_two/articles/page_twentythree",
                                                                         "back": back,
                                                                         "solved": solution.solved, "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Articles * Extra",
-                                                                        "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -4383,11 +4157,8 @@ def articles_page_twentythree(request):
         return render(request, "lesson2/articles/page_twentythree.html", {"next": "/lesson_two/family/page_one",
                                                                           "back": back,
                                                                           "solved": solution.solved, "lessons": lessons,
-                                                                          "lesson": "Unit 2",
-                                                                          "title": "Articles * Extra",
-                                                                          "user": request.session['user'],
-                                                                          "src": src_ref, "parts": parts,
-                                                                          "colors": colors
+                                                                          "lesson": "Unit 2", "title": "Articles * Extra", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
                                                                           })
 
 
@@ -4412,8 +4183,7 @@ def family_page_one(request):
         user.add_chapter('Family Members')
         return render(request, "lesson2/family/page_one.html", {"next": "/lesson_two/family/page_two",
                                                                 "back": back, "lessons": lessons,
-                                                                "lesson": "Unit 2", "title": "Family Members",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -4434,10 +4204,8 @@ def family_page_two(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_two.html", {"next": "/lesson_two/family/page_three",
-                                                                "back": "/lesson_two/family/page_one",
-                                                                "lessons": lessons,
-                                                                "lesson": "Unit 2", "title": "Family Members",
-                                                                "user": request.session['user'],
+                                                                "back": "/lesson_two/family/page_one", "lessons": lessons,
+                                                                "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -4458,10 +4226,8 @@ def family_page_three(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_three.html", {"next": "/lesson_two/family/page_four",
-                                                                  "back": "/lesson_two/family/page_two",
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 2", "title": "Family Members",
-                                                                  "user": request.session['user'],
+                                                                  "back": "/lesson_two/family/page_two", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -4482,10 +4248,8 @@ def family_page_four(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_four.html", {"next": "/lesson_two/family/page_five",
-                                                                 "back": "/lesson_two/family/page_three",
-                                                                 "lessons": lessons,
-                                                                 "lesson": "Unit 2", "title": "Family Members",
-                                                                 "user": request.session['user'],
+                                                                 "back": "/lesson_two/family/page_three", "lessons": lessons,
+                                                                 "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -4506,10 +4270,8 @@ def family_page_five(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_five.html", {"next": "/lesson_two/family/page_six",
-                                                                 "back": "/lesson_two/family/page_four",
-                                                                 "lessons": lessons,
-                                                                 "lesson": "Unit 2", "title": "Family Members",
-                                                                 "user": request.session['user'],
+                                                                 "back": "/lesson_two/family/page_four", "lessons": lessons,
+                                                                 "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -4530,10 +4292,8 @@ def family_page_six(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_six.html", {"next": "/lesson_two/family/page_seven",
-                                                                "back": "/lesson_two/family/page_five",
-                                                                "lessons": lessons,
-                                                                "lesson": "Unit 2", "title": "Family Members",
-                                                                "user": request.session['user'],
+                                                                "back": "/lesson_two/family/page_five", "lessons": lessons,
+                                                                "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -4554,10 +4314,8 @@ def family_page_seven(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_seven.html", {"next": "/lesson_two/family/page_eight",
-                                                                  "back": "/lesson_two/family/page_six",
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 2", "title": "Family Members",
-                                                                  "user": request.session['user'],
+                                                                  "back": "/lesson_two/family/page_six", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -4578,10 +4336,8 @@ def family_page_eight(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_eight.html", {"next": "/lesson_two/family/page_nine",
-                                                                  "back": "/lesson_two/family/page_seven",
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 2", "title": "Family Members",
-                                                                  "user": request.session['user'],
+                                                                  "back": "/lesson_two/family/page_seven", "lessons": lessons,
+                                                                  "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -4602,10 +4358,8 @@ def family_page_nine(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_nine.html", {"next": "/lesson_two/family/page_ten",
-                                                                 "back": "/lesson_two/family/page_eight",
-                                                                 "lessons": lessons,
-                                                                 "lesson": "Unit 2", "title": "Family Members",
-                                                                 "user": request.session['user'],
+                                                                 "back": "/lesson_two/family/page_eight", "lessons": lessons,
+                                                                 "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -4626,10 +4380,8 @@ def family_page_ten(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/family/page_ten.html", {"next": "/lesson_two/family/page_eleven",
-                                                                "back": "/lesson_two/family/page_nine",
-                                                                "lessons": lessons,
-                                                                "lesson": "Unit 2", "title": "Family Members",
-                                                                "user": request.session['user'],
+                                                                "back": "/lesson_two/family/page_nine", "lessons": lessons,
+                                                                "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -4653,8 +4405,7 @@ def family_page_eleven(request):
         return render(request, "lesson2/family/page_eleven.html", {"next": "/lesson_two/family/page_twelve",
                                                                    "back": "/lesson_two/family/page_ten",
                                                                    "lessons": lessons, "solved": solution.solved,
-                                                                   "lesson": "Unit 2", "title": "Family Members",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -4679,10 +4430,8 @@ def family_page_twelve(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/family/page_twelve.html", {"next": "/lesson_two/family/page_thirteen",
-                                                                   "back": back, "lessons": lessons,
-                                                                   "solved": solution.solved,
-                                                                   "lesson": "Unit 2", "title": "Family Members",
-                                                                   "user": request.session['user'],
+                                                                   "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                   "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -4707,10 +4456,8 @@ def family_page_thirteen(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/family/page_thirteen.html", {"next": "/lesson_two/family/page_fourteen",
-                                                                     "back": back, "lessons": lessons,
-                                                                     "solved": solution.solved,
-                                                                     "lesson": "Unit 2", "title": "Family Members",
-                                                                     "user": request.session['user'],
+                                                                     "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                     "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors
                                                                      })
 
@@ -4735,10 +4482,8 @@ def family_page_fourteen(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/family/page_fourteen.html", {"next": "/lesson_two/family/page_fifteen",
-                                                                     "back": back, "lessons": lessons,
-                                                                     "solved": solution.solved,
-                                                                     "lesson": "Unit 2", "title": "Family Members",
-                                                                     "user": request.session['user'],
+                                                                     "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                     "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors
                                                                      })
 
@@ -4763,10 +4508,8 @@ def family_page_fifteen(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/family/page_fifteen.html", {"next": "/lesson_two/family/page_sixteen",
-                                                                    "back": back, "lessons": lessons,
-                                                                    "solved": solution.solved,
-                                                                    "lesson": "Unit 2", "title": "Family Members",
-                                                                    "user": request.session['user'],
+                                                                    "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                    "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
@@ -4791,10 +4534,8 @@ def family_page_sixteen(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/family/page_sixteen.html", {"next": "/lesson_two/clothes/page_one",
-                                                                    "back": back, "lessons": lessons,
-                                                                    "solved": solution.solved,
-                                                                    "lesson": "Unit 2", "title": "Family Members",
-                                                                    "user": request.session['user'],
+                                                                    "back": back, "lessons": lessons, "solved": solution.solved,
+                                                                    "lesson": "Unit 2", "title": "Family Members", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
@@ -4820,8 +4561,7 @@ def clothes_page_one(request):
         user.add_chapter('Clothes')
         return render(request, "lesson2/clothes/page_one.html", {"next": "/lesson_two/clothes/page_two",
                                                                  "back": back, "lessons": lessons,
-                                                                 "lesson": "Unit 2", "title": "Clothes",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -4842,10 +4582,8 @@ def clothes_page_two(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/clothes/page_two.html", {"next": "/lesson_two/clothes/page_three",
-                                                                 "back": "/lesson_two/clothes/page_one",
-                                                                 "lessons": lessons,
-                                                                 "lesson": "Unit 2", "title": "Clothes",
-                                                                 "user": request.session['user'],
+                                                                 "back": "/lesson_two/clothes/page_one", "lessons": lessons,
+                                                                 "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -4869,8 +4607,7 @@ def clothes_page_three(request):
         return render(request, "lesson2/clothes/page_three.html", {"next": "/lesson_two/clothes/page_four",
                                                                    "back": "/lesson_two/clothes/page_two",
                                                                    "lessons": lessons, "solved": solution.solved,
-                                                                   "lesson": "Unit 2", "title": "Clothes",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -4896,8 +4633,7 @@ def clothes_page_four(request):
         return render(request, "lesson2/clothes/page_four.html", {"next": "/lesson_two/clothes/page_five",
                                                                   "back": back,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 2", "title": "Clothes",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -4921,8 +4657,7 @@ def clothes_page_five(request):
         return render(request, "lesson2/clothes/page_five.html", {"next": "/lesson_two/clothes/page_six",
                                                                   "back": "/lesson_two/clothes/page_four",
                                                                   "lessons": lessons, "solved": solution.solved,
-                                                                  "lesson": "Unit 2", "title": "Clothes",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -4948,8 +4683,7 @@ def clothes_page_six(request):
         return render(request, "lesson2/clothes/page_six.html", {"next": "/lesson_two/clothes/page_seven",
                                                                  "back": back,
                                                                  "lessons": lessons,
-                                                                 "lesson": "Unit 2", "title": "Clothes",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -4973,8 +4707,7 @@ def clothes_page_seven(request):
         return render(request, "lesson2/clothes/page_seven.html", {"next": "/lesson_two/clothes/page_eight",
                                                                    "back": "/lesson_two/clothes/page_six",
                                                                    "lessons": lessons, "solved": solution.solved,
-                                                                   "lesson": "Unit 2", "title": "Clothes",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -5000,8 +4733,7 @@ def clothes_page_eight(request):
         return render(request, "lesson2/clothes/page_eight.html", {"next": "/lesson_two/clothes/page_nine",
                                                                    "back": back,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 2", "title": "Clothes",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -5025,8 +4757,7 @@ def clothes_page_nine(request):
         return render(request, "lesson2/clothes/page_nine.html", {"next": "/lesson_two/clothes/page_ten",
                                                                   "back": "/lesson_two/clothes/page_eight",
                                                                   "lessons": lessons, "solved": solution.solved,
-                                                                  "lesson": "Unit 2", "title": "Clothes",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -5053,8 +4784,7 @@ def clothes_page_ten(request):
         return render(request, "lesson2/clothes/page_ten.html", {"next": "/lesson_two/clothes/page_eleven",
                                                                  "back": back,
                                                                  "lessons": lessons, "solved": solution.solved,
-                                                                 "lesson": "Unit 2", "title": "Clothes",
-                                                                 "user": request.session['user'],
+                                                                 "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
                                                                  })
 
@@ -5078,8 +4808,7 @@ def clothes_page_eleven(request):
         return render(request, "lesson2/clothes/page_eleven.html", {"next": "/lesson_two/clothes/page_twelve",
                                                                     "back": "/lesson_two/clothes/page_ten",
                                                                     "lessons": lessons, "solved": solution.solved,
-                                                                    "lesson": "Unit 2", "title": "Clothes",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
@@ -5106,8 +4835,7 @@ def clothes_page_twelve(request):
         return render(request, "lesson2/clothes/page_twelve.html", {"next": "/lesson_two/clothes/page_thirteen",
                                                                     "back": back,
                                                                     "lessons": lessons, "solved": solution.solved,
-                                                                    "lesson": "Unit 2", "title": "Clothes",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
@@ -5134,8 +4862,7 @@ def clothes_page_thirteen(request):
         return render(request, "lesson2/clothes/page_thirteen.html", {"next": "/lesson_two/clothes/page_fourteen",
                                                                       "back": back,
                                                                       "lessons": lessons, "solved": solution.solved,
-                                                                      "lesson": "Unit 2", "title": "Clothes",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors
                                                                       })
 
@@ -5162,8 +4889,7 @@ def clothes_page_fourteen(request):
         return render(request, "lesson2/clothes/page_fourteen.html", {"next": "/lesson_two/clothes/page_fifteen",
                                                                       "back": back,
                                                                       "lessons": lessons, "solved": solution.solved,
-                                                                      "lesson": "Unit 2", "title": "Clothes",
-                                                                      "user": request.session['user'],
+                                                                      "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                       "src": src_ref, "parts": parts, "colors": colors
                                                                       })
 
@@ -5190,8 +4916,7 @@ def clothes_page_fifteen(request):
         return render(request, "lesson2/clothes/page_fifteen.html", {"next": "/lesson_two/time/page_one",
                                                                      "back": back,
                                                                      "lessons": lessons, "solved": solution.solved,
-                                                                     "lesson": "Unit 2", "title": "Clothes",
-                                                                     "user": request.session['user'],
+                                                                     "lesson": "Unit 2", "title": "Clothes", "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts, "colors": colors
                                                                      })
 
@@ -5217,8 +4942,7 @@ def time_page_one(request):
         user.add_chapter("Time")
         return render(request, "lesson2/time/page_one.html", {"next": "/lesson_two/time/page_two",
                                                               "back": back, "lessons": lessons,
-                                                              "lesson": "Unit 2", "title": "Time",
-                                                              "user": request.session['user'],
+                                                              "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                               "src": src_ref, "parts": parts, "colors": colors
                                                               })
 
@@ -5240,8 +4964,7 @@ def time_page_two(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/time/page_two.html", {"next": "/lesson_two/time/page_three",
                                                               "back": "/lesson_two/time/page_one", "lessons": lessons,
-                                                              "lesson": "Unit 2", "title": "Time",
-                                                              "user": request.session['user'],
+                                                              "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                               "src": src_ref, "parts": parts, "colors": colors
                                                               })
 
@@ -5263,8 +4986,7 @@ def time_page_three(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/time/page_three.html", {"next": "/lesson_two/time/page_four",
                                                                 "back": "/lesson_two/time/page_two", "lessons": lessons,
-                                                                "lesson": "Unit 2", "title": "Time",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -5285,10 +5007,8 @@ def time_page_four(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/time/page_four.html", {"next": "/lesson_two/time/page_five",
-                                                               "back": "/lesson_two/time/page_three",
-                                                               "lessons": lessons,
-                                                               "lesson": "Unit 2", "title": "Time",
-                                                               "user": request.session['user'],
+                                                               "back": "/lesson_two/time/page_three", "lessons": lessons,
+                                                               "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                })
 
@@ -5310,8 +5030,7 @@ def time_page_five(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/time/page_five.html", {"next": "/lesson_two/time/page_six",
                                                                "back": "/lesson_two/time/page_four", "lessons": lessons,
-                                                               "lesson": "Unit 2", "title": "Time",
-                                                               "user": request.session['user'],
+                                                               "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                })
 
@@ -5333,8 +5052,7 @@ def time_page_six(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/time/page_six.html", {"next": "/lesson_two/time/page_seven",
                                                               "back": "/lesson_two/time/page_five", "lessons": lessons,
-                                                              "lesson": "Unit 2", "title": "Time",
-                                                              "user": request.session['user'],
+                                                              "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                               "src": src_ref, "parts": parts, "colors": colors
                                                               })
 
@@ -5356,8 +5074,7 @@ def time_page_seven(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/time/page_seven.html", {"next": "/lesson_two/time/page_eight",
                                                                 "back": "/lesson_two/time/page_six", "lessons": lessons,
-                                                                "lesson": "Unit 2", "title": "Time",
-                                                                "user": request.session['user'],
+                                                                "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -5378,10 +5095,8 @@ def time_page_eight(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/time/page_eight.html", {"next": "/lesson_two/time/page_nine",
-                                                                "back": "/lesson_two/time/page_seven",
-                                                                "lessons": lessons,
-                                                                "lesson": "Unit 2", "title": "Time",
-                                                                "user": request.session['user'],
+                                                                "back": "/lesson_two/time/page_seven", "lessons": lessons,
+                                                                "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
 
@@ -5405,8 +5120,7 @@ def time_page_nine(request):
         return render(request, "lesson2/time/page_nine.html", {"next": "/lesson_two/time/page_nine",
                                                                "back": "/lesson_two/time/page_eight",
                                                                "solved": solution.solved, "lessons": lessons,
-                                                               "lesson": "Unit 2", "title": "Time",
-                                                               "user": request.session['user'],
+                                                               "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                })
 
@@ -5431,10 +5145,8 @@ def time_page_ten(request):
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/time/page_ten.html", {"next": "/lesson_two/present_simple/page_one",
-                                                              "back": back, "solved": solution.solved,
-                                                              "lessons": lessons,
-                                                              "lesson": "Unit 2", "title": "Time",
-                                                              "user": request.session['user'],
+                                                              "back": back, "solved": solution.solved, "lessons": lessons,
+                                                              "lesson": "Unit 2", "title": "Time", "user": request.session['user'],
                                                               "src": src_ref, "parts": parts, "colors": colors
                                                               })
 
@@ -5460,8 +5172,7 @@ def present_simple_page_one(request):
         user.add_chapter("Present Simple")
         return render(request, "lesson2/present_simple/page_one.html", {"next": "/lesson_two/present_simple/page_two",
                                                                         "back": back, "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Present Simple",
-                                                                        "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -5482,10 +5193,8 @@ def present_simple_page_two(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         return render(request, "lesson2/present_simple/page_two.html", {"next": "/lesson_two/present_simple/page_three",
-                                                                        "back": "/lesson_two/present_simple/page_one",
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Present Simple",
-                                                                        "user": request.session['user'],
+                                                                        "back": "/lesson_two/present_simple/page_one", "lessons": lessons,
+                                                                        "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -5505,12 +5214,11 @@ def present_simple_page_three(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/present_simple/page_three.html",
-                      {"next": "/lesson_two/present_simple/page_four",
-                       "back": "/lesson_two/present_simple/page_two", "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_three.html", {"next": "/lesson_two/present_simple/page_four",
+                                                                          "back": "/lesson_two/present_simple/page_two", "lessons": lessons,
+                                                                          "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
+                                                                          })
 
 
 def present_simple_page_four(request):
@@ -5532,10 +5240,8 @@ def present_simple_page_four(request):
         return render(request, "lesson2/present_simple/page_four.html", {"next": "/lesson_two/present_simple/page_five",
                                                                          "back": "/lesson_two/present_simple/page_three",
                                                                          "lessons": lessons, "solved": solution.solved,
-                                                                         "lesson": "Unit 2", "title": "Present Simple",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors
+                                                                         "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                          })
 
 
@@ -5559,10 +5265,8 @@ def present_simple_page_five(request):
             return redirect(back)
         return render(request, "lesson2/present_simple/page_five.html", {"next": "/lesson_two/present_simple/page_six",
                                                                          "back": back, "lessons": lessons,
-                                                                         "lesson": "Unit 2", "title": "Present Simple",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors
+                                                                         "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                          })
 
 
@@ -5585,8 +5289,7 @@ def present_simple_page_six(request):
         return render(request, "lesson2/present_simple/page_six.html", {"next": "/lesson_two/present_simple/page_seven",
                                                                         "back": "/lesson_two/present_simple/page_five",
                                                                         "lessons": lessons, "solved": solution.solved,
-                                                                        "lesson": "Unit 2", "title": "Present Simple",
-                                                                        "user": request.session['user'],
+                                                                        "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
 
@@ -5609,12 +5312,11 @@ def present_simple_page_seven(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson2/present_simple/page_seven.html",
-                      {"next": "/lesson_two/present_simple/page_eight",
-                       "back": back, "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_seven.html", {"next": "/lesson_two/present_simple/page_eight",
+                                                                          "back": back, "lessons": lessons,
+                                                                          "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
+                                                                          })
 
 
 def present_simple_page_eight(request):
@@ -5633,13 +5335,12 @@ def present_simple_page_eight(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/present_simple/page_eight.html",
-                      {"next": "/lesson_two/present_simple/page_nine",
-                       "back": "/lesson_two/present_simple/page_seven",
-                       "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_eight.html", {"next": "/lesson_two/present_simple/page_nine",
+                                                                          "back": "/lesson_two/present_simple/page_seven",
+                                                                          "lessons": lessons, "solved": solution.solved,
+                                                                          "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                          "src": src_ref, "parts": parts, "colors": colors
+                                                                          })
 
 
 def present_simple_page_nine(request):
@@ -5662,10 +5363,8 @@ def present_simple_page_nine(request):
             return redirect(back)
         return render(request, "lesson2/present_simple/page_nine.html", {"next": "/lesson_two/present_simple/page_ten",
                                                                          "back": back, "lessons": lessons,
-                                                                         "lesson": "Unit 2", "title": "Present Simple",
-                                                                         "user": request.session['user'],
-                                                                         "src": src_ref, "parts": parts,
-                                                                         "colors": colors
+                                                                         "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                          })
 
 
@@ -5684,12 +5383,11 @@ def present_simple_page_ten(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/present_simple/page_ten.html",
-                      {"next": "/lesson_two/present_simple/page_eleven",
-                       "back": "/lesson_two/present_simple/page_nine", "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_ten.html", {"next": "/lesson_two/present_simple/page_eleven",
+                                                                        "back": "/lesson_two/present_simple/page_nine", "lessons": lessons,
+                                                                        "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors
+                                                                        })
 
 
 def present_simple_page_eleven(request):
@@ -5708,13 +5406,12 @@ def present_simple_page_eleven(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/present_simple/page_eleven.html",
-                      {"next": "/lesson_two/present_simple/page_twelve",
-                       "back": "/lesson_two/present_simple/page_ten",
-                       "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_eleven.html", {"next": "/lesson_two/present_simple/page_twelve",
+                                                                           "back": "/lesson_two/present_simple/page_ten",
+                                                                           "lessons": lessons, "solved": solution.solved,
+                                                                           "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors
+                                                                           })
 
 
 def present_simple_page_twelve(request):
@@ -5735,12 +5432,11 @@ def present_simple_page_twelve(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson2/present_simple/page_twelve.html",
-                      {"next": "/lesson_two/present_simple/page_thirteen",
-                       "back": back, "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_twelve.html", {"next": "/lesson_two/present_simple/page_thirteen",
+                                                                           "back": back, "lessons": lessons,
+                                                                           "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                           "src": src_ref, "parts": parts, "colors": colors
+                                                                           })
 
 
 def present_simple_page_thirteen(request):
@@ -5758,12 +5454,11 @@ def present_simple_page_thirteen(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/present_simple/page_thirteen.html",
-                      {"next": "/lesson_two/present_simple/page_fourteen",
-                       "back": "/lesson_two/present_simple/page_twelve", "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_thirteen.html", {"next": "/lesson_two/present_simple/page_fourteen",
+                                                                             "back": "/lesson_two/present_simple/page_twelve", "lessons": lessons,
+                                                                             "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                             "src": src_ref, "parts": parts, "colors": colors
+                                                                             })
 
 
 def present_simple_page_fourteen(request):
@@ -5781,12 +5476,11 @@ def present_simple_page_fourteen(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/present_simple/page_fourteen.html",
-                      {"next": "/lesson_two/present_simple/page_fifteen",
-                       "back": "/lesson_two/present_simple/page_thirteen", "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_fourteen.html", {"next": "/lesson_two/present_simple/page_fifteen",
+                                                                             "back": "/lesson_two/present_simple/page_thirteen", "lessons": lessons,
+                                                                             "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                             "src": src_ref, "parts": parts, "colors": colors
+                                                                             })
 
 
 def present_simple_page_fifteen(request):
@@ -5804,12 +5498,11 @@ def present_simple_page_fifteen(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/present_simple/page_fifteen.html",
-                      {"next": "/lesson_two/present_simple/page_sixteen",
-                       "back": "/lesson_two/present_simple/page_fourteen", "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_fifteen.html", {"next": "/lesson_two/present_simple/page_sixteen",
+                                                                            "back": "/lesson_two/present_simple/page_fourteen", "lessons": lessons,
+                                                                            "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                            "src": src_ref, "parts": parts, "colors": colors
+                                                                            })
 
 
 def present_simple_page_sixteen(request):
@@ -5828,13 +5521,12 @@ def present_simple_page_sixteen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/present_simple/page_sixteen.html",
-                      {"next": "/lesson_two/present_simple/page_seventeen",
-                       "back": "/lesson_two/present_simple/page_fifteen",
-                       "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
+        return render(request, "lesson2/present_simple/page_sixteen.html", {"next": "/lesson_two/present_simple/page_seventeen",
+                                                                            "back": "/lesson_two/present_simple/page_fifteen",
+                                                                            "lessons": lessons, "solved": solution.solved,
+                                                                            "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                            "src": src_ref, "parts": parts, "colors": colors
+                                                                            })
 
 
 def present_simple_page_seventeen(request):
@@ -5855,136 +5547,11 @@ def present_simple_page_seventeen(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson2/present_simple/page_seventeen.html",
-                      {"next": "/lesson_two/daily_routines/page_one",
-                       "back": back, "lessons": lessons,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
-
-
-def daily_routines_page_one(request):
-    back = "/lesson_two/present_simple/page_seventeen"
-    if request.method == "GET":
-        if 'user' not in request.session:
-            return login_page(request)
-        user = User.objects.get(email=request.session['user']['email'])
-        if not get_refferer(request) and not user.is_staff:
-            return redirect(request.session['last_page'])
-        request.session['last_page'] = request.path
-        if 'avatar' in request.session:
-            src_ref = request.session['avatar']['src_ref']
-            parts = request.session['avatar']['parts']
-            colors = request.session['avatar']['colors']
-        else:
-            src_ref, parts, colors = get_user_avatar(request.session['user'])
-            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/daily_routines/page_one.html", {"next": "/lesson_two/daily_routines/page_two",
-                                                                        "back": back, "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Daily Routines",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts, "colors": colors
-                                                                        })
-
-
-def daily_routines_page_two(request):
-    back = "/lesson_two/daily_routines/page_one"
-    if request.method == "GET":
-        if 'user' not in request.session:
-            return login_page(request)
-        user = User.objects.get(email=request.session['user']['email'])
-        if not get_refferer(request) and not user.is_staff:
-            return redirect(request.session['last_page'])
-        request.session['last_page'] = request.path
-        if 'avatar' in request.session:
-            src_ref = request.session['avatar']['src_ref']
-            parts = request.session['avatar']['parts']
-            colors = request.session['avatar']['colors']
-        else:
-            src_ref, parts, colors = get_user_avatar(request.session['user'])
-            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/daily_routines/page_two.html", {"next": "/lesson_two/daily_routines/page_three",
-                                                                        "back": back, "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Daily Routines",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts, "colors": colors
-                                                                        })
-
-
-def daily_routines_page_three(request):
-    back = "/lesson_two/daily_routines/page_two"
-    if request.method == "GET":
-        if 'user' not in request.session:
-            return login_page(request)
-        user = User.objects.get(email=request.session['user']['email'])
-        if not get_refferer(request) and not user.is_staff:
-            return redirect(request.session['last_page'])
-        request.session['last_page'] = request.path
-        if 'avatar' in request.session:
-            src_ref = request.session['avatar']['src_ref']
-            parts = request.session['avatar']['parts']
-            colors = request.session['avatar']['colors']
-        else:
-            src_ref, parts, colors = get_user_avatar(request.session['user'])
-            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/daily_routines/page_three.html",
-                      {"next": "/lesson_two/daily_routines/page_three",
-                       "back": back, "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Daily Routines", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
-
-
-def daily_routines_page_four(request):
-    back = "/lesson_two/daily_routines/page_three"
-    if request.method == "GET":
-        if 'user' not in request.session:
-            return login_page(request)
-        user = User.objects.get(email=request.session['user']['email'])
-        if not get_refferer(request) and not user.is_staff:
-            return redirect(request.session['last_page'])
-        request.session['last_page'] = request.path
-        if 'avatar' in request.session:
-            src_ref = request.session['avatar']['src_ref']
-            parts = request.session['avatar']['parts']
-            colors = request.session['avatar']['colors']
-        else:
-            src_ref, parts, colors = get_user_avatar(request.session['user'])
-            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/daily_routines/page_four.html",
-                      {"next": "/lesson_two/daily_routines/page_five",
-                       "back": back, "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Daily Routines", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
-
-
-def daily_routines_page_five(request):
-    back = "/lesson_two/daily_routines/page_four"
-    if request.method == "GET":
-        if 'user' not in request.session:
-            return login_page(request)
-        user = User.objects.get(email=request.session['user']['email'])
-        if not get_refferer(request) and not user.is_staff:
-            return redirect(request.session['last_page'])
-        request.session['last_page'] = request.path
-        if 'avatar' in request.session:
-            src_ref = request.session['avatar']['src_ref']
-            parts = request.session['avatar']['parts']
-            colors = request.session['avatar']['colors']
-        else:
-            src_ref, parts, colors = get_user_avatar(request.session['user'])
-            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/daily_routines/page_five.html",
-                      {"next": "/lesson_two/daily_routines/page_five",
-                       "back": back, "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Daily Routines", "user": request.session['user'],
-                       "src": src_ref, "parts": parts, "colors": colors
-                       })
-
+        return render(request, "lesson2/present_simple/page_seventeen.html", {"next": "/lesson_three/title",
+                                                                              "back": back, "lessons": lessons,
+                                                                              "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                                                                              "src": src_ref, "parts": parts, "colors": colors
+                                                                              })
 
 
 # UNIT 3
@@ -5993,8 +5560,7 @@ def lesson_three_title(request):
         return render(request, "lesson3/title_page.html", {"next": "/lesson_three/pronouns/page_one",
                                                            "back": "/lesson_two/present_simple/page_seventeen",
                                                            "lessons": lessons,
-                                                           "lesson": "Unit 3: Let's Eat", "title": "",
-                                                           "user": request.session['user']
+                                                           "lesson": "Unit 3: Let's Eat", "title": "", "user": request.session['user']
                                                            })
 
 
@@ -6017,8 +5583,7 @@ def pronouns_page_one(request):
         return render(request, "lesson3/pronouns/page_one.html", {"next": "/lesson_three/pronouns/page_two",
                                                                   "back": "/lesson_three/title",
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -6041,8 +5606,7 @@ def pronouns_page_two(request):
         return render(request, "lesson3/pronouns/page_two.html", {"next": "/lesson_three/pronouns/page_three",
                                                                   "back": "/lesson_three/pronouns/page_one",
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -6065,8 +5629,7 @@ def pronouns_page_three(request):
         return render(request, "lesson3/pronouns/page_three.html", {"next": "/lesson_three/pronouns/page_four",
                                                                     "back": "/lesson_three/pronouns/page_two",
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
@@ -6086,14 +5649,12 @@ def pronouns_page_four(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        solution = get_or_create_solution(user,
-                                          request.path)  # @SpeedaRJ če je contextu (ta dict spodej) solution dodaj ta stavek
+        solution = get_or_create_solution(user, request.path)  # @SpeedaRJ če je contextu (ta dict spodej) solution dodaj ta stavek
         return render(request, "lesson3/pronouns/page_four.html", {"next": "/lesson_three/pronouns/page_five",
                                                                    "back": "/lesson_three/pronouns/page_three",
                                                                    "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -6118,8 +5679,7 @@ def pronouns_page_five(request):
                                                                    "back": "/lesson_three/pronouns/page_four",
                                                                    "solved": solution.solved,
                                                                    "lessons": lessons,
-                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
-                                                                   "user": request.session['user'],
+                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
 
@@ -6144,8 +5704,7 @@ def pronouns_page_six(request):
                                                                   "back": "/lesson_three/pronouns/page_five",
                                                                   "solved": solution.solved,
                                                                   "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
-                                                                  "user": request.session['user'],
+                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                   "src": src_ref, "parts": parts, "colors": colors
                                                                   })
 
@@ -6170,109 +5729,170 @@ def pronouns_page_seven(request):
                                                                     "back": "/lesson_three/pronouns/page_six",
                                                                     "solved": solution.solved,
                                                                     "lessons": lessons,
-                                                                    "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
-                                                                    "user": request.session['user'],
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "Pronouns", "user": request.session['user'],
                                                                     "src": src_ref, "parts": parts, "colors": colors
                                                                     })
 
 
 def glossary(request):
     if request.get_full_path().split("/")[2] == "introduction":
-        return JsonResponse({"vocabulary": {"hello": "živijo", "name": "ime", "nickname": "vzdevek", "age": "starost",
-                                            "country": "država",
-                                            "I": "jaz", "you": "ti", "yes": "ja", "no": "ne", "my": "moj",
-                                            "your": "tvoj", "year": "leto", "old": "star",
-                                            "born": "rojen", "to live": "živeti", "Slovenia": "Slovenija", "who": "kdo",
-                                            "what": "kaj", "where": "kje",
+        return JsonResponse({"vocabulary": {"hello": "živijo", "name": "ime", "nickname": "vzdevek", "age": "starost", "country": "država",
+                                            "I": "jaz", "you": "ti", "yes": "ja", "no": "ne", "my": "moj", "your": "tvoj", "year": "leto", "old": "star",
+                                            "born": "rojen", "to live": "živeti", "Slovenia": "Slovenija", "who": "kdo", "what": "kaj", "where": "kje",
                                             "how": "kako", "person": "oseba", "notebook": "zvezek"}
                              })
     elif request.get_full_path().split("/")[2] == "character_select":
-        return JsonResponse({"vocabulary": {"to choose": "izbrati", "skin": "koža", "colour": "barva", "tall": "visok",
-                                            "short": "nizek, kratek",
-                                            "plump": "močnejše postave", "slender": "vitek", "hair": "lasje",
-                                            "long": "dolg", "brown": "rjava",
-                                            "beard": "brada", "mustache": "brki", "to wear": "nositi",
-                                            "glasses": "očala", "to pick": "izbrati",
+        return JsonResponse({"vocabulary": {"to choose": "izbrati", "skin": "koža", "colour": "barva", "tall": "visok", "short": "nizek, kratek",
+                                            "plump": "močnejše postave", "slender": "vitek", "hair": "lasje", "long": "dolg", "brown": "rjava",
+                                            "beard": "brada", "mustache": "brki", "to wear": "nositi", "glasses": "očala", "to pick": "izbrati",
                                             "clothes": "oblačila"},
                              "additional": {"fat": "debel", "thin": "suh", "slim": "vitek"}
                              })
     elif request.get_full_path().split("/")[2] == "numbers":
-        return JsonResponse({"vocabulary": {"number": "število", "to count": "šteti", "zero": "nič", "one": "ena",
-                                            "two": "dve", "three": "tri",
-                                            "four": "štiri", "five": "pet", "six": "šest", "seven": "sedem",
-                                            "eight": "osem", "nine": "devet",
-                                            "ten": "deset", "eleven": "enajst", "twelve": "dvanajst",
-                                            "thirteen": "trinjast", "fourteen": "štirinajst",
-                                            "fifteen": "petnajst", "sixteen": "šestnajst", "seventeen": "sedemnajst",
-                                            "eighteen": "osemnajst",
-                                            "nineteen": "devetnajst", "twenty": "dvajset", "twenty-one": "enaindvajset",
-                                            "thirty": "trideset",
-                                            "forty": "štirideset", "fifty": "petedeset", "sixty": "šestdeset",
-                                            "seventy": "sedemdeset",
-                                            "eighty": "osemdeset", "ninety": "devetdeset", "hundred": "sto",
-                                            "thousand": "tisoč", "million": "million"},
-                             "additional": {"ordinal number": "vrstilni števnik", "first": "prvi", "second": "drugi",
-                                            "third": "tretji", "fourth": "četrti", "fifth": "peti", "sixth": "šesti",
+        return JsonResponse({"vocabulary": {"number": "število", "to count": "šteti", "zero": "nič", "one": "ena", "two": "dve", "three": "tri",
+                                            "four": "štiri", "five": "pet", "six": "šest", "seven": "sedem", "eight": "osem", "nine": "devet",
+                                            "ten": "deset", "eleven": "enajst", "twelve": "dvanajst", "thirteen": "trinjast", "fourteen": "štirinajst",
+                                            "fifteen": "petnajst", "sixteen": "šestnajst", "seventeen": "sedemnajst", "eighteen": "osemnajst",
+                                            "nineteen": "devetnajst", "twenty": "dvajset", "twenty-one": "enaindvajset", "thirty": "trideset",
+                                            "forty": "štirideset", "fifty": "petedeset", "sixty": "šestdeset", "seventy": "sedemdeset",
+                                            "eighty": "osemdeset", "ninety": "devetdeset", "hundred": "sto", "thousand": "tisoč", "million": "million"},
+                             "additional": {"ordinal number": "vrstilni števnik", "first": "prvi", "second": "drugi", "third": "tretji", "fourth": "četrti", "fifth": "peti", "sixth": "šesti",
                                             "seventh": "sedmi",
                                             "eighth": "osmi", "ninth": "deveti", "tenth": "deseti"}
                              }
                             )
     elif request.get_full_path().split("/")[2] == "colors":
-        return JsonResponse(
-            {"vocabulary": {"to look": "gledati", "colour": "barva", "to click": "klikati", "word": "beseda",
-                            "to listen": "poslušati", "to repeat": "ponoviti", "red": "rdeča", "orange": "oranžna",
-                            "yellow": "rumena", "green": "zelena", "blue": "modra", "purple": "vijolična",
-                            "pink": "roza",
-                            "black": "črna", "grey": "siva", "white": "bela", "brown": "rjava", "gold": "zlata",
-                            "silver": "srebrna"},
-             "additional": {"shade": "odtenek", "adjective": "pridevnik", "light": "svetel", "dark": "temen",
-                            "bright": "živ"}
-             })
+        return JsonResponse({"vocabulary": {"to look": "gledati", "colour": "barva", "to click": "klikati", "word": "beseda",
+                                            "to listen": "poslušati", "to repeat": "ponoviti", "red": "rdeča", "orange": "oranžna",
+                                            "yellow": "rumena", "green": "zelena", "blue": "modra", "purple": "vijolična", "pink": "roza",
+                                            "black": "črna", "grey": "siva", "white": "bela", "brown": "rjava", "gold": "zlata", "silver": "srebrna"},
+                             "additional": {"shade": "odtenek", "adjective": "pridevnik", "light": "svetel", "dark": "temen", "bright": "živ"}
+                             })
     elif request.get_full_path().split("/")[2] == "years":
-        return JsonResponse(
-            {"vocabulary": {"year": "leto", "to learn": "učiti se", "to pronounce": "izgovoriti", "correct": "pravilen",
-                            "and": "in", "in": "v", "to read": "brati", "to say": "reči", "to hear": "slišati"},
-             "rules": {
-                 "rule1": "Pred letnicami uporabljamo predlog IN, ki pomeni V.",
-                 "rule2": "Če sprašujemo po letnici, uporabimo vprašalnico WHAT YEAR."
-             }
-             })
+        return JsonResponse({"vocabulary": {"year": "leto", "to learn": "učiti se", "to pronounce": "izgovoriti", "correct": "pravilen",
+                                            "and": "in", "in": "v", "to read": "brati", "to say": "reči", "to hear": "slišati"},
+                             "rules": {
+                                 "rule1": "Pred letnicami uporabljamo predlog IN, ki pomeni V.",
+                                 "rule2": "Če sprašujemo po letnici, uporabimo vprašalnico WHAT YEAR."
+                             }
+                             })
     elif request.get_full_path().split("/")[2] == "personal_traits":
-        return JsonResponse(
-            {"vocabulary": {"personality": "osebnost", "trait": "lastnost, značilnost", "short": "nizek, kratek",
-                            "plump": "močnejše postave", "smart": "pameten", "stupid": "neumen", "good": "dober",
-                            "bad": "slab",
-                            "hard-working": "delaven", "lazy": "len", "generous": "radodaren, velikodušen",
-                            "selfish": "sebičen",
-                            "kind": "prijazen", "mean": "neprijazen, nesramen", "funny": "zabaven",
-                            "boring": "dolgočasen",
-                            "outgoing": "družaben", "shy": "sramežljiv", "reliable": "zanesljiv",
-                            "unreliable": "nezanesljiv",
-                            "opposite": "nasprotje", "to describe": "opisati", "to try": "poskusiti",
-                            "to ask": "vprašati",
-                            "awesome": "super", "surprise": "presenečenje", "to meet": "spoznati",
-                            "friend": "prijatelj",
-                            "translation": "prevod"}
-             })
+        return JsonResponse({"vocabulary": {"personality": "osebnost", "trait": "lastnost, značilnost", "short": "nizek, kratek",
+                                            "plump": "močnejše postave", "smart": "pameten", "stupid": "neumen", "good": "dober", "bad": "slab",
+                                            "hard-working": "delaven", "lazy": "len", "generous": "radodaren, velikodušen", "selfish": "sebičen",
+                                            "kind": "prijazen", "mean": "neprijazen, nesramen", "funny": "zabaven", "boring": "dolgočasen",
+                                            "outgoing": "družaben", "shy": "sramežljiv", "reliable": "zanesljiv", "unreliable": "nezanesljiv",
+                                            "opposite": "nasprotje", "to describe": "opisati", "to try": "poskusiti", "to ask": "vprašati",
+                                            "awesome": "super", "surprise": "presenečenje", "to meet": "spoznati", "friend": "prijatelj",
+                                            "translation": "prevod"}
+                             })
     elif request.get_full_path().split("/")[2] == "he_she_it":
-        return JsonResponse(
-            {"vocabulary": {"I": "jaz", "you (ed.)": "ti", "he": "on", "she": "ona", "it": "ono", "we": "mi",
-                            "you (mn.)": "vi", "they": "oni", "to be": "biti", "to talk": "govoriti",
-                            "people": "ljudje",
-                            "to use": "uporabiti", "to check": "preveriti", "to complete": "zaključiti",
-                            "pronoun": "zaimek",
-                            "knowledge": "znanje", "happy": "srečen", "sad": "žalosten", "bald": "plešast",
-                            "sentence": "poved",
-                            "form": "oblika", "text": "besedilo", "question": "vprašanje", "answer": "odgovor",
-                            "affirmative": "trdilen",
-                            "negative": "nikalen", "to have": "imeti", "singular": "ednina",
-                            "plural": "množina", "verb": "glagol", "true": "resničen, pravilen", "false": "napačen"},
-             "rules": {
-                 "rule1": "Ko govorimo o nekom v tretji osebi, uporabljamo zaimka HE in SHE – odvisno od spola osebe. SHE uporabljamo, ko govorimo o osebi ženskega spola. HE "
-                          "uporabljamo, ko govorimo o osebi moškega spola. IT pa uporabljamo, ko govorimo o živalih, predmetih, … IZJEMA: Če govorimo o hišnih  ljubljenčkih, "
-                          "le redko uporabimo IT, saj poznamo spol in ime živali.",
-                 "rule2": "Namesto zaimkov lahko uporabimo tudi osebna imena. Prav tako lahko osebna imena zamenjamo z zaimki.",
-                 "rule3": "Okrajšano glagolsko obliko lahko uporabljamo tudi ob osebnih imenih ali predmetih, ne le ob osebnih zaimkih.",
-                 "rule4": "Osnovna vprašanja vedno tvorimo s pomočjo TRDILNE OBLIKE. Torej IS HE HAPPY? in ne ISN'T HAPPY?. Glagol je v vprašanju vedno v trdilni obliki."
-             }
-             })
+        return JsonResponse({"vocabulary": {"I": "jaz", "you (ed.)": "ti", "he": "on", "she": "ona", "it": "ono", "we": "mi",
+                                            "you (mn.)": "vi", "they": "oni", "to be": "biti", "to talk": "govoriti", "people": "ljudje",
+                                            "to use": "uporabiti", "to check": "preveriti", "to complete": "zaključiti", "pronoun": "zaimek",
+                                            "knowledge": "znanje", "happy": "srečen", "sad": "žalosten", "bald": "plešast", "sentence": "poved",
+                                            "form": "oblika", "text": "besedilo", "question": "vprašanje", "answer": "odgovor", "affirmative": "trdilen",
+                                            "negative": "nikalen", "to have": "imeti", "singular": "ednina",
+                                            "plural": "množina", "verb": "glagol", "true": "resničen, pravilen", "false": "napačen"},
+                             "rules": {
+                                 "rule1": "Ko govorimo o nekom v tretji osebi, uporabljamo zaimka HE in SHE – odvisno od spola osebe. SHE uporabljamo, ko govorimo o osebi ženskega spola. HE "
+                                          "uporabljamo, ko govorimo o osebi moškega spola. IT pa uporabljamo, ko govorimo o živalih, predmetih, … IZJEMA: Če govorimo o hišnih  ljubljenčkih, "
+                                          "le redko uporabimo IT, saj poznamo spol in ime živali.",
+                                 "rule2": "Namesto zaimkov lahko uporabimo tudi osebna imena. Prav tako lahko osebna imena zamenjamo z zaimki.",
+                                 "rule3": "Okrajšano glagolsko obliko lahko uporabljamo tudi ob osebnih imenih ali predmetih, ne le ob osebnih zaimkih.",
+                                 "rule4": "Osnovna vprašanja vedno tvorimo s pomočjo TRDILNE OBLIKE. Torej IS HE HAPPY? in ne ISN'T HAPPY?. Glagol je v vprašanju vedno v trdilni obliki."
+                             }
+                             })
+    elif request.get_full_path().split("/")[2] == "day_week_month":
+        return JsonResponse({"vocabulary": {'Monday': 'ponedeljek', 'Tuesday': 'torek', 'Wednesday': 'sreda', 'Thursday': 'četrtek', 'Friday': 'petek',
+                                            'Saturday': 'sobota', 'Sunday': 'nedelja', 'January': 'januar', 'February': 'februar', 'March': 'marec',
+                                            'April': 'april', 'May': 'maj', 'June': 'junij', 'July': 'julij', 'August': 'avgust', 'September': 'september', 'October': 'oktober',
+                                            'November': 'november', 'December': 'december', 'day': 'dan', 'week': 'teden', 'month': 'mesec', 'English': 'angleščina',
+                                            'capitalised': 'z veliko začetnico', 'sun': 'sonce', 'sunny': 'sončno', 'again': 'spet', 'to see': 'videti', 'to remember': 'spomniti se',
+                                            'to start': 'začeti', 'careful': 'previden', 'because': 'ker', 'letter': 'črka', 'difference': 'razlika', 'weekend': 'vikend', 'free': 'svoboden'
+                                            }})
+    elif request.get_full_path().split("/")[2] == "articles":
+        return JsonResponse({"vocabulary": {'a': 'nedoločni člen', 'an': 'nedoločni člen', 'the': 'določni člen', 'apple': 'jabolko', 'table': 'miza', 'book': 'knjiga', 'house': 'hiša',
+                                            'TV': 'televizija', 'to turn on': 'prižgati', 'to want': 'želeti', 'to watch': 'gledati', 'film': 'film', 'queen': 'kraljica', 'drink': 'pijača',
+                                            'university': 'univerza', 'doctor': 'zdravnik', 'engineer': 'inženir', 'toilet': 'stranišče', 'sister': 'sestra', 'bus driver': 'voznik avtobusa',
+                                            'teacher': 'učitelj', 'balloon': 'balon', 'honest': 'iskren', 'owl': 'sova', 'country': 'država', 'ice-cream': 'sladoled', 'to add': 'dodati',
+                                            'salt': 'sol', 'to drink': 'piti', 'water': 'voda', 'to need': 'potrebovati', 'information': 'informacije', 'love': 'ljubezen', 'tomorrow': 'jutri',
+                                            'to celebrate': 'praznovati', 'Christmas': 'Božič', 'artist': 'umetnik', 'birthday': 'rojstni dan', 'school': 'šola', 'Ester': 'velika noč',
+                                            'luck': 'sreča', 'death': 'smrt', 'difficult': 'težaven', 'topic': 'tema', 'to give': 'dati', 'chance': 'priložnost', 'thief': 'tat', 'shirt': 'majica',
+                                            'cat': 'mačka', 'big': 'velik', 'pretty': 'lep', 'to play': 'igrati', 'piano': 'klavir', 'to climb': 'plezati', 'river': 'reka', 'ocean': 'ocean',
+                                            'north': 'sever', 'south': 'jug', 'east': 'vzhod', 'west': 'zahod', 'basketball': 'košarka', 'maths': 'matematika', 'to speak': 'govoriti',
+                                            'breakfast': 'zajtrk', 'beautiful': 'prelep', 'capital': 'glavno mesto', 'violin': 'violina', 'to close': 'zapreti', 'window': 'okno',
+                                            'to borrow': 'sposoditi si', 'pencil': 'svinčnik', 'world': 'svet', 'city': 'mesto', 'writer': 'pisatelj', 'to go': 'iti', 'France': 'Francija',
+                                            'cello': 'violončelo', 'baseball': 'bejzbol', 'library': 'knjižnica', 'mom': 'mati', 'to make': 'narediti', 'lunch': 'kosilo', 'hard': 'trd, težaven',
+                                            'flower': 'roža', 'dog': 'pes', 'bus': 'avtobus', 'kiss': 'poljub', 'church': 'cerkev', 'brush': 'krtača', 'box': 'škatla', 'tomato': 'paradižnik',
+                                            'family': 'družina', 'lady': 'gospa', 'baby': 'dojenček', 'story': 'zgodba', 'play': 'igra', 'way': 'pot, način', 'boy': 'fant', 'monkey': 'opica',
+                                            'knife': 'nož', 'wife': 'žena', 'scarf': 'šal', 'child': 'otrok', 'woman': 'ženska', 'man': 'moški', 'person': 'oseba', 'tooth': 'zob',
+                                            'foot': 'del noge od gležnja nižje', 'mouse': 'miš', 'fish': 'riba', 'deer': 'srnja', 'sheep': 'ovca', 'noun': 'samostalnik', 'orange': 'pomaranča',
+                                            'strawberry': 'jagoda', 'photo': 'fotografija', 'dress': 'obleka', 'key': 'ključ', 'avocado': 'avokado', 'enemy': 'sovražnik', 'bench': 'klopca',
+                                            'guy': 'moški', 'toy': 'igrača', 'zoo': 'živalski vrt', 'kite': '(papirnati) zmaj', 'daisy': 'marjetica', 'echo': 'odmev', 'army': 'vojska',
+                                            'potato': 'krompir', 'class': 'razred', 'hero': 'junak', 'radio': 'radio', 'road': 'cesta', 'glass': 'steklo, kozarec', 'cloud': 'oblak',
+                                            'puffy': 'napihnjen', 'fresh': 'svež', 'dirty': 'umazan', 'naughty': 'poreden', 'sad': 'žalosten', 'rose': 'vrtnica', 'nose': 'nos', 'fly': 'muha',
+                                            'annoying': 'nadležen', 'donkey': 'osel', 'loud': 'glasen', 'address': 'naslov', 'sweet': 'sladek', 'spy': 'vohun', 'smart': 'pameten',
+                                            'princess': 'princesa', 'watch': '(ročna) ura', 'wrong': 'napačen', 'quiet': 'tih', 'glasses': 'očala', 'tree': 'drevo', 'huge': 'ogromen', 'wool': 'volna',
+                                            'cross': 'križ', 'wall': 'stena', 'bush': 'grm', 'crayon': 'voščenka', 'ring': 'prstan', 'classmate': 'sošolec, sošolka', 'bracelet': 'zapestnica',
+                                            'desk': '(šolska) klop', 'chair': 'stol', 'pen': 'kemični svinčnik', 'slipper': 'copat'}})
+    elif request.get_full_path().split("/")[2] == "family":
+        return JsonResponse({"vocabulary": {'family': 'družina', 'member': 'član', 'to tell': 'povedati', 'something': 'nekaj', 'important': 'pomemben', 'birthday': 'rojstni dan',
+                                            'to visit': 'obiskati', 'afternoon': 'popoldan', 'to have': 'imeti', 'husband': 'mož', 'wife': 'žena', 'son': 'sin', 'daughter': 'hčerka',
+                                            'parents': 'starši', 'mother': 'mama', 'father': 'oče', 'this': 'to', 'sentence': 'stavek', 'cat': 'mačka', 'toy': 'igrača', 'house': 'hiša',
+                                            'description': 'opis', 'ago': 'pred, nazaj', 'kids': 'otroci', 'countryside': 'podeželje', 'baby': 'dojenček', 'with': 's/z', 'to miss': 'pogrešati',
+                                            'friend': 'prijatelj', 'own': 'lasten', 'university': 'univerza', 'work': 'delo', 'daughter-in-law': 'snaha', 'son-in-law': 'zet',
+                                            'sister-in-law': 'svakinja', 'brother-in-law': 'svak', 'rest': 'preostanek', 'grandchild': 'vnuk, vnukinja', 'grandchildren': 'vnuki', 'grandson': 'vnuk',
+                                            'granddaughter': 'vnukinja', 'second': 'drugi', 'once': 'enkrat', 'dinner': 'večerja', 'to grow up': 'odraščati', 'fast': 'hiter/hitro', 'soon': 'kmalu',
+                                            'great-grandmother': 'prababica', 'great-grandfather': 'praded', 'great-grandparents': 'prababica in pradedek', 'tree': 'drevo',
+                                            'family tree': 'družinsko drevo', '(family) relation': '(družinska) vez', 'different': 'drugačen', 'to divorce': 'ločiti se', 'first': 'prvi',
+                                            'to marry': 'poročiti se', 'to bring': 'prinesti', 'stepson': 'pastorek', 'stepfather': 'očim', 'stepdaughter': 'pastorka', 'stepmother': 'mačeha',
+                                            'to describe': 'opisati', 'to form': 'tvoriti', 'about': 'o'}})
+    elif request.get_full_path().split("/")[2] == "clothes":
+        return JsonResponse({"vocabulary": {'clothes': 'oblačila', 'today': 'danes', 'to come over': 'obiskati/priti na obisk', 'to help': 'pomagati', 'to decide': 'odločiti se',
+                                            'to wear': 'nositi (oblačila)', 'to open': 'odpreti', 'wardrobe': 'omara', 'blouse': 'bluza', 'restaurant': 'restavracija', 'pants': 'hlače',
+                                            'to look': 'izgledati', 'casual': 'neformalen, sproščen', 'dress': 'obleka', 'to dance': 'plesati', 'shoes': 'čevlji', 'occasion': 'priložnost',
+                                            'T-shirt': 'majica s kratkimi rokavi', 'to hike': 'hoditi', 'hike': 'pohod', 'skirt': 'krilo', 'socks': 'nogavice', 'feet': 'stopala',
+                                            'to be cold': 'zebsti', 'shorts': 'kratke hlače', 'summer': 'poletje', 'boots': 'škornji', 'to rain': 'deževati', 'rain': 'dež', 'coat': 'plašč',
+                                            'cold': 'mrzlo/mrzel', 'gloves': 'rokavice', 'to snow': 'snežiti', 'snow': 'sneg', 'scarf': 'šal', 'neck': 'vrat', 'to protect': 'ščititi',
+                                            'to protect from': 'ščititi pred', 'wind': 'veter', 'swimsuit': 'kopalke', 'beach': 'plaža', 'jacket': 'jakna', 'outside': 'zunaj',
+                                            'trainers': 'športni copati', '“to run”': '“teči”', '“hat”': 'klobuk', 'ears': 'ušesa', 'tie': 'kravata', 'formally': 'formalno', 'suit': 'obleka',
+                                            'wedding': 'poroka', 'sweater': 'pulover', 'winter': 'zima', 'jeans': 'kavbojke', 'walk': '  sprehod', 'to walk': 'hoditi', 'piece': 'kos',
+                                            'autumn': 'jesen', 'spring': 'pomlad', 'windy': 'vetrovno', 'when': 'ko'}})
+    elif request.get_full_path().split("/")[2] == "time":
+        return JsonResponse({"vocabulary": {'What time is it?': 'Koliko je ura?', 'hour': 'ura', 'a.m.': 'dopoldan', 'p.m.': 'popoldan', 'midnight': 'polnoč', 'noon': 'poldan', 'morning': 'jutro',
+                                            'day': 'dan', 'afternoon': 'popoldne', 'night': 'noč', 'clock': 'ura', 'quarter': 'četrt', 'past': 'čez', 'to': 'do', 'half': 'pol'}})
+    elif request.get_full_path().split("/")[2] == "present_simple" or request.get_full_path().split("/")[2] == "daily_routines" :
+        return JsonResponse({"vocabulary": {'grammar': 'slovnica', 'present': 'sedanjost', 'routine': 'rutina', 'habit': 'navada', 'everyday (adj.)': 'vsakodnevni', 'activity': 'aktivnost',
+                                            'state': 'stanje', 'general': 'splošen', 'truth': 'resnica', 'tense': 'čas', 'never': 'nikoli', 'school': 'šola', 'milk': 'mleko', 'to drink': 'piti',
+                                            'flower': 'roža', 'to breath': 'dihati', 'nose': 'nos', 'through': 'skozi', 'person': 'oseba', 'verb': 'glagol', 'to drive': 'voziti', 'car': 'avto',
+                                            'work': 'delo/služba', 'always': 'vedno', 'sometimes': 'včasih', 'often': 'pogosto', 'rarely': 'redko', 'usually': 'običajno', 'every day': 'vsak dan',
+                                            'every week': 'vsak teden', 'to add': 'dodati', 'careful': 'previden', 'to end': 'končati', 'suffix': 'končnica', 'to pronounce': 'izgovoriti',
+                                            'example': 'primer', 'to kiss': 'poljubiti', 'kiss': 'poljub', 'to brush': 'krtačiti', 'teeth': 'zobje', 'to go': 'iti', 'to watch': 'gledati',
+                                            'TV': 'televizija', 'to miss': 'pogrešati', 'consonant': 'soglasnik', 'third': 'tretji', 'to cry': 'jokati', 'to punch': 'udariti', 'vowel': 'samoglasnik',
+                                            'violin': 'violina', 'piano': 'klavir', 'to enjoy': 'uživati', 'to read': 'brati', 'to fly': 'leteti', 'kite': '(papirnati) zmaj',
+                                            'to fly a kite': 'spuščati zmaja', 'to party': 'zabavati se', 'weekend': 'vikend', 'negative sentence': 'nikalna poved', 'structure': 'struktura',
+                                            'before': 'pred', 'short': 'kratek, nizek', 'shorter': 'krajši', 'singular': 'ednina', 'to eat': 'jesti', 'meat': 'meso', 'word': 'beseda',
+                                            'to use': 'uporabiti', 'to like': 'imeti rad', 'animal': 'žival', 'to love': 'ljubiti', 'parents': 'starši', 'to listen': 'poslušati', 'music': 'glasba',
+                                            'to play': 'igrati', 'guitar': 'kitara', 'cat': 'mačka', 'to sleep': 'spati', 'lunch': 'kosilo', 'together': 'skupaj', 'to write': 'pisati',
+                                            "children's book": 'knjiga za otroke', 'to sing': 'peti', 'band': 'glasbena skupina”', 'exception': 'izjema', 'wrong': 'napačen', 'order': '(vrstni) red',
+                                            'form': 'oblika', 'to answer': 'odgovoriti', 'football': 'ameriški nogomet', 'young': 'mlad', 'chess': 'šah', 'to cook': 'kuhati', 'dog': 'pes',
+                                            'alone': 'sam', 'to talk': 'govoriti', 'to draw': 'risati', 'to live': 'živeti', 'apartment': 'stanovanje', 'to hate': 'sovražiti', 'from': 'od',
+                                            'late': 'pozen', 'lost': 'izgubljen', 'to forget': 'pozabiti', 'common': 'običajno', 'to work out': 'telovaditi', 'to clean': 'čistiti', 'coffee': 'kava',
+                                            'garden': 'vrt', 'board games': 'družabne igre', 'to take a shower': '(s)tuširati se', 'shower': 'tuš', 'sleep': 'spanje', 'beach': 'plaža',
+                                            'restaurant': 'restavracija', 'nap': 'dremež', 'walk': 'sprehod', 'cards': 'karte', 'computer': 'računalnik', 'gym': 'telovadnica', 'to paint': 'slikati',
+                                            'shopping': 'nakupovanje', 'to feed': 'hraniti'}})
+    elif request.get_full_path().split("/")[2] == "occupations":
+        return JsonResponse({"vocabulary": {'job': 'služba', 'surprise': 'presenečenje', 'to study': 'učiti se', 'sure': 'gotovo', 'to choose': 'izbrati', 'to sound': 'zveneti',
+                                            'policeman': 'policist', 'policewoman': '', 'pilot': 'pilot, pilotka', 'engineer': 'inženir, inženirka', 'doctor': 'zdravnik, zdravnica',
+                                            'photographer': 'fotograf, fotografinja', 'postman': 'poštar', 'postwoman': 'poštarka', 'bus driver': 'voznik, voznica avtobusa',
+                                            'taxi driver': 'taksist, taksistka', 'waiter': 'natakar', 'waitress': 'natakarica', 'plumber': 'vodovodar, vodovodarka', 'farmer': 'kmet, kmetica',
+                                            'musician': 'glasbenik, glasbenica', 'cook': 'kuhar, kuharica', 'businessman': 'poslovnež', 'businesswoman': 'poslovna ženska',
+                                            'firefighter': 'gasilec, gasilka', 'teacher': 'učitelj, učiteljica', 'lawyer': 'odvetnik, odvetnica', 'judge': 'sodnik, sodnica',
+                                            'writer': 'pisatelj, pisateljica', 'poet': 'pesnik', 'poetess': 'pesnica (občasno slabšalno)', 'actor': 'igralec', 'actress': 'igralka',
+                                            'builder': 'gradbenik, gradbenica', 'singer': 'pevec, pevka', 'designer': 'oblikovalec, oblikovalka', 'priest': 'duhovnik',
+                                            'librarian': 'knjižničar, knjižničarka', 'salesman': 'prodajalec', 'saleswoman': 'prodajalka', 'to translate': 'prevesti', 'to extinguish': 'pogasiti',
+                                            'fire': 'ogenj', 'fashion': 'moda', 'industry': 'industrija', 'result': 'rezultat', 'poetry': 'poezija', 'performance': 'nastop', 'stage': 'oder',
+                                            'cashier': 'blagajna', 'to build': 'graditi', 'house': 'hiša', 'blackboard': '(šolska) tabla', 'cab': 'taksi', 'to be surrounded': 'biti obkrožen',
+                                            'guilty': 'kriv', 'whether': 'če, ali', 'to serve': 'streči', 'to prepare': 'pripraviti', 'to bring': 'prinesti', 'mail': 'pošta', 'to tell': 'povedati',
+                                            'medicine': 'zdravilo', 'photograph': 'fotografija', 'plane': 'letalo', 'gun': 'pištola', 'handcuffs': 'lisice'}})
