@@ -1,0 +1,35 @@
+.line {
+    width: 100%;
+    display: flex;
+}
+
+.drop {
+    width: 23%;
+    height: 30px;
+}
+
+.draggable-word {
+    margin-left: 4%;
+    width: 100% !important;
+    background: #e4e3e8;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.translation {
+    width: 100% !important;
+    margin-top: 8%;
+}
+
+.items {
+    display: flex-block;
+    padding-top: 30%;
+}
+
+.correct {
+    background: #00A881;
+}
+
+.incorrect {
+    background: #F15D2A;
+}

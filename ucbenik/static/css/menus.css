@@ -30,6 +30,7 @@ button {
   color: #ffffff;
   border: none;
   background-color: #6699CC;
+  text-align: center;
   font-size: 0.8em;
 }
 
@@ -238,5 +239,5 @@ button[class="titleB"]:hover {
 
 .SB {
   font-size: 0.6em;
-  text-align: left;
+  text-align: center;
 }
