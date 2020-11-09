@@ -5402,7 +5402,7 @@ def time_page_nine(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/time/page_nine.html", {"next": "/lesson_two/time/page_nine",
+        return render(request, "lesson2/time/page_nine.html", {"next": "/lesson_two/time/page_ten",
                                                                "back": "/lesson_two/time/page_eight",
                                                                "solved": solution.solved, "lessons": lessons,
                                                                "lesson": "Unit 2", "title": "Time",
