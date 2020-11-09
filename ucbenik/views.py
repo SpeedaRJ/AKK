@@ -19,7 +19,8 @@ lessons = {"lesson_one": {"Introduction": "/lesson_one/introduction/page_one",
                           "Family Members": "/lesson_two/family/page_one",
                           "Clothes": "/lesson_two/clothes/page_one",
                           "Time": "/lesson_two/time/page_one",
-                          "Present Simple": "/lesson_two/present_simple/page_one"},
+                          "Present Simple": "/lesson_two/present_simple/page_one",
+                          "Daily Routines": "lesson_two/daily_rountine/page_one"},
            "lesson_three": {"Pronouns": "/lesson_three/pronouns/page_one"}
            }
 
@@ -5862,7 +5863,7 @@ def glossary(request):
     elif request.get_full_path().split("/")[2] == "time":
         return JsonResponse({"vocabulary": {'What time is it?': 'Koliko je ura?', 'hour': 'ura', 'a.m.': 'dopoldan', 'p.m.': 'popoldan', 'midnight': 'polnoč', 'noon': 'poldan', 'morning': 'jutro',
                                             'day': 'dan', 'afternoon': 'popoldne', 'night': 'noč', 'clock': 'ura', 'quarter': 'četrt', 'past': 'čez', 'to': 'do', 'half': 'pol'}})
-    elif request.get_full_path().split("/")[2] == "present_simple" or request.get_full_path().split("/")[2] == "daily_routines" :
+    elif request.get_full_path().split("/")[2] == "present_simple" or request.get_full_path().split("/")[2] == "daily_routines":
         return JsonResponse({"vocabulary": {'grammar': 'slovnica', 'present': 'sedanjost', 'routine': 'rutina', 'habit': 'navada', 'everyday (adj.)': 'vsakodnevni', 'activity': 'aktivnost',
                                             'state': 'stanje', 'general': 'splošen', 'truth': 'resnica', 'tense': 'čas', 'never': 'nikoli', 'school': 'šola', 'milk': 'mleko', 'to drink': 'piti',
                                             'flower': 'roža', 'to breath': 'dihati', 'nose': 'nos', 'through': 'skozi', 'person': 'oseba', 'verb': 'glagol', 'to drive': 'voziti', 'car': 'avto',
