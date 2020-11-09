@@ -36,7 +36,7 @@
                     {% for key,item in lessons.lesson_two.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'"
-                        {% if key in user.chapters %}
+                        {% if user.is_staff or key in user.chapters %}
                         {% else %}
                         disabled
                         {% endif %}>
@@ -63,7 +63,7 @@
                     {% for key,item in lessons.lesson_three.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'"
-                        {% if key in user.chapters %}
+                        {% if user.is_staff or key in user.chapters %}
                         {% else %}
                         disabled
                         {% endif %}>
@@ -90,7 +90,7 @@
                     {% for key,item in lessons.lesson_four.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'"
-                        {% if key in user.chapters %}
+                        {% if user.is_staff or key in user.chapters %}
                         {% else %}
                         disabled
                         {% endif %}>
@@ -117,7 +117,7 @@
                     {% for key,item in lessons.lesson_five.items %}
                     <li>
                         <button class="SB" onclick="window.location.href='{{ item }}'"
-                        {% if key in user.chapters %}
+                        {% if user.is_staff or key in user.chapters %}
                         {% else %}
                         disabled
                         {% endif %}>

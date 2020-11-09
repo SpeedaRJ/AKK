@@ -6,4 +6,5 @@ ucbenik/temp
 *.pyc
 *.pyo
 .env
+.vscode
 akk/settings.py
