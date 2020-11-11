@@ -23,3 +23,7 @@
 .color {
     color: #e6a454;
 }
+
+.flex {
+    display: flex;
+}
