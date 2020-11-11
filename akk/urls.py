@@ -270,6 +270,9 @@ urlpatterns = [
     path("lesson_two/daily_routines/page_three", views.daily_routines_page_three, name="daily_routines_page_three"),
     path("lesson_two/daily_routines/page_four", views.daily_routines_page_four, name="daily_routines_page_four"),
     path("lesson_two/daily_routines/page_five", views.daily_routines_page_five, name="daily_routines_page_five"),
+    path("lesson_two/daily_routines/page_six", views.daily_routines_page_six, name="daily_routines_page_six"),
+    path("lesson_two/daily_routines/page_seven", views.daily_routines_page_seven, name="daily_routines_page_six"),
+    path("lesson_two/daily_routines/page_eight", views.daily_routines_page_eight, name="daily_routines_page_eight"),
     # Lesson3
     path("lesson_three/title", views.lesson_three_title, name="title_three"),
     path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),

@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/daily_routines/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/lesson2/daily_routines/page_one.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width" style="text-align: center; font-size: 18px; padding-left: 0">
+                    Jenny’s daily (week day) routine.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="row">
+
+    </div>
+</div>
+{% endblock %}
