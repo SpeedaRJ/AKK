@@ -5882,7 +5882,7 @@ def daily_routines_page_one(request):
         return render(request, "lesson2/daily_routines/page_one.html", {"next": "/lesson_two/daily_routines/page_two",
                                                                         "back": "/lesson_two/present_simple/page_seventeen",
                                                                         "lessons": lessons,
-                                                                        "lesson": "Unit 2", "title": "Present Simple",
+                                                                        "lesson": "Unit 2", "title": "Daily Routines",
                                                                         "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
@@ -5907,7 +5907,7 @@ def daily_routines_page_two(request):
         return render(request, "lesson2/daily_routines/page_two.html", {"next": "/lesson_two/daily_routines/page_three",
                                                                         "back": "/lesson_two/daily_routines/page_one",
                                                                         "lessons": lessons, "solved": solution.solved,
-                                                                        "lesson": "Unit 2", "title": "Present Simple",
+                                                                        "lesson": "Unit 2", "title": "Daily Routines",
                                                                         "user": request.session['user'],
                                                                         "src": src_ref, "parts": parts, "colors": colors
                                                                         })
@@ -5933,7 +5933,7 @@ def daily_routines_page_three(request):
                       {"next": "/lesson_two/daily_routines/page_four",
                        "back": "/lesson_two/daily_routines/page_two",
                        "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Present Simple", "user": request.session['user'],
+                       "lesson": "Unit 2", "title": "Daily Routines", "user": request.session['user'],
                        "src": src_ref, "parts": parts, "colors": colors
                        })
 
@@ -5957,7 +5957,7 @@ def daily_routines_page_four(request):
         return render(request, "lesson2/daily_routines/page_four.html", {"next": "/lesson_two/daily_routines/page_five",
                                                                          "back": "/lesson_two/daily_routines/page_three",
                                                                          "lessons": lessons, "solved": solution.solved,
-                                                                         "lesson": "Unit 2", "title": "Present Simple",
+                                                                         "lesson": "Unit 2", "title": "Daily Routines",
                                                                          "user": request.session['user'],
                                                                          "src": src_ref, "parts": parts,
                                                                          "colors": colors
@@ -5982,7 +5982,7 @@ def daily_routines_page_five(request):
         return render(request, "lesson2/daily_routines/page_five.html", {"next": "/lesson_two/daily_routines/page_five",
                                                                          "back": "/lesson_two/daily_routines/page_four",
                                                                          "lessons": lessons,
-                                                                         "lesson": "Unit 2", "title": "Present Simple",
+                                                                         "lesson": "Unit 2", "title": "Daily Routines",
                                                                          "user": request.session['user'],
                                                                          "src": src_ref, "parts": parts,
                                                                          "colors": colors
@@ -6009,7 +6009,7 @@ def daily_routines_page_six(request):
                       {"next": "/lesson_two/daily_routines/page_seven",
                        "back": "/lesson_two/daily_routines/page_five",
                        "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Present Simple",
+                       "lesson": "Unit 2", "title": "Daily Routines",
                        "user": request.session['user'],
                        "src": src_ref, "parts": parts,
                        "colors": colors
@@ -6036,7 +6036,7 @@ def daily_routines_page_seven(request):
                       {"next": "/lesson_two/daily_routines/page_eight",
                        "back": "/lesson_two/daily_routines/page_six",
                        "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Present Simple",
+                       "lesson": "Unit 2", "title": "Daily Routines",
                        "user": request.session['user'],
                        "src": src_ref, "parts": parts,
                        "colors": colors
@@ -6063,7 +6063,7 @@ def daily_routines_page_eight(request):
                       {"next": "/lesson_two/daily_routines/page_eight",
                        "back": "/lesson_two/daily_routines/page_seven",
                        "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Present Simple",
+                       "lesson": "Unit 2", "title": "Daily Routines",
                        "user": request.session['user'],
                        "src": src_ref, "parts": parts,
                        "colors": colors
