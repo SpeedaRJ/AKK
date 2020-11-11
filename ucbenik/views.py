@@ -6260,22 +6260,26 @@ def pronouns_page_seven(request):
 
 
 def pictures(request):
-    if request.get_full_path().split("/")[2] == "daily_routines":
-        sentences = {"sun.svn": "I get up at seven o’clock.", "brush.svg": "I brush my teeth.", "hairbrush.svg": "I comb my hair.", "shirt.svg": "I get dressed.",
-                     "meal0.svg": "I have breakfast.", "newspaper.svg": "I read the newspaper.", "car0.svg": "I go to work.", "papers.svg": "I work.",
-                     "apple.svg": "I eat a snack.", "car1.svg": "I arrive home at half past four.", "pot.svg": "I make lunch.", "meal1.svg": "I have lunch.",
-                     "dishes.svg": "I do the dishes.", "shower.svg": "I take a shower.", "tv.svg": "I watch TV.", "book.svg": "I read a book.",
-                     "meal2.svg": "I have dinner.", "night.svg": "I go to bed at eleven o’clock."
-                     }
-        count = {"meal": 0, "car": 0}
-        img = {}
-        for image in os.listdir("ucbenik/static/svg/lesson2/daily_routines"):
-            if image == "meal.svg" or image == "car.svg":
-                img["svg/lesson2/daily_routines" + str(image)] = sentences[image.split(".")[0] + str(count[image]) + ".svg"]
-                count[image] += 1
-            else:
-                img["svg/lesson2/daily_routines" + str(image)] = sentences[image]
-        return JsonResponse({"links":img})
+    sentences = {"sun.svg": "I get up at seven o’clock.", "brush.svg": "I brush my teeth.",
+                 "hairbrush.svg": "I comb my hair.", "shirt.svg": "I get dressed.",
+                 "meal0.svg": "I have breakfast.", "newspaper.svg": "I read the newspaper.",
+                 "car0.svg": "I go to work.", "papers.svg": "I work.",
+                 "apple.svg": "I eat a snack.", "car1.svg": "I arrive home at half past four.",
+                 "pot.svg": "I make lunch.", "meal1.svg": "I have lunch.",
+                 "dishes.svg": "I do the dishes.", "shower.svg": "I take a shower.", "tv.svg": "I watch TV.",
+                 "book.svg": "I read a book.",
+                 "meal2.svg": "I have dinner.", "night.svg": "I go to bed at eleven o’clock."
+                 }
+    count = {"meal.svg": 0, "car.svg": 0}
+    img = {}
+    for image in os.listdir("ucbenik/static/svg/lesson2/daily_routines"):
+        if image == "meal.svg" or image == "car.svg":
+            img["svg/lesson2/daily_routines/" + str(image.split(".")[0]) + str(count[image]) + ".svg"] = sentences[
+                str(image.split(".")[0]) + str(count[image]) + ".svg"]
+            count[image] += 1
+        else:
+            img["svg/lesson2/daily_routines/" + str(image)] = sentences[image]
+    return JsonResponse({"links": img})
 
 
 def glossary(request):
