@@ -1,0 +1,21 @@
+#working-unit {
+    width: 60%;
+    margin-right: 20%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.user {
+    padding: 2% !important;
+}
+
+textarea {
+    width: 100%;
+    color: black !important;
+    background: #ffffec;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none !important;
+}
