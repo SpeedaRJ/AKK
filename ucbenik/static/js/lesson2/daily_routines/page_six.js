@@ -42,6 +42,10 @@ function drop(ev, el) {
     text.innerHTML = sentences[data];
     text.id = "sentence " + data;
     div_with_sentences.appendChild(text);
+    var drag_origin = document.getElementById("drag-origin");
+    if(drag_origin.childElementCount===0){
+        document.getElementById("next").removeAttribute("disabled")
+    }
 }
 var sentences = {};
 $(document).ready(function () {
@@ -68,7 +72,7 @@ $(document).ready(function () {
                 p.setAttribute("id", "match" + count);
                 p.setAttribute("draggable", "true");
                 p.classList.add("draggable-word");
-                p.setAttribute("style","margin:0; width:100;");
+                p.setAttribute("style","margin:0; width:100%;");
                 sentences[p.id] = result.links[i];
                 pictures.appendChild(p);
                 count++;
