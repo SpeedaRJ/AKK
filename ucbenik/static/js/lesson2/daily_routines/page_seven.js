@@ -33,7 +33,7 @@ function redo() {
 }
 
 function solution(el, solution) {
-    if (solution.toLowerCase().split("/").includes(el.value.toLowerCase().trim().replace(/  +/g, ' '))) {
+    if (solution.toLowerCase().split("/").includes(el.value.toLowerCase().trim().replace(/  +/g, ' ').replace(".", "").replace("!", ""))) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {

@@ -1,0 +1,35 @@
+.full-width {
+    width: 100% !important;
+}
+
+.translation {
+    text-align: center;
+}
+
+.user {
+    text-align: center;
+}
+
+.textarea {
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+.correct {
+    background: #e4e3e8;
+    color: #00A881;
+}
+
+.correct:hover {
+    background: #e4e3e8;
+}
+
+.incorrect {
+    background: #e4e3e8;
+    color: #F15D2A;
+}
+
+.incorrect:hover {
+    background: #e4e3e8;
+}
+

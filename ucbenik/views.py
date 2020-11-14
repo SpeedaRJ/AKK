@@ -21,7 +21,8 @@ lessons = {"lesson_one": {"Introduction": "/lesson_one/introduction/page_one",
                           "Clothes": "/lesson_two/clothes/page_one",
                           "Time": "/lesson_two/time/page_one",
                           "Present Simple": "/lesson_two/present_simple/page_one",
-                          "Daily Routines": "/lesson_two/daily_routines/page_one"},
+                          "Daily Routines": "/lesson_two/daily_routines/page_one",
+                          "Occupations": "/lesson_two/occupations/page_one"},
            "lesson_three": {"Pronouns": "/lesson_three/pronouns/page_one"}
            }
 
