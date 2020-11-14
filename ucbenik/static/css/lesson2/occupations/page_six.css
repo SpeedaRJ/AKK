@@ -6,10 +6,6 @@
     text-align: center;
 }
 
-.user {
-    text-align: center;
-}
-
 .textarea {
     margin-bottom: 5px;
     width: 90%;
@@ -31,5 +27,10 @@
 
 .incorrect:hover {
     background: #e4e3e8;
+}
+
+.user {
+    text-align: center;
+    background: #58469F;
 }
 

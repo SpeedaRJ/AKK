@@ -40,7 +40,11 @@ function redo() {
         items[x].classList.remove("correct");
         items[x].classList.remove("incorrect");
     }
-    document.getElementById("working-main").innerHTML = "";
+    items = document.getElementsByClassName("toDelete");
+    var arr = [].slice.call(items);
+    arr.forEach(function(x) {
+        x.parentNode.removeChild(x);
+    })
     job = [];
     setUp();
 }
@@ -72,27 +76,44 @@ function checkCorrectness() {
 
 function setUp(){
     let work = document.getElementById("working-main");
-    for(var i = 0; i < 5; i++) {
+    let work2 = document.getElementById("working-main2");
+    for(var i = 0; i < 10; i++) {
         var inx = Math.floor(Math.random() * 27);
         if(!job.includes(options[inx])){
             job.push(options[inx]);
             i--;
             continue;
         }
-        var div = document.createElement("div");
-        div.classList.add("msg");
-        div.classList.add("user");
-        div.classList.add("full-width");
-        var obj = document.createElement("p");
-        obj.innerHTML = job[i];
-        div.appendChild(obj);
-        work.appendChild(div);
+        if(i < 5){
+            var div = document.createElement("div");
+            div.classList.add("msg");
+            div.classList.add("user");
+            div.classList.add("full-width");
+            div.classList.add("toDelete");
+            var obj = document.createElement("p");
+            obj.innerHTML = job[i];
+            div.appendChild(obj);
+            work.insertBefore(div, work.firstChild);
 
-        var input = document.getElementById(i.toString());
-        input.setAttribute("onchange", `solution(this, \"${solutions[job[i]]}\")`)
-        if(i == 0) {
-            input.value = solutions[job[i]][0];
-            input.classList.add("correct");
+            var input = document.getElementById(i.toString());
+            input.setAttribute("onchange", `solution(this, \"${solutions[job[i]]}\")`)
+            if(i == 4) {
+                input.value = solutions[job[i]][0];
+                input.classList.add("correct");
+            }
+        } else {
+            var div = document.createElement("div");
+            div.classList.add("msg");
+            div.classList.add("user");
+            div.classList.add("full-width");
+            div.classList.add("toDelete");
+            var obj = document.createElement("p");
+            obj.innerHTML = solutions[job[i]];
+            div.appendChild(obj);
+            work2.appendChild(div);
+
+            var input = document.getElementById(i.toString());
+            input.setAttribute("onchange", `solution(this, \"${job[i]}\")`)
         }
     }
 }
