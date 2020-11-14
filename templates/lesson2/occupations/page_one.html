@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/daily_routines/page_two.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div clss = "row">
+                <div class="msg jenny" style="text-align: center">
+                    Have I told you about my job? I am a teacher of English. Surprise!
+                </div>
+                <div class="msg translation" style="text-align: center;">
+                    Sem ti že povedala o moji službi? Sem učiteljica angleščine. Presenečenje!
+                </div>
+            </div>
+
+            <div clss = "row">
+                <div class="msg jenny" style="text-align: center">
+                    When I was deciding on what to study, I wasn’t sure. There were so many possible occupations to choose from!
+                </div>
+                <div class="msg translation" style="text-align: center">
+                    Ko sem se odločala, kaj študirati, nisem bila prepričana. Na izbiro je bilo toliko poklicnih možnosti!
+                </div>
+            </div>
+
+            <div clss = "row">
+                <div class="msg jenny" style="text-align: center">
+                    Let’s take a look at some of the occupations and how they sound in English.
+                </div>
+                <div class="msg translation" style="text-align: center">
+                    Poglejva si nekaj poklicev in kako zvenijo v angleščini.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}
