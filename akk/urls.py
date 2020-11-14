@@ -278,10 +278,9 @@ urlpatterns = [
     path("lesson_two/occupations/page_two", views.occupations_page_two, name="daily_occupations_two"),
     path("lesson_two/occupations/page_three", views.occupations_page_three, name="daily_occupations_three"),
     path("lesson_two/occupations/page_four", views.occupations_page_four, name="daily_occupations_four"),
-    path("lesson_two/occupations/page_five", views.occupations_page_five, name="daily_occupations_five"),
-    path("lesson_two/occupations/page_six", views.occupations_page_six, name="daily_occupations_six"),
-    path("lesson_two/occupations/page_seven", views.occupations_page_seven, name="daily_occupations_seven"),
-    path("lesson_two/occupations/page_eight", views.occupations_page_eight, name="daily_occupations_eight"),
+    path("lesson_two/occupations/page_five", views.occupations_page_six, name="daily_occupations_six"),
+    path("lesson_two/occupations/page_six", views.occupations_page_seven, name="daily_occupations_seven"),
+    path("lesson_two/occupations/page_seven", views.occupations_page_eight, name="daily_occupations_eight"),
     # Lesson3
     #path("lesson_three/title", views.lesson_three_title, name="title_three"),
     #path("lesson_three/pronouns/page_one", views.pronouns_page_one, name="pronouns_page_one"),

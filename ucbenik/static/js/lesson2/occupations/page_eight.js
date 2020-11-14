@@ -78,7 +78,7 @@ function setUp() {
         const input = document.getElementById(i.toString());
         input.setAttribute("onchange", `solution(this, \"${solutions[job[i]]}\")`);
         div.classList.add("toDelete");
-        if (i == 0) {
+        if (i == 4) {
             input.value = solutions[job[i]].split("/")[0];
             input.classList.add("correct");
         }
