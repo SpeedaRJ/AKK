@@ -1,37 +1,43 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
-<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
-<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
-<link href="{% static 'css/lesson2/daily_routines/page_six.css' %}" rel="stylesheet" type="text/css"/>
-<script src="{% static 'js/lesson2/daily_routines/page_six.js' %}" type="text/javascript"></script>
+    <link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/daily_routines/page_six.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/lesson2/daily_routines/page_six.js' %}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3">
-            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
-        </div>
-        <div class="col-lg-6">
-            <div class="row inst space">
-                <div class="msg user full-width" style="text-align: center; padding-left: 0">
-                    3. What do you do in a day? Drag and drop the pictures to form your routine.
-                </div>
-                <div class="msg translation full-width" style="text-align: center; padding-left: 0; margin-top: 12%;">
-                    Kaj ti delaš čez dan? Prenesi in odloži slike, da si oblikuješ svojo rutino.
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+            </div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg user full-width" style="text-align: center; padding-left: 0">
+                        3. What do you do in a day? Drag and drop the pictures to form your routine.
+                    </div>
+                    <div class="msg translation full-width" style="text-align: center; padding-left: 0; margin-top: 12%;">
+                        Kaj ti delaš čez dan? Prenesi in odloži slike, da si oblikuješ svojo rutino.
+                    </div>
                 </div>
             </div>
+            {% include "character.html" %}
         </div>
-        {% include "character.html" %}
-    </div>
-    <div class="row">
-        <div class="col-lg-8">
+        <div class="row">
 
-        </div>
-        <div class="col-lg-4" id="drag-origin">
+            <div id="sentences" class="col-lg-6 user" style="display: flex; flex-direction: column; height: 480px;  border-radius: 25px;">
+            </div>
+            <div class="col-lg-1"></div>
 
+            <div class="col-lg-2 user" id="draghere" style="display: flex; align-items: center; justify-content: center;flex-direction: column;
+                flex-wrap: wrap; height: 450px; border-radius: 25px" ondragover="allowDrop(event)" ondrop="drop(event, this)">
+                <h3 id="DragHere">Drag here!</h3>
+            </div>
+            <div class="col-lg-2" id="drag-origin" style="display: flex; flex-direction: column; margin: 0; padding-right: 3px;">
+
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
