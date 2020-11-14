@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/daily_routines/page_two.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/occupations/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+            </div>
+            <div class="col-lg-6">
+                <div clss="row">
+                    <div class="msg jenny" style="text-align: center">
+                        J: What is your occupation?
+                    </div>
+                    <div class="msg translation" style="text-align: center;">
+                        Kaj si ti po poklicu?
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="user msg" style="margin-left: 0 !important; padding: 0 !important; text-align: center;">
+                        <h4>U: I am a/an <input type="text"></h4>
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="msg jenny" style="text-align: center">
+                        J: Let's check if you remember the words!
+                    </div>
+                    <div class="msg translation" style="text-align: center; margin-top: 0 !important;">
+                        Preveriva, ali si si zapomnil/-a besede.
+                    </div>
+                </div>
+            </div>
+            {% include "character.html" %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/daily_routines/page_two.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/occupations/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+            </div>
+            <div class="col-lg-6">
+                <div clss="row">
+                    <div class="msg jenny" style="text-align: center">
+                        Click on the occupation, listen and repeat.
+                    </div>
+                    <div class="msg translation" style="text-align: center;">
+                        Klikni na poklic, poslušaj in ponovi.
+                    </div>
+                </div>
+            </div>
+            {% include "character.html" %}
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="user msg" style="text-align: center">
+                    <h5>businessman = poslovnež</h5>
+                    <h5>businesswoman = poslovna ženska</h5>
+                    <h5>firefighter = gasilec, gasilka</h5>
+                    <h5>teacher = učitelj, učiteljica</h5>
+                    <h5>lawyer = odvetnik, odvetnica</h5>
+                    <h5>judge = sodnik, sodnica</h5>
+                    <h5>writer = pisatelj, pisateljicar</h5>
+                    <h5>poet = pesnik</h5>
+                    <h5>poetess = pesnica (občasno slabšalno)</h5>
+                    <h5>actor = igralec</h5>
+                    <h5>actress = igralka</h5>
+                    <h5>builder = gradbinec, gradbinka</h5>
+                    <h5>singer = pevec, pevka</h5>
+                    <h5>designer = oblikovalec, oblikovalka</h5>
+                    <h5>priest = duhovnik</h5>
+                    <h5>librarian = knjižničar, knjižničarka</h5>
+                    <h5>salesman = prodajalec</h5>
+                    <h5>saleswoman = prodajalka</h5>
+                </div>
+            </div>
+            <div class="col-lg-1" >
+                <div class="user msg" style="display: flex; flex-direction:column ;justify-content: center; margin-top: 10px">
+                    {% for foo in "x"|rjust:"18"|make_list %}
+                        <button style="margin-left: 3px;background: url({% static 'svg/common/listen_on.svg' %}) no-repeat; height: 28px; padding:0"></button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

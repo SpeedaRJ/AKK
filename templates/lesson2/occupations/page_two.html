@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/daily_routines/page_two.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/lesson2/occupations/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+            </div>
+            <div class="col-lg-6">
+                <div clss="row">
+                    <div class="msg jenny" style="text-align: center">
+                        Click on the occupation, listen and repeat.
+                    </div>
+                    <div class="msg translation" style="text-align: center;">
+                        Klikni na poklic, poslušaj in ponovi.
+                    </div>
+                </div>
+            </div>
+            {% include "character.html" %}
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="user msg" style="text-align: center">
+                    <h5>policeman = policist,policistka</h5>
+                    <h5>policewoman = policajka </h5>
+                    <h5>pilot = pilot, pilotka</h5>
+                    <h5>engineer = inženir, inženirka</h5>
+                    <h5>doctor = zdravnik, zdravnica</h5>
+                    <h5>photographer = fotograf, fotografinja</h5>
+                    <h5>postman = poštar</h5>
+                    <h5>postwoman = poštarka</h5>
+                    <h5>bus driver = voznik, voznica avtobusa</h5>
+                    <h5>taxi driver = taksist, taksistka</h5>
+                    <h5>twaiter = natakar</h5>
+                    <h5>waitress = natakarica</h5>
+                    <h5>plumber = vodovodar, vodovodarka</h5>
+                    <h5>farmer = kmet, kmetica</h5>
+                    <h5>musician = glasbenik, glasbenica</h5>
+                    <h5>cook = kuhar, kuharica</h5>
+                </div>
+            </div>
+            <div class="col-lg-1" >
+                <div class="user msg" style="display: flex; flex-direction:column ;justify-content: center; margin-top: 10px">
+                    {% for foo in "x"|rjust:"16"|make_list %}
+                        <button style="margin-left: 3px;background: url({% static 'svg/common/listen_on.svg' %}) no-repeat; height: 28px; padding:0"></button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
