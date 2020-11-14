@@ -5979,7 +5979,7 @@ def daily_routines_page_five(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson2/daily_routines/page_five.html", {"next": "/lesson_two/daily_routines/page_five",
+        return render(request, "lesson2/daily_routines/page_five.html", {"next": "/lesson_two/daily_routines/page_six",
                                                                          "back": "/lesson_two/daily_routines/page_four",
                                                                          "lessons": lessons,
                                                                          "lesson": "Unit 2", "title": "Daily Routines",
@@ -6472,15 +6472,15 @@ def pronouns_page_seven(request):
 
 
 def pictures(request):
-    sentences = {"sun.svg": "I get up at seven o’clock.", "brush.svg": "I brush my teeth.",
+    sentences = {"sun.svg": "I get up.", "brush.svg": "I brush my teeth.",
                  "hairbrush.svg": "I comb my hair.", "shirt.svg": "I get dressed.",
                  "meal0.svg": "I have breakfast.", "newspaper.svg": "I read the newspaper.",
                  "car0.svg": "I go to work.", "papers.svg": "I work.",
-                 "apple.svg": "I eat a snack.", "car1.svg": "I arrive home at half past four.",
+                 "apple.svg": "I eat a snack.", "car1.svg": "I arrive home.",
                  "pot.svg": "I make lunch.", "meal1.svg": "I have lunch.",
                  "dishes.svg": "I do the dishes.", "shower.svg": "I take a shower.", "tv.svg": "I watch TV.",
                  "book.svg": "I read a book.",
-                 "meal2.svg": "I have dinner.", "night.svg": "I go to bed at eleven o’clock."
+                 "meal2.svg": "I have dinner.", "night.svg": "I go to bed."
                  }
     count = {"meal.svg": 0, "car.svg": 0}
     img = {}
