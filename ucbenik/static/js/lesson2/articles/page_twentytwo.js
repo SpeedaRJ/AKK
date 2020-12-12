@@ -1,9 +1,9 @@
 items = [
     ["A nose is pink", "Noses are pink"],
     ["A fly is annoying", "Flies are annoying"],
-    ["A donkey is loud", "Donkies are loud"],
+    ["A donkey is loud", "Donkeys are loud"],
     ["An address is long", "Addresses are long"],
-    ["A potato is sweet", "Potato are sweet"],
+    ["A potato is sweet", "Potatoes are sweet"],
     ["A woman is tall", "Women are tall"],
     ["An orange is orange", "Oranges are orange"],
     ["A spy is smart", "Spies are smart"],

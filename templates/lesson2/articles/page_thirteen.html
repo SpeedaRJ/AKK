@@ -1,57 +1,83 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
-<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/lesson2/articles/glossary.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/articles/glossary.js' %}"></script>
 {% endblock %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3">
-            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <button class="title" style="font-size: 1em;" disabled>Dodatno znanje - dodatna pravila za rabo členov</button>
+                    <div class="msg jenny">
+                        Pri nekaterih samostalnikih ne rabimo člena. Člena ne uporabimo:
+                    </div>
+                </div>
+            </div>
+            {% include "character.html" %}
         </div>
-        <div class="col-lg-6">
-            <div class="row inst space">
-                <button class="title" style="font-size: 1em;" disabled>Dodatno znanje - dodatna pravila za rabo členov</button>
-                <div class="msg jenny">
-                    Pri nekaterih samostalnikih ne rabimo člena. Člena ne uporabimo:
+        <div class="col-lg-2 full"></div>
+        <div class="col-lg-8">
+            <div id="conversation">
+                <div class="row">
+                    <div class="msg user" style="float:left;width:50%;">
+                        s športi
+                    </div>
+                    <div class="msg jenny">
+                        He plays
+                        <pr class="orange">basketball</pr>
+                        . / Igra košarko.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:left;width:50%;">
+                        s šolskimi predmeti
+                    </div>
+                    <div class="msg jenny">
+                        I like
+                        <pr class="orange">maths</pr>
+                        . / Všeč mi je matematika.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:left;width:50%;">
+                        z jeziki
+                    </div>
+                    <div class="msg jenny">
+                        Do you speak
+                        <pr class="orange">English</pr>
+                        ? / Ali znaš govoriti po angleško?
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:left;width:50%;">
+                        z obroki
+                    </div>
+                    <div class="msg jenny">
+                        What do you want for
+                        <pr class="orange">breakfast</pr>
+                        ? / Kaj želiš za zajtrk?
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg user" style="float:left;width:50%;">
+                        z državami,mesti ulicami
+                    </div>
+                    <div class="msg jenny">
+                        <pr class="orange">Slovenia</pr> is beautiful. / Slovenija je prelepa.<br>
+                        Slovenia’s capital is <pr class="orange">Ljubljana</pr>. / Slovensko glavno mesto je Ljubljana.<br>
+                        It is located on <pr class="orange">Čop Street</pr>. / Nahaja se na Čopovi ulici.
+                    </div>
                 </div>
             </div>
         </div>
-        {% include "character.html" %}
+        <div class="col-lg-2"></div>
     </div>
-    <div class="col-lg-2 full"> </div>
-    <div class="col-lg-8">
-        <div id="conversation">
-            <div class="row">
-                <div class="msg user" style="float:left;width:50%;">
-                    s športi
-                </div>
-                <div class="msg jenny">
-                    He plays <pr class="orange">basketball</pr>. / Igra košarko.
-                </div>
-            </div>
-            <div class="row">
-                <div class="msg user" style="float:left;width:50%;">
-                    s šolskimi predmeti
-                </div>
-                <div class="msg jenny">
-                    I like <pr class="orange">maths</pr>. / Všeč mi je matematika.
-                </div>
-            </div>
-            <div class="row">
-                <div class="msg user" style="float:left;width:50%;">
-                    z jeziki
-                </div>
-                <div class="msg jenny">
-                    Do you speak <pr class="orange">English</pr>? / Ali znaš govoriti po angleško?
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-2"> </div>
-</div>
 {% endblock %}

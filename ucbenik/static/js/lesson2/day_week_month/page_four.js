@@ -1,8 +1,11 @@
 
 function toOrigin(el) {
+    console.log(el);
     var oId = el.id.replace("m","match");
+    console.log(oId);
     var origin = document.getElementById(oId);
     if (origin === el.parentElement) return;
+    console.log(origin);
     origin.appendChild(el);
     el.classList.remove('incorrect');
     el.classList.remove('correct');
@@ -38,7 +41,8 @@ function drop(ev, el, limit) {
 
 function redo() {
     Array.from(document.getElementsByClassName("trait")).forEach(function(item) {
-        toOrigin(item);
+        if(item.classList.contains("correct") || item.classList.contains("incorrect"))
+            toOrigin(item);
     });
     shuffle(document.getElementById("drag1"));
     shuffle(document.getElementById("drag2"));
