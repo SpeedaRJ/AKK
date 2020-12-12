@@ -91,7 +91,7 @@ def coming_soon(request):
     else:
         src_ref, parts, colors = get_user_avatar(request.session['user'])
         request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-    return render(request, "coming_soon.html", {"next": "/", "back": back,
+    return render(request, "comming_soon.html", {"next": "/", "back": back,
                                                 "lessons": lessons,
                                                 "lesson": "Coming Soon", "title": "Coming Soon",
                                                 "user": request.session['user'],
@@ -6175,33 +6175,6 @@ def occupations_page_four(request):
                        })
 
 
-def occupations_page_five(request):
-    if request.method == "GET":
-        if 'user' not in request.session:
-            return login_page(request)
-        user = User.objects.get(email=request.session['user']['email'])
-        if not get_refferer(request) and not user.is_staff:
-            return redirect(request.session['last_page'])
-        request.session['last_page'] = request.path
-        if 'avatar' in request.session:
-            src_ref = request.session['avatar']['src_ref']
-            parts = request.session['avatar']['parts']
-            colors = request.session['avatar']['colors']
-        else:
-            src_ref, parts, colors = get_user_avatar(request.session['user'])
-            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson2/occupations/page_five.html",
-                      {"next": "/lesson_two/occupations/page_six",
-                       "back": "/lesson_two/occupations/page_four",
-                       "lessons": lessons, "solved": solution.solved,
-                       "lesson": "Unit 2", "title": "Daily Routines",
-                       "user": request.session['user'],
-                       "src": src_ref, "parts": parts,
-                       "colors": colors
-                       })
-
-
 def occupations_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -6219,8 +6192,8 @@ def occupations_page_six(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/occupations/page_six.html",
-                      {"next": "/lesson_two/occupations/page_seven",
-                       "back": "/lesson_two/occupations/page_five",
+                      {"next": "/lesson_two/occupations/page_six",
+                       "back": "/lesson_two/occupations/page_four",
                        "lessons": lessons, "solved": solution.solved,
                        "lesson": "Unit 2", "title": "Daily Routines",
                        "user": request.session['user'],
@@ -6246,8 +6219,8 @@ def occupations_page_seven(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/occupations/page_seven.html",
-                      {"next": "/lesson_two/occupations/page_eight",
-                       "back": "/lesson_two/occupations/page_six",
+                      {"next": "/lesson_two/occupations/page_seven",
+                       "back": "/lesson_two/occupations/page_five",
                        "lessons": lessons, "solved": solution.solved,
                        "lesson": "Unit 2", "title": "Daily Routines",
                        "user": request.session['user'],
@@ -6273,8 +6246,8 @@ def occupations_page_eight(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson2/occupations/page_eight.html",
-                      {"next": "/lesson_two/occupations/page_seven",
-                       "back": "/lesson_three/title",
+                      {"next": "/coming_soon",
+                       "back": "/lesson_two/occupations/page_six",
                        "lessons": lessons, "solved": solution.solved,
                        "lesson": "Unit 2", "title": "Daily Routines",
                        "user": request.session['user'],

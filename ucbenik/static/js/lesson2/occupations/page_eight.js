@@ -21,7 +21,11 @@ function redo() {
         items[x].classList.remove("correct");
         items[x].classList.remove("incorrect");
     }
-    document.getElementById("working-main").innerHTML = "";
+    items = document.getElementsByClassName("toDelete");
+    var arr = [].slice.call(items);
+    arr.forEach(function(x) {
+        x.parentNode.removeChild(x);
+    })
     job = [];
     setUp();
 }
@@ -54,16 +58,27 @@ function checkCorrectness() {
 function setUp() {
     let work = document.getElementById("working-main");
     for (var i = 0; i < 5; i++) {
-        var inx = Math.floor(Math.random() * 14);
+        var inx = Math.floor(Math.random() * 20);
         if (!job.includes(options[inx])) {
             job.push(options[inx]);
             i--;
             continue;
         }
 
+        var div = document.createElement("div");
+        div.classList.add("msg");
+        div.classList.add("user");
+        div.classList.add("full-width");
+        div.classList.add("toDelete");
+        var obj = document.createElement("p");
+        obj.innerHTML = job[i];
+        div.appendChild(obj);
+        work.insertBefore(div, work.firstChild);
+
         const input = document.getElementById(i.toString());
         input.setAttribute("onchange", `solution(this, \"${solutions[job[i]]}\")`);
-        if (i == 0) {
+        div.classList.add("toDelete");
+        if (i == 4) {
             input.value = solutions[job[i]].split("/")[0];
             input.classList.add("correct");
         }

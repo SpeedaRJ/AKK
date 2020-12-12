@@ -48,7 +48,11 @@ function redo() {
         items[x].classList.remove("correct");
         items[x].classList.remove("incorrect");
     }
-    document.getElementById("working-main").innerHTML = "";
+    items = document.getElementsByClassName("toDelete");
+    var arr = [].slice.call(items);
+    arr.forEach(function(x) {
+        x.parentNode.removeChild(x);
+    })
     job = [];
     setUp();
 }
@@ -93,6 +97,7 @@ function setUp(){
             div.classList.add("msg");
             div.classList.add("user");
             div.classList.add("full-width");
+            div.classList.add("toDelete");
             var obj = document.createElement("p");
             obj.innerHTML = job[i];
             div.appendChild(obj);
@@ -100,10 +105,23 @@ function setUp(){
 
             var input = document.getElementById(i.toString());
             input.setAttribute("onchange", `solution(this, \"${solutions[job[i]]}\")`)
-            if(i == 0) {
+            if(i == 4) {
                 input.value = solutions[job[i]][0];
                 input.classList.add("correct");
             }
+        } else {
+            var div = document.createElement("div");
+            div.classList.add("msg");
+            div.classList.add("user");
+            div.classList.add("full-width");
+            div.classList.add("toDelete");
+            var obj = document.createElement("p");
+            obj.innerHTML = solutions[job[i]];
+            div.appendChild(obj);
+            work2.appendChild(div);
+
+            var input = document.getElementById(i.toString());
+            input.setAttribute("onchange", `solution(this, \"${job[i]}\")`)
         }
     }
 }
