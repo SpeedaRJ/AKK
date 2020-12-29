@@ -6645,7 +6645,7 @@ def pronouns_page_sixteen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson3/pronouns/page_six.html", {"next": "/lesson_three/pronouns/page_seventeen",
+        return render(request, "lesson3/pronouns/page_sixteen.html", {"next": "/lesson_three/pronouns/page_seventeen",
                                                                   "back": "/lesson_three/pronouns/page_fourteen",
                                                                   "solved": solution.solved,
                                                                   "lessons": lessons,
