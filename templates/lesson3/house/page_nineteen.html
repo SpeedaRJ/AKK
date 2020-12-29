@@ -1,0 +1,66 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny full-width" style="background-color: #006655">
+                        Jim: Now, fill in the sentences.
+                    </div>
+                    <div class="msg jenny translation full-width">
+                        Zdaj zapolni povedi.
+                    </div>
+                </div>
+            </div>
+            {% include "character.html" %}
+            <div class="col-lg-2 full"></div>
+            <div class="col-lg-6">
+                <div class="row container">
+                    <div class="col-lg-8 column container">
+                        <div class="col-lg-1"></div>
+                        <div class="row word-drops col-lg-2">
+                            <div class="drop" id="answer1">
+                                <input type="text" class="answer" onchange="solution(this)">
+                            </div>
+                        </div>
+                        <div class="row word-drops col-lg-2">
+                            <div class="drop" id="answer2">
+                                <input type="text" class="answer" onchange="solution(this)">
+                            </div>
+                        </div>
+                        <div class="row word-drops col-lg-2">
+                            <div class="drop" id="answer3">
+                                <input type="text" class="answer" onchange="solution(this)">
+                            </div>
+                        </div>
+                        <div class="row word-drops col-lg-2">
+                            <div class="drop" id="answer4">
+                                <input type="text" class="answer" onchange="solution(this)">
+                            </div>
+                        </div>
+                        <div class="row word-drops col-lg-2">
+                            <div class="drop" id="answer5">
+                                <input type="text" class="answer" onchange="solution(this)">
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+            </div>
+        </div>
+    </div>
+{% endblock %}

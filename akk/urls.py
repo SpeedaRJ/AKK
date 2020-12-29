@@ -301,4 +301,6 @@ urlpatterns = [
     path("lesson_three/house/page_four", views.house_page_four, name="house_page_four"),
     path("lesson_three/house/page_five", views.house_page_five, name="house_page_five"),
     path("lesson_three/house/page_six", views.house_page_six, name="house_page_six"),
+    path("lesson_three/house/page_nineteen", views.house_page_nineteen(), name="house_page_nineteen"),
+
 ]
