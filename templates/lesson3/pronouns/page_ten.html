@@ -1,0 +1,98 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_three.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_five.css' %}"/>
+<script type="text/javascript" src="{% static 'js/lesson3/pronouns/page_five.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+    </div>
+    <div class="col-lg-6">
+        <div class="row inst nospace" id="inst">
+            <div class="msg user">2. Match.</div>
+            <div class="msg user slo ">Poveži.</div>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
+<div class="row container">
+    <div class="row" style="height: 45%">
+        <div class="col-lg-2"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="him01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">he</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="it01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">it</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="us01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">we</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="me01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">I</h6>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div class="row" style="height: 45%">
+        <div class="col-lg-2"></div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="you01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">you (ed.)</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="you02" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">you (mn.)</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="her01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">she</h6>
+            </div>
+        </div>
+        <div class="row word-drops col-lg-2">
+            <div class="drop" id="them01" ondrop="drop(event, this, 1)" ondragover="allowDrop(event)">
+                <h6 class="drop-text">they</h6>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+<div class=" container-fluid">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="row items" id="drag-origin">
+            <span onclick="toOrigin1(this)" class="draggable-word" id="her1" draggable="true"
+                  ondragstart="drag(event)">her</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="him1" draggable="true"
+                  ondragstart="drag(event)">his</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="me1" draggable="true"
+                  ondragstart="drag(event)">my</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="us1" draggable="true"
+                  ondragstart="drag(event)">our</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="them1" draggable="true"
+                  ondragstart="drag(event)">their</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="you1" draggable="true"
+                  ondragstart="drag(event)">your</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="you2" draggable="true"
+                  ondragstart="drag(event)">your</span>
+            <span onclick="toOrigin1(this)" class="draggable-word" id="it1" draggable="true"
+                  ondragstart="drag(event)">its</span>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+{% endblock %}

@@ -42,7 +42,7 @@ function drop(ev, el, limit) {
 
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
-    correct = data.search(el.id.replace("0","")) > -1;
+    correct = data.search('^' + el.id.substring(0, el.id.length-2) + '[0-9]$') > -1;
     console.log(correct);
     var child = document.getElementById(data);
     if (correct) {

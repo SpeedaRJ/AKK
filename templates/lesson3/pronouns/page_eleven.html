@@ -1,0 +1,117 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_five.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/daily_routines/page_four.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_eleven.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/lesson2/daily_routines/page_four.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg user full-width" style="text-align: center; width: 100%; padding-left: 2%;">
+                    2. Drag and drop.
+                </div>
+                <div class="msg translation full-width" style="text-align: center;">
+                    Prenesi in odloži.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="row">
+        <div class="col-lg-7" style="margin-top: 4%;">
+            <div class="msg user full-width line">Dalton and Anne have just bought a house.</div>
+            <div class="msg user full-width line">The house is finally <div class="drop" id="mine" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div>.
+            </div>
+
+            <div class="msg user full-width line">Anne designed the living room herself.</div>
+
+            <div class="msg user full-width line"><div class="drop" id="it" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div> is <div class="drop" id="her" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div> favourite room in the house.
+            </div>
+
+            <div class="msg user full-width line">Dalton enjoys cooking so the kitchen is <div class="drop" id="his" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div> favourite room in the house.
+            </div>
+
+            <div class="msg user full-width line"><div class="drop" id="we" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div> had a housewarming party.
+            </div>
+
+            <div class="msg user full-width line">Their friend Jamie came to the party.</div>
+
+            <div class="msg user full-width line">He brought <div class="drop" id="his0" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div> girlfriend Monica along and proclaimed: “This girl is <div class="drop" id="mine0" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div>.”
+            </div>
+
+            <div class="msg user full-width line">Everyone replied: “ Yes, we know <div class="drop" id="she" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div> is <div class="drop" id="yours0" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div>.
+            </div>
+            <div class="msg user full-width line"><div class="drop" id="we01" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div> won’t steal her. We have <div class="drop" id="our" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
+                </div> own partners.”
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="items" id="drag-origin">
+                <p class="draggable-word" draggable="true" id="theirs1" onclick="toOrigin1(this)"
+                    ondragstart="drag(event)"> theirs</p>
+                <p class="draggable-word" draggable="true" id="it1" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> it</p>
+                <p class="draggable-word" draggable="true" id="her1" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> her</p>
+                <p class="draggable-word" draggable="true" id="they1" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> they</p>
+                <p class="draggable-word" draggable="true" id="his1" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> his</p>
+                <p class="draggable-word" draggable="true" id="mine1" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> mine</p>
+                <p class="draggable-word" draggable="true" id="she1" onclick="toOrigin1(this)"
+                    ondragstart="drag(event)"> she</p>
+                <p class="draggable-word" draggable="true" id="yours1" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> yours</p>
+                <p class="draggable-word" draggable="true" id="we1" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> we</p>
+                <p class="draggable-word" draggable="true" id="our1" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> our</p>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="items" id="drag-origin2">
+                <p class="draggable-word" draggable="true" id="theirs2" onclick="toOrigin1(this)"
+                    ondragstart="drag(event)"> theirs</p>
+                <p class="draggable-word" draggable="true" id="it2" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> it</p>
+                <p class="draggable-word" draggable="true" id="her2" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> her</p>
+                <p class="draggable-word" draggable="true" id="they2" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> they</p>
+                <p class="draggable-word" draggable="true" id="his2" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> his</p>
+                <p class="draggable-word" draggable="true" id="mine2" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> mine</p>
+                <p class="draggable-word" draggable="true" id="she2" onclick="toOrigin1(this)"
+                    ondragstart="drag(event)"> she</p>
+                <p class="draggable-word" draggable="true" id="yours2" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> yours</p>
+                <p class="draggable-word" draggable="true" id="we2" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> we</p>
+                <p class="draggable-word" draggable="true" id="our2" onclick="toOrigin1(this)"
+                      ondragstart="drag(event)"> our</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -5,7 +5,7 @@
 <link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
 <link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
 <link href="{% static 'css/lesson3/pronouns/page_four.css' %}" rel="stylesheet" type="text/css"/>
-<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/lesson3/pronouns/page_nine.js' %}" type="text/javascript"></script>
 {% endblock %}
 {% block content %}
 <div class="container" style="margin-top: 0 !important">
@@ -102,7 +102,7 @@
             <div class="col-lg-3"></div>
             <div class="col-lg-6 main">
                 <div class="row inst space">
-                    <div class="msg jenny">Razlaga za its: It uporabljamo z živalmi in predmeti, zato je v tem primeru
+                    <div class="msg jenny"><b>Razlaga</b> za its: It uporabljamo z živalmi in predmeti, zato je v tem primeru
                         uporabljena beseda kost namesto besede knjiga. Žival namreč ne bere knjig.
                     </div>
                 </div>
@@ -124,7 +124,11 @@
                 <div class="row inst space" hidden id="third">
                     <div class="msg jenny">This is Jim’s book.</div>
                 </div>
-                <button class="next" id="next-list" onclick="changelist()" type="button">Next</button>
+                <div class="row inst space">
+                    <button class="next" id="next-list" onclick="changelist()" style="background:#e6a454" type="button">
+                        Next
+                    </button>
+                </div>
             </div>
             <div class="col-lg-3"></div>
         </div>
