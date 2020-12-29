@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_six.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/common/jim-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6 main">
+            <div class="row inst space">
+                <div class="msg user wide jim">Great! We can meet at the restaurant at 1 p.m.
+
+                </div>
+                <div class="msg user wide slo">Super! Lahko se srečamo pred restavracij ob enih.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user wide">Okay. What is the restaurant’s name?
+                </div>
+                <div class="msg user wide slo">V redu. Kako se imenuje restavracija?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user wide jim"> It’s called Food for life. It is right next to the post office. If you cannot find it, just ask around. I am sure people will give you directions.
+                </div>
+                <div class="msg user wide slo">Imenuje se “Hrana za življenje”. Nahaja se poleg pošte. Če je ne nejdeta, samo vprašajta naokoli. Sigurno vama bo nekdo dal navodila.
+                </div>
+            </div>
+             <div class="row inst space">
+                <div class="msg user wide jim"> In order to understand the directions, you need to learn a few words. Let’s learn prepositions and words used when giving directions.
+                </div>
+                <div class="msg user wide slo">Zato da boš razumel_a navodila, se moraš naučiti par besed. Dajva se naučiti predloge in besede, ki jih uporabljamo pri navodilih za pot.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

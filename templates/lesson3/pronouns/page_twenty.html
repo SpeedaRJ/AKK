@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_six.css' %}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<!--<script src="{% static 'js/lesson3/pronouns/page_twenty.js' %}" type="text/javascript"></script>-->
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+
+<!--
+TODO: Spremeni id-je tako da bo zvok delal ko bo ta porezan
+-->
+
+<div class="container">
+    <div class="container">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6 main">
+            <div class="row inst space">
+                <div class="msg user jim wide">Let’s learn some useful phrases for giving directions.</div>
+                <div class="msg user slo wide"> Naučiva se par uporabnih fraz za podajanje navodil za pot.</div>
+            </div>
+            <div class="row inst space" style="padding-top:2% !important">
+                <div class="msg user wide">Turn left.
+                    <img onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a1" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg user wide slo">Zavij levo.
+                </div>
+            </div>
+            <div class="row inst space" style="padding-top:2% !important">
+                <div class="msg user wide">Turn right.
+                    <img onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a1" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg user wide slo">Zavij desno.
+                </div>
+            </div>
+            <div class="row inst space" style="padding-top:2% !important">
+                <div class="msg user wide">Go past.
+                    <img onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a1" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg user wide slo">Pojdi mimo.
+                </div>
+            </div>
+            <div class="row inst space" style="padding-top:2% !important">
+                <div class="msg user wide">Walk across.
+                    <img onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a1" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg user wide slo">Prečkaj.
+                </div>
+            </div>
+            <div class="row inst space" style="padding-top:2% !important">
+                <div class="msg user wide">Go straight ahead.
+                    <img onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a1" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg user wide slo">Pojdi naravnost.
+                </div>
+            </div>
+            <div class="row inst space" style="padding-top:2% !important">
+                <div class="msg user wide">At the crossroads.
+                    <img onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenButton">
+                    <audio id="a1" src="{% static 'audio/lesson1/day_week_month/1.mp3' %}"></audio>
+                </div>
+                <div class="msg user wide slo">Na križišču.
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}
