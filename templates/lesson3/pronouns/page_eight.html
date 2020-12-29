@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_three.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/lesson3/pronouns/page_one.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -15,26 +15,23 @@
     </div>
     <div class="col-lg-6 main">
         <div class="row inst nospace" style="height: 18%">
-            <div class="msg user">PHONE CALL (‘telefonski klic’).</div>
-            <input type="image" src="{% static 'svg/lesson3/pronouns/phone_on.svg' %}" id="redo_b" onclick="answer()">
+            <div class="msg user wide">Possessive pronouns - Svojilni zaimki</div>
         </div>
-        <div id="conversation" hidden>
+        <div id="conversation">
             <div class="row inst space">
-                <div class="msg jenny">Hello {{user.first_name}}. How are you?</div>
-                <div class="msg jenny translation">Živijo {{user.first_name}}. Kako si?</div>
+                <div class="msg jenny wide"> In English, you can say that you own something in two different ways:</div>
             </div>
             <div class="row inst space">
-                <div class="msg user">Hello. I am doing well. How are you?</div>
-                <div class="msg user slo ">Živijo. Vredu sem. Kako si ti?</div>
+                <div class="msg user wide">This is <b>my</b> book.</div>
+                <div class="msg user slo wide">To je moja knjiga.</div>
             </div>
-
             <div class="row inst space">
-                <div class="msg jenny">I am good. I’d like to ask you something.</div>
-                <div class="msg jenny translation">V redu sem. Nekaj te želim vprašati.</div>
+                <div class="msg user wide">This book is <b>mine</b>.</div>
+                <div class="msg user slo wide">Ta knjiga je moja.</div>
             </div>
             <div class="row inst nospace">
-                <div class="msg user">Go ahead.</div>
-                <div class="msg user slo ">Kar vprašaj.</div>
+                <div class="msg jenny wide">These are possessive pronouns.</div>
+                <div class="msg jenny translation wide">To so svojilni zaimki.</div>
             </div>
         </div>
     </div>

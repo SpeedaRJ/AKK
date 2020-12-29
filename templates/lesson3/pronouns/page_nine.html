@@ -1,0 +1,133 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_four.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container" style="margin-top: 0 !important">
+    <div class="container" style="height: 90%;">
+        <div class="col-lg-6 tables">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Pridevnik</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>my</td>
+                    <td>moje</td>
+                    <td>This is <b>my</b> book.</td>
+                </tr>
+                <tr>
+                    <td>your</td>
+                    <td>tvoje</td>
+                    <td>This is <b>your</b> book.</td>
+                </tr>
+                <tr>
+                    <td>his</td>
+                    <td>njegovo</td>
+                    <td>This is <b>his</b> book.</td>
+                </tr>
+                <tr>
+                    <td>her</td>
+                    <td>njeno</td>
+                    <td>This is <b>book</b>.</td>
+                </tr>
+                <tr>
+                    <td>its</td>
+                    <td>od onega</td>
+                    <td>This is <b>bone</b>.</td>
+                </tr>
+                <tr>
+                    <td>our</td>
+                    <td>naše</td>
+                    <td>This is <b>our</b> book</td>
+                </tr>
+                <tr>
+                    <td>your</td>
+                    <td>vaše</td>
+                    <td>This is <b>your</b> book.</td>
+                </tr>
+                <tr>
+                    <td>their</td>
+                    <td>njihovo</td>
+                    <td>This is <b>their</b> book.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-6 tables">
+            <table>
+                <tr>
+                    <th colspan="2">Samostalnik</th>
+                </tr>
+                <tr>
+                    <td>mine</td>
+                    <td>The book is <b>mine</b>.</td>
+                </tr>
+                <tr>
+                    <td>your<b>s</b></td>
+                    <td>The book is <b>yours</b>.</td>
+                </tr>
+                <tr>
+                    <td>his</td>
+                    <td>The book is <b>his</b>.</td>
+                </tr>
+                <tr>
+                    <td>her<b>s</b></td>
+                    <td>The book is <b>hers</b>.</td>
+                </tr>
+                <tr>
+                    <td>its</td>
+                    <td>The bone is <b>its</b>.</td>
+                </tr>
+                <tr>
+                    <td>our<b>s</b></td>
+                    <td>The book is <b>ours</b>.</td>
+                </tr>
+                <tr>
+                    <td>your<b>s</b></td>
+                    <td>The book is <b>yours</b>.</td>
+                </tr>
+                <tr>
+                    <td>their<b>s</b>/td>
+                    <td>The book is <b>theirs</b>.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="container">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 main">
+                <div class="row inst space">
+                    <div class="msg jenny">Razlaga za its: It uporabljamo z živalmi in predmeti, zato je v tem primeru
+                        uporabljena beseda kost namesto besede knjiga. Žival namreč ne bere knjig.
+                    </div>
+                </div>
+                <div class="row inst space" id="first">
+                    <div class="msg jenny">If the possessive pronoun follows the verb ‘to be’, an -s is added to the
+                        pronoun.
+                    </div>
+                    <div class="msg jenny translation">Če svojilni zaimek sledi glagolu biti, dodamo zaimku končnico
+                        -s.
+                    </div>
+                </div>
+                <div class="row inst space" hidden id="second">
+                    <div class="msg jenny">To show possession, nouns are followed by an apostrophe and s (<b>‘s)</b>.
+                    </div>
+                    <div class="msg jenny translation">Da izrazijo svojino, samostalnikom sledi apostrofa in in s
+                        (<b>‘s</b>).
+                    </div>
+                </div>
+                <div class="row inst space" hidden id="third">
+                    <div class="msg jenny">This is Jim’s book.</div>
+                </div>
+                <button class="next" id="next-list" onclick="changelist()" type="button">Next</button>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

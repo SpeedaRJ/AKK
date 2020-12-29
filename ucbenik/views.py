@@ -6435,8 +6435,60 @@ def pronouns_page_seven(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson3/pronouns/page_seven.html", {"next": "/lesson_three/pronouns/page_seven",
+        return render(request, "lesson3/pronouns/page_seven.html", {"next": "/lesson_three/pronouns/page_eight",
                                                                     "back": "/lesson_three/pronouns/page_six",
+                                                                    "solved": solution.solved,
+                                                                    "lessons": lessons,
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
+                                                                    "user": request.session['user'],
+                                                                    "src": src_ref, "parts": parts, "colors": colors
+                                                                    })
+
+
+def pronouns_page_eight(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_eight.html", {"next": "/lesson_three/pronouns/page_nine",
+                                                                    "back": "/lesson_three/pronouns/page_seven",
+                                                                    "solved": solution.solved,
+                                                                    "lessons": lessons,
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
+                                                                    "user": request.session['user'],
+                                                                    "src": src_ref, "parts": parts, "colors": colors
+                                                                    })
+
+
+def pronouns_page_nine(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_nine.html", {"next": "/lesson_three/pronouns/page_ten",
+                                                                    "back": "/lesson_three/pronouns/page_eight",
                                                                     "solved": solution.solved,
                                                                     "lessons": lessons,
                                                                     "lesson": "Unit 3: Let's Eat", "title": "Pronouns",

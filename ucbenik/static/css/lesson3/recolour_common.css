@@ -21,3 +21,7 @@
 .user {
     background: #446A85;
 }
+
+.wide {
+    width: 100% !important;
+}
