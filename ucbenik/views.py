@@ -6516,7 +6516,7 @@ def house_page_one(request):
         return render(request, "lesson3/house/page_one.html", {"next": "/lesson_three/house/page_two",
                                                                "back": "/lesson_three/house/page_one",
                                                                "solved": solution.solved,
-                                                               "lessons": lessons, "picture": "/svg/lesson3/house/bathroom 01.svg",
+                                                               "lessons": lessons, "picture": "svg/lesson3/house/bedroom 01.svg",
                                                                "lesson": "Unit 3: Let's Eat", "title": "House",
                                                                "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
@@ -6542,7 +6542,7 @@ def house_page_two(request):
         return render(request, "lesson3/house/page_two.html", {"next": "/lesson_three/house/page_three",
                                                                "back": "/lesson_three/house/page_one",
                                                                "solved": solution.solved,
-                                                               "lessons": lessons, "picture": "/svg/lesson3/house/bedroom 01.svg",
+                                                               "lessons": lessons, "picture": "svg/lesson3/house/bathroom 01.svg",
                                                                "lesson": "Unit 3: Let's Eat", "title": "House",
                                                                "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
@@ -6568,7 +6568,7 @@ def house_page_three(request):
         return render(request, "lesson3/house/page_three.html", {"next": "/lesson_three/house/page_four",
                                                                  "back": "/lesson_three/house/page_two",
                                                                  "solved": solution.solved,
-                                                                 "lessons": lessons, "picture": "/svg/lesson3/house/dining room 01.svg",
+                                                                 "lessons": lessons, "picture": "svg/lesson3/house/living room 01.svg",
                                                                  "lesson": "Unit 3: Let's Eat", "title": "House",
                                                                  "user": request.session['user'],
                                                                  "src": src_ref, "parts": parts, "colors": colors
@@ -6594,7 +6594,7 @@ def house_page_four(request):
         return render(request, "lesson3/house/page_four.html", {"next": "/lesson_three/house/page_five",
                                                                 "back": "/lesson_three/house/page_three",
                                                                 "solved": solution.solved,
-                                                                "lessons": lessons, "picture": "/svg/lesson3/house/garden 01.svg",
+                                                                "lessons": lessons, "picture": "svg/lesson3/house/kitchen 01.svg",
                                                                 "lesson": "Unit 3: Let's Eat", "title": "House",
                                                                 "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
@@ -6620,11 +6620,13 @@ def house_page_five(request):
         return render(request, "lesson3/house/page_five.html", {"next": "/lesson_three/house/page_six",
                                                                 "back": "/lesson_three/house/page_four",
                                                                 "solved": solution.solved,
-                                                                "lessons": lessons, "picture": "/svg/lesson3/house/kitchen 01.svg",
+                                                                "lessons": lessons, "picture": "svg/lesson3/house/dining room 01.svg",
                                                                 "lesson": "Unit 3: Let's Eat", "title": "House",
                                                                 "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
+
+
 def house_page_six(request):
     if request.method == "GET":
         if 'user' not in request.session:
@@ -6644,11 +6646,12 @@ def house_page_six(request):
         return render(request, "lesson3/house/page_six.html", {"next": "/lesson_three/house/page_seven",
                                                                    "back": "/llesson_three/house/page_five",
                                                                    "solved": solution.solved,
-                                                                   "lessons": lessons, "picture": "/svg/lesson3/house/living room 01.svg",
+                                                                   "lessons": lessons, "picture": "svg/lesson3/house/garden 01.svg",
                                                                    "lesson": "Unit 3: Let's Eat", "title": "House",
                                                                    "user": request.session['user'],
                                                                    "src": src_ref, "parts": parts, "colors": colors
                                                                    })
+
 
 def pictures(request):
     sentences = {"sun.svg": "I get up.", "brush.svg": "I brush my teeth.",
