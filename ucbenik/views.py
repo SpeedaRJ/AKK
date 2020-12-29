@@ -6832,15 +6832,296 @@ def pronouns_page_twentytwo(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson3/pronouns/page_twentytwo.html", {"next": "/lesson_three/house/page_one",
-                                                                        "back": "/lesson_three/pronouns/page_twentyone",
-                                                                        "solved": solution.solved,
-                                                                        "lessons": lessons,
-                                                                        "lesson": "Unit 3: Let's Eat",
-                                                                        "title": "Pronouns",
-                                                                        "user": request.session['user'],
-                                                                        "src": src_ref, "parts": parts, "colors": colors
-                                                                        })
+        return render(request, "lesson3/pronouns/page_twentytwo.html",
+                      {"next": "/lesson_three/pronouns/page_twentythree",
+                       "back": "/lesson_three/pronouns/page_twentyone",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_twentythree(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_twentythree.html",
+                      {"next": "/lesson_three/pronouns/page_twentyfour",
+                       "back": "/lesson_three/pronouns/page_twentytwo",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_twentyfour(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_twentyfour.html",
+                      {"next": "/lesson_three/pronouns/page_twentyfive",
+                       "back": "/lesson_three/pronouns/page_twentythree",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_twentyfive(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_twentyfive.html",
+                      {"next": "/lesson_three/pronouns/page_twentysix",
+                       "back": "/lesson_three/pronouns/page_twentyfour",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_twentysix(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_twentysix.html",
+                      {"next": "/lesson_three/pronouns/page_twentyseven",
+                       "back": "/lesson_three/pronouns/page_twentyfive",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_twentyseven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_twentyseven.html",
+                      {"next": "/lesson_three/pronouns/page_twentyeight",
+                       "back": "/lesson_three/pronouns/page_twentysix",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_twentyeight(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_twentyeight.html",
+                      {"next": "/lesson_three/pronouns/page_twentynine",
+                       "back": "/lesson_three/pronouns/page_twentyseven",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_twentynine(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_twentynine.html",
+                      {"next": "/lesson_three/pronouns/page_thirty",
+                       "back": "/lesson_three/pronouns/page_twentyeight",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_thirty(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_thirty.html",
+                      {"next": "/lesson_three/pronouns/page_thirtyone",
+                       "back": "/lesson_three/pronouns/page_twentynine",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_thirtyone(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_thirtyone.html",
+                      {"next": "/lesson_three/pronouns/page_thirtytwo",
+                       "back": "/lesson_three/pronouns/page_thirty",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
+
+
+def pronouns_page_thirtytwo(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/pronouns/page_thirtytwo.html",
+                      {"next": "/lesson_three/house/page_one",
+                       "back": "/lesson_three/pronouns/page_thirtyone",
+                       "solved": solution.solved,
+                       "lessons": lessons,
+                       "lesson": "Unit 3: Let's Eat",
+                       "title": "Pronouns",
+                       "user": request.session['user'],
+                       "src": src_ref, "parts": parts, "colors": colors
+                       })
 
 
 def house_page_one(request):
@@ -7049,14 +7330,15 @@ def house_page_twenty(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/house/page_twenty.html", {"next": "/lesson_three/house/page_twenty",
-                                                                    "back": "/lesson_three/house/page_nineteen",
-                                                                    "solved": solution.solved,
-                                                                    "lessons": lessons,
-                                                                    "picture": "svg/lesson3/house/garden 01.svg",
-                                                                    "lesson": "Unit 3: Let's Eat", "title": "House",
-                                                                    "user": request.session['user'],
-                                                                    "src": src_ref, "parts": parts, "colors": colors
-                                                                    })
+                                                                  "back": "/lesson_three/house/page_nineteen",
+                                                                  "solved": solution.solved,
+                                                                  "lessons": lessons,
+                                                                  "picture": "svg/lesson3/house/garden 01.svg",
+                                                                  "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                  "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
 
 def pictures(request):
     sentences = {"sun.svg": "I get up.", "brush.svg": "I brush my teeth.",

@@ -1,0 +1,114 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_six.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/lesson3/pronouns/page_fourteen.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6 main">
+            <div class="row inst space">
+                <div class="msg user wide">1. Complete the sentences with ‘this’, ‘that’, ‘these’ and ‘those’.</div>
+                <div class="msg user slo wide">Dopolni povedi z ‘this’, ‘that’, ‘these’ in ‘those’.</div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user slo wide">
+                    <input class=textarea onchange="solution(this,1)"
+                           style="border-color:#6282B7;background-color: transparent;width:30%"/> chair is broken. <br>
+                    Look at <input class=textarea onchange="solution(this,2)"
+                                   style="border-color:#6282B7;background-color: transparent;width:30%"/> birds. <br>
+                    <input class=textarea onchange="solution(this,3)"
+                           style="border-color:#6282B7;background-color: transparent;width:30%"/> books look
+                    interesting.
+                    <br>
+                    Look at <input class=textarea onchange="solution(this,4)"
+                                   style="border-color:#6282B7;background-color: transparent;width:30%"/> man.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny wide">Namesto določnega ali nedoločnega člena lahko uporabimo svojilni ali kazalni
+                    zaimek, ki namesto člena definira samostalnik: MY, YOUR, HIS, HER, OUR, THEIR, THIS, THAT, THESE,
+                    THOSE.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny wide">Poglejva si par primerov.
+                </div>
+            </div>
+            <div class="row inst space" id="first">
+                <div class="msg user">This is my daughter.
+                </div>
+                <div class="msg user translation">This is my daughter.
+                </div>
+            </div>
+            <div class="row inst space" hidden id="second">
+                <div class="msg user">Is this your son?
+                </div>
+                <div class="msg user translation">Je to tvoj sin?
+                </div>
+            </div>
+            <div class="row inst space" hidden id="third">
+                <div class="msg user">This is his car.
+                </div>
+                <div class="msg user translation">To je njegov avto.
+                </div>
+            </div>
+            <div class="row inst space" hidden id="fourth">
+                <div class="msg user">She left her notebook.
+                </div>
+                <div class="msg user translation">Pustila je svoj zvezek.
+                </div>
+            </div>
+            <div class="row inst space" hidden id="fifth">
+                <div class="msg user">This is our cat.
+                </div>
+                <div class="msg user translation">To je naša mačka.
+                </div>
+            </div>
+            <div class="row inst space" hidden id="sixth">
+                <div class="msg user">Their car is broken.
+                </div>
+                <div class="msg user translation">Njun/njihov avto je pokvarjen.
+                </div>
+            </div>
+            <div class="row inst space" hidden id="seventh">
+                <div class="msg user">Look at this picture.
+                </div>
+                <div class="msg user translation">Poglej to sliko.
+                </div>
+            </div>
+            <div class="row inst space" hidden id="eight">
+                <div class="msg user">That house is red.
+                </div>
+                <div class="msg user translation">Tista hiša je rdeča.
+                </div>
+            </div>
+            <div class="row inst space" hidden id="ninth">
+                <div class="msg user">Is this your son?
+                </div>
+                <div class="msg user translation">Je to tvoj sin?
+                </div>
+            </div>
+            <div class="row inst space" hidden id="tenth">
+                <div class="msg user">Is this your son?
+                </div>
+                <div class="msg user translation">Je to tvoj sin?
+                </div>
+            </div>
+            <div class="row inst space">
+                <button class="next" id="next-list" onclick="changelist()" style="background:#e6a454" type="button">
+                    Next
+                </button>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

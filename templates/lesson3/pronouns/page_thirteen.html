@@ -1,0 +1,105 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_four.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container" style="margin-top: 0 !important">
+    <div class="container">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6 main">
+            <div id="conversation_one">
+                <div class="row inst nospace" style="padding: 0; width: 100%;">
+                    <div class="msg user" style="float: none !important"><p
+                            style="color:#e6a454;font-weight: bold;margin:0;">DEMONSTRATIVE PRONOUNS - KAZALNI
+                        ZAIMKI</p></div>
+                </div>
+                <div class="row inst space">
+                    <div class="msg jenny">You already know the personal pronouns in the first column. Let’s repeat
+                        them.
+                        Fill in their
+                        Slovenian translations.
+                    </div>
+                    <div class="msg jenny translation">Osebne zaimke v prvem stolpcu že znaš. Ponoviva jih. Dopiši
+                        slovenski
+                        prevod..
+                    </div>
+                </div>
+                <div class="col-lg-6 tables">
+                    <table>
+                        <tr>
+                            <th colspan="2">Ednina</th>
+                        </tr>
+                        <tr>
+                            <td>this</td>
+                            <td>to</td>
+                        </tr>
+                        <tr>
+                            <td>that</td>
+                            <td>tisto</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-6 tables">
+                    <table>
+                        <tr>
+                            <th colspan="2">Množina</th>
+                        </tr>
+                        <tr>
+                            <td>these</td>
+                            <td>ti</td>
+                        </tr>
+                        <tr>
+                            <td>those</td>
+                            <td>tisti</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div hidden id="conversation_two">
+                <div class="row inst space">
+                    <div class="msg jenny">Personal pronouns change when they follow a verb - in the object position.
+                        Take a look at
+                        the examples.
+                    </div>
+                    <div class="msg jenny translation">Osebni zaimki se spremenijo, ko sledijo glagolu - v vlogi
+                        predmeta. Poglej primere.
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="container" style="height: 90%;">
+        <div class="container">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 main">
+                <div class="row inst space">
+                    <div class="msg jenny">This in these uporabimo, ko je predmet v naši neposredni bližini. That in
+                        those uporabimo, ko je predmet od nas oddaljen.
+                    </div>
+                </div>
+                <div class="row inst space" id="first">
+                    <div class="msg jenny">Anna gave me this pencil. (I am most likely holding the pencil.)</div>
+                    <div class="msg jenny translation">Anna mi je dala ta svinčnik. (Najverjetneje držim svinčnik v
+                        roki.)
+                    </div>
+                </div>
+                <div class="row inst space" id="second">
+                    <div class="msg jenny">I do not like that girl. (The girl in question is not close to me.).</div>
+                    <div class="msg jenny translation">Ni mi všeč tista punca. (Omenjena punca ni v moji neposredni
+                        bližini.)
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

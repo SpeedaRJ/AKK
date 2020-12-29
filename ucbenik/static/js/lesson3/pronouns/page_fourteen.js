@@ -1,17 +1,8 @@
 let solutions = [
-    "him",
-    "her",
-    "she",
-    "him",
-    "she",
-    "they",
-    "us",
-    "he",
-    "they",
-    "them",
-    "we",
-    "me",
-    "you",
+    "this",
+    "those",
+    "these",
+    "that",
 ]
 
 function solution(el,n) {
@@ -36,6 +27,6 @@ function solution(el,n) {
 }
 
 $(document).ready(function() {
-    $("#S1").val("him");
+    $("#S1").val("hers");
     $("#S1").attr("readonly", true);
 })

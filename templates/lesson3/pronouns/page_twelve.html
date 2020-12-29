@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_six.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/lesson3/pronouns/page_twelve.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6 main">
+            <div class="row inst space">
+                <div class="msg user">3. Fill in the possessive pronouns.</div>
+                <div class="msg user slo">Vstavi svojilne zaimke.</div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="container main-working" style="height: 90%;">
+        <div class="msg jenny translation">
+            Jessie has a cat. The cat is <input id= "S1" class="textarea correct"/>.
+            <input class=textarea onchange="solution(this,1)" style="border-color:#6282B7;background-color: transparent;width:30%"/> cat is orange.
+            Philip took <input class=textarea onchange="solution(this,2)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
+            work computer home even though it is not <input class=textarea onchange="solution(this,3)" style="border-color:#6282B7;background-color: transparent;width:30%"/>.
+            <input class=textarea onchange="solution(this,4)" style="border-color:#6282B7;background-color: transparent;width:30%"/> phone broke,
+            so I can’t wait to make that new phone <input class=textarea onchange="solution(this,5)" style="border-color:#6282B7;background-color: transparent;width:30%"/>.
+            My cat doesn’t like sharing <input class=textarea onchange="solution(this,6)" style="border-color:#6282B7;background-color: transparent;width:30%"/> toys.
+            The toys are <input class=textarea onchange="solution(this,7)" style="border-color:#6282B7;background-color: transparent;width:30%"/>.
+            “Excuse me, mister. Is this wallet <input class=textarea onchange="solution(this,8)" style="border-color:#6282B7;background-color: transparent;width:30%"/>?”
+            “Ah, this is <input class=textarea onchange="solution(this,9)" style="border-color:#6282B7;background-color: transparent;width:30%"/> wallet. Thank you.”
+            In summer, we ride <input class=textarea onchange="solution(this,10)" style="border-color:#6282B7;background-color: transparent;width:30%"/> motorcycles
+            and it feels like the roads are <input class=textarea onchange="solution(this,11)" style="border-color:#6282B7;background-color: transparent;width:30%"/> alone.
+            The Smith family owns a pizzeria. <input class=textarea onchange="solution(this,12)" style="border-color:#6282B7;background-color: transparent;width:30%"/> pizzas are amazing.
+        </div>
+    </div>
+</div>
+{% endblock %}
