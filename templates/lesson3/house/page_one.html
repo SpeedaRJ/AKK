@@ -1,0 +1,51 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny full-width" style="background-color: #006655">
+                    Jim: Before you go, let me show you around my house. I am very proud of it. We renovated it last month. Let's go upstairs first.
+                </div>
+                <div class="msg jenny translation full-width">
+                    Naj ti pokažem hišo preden odideš. Zelo ponosen sem nanjo. Prejšnji mesec smo jo prenovili. Greva najprej v zgornje nadstropje.
+                </div>
+                <div class="msg jenny full-width">
+                    Jenny: Look out for the objects in the house!
+                </div>
+                <div class="msg jenny translation full-width">
+                    Bodi pozoren na predemte v hiši!
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg user full-width" style="float:unset;">
+                    This is my family.
+                </div>
+                <div class="msg jenny translation full-width">
+                    To je moja družina.
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'svg/lesson2/family_members/family_members01.svg' %}" type="svg" style="width:80%;margin-left:10%;">
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}
