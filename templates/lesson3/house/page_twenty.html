@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny full-width" style="background-color: #006655">
+                        Jim: No problem. Now i have to go. Bye, see you later at the restaurant!
+                    </div>
+                    <div class="msg jenny translation full-width">
+                        Ni problema. Zdaj pa moram iti. Adijo, se vidimo pred restavraciji!
+                    </div>
+                </div>
+                <div class="row inst space">
+                    <div class="msg jenny full-width">
+                       2. After you say goodbye to Jim we go around town. Before we can start exploring, you need to find a map of the town. Let’s go to the market across the street to see if they sell maps.
+                    </div>
+                    <div class="msg jenny translation full-width">
+                        Ko se posloviš od Jima, greva po mestu. Preden lahko začneva raziskovati, rabiva zemljevid mesta. Pojdiva v trgovino čez cesto in poglejva, če jo imajo.
+                    </div>
+                </div>
+            </div>
+            {% include "character.html" %}
+        </div>
+    </div>
+{% endblock %}

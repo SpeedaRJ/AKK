@@ -312,5 +312,6 @@ urlpatterns = [
     path("lesson_three/house/page_five", views.house_page_five, name="house_page_five"),
     path("lesson_three/house/page_six", views.house_page_six, name="house_page_six"),
     path("lesson_three/house/page_nineteen", views.house_page_nineteen, name="house_page_nineteen"),
+    path("lesson_three/house/page_twenty", views.house_page_twenty, name="house_page_twenty"),
 
 ]

@@ -7032,6 +7032,32 @@ def house_page_nineteen(request):
                                                                     })
 
 
+def house_page_twenty(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_twenty.html", {"next": "/lesson_three/house/page_twenty",
+                                                                    "back": "/lesson_three/house/page_nineteen",
+                                                                    "solved": solution.solved,
+                                                                    "lessons": lessons,
+                                                                    "picture": "svg/lesson3/house/garden 01.svg",
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                    "user": request.session['user'],
+                                                                    "src": src_ref, "parts": parts, "colors": colors
+                                                                    })
+
 def pictures(request):
     sentences = {"sun.svg": "I get up.", "brush.svg": "I brush my teeth.",
                  "hairbrush.svg": "I comb my hair.", "shirt.svg": "I get dressed.",

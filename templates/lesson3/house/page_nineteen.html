@@ -23,44 +23,56 @@
                         Zdaj zapolni povedi.
                     </div>
                 </div>
-            </div>
-            {% include "character.html" %}
-            <div class="col-lg-2 full"></div>
-            <div class="col-lg-6">
-                <div class="row container">
-                    <div class="col-lg-8 column container">
-                        <div class="col-lg-1"></div>
-                        <div class="row word-drops col-lg-2">
-                            <div class="drop" id="answer1">
-                                <input type="text" class="answer" onchange="solution(this)">
-                            </div>
+                <script>
+                    function solution(source, solution) {
+                        if (source.value === solution) {
+                            source.style.color = "#00a881";
+                        } else {
+                            source.style.color = "#f15d2a";
+                        }
+                    }
+                </script>
+                <div class="col-lg-8 translation msg" style="margin-top: 10px;">
+                    <div>
+                        We sleep in the<input type="text" style="border-bottom: black 1px dashed" onchange="solution(this,'bedroom')">
+                    </div>
+                    <div>
+                        We cook in the <input type="text" style="border-bottom: black 1px dashed" onchange="solution(this,'kitchen')">
+                    </div>
+                    <div>
+                        We brush our teeth in the <input type="text" style="border-bottom: black 1px dashed" onchange="solution(this,'bathroom')">
+                    </div>
+                    <div>
+                        We watch television in the <input type="text" style="border-bottom: black 1px dashed" onchange="solution(this,'living room')">
+                    </div>
+                    <div>
+                        We plant flowers in the <input type="text" style="border-bottom: black 1px dashed" onchange="solution(this,'garden')">
+                    </div>
+                    <div>
+                        We eat meals in the <input type="text" style="border-bottom: black 1px dashed" onchange="solution(this,'dining room')">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row inst space">
+                        <div class="msg jenny full-width" style="background-color: #006655">
+                            Thank Jim for showing us his house.
                         </div>
-                        <div class="row word-drops col-lg-2">
-                            <div class="drop" id="answer2">
-                                <input type="text" class="answer" onchange="solution(this)">
-                            </div>
+                        <div class="msg jenny translation full-width">
+                            Zahvali se Jimu, da nama je pokazal hišo.
                         </div>
-                        <div class="row word-drops col-lg-2">
-                            <div class="drop" id="answer3">
-                                <input type="text" class="answer" onchange="solution(this)">
-                            </div>
+                    </div>
+                    <div class="row inst space">
+                        <div class="msg jenny full-width " style="background-color: #006655">
+                            Razlaga: Thank you = Hvala; when you say 'thank you' you are being polite. Ko rečeš, hvala si vljuden.
                         </div>
-                        <div class="row word-drops col-lg-2">
-                            <div class="drop" id="answer4">
-                                <input type="text" class="answer" onchange="solution(this)">
-                            </div>
+                        <div class="msg jenny translation full-width">
+                            <input type="text" style="text-align: center;width: 80%;border-bottom: black 1px dashed" onchange="solution(this,'Thank you')">
                         </div>
-                        <div class="row word-drops col-lg-2">
-                            <div class="drop" id="answer5">
-                                <input type="text" class="answer" onchange="solution(this)">
-                            </div>
-                        </div>
-                        <div class="col-lg-1"></div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
-            </div>
+            {% include "character.html" %}
+
         </div>
     </div>
 {% endblock %}
