@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_six.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block content %}
+<script>
+    solutions = ["okay", "great", "fine", "it’s ok with me", "yes", "ok"];
+
+    function checkAnswer(el){
+        if(solutions.includes(el.value.toLowerCase())){
+            document.getElementById("next").removeAttribute("disabled");
+        } else {
+            document.getElementById("next").setAttribute("disabled", "disabled");
+        }
+    }
+</script>
+<div class="container">
+    <div class="container">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/common/jim-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6 main">
+            <div class="row inst space">
+                <div class="msg user wide">What are some of your favourite dishes? Tell me at least two.
+                </div>
+                <div class="msg user slo wide">Katere so tvoje najljubše jedi? Povej mi vsaj za dve.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user wide"> My favourite dishes are <input class=textarea
+                                                                           style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                    and <input class=textarea
+                               style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user wide jim">I like that too. Then we should eat in our favourite restaurant in town.
+                    Before we go to the restaurant, I have to do something. I’m helping a friend’s son to learn maths.
+                    In the meantime, you can go sightseeing. Is that okay with you?
+                </div>
+                <div class="msg user wide slo">Meni je tudi to všeč. Gremo jesti v najino najljubšo restavracijo v
+                    mestu. Preden gremo, moram še nekaj narediti. Prijateljevemu sinu pomagam z matematiko. Medtem si
+                    lahko gresta vidva/vidve ogledati znamenitosti. Vama je to v redu?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user wide"><input class=textarea onchange="checkAnswer(this)"
+                                                  style="border-color:#6282B7;background-color: transparent;width:30%"/>
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

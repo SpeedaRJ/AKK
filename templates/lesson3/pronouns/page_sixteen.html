@@ -1,0 +1,45 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/exercises/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/pronouns/page_six.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/common/jim-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6 main">
+            <div class="row inst space">
+                <div class="msg user wide">Today you are visiting your new friend Jim with me. You arrive in front of
+                    Jim's house and knock on his door. Jim answers the door.
+                </div>
+                <div class="msg user slo wide">Danes greš na obisk k svojemu novemu prijatelju Jimu. Prispeš pred Jimovo
+                    hišo in potrkaš na njegova vrata. Jim odpre vrata.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user wide jim">Hello {{ user.first_name }}. Welcome to English Town! This is my house. Please, come in. This is my cat. Do you want something to drink? Maybe some tea or juice?
+                </div>
+                <div class="msg user wide slo">Živijo { user.first_name }}. Dobrodošel v English Town! To je moja hiša. Kar naprej. To je moja mačka. Bi želel kaj spiti? Mogoče čaj ali sok?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user wide"> I would like some <b>juice</b>, please.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg user jim wide">Here you go! So, Jenny and I have decided to take you to lunch.
+                </div>
+                <div class="msg user slo wide">Izvoli. Z Jenny sva se odločila, da te peljeva na kosilo.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

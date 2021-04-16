@@ -6618,7 +6618,7 @@ def pronouns_page_fourteen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson3/pronouns/page_fourteen.html", {"next": "/lesson_three/pronouns/page_fifteen",
+        return render(request, "lesson3/pronouns/page_fourteen.html", {"next": "/lesson_three/pronouns/page_sixteen",
                                                                        "back": "/lesson_three/pronouns/page_fourteen",
                                                                        "solved": solution.solved,
                                                                        "lessons": lessons,
@@ -6627,33 +6627,6 @@ def pronouns_page_fourteen(request):
                                                                        "user": request.session['user'],
                                                                        "src": src_ref, "parts": parts, "colors": colors
                                                                        })
-
-
-def pronouns_page_fifteen(request):
-    if request.method == "GET":
-        if 'user' not in request.session:
-            return login_page(request)
-        user = User.objects.get(email=request.session['user']['email'])
-        if not get_refferer(request) and not user.is_staff:
-            return redirect(request.session['last_page'])
-        request.session['last_page'] = request.path
-        if 'avatar' in request.session:
-            src_ref = request.session['avatar']['src_ref']
-            parts = request.session['avatar']['parts']
-            colors = request.session['avatar']['colors']
-        else:
-            src_ref, parts, colors = get_user_avatar(request.session['user'])
-            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson3/pronouns/page_fifteen.html", {"next": "/lesson_three/pronouns/page_sixteen",
-                                                                      "back": "/lesson_three/pronouns/page_fourteen",
-                                                                      "solved": solution.solved,
-                                                                      "lessons": lessons,
-                                                                      "lesson": "Unit 3: Let's Eat",
-                                                                      "title": "Pronouns",
-                                                                      "user": request.session['user'],
-                                                                      "src": src_ref, "parts": parts, "colors": colors
-                                                                      })
 
 
 def pronouns_page_sixteen(request):
@@ -6672,8 +6645,8 @@ def pronouns_page_sixteen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson3/pronouns/page_six.html", {"next": "/lesson_three/pronouns/page_seventeen",
-                                                                  "back": "/lesson_three/pronouns/page_fifteen",
+        return render(request, "lesson3/pronouns/page_sixteen.html", {"next": "/lesson_three/pronouns/page_seventeen",
+                                                                  "back": "/lesson_three/pronouns/page_fourteen",
                                                                   "solved": solution.solved,
                                                                   "lessons": lessons,
                                                                   "lesson": "Unit 3: Let's Eat", "title": "Pronouns",

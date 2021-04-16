@@ -297,7 +297,6 @@ urlpatterns = [
     path("lesson_three/pronouns/page_twelve", views.pronouns_page_twelve, name="pronouns_page_twelve"),
     path("lesson_three/pronouns/page_thirteen", views.pronouns_page_thirteen, name="pronouns_page_thirteen"),
     path("lesson_three/pronouns/page_fourteen", views.pronouns_page_fourteen, name="pronouns_page_fourteen"),
-    path("lesson_three/pronouns/page_fifteen", views.pronouns_page_fifteen, name="pronouns_page_fifteen"),
     path("lesson_three/pronouns/page_sixteen", views.pronouns_page_sixteen, name="pronouns_page_sixteen"),
     path("lesson_three/pronouns/page_seventeen", views.pronouns_page_seventeen, name="pronouns_page_seventeen"),
     path("lesson_three/pronouns/page_eighteen", views.pronouns_page_eighteen, name="pronouns_page_eighteen"),
