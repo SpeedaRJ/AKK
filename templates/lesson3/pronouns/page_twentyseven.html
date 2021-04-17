@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_three.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_one.css' %}"/>
+    <script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-3">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6 main">
+                <div class="row" style=" height: 18%">
+                    <div class="msg jenny" style="background-color: #446a85">
+                        Read the sentences and repeat after me.
+                    </div>
+                    <div class="msg jenny translation">
+                        Preberi povedi in ponovi za menoj.
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 100px">
+                    <div class="col-lg-12">
+                        <div class="msg jenny" style="background-color: #446a85">
+                            Opposite: The keys are <p style="font-weight: bolder; color: orange">opposite</p> the glasses.
+                        </div>
+                        <div class="msg jenny translation">
+                            Ključi so nasproti očalom.
+                        </div>
+                    </div>
+                    <img src="{% static "svg/lesson3/prepositions/key_opposite_glasses.svg" %}" style="height: 75px; margin-left: 50px; margin-top: 20px">
+                </div>
+                <div class="row" style="margin-top: 200px">
+                    <div class="col-lg-12">
+                        <div class="msg jenny" style="background-color: #446a85">
+                            Between: The keys are <p style="font-weight: bolder; color: orange">between</p> the wallet and glasses.
+                        </div>
+                        <div class="msg jenny translation">
+                            Ključi so med denarnico in očali.
+                        </div>
+                    </div>
+                    <img src="{% static "svg/lesson3/prepositions/glasses_key_wallet.svg" %}" style="height: 50px; margin-left: 50px; margin-top: 20px">
+                </div>
+            </div>
+            {% include "character.html" %}
+        </div>
+    </div>
+{% endblock content %}
