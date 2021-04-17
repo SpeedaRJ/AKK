@@ -1,10 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/pronouns/page_seventeen.css' %}"/>
+    <link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="{% static 'js/lesson3/pronouns/page_seventeen.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/colors/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst nospace" id="inst">
+                <div class="msg user">Tick the right food.</div>
+                <div class="msg user slo ">Označi pravo hrano.</div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="row container">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2 text-center" style="display: flex; flex-direction: column">
+            <div class="image">
+                <img src="{% static 'svg/lesson3/pronouns/pizza.svg' %}">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="rice1" name="color1" onclick="check(event, 'pizza')">
+                <label for="rice1">Rice</label><br>
+                <input type="radio" id="pasta1" name="color1" onclick="check(event, 'pizza')">
+                <label for="pasta1">Pasta</label><br>
+                <input type="radio" id="pizza1" name="color1" onclick="check(event, 'pizza')">
+                <label for="pizza1">Pizza</label><br>
+            </div>
+        </div>
+        <div class="col-lg-2" style="display: flex;flex-direction: column">
+            <div class="image">
+                    <img src="{% static 'svg/lesson3/pronouns/soup.svg' %}">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="egg1" name="color2" onclick="check(event, 'soup')">
+                <label for="egg1">Egg</label><br>
+                <input type="radio" id="soup1" name="color2" onclick="check(event, 'soup')">
+                <label for="soup1">Soup</label><br>
+                <input type="radio" id="meat1" name="color2" onclick="check(event, 'soup')">
+                <label for="meat1">Meat</label><br>
+            </div>
+        </div>
+        <div class="col-lg-2" style="display: flex;flex-direction: column">
+            <div class="image">
+                <img src="{% static 'svg/lesson3/pronouns/hamburger.svg' %}" style="width: 170%;">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="salad1" name="color3" onclick="check(event, 'burger')">
+                <label for="salad1">Salad</label><br>
+                <input type="radio" id="milk1" name="color3" onclick="check(event, 'burger')">
+                <label for="milk1">Milk</label><br>
+                <input type="radio" id="burger1" name="color3" onclick="check(event, 'burger')">
+                <label for="burger1">Burger</label><br>
+            </div>
+        </div>
+        <div class="col-lg-2" style="display: flex;flex-direction: column">
+            <div class="image" >
+                <img src="{% static 'svg/lesson3/pronouns/spaghetti.svg' %}" style="width: 170%;">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="butter1" name="color3" onclick="check(event, 'spaghet')">
+                <label for="butter1">Butter</label><br>
+                <input type="radio" id="spaghet1" name="color3" onclick="check(event, 'spaghet')">
+                <label for="spaghet1">Spaghetti</label><br>
+                <input type="radio" id="bread1" name="color3" onclick="check(event, 'spaghet')">
+                <label for="bread1">Bread</label><br>
+            </div>
+        </div>
+        <div class="col-lg-2" style="display: flex;flex-direction: column">
+            <div class="image" >
+                <img src="{% static 'svg/lesson3/pronouns/rice.svg' %}" style="width: 170%;">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="jam1" name="color3" onclick="check(event, 'rice')">
+                <label for="jam1">Jam</label><br>
+                <input type="radio" id="rice2" name="color3" onclick="check(event, 'rice')">
+                <label for="rice2">Rice</label><br>
+                <input type="radio" id="pepper1" name="color3" onclick="check(event, 'rice')">
+                <label for="pepper1">Pepper</label><br>
+            </div>
+        </div>
+    </div>
+    <div class="row container">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2 text-center" style="display: flex; flex-direction: column">
+            <div class="image">
+                <img src="{% static 'svg/lesson3/pronouns/salad.svg' %}">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="tomato1" name="color1" onclick="check(event, 'salad')">
+                <label for="tomato1">Tomatoes</label><br>
+                <input type="radio" id="carrot1" name="color1" onclick="check(event, 'salad')">
+                <label for="carrot1">Carrot</label><br>
+                <input type="radio" id="salad2" name="color1" onclick="check(event, 'salad')">
+                <label for="salad2">Salad</label><br>
+            </div>
+        </div>
+        <div class="col-lg-2" style="display: flex;flex-direction: column">
+            <div class="image" >
+                <img src="{% static 'svg/lesson3/pronouns/fish.svg' %}" style="width: 170%;">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="fish1" name="color3" onclick="check(event, 'fish')">
+                <label for="fish1">Fish</label><br>
+                <input type="radio" id="apple1" name="color3" onclick="check(event, 'fish')">
+                <label for="apple1">Apple</label><br>
+                <input type="radio" id="raddish1" name="color3" onclick="check(event, 'fish')">
+                <label for="raddish1">Radish</label><br>
+            </div>
+        </div>
+        <div class="col-lg-2" style="display: flex;flex-direction: column">
+            <div class="image" >
+                <img src="{% static 'svg/lesson3/pronouns/sandwich.svg' %}" style="width: 170%;">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="egg2" name="color3" onclick="check(event, 'bread')">
+                <label for="egg2">Egg</label><br>
+                <input type="radio" id="salmon1" name="color3" onclick="check(event, 'bread')">
+                <label for="salmon1">Salmon</label><br>
+                <input type="radio" id="bread2" name="color3" onclick="check(event, 'bread')">
+                <label for="bread2">Bread</label><br>
+            </div>
+        </div>
+        <div class="col-lg-2" style="display: flex;flex-direction: column">
+            <div class="image" >
+                <img src="{% static 'svg/lesson3/pronouns/meat.svg' %}" style="width: 170%;">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="rice3" name="color3" onclick="check(event, 'meat')">
+                <label for="rice3">Rice</label><br>
+                <input type="radio" id="apple2" name="color3" onclick="check(event, 'meat')">
+                <label for="apple2">Apple</label><br>
+                <input type="radio" id="meat2" name="color3" onclick="check(event, 'meat')">
+                <label for="meat2">Meat</label><br>
+            </div>
+        </div>
+        <div class="col-lg-2" style="display: flex;flex-direction: column">
+            <div class="image" >
+                <img src="{% static 'svg/lesson3/pronouns/sausage.svg' %}" style="width: 170%;">
+            </div>
+            <div class="question-under">
+                <input type="radio" id="grape1" name="color3" onclick="check(event, 'sausage')">
+                <label for="grape1">Grape</label><br>
+                <input type="radio" id="salt1" name="color3" onclick="check(event, 'sausage')">
+                <label for="salt1">Salt</label><br>
+                <input type="radio" id="sausage1" name="color3" onclick="check(event, 'sausage')">
+                <label for="sausage1">Sausage</label><br>
+            </div>
+        </div>
+    </div>
+{% endblock %}

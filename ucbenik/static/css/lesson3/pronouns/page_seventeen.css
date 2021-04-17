@@ -1,0 +1,52 @@
+#avatar {
+    width: 70%;
+}
+
+.question {
+    background-color: #E4E3E8;
+    width: 55%;
+    height: 35%;
+    padding: 8%;
+    border-radius: 30%;
+}
+
+.question-under {
+    background-color: #E4E3E8;
+    width: 100%;
+    margin-top: 10%;
+    padding: 8%;
+    border-radius: 30%;
+}
+
+.container {
+    height: 60%;
+}
+
+.col-lg-4 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.image {
+    height: auto;
+    width: 18%;
+    margin-left: 40%;
+}
+
+.down {
+    display: flex;
+    max-height: 50%;
+    justify-content: space-evenly;
+}
+
+.down > .question {
+    height: 100%;
+}
+
+.col-lg-2 {
+    height: 100%;
+}
+
+.container {
+    height: 30% !important;
+}

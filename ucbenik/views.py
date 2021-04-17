@@ -6619,7 +6619,7 @@ def pronouns_page_fourteen(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/pronouns/page_fourteen.html", {"next": "/lesson_three/pronouns/page_sixteen",
-                                                                       "back": "/lesson_three/pronouns/page_fourteen",
+                                                                       "back": "/lesson_three/pronouns/page_thirteen",
                                                                        "solved": solution.solved,
                                                                        "lessons": lessons,
                                                                        "lesson": "Unit 3: Let's Eat",
@@ -6699,7 +6699,7 @@ def pronouns_page_eighteen(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/pronouns/page_eighteen.html", {"next": "/lesson_three/pronouns/page_nineteen",
-                                                                       "back": "/lesson_three/pronouns/page_eighteen",
+                                                                       "back": "/lesson_three/pronouns/page_seventeen",
                                                                        "solved": solution.solved,
                                                                        "lessons": lessons,
                                                                        "lesson": "Unit 3: Let's Eat",
