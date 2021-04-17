@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/lesson2/articles/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <button class="title" disabled>Articles</button>
+            <button class="title trans" disabled><p class="orange" style="padding-left: 2px;">A   AN</p><p class="purple" style="padding-left: 2px;">     THE</p></button>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"></div>
+    <div class="col-lg-10">
+        <div class="col-lg-4">
+            <div class="row inst space">
+                <div class="msg jenny">This is <p class="orange">an</p> apple.</div>
+                <div class="msg jenny translation">To je jabolko.</div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row inst space">
+                <div class="msg jenny">This is <p class="orange">a</p> table.</div>
+                <div class="msg jenny translation"> To je miza</div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row inst space">
+                <div class="msg jenny">Give me <p class="purple">the</p> book.</div>
+                <div class="msg jenny translation">Daj mi knjigo.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-6">
+        <div id="conversation">
+            <div class="row inst space">
+                <div class="msg jenny">Kaj so odebeljene besede? To so členi. Členi so besede <p class="orange">A, AN</p> in <p class="purple">THE</p>. Najdemo jih pred samostalniki.</div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny">
+                    <p class="orange">A in AN</p> sta nedoločna člena, <p class="purple">THE</p> je določni člen
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}

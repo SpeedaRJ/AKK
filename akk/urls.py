@@ -323,4 +323,16 @@ urlpatterns = [
     path("lesson_three/house/page_nineteen", views.house_page_nineteen, name="house_page_nineteen"),
     path("lesson_three/house/page_twenty", views.house_page_twenty, name="house_page_twenty"),
 
+    path("lesson_three/modal_verbs/page_one", views.modal_verbs_page_one, name="modal_verbs_page_one"),
+    path("lesson_three/modal_verbs/page_two", views.modal_verbs_page_two, name="modal_verbs_page_two"),
+    path("lesson_three/modal_verbs/page_three", views.modal_verbs_page_three, name="modal_verbs_page_three"),
+    path("lesson_three/modal_verbs/page_four", views.modal_verbs_page_four, name="modal_verbs_page_four"),
+    path("lesson_three/modal_verbs/page_five", views.modal_verbs_page_five, name="modal_verbs_page_five"),
+    path("lesson_three/modal_verbs/page_six", views.modal_verbs_page_six, name="modal_verbs_page_six"),
+    path("lesson_three/modal_verbs/page_seven", views.modal_verbs_page_seven, name="modal_verbs_page_seven"),
+    path("lesson_three/modal_verbs/page_eight", views.modal_verbs_page_eight, name="modal_verbs_page_eight"),
+    path("lesson_three/modal_verbs/page_nine", views.modal_verbs_page_nine, name="modal_verbs_page_nine"),
+    path("lesson_three/modal_verbs/page_ten", views.modal_verbs_page_ten, name="modal_verbs_page_ten"),
+    path("lesson_three/modal_verbs/page_eleven", views.modal_verbs_page_eleven, name="modal_verbs_page_eleven"),
+    path("lesson_three/modal_verbs/page_twelve", views.modal_verbs_page_twelve, name="modal_verbs_page_twelve")
 ]
