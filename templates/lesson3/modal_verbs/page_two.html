@@ -1,10 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesson3/recolour_common.css' %}"/>
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/lesson2/articles/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+        </div>
+        <div class="col-lg-6">
+            <div class="msg jenny nospace full-width">Tukaj gre za zmožnost, ki je lahko odvisna tudi od okolice, ne zgolj od nas samih.</div>
+            <div class="msg user jenny full-width">
+                    Obligation - dolžnost, obveza
+                </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"></div>
+    <div class="col-lg-10">
+        <div class="row inst space">
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny user" style="width: 100% !important">I can’t dance.</div>
+                    <div class="msg jenny translation" style="width: 100%"> Ne znam plesati.</div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny user" style="width: 100%">I can’t hear you.</div>
+                    <div class="msg jenny translation" style="width: 100%">Ne slišim te. </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inst space">
+                <div class="msg jenny full-width">We use ‘must/mustn’t’ with strong obligation and with rules. We use ‘have to’ for mild obligation.</div>
+                <div class="msg jenny translation full-width">‘Must/mustn’t’ se uporablja, kadar smo močno obvezani k nekemu dejanju in kadar nas obvezujejo pravila. ‘Have to’ se uporablja, kadar nismo tako močno obvezani k dejanju. </div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <div class="row inst space">
+                        <div class="msg jenny user" style="width: 100%">I have to go now.</div>
+                        <div class="msg jenny translation" style="width: 100%">Jaz moram da grem zdaj</div>
+                    </div>
+                </div>
+         </div>
+    </div>
+    <div class="col-lg-1 full"> </div>
+    <div class="col-lg-3 full"> </div>
+    <div class="col-lg-3"> </div>
+</div>
+{% endblock %}

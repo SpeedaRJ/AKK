@@ -142,3 +142,8 @@ input:focus {
     float: left;
     margin-left: 0;
 }
+
+.full-width {
+    width: 100% !important;
+    text-align: center;
+}
