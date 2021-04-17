@@ -41,6 +41,7 @@ function changelist() {
      if(index == 9){
         pass[1] = true;
         document.getElementById("next-list").setAttribute("disabled", "disabled");
+        ocument.getElementById("next-list").setAttribute("hidden", "hidden");
         checkCorrectness();
      }
      document.getElementById(lists[index - 1]).setAttribute("hidden", "hidden");
@@ -49,9 +50,11 @@ function changelist() {
 }
 
 function checkCorrectness() {
-    if(pass[0] && pass[1]) {
+    if(pass[1]) {
         document.getElementById("next").removeAttribute("disabled");
+         document.getElementById("next-list").setAttribute("disabled", "disabled");
     } else {
         document.getElementById("next").setAttribute("disabled", "disabled");
+        document.getElementById("next-list").removeAttribute("disabled");
     }
 }
