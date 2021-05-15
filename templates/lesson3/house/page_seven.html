@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny full-width" style="background-color: #006655">
+                        Oh no! I have lost my glasses. Help me look for them. Fill in the sentences with the right preposition (under, on, next to, in).
+                    </div>
+                    <div class="msg jenny translation full-width">
+                        O ne! Izgubil sem očala. Pomagaj mi jih najti. Zapolni povedi s pravim predlogom.
+                    </div>
+                </div>
+            </div>
+            {% include "character.html" %}
+
+        </div>
+    </div>
+{% endblock content %}
