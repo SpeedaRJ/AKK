@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/colors/page_nine.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/lesson2/articles/glossary.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny translation" style="width: 100%">2. MUST <br>
+                    <input class="answer" onchange="check(this, ['i mustn\'t go home now'])" style="border-color: white;"
+                           type="text">. (-)<br>
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny user full-width">She mustn’t go now.= Ona ne sme iti. <br>
+                    She doesn’t have to go now.= Njej ni treba iti.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny translation" style="width: 100%">
+                    <input class="answer" onchange="check(this, ['must she go now'])" style="border-color: white;"
+                           type="text">?<br>
+                    Does she have to go now?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny nospace full-width">As you can see, when we negate the sentence, ‘must not’ and
+                    ‘does not have to’ are not interchangeable because they carry different meanings. In questions we
+                    can use either of them and the meaning stays the same.
+                </div>
+                <div class="msg jenny translation" style="width: 100%">Kot vidiš, ‘must not’ in ‘does not have to’ nista
+                    zamenljiva v nikalnih povedih, saj imata različne pomene. V vprašanjih lahko uporabimo enega ali
+                    drugega in pri tem pomen ostaja enak.
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}
