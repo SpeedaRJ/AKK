@@ -6647,13 +6647,14 @@ def pronouns_page_sixteen(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/pronouns/page_sixteen.html", {"next": "/lesson_three/pronouns/page_seventeen",
-                                                                  "back": "/lesson_three/pronouns/page_fourteen",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Pronouns",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                      "back": "/lesson_three/pronouns/page_fourteen",
+                                                                      "solved": solution.solved,
+                                                                      "lessons": lessons,
+                                                                      "lesson": "Unit 3: Let's Eat",
+                                                                      "title": "Pronouns",
+                                                                      "user": request.session['user'],
+                                                                      "src": src_ref, "parts": parts, "colors": colors
+                                                                      })
 
 
 def pronouns_page_seventeen(request):
@@ -7334,7 +7335,7 @@ def house_page_six(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/house/page_six.html", {"next": "/lesson_three/house/page_seven",
-                                                               "back": "/llesson_three/house/page_five",
+                                                               "back": "/lesson_three/house/page_five",
                                                                "solved": solution.solved,
                                                                "lessons": lessons,
                                                                "picture": "svg/lesson3/house/garden 01.svg",
@@ -7342,6 +7343,357 @@ def house_page_six(request):
                                                                "user": request.session['user'],
                                                                "src": src_ref, "parts": parts, "colors": colors
                                                                })
+
+
+def house_page_seven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_seven.html", {"next": "/lesson_three/house/page_eight",
+                                                                 "back": "/lesson_three/house/page_six",
+                                                                 "solved": solution.solved,
+                                                                 "lessons": lessons,
+                                                                 "picture": "svg/lesson3/house/garden 01.svg",
+                                                                 "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                 "user": request.session['user'],
+                                                                 "src": src_ref, "parts": parts, "colors": colors
+                                                                 })
+
+
+def house_page_eight(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_eight.html", {"next": "/lesson_three/house/page_nine",
+                                                                 "back": "/lesson_three/house/page_seven",
+                                                                 "solved": solution.solved,
+                                                                 "lessons": lessons,
+                                                                 "picture": "svg/lesson3/house/garden 01.svg",
+                                                                 "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                 "user": request.session['user'],
+                                                                 "src": src_ref, "parts": parts, "colors": colors
+                                                                 })
+
+
+def house_page_nine(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_nine.html", {"next": "/lesson_three/house/page_ten",
+                                                                "back": "/lesson_three/house/page_eight",
+                                                                "solved": solution.solved,
+                                                                "lessons": lessons,
+                                                                "picture": "svg/lesson3/house/garden 01.svg",
+                                                                "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                "user": request.session['user'],
+                                                                "src": src_ref, "parts": parts, "colors": colors
+                                                                })
+
+
+def house_page_six(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_six.html", {"next": "/lesson_three/house/page_seven",
+                                                               "back": "/lesson_three/house/page_five",
+                                                               "solved": solution.solved,
+                                                               "lessons": lessons,
+                                                               "picture": "svg/lesson3/house/garden 01.svg",
+                                                               "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                               "user": request.session['user'],
+                                                               "src": src_ref, "parts": parts, "colors": colors
+                                                               })
+
+
+def house_page_ten(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_ten.html", {"next": "/lesson_three/house/page_eleven",
+                                                               "back": "/lesson_three/house/page_nine",
+                                                               "solved": solution.solved,
+                                                               "lessons": lessons,
+                                                               "picture": "svg/lesson3/house/garden 01.svg",
+                                                               "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                               "user": request.session['user'],
+                                                               "src": src_ref, "parts": parts, "colors": colors
+                                                               })
+
+
+def house_page_eleven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_elven.html", {"next": "/lesson_three/house/page_twelve",
+                                                                 "back": "/lesson_three/house/page_ten",
+                                                                 "solved": solution.solved,
+                                                                 "lessons": lessons,
+                                                                 "picture": "svg/lesson3/house/garden 01.svg",
+                                                                 "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                 "user": request.session['user'],
+                                                                 "src": src_ref, "parts": parts, "colors": colors
+                                                                 })
+
+
+def house_page_twelve(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_twelve.html", {"next": "/lesson_three/house/page_thirteen",
+                                                                  "back": "/lesson_three/house/page_elven",
+                                                                  "solved": solution.solved,
+                                                                  "lessons": lessons,
+                                                                  "picture": "svg/lesson3/house/garden 01.svg",
+                                                                  "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                  "user": request.session['user'],
+                                                                  "src": src_ref, "parts": parts, "colors": colors
+                                                                  })
+
+
+def house_page_thirteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_thirteen.html", {"next": "/lesson_three/house/page_fourteen",
+                                                                    "back": "/lesson_three/house/page_twelve",
+                                                                    "solved": solution.solved,
+                                                                    "lessons": lessons,
+                                                                    "picture": "svg/lesson3/house/garden 01.svg",
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                    "user": request.session['user'],
+                                                                    "src": src_ref, "parts": parts, "colors": colors
+                                                                    })
+
+
+def house_page_fourteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_fourteen.html", {"next": "/lesson_three/house/page_fifteen",
+                                                                    "back": "/lesson_three/house/page_fourteen",
+                                                                    "solved": solution.solved,
+                                                                    "lessons": lessons,
+                                                                    "picture": "svg/lesson3/house/garden 01.svg",
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                    "user": request.session['user'],
+                                                                    "src": src_ref, "parts": parts, "colors": colors
+                                                                    })
+
+
+def house_page_fifteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_fifteen.html", {"next": "/lesson_three/house/page_sixteen",
+                                                                   "back": "/lesson_three/house/page_fourteen",
+                                                                   "solved": solution.solved,
+                                                                   "lessons": lessons,
+                                                                   "picture": "svg/lesson3/house/garden 01.svg",
+                                                                   "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                   "user": request.session['user'],
+                                                                   "src": src_ref, "parts": parts, "colors": colors
+                                                                   })
+
+
+def house_page_sixteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_sixteen.html", {"next": "/lesson_three/house/page_seventeen",
+                                                                   "back": "/lesson_three/house/page_fifteen",
+                                                                   "solved": solution.solved,
+                                                                   "lessons": lessons,
+                                                                   "picture": "svg/lesson3/house/garden 01.svg",
+                                                                   "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                   "user": request.session['user'],
+                                                                   "src": src_ref, "parts": parts, "colors": colors
+                                                                   })
+
+
+def house_page_seventeen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_seventeen.html", {"next": "/lesson_three/house/page_eighteen",
+                                                                     "back": "/lesson_three/house/page_sixteen",
+                                                                     "solved": solution.solved,
+                                                                     "lessons": lessons,
+                                                                     "picture": "svg/lesson3/house/garden 01.svg",
+                                                                     "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                     "user": request.session['user'],
+                                                                     "src": src_ref, "parts": parts, "colors": colors
+                                                                     })
+
+
+def house_page_eighteen(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/house/page_eighteen.html", {"next": "/lesson_three/house/page_nineteen",
+                                                                    "back": "/lesson_three/house/page_seventeen",
+                                                                    "solved": solution.solved,
+                                                                    "lessons": lessons,
+                                                                    "picture": "svg/lesson3/house/garden 01.svg",
+                                                                    "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                    "user": request.session['user'],
+                                                                    "src": src_ref, "parts": parts, "colors": colors
+                                                                    })
 
 
 def house_page_nineteen(request):
@@ -7442,13 +7794,14 @@ def modal_verbs_page_one(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_one.html", {"next": "/lesson_three/modal_verbs/page_two",
-                                                                  "back": "/lesson_three/modal_verbs/page_one",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                     "back": "/lesson_three/modal_verbs/page_one",
+                                                                     "solved": solution.solved,
+                                                                     "lessons": lessons,
+                                                                     "lesson": "Unit 3: Let's Eat",
+                                                                     "title": "Modal Verbs",
+                                                                     "user": request.session['user'],
+                                                                     "src": src_ref, "parts": parts, "colors": colors
+                                                                     })
 
 
 def modal_verbs_page_two(request):
@@ -7468,13 +7821,14 @@ def modal_verbs_page_two(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_two.html", {"next": "/lesson_three/modal_verbs/page_three",
-                                                                  "back": "/lesson_three/modal_verbs/page_one",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                     "back": "/lesson_three/modal_verbs/page_one",
+                                                                     "solved": solution.solved,
+                                                                     "lessons": lessons,
+                                                                     "lesson": "Unit 3: Let's Eat",
+                                                                     "title": "Modal Verbs",
+                                                                     "user": request.session['user'],
+                                                                     "src": src_ref, "parts": parts, "colors": colors
+                                                                     })
 
 
 def modal_verbs_page_three(request):
@@ -7494,13 +7848,14 @@ def modal_verbs_page_three(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_three.html", {"next": "/lesson_three/modal_verbs/page_four",
-                                                                  "back": "/lesson_three/modal_verbs/page_two",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                       "back": "/lesson_three/modal_verbs/page_two",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat",
+                                                                       "title": "Modal Verbs",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
 
 
 def modal_verbs_page_four(request):
@@ -7520,15 +7875,15 @@ def modal_verbs_page_four(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_four.html", {"next": "/lesson_three/modal_verbs/page_five",
-                                                                  "back": "/lesson_three/modal_verbs/page_three",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat",
-                                                                  "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts,
-                                                                  "colors": colors
-                                                                  })
+                                                                      "back": "/lesson_three/modal_verbs/page_three",
+                                                                      "solved": solution.solved,
+                                                                      "lessons": lessons,
+                                                                      "lesson": "Unit 3: Let's Eat",
+                                                                      "title": "Modal Verbs",
+                                                                      "user": request.session['user'],
+                                                                      "src": src_ref, "parts": parts,
+                                                                      "colors": colors
+                                                                      })
 
 
 def modal_verbs_page_five(request):
@@ -7548,13 +7903,14 @@ def modal_verbs_page_five(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_five.html", {"next": "/lesson_three/modal_verbs/page_six",
-                                                                  "back": "/lesson_three/modal_verbs/page_four",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                      "back": "/lesson_three/modal_verbs/page_four",
+                                                                      "solved": solution.solved,
+                                                                      "lessons": lessons,
+                                                                      "lesson": "Unit 3: Let's Eat",
+                                                                      "title": "Modal Verbs",
+                                                                      "user": request.session['user'],
+                                                                      "src": src_ref, "parts": parts, "colors": colors
+                                                                      })
 
 
 def modal_verbs_page_six(request):
@@ -7574,15 +7930,15 @@ def modal_verbs_page_six(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_six.html", {"next": "/lesson_three/modal_verbs/page_seven",
-                                                                  "back": "/lesson_three/modal_verbs/page_five",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat",
-                                                                  "title": "House",
-                                                                  "user": request.session['Modal Verbs'],
-                                                                  "src": src_ref, "parts": parts,
-                                                                  "colors": colors
-                                                                  })
+                                                                     "back": "/lesson_three/modal_verbs/page_five",
+                                                                     "solved": solution.solved,
+                                                                     "lessons": lessons,
+                                                                     "lesson": "Unit 3: Let's Eat",
+                                                                     "title": "House",
+                                                                     "user": request.session['Modal Verbs'],
+                                                                     "src": src_ref, "parts": parts,
+                                                                     "colors": colors
+                                                                     })
 
 
 def modal_verbs_page_seven(request):
@@ -7602,13 +7958,14 @@ def modal_verbs_page_seven(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_seven.html", {"next": "/lesson_three/modal_verbs/page_eight",
-                                                                  "back": "/lesson_three/modal_verbs/page_six",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                       "back": "/lesson_three/modal_verbs/page_six",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat",
+                                                                       "title": "Modal Verbs",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
 
 
 def modal_verbs_page_eight(request):
@@ -7628,15 +7985,15 @@ def modal_verbs_page_eight(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_eight.html", {"next": "/lesson_three/modal_verbs/page_nine",
-                                                                  "back": "/lesson_three/modal_verbs/page_nine",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat",
-                                                                  "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts,
-                                                                  "colors": colors
-                                                                  })
+                                                                       "back": "/lesson_three/modal_verbs/page_nine",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat",
+                                                                       "title": "Modal Verbs",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts,
+                                                                       "colors": colors
+                                                                       })
 
 
 def modal_verbs_page_nine(request):
@@ -7656,13 +8013,14 @@ def modal_verbs_page_nine(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_nine.html", {"next": "/lesson_three/modal_verbs/page_ten",
-                                                                  "back": "/lesson_three/modal_verbs/page_eight",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                      "back": "/lesson_three/modal_verbs/page_eight",
+                                                                      "solved": solution.solved,
+                                                                      "lessons": lessons,
+                                                                      "lesson": "Unit 3: Let's Eat",
+                                                                      "title": "Modal Verbs",
+                                                                      "user": request.session['user'],
+                                                                      "src": src_ref, "parts": parts, "colors": colors
+                                                                      })
 
 
 def modal_verbs_page_ten(request):
@@ -7682,13 +8040,14 @@ def modal_verbs_page_ten(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_ten.html", {"next": "/lesson_three/modal_verbs/page_eleven",
-                                                                  "back": "/lesson_three/modal_verbs/page_nine",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                     "back": "/lesson_three/modal_verbs/page_nine",
+                                                                     "solved": solution.solved,
+                                                                     "lessons": lessons,
+                                                                     "lesson": "Unit 3: Let's Eat",
+                                                                     "title": "Modal Verbs",
+                                                                     "user": request.session['user'],
+                                                                     "src": src_ref, "parts": parts, "colors": colors
+                                                                     })
 
 
 def modal_verbs_page_eleven(request):
@@ -7708,13 +8067,14 @@ def modal_verbs_page_eleven(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_eleven.html", {"next": "/lesson_three/modal_verbs/page_twelve",
-                                                                  "back": "/lesson_three/modal_verbs/page_ten",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "Modal Verbs",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                        "back": "/lesson_three/modal_verbs/page_ten",
+                                                                        "solved": solution.solved,
+                                                                        "lessons": lessons,
+                                                                        "lesson": "Unit 3: Let's Eat",
+                                                                        "title": "Modal Verbs",
+                                                                        "user": request.session['user'],
+                                                                        "src": src_ref, "parts": parts, "colors": colors
+                                                                        })
 
 
 def modal_verbs_page_twelve(request):
@@ -7734,13 +8094,13 @@ def modal_verbs_page_twelve(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
         return render(request, "lesson3/modal_verbs/page_welve.html", {"next": "/lesson_three/modal_verbs/page_twelve",
-                                                                  "back": "/lesson_three/modal_verbs/page_eleven",
-                                                                  "solved": solution.solved,
-                                                                  "lessons": lessons,
-                                                                  "lesson": "Unit 3: Let's Eat", "title": "House",
-                                                                  "user": request.session['user'],
-                                                                  "src": src_ref, "parts": parts, "colors": colors
-                                                                  })
+                                                                       "back": "/lesson_three/modal_verbs/page_eleven",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "House",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
 
 
 def pictures(request):
