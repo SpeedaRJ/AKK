@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/lesson2/articles/glossary.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="msg user jenny full-width">
+                Possibility - možnost
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"></div>
+    <div class="col-lg-10">
+        <div class="row inst space">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny user" style="width: 100%">Requests - prošnje</div>
+                </div>
+                <div class="row inst space">
+                    <div class="msg jenny user" style="width: 100%">Can you open the window, please?</div>
+                    <div class="msg jenny translation" style="width: 100%">Ali lahko prosim odpreš okno?</div>
+                </div>
+                <div class="row inst space"></div>
+                <div class="row inst space">
+                    <div class="msg jenny user" style="width: 100%">Advice - nasveti</div>
+                </div>
+                 <div class="row inst space">
+                    <div class="msg jenny user" style="width: 100%">You should stop smoking.</div>
+                    <div class="msg jenny translation" style="width: 100%">Moral bi nehati kaditi.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 full"></div>
+    <div class="col-lg-3 full"></div>
+    <div class="col-lg-3"></div>
+</div>
+{% endblock %}

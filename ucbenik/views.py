@@ -7934,8 +7934,8 @@ def modal_verbs_page_six(request):
                                                                      "solved": solution.solved,
                                                                      "lessons": lessons,
                                                                      "lesson": "Unit 3: Let's Eat",
-                                                                     "title": "House",
-                                                                     "user": request.session['Modal Verbs'],
+                                                                     "title": "Modal Verbs",
+                                                                     "user": request.session['user'],
                                                                      "src": src_ref, "parts": parts,
                                                                      "colors": colors
                                                                      })

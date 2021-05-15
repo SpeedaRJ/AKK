@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/lesson2/articles/glossary.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="msg user jenny full-width">
+                Permission - dovoljenje
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="col-lg-1 full"></div>
+    <div class="col-lg-10">
+        <div class="row inst space">
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny user" style="width: 100% !important">Can I borrow your car?</div>
+                    <div class="msg jenny translation" style="width: 100%">Si lahko sposodim tvoj avto?</div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny user" style="width: 100%">Could I borrow your car?</div>
+                    <div class="msg jenny translation" style="width: 100%">Bi si lahko sposodil tvoj avto?</div>
+                </div>
+            </div>
+        </div>
+        <div class="row inst space">
+            <div class="msg jenny full-width">In both cases you are asking someone for permission to borrow their car.
+                If you use ‘can’, you are more direct. If you use ‘could, your request for permission is more polite and
+                indirect.
+            </div>
+            <div class="msg jenny translation full-width">V obeh primerih prosimo nekoga za dovoljenje, da si sposodimo
+                njegov avto. Če uporabimo ‘can’, je naša prošnja za dovoljenje bolj neposredna. Če uporabimo ‘could’,
+                smo bolj vljudni in bolj posredni.
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 full"></div>
+    <div class="col-lg-3 full"></div>
+    <div class="col-lg-3"></div>
+</div>
+{% endblock %}
