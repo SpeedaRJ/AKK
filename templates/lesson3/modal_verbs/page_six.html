@@ -1,10 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/modal_verbs/page_six.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/enable_button.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/lesson2/articles/glossary.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="msg jenny nospace full-width">Poglejva modalni glagol CAN v primeru. Opazil / opazila boš, da
+                za modalnim glagolom ostane glagol, ki mu sledi nespremenjen ne glede na osebo.
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+    <div class="row inst space">
+        <div class="col-lg-3 full"></div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <table>
+                    <tr>
+                        <td>I</td>
+                        <td>I <span style="color:#E6A454">can ride</span> a bicycle.</td>
+                    </tr>
+                    <tr>
+                        <td>you</td>
+                        <td>You <span style="color:#E6A454">can ride</span> a bicycle.</td>
+                    </tr>
+                    <tr>
+                        <td>he/she/it</td>
+                        <td>He/she/it <span style="color:#E6A454">can ride</span> a bicycle.</td>
+                    </tr>
+                    <tr>
+                        <td>we</td>
+                        <td>We <span style="color:#E6A454">can ride</span> a bicycle.</td>
+                    </tr>
+                    <tr>
+                        <td>you</td>
+                        <td>You <span style="color:#E6A454">can ride</span> a bicycle.</td>
+                    </tr>
+                    <tr>
+                        <td>they</td>
+                        <td>They <span style="color:#E6A454">can ride</span> a bicycle.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

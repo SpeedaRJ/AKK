@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/articles/page_one.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson2/common.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/lesson3/recolour_common.css' %}" rel="stylesheet" type="text/css"/>
+<script src="{% static 'js/colors/page_nine.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/lesson2/articles/glossary.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img id="jenny" src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
+        </div>
+        <div class="col-lg-6">
+            <div class="row inst space">
+                <div class="msg jenny nospace full-width">You can also make questions and use negative modal
+                    verbs. Let’s take a look at the structure of all three types. Let’s do it with the modal verb ‘can’.
+                </div>
+                <div class="msg jenny translation" style="width: 100%">Modalne glagole lahko tudi zanikaš in oblikuješ
+                    vprašanja. Poglejva strukturo vseh treh tipov. <br>
+                    Uporabiva modalni glagol ‘can’.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny user full-width">You can swim. <br>
+                    You can’t swim. <br>
+                    Can you swim?
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny nospace full-width">We’ve done it with the verb ‘can’. Now, you try and do it with
+                    ‘should’ and ‘must’.
+                </div>
+                <div class="msg jenny translation" style="width: 100%">Uporabila sva glagol ‘can’. Zdaj pa ti poskusi z
+                    glagoloma ‘should’ in ‘must’.
+                </div>
+            </div>
+            <div class="row inst space">
+                <div class="msg jenny translation" style="width: 100%">1. SHOULD <br>
+                    I should go home now. <br>
+                    <input class="answer" onchange="check(this, ['i shouldn\'t go home now'])" style="border-color: white;"
+                           type="text">. (-)<br>
+                    <input class="answer" onchange="check(this, ['should i go home now'])" style="border-color: white;"
+                           type="text">?
+                </div>
+            </div>
+        </div>
+        {% include "character.html" %}
+    </div>
+</div>
+{% endblock %}

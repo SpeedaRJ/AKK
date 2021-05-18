@@ -1,0 +1,18 @@
+td {
+    background: #446A85;
+    padding: 10%;
+    color: white;
+    height: auto;
+    width: 40%;
+}
+
+table {
+    text-align: center;
+    height: 60%;
+    width: 100%;
+}
+
+tr >td {
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
