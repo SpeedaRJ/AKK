@@ -7496,7 +7496,7 @@ def house_page_eleven(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson3/house/page_elven.html", {"next": "/lesson_three/house/page_twelve",
+        return render(request, "lesson3/house/page_eleven.html", {"next": "/lesson_three/house/page_twelve",
                                                                  "back": "/lesson_three/house/page_ten",
                                                                  "solved": solution.solved,
                                                                  "lessons": lessons,

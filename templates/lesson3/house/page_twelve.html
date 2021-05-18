@@ -26,17 +26,17 @@
             </div>
             {% include "character.html" %}
              <div class="col-lg-4">
-                <img src="{% static 'svg/lesson3/house/bedroom 03.svg' %}" type="svg" style="height: 10%;width:auto; margin-top: 10px;">
+                <img src="{% static 'svg/lesson3/house/garden 03.svg' %}" type="svg" style="height: 10%;width:auto; margin-top: 10px;">
             </div>
-            <div class="col-lg-3" style="background-color: #006655; border-radius: 15px; margin-top: 10px; text-align: left; padding-left: 20px">
-                <p style="font-weight: normal; color: white;">The glasses are <input type="text" style="border-bottom: dashed white 1px; width: 20px" onchange="check_entery(this,'in')"> the wardrobe. </p>
-                <p style="font-weight: normal; color: white;">The glasses are <input type="text" style="border-bottom: dashed white 1px; width: 20px" onchange="check_entery(this,'on')"> the pillow.  </p>
+            <div class="col-lg-4" style="background-color: #006655; border-radius: 15px; margin-top: 10px; text-align: left; padding-left: 20px">
+                <p style="font-weight: normal; color: white;">The glasses are <input type="text" style="border-bottom: dashed white 1px; width: 20px" onchange="check_entery(this,'in')"> the bucket. </p>
+                <p style="font-weight: normal; color: white;">The glasses are <input type="text" style="border-bottom: dashed white 1px; width: 20px" onchange="check_entery(this,'on')"> the fence.  </p>
             </div>
         </div>
     </div>
     <script type="text/javascript">
         function check_entery(element, solution) {
-            if(element.value.toLowerCase() === solution){
+            if(element.value.toLowerCase().trim() === solution){
                 element.style.color = "#00ff22"
             }else{
                 element.style.color = "#ff7800"

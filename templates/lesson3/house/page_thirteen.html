@@ -1,0 +1,84 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="row inst space">
+                    <div class="msg jenny full-width" style="background-color: #006655">
+                        Let's repeat. Fill in the words for the objects in the house.
+                    </div>
+                    <div class="msg jenny translation full-width">
+                        Ponoviva. Zapolni besede za predmete v hiši.
+                    </div>
+                </div>
+            </div>
+            {% include "character.html" %}
+             <div class="col-lg-4">
+                <img src="{% static 'svg/lesson3/house/bedroom 04.svg' %}" type="svg" style="height: 10%;width:auto; margin-top: 10px;">
+            </div>
+            <div class="col-lg-4" style="margin-top: 10px; display: flex;flex-direction: column;">
+                <div style="display: flex;">
+                    <div style="background-color: #006655; border-radius: 50%; width: 40px;height: 40px;display: flex; align-items: center; text-align: center; justify-content: center; color: white; font-weight: normal ">
+                        1.
+                    </div>
+                    <div style="background-color: #e4e3e8; border-radius: 20px; text-align: center; padding-top: 10px">
+                        <input type="text" style="border-bottom: dashed #6282b7 1px; width: 80%" onchange="check_entery(this,'bed')">
+                    </div>
+                </div>
+                <div style="display: flex; margin-top: 10px">
+                    <div style="background-color: #006655; border-radius: 50%; width: 40px;height: 40px;display: flex; align-items: center; text-align: center; justify-content: center; color: white; font-weight: normal ">
+                        2.
+                    </div>
+                    <div style="background-color: #e4e3e8; border-radius: 20px; text-align: center; padding-top: 10px">
+                        <input type="text" style="border-bottom: dashed #6282b7 1px; width: 80%" onchange="check_entery(this,'pillow')">
+                    </div>
+                </div>
+                <div style="display: flex; margin-top: 10px">
+                    <div style="background-color: #006655; border-radius: 50%; width: 40px;height: 40px;display: flex; align-items: center; text-align: center; justify-content: center; color: white; font-weight: normal ">
+                        3.
+                    </div>
+                    <div style="background-color: #e4e3e8; border-radius: 20px; text-align: center; padding-top: 10px">
+                        <input type="text" style="border-bottom: dashed #6282b7 1px; width: 80%" onchange="check_entery(this,'night stand')">
+                    </div>
+                </div>
+                <div style="display: flex; margin-top: 10px">
+                    <div style="background-color: #006655; border-radius: 50%; width: 40px;height: 40px;display: flex; align-items: center; text-align: center; justify-content: center; color: white; font-weight: normal ">
+                        4.
+                    </div>
+                    <div style="background-color: #e4e3e8; border-radius: 20px; text-align: center; padding-top: 10px">
+                        <input type="text" style="border-bottom: dashed #6282b7 1px; width: 80%" onchange="check_entery(this,'lamp')">
+                    </div>
+                </div>
+                <div style="display: flex; margin-top: 10px">
+                    <div style="background-color: #006655; border-radius: 50%; width: 40px;height: 40px;display: flex; align-items: center; text-align: center; justify-content: center; color: white; font-weight: normal ">
+                        5.
+                    </div>
+                    <div style="background-color: #e4e3e8; border-radius: 20px; text-align: center; padding-top: 10px">
+                        <input type="text" style="border-bottom: dashed #6282b7 1px; width: 80%" onchange="check_entery(this,'wardrobe')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function check_entery(element, solution) {
+            if(element.value.toLowerCase().trim() === solution){
+                element.style.color = "#00b402"
+            }else{
+                element.style.color = "#ff2200"
+            }
+        }
+    </script>
+{% endblock content %}
