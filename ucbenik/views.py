@@ -8103,6 +8103,31 @@ def modal_verbs_page_twelve(request):
                                                                        })
 
 
+def market_page_one(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_one.html", {"next": "/lesson_three/modal_verbs/page_twelve",
+                                                                       "back": "/lesson_three/market/page_two",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
 def pictures(request):
     sentences = {"sun.svg": "I get up.", "brush.svg": "I brush my teeth.",
                  "hairbrush.svg": "I comb my hair.", "shirt.svg": "I get dressed.",

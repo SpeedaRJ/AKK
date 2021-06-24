@@ -1,0 +1,138 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" style="height: 200px">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="msg jenny full-width" style="background-color: #006655">
+                    AT THE STORE - <p style="color: #e6a454">FRUITS</p>
+                </div>
+                <div class="msg jenny translation full-width">
+                    V trgovini - Sadje
+                </div>
+                <div class="msg jenny full-width" style="background-color: #006655; margin-top: 10px">
+                    Drag and drop
+                </div>
+                <div class="msg jenny translation full-width">
+                    Prenesi in odloži
+                </div>
+            </div>
+            {% include "character.html" %}
+            <div style="display: inline-flex; flex-direction: row; justify-content: center">
+                <div class="col-lg-6" style="display: inline-flex; margin-top: 20px; flex-direction: row; flex-wrap: wrap;">
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/apple.svg' %} " id="apple" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/cherry.svg' %} " id="cherry" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/grapes.svg' %} " id="grapes" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/lemon.svg' %} " id="lemon" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/ananas.svg' %} " id="ananas" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/orange.svg' %} " id="orange" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/strawberry.svg' %} " id="strawberry" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/blueberry.svg' %} "  id="blueberry" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/avocado.svg' %} " id="avocado" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/watermelon.svg' %} " id="watermelon" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/pear.svg' %} " id="pear" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/peach.svg' %} " id="peach" style="width: 40px;">
+                    </div>
+                </div>
+                <div class="col-lg-2" style="display: flex; flex-direction: column; color: #6282b7; justify-content: space-between">
+                    <div id="apple_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true" ondragstart="drag(event)">
+                        Apple
+                    </div>
+                    <div id="cherry_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Cherry
+                    </div>
+                    <div id="grapes_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Grapes
+                    </div>
+                    <div id="lemon_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Lemon
+                    </div>
+                    <div id="ananas_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true" ondragstart="drag(event)">
+                        Ananas
+                    </div>
+                    <div id="orange_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Orange
+                    </div>
+                    <div id="strawberry_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Strawberry
+                    </div>
+                    <div id="blueberry_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Blueberry
+                    </div>
+                    <div id="avocado_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Avocado
+                    </div>
+                    <div id="watermelon_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Watermelon
+                    </div>
+                    <div id="pear_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center;margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Pear
+                    </div>
+                    <div id="peach_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center;margin: 5px;" draggable="true"  ondragstart="drag(event)">
+                        Peach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            if (ev.target.tagName === "IMG") {
+                var data = document.getElementById(ev.dataTransfer.getData("text"));
+                if(ev.target.parentNode.childElementCount === 2){
+                    return;
+                }
+                ev.target.parentNode.appendChild(data);
+            } else if(ev.target.tagName === "DIV" && ev.target.childElementCount !== 0) {
+                console.log(ev.target.childElementCount);
+                if(ev.target.childElementCount === 2){
+                    return;
+                }
+                ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text")));
+            }
+        }
+    </script>
+{% endblock %}
