@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" style="height: 200px">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="msg jenny full-width" style="background-color: #006655">
+                    SOME/ANY
+                </div>
+                <div class="msg jenny full-width" style="background-color: #006655; margin-top: 10px">
+                    Za neštevno hrano in pijačo, kot je v angleščini moka, sol, sladkor in voda, uporabimo namesto člena <p style="color: #d89f72; font-weight: bolder">‘some’</p>. V vprašanjih se <p
+                        style="color: #d89f72; font-weight: bolder">‘some’</p> spremeni v
+                    <p style="color: #d89f72; font-weight: bolder">‘any’</p>.
+                </div>
+            </div>
+            {% include "character.html" %}
+            <div class="col-lg-6" style="margin-top: 20px;">
+                <div class="msg jenny " style="background-color: #006655">
+                    I would like some sugar.
+                </div>
+                <div class="msg jenny " style="background-color: #006655">
+                    Do you have any sugar?
+                </div>
+            </div>
+        </div>
+        <div class=" row" style="display: flex; justify-content: center; margin-top: 15px;height: 200px">
+            <div class="col-lg-3 " style="">
+                <img src="{% static 'svg/common/jenny_head.svg' %}" type="svg" id="jenny" style="margin-left: auto; margin-right: auto; display: block; height: 300px">
+            </div>
+        </div>
+        <div class="row" style="display: flex; justify-content: center; margin-bottom: 100px;height: 200px">
+            <div class="col-lg-6">
+                <div class="msg jenny full-width">
+                   I see a map of the town. Let’s buy it and leave the store.
+                </div>
+                <div class="msg jenny translation full-width">
+                   Vidim mestni zemljevid. Kupiva ga in zapustiva trgovino.
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -8119,8 +8119,263 @@ def market_page_one(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson3/market/page_one.html", {"next": "/lesson_three/modal_verbs/page_twelve",
+        return render(request, "lesson3/market/page_one.html", {"next": "/lesson_three/market/page_two",
+                                                                       "back": "/lesson_three/modal_verbs/page_twelve",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+def market_page_two(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_two.html", {"next": "/lesson_three/market/page_three",
+                                                                       "back": "/lesson_three/market/page_one",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+
+def market_page_three(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_three.html", {"next": "/lesson_three/market/page_four",
                                                                        "back": "/lesson_three/market/page_two",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+def market_page_four(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_four.html", {"next": "/lesson_three/market/page_five",
+                                                                       "back": "/lesson_three/market/page_three",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+
+def market_page_five(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_five.html", {"next": "/lesson_three/market/page_six",
+                                                                       "back": "/lesson_three/market/page_four",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+
+def market_page_six(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_six.html", {"next": "/lesson_three/market/page_seven",
+                                                                       "back": "/lesson_three/market/page_five",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+def market_page_seven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_seven.html", {"next": "/lesson_three/market/page_eight",
+                                                                       "back": "/lesson_three/market/page_six",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+def market_page_eight(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_eight.html", {"next": "/lesson_three/market/page_nine",
+                                                                       "back": "/lesson_three/market/page_seven",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+
+def market_page_nine(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_nine.html", {"next": "/lesson_three/market/page_ten",
+                                                                       "back": "/lesson_three/market/page_eight",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+def market_page_ten(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_ten.html", {"next": "/lesson_three/market/page_eleven",
+                                                                       "back": "/lesson_three/market/page_nine",
+                                                                       "solved": solution.solved,
+                                                                       "lessons": lessons,
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "user": request.session['user'],
+                                                                       "src": src_ref, "parts": parts, "colors": colors
+                                                                       })
+
+
+def market_page_eleven(request):
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        solution = get_or_create_solution(user, request.path)
+        return render(request, "lesson3/market/page_eleven.html", {"next": "",
+                                                                       "back": "/lesson_three/market/page_ten",
                                                                        "solved": solution.solved,
                                                                        "lessons": lessons,
                                                                        "lesson": "Unit 3: Let's Eat", "title": "At the store",

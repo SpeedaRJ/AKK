@@ -1,0 +1,108 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" style="height: 200px">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="msg jenny full-width" style="background-color: #006655">
+                    AT THE STORE - <p style="color: #e6a454">DAIRY PRODUCTS</p>
+                </div>
+                <div class="msg jenny translation full-width">
+                    V trgovini - Mlečni izdelki
+                </div>
+                <div class="msg jenny full-width" style="background-color: #006655; margin-top: 10px">
+                    Drag and drop
+                </div>
+                <div class="msg jenny translation full-width">
+                    Prenesi in odloži
+                </div>
+            </div>
+            {% include "character.html" %}
+            <div style="display: inline-flex; flex-direction: row; justify-content: space-between; ">
+                <div class="col-lg-8" style="display: inline-flex; margin-top: 20px; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly">
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/millk.svg' %} " id="milk" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/joghurt.svg' %} " id="yogurt" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/cheese.svg' %} " id="cheese" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/tofu.svg' %} " id="tofu" style="width: 40px;">
+                    </div>
+                </div>
+                <div class="col-lg-3" style="display: flex; flex-direction: column;color: #3E83D5; justify-content: space-between; margin-left: 5px; margin-top: 20px;" id="options">
+                    <div id="milk_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true" ondragstart="drag(event)" onclick="return_back(this)">
+                        Milk
+                    </div>
+                    <div id="yogurt_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Yogurt
+                    </div>
+                    <div id="cheese_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Cheese
+                    </div>
+                    <div id="tofu_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Tofu
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function return_back(target) {
+            if(target.parentNode.id === "options"){
+                return;
+            }
+            target.parentNode.removeChild(target);
+            target.style.color= "";
+            document.getElementById("options").appendChild(target);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = document.getElementById(ev.dataTransfer.getData("text"));
+            if (ev.target.tagName === "IMG") {
+                console.log("burek");
+                if(ev.target.parentNode.childElementCount === 2){
+                    return;
+                }
+                 if(data.id.split("\_")[0] === ev.target.id){
+                    data.style.color = "#48ab53";
+                }else{
+                    data.style.color = "#EE202E";
+                }
+                ev.target.parentNode.appendChild(data);
+            } else if(ev.target.tagName === "DIV" && ev.target.childElementCount !== 0) {
+                console.log("jufka");
+                if(ev.target.childElementCount === 2){
+                    return;
+                }
+                if(data.id.split("\_")[0] === ev.target.children[0].id){
+                    data.style.color = "#48ab53";
+                }else{
+                    data.style.color = "#EE202E";
+                }
+                ev.target.appendChild(data);
+            }
+        }
+    </script>
+{% endblock %}

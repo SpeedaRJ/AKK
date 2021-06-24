@@ -1,0 +1,138 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" style="height: 200px">
+                <img src="{% static 'svg/common/jim-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="msg jenny full-width" style="background-color: #006655">
+                    AT THE STORE - <p style="color: #e6a454">VEGETABLES</p>
+                </div>
+                <div class="msg jenny translation full-width">
+                    V trgovini - Zelenjava
+                </div>
+                <div class="msg jenny full-width" style="background-color: #006655; margin-top: 10px">
+                    Drag and drop
+                </div>
+                <div class="msg jenny translation full-width">
+                    Prenesi in odloži
+                </div>
+            </div>
+            {% include "character.html" %}
+            <div style="display: inline-flex; flex-direction: row; justify-content: center">
+                <div class="col-lg-6" style="display: inline-flex; margin-top: 20px; flex-direction: row; flex-wrap: wrap;">
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/meat.svg' %} " id="beef" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/sausage.svg' %} " id="sausage" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/ham.svg' %} " id="ham" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/chciken.svg' %} " id="chicken" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/meat 02.svg' %} " id="pork" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/fish.svg' %} " id="fish" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/shrimp.svg' %} "  id="shrimp" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/tuna.svg' %} " id="tuna" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/salmon.svg' %} " id="salmon" style="width: 40px;">
+                    </div>
+                </div>
+                <div class="col-lg-2" style="display: flex; flex-direction: column;color: #3E83D5; justify-content: space-between" id="options">
+                    <div id="beef_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true" ondragstart="drag(event)" onclick="return_back(this)">
+                        Beef
+                    </div>
+                    <div id="sausage_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Sausage
+                    </div>
+                    <div id="ham_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Ham
+                    </div>
+                    <div id="chicken_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Chicken
+                    </div>
+                    <div id="pork_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Pork
+                    </div>
+                    <div id="fish_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Fish
+                    </div>
+                    <div id="shrimp_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Shrimp
+                    </div>
+                    <div id="tuna_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Tuna
+                    </div>
+                    <div id="salmon_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Salmon
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function return_back(target) {
+            if(target.parentNode.id === "options"){
+                return;
+            }
+            target.parentNode.removeChild(target);
+            target.style.color= "";
+            document.getElementById("options").appendChild(target);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = document.getElementById(ev.dataTransfer.getData("text"));
+            if (ev.target.tagName === "IMG") {
+                console.log("burek");
+                if(ev.target.parentNode.childElementCount === 2){
+                    return;
+                }
+                 if(data.id.split("\_")[0] === ev.target.id){
+                    data.style.color = "#48ab53";
+                }else{
+                    data.style.color = "#EE202E";
+                }
+                ev.target.parentNode.appendChild(data);
+            } else if(ev.target.tagName === "DIV" && ev.target.childElementCount !== 0) {
+                console.log("jufka");
+                if(ev.target.childElementCount === 2){
+                    return;
+                }
+                if(data.id.split("\_")[0] === ev.target.children[0].id){
+                    data.style.color = "#48ab53";
+                }else{
+                    data.style.color = "#EE202E";
+                }
+                ev.target.appendChild(data);
+            }
+        }
+    </script>
+{% endblock %}

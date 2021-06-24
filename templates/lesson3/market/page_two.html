@@ -16,10 +16,10 @@
             </div>
             <div class="col-lg-6">
                 <div class="msg jenny full-width" style="background-color: #006655">
-                    AT THE STORE - <p style="color: #e6a454">FRUITS</p>
+                    AT THE STORE - <p style="color: #e6a454">VEGETABLES</p>
                 </div>
                 <div class="msg jenny translation full-width">
-                    V trgovini - Sadje
+                    V trgovini - Zelenjava
                 </div>
                 <div class="msg jenny full-width" style="background-color: #006655; margin-top: 10px">
                     Drag and drop
@@ -32,78 +32,84 @@
             <div style="display: inline-flex; flex-direction: row; justify-content: center">
                 <div class="col-lg-6" style="display: inline-flex; margin-top: 20px; flex-direction: row; flex-wrap: wrap;">
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/apple.svg' %} " id="apple" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/carrot.svg' %} " id="carrot" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/cherry.svg' %} " id="cherry" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/lettuce.svg' %} " id="lettuce" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/grapes.svg' %} " id="grapes" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/bell peper.svg' %} " id="bellpepper" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/lemon.svg' %} " id="lemon" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/eggplant.svg' %} " id="eggplant" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/ananas.svg' %} " id="ananas" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/zucchini.svg' %} " id="zucchini" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/orange.svg' %} " id="orange" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/onion.svg' %} " id="onion" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/strawberry.svg' %} " id="strawberry" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/garlic.svg' %} " id="garlic" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/blueberry.svg' %} "  id="blueberry" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/mushroom.svg' %} "  id="mushroom" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/avocado.svg' %} " id="avocado" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/beans.svg' %} " id="beans" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/watermelon.svg' %} " id="watermelon" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/beetroot.svg' %} " id="beetroot" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/pear.svg' %} " id="pear" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/broccoli.svg' %} " id="broccoli" style="width: 40px;">
                     </div>
                     <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <img src="{% static 'svg/lesson3/market/peach.svg' %} " id="peach" style="width: 40px;">
+                        <img src="{% static 'svg/lesson3/market/potato.svg' %} " id="potato" style="width: 40px;">
+                    </div>
+                    <div style="margin: 15px" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img src="{% static 'svg/lesson3/market/tomato.svg' %} " id="tomato" style="width: 40px;">
                     </div>
                 </div>
                 <div class="col-lg-2" style="display: flex; flex-direction: column;color: #3E83D5; justify-content: space-between" id="options">
-                    <div id="apple_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true" ondragstart="drag(event)" onclick="return_back(this)">
-                        Apple
+                    <div id="carrot_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true" ondragstart="drag(event)" onclick="return_back(this)">
+                        Carrot
                     </div>
-                    <div id="cherry_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Cherry
+                    <div id="lettuce_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Lettuce
                     </div>
-                    <div id="grapes_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Grapes
+                    <div id="bellpepper_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Bell pepper
                     </div>
-                    <div id="lemon_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Lemon
+                    <div id="eggplant_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Eggplant
                     </div>
-                    <div id="ananas_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true" ondragstart="drag(event)" onclick="return_back(this)">
-                        Ananas
+                    <div id="zucchini_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true" ondragstart="drag(event)" onclick="return_back(this)">
+                        Zucchini
                     </div>
-                    <div id="orange_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Orange
+                    <div id="onion_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Onion
                     </div>
-                    <div id="strawberry_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Strawberry
+                    <div id="garlic_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Garlic
                     </div>
-                    <div id="blueberry_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Blueberry
+                    <div id="mushroom_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Mushroom
                     </div>
-                    <div id="avocado_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Avocado
+                    <div id="beans_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Beans
                     </div>
-                    <div id="watermelon_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Watermelon
+                    <div id="radish_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center; margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Radish
                     </div>
-                    <div id="pear_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center;margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Pear
+                    <div id="broccoli_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center;margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Broccoli
                     </div>
-                    <div id="peach_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center;margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
-                        Peach
+                    <div id="potato_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center;margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Potato
+                    </div>
+                    <div id="tomato_txt" style="border-radius: 10px 10px 10px 10px; background-color: #e4e3e8; text-align: center;margin: 5px;" draggable="true"  ondragstart="drag(event)" onclick="return_back(this)">
+                        Tomato
                     </div>
                 </div>
             </div>
@@ -132,7 +138,7 @@
                 if(ev.target.parentNode.childElementCount === 2){
                     return;
                 }
-                if(data.id.split("\_")[0] === ev.target.id){
+                 if(data.id.split("\_")[0] === ev.target.id){
                     data.style.color = "#48ab53";
                 }else{
                     data.style.color = "#EE202E";
