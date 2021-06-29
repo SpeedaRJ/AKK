@@ -8404,7 +8404,7 @@ def city_page_one(request):
                                                                        "back": "/lesson_three/market/page_eleven",
                                                                        "solved": solution.solved,
                                                                        "lessons": lessons,
-                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "City",
                                                                        "user": request.session['user'],
                                                                        "src": src_ref, "parts": parts, "colors": colors
                                                                        })
@@ -8430,7 +8430,7 @@ def city_page_two(request):
                                                                        "back": "/lesson_three/city/page_one",
                                                                        "solved": solution.solved,
                                                                        "lessons": lessons,
-                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "City",
                                                                        "user": request.session['user'],
                                                                        "src": src_ref, "parts": parts, "colors": colors
                                                                        })
@@ -8455,7 +8455,7 @@ def city_page_three(request):
                                                                        "back": "/lesson_three/city/page_two",
                                                                        "solved": solution.solved,
                                                                        "lessons": lessons,
-                                                                       "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                       "lesson": "Unit 3: Let's Eat", "title": "City",
                                                                        "user": request.session['user'],
                                                                        "src": src_ref, "parts": parts, "colors": colors
                                                                        })
@@ -8480,7 +8480,7 @@ def city_page_four(request):
                                                                 "back": "/lesson_three/city/page_three",
                                                                 "solved": solution.solved,
                                                                 "lessons": lessons,
-                                                                "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                "lesson": "Unit 3: Let's Eat", "title": "City",
                                                                 "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
@@ -8505,7 +8505,7 @@ def city_page_five(request):
                                                                 "back": "/lesson_three/city/page_four",
                                                                 "solved": solution.solved,
                                                                 "lessons": lessons,
-                                                                "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                "lesson": "Unit 3: Let's Eat", "title": "City",
                                                                 "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
@@ -8530,7 +8530,7 @@ def city_page_six(request):
                                                                 "back": "/lesson_three/city/page_five",
                                                                 "solved": solution.solved,
                                                                 "lessons": lessons,
-                                                                "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                                "lesson": "Unit 3: Let's Eat", "title": "City",
                                                                 "user": request.session['user'],
                                                                 "src": src_ref, "parts": parts, "colors": colors
                                                                 })
@@ -8555,7 +8555,7 @@ def city_page_seven(request):
                                                               "back": "/lesson_three/city/page_six",
                                                               "solved": solution.solved,
                                                               "lessons": lessons,
-                                                              "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                              "lesson": "Unit 3: Let's Eat", "title": "City",
                                                               "user": request.session['user'],
                                                               "src": src_ref, "parts": parts, "colors": colors
                                                               })
@@ -8580,7 +8580,7 @@ def city_page_eight(request):
                                                               "back": "/lesson_three/city/page_seven",
                                                               "solved": solution.solved,
                                                               "lessons": lessons,
-                                                              "lesson": "Unit 3: Let's Eat", "title": "At the store",
+                                                              "lesson": "Unit 3: Let's Eat", "title": "City",
                                                               "user": request.session['user'],
                                                               "src": src_ref, "parts": parts, "colors": colors
                                                               })
