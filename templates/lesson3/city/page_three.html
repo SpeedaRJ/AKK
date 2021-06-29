@@ -1,0 +1,56 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="msg jenny full-width"  style="background-color: #446a85">
+                    You are at Jim's house and want to go to the park.
+                </div>
+                <div class="msg jenny full-width translation">
+                    Nahajaš se pri Jimovi hiši in želiš do parka.
+                </div>
+                <div class="msg jenny full-width" style="background-color: #446a85; margin-top: 10px">
+                   If you were on the street and you wanted to ask someone for directions, you would say:
+                </div>
+                <div class="msg jenny full-width translation">
+                   Če bi bil/a na ulici in bi želel/a nekoga vprašati za navodila za pot, bi rekel/a.
+                </div>
+
+                <div class="msg jenny full-width" style="background-color: #446a85; margin-top: 10px">
+                    ‘Excuse me, how can I get to the park?
+                </div>
+                <div class="msg jenny full-width translation">
+                   Oprostite, kako pridem do parka?
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="msg jenny full-width">
+                    You have to go <p style="color: #d55225">straight ahead</p>.
+                </div>
+                <div class="msg jenny full-width translation">
+                   Pojdi naravnost.
+                </div>
+                <div class="msg jenny full-width" style="color: #d55225; margin-top: 10px">
+                    Turn right at the second crossroad.
+                </div>
+                <div class="msg jenny full-width translation">
+                   Pri drugem križišču zavij desno.
+                </div>
+            </div>
+            <div class="col-lg-12" style="margin-top: 25px; display: flex; justify-content: space-evenly; " >
+                <div class="col-lg-8" style="padding: 0">
+                    <img src="{% static 'svg/lesson3/city/city 03.svg' %}"  type="svg" style="width: 80%; ">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

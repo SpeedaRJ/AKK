@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row" style="display: flex; justify-content: center">
+            <div class="col-lg-6">
+                <div class="msg full-width jenny" style="background-color: #446a85">
+                    You are at the bakery and want to go to the supermarket.
+                </div>
+                <div class="msg jenny full-width translation">
+                    Nahajaš pri pekarni in želiš priti do super marketa.
+                </div>
+                <div class="msg full-width jenny" style="margin-top: 10px">
+                    You have to go straight ahead.  Turn right at the crossroads. Go straight ahead and you will see the supermarket opposite the train station.
+                </div>
+                <div class="msg jenny full-width translation">
+                    Pojdi naravnost. Pri križišču zavij desno. Nadaljuj naravnost in videl boš supoermarket nasproti železniške postaje.
+                </div>
+                <div class="col-lg-12" style="margin-top: 10px">
+                    <img src="{% static 'svg/lesson3/city/city 08.svg' %}" type="svg">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

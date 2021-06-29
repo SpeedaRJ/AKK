@@ -1,0 +1,73 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" style="height: 200px">
+                <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="msg jenny full-width" style="background-color: #446a85">
+                   Let's repeat!.
+                </div>
+                <div class="msg jenny full-width translation">
+                    Ponoviva!
+                </div>
+            </div>
+            {% include "character.html" %}
+            <div class="col-lg-12" style="margin-top: 25px; display: flex; justify-content: space-around">
+                <div class="col-lg-5" style="display: flex; flex-direction: column;justify-content: space-between; color: white">
+                    <div  class="msg full-width jenny" style="background-color: #446a85;" >
+                        <p>Where can you buy croissants? At the b</p><input type="text" style="border-bottom: dashed #6282b7 1px; width: 40px;" onchange="check_answer(this,'akery')">
+                    </div>
+                    <div  class="msg full-width jenny" style="background-color: #446a85; margin-top: 10px" >
+                        <p>At the r</p><input type="text" style="border-bottom: dashed #6282b7 1px; width:80px;" onchange="check_answer(this,'estaurant')"><p> you can eat lunch.</p>
+                    </div>
+                    <div  class="msg full-width jenny" style="background-color: #446a85; margin-top: 10px" >
+                        <p>Let’s go watch a movie at the c</p><input type="text" style="border-bottom: dashed #6282b7 1px; width:80px;" onchange="check_answer(this,'inema')">
+                    </div>
+                    <div  class="msg full-width jenny" style="background-color: #446a85; margin-top: 10px" >
+                        <p>Children learn, play and make new friends at s</p><input type="text" style="border-bottom: dashed #6282b7 1px; width:80px;" onchange="check_answer(this,'chool')">
+                    </div>
+                    <div  class="msg full-width jenny" style="background-color: #446a85; margin-top: 10px" >
+                        <p>If there is a fire you need to call the f</p><input type="text" style="border-bottom: dashed #6282b7 1px; width:80px;" onchange="check_answer(this,'ire')"><br><p> S</p> <input type="text" style="border-bottom: dashed #6282b7 1px; width:80px;" onchange="check_answer(this,'tation')">
+                    </div>
+                </div>
+                <div class="col-lg-5" style="display: flex; flex-direction: column; color: white; justify-content: space-between;">
+                     <div  class="msg full-width jenny" style="background-color: #446a85; " >
+                        <p>When you break your arm or need a surgery you go to the</p><br><p>h</p><input type="text" style="border-bottom: dashed #6282b7 1px; width: 60px;" onchange="check_answer(this,'ospital')">
+                    </div>
+                     <div  class="msg full-width jenny" style="background-color: #446a85;" >
+                        <p>If your car needs fuel you go to the g</p><input type="text" style="border-bottom: dashed #6282b7 1px; width: 40px;" onchange="check_answer(this,'as')"><p> s</p><input type="text" style="border-bottom: dashed #6282b7 1px; width: 40px;" onchange="check_answer(this,'tation')">
+                    </div>
+                     <div  class="msg full-width jenny" style="background-color: #446a85;" >
+                        <p>I go for a walk in the p</p><input type="text" style="border-bottom: dashed #6282b7 1px; width: 40px;" onchange="check_answer(this,'ark')"><p> every day</p>
+                    </div>
+                     <div  class="msg full-width jenny" style="background-color: #446a85;" >
+                        <p>On Saturday, we will go see a new art exhibition at the</p><br><p>g</p><input type="text" style="border-bottom: dashed #6282b7 1px; width: 40px;" onchange="check_answer(this,'allery')">
+                    </div>
+                     <div  class="msg full-width jenny" style="background-color: #446a85;" >
+                        <p>You can send a postcard at the nearest p</p><input type="text" style="border-bottom: dashed #6282b7 1px; width: 40px;" onchange="check_answer(this,'ost')"><p> o</p><input type="text" style="border-bottom: dashed #6282b7 1px; width: 40px;" onchange="check_answer(this,'ffice')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function check_answer(el, ans) {
+            if(el.value.toLowerCase() === ans){
+                el.style.color = "#48ab53";
+            }else{
+                el.style.color = "#EE202E";
+            }
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="msg  full-width jenny">
+                    And walk straight until you <p style="color: #d55225">see the supermarket</p>.
+                </div>
+                <div class="msg jenny full-width translation">
+                    Hodi naravnost dokler ne vidiš supermarketa.
+                </div>
+                <div class="col-lg-12" style="padding: 0; width: 100%;">
+                    <img src="{% static 'svg/lesson3/city/city 04.svg' %}" type="svg" ">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="msg jenny full-width">
+                    <p style="color: #d55225">Turn right at </p>the supermarket.
+                </div>
+                <div class="msg jenny full-width translation">
+                    Zavij desno pri supermarketu.
+                </div>
+                <div class="msg jenny full-width" style="color: #d55225; margin-top: 10px">
+                   You walk straight ahead until you see the cinema and you turn left there.
+                </div>
+                <div class="msg jenny full-width translation">
+                    Hodi naravnost dokler ne vidiš kina in pri njem zavij levo.
+                </div>
+                <div class="col-lg-12">
+                    <img src="{% static 'svg/lesson3/city/city 05.svg' %}" type="svg" >
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

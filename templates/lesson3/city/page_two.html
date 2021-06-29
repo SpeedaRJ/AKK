@@ -1,0 +1,100 @@
+{% extends "main.html" %}
+{% load static %}
+{% block custom_imports %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/articles/page_one.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lesson2/family/page_one.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lesson2/family/glossary.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" style="height: 200px">
+                <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
+            </div>
+            <div class="col-lg-6">
+                <div class="msg jenny full-width" style="background-color: #446a85">
+                   Fill in the missing letters.
+                </div>
+                <div class="msg jenny full-width translation">
+                    Dopolni manjkajoče črke.
+                </div>
+            </div>
+            {% include "character.html" %}
+            <div class="col-lg-12" style="margin-top: 25px; display: flex; justify-content: space-around">
+                <div class="col-lg-8" style="padding: 0">
+                    <img src="{% static 'svg/lesson3/city/city 01.svg' %}"  type="svg" style="width: 80%; ">
+                </div>
+                <div class="col-lg-2" style="display: flex; flex-direction: column; background-color: #e4e3e8; border-radius: 20px 20px 20px 20px; justify-content: center; margin-right: 15px; text-transform: uppercase">
+                    <div>
+                        <p>R</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px;" onchange="check_answer(this,'ail')"><p>way station</p>
+                    </div>
+                    <div>
+                       <p>B</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'us')"><p>station</p>
+                    </div>
+                    <div>
+                        <input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'jim')"><p>'s house</p>
+                    </div>
+                    <div>
+                        <p>B</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'an')"><p>k</p>
+                    </div>
+                    <div>
+                        <p>M</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'use')"><p>um</p>
+                    </div>
+                    <div>
+                        <p>G</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'alle')"><p>ry</p>
+                    </div>
+                    <div>
+                        <p>P</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'ar')"><p>k</p>
+                    </div>
+                    <div>
+                        <p>H</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'ospit')"><p>al</p>
+                    </div>
+                    <div>
+                        <p>F</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'ire')"><p> S</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'tati')"><p>on</p>
+                    </div>
+                </div>
+                <div class="col-lg-2" style="display: flex; flex-direction: column; background-color: #e4e3e8; border-radius: 20px 20px 20px 20px; justify-content: center; text-transform: uppercase">
+                    <div>
+                        <p>P</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'oli')"><p>ce sta</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'tion')">
+                    </div>
+                    <div>
+                        <p>B</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'ake')"><p>ry</p>
+                    </div>
+                    <div>
+                        <p>L</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'ibra')"><p>ry</p>
+                    </div>
+                    <div>
+                        <p>S</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'cho')"><p>ol</p>
+                    </div>
+                    <div>
+                        <p>P</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'os')"><p>t O</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'offi')"><p>ce</p>
+                    </div>
+                    <div>
+                        <p>C</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'ine')"><p>ma</p>
+                    </div>
+                    <div>
+                        <p>G</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'as')"><p> station</p>
+                    </div>
+                    <div>
+                        <p>S</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'upe')"><p>r M</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'arke')"><p>t</p>
+                    </div>
+                    <div>
+                        <p>M</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'ark')"><p>et S</p><input type="text" style="border-bottom: dashed #6282b7 3px; width: 30px"  onchange="check_answer(this,'quar')"><p>e</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function check_answer(el, ans) {
+            if(el.value.toLowerCase() === ans){
+                el.style.color = "#48ab53";
+            }else{
+                el.style.color = "#EE202E";
+            }
+        }
+    </script>
+{% endblock %}

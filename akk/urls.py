@@ -360,4 +360,18 @@ urlpatterns = [
     path("lesson_three/market/page_nine", views.market_page_nine, name="market_page_nine"),
     path("lesson_three/market/page_ten", views.market_page_ten, name="market_page_ten"),
     path("lesson_three/market/page_eleven", views.market_page_eleven, name="market_page_eleven"),
+
+    path("lesson_three/city/page_one", views.city_page_one, name="city_page_one"),
+    path("lesson_three/city/page_two", views.city_page_two, name="city_page_two"),
+    path("lesson_three/city/page_three", views.city_page_three, name="city_page_three"),
+    path("lesson_three/city/page_four", views.city_page_four, name="city_page_four"),
+    path("lesson_three/city/page_five", views.city_page_five, name="city_page_five"),
+    path("lesson_three/city/page_six", views.city_page_six, name="city_page_six"),
+    path("lesson_three/city/page_seven", views.city_page_seven, name="city_page_seven"),
+    path("lesson_three/city/page_eight", views.city_page_eight, name="city_page_eight"),
+    # path("lesson_three/city/page_nine", views.city_page_nine, name="city_page_nine"),
+    # path("lesson_three/city/page_ten", views.city_page_ten, name="city_page_ten"),
+    # path("lesson_three/city/page_eleven", views.city_page_eleven, name="city_page_eleven"),
+    # path("lesson_three/city/page_twelve", views.city_page_twelve, name="city_page_twelve"),
+    # path("lesson_three/city/page_thirteen", views.city_page_thirteen, name="city_page_thirteen"),
 ]
