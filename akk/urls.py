@@ -369,9 +369,4 @@ urlpatterns = [
     path("lesson_three/city/page_six", views.city_page_six, name="city_page_six"),
     path("lesson_three/city/page_seven", views.city_page_seven, name="city_page_seven"),
     path("lesson_three/city/page_eight", views.city_page_eight, name="city_page_eight"),
-    # path("lesson_three/city/page_nine", views.city_page_nine, name="city_page_nine"),
-    # path("lesson_three/city/page_ten", views.city_page_ten, name="city_page_ten"),
-    # path("lesson_three/city/page_eleven", views.city_page_eleven, name="city_page_eleven"),
-    # path("lesson_three/city/page_twelve", views.city_page_twelve, name="city_page_twelve"),
-    # path("lesson_three/city/page_thirteen", views.city_page_thirteen, name="city_page_thirteen"),
 ]

@@ -24,7 +24,11 @@ lessons = {"lesson_one": {"Introduction": "/lesson_one/introduction/page_one",
                           "Daily Routines": "/lesson_two/daily_routines/page_one",
                           "Occupations": "/lesson_two/occupations/page_one"},
            "lesson_three": {"Pronouns": "/lesson_three/pronouns/page_one",
-                            "Modal Verbs": "/lesson_three/modal_verbs/page_one"}
+                            "Modal Verbs": "/lesson_three/modal_verbs/page_one",
+                            "City": "/lesson_three/city/page_one",
+                            "Market": "/lesson_three/market/page_one",
+                            "House": "/lesson_three/house/page_one",
+                            "Prepositions": "/lesson_three/prepositions/page_one"}
            }
 
 
