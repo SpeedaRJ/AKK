@@ -1,4 +1,4 @@
-let colors = ["first","second","third","fourth","fifth","sixth","seventh","eigtht","ninth","tenth"];
+let colors = ["first","second","third","fourth","fifth","sixth","seventh","eighth","ninth","tenth"];
 let hex_codes = ["1","2","3","4","5","6","7","8","9","10"]
 
 function toOrigin1(el) {

@@ -170,7 +170,7 @@ function translate(el) {
     if (el.target.value.toLowerCase().replace(/ +/g,"").match("^plump|fat$")) {
         paras[0].innerHTML = "močnejše postave";
         let data = {
-            "body_type": "fat"
+            "body_type": "plump"
         };
         update_session(data);
     } else if (el.target.value.toString().trim().replace(/ +/g, '').toLowerCase().match("^slender|slim$")) {

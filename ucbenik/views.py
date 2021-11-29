@@ -8632,7 +8632,7 @@ def glossary(request):
                                             "beard": "brada", "mustache": "brki", "to wear": "nositi",
                                             "glasses": "očala", "to pick": "izbrati",
                                             "clothes": "oblačila"},
-                             "additional": {"fat": "debel", "thin": "suh", "slim": "vitek"}
+                             "additional": {"plump": "debel", "thin": "suh", "slim": "vitek"}
                              })
     elif request.get_full_path().split("/")[2] == "numbers":
         return JsonResponse({"vocabulary": {"number": "število", "to count": "šteti", "zero": "nič", "one": "ena",

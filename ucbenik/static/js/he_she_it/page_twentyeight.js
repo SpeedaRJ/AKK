@@ -1,6 +1,6 @@
 let solutions = [
     "Is she slender",
-    "Is he fat",
+    "Is he plump",
     "Are you happy",
     "Are they sad",
     "Am I short",
@@ -31,7 +31,7 @@ function solution(el,n) {
 function redo() {
     aps = document.getElementById("aps");
     aps.innerHTML='<div class="msg jenny slo in" style="width: 40%;float:left;margin-left:0;height:6vh"> She is slender. </div><div class="msg jenny slo in" style="width: 40%;float:right;height:6vh""><input class=textarea onchange="solution(this,0)" style="border-color:#6282B7;background-color: transparent;width: 100%"/></div>'
-    aps.innerHTML+='<div class="msg jenny slo in" style="width: 40%;float:left;margin-left:0;height:6vh""> He isn'+"'"+'t fat </div><div class="msg jenny slo in" style="width: 40%;float:right;height:6vh""><input class=textarea onchange="solution(this,1)" style="border-color:#6282B7;background-color: transparent;width: 100%"/></div>'
+    aps.innerHTML+='<div class="msg jenny slo in" style="width: 40%;float:left;margin-left:0;height:6vh""> He isn'+"'"+'t plump </div><div class="msg jenny slo in" style="width: 40%;float:right;height:6vh""><input class=textarea onchange="solution(this,1)" style="border-color:#6282B7;background-color: transparent;width: 100%"/></div>'
     aps.innerHTML+='<div class="msg jenny slo in" style="width: 40%;float:left;margin-left:0;height:6vh""> You are happy. </div><div class="msg jenny slo in" style="width: 40%;float:right;height:6vh""><input class=textarea onchange="solution(this,2)" style="border-color:#6282B7;background-color: transparent;width: 100%"/></div>'
     aps.innerHTML+='<div class="msg jenny slo in" style="width: 40%;float:left;margin-left:0;height:6vh""> They aren'+"'"+'t sad. </div><div class="msg jenny slo in" style="width: 40%;float:right;height:6vh""><input class=textarea onchange="solution(this,3)" style="border-color:#6282B7;background-color: transparent;width: 100%"/></div>'
     aps.innerHTML+='<div class="msg jenny slo in" style="width: 40%;float:left;margin-left:0;height:6vh""> I am short. </div><div class="msg jenny slo in" style="width: 40%;float:right;height:6vh""><input class=textarea onchange="solution(this,4)" style="border-color:#6282B7;background-color: transparent;width: 100%"/></div>'
