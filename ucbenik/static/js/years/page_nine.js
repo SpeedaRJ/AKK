@@ -27,6 +27,7 @@ $(function () {
 function tts(el) {
     if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
+        msg.lang = "en-GB";
         msg.text = "year" + el.innerHTML;
         msg.volume = 0.5; // From 0 to 1
         msg.rate = 1; // From 0.1 to 10

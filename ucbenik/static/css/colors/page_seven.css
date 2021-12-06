@@ -64,3 +64,7 @@ input:focus {
 .incorrect {
     color: #F15D2A;
 }
+
+div[id^='color'] {
+    border: 0.5px solid black;
+}

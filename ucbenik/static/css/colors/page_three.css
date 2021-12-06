@@ -46,3 +46,7 @@
 input {
    background-color: transparent;
 }
+
+div[id^='color'] {
+    border: 0.5px solid black;
+}

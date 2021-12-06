@@ -63,6 +63,8 @@ function redo(e) {
             children[1].children[0].style.display="none";
             
         }
+        children[0].children[1].value = "";
+        children[1].children[1].value = "";
     }
 }
 

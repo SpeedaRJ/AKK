@@ -56,7 +56,7 @@ function redo(e) {
         s1=i;
     }
     document.getElementById("textarea").innerHTML="";
-    if (c < 2)
+    if (c < 1)
         document.getElementById("solution").innerHTML = "house."
     else
         document.getElementById("solution").innerHTML = "houses."
@@ -71,7 +71,7 @@ function redo(e) {
         s2=i;
     }
     document.getElementById("textarea2").value="";
-    if (c < 2)
+    if (c < 1)
         document.getElementById("solution2").innerHTML = "tree."
     else
         document.getElementById("solution2").innerHTML = "trees."

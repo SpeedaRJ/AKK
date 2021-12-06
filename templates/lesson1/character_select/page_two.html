@@ -28,17 +28,19 @@
                         <div class="msg jenny translation">Visoka si!</div>
                     {% endif %}
                 {% else %}
-                    <div class="msg jenny">You are short!</div> 
+                    <div class="msg jenny">You are quite short!</div> 
                     <input type="image" onclick="play('a11')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                     <audio id="a11" src="{% static 'audio/lesson1_jenny/character_select/4.2.mp3' %}"></audio>
                     {% if user.sex == "M" %}
-                        <div class="msg jenny translation">Si nižje rasti!</div>
+                        <div class="msg jenny translation">Nizek si.</div>
+                    {% else %}
+                        <div class="msg jenny translation">Nizka si.</div>
                     {% endif %}
                 {% endif %}
             </div>
             <div class="row text space">
                 <div class="msg jenny">I am quite plump now but I was slender when I was young</div>
-                <div class="msg jenny translation">Zdaj sem močnejše postave, vendar sem bila suha, ko sem bila mlada</div>
+                <div class="msg jenny translation">Zdaj sem močnejše postave, vendar sem bila vitka, ko sem bila mlada</div>
                 <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <audio id="a2" src="{% static 'audio/lesson1_jenny/character_select/5.mp3' %}"></audio>
             </div>
@@ -47,9 +49,9 @@
                 <input type="image" onclick="play('a3')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
                 <audio id="a3" src="{% static 'audio/lesson1_jenny/character_select/6.mp3' %}"></audio>
                 {% if user.sex == 'M' %}
-                    <div class="msg jenny translation">Kja pa ti? Si močnejše postave ali vitek?</div>
+                    <div class="msg jenny translation">Kja pa ti? Si močnejše postave ali si vitek?</div>
                 {% else %}
-                    <div class="msg jenny translation">Kaj pa ti? Si debela ali suha?</div>
+                    <div class="msg jenny translation">Kaj pa ti? Si močnejše postave ali si vitka?</div>
                 {% endif %}
             </div>
             <div class="row text space">

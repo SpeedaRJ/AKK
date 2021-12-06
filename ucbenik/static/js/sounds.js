@@ -6,6 +6,7 @@ function play(id) {
 function tts(id) {
   if ('speechSynthesis' in window) {
     var msg = new SpeechSynthesisUtterance();
+    msg.lang = "en-GB";
     msg.text = document.getElementById(id).value;
     if (!msg.text)
     msg.text = "Please enter a value."

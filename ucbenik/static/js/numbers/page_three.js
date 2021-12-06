@@ -35,7 +35,7 @@ function redo(e) {
         let cat = document.getElementById(cats[i]);
         cat.style.display = "inline";
     }
-    if (c < 2)
+    if (c < 1)
         document.getElementById("solution").innerHTML = "cat."
     else
         document.getElementById("solution").innerHTML = "cats."

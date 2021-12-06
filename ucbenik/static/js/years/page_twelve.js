@@ -1,6 +1,7 @@
 function tts(id) {
     if ('speechSynthesis' in window) {
       var msg = new SpeechSynthesisUtterance();
+      msg.lang = "en-GB";
       msg.text = "year" + document.getElementById(id).value;
       if (!msg.text)
         msg.text = "Please enter a value."
