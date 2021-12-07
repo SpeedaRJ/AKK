@@ -1,8 +1,8 @@
 function setYears() {
     let selected = [];
     while (selected.length != 5) {
-        let year = Math.floor(Math.random() * (2020 - 1000 + 1) ) + 1000;;
-        if(selected.indexOf(year) == -1) {
+        let year = Math.floor(Math.random() * (2020 - 1000 + 1)) + 1000;;
+        if (selected.indexOf(year) == -1) {
             selected.push(year);
         }
     }
@@ -14,7 +14,7 @@ function setYears() {
 }
 
 
-function redo(){
+function redo() {
     setYears();
 }
 
@@ -27,15 +27,16 @@ $(function () {
 function tts(el) {
     if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
+        msg.voice = voicesList.find((voice) => voice.lang === 'en-GB');
         msg.lang = "en-GB";
-        msg.text = "year" + el.innerHTML;
+        msg.text = el.innerHTML;
         msg.volume = 0.5; // From 0 to 1
         msg.rate = 1; // From 0.1 to 10
         msg.pitch = 2; // From 0 to 2
         if (!msg.text)
-            msg.text = "Please enter a value."
+            msg.text = "Please enter a year."
         window.speechSynthesis.speak(msg);
-    } else{
+    } else {
         // Speech Synthesis Not Supported 😣
         alert("Sorry, your browser doesn't support text to speech!");
     }

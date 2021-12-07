@@ -15,11 +15,17 @@ let objects1 = [
 function redo(e) {
     shuffle(objects1);
     /* hide all objects */
-    for(i=0; i < objects1.length; i++) {
-        document.getElementById(objects1[i]).style.display = "none";
+    for (i = 0; i < objects1.length; i++) {
+        let obj = document.getElementById(objects1[i]);
+        obj.style.display = "none";
+        children = obj.children;
+        children[0].classList.remove("incorrect");
+        children[0].classList.remove("correct");
+        children[1].classList.remove("incorrect");
+        children[1].classList.remove("correct");
     }
 
-    for(i=0; i < 5; i++) {
+    for (i = 0; i < 5; i++) {
         let obj = document.getElementById(objects1[i]);
         obj.style.display = "block";
         children = obj.children;
@@ -27,12 +33,25 @@ function redo(e) {
         children[0].classList.remove("correct");
         children[1].classList.remove("incorrect");
         children[1].classList.remove("correct");
-        children[0].children[1].style.display="none";
-        children[0].children[0].style.display="inline";
-        children[1].children[1].style.display="inline";
-        children[1].children[0].style.display = "none";
-        children[0].children[1].value = "";
-        children[1].children[1].value = "";
+        if (Math.random() > 0.5) {
+            children[0].children[0].style.display = "none";
+            children[0].children[1].style.display = "inline";
+            children[1].children[0].style.display = "inline";
+            children[1].children[1].style.display = "none";
+            children[0].children[0].value = '';
+            children[0].children[1].value = '';
+            children[1].children[0].value = '';
+            children[1].children[1].value = '';
+        } else {
+            children[0].children[1].style.display = "none";
+            children[0].children[0].style.display = "inline";
+            children[1].children[1].style.display = "inline";
+            children[1].children[0].style.display = "none";
+            children[0].children[0].value = '';
+            children[0].children[1].value = '';
+            children[1].children[0].value = '';
+            children[1].children[1].value = '';
+        }
     }
 }
 
@@ -47,9 +66,9 @@ function shuffle(a) {
     return a;
 }
 
-function solution(el,solution) {
+function solution(el, solution) {
     let parent = el.parentElement;
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution+'\\.*\\!*$')) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^' + solution + '\\.*\\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {
@@ -58,17 +77,17 @@ function solution(el,solution) {
     }
     let paras = document.getElementsByClassName("tip")
     let counter = 0;
-    for(let x in paras) {
-        if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
+    for (let x in paras) {
+        if (paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter === 5)
+    if (counter === 5)
         document.getElementById("next").removeAttribute("disabled")
     else
         document.getElementById("next").setAttribute("disabled", "disabled");
 }
 
 
-$(function(){
+$(function () {
     redo();
 })

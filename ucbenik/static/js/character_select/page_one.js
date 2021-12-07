@@ -64,7 +64,7 @@ function update_session(d) {
 }
 
 function filterHeight(value) {
-    if (value >= "182") {
+    if (value >= "175") {
         update_session({"height": "tall"});
     } else {
         update_session({"height": "short"});

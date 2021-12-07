@@ -1,5 +1,5 @@
 let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink", "Black", "Grey", "White", "Brown", "Gold", "Silver"];
-let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90", "#EF509C", "#231F20", "#85837D", "#F8F8F8", "#653614", "#FBAD18", "#B6B2AC"];
+let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90", "#EF509C", "#231F20", "#85837D", "#F8F8F8", "#653614", "#FBAD18", "#aaa9ad"];
 
 function toOrigin1(el) {
     var origin = document.getElementById('drag-origin');
@@ -21,13 +21,13 @@ function drop(ev, el, limit) {
     if (el.children.length > limit) {
         try {
             children = el.children;
-            for(var i = 0; i < children.length; i++) {
-                if(children[i].classList !== undefined && children[i].className.includes("incorrect")) {
+            for (var i = 0; i < children.length; i++) {
+                if (children[i].classList !== undefined && children[i].className.includes("incorrect")) {
                     toOrigin1(children[i]);
                     break;
                 }
             }
-            if(i === children.length && i > 1)
+            if (i === children.length && i > 1)
                 return;
         } catch {
             return;
@@ -37,7 +37,7 @@ function drop(ev, el, limit) {
 
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
-    correct = data.search("color" + el.id.substring(el.id.length-1)) > -1;
+    correct = data.search("color" + el.id.substring(el.id.length - 1)) > -1;
     var child = document.getElementById(data);
     if (correct) {
         child.classList.add('correct');
@@ -68,14 +68,14 @@ function sortItems() {
 function checkCorrectness() {
     let items = document.getElementsByClassName("draggable-word")
     let counter = 0;
-    for(let x = 0; x < items.length; x++) {
-        if(items[x].classList !== undefined && items[x].className.includes("correct") && !items[x].className.includes("incorrect"))
+    for (let x = 0; x < items.length; x++) {
+        if (items[x].classList !== undefined && items[x].className.includes("correct") && !items[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter === items.length) {
+    if (counter === items.length) {
         document.getElementById("next").removeAttribute("disabled")
     } else {
-         document.getElementById("next").setAttribute("disabled", "disabled");
+        document.getElementById("next").setAttribute("disabled", "disabled");
     }
 }
 
@@ -83,10 +83,10 @@ function setColors() {
     let selected = [];
     while (selected.length !== 5) {
         let randomElement = colors[Math.floor(Math.random() * colors.length)];
-        if(!selected.includes(randomElement)) selected.push(randomElement);
+        if (!selected.includes(randomElement)) selected.push(randomElement);
     }
     let hex = [];
-    for(let color in selected) {
+    for (let color in selected) {
         hex.push(hex_codes[colors.findIndex((element) => element === selected[color])]);
     }
     document.getElementById("color01").style.backgroundColor = hex[0];
@@ -103,8 +103,8 @@ function setColors() {
 
 function redo(e) {
     let node = [].slice.call(document.getElementsByClassName("draggable-word"));
-    if(node.some((el) => el.className.includes("correct")))
-        [].forEach.call(node, function(el) {el.click(); console.log(el)});
+    if (node.some((el) => el.className.includes("correct")))
+        [].forEach.call(node, function (el) { el.click(); console.log(el) });
     setColors();
 }
 

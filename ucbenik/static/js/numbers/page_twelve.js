@@ -19,7 +19,6 @@ let objects1 = [
     "row17",
     "row18",
     "row19",
-    "row20",
 ]
 
 let objects2 = [
@@ -32,18 +31,25 @@ let objects2 = [
     "row172",
     "row182",
     "row192",
-    "row202",
 ]
+
+let firstSolved = false;
 
 
 function redo(e) {
     shuffle(objects1);
     /* hide all objects */
-    for(i=0; i < objects1.length; i++) {
-        document.getElementById(objects1[i]).style.display = "none";
+    for (i = 0; i < objects1.length; i++) {
+        let obj = document.getElementById(objects1[i]);
+        obj.style.display = "none";
+        children = obj.children;
+        children[0].classList.remove("incorrect");
+        children[0].classList.remove("correct");
+        children[1].classList.remove("incorrect");
+        children[1].classList.remove("correct");
     }
 
-    for(i=0; i < 5; i++) {
+    for (i = 0; i < 5; i++) {
         let obj = document.getElementById(objects1[i]);
         obj.style.display = "block";
         children = obj.children;
@@ -51,31 +57,42 @@ function redo(e) {
         children[0].classList.remove("correct");
         children[1].classList.remove("incorrect");
         children[1].classList.remove("correct");
-        if(Math.random()>0.5) {
-            children[0].children[0].style.display="none";
-            children[0].children[1].style.display="inline";
-            children[1].children[0].style.display="inline";
-            children[1].children[1].style.display="none";
+        if (Math.random() > 0.5) {
+            children[0].children[0].style.display = "none";
+            children[0].children[1].style.display = "inline";
+            children[1].children[0].style.display = "inline";
+            children[1].children[1].style.display = "none";
+            children[0].children[0].value = '';
+            children[0].children[1].value = '';
+            children[1].children[0].value = '';
+            children[1].children[1].value = '';
         } else {
-            children[0].children[1].style.display="none";
-            children[0].children[0].style.display="inline";
-            children[1].children[1].style.display="inline";
-            children[1].children[0].style.display="none";
-            
+            children[0].children[1].style.display = "none";
+            children[0].children[0].style.display = "inline";
+            children[1].children[1].style.display = "inline";
+            children[1].children[0].style.display = "none";
+            children[0].children[0].value = '';
+            children[0].children[1].value = '';
+            children[1].children[0].value = '';
+            children[1].children[1].value = '';
         }
-        children[0].children[1].value = "";
-        children[1].children[1].value = "";
     }
 }
 
 function redo2(e) {
     shuffle(objects2);
     /* hide all objects */
-    for(i=0; i < objects2.length; i++) {
-        document.getElementById(objects2[i]).style.display = "none";
+    for (i = 0; i < objects2.length; i++) {
+        let obj = document.getElementById(objects2[i]);
+        obj.style.display = "none";
+        children = obj.children;
+        children[0].classList.remove("incorrect");
+        children[0].classList.remove("correct");
+        children[1].classList.remove("incorrect");
+        children[1].classList.remove("correct");
     }
 
-    for(i=0; i < 5; i++) {
+    for (i = 0; i < 5; i++) {
         let obj = document.getElementById(objects2[i]);
         obj.style.display = "block";
         children = obj.children;
@@ -83,17 +100,24 @@ function redo2(e) {
         children[0].classList.remove("correct");
         children[1].classList.remove("incorrect");
         children[1].classList.remove("correct");
-        if(Math.random()>0.5) {
-            children[0].children[0].style.display="none";
-            children[0].children[1].style.display="inline";
-            children[1].children[0].style.display="inline";
-            children[1].children[1].style.display="none";
+        if (Math.random() > 0.5) {
+            children[0].children[0].style.display = "none";
+            children[0].children[1].style.display = "inline";
+            children[1].children[0].style.display = "inline";
+            children[1].children[1].style.display = "none";
+            children[0].children[0].value = '';
+            children[0].children[1].value = '';
+            children[1].children[0].value = '';
+            children[1].children[1].value = '';
         } else {
-            children[0].children[1].style.display="none";
-            children[0].children[0].style.display="inline";
-            children[1].children[1].style.display="inline";
-            children[1].children[0].style.display="none";
-            
+            children[0].children[1].style.display = "none";
+            children[0].children[0].style.display = "inline";
+            children[1].children[1].style.display = "inline";
+            children[1].children[0].style.display = "none";
+            children[0].children[0].value = '';
+            children[0].children[1].value = '';
+            children[1].children[0].value = '';
+            children[1].children[1].value = '';
         }
     }
 }
@@ -109,9 +133,9 @@ function shuffle(a) {
     return a;
 }
 
-function solution(el,solution) {
+function solution(el, solution) {
     let parent = el.parentElement;
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solution+'\\.*\\!*$')) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^' + solution + '\\.*\\!*$')) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {
@@ -120,17 +144,18 @@ function solution(el,solution) {
     }
     let paras = document.getElementsByClassName("tip")
     let counter = 0;
-    for(let x in paras) {
-        if(paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
+    for (let x in paras) {
+        if (paras[x].classList !== undefined && paras[x].className.includes("correct") && !paras[x].className.includes("incorrect"))
             counter++;
     }
-    
+    console.log(counter)
     var next = document.getElementById("next");
-    if(counter === 5) {
-        next.setAttribute('onclick',"display2()");
+    if (counter == 5) {
+        next.setAttribute('onclick', "display2()");
         next.removeAttribute("disabled");
-    } else if (counter === 10) {
-        next.setAttribute('onclick',"window.location.href='/lesson_one/numbers/page_thirteen'");
+        firstSolved = true;
+    } else if (counter == 10 || counter == 5 && firstSolved) {
+        next.setAttribute('onclick', "window.location.href='/lesson_one/numbers/page_thirteen'");
         next.removeAttribute("disabled");
     } else {
         next.setAttribute("disabled", "disabled");
@@ -138,12 +163,12 @@ function solution(el,solution) {
 }
 
 function display2() {
-    document.getElementById("table1").style.display="none";
-    document.getElementById("table2").style.display="block";
+    document.getElementById("table1").style.display = "none";
+    document.getElementById("table2").style.display = "block";
 }
 
 
-$(function(){
+$(function () {
     redo();
     redo2();
 })

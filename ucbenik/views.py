@@ -1371,8 +1371,8 @@ def numbers_page_seventeen(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson1/numbers/page_seventeen.html", {"next": "/lesson_one/numbers/page_eighteen",
-                                                                       "back": "/lesson_one/numbers/page_sixteen",
+        return render(request, "lesson1/numbers/page_seventeen.html", {"next": "/lesson_one/numbers/page_twentyone",
+                                                                       "back": "/lesson_one/numbers/page_nineteen",
                                                                        "lessons": lessons,
                                                                        "lesson": "Unit 1: About Me", "title": "Numbers",
                                                                        "user": request.session['user'],
@@ -1395,8 +1395,8 @@ def numbers_page_eighteen(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson1/numbers/page_eighteen.html", {"next": "/lesson_one/numbers/page_nineteen",
-                                                                      "back": "/lesson_one/numbers/page_seventeen",
+        return render(request, "lesson1/numbers/page_eighteen.html", {"next": "/lesson_one/numbers/page_twentytwo",
+                                                                      "back": "/lesson_one/numbers/page_twenty",
                                                                       "lessons": lessons,
                                                                       "lesson": "Unit 1: About Me", "title": "Numbers",
                                                                       "user": request.session['user'],
@@ -1419,8 +1419,8 @@ def numbers_page_nineteen(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/numbers/page_nineteen.html", {"next": "/lesson_one/numbers/page_twenty",
-                                                                      "back": "/lesson_one/numbers/page_eighteen",
+        return render(request, "lesson1/numbers/page_nineteen.html", {"next": "/lesson_one/numbers/page_twentythree",
+                                                                      "back": "/lesson_one/numbers/page_twentyone",
                                                                       "solved": solution.solved, "lessons": lessons,
                                                                       "lesson": "Unit 1: About Me", "title": "Numbers",
                                                                       "user": request.session['user'],
@@ -1428,7 +1428,7 @@ def numbers_page_nineteen(request):
 
 
 def numbers_page_twenty(request):
-    back = "/lesson_one/numbers/page_nineteen"
+    back = "/lesson_one/numbers/page_twentytwo"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -1446,7 +1446,7 @@ def numbers_page_twenty(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/numbers/page_twenty.html", {"next": "/lesson_one/numbers/page_twentyone",
+        return render(request, "lesson1/numbers/page_twenty.html", {"next": "/lesson_one/numbers/page_twentyfour",
                                                                     "back": back, "solved": solution.solved,
                                                                     "lessons": lessons,
                                                                     "lesson": "Unit 1: About Me", "title": "Numbers",
@@ -1455,7 +1455,7 @@ def numbers_page_twenty(request):
 
 
 def numbers_page_twentyone(request):
-    back = "/lesson_one/numbers/page_twenty"
+    back = "/lesson_one/numbers/page_twentythree"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -1472,7 +1472,7 @@ def numbers_page_twentyone(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson1/numbers/page_twentyone.html", {"next": "/lesson_one/numbers/page_twentytwo",
+        return render(request, "lesson1/numbers/page_twentyone.html", {"next": "/lesson_one/numbers/page_twentyfive",
                                                                        "back": back, "lessons": lessons,
                                                                        "lesson": "Unit 1: About Me", "title": "Numbers",
                                                                        "user": request.session['user'],
@@ -1495,8 +1495,8 @@ def numbers_page_twentytwo(request):
         else:
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
-        return render(request, "lesson1/numbers/page_twentytwo.html", {"next": "/lesson_one/numbers/page_twentythree",
-                                                                       "back": "/lesson_one/numbers/page_twentyone",
+        return render(request, "lesson1/numbers/page_twentytwo.html", {"next": "/lesson_one/colors/page_one",
+                                                                       "back": "/lesson_one/numbers/page_twentyfour",
                                                                        "lessons": lessons,
                                                                        "lesson": "Unit 1: About Me", "title": "Numbers",
                                                                        "user": request.session['user'],
@@ -1520,8 +1520,8 @@ def numbers_page_twentythree(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/numbers/page_twentythree.html", {"next": "/lesson_one/numbers/page_twentyfour",
-                                                                         "back": "/lesson_one/numbers/page_twentytwo",
+        return render(request, "lesson1/numbers/page_twentythree.html", {"next": "/lesson_one/numbers/page_eighteen",
+                                                                         "back": "/lesson_one/numbers/page_sixteen",
                                                                          "solved": solution.solved,
                                                                          "lessons": lessons,
                                                                          "lesson": "Unit 1: About Me",
@@ -1532,7 +1532,7 @@ def numbers_page_twentythree(request):
 
 
 def numbers_page_twentyfour(request):
-    back = "/lesson_one/numbers/page_twentythree"
+    back = "/lesson_one/numbers/page_seventeen"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -1550,7 +1550,7 @@ def numbers_page_twentyfour(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/numbers/page_twentyfour.html", {"next": "/lesson_one/numbers/page_twentyfive",
+        return render(request, "lesson1/numbers/page_twentyfour.html", {"next": "/lesson_one/numbers/page_nineteen",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
                                                                         "lesson": "Unit 1: About Me",
@@ -1561,7 +1561,7 @@ def numbers_page_twentyfour(request):
 
 
 def numbers_page_twentyfive(request):
-    back = "/lesson_one/numbers/page_twentyfour"
+    back = "/lesson_one/numbers/page_eighteen"
     if request.method == "GET":
         if 'user' not in request.session:
             return login_page(request)
@@ -1579,7 +1579,7 @@ def numbers_page_twentyfive(request):
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/numbers/page_twentyfive.html", {"next": "/lesson_one/colors/page_one",
+        return render(request, "lesson1/numbers/page_twentyfive.html", {"next": "/lesson_one/numbers/page_twenty",
                                                                         "back": back, "solved": solution.solved,
                                                                         "lessons": lessons,
                                                                         "lesson": "Unit 1: About Me",

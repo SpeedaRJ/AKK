@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}" />
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/colors/glossary.js' %}"></script>
@@ -14,7 +14,7 @@
     </div>
     <div class="col-lg-6 main">
         <div class="row">
-            <div class="msg jenny">Now let’s look at colours.</div>
+            <div class="msg jenny">Now, let’s look at colours.</div>
             <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
             <audio id="a1" src="{% static 'audio/lesson1_jenny/colors/1.mp3' %}"></audio>
             <div class="msg jenny translation">Zdaj si poglejva barve.</div>
@@ -98,7 +98,7 @@
                     <audio id="a13" src="{% static 'audio/lesson1_jenny/colors/13.mp3' %}"></audio>
                 </tr>
                 <tr>
-                    <td onclick="play('a14')" class="color" style="background: #B6B2AC; color: #B6B2AC">_____</td>
+                    <td onclick="play('a14')" class="color" style="background: #aaa9ad; color: #aaa9ad">_____</td>
                     <td onclick="play('a14')">Silver</td>
                     <td onclick="play('a14')">Srebrna</td>
                     <audio id="a14" src="{% static 'audio/lesson1_jenny/colors/14.mp3' %}"></audio>

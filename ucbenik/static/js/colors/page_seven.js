@@ -1,9 +1,9 @@
 let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink", "Black", "Grey", "White", "Brown", "Gold", "Silver"];
-let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90", "#EF509C", "#231F20", "#85837D", "#F8F8F8", "#653614", "#F1E5AC", "#aaa9ad"];
+let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90", "#EF509C", "#231F20", "#85837D", "#F8F8F8", "#653614", "#FBAD18", "#aaa9ad"];
 let answers = [];
 
 function solution(el) {
-    if(el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+answers[el.parentNode.id.slice(-1) - 1].toLowerCase()+'$')) {
+    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^' + answers[el.parentNode.id.slice(-1) - 1].toLowerCase() + '$')) {
         el.classList.remove("incorrect");
         el.classList.add("correct");
     } else {
@@ -17,10 +17,10 @@ function setColors() {
     let selected = [];
     while (selected.length !== 5) {
         let randomElement = colors[Math.floor(Math.random() * colors.length)];
-        if(!selected.includes(randomElement)) selected.push(randomElement);
+        if (!selected.includes(randomElement)) selected.push(randomElement);
     }
     let hex = [];
-    for(let color in selected) {
+    for (let color in selected) {
         hex.push(hex_codes[colors.findIndex((element) => element === selected[color])]);
         answers.push(selected[color]);
     }
@@ -35,21 +35,21 @@ function redo(e) {
     answers = [];
     setColors();
     let node = [].slice.call(document.getElementsByClassName("answer"));
-    [].forEach.call(node, function(el) {el.value = ""; el.classList.remove("correct"); el.classList.remove("incorrect");});
+    [].forEach.call(node, function (el) { el.value = ""; el.classList.remove("correct"); el.classList.remove("incorrect"); });
     checkCorrectness();
 }
 
 function checkCorrectness() {
     let items = document.getElementsByClassName("answer")
     let counter = 0;
-    for(let x = 0; x < items.length; x++) {
-        if(items[x].classList !== undefined && items[x].className.includes("correct") && !items[x].className.includes("incorrect"))
+    for (let x = 0; x < items.length; x++) {
+        if (items[x].classList !== undefined && items[x].className.includes("correct") && !items[x].className.includes("incorrect"))
             counter++;
     }
-    if(counter === items.length) {
+    if (counter === items.length) {
         document.getElementById("next").removeAttribute("disabled")
     } else {
-         document.getElementById("next").setAttribute("disabled", "disabled");
+        document.getElementById("next").setAttribute("disabled", "disabled");
     }
 }
 
