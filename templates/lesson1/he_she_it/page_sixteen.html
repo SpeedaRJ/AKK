@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}" />
 <script type="text/javascript" src="{% static 'js/he_she_it/page_sixteen.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
@@ -14,10 +14,12 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg user">
-                These are George and Mary. Complete their descriptions.
+                These are George and Mary. Complete their descriptions using: <br> bald, happy, slim, tall,
+                short,
+                old, young.
             </div>
             <div class="msg jenny slo centre">
-                To sta George in Mary. Dopolni njuna opisa. 
+                To sta George in Mary. Dopolni njuna opisa, uporabi: <br> plešast, vesel, suh, visok, nizek, star, mlad.
             </div>
         </div>
     </div>
@@ -28,25 +30,31 @@
         <img src="{% static 'svg/lesson1/he_she_it/george.svg' %}" type="svg" style="height:37vh;margin-top: 8vh;">
     </div>
     <div class="col-lg-6" style="text-align: center;">
-        <div class="inst" >
+        <div class="inst">
             <div class="msg jenny slo" style="width: 90%; margin-left: 0; margin-top: 20%;">
                 George is
-                <input class=textarea onchange="solution(this,['short','bald','happy','slim','slender', 'old'])" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                <input class=textarea onchange="solution(this,['short','bald','happy','slim','slender', 'old'])"
+                    style="border-color:#6282B7;background-color: transparent;width: 15%" />
                 . He is
-                <input class=textarea onchange="solution(this,['short','bald','happy','slim','slender', 'old'])" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                <input class=textarea onchange="solution(this,['short','bald','happy','slim','slender', 'old'])"
+                    style="border-color:#6282B7;background-color: transparent;width: 15%" />
                 and
-                <input class=textarea onchange="solution(this,['short','bald','happy','slim','slender', 'old'])" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                <input class=textarea onchange="solution(this,['short','bald','happy','slim','slender', 'old'])"
+                    style="border-color:#6282B7;background-color: transparent;width: 15%" />
                 .
             </div>
         </div>
-        <div class="inst" >
+        <div class="inst">
             <div class="msg jenny slo" style="width: 90%; margin-left: 10%; margin-top: 20%;">
                 Mary is
-                <input class=textarea onchange="solution(this,['tall','happy','slim','slender', 'young'])" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                <input class=textarea onchange="solution(this,['tall','happy','slim','slender', 'young'])"
+                    style="border-color:#6282B7;background-color: transparent;width: 15%" />
                 . She is
-                <input class=textarea onchange="solution(this,['tall','happy','slim','slender', 'young'])" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                <input class=textarea onchange="solution(this,['tall','happy','slim','slender', 'young'])"
+                    style="border-color:#6282B7;background-color: transparent;width: 15%" />
                 and
-                <input class=textarea onchange="solution(this,['tall','happy','slim','slender', 'young'])" style="border-color:#6282B7;background-color: transparent;width: 15%"/>
+                <input class=textarea onchange="solution(this,['tall','happy','slim','slender', 'young'])"
+                    style="border-color:#6282B7;background-color: transparent;width: 15%" />
                 .
             </div>
         </div>

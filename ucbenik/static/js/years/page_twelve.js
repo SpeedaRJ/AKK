@@ -1,7 +1,6 @@
 function tts(id) {
   if ('speechSynthesis' in window) {
     var msg = new SpeechSynthesisUtterance();
-    msg.voice = voicesList.find((voice) => voice.lang === 'en-GB');
     msg.lang = "en-GB";
     msg.text = "year" + document.getElementById(id).value;
     if (!msg.text)

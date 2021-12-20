@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}" />
 <script type="text/javascript" src="{% static 'js/he_she_it/page_twentytwo.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
@@ -14,7 +14,7 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg user">
-                Complete the text with short forms of the verb TO BE.  
+                Complete the text with short forms of the verb TO BE.
             </div>
             <div class="msg jenny slo centre">
                 Dopolni besedilo s kratkimi oblikami glagola BITI.
@@ -31,20 +31,33 @@
             <img src="{% static 'svg/lesson1/he_she_it/three_people02.svg' %}" type="svg" style="width:45%">
             <div class="row inst" style="width: 50%;margin-left:0;float:right;">
                 <div class="msg jenny slo" style="margin-bottom: 2%;">
-                    I am Agatha and I am a writer. I am also a nurse in a hospital. My work is the inspiration for many stories. They are often about poison and murder. My husband is Archibald. He is a colonel. We have a daughter. Her name is Rosalind. She is very kind. We are very happy.
+                    <u>I am</u> Agatha and <u>I am</u> a writer. <u>I am</u> also a nurse in a hospital. <u>My work</u>
+                    is the inspiration for many stories. <u>They are</u> often about poison and murder. <u>My
+                        husband</u> is Archibald. <u>He is</u> a colonel. We have a daughter. <u>Her name</u> is
+                    Rosalind. <u>She is</u> very kind. <u>We are</u> very happy.
                 </div>
                 <div class="msg jenny slo">
-                    <input id= "S1" class="textarea correct" style="border-color:#6282B7;background-color: transparent;width:30%" disabled/>
-                            Agatha and <input id="S2" class="textarea correct" style="border-color:#6282B7;background-color: transparent;width:30%" disabled/>
-                            a writer. <input class=textarea onchange="solution(this,2)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            also a nurse in a hospital. <input class=textarea onchange="solution(this,3)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            the inspiration for many stories. <input class=textarea onchange="solution(this,4)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            often about poison and murder. <input class=textarea onchange="solution(this,5)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            Archibald. <input class=textarea onchange="solution(this,6)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            a colonel. We have a daughter. <input class=textarea onchange="solution(this,7)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            Rosalind. <input class=textarea onchange="solution(this,8)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            very kind. <input class=textarea onchange="solution(this,9)" style="border-color:#6282B7;background-color: transparent;width:30%"/>
-                            very happy.
+                    <input id="S1" class="textarea correct"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" disabled />
+                    Agatha and <input id="S2" class="textarea correct"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" disabled />
+                    a writer. <input class=textarea onchange="solution(this,2)"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" />
+                    also a nurse in a hospital. <input class=textarea onchange="solution(this,3)"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" />
+                    the inspiration for many stories. <input class=textarea onchange="solution(this,4)"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" />
+                    often about poison and murder. <input class=textarea onchange="solution(this,5)"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" />
+                    Archibald. <input class=textarea onchange="solution(this,6)"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" />
+                    a colonel. We have a daughter. <input class=textarea onchange="solution(this,7)"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" />
+                    Rosalind. <input class=textarea onchange="solution(this,8)"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" />
+                    very kind. <input class=textarea onchange="solution(this,9)"
+                        style="border-color:#6282B7;background-color: transparent;width:30%" />
+                    very happy.
                 </div>
             </div>
         </div>

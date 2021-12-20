@@ -1,9 +1,9 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
-<script type="text/javascript" src="{% static 'js/he_she_it/page_thirteen.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}" />
+<script type="text/javascript" src="{% static 'js/he_she_it/page_twentyfive.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
 {% block content %}
@@ -14,13 +14,15 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg user">
-                Form sentences: He/She is not … 
-                Use the hints in the brackets. 
-                Use the short forms.
+                Form sentences: He/She is not …
+                Use the hints in the brackets.
+                Use the short forms. <br>
+                (not slender, not plump, not happy, not sad, not short, not tall)
             </div>
             <div class="msg jenny slo centre">
-                Oblikuj povedi: Oseba ni … Pomagaj si z namigi 
-                v oklepajih. Uporabi kratke oblike.
+                Oblikuj povedi: Oseba ni … Pomagaj si z namigi
+                v oklepajih. Uporabi kratke oblike. <br>
+                (ni vitek, ni močnejše postave, ni vesel, ni žalosten, ni nizek, ni visok)
             </div>
         </div>
     </div>
@@ -30,18 +32,22 @@
     <div class="col-lg-3">
     </div>
     <div class="col-lg-3" style="text-align: center;">
-        <img src="{% static 'svg/lesson1/he_she_it/woman_full_yellow.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
+        <img src="{% static 'svg/lesson1/he_she_it/woman_full_yellow.svg' %}" type="svg"
+            style="height:40vh;margin-top: 5vh;">
         <div class="inst">
             <div class="msg jenny slo" style="width: 100%;margin-left: 0;">
-                <input class=textarea onchange="solution(this,['tall','slim','slender','happy'],'F',true)" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['short','plump','sad'],'F',true)"
+                    style="border-color:#6282B7;background-color: transparent;width: 100%" />
             </div>
         </div>
     </div>
     <div class="col-lg-3" style="text-align: center;">
-        <img src="{% static 'svg/lesson1/he_she_it/man_full_blue02.svg' %}" type="svg" style="height:35vh;margin-top: 10vh;">
-        <div class="inst" >
+        <img src="{% static 'svg/lesson1/he_she_it/man_full_blue02.svg' %}" type="svg"
+            style="height:35vh;margin-top: 10vh;">
+        <div class="inst">
             <div class="msg jenny slo" style="width: 100%;margin-left: 0;">
-                <input class=textarea onchange="solution(this,['short','happy'],'M',true)" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['tall','sad','plump'],'M',true)"
+                    style="border-color:#6282B7;background-color: transparent;width: 100%" />
             </div>
         </div>
     </div>

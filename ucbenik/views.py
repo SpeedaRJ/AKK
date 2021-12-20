@@ -2524,7 +2524,32 @@ def he_she_it_page_seven(request):
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         if not save_solution(user, back) and not user.is_staff:
             return redirect(back)
-        return render(request, "lesson1/he_she_it/page_seven.html", {"next": "/lesson_one/he_she_it/page_eight",
+        return render(request, "lesson1/he_she_it/page_eight.html", {"next": "/lesson_one/he_she_it/page_seven2",
+                                                                     "back": back, "lessons": lessons,
+                                                                     "lesson": "Unit 1: About Me", "title": "He She It",
+                                                                     "user": request.session['user'],
+                                                                     "src": src_ref, "parts": parts, "colors": colors})
+
+
+def he_she_it_page_seven2(request):
+    back = "/lesson_one/he_she_it/page_six"
+    if request.method == "GET":
+        if 'user' not in request.session:
+            return login_page(request)
+        user = User.objects.get(email=request.session['user']['email'])
+        if not get_refferer(request) and not user.is_staff:
+            return redirect(request.session['last_page'])
+        request.session['last_page'] = request.path
+        if 'avatar' in request.session:
+            src_ref = request.session['avatar']['src_ref']
+            parts = request.session['avatar']['parts']
+            colors = request.session['avatar']['colors']
+        else:
+            src_ref, parts, colors = get_user_avatar(request.session['user'])
+            request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
+        if not save_solution(user, back) and not user.is_staff:
+            return redirect(back)
+        return render(request, "lesson1/he_she_it/page_eight2.html", {"next": "/lesson_one/he_she_it/page_eight",
                                                                      "back": back, "lessons": lessons,
                                                                      "lesson": "Unit 1: About Me", "title": "He She It",
                                                                      "user": request.session['user'],
@@ -2547,7 +2572,7 @@ def he_she_it_page_eight(request):
             src_ref, parts, colors = get_user_avatar(request.session['user'])
             request.session['avatar'] = {'src_ref': src_ref, 'parts': parts, 'colors': colors}
         solution = get_or_create_solution(user, request.path)
-        return render(request, "lesson1/he_she_it/page_eight.html", {"next": "/lesson_one/he_she_it/page_nine",
+        return render(request, "lesson1/he_she_it/page_seven.html", {"next": "/lesson_one/he_she_it/page_nine",
                                                                      "back": "/lesson_one/he_she_it/page_seven",
                                                                      "solved": solution.solved,
                                                                      "lessons": lessons,

@@ -1,56 +1,56 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_two.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
-    <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/character_select/glossary.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_two.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}" />
+<script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/character_select/glossary.js' %}"></script>
 {% endblock %}
 {% block content %}
-    <div class="container">
-        <div class="col-lg-3">
-            <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
-        </div>
-        <div class="col-lg-6 main">
-            <div class="row text">
-                <div class="msg jenny">
-                    Write in your notebook! <br>
-                    Zapiši si v zvezek!
-                </div>
-            </div>
-            <div id="table-div">
-                <table id="table" style="width: 100%; height: 80%">
-                    <tr>
-                        <td>I am 176 cm tall.</td>
-                        <td>How tall are you?</td>
-                    </tr>
-                    <tr>
-                        <td>I am short / tall.</td>
-                        <td>Are you short or tall?</td>
-                    </tr>
-                    <tr>
-                        <td>I am plump / slender.</td>
-                        <td>Are you plump or slender?</td>
-                    </tr>
-                    <tr>
-                        <td>My hair is short.</td>
-                        <td rowspan="3">What is your hair like?</td>
-                    </tr>
-                    <tr>
-                        <td>My hair is long.</td>
-                    </tr>
-                    <tr>
-                        <td>I am bald.</td>
-                    </tr>
-                    <tr>
-                        <td>My hair is brown.</td>
-                        <td>What colour is your hair?</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        {% include "character.html" %}
+<div class="container">
+    <div class="col-lg-3">
+        <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg">
     </div>
+    <div class="col-lg-6 main">
+        <div class="row text">
+            <div class="msg jenny">
+                Write in your notebook! <br>
+                Zapiši si v zvezek!
+            </div>
+        </div>
+        <div id="table-div">
+            <table id="table" style="width: 100%; height: 80%; font-size: 1.4rem;">
+                <tr>
+                    <td>I am 176 cm tall.</td>
+                    <td>How tall are you?</td>
+                </tr>
+                <tr>
+                    <td>I am short / tall.</td>
+                    <td>Are you short or tall?</td>
+                </tr>
+                <tr>
+                    <td>I am plump / slender.</td>
+                    <td>Are you plump or slender?</td>
+                </tr>
+                <tr>
+                    <td>My hair is short.</td>
+                    <td rowspan="3">What is your hair like?</td>
+                </tr>
+                <tr>
+                    <td>My hair is long.</td>
+                </tr>
+                <tr>
+                    <td>I am bald.</td>
+                </tr>
+                <tr>
+                    <td>My hair is brown.</td>
+                    <td>What colour is your hair?</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {% include "character.html" %}
+</div>
 {% endblock %}

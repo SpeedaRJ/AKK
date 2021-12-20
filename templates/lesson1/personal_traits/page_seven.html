@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/personal_traits/page_one.css' %}" />
 <script type="text/javascript" src="{% static 'js/personal_traits/page_seven.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/personal_traits/glossary.js' %}"></script>
@@ -15,7 +15,7 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg jenny">
-                Can you describe your personality? <br>Let's check! What are you like? 
+                Can you describe your personality? <br>Let's check! What are you like?
             </div>
             <input type="image" onclick="play('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
             <audio id="a1" src="{% static 'audio/lesson1_jenny/personal_traits/4.mp3' %}"></audio>
@@ -24,14 +24,14 @@
             </div>
             <div class="msg user" style="margin-top: 2vh;">
                 I am
-                <input  class=textarea size="5" onchange="solution()"/>
+                <input class=textarea size="5" onchange="solution()" />
                 ,
-                <input  class=textarea size="5" onchange="solution()"/>
+                <input class=textarea size="5" onchange="solution()" />
             </div>
         </div>
         <div class="row inst" hidden id="div_two">
             <div class="msg jenny">
-                Great! Let's try one more thing. How would you ask me about my personality? 
+                Great! Let's try one more thing. How would you ask me about my personality?
             </div>
             <input type="image" onclick="play('a2')" src="{% static 'svg/common/listen_off.svg' %}" class="listenToAng">
             <audio id="a2" src="{% static 'audio/lesson1_jenny/personal_traits/5.mp3' %}"></audio>
@@ -39,7 +39,7 @@
                 Odlično! Zdaj pa preizkusiva še eno stvar … Kako bi po karakternih značilnostih vprašal mene?
             </div>
             <div class="msg user" style="margin-top: 2vh;">
-                <input  class=textarea size="15" onchange="solution(this)" style="width:90%"/>
+                <input class=textarea size="15" onchange="solution(this)" style="width:90%" />
             </div>
         </div>
 

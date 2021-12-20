@@ -27,7 +27,6 @@ $(function () {
 function tts(el) {
     if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
-        msg.voice = voicesList.find((voice) => voice.lang === 'en-GB');
         msg.lang = "en-GB";
         msg.text = el.innerHTML;
         msg.volume = 0.5; // From 0 to 1

@@ -1,13 +1,13 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twenty.css' %}"/>
-<script type="text/javascript" src="{% static 'js/he_she_it/page_thirtyone.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twenty.css' %}" />
+<script type="text/javascript" src="{% static 'js/he_she_it/page_thirtytwo.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 <style>
     .answer {
-        display:none
+        display: none
     }
 </style>
 {% endblock %}
@@ -20,7 +20,7 @@
         <div class="row inst">
             <div class="msg user">
                 Answer the following questions. <br>
-                Use long answers.                
+                Use long answers.
             </div>
             <div class="msg jenny slo centre">
                 Odgovori na naslednja vprašanja. <br>
@@ -37,14 +37,38 @@
     <div class="col-lg-6" style="text-align: center;">
         <div class="inst" id="aps">
             <div class="msg jenny slo in" style="width: 100%; margin:0">
-                Are you happy? <div class="answer" id="a0">Yes,<input class=textarea onchange="solution(this,0)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><div class="answer" id="a8">No,<input class=textarea onchange="solution(this,8)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><br>
-                Is she talented? <div class="answer" id="a1">Yes, <input class=textarea onchange="solution(this,1)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><div class="answer" id="a9">No,<input class=textarea onchange="solution(this,9)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><br>
-                Am I your teacher? <div class="answer" id="a2">Yes, <input class=textarea onchange="solution(this,2)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><div class="answer" id="a10">No,<input class=textarea onchange="solution(this,10)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><br>
-                Are they from Canada?  <div class="answer" id="a3">Yes, <input class=textarea onchange="solution(this,3)" style="border-color:#6282B7;background-color: transparent;width:45%;"/></div><div class="answer" id="a11">No,<input class=textarea onchange="solution(this,11)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><br>
-                Are we at home?  <div class="answer" id="a4">Yes, <input class=textarea onchange="solution(this,4)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><div class="answer" id="a12">No,<input class=textarea onchange="solution(this,12)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><br>
-                Is he your boyfriend?  <div class="answer" id="a5">Yes, <input class=textarea onchange="solution(this,5)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><div class="answer" id="a13">No,<input class=textarea onchange="solution(this,13)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><br>
-                Is it dangerous? <div class="answer" id="a6">Yes, <input class=textarea onchange="solution(this,6)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><div class="answer" id="a14">No,<input class=textarea onchange="solution(this,14)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><br>
-                Are they right? <div class="answer" id="a7">Yes, <input class=textarea onchange="solution(this,7)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div><div class="answer" id="a15">No,<input class=textarea onchange="solution(this,15)" style="border-color:#6282B7;background-color: transparent;width:50%;"/></div>
+                Are you happy? <div class="answer" id="a0">Yes,<input class=textarea onchange="solution(this,0)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div>
+                <div class="answer" id="a8">No,<input class=textarea onchange="solution(this,8)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div><br>
+                Is she talented? <div class="answer" id="a1">Yes, <input class=textarea onchange="solution(this,1)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div>
+                <div class="answer" id="a9">No,<input class=textarea onchange="solution(this,9)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div><br>
+                Am I your teacher? <div class="answer" id="a2">Yes, <input class=textarea onchange="solution(this,2)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div>
+                <div class="answer" id="a10">No,<input class=textarea onchange="solution(this,10)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div><br>
+                Are they from Canada? <div class="answer" id="a3">Yes, <input class=textarea onchange="solution(this,3)"
+                        style="border-color:#6282B7;background-color: transparent;width:45%;" /></div>
+                <div class="answer" id="a11">No,<input class=textarea onchange="solution(this,11)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div><br>
+                Are we at home? <div class="answer" id="a4">Yes, <input class=textarea onchange="solution(this,4)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div>
+                <div class="answer" id="a12">No,<input class=textarea onchange="solution(this,12)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div><br>
+                Is he your boyfriend? <div class="answer" id="a5">Yes, <input class=textarea onchange="solution(this,5)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div>
+                <div class="answer" id="a13">No,<input class=textarea onchange="solution(this,13)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div><br>
+                Is it dangerous? <div class="answer" id="a6">Yes, <input class=textarea onchange="solution(this,6)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div>
+                <div class="answer" id="a14">No,<input class=textarea onchange="solution(this,14)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div><br>
+                Are they right? <div class="answer" id="a7">Yes, <input class=textarea onchange="solution(this,7)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div>
+                <div class="answer" id="a15">No,<input class=textarea onchange="solution(this,15)"
+                        style="border-color:#6282B7;background-color: transparent;width:50%;" /></div>
             </div>
         </div>
     </div>
