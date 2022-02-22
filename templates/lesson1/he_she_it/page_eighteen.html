@@ -1,8 +1,9 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_eighteen.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_eighteen.css' %}" />
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/page_eighteen.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
@@ -16,7 +17,7 @@
             <div class="msg jenny" id="instructions">
                 Poznamo tudi okrajšane oblike glagola biti. <br>
                 Preglej tabelo in reši nalogo, ki sledi. <br>
-                Ne pozabi si tabel zapisati v zvezek. 
+                Ne pozabi si tabel zapisati v zvezek.
             </div>
             <button class="next" onclick="next(this)" type="button" id="nxt">Next</button>
         </div>
@@ -29,27 +30,30 @@
     </div>
     <div class="help-table" id="help-table">
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>1.	oseba</button>
+            <button class="col-lg-6 tip" disabled>1. oseba</button>
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/he_she_it/tabela2/Im.mp3' %}"></audio>
             <button class="col-lg-6 tip" disabled>I am</button>
-            <button class="col-lg-6 tip lst" disabled>
+            <button class="col-lg-6 tip lst" onclick="play('a1')">
                 I'm
                 <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
             </button>
             <button class="col-lg-6 tip" disabled>Jaz sem</button>
         </div>
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>2.	oseba</button>
+            <button class="col-lg-6 tip" disabled>2. oseba</button>
+            <audio id="a2" src="{% static 'audio/lesson1_jenny/he_she_it/tabela2/youre.mp3' %}"></audio>
             <button class="col-lg-6 tip" disabled>You are</button>
-            <button class="col-lg-6 tip lst" disabled>
+            <button class="col-lg-6 tip lst" onclick="play('a2')">
                 You're
                 <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
             </button>
             <button class="col-lg-6 tip" disabled>Ti si</button>
         </div>
         <div class="help row">
-            <button class="col-lg-6 tip c1" disabled>3.	oseba</button>
+            <button class="col-lg-6 tip c1" disabled>3. oseba</button>
+            <audio id="a3" src="{% static 'audio/lesson1_jenny/he_she_it/tabela2/hes.mp3' %}"></audio>
             <button class="col-lg-6 tip" disabled>He is</button>
-            <button class="col-lg-6 tip lst" disabled>
+            <button class="col-lg-6 tip lst" onclick="play('a3')">
                 He's
                 <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
             </button>
@@ -57,8 +61,9 @@
         </div>
         <div class="help row">
             <button class="col-lg-6 tip c1" disabled></button>
+            <audio id="a4" src="{% static 'audio/lesson1_jenny/he_she_it/tabela2/shes.mp3' %}"></audio>
             <button class="col-lg-6 tip" disabled>She is</button>
-            <button class="col-lg-6 tip lst" disabled>
+            <button class="col-lg-6 tip lst" onclick="play('a4')">
                 She's
                 <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
             </button>
@@ -66,8 +71,9 @@
         </div>
         <div class="help row">
             <button class="col-lg-6 tip c1" disabled></button>
+            <audio id="a5" src="{% static 'audio/lesson1_jenny/he_she_it/tabela2/its.mp3' %}"></audio>
             <button class="col-lg-6 tip" disabled>It is</button>
-            <button class="col-lg-6 tip lst" disabled>
+            <button class="col-lg-6 tip lst" onclick="play('a5')">
                 It's
                 <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
             </button>
@@ -80,27 +86,30 @@
     </div>
     <div class="help-table" id="help-table">
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>1.	oseba</button>
+            <button class="col-lg-6 tip" disabled>1. oseba</button>
+            <audio id="a6" src="{% static 'audio/lesson1_jenny/he_she_it/tabela2/were.mp3' %}"></audio>
             <button class="col-lg-6 tip" disabled>We are</button>
-            <button class="col-lg-6 tip lst" disabled>
+            <button class="col-lg-6 tip lst" onclick="play('a6')">
                 We're
                 <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
             </button>
             <button class="col-lg-6 tip" disabled>Mi smo</button>
         </div>
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>2.	oseba</button>
+            <button class="col-lg-6 tip" disabled>2. oseba</button>
+            <audio id="a7" src="{% static 'audio/lesson1_jenny/he_she_it/tabela2/youre.mp3' %}"></audio>
             <button class="col-lg-6 tip" disabled>You are</button>
-            <button class="col-lg-6 tip lst" disabled>
+            <button class="col-lg-6 tip lst" onclick="play('a7')">
                 You're
                 <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
             </button>
             <button class="col-lg-6 tip">Vi ste</button>
         </div>
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>3.	oseba</button>
+            <button class="col-lg-6 tip" disabled>3. oseba</button>
+            <audio id="a8" src="{% static 'audio/lesson1_jenny/he_she_it/tabela2/theyre.mp3' %}"></audio>
             <button class="col-lg-6 tip" disabled>They are</button>
-            <button class="col-lg-6 tip lst" disabled>
+            <button class="col-lg-6 tip lst" onclick="play('a8')">
                 They're
                 <img src="{% static 'svg/common/listen_off.svg' %}" type="svg" class="listen" id="off">
             </button>

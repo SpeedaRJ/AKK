@@ -1,8 +1,9 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_four.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_four.css' %}" />
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
@@ -27,28 +28,33 @@
     </div>
     <div class="help-table" id="help-table">
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>1.	oseba</button>
-            <button class="col-lg-6 tip" disabled>I am</button>
+            <button class="col-lg-6 tip" disabled>1. oseba</button>
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/he_she_it/tabela/Iam.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a1')">I am</button>
             <button class="col-lg-6 tip" disabled>Jaz sem</button>
         </div>
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>2.	oseba</button>
-            <button class="col-lg-6 tip" disabled>You are</button>
+            <button class="col-lg-6 tip" disabled>2. oseba</button>
+            <audio id="a2" src="{% static 'audio/lesson1_jenny/he_she_it/tabela/youare.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a2')">You are</button>
             <button class="col-lg-6 tip" disabled>Ti si</button>
         </div>
         <div class="help row">
-            <button class="col-lg-6 tip c1" disabled>3.	oseba</button>
-            <button class="col-lg-6 tip" disabled>He is</button>
+            <button class="col-lg-6 tip c1" disabled>3. oseba</button>
+            <audio id="a3" src="{% static 'audio/lesson1_jenny/he_she_it/tabela/Heis.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a3')">He is</button>
             <button class="col-lg-6 tip" disabled>On je</button>
         </div>
         <div class="help row">
             <button class="col-lg-6 tip c1" disabled></button>
-            <button class="col-lg-6 tip" disabled>She is</button>
+            <audio id="a4" src="{% static 'audio/lesson1_jenny/he_she_it/tabela/Sheis.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a4')">She is</button>
             <button class="col-lg-6 tip" disabled>Ona je</button>
         </div>
         <div class="help row">
             <button class="col-lg-6 tip c1" disabled></button>
-            <button class="col-lg-6 tip" disabled>It is</button>
+            <audio id="a5" src="{% static 'audio/lesson1_jenny/he_she_it/tabela/Itis.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a5')">It is</button>
             <button class="col-lg-6 tip" disabled>Ono je</button>
         </div>
     </div>
@@ -58,18 +64,21 @@
     </div>
     <div class="help-table" id="help-table">
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>1.	oseba</button>
-            <button class="col-lg-6 tip" disabled>We are</button>
+            <button class="col-lg-6 tip" disabled>1. oseba</button>
+            <audio id="a6" src="{% static 'audio/lesson1_jenny/he_she_it/tabela/Weare.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a6')">We are</button>
             <button class="col-lg-6 tip" disabled>Mi smo</button>
         </div>
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>2.	oseba</button>
-            <button class="col-lg-6 tip" disabled>You are</button>
+            <button class="col-lg-6 tip" disabled>2. oseba</button>
+            <audio id="a7" src="{% static 'audio/lesson1_jenny/he_she_it/tabela/youare2.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a7')">You are</button>
             <button class="col-lg-6 tip">Vi ste</button>
         </div>
         <div class="help row">
-            <button class="col-lg-6 tip" disabled>3.	oseba</button>
-            <button class="col-lg-6 tip" disabled>They are</button>
+            <button class="col-lg-6 tip" disabled>3. oseba</button>
+            <audio id="a8" src="{% static 'audio/lesson1_jenny/he_she_it/tabela/Theyare.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a8')">They are</button>
             <button class="col-lg-6 tip" disabled>Oni so</button>
         </div>
     </div>

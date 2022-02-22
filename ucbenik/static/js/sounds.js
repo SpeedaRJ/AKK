@@ -9,6 +9,8 @@ function tts(id) {
     msg.lang = "en-GB";
     msg.text = document.getElementById(id).value;
     if (!msg.text)
+      msg.text = document.getElementById(id).textContent;
+    if (!msg.text)
       msg.text = "Please enter a year."
     msg.volume = 0.5; // From 0 to 1
     msg.rate = 1; // From 0.1 to 10

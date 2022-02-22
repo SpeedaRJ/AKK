@@ -1,22 +1,22 @@
 var pro = [
-    "I",
     "You (ed.) ",
-    "We",
-    "He",
-    "She",
     "It",
+    "I",
     "You (mn.)",
-    "They"
+    "She",
+    "They",
+    "We",
+    "He"
 ];
 var verb = [
+    "are",
+    "is",
     "am",
     "are",
-    "are",
-    "is",
-    "is",
     "is",
     "are",
-    "are"
+    "are",
+    "is"
 ];
 
 function redo() {
