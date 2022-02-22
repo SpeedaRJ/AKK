@@ -101,3 +101,7 @@ img {
 .incorrect {
     color:#e6a454 !important;
 }
+
+.hint {
+    width: 60% !important;
+}

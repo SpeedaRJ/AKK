@@ -16,9 +16,9 @@ let solutions = [
 function redo() {
     for (let i = 0; i < solutions.length; i++) {
         document.getElementById("a" + i).style.display = "none";
-        document.getElementById("a" + i).children[0].value = "";
-        el.classList.remove("incorrect");
-        el.classList.remove("correct");
+        document.getElementById("ai" + i).value = "";
+        document.getElementById("ai" + i).classList.remove("incorrect");
+        document.getElementById("ai" + i).classList.remove("correct");
     }
     for (let i = 0; i < 6; i++) {
         if (Math.random() > 0.5) {

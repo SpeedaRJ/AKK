@@ -9,22 +9,25 @@ let solutions = [
     ["they are right", ""],
     ["I'm not happy", "I am not happy"],
     ["she isn't talented", "she is not talented"],
-    ["you aren't my teacher", "you are not my teacher"],
+    ["I am not your teacher", "I'm not your teacher"],
     ["they aren't from Canada", "they are not from Canada"],
-    ["we aren't at home", "we are not home"],
+    ["we aren't at home", "we are not at home"],
     ["he isn't my boyfriend", "he is not my boyfriend"],
     ["it isn't dangerous", "it is not dangerous"],
     ["they aren't right", "they are not right"]
 ]
 
 function redo() {
-    for (i = 0; i < solutions.length; i++)
+    for (i = 0; i < solutions.length; i++) {
         document.getElementById("a" + i).style.display = "none";
+    }
     for (i = 0; i < 8; i++) {
-        if (Math.random() > 0.5)
+        if (Math.random() > 0.5) {
             document.getElementById("a" + i).style.display = "inline";
-        else
+            document.getElementById("ai" + i).value = "";
+        } else {
             document.getElementById("a" + (i + 8)).style.display = "inline";
+        }
     }
 }
 

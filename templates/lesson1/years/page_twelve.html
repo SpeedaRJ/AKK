@@ -1,10 +1,10 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_one.css' %}" />
 <script type="text/javascript" src="{% static 'js/years/page_twelve.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/years/glossary.js' %}"></script>
@@ -17,22 +17,22 @@
     <div class="col-lg-6 main">
         <div class="row text">
             <div class="msg user">
-                Think of years that are important to you. 
-                Write them down and read them out loud. 
-                If you are not sure about the pronunctiation, 
-                type the year into the box and listen to 
-                the pronunciation. 
+                Think of years that are important to you.
+                Write them down and read them out loud.
+                If you are not sure about the pronunctiation,
+                type the year into the box and listen to
+                the pronunciation.
             </div>
             <div class="msg jenny translation" style="margin-left: 10%;">
-                Pomisli na letnice, ki so ti pomembne. 
-                Zapiši si jih in jih poskusi izgovoriti. 
-                Če nisi prepričan o izgovorjavi, vpiši letnico v 
+                Pomisli na letnice, ki so ti pomembne.
+                Zapiši si jih in jih poskusi izgovoriti.
+                Če nisi prepričan o izgovorjavi, vpiši letnico v
                 okvir in prisluhni izgovorjavi.
             </div>
         </div>
         <div class="row text">
             <div class="msg jenny translation" style="margin-left: 10%;margin-top: 4vh;">
-                <input id="a1" class="answer" type="text" style="width: 100%; background-color: transparent;">
+                Year <input id="a1" class="answer" type="text" style="width: 75%; background-color: transparent;">
             </div>
             <input type="image" onclick="tts('a1')" src="{% static 'svg/common/listen_off.svg' %}" class="listen">
         </div>

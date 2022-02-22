@@ -3,6 +3,7 @@
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_four.css' %}" />
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
@@ -32,27 +33,32 @@
     <div class="help-table" id="help-table">
         <div class="help row">
             <button class="col-lg-6 tip" disabled>1. oseba</button>
-            <button class="col-lg-6 tip" disabled>I have</button>
+            <audio id="a1" src="{% static 'audio/lesson1_jenny/he_she_it/tabela7/Ihave.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a1')">I have</button>
             <button class="col-lg-6 tip" disabled>Jaz imam</button>
         </div>
         <div class="help row">
             <button class="col-lg-6 tip" disabled>2. oseba</button>
-            <button class="col-lg-6 tip" disabled>You have</button>
+            <audio id="a2" src="{% static 'audio/lesson1_jenny/he_she_it/tabela7/Youhave.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a2')">You have</button>
             <button class="col-lg-6 tip" disabled>Ti imaš</button>
         </div>
         <div class="help row">
             <button class="col-lg-6 tip c1" disabled>3. oseba</button>
-            <button class="col-lg-6 tip" disabled>He has</button>
+            <audio id="a3" src="{% static 'audio/lesson1_jenny/he_she_it/tabela7/Hehas.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a3')">He has</button>
             <button class="col-lg-6 tip" disabled>On ima</button>
         </div>
         <div class="help row">
             <button class="col-lg-6 tip c1" disabled></button>
-            <button class="col-lg-6 tip" disabled>She has</button>
+            <audio id="a4" src="{% static 'audio/lesson1_jenny/he_she_it/tabela7/Shehas.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a4')">She has</button>
             <button class="col-lg-6 tip" disabled>Ona ima</button>
         </div>
         <div class="help row">
             <button class="col-lg-6 tip c1" disabled></button>
-            <button class="col-lg-6 tip" disabled>It has</button>
+            <audio id="a5" src="{% static 'audio/lesson1_jenny/he_she_it/tabela7/Ithas.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a5')">It has</button>
             <button class="col-lg-6 tip" disabled>Ono ima</button>
         </div>
     </div>
@@ -63,17 +69,20 @@
     <div class="help-table" id="help-table">
         <div class="help row">
             <button class="col-lg-6 tip" disabled>1. oseba</button>
-            <button class="col-lg-6 tip" disabled>We have</button>
+            <audio id="a6" src="{% static 'audio/lesson1_jenny/he_she_it/tabela7/Wehave.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a6')">We have</button>
             <button class="col-lg-6 tip" disabled>Mi imamo</button>
         </div>
         <div class="help row">
             <button class="col-lg-6 tip" disabled>2. oseba</button>
-            <button class="col-lg-6 tip" disabled>You have</button>
-            <button class="col-lg-6 tip">Vi imate</button>
+            <audio id="a7" src="{% static 'audio/lesson1_jenny/he_she_it/tabela7/Youhave2.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a7')">You have</button>
+            <button class="col-lg-6 tip" disabled>Vi imate</button>
         </div>
         <div class="help row">
             <button class="col-lg-6 tip" disabled>3. oseba</button>
-            <button class="col-lg-6 tip" disabled>They have</button>
+            <audio id="a8" src="{% static 'audio/lesson1_jenny/he_she_it/tabela7/Theyhave.mp3' %}"></audio>
+            <button class="col-lg-6 tip" onclick="play('a8')">They have</button>
             <button class="col-lg-6 tip" disabled>Oni imajo</button>
         </div>
     </div>

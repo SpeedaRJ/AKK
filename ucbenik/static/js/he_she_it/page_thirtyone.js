@@ -1,7 +1,7 @@
 let solutions = [
     ["I am"],
     ["she is"],
-    ["you are"],
+    ["I am"],
     ["they are"],
     ["we are"],
     ["he is"],
@@ -9,7 +9,7 @@ let solutions = [
     ["they are"],
     ["I am not", "I'm not"],
     ["she isn't", "she is not"],
-    ["you aren't", "you are not"],
+    ["I am not", "I'm not"],
     ["they aren't", "they are not"],
     ["we aren't", "we are not"],
     ["he isn't", "he is not"],
