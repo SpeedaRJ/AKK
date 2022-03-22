@@ -47,7 +47,16 @@ function redo(e) {
 
 function solution(el, solution) {
     let parent = el.parentElement;
-    if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^' + solution.toLowerCase() + '\.*\!*$')) {
+    let expression;
+
+    if (solution == "I have") {
+        expression = el.value.trim().replace(/  +/g, ' ').match('^' + solution + '\.*\!*$');
+    }
+    else if (solution != "I have") {
+        expression = el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^' + solution.toLowerCase() + '\.*\!*$');
+    }
+
+    if (expression) {
         parent.classList.remove("incorrect");
         parent.classList.add("correct");
     } else {

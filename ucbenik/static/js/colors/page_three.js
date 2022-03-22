@@ -1,4 +1,4 @@
-let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink", "Black", "Grey", "White", "Brown", "Gold", "Silver"];
+let colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "grey", "white", "brown", "gold", "silver"];
 let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90", "#EF509C", "#231F20", "#85837D", "#F8F8F8", "#653614", "#FBAD18", "#aaa9ad"];
 
 function toOrigin1(el) {

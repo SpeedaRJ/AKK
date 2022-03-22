@@ -1,14 +1,20 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_six.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/exercises/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/colors/page_four.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_six.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/years/page_six.css' %}" />
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/years/glossary.js' %}"></script>
+<style>
+    td.l:hover {
+        color: #e6a454;
+    }
+</style>
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -23,27 +29,33 @@
         <div id="table-div" style="margin-top: 25%">
             <table id="table" style="width: 100%">
                 <tr>
-                    <td class="l">1997</td>
+                    <audio id="a1" src="{% static 'audio/lesson1_jenny/years/1997.mp3' %}"></audio>
+                    <td onclick="play('a1')" class="l" style="cursor: pointer;">1997</td>
                     <td>nineteen ninety-seven</td>
                 </tr>
                 <tr>
-                    <td class="l">1970</td>
+                    <audio id="a2" src="{% static 'audio/lesson1_jenny/years/1970.mp3' %}"></audio>
+                    <td onclick="play('a2')" class="l" style="cursor: pointer;">1970</td>
                     <td>nineteen seventy</td>
                 </tr>
                 <tr>
-                    <td class="l">1907</td>
+                    <audio id="a3" src="{% static 'audio/lesson1_jenny/years/1907.mp3' %}"></audio>
+                    <td onclick="play('a3')" class="l" style="cursor: pointer;">1907</td>
                     <td>nineteen oh seven</td>
                 </tr>
                 <tr>
-                    <td class="l">2007</td>
+                    <audio id="a4" src="{% static 'audio/lesson1_jenny/years/2007.mp3' %}"></audio>
+                    <td onclick="play('a4')" class="l" style="cursor: pointer;">2007</td>
                     <td>twenty oh seven /<br> two thousand and seven</td>
                 </tr>
                 <tr>
-                    <td class="l">1900</td>
+                    <audio id="a5" src="{% static 'audio/lesson1_jenny/years/1900.mp3' %}"></audio>
+                    <td onclick="play('a5')" class="l" style="cursor: pointer;">1900</td>
                     <td>nineteen hundred</td>
                 </tr>
                 <tr>
-                    <td class="l">2000</td>
+                    <audio id="a6" src="{% static 'audio/lesson1_jenny/years/2000.mp3' %}"></audio>
+                    <td onclick="play('a6')" class="l" style="cursor: pointer;">2000</td>
                     <td>two thousand</td>
                 </tr>
             </table>

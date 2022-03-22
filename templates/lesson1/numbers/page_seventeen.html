@@ -1,9 +1,10 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_seventeen.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/numbers/page_seventeen.css' %}" />
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/sounds.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/numbers/glossary.js' %}"></script>
 {% endblock %}
 {% block content %}
@@ -19,7 +20,7 @@
         <button class="next" onclick="window.location.href='/lesson_one/numbers/page_twentythree'">SKIP</button>
     </div>
     {% with class="side" %}
-        {% include "character.html" %}
+    {% include "character.html" %}
     {% endwith %}
     <div class="col-lg-10 centre">
         <div class="help-table" id="help-table">
@@ -45,7 +46,8 @@
             </div>
             <div class="help row">
                 <button disabled class="col-lg-6 tip" disabled>5</button>
-                <button disabled class="col-lg-6 tip c2">fiv<p style="color:#FBE100;font-weight: bold;margin:0">e</p></button>
+                <button disabled class="col-lg-6 tip c2">fiv<p style="color:#FBE100;font-weight: bold;margin:0">e</p>
+                </button>
             </div>
             <div class="help row">
                 <button disabled class="col-lg-6 tip" disabled>6</button>
@@ -57,11 +59,13 @@
             </div>
             <div class="help row">
                 <button disabled class="col-lg-6 tip" disabled>8</button>
-                <button disabled class="col-lg-6 tip c2">eigh<p style="color:#FBE100;font-weight: bold;margin:0">t</p></button>
+                <button disabled class="col-lg-6 tip c2">eigh<p style="color:#FBE100;font-weight: bold;margin:0">t</p>
+                </button>
             </div>
             <div class="help row">
                 <button disabled class="col-lg-6 tip" disabled>9</button>
-                <button disabled class="col-lg-6 tip c2">nin<p style="color:#FBE100;font-weight: bold;margin:0">e</p></button>
+                <button disabled class="col-lg-6 tip c2">nin<p style="color:#FBE100;font-weight: bold;margin:0">e</p>
+                </button>
             </div>
             <div class="help row">
                 <button disabled class="col-lg-6 tip" disabled>10</button>
@@ -74,43 +78,73 @@
                 <button disabled class="col-lg-6 tip title">Prevod</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled><p style="color:#FBE100;font-weight: bold;margin:0">first</p></button>
+                <audio id="a1" src="{% static 'audio/lesson1_jenny/numbers/VS1.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a1')">
+                    <p style="color:#FBE100;font-weight: bold;margin:0;cursor: pointer">first</p>
+                </button>
                 <button disabled class="col-lg-6 tip c2">prvi</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled><p style="color:#FBE100;font-weight: bold;margin:0">second</p></button>
+                <audio id="a2" src="{% static 'audio/lesson1_jenny/numbers/VS2.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a2')">
+                    <p style="color:#FBE100;font-weight: bold;margin:0;cursor: pointer">second</p>
+                </button>
                 <button disabled class="col-lg-6 tip c2">drugi</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled><p style="color:#FBE100;font-weight: bold;margin:0">third</p></button>
+                <audio id="a3" src="{% static 'audio/lesson1_jenny/numbers/VS3.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a3')">
+                    <p style="color:#FBE100;font-weight: bold;margin:0">third</p>
+                </button>
                 <button disabled class="col-lg-6 tip c2">tretji</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled>four<p style="color:#FBE100;font-weight: bold;margin:0">th</p></button>
+                <audio id="a4" src="{% static 'audio/lesson1_jenny/numbers/VS4.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a4')">four<p
+                        style="color:#FBE100;font-weight: bold;margin:0">
+                        th</p></button>
                 <button disabled class="col-lg-6 tip c2">četrti</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled><p style="color:#FBE100;font-weight: bold;margin:0">fifth</p></button>
+                <audio id="a5" src="{% static 'audio/lesson1_jenny/numbers/VS5.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a5')">
+                    <p style="color:#FBE100;font-weight: bold;margin:0">fifth</p>
+                </button>
                 <button disabled class="col-lg-6 tip c2">peti</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled>six<p style="color:#FBE100;font-weight: bold;margin:0">th</p></button>
+                <audio id="a6" src="{% static 'audio/lesson1_jenny/numbers/VS6.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a6')">six<p
+                        style="color:#FBE100;font-weight: bold;margin:0">th
+                    </p></button>
                 <button disabled class="col-lg-6 tip c2">šesti</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled>seven<p style="color:#FBE100;font-weight: bold;margin:0">th</p></button>
+                <audio id="a7" src="{% static 'audio/lesson1_jenny/numbers/VS7.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a7')">seven<p
+                        style="color:#FBE100;font-weight: bold;margin:0">
+                        th</p></button>
                 <button disabled class="col-lg-6 tip c2">sedmi</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled>eigh<p style="color:#FBE100;font-weight: bold;margin:0">th</p></button>
+                <audio id="a8" src="{% static 'audio/lesson1_jenny/numbers/VS8.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a8')">eigh<p
+                        style="color:#FBE100;font-weight: bold;margin:0">
+                        th</p></button>
                 <button disabled class="col-lg-6 tip c2">osmi</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled>nin<p style="color:#FBE100;font-weight: bold;margin:0">th</p></button>
+                <audio id="a9" src="{% static 'audio/lesson1_jenny/numbers/VS9.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a9')">nin<p
+                        style="color:#FBE100;font-weight: bold;margin:0">th
+                    </p></button>
                 <button disabled class="col-lg-6 tip c2">deveti</button>
             </div>
             <div class="help row">
-                <button disabled class="col-lg-6 tip" disabled>ten<p style="color:#FBE100;font-weight: bold;margin:0">th</p></button>
+                <audio id="a10" src="{% static 'audio/lesson1_jenny/numbers/VS10.mp3' %}"></audio>
+                <button class="col-lg-6 tip" onclick="play('a10')">ten<p
+                        style="color:#FBE100;font-weight: bold;margin:0">th
+                    </p></button>
                 <button disabled class="col-lg-6 tip c2">deseti</button>
             </div>
         </div>

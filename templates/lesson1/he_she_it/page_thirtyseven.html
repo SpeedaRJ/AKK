@@ -3,10 +3,16 @@
 {% block custom_imports %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}" />
+<script type="text/javascript" src="{% static 'js/he_she_it/page_thirtyseven.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
 {% block content %}
+<style>
+    .content {
+        height: 80% !important;
+    }
+</style>
 <div class="row">
     <div class="col-lg-3">
         <img src="{% static 'svg/lesson1/introduction/SVG/jenny-head.svg' %}" type="svg" id="jenny">
@@ -23,8 +29,8 @@
         </div>
         <div class="row inst">
             <div class="msg user">
-                Jim <input id="textarea" class=textarea style="width: 10%;" />
-                short grey hair. He <input id="textarea" class=textarea style="width: 10%;" />
+                Jim <input id="textarea1" class=textarea style="width: 10%;" onchange="check()" />
+                short grey hair. He <input id="textarea2" class=textarea style="width: 10%;" onchange="check()" />
                 a beard and glasses.
             </div>
             <div class="msg jenny">

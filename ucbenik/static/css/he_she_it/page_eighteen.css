@@ -22,9 +22,9 @@ img {
     margin-left: 0;
 }
 
-.row {
+/*.row {
     height: 30%;
-}
+}*/
 
 .text {
     padding-left: 2%;
@@ -71,7 +71,7 @@ img {
 }
 
 .listen {
-    width:3vh;
+    width:2vh;
     float: right;
 }
 
@@ -136,7 +136,7 @@ img {
 }
 
 #nxt {
-    margin-top: -2vh;
+    margin-top: 2vh;
     background-color: #007DAC
 }
 
