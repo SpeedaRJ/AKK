@@ -110,7 +110,7 @@ img {
     margin-right: 0.1vw;
     margin-bottom: 0.1vh;
     height: 4vh;
-    font-size: 2vh;
+    font-size: 1.8vh;
 }
 
 .lst {
@@ -144,4 +144,11 @@ img {
     position: absolute;
     margin-left: 16%;
     margin-top: 1vh;
+}
+
+.line {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
