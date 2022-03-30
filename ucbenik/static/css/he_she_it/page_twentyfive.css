@@ -9,14 +9,17 @@
     height: fit-content;
 }
 
-.continer {
+.container  {
     height: fit-content;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6vh !important;
 }
 
 span {
     display: grid;
-    width: 60%;
+    width: 70%;
 }
 
 span > .msg {
@@ -24,6 +27,7 @@ span > .msg {
     justify-content: center;
     align-items: center;
     display: flex;
+    min-width: 100%;
 }
 
 span > .slo {
