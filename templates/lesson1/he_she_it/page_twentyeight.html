@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twenty.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_twenty.css' %}" />
 <script type="text/javascript" src="{% static 'js/he_she_it/page_twentyeight.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
@@ -14,12 +14,11 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg user">
-                Use the positive and negative sentences to form questions.  
+                Use the positive and negative sentences to form questions.
             </div>
             <div class="msg jenny slo centre">
-                Iz trdilnih in nikalnih povedi tvori vprašalne.  
+                Iz trdilnih in nikalnih povedi tvori vprašalne.
             </div>
-            <input type="image" src="{% static 'svg/common/redo.svg' %}" id="redo_b" onclick="redo()">
         </div>
     </div>
     {% include "character.html" %}

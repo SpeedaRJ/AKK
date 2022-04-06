@@ -41,11 +41,11 @@ function solution(el, s) {
 
     // if (el.value.toLowerCase().trim().replace(/  +/g, ' ').match('^'+solutions[s].toLowerCase())+'$') {
     if (expression) {
-        parent.classList.remove("incorrect");
-        parent.classList.add("correct");
+        el.parentElement.classList.remove("incorrect");
+        el.parentElement.classList.add("correct");
     } else {
-        parent.classList.add("incorrect");
-        parent.classList.remove("correct");
+        el.parentElement.classList.add("incorrect");
+        el.parentElement.classList.remove("correct");
     }
     let paras = document.getElementsByClassName("tip")
     let counter = 0;

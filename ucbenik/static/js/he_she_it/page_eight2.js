@@ -25,7 +25,7 @@ function redo() {
     fillin.innerHTML = "";
     for (let i = 0; i < pro.length; i++) {
         var html = '<div class="msg user fill">' + pro[i] +
-            '<input class=textarea onchange="solution(this,' + "'" + verb[i] + "'" + ')"/> tall</div>';
+            '<input class=textarea onchange="solution(this,' + "'" + verb[i] + "'" + ')"/> tall.</div>';
         fillin.innerHTML += html;
     }
 }

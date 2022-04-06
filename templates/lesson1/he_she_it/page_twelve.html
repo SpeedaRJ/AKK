@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}" />
 <script type="text/javascript" src="{% static 'js/he_she_it/page_nine.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
@@ -14,13 +14,13 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg user">
-                Describe the people in the photos. 
-                Choose between the words: slender, 
+                Describe the people in the photos.
+                Choose between the words: slender,
                 plump, tall, short, happy, sad and bald.
 
             </div>
             <div class="msg jenny slo centre">
-                Opiši osebe na fotografijah. Izbiraj med besedami: 
+                Opiši osebe na fotografijah. Izbiraj med besedami:
                 slender, plump, tall, short, happy, sad in bald.
             </div>
         </div>
@@ -29,11 +29,13 @@
 </div>
 <div class="container.fluid">
     <div class="col-lg-12" style="text-align: center;">
-        <img src="{% static 'svg/lesson1/he_she_it/man_full_blue.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
-        <div class="inst" >
+        <img src="{% static 'svg/lesson1/he_she_it/man_full_blue.svg' %}" type="svg"
+            style="height:40vh;margin-top: 5vh;">
+        <div class="inst">
             <div class="msg jenny slo" style="margin-left: 33%;width: 33%; height: 5vh;padding:1vh">
                 He is
-                <input class=textarea onchange="solution(this,['bald','tall','happy','slim','slender'])" style="border-color:#6282B7;background-color: transparent;"/>
+                <input class=textarea onchange="solution(this,['bald','tall','happy','slim','slender'])"
+                    style="border-color:#6282B7;background-color: transparent;" />.
             </div>
         </div>
     </div>

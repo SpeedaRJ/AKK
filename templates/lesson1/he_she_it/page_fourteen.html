@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}" />
 <script type="text/javascript" src="{% static 'js/enable_button.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/page_thirteen.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
@@ -15,10 +15,10 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg user">
-                Now, describe people without any help. 
+                Now, describe people without any help.
             </div>
             <div class="msg jenny slo centre">
-                Zdaj osebe opiši brez pomoči. 
+                Zdaj osebe opiši brez pomoči.
             </div>
         </div>
     </div>
@@ -27,9 +27,10 @@
 <div class="container.fluid">
     <div class="col-lg-4" style="text-align: center;">
         <img src="{% static 'svg/lesson1/he_she_it/man_happy.svg' %}" type="svg" style="height:35vh;margin-top: 10vh;">
-        <div class="inst" >
+        <div class="inst">
             <div class="msg jenny slo" style="width: 80%;">
-                <input class=textarea onchange="solution(this,['happy','short'],'M')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['happy','short'],'M')"
+                    style="border-color:#6282B7;background-color: transparent;width: 100%" />.
             </div>
         </div>
     </div>
@@ -37,15 +38,18 @@
         <img src="{% static 'svg/lesson1/he_she_it/woman_sad.svg' %}" type="svg" style="height:35vh;margin-top: 10vh;">
         <div class="inst">
             <div class="msg jenny slo" style="width: 80%;">
-                <input class=textarea onchange="solution(this,['sad','short'],'F')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['sad','short'],'F')"
+                    style="border-color:#6282B7;background-color: transparent;width: 100%" />.
             </div>
         </div>
     </div>
     <div class="col-lg-4" style="text-align: center;">
-        <img src="{% static 'svg/lesson1/he_she_it/man_full_blue.svg' %}" type="svg" style="height:40vh;margin-top: 5vh;">
+        <img src="{% static 'svg/lesson1/he_she_it/man_full_blue.svg' %}" type="svg"
+            style="height:40vh;margin-top: 5vh;">
         <div class="inst">
             <div class="msg jenny slo" style="width: 80%;">
-                <input class=textarea onchange="solution(this,['bald','tall','happy','slim','slender'],'M')" style="border-color:#6282B7;background-color: transparent;width: 100%"/>
+                <input class=textarea onchange="solution(this,['bald','tall','happy','slim','slender'],'M')"
+                    style="border-color:#6282B7;background-color: transparent;width: 100%" />.
             </div>
         </div>
     </div>

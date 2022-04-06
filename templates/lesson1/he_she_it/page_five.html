@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css"/>
-<link href="{% static 'css/personal_traits/page_three.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/introduction/page_one.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/personal_traits/page_three.css' %}" rel="stylesheet" type="text/css" />
 <script src="{% static 'js/he_she_it/page_five.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/he_she_it/glossary.js' %}" type="text/javascript"></script>
 {% endblock %}
@@ -14,10 +14,10 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg jenny">
-                What is the meaning of the adjectives? Match the English and Slovene words with their translations.
+                What is the meaning of the pronouns? Match the English and Slovene words with their translations.
             </div>
             <div class="msg jenny slo centre">
-                Kaj pomenijo pridevniki? Poveži angleške in slovenske besede z njihovimi pravimi prevodi.
+                Kaj pomenijo zaimki? Poveži angleške in slovenske besede z njihovimi pravimi prevodi.
             </div>
             <input id="redo_b" onclick="redo()" src="{% static 'svg/common/redo.svg' %}" type="image">
         </div>
@@ -31,104 +31,104 @@
         <div class="col-lg-6" id="drag1">
             <div class="drop" id="match01" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m01" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    Jaz
+                    ondragstart="drag(event)">
+                    jaz
                 </div>
             </div>
             <div class="drop" id="match12" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m12" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    Ono
+                    ondragstart="drag(event)">
+                    ono
                 </div>
             </div>
 
             <div class="drop" id="match04" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m04" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    You (ed.)
+                    ondragstart="drag(event)">
+                    you (ed.)
                 </div>
             </div>
             <div class="drop" id="match13" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m13" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    We
+                    ondragstart="drag(event)">
+                    we
                 </div>
             </div>
             <div class="drop" id="match05" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m05" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    He
+                    ondragstart="drag(event)">
+                    he
                 </div>
             </div>
             <div class="drop" id="match18" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m18" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    Oni
+                    ondragstart="drag(event)">
+                    oni
                 </div>
             </div>
             <div class="drop" id="match08" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m08" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    Ona
+                    ondragstart="drag(event)">
+                    ona
                 </div>
             </div>
             <div class="drop" id="match15" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m15" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    You (mn.)
+                    ondragstart="drag(event)">
+                    you (mn.)
                 </div>
             </div>
         </div>
         <div class="col-lg-6" id="drag2">
             <div class="drop" id="match11" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m11" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    It
+                    ondragstart="drag(event)">
+                    it
                 </div>
             </div>
             <div class="drop" id="match02" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m02" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
+                    ondragstart="drag(event)">
                     I
                 </div>
             </div>
             <div class="drop" id="match03" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m03" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    Ti
+                    ondragstart="drag(event)">
+                    ti
                 </div>
             </div>
 
             <div class="drop" id="match14" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m14" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    Mi
+                    ondragstart="drag(event)">
+                    mi
                 </div>
             </div>
             <div class="drop" id="match06" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m06" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    On
+                    ondragstart="drag(event)">
+                    on
                 </div>
             </div>
 
             <div class="drop" id="match17" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m17" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    They
+                    ondragstart="drag(event)">
+                    they
                 </div>
             </div>
 
             <div class="drop" id="match16" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m16" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    Vi
+                    ondragstart="drag(event)">
+                    vi
                 </div>
             </div>
             <div class="drop" id="match07" ondragover="allowDrop(event)" ondrop="drop(event, this, 1)">
                 <div class="msg user trait" draggable="true" id="m07" onclick="toOrigin(this)"
-                     ondragstart="drag(event)">
-                    She
+                    ondragstart="drag(event)">
+                    she
                 </div>
             </div>
         </div>

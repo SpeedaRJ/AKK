@@ -1,8 +1,8 @@
 {% extends "main.html" %}
 {% load static %}
 {% block custom_imports %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduction/page_one.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/he_she_it/page_one.css' %}" />
 <script type="text/javascript" src="{% static 'js/he_she_it/page_nine.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/he_she_it/glossary.js' %}"></script>
 {% endblock %}
@@ -14,12 +14,12 @@
     <div class="col-lg-6">
         <div class="row inst">
             <div class="msg user">
-                Describe the people in the photos. 
-                Choose between the words: slender, 
+                Describe the people in the photos.
+                Choose between the words: slender,
                 plump, tall, short, happy, sad and bald.
             </div>
             <div class="msg jenny slo centre">
-                Opiši osebe na fotografijah. Izbiraj med besedami: 
+                Opiši osebe na fotografijah. Izbiraj med besedami:
                 slender, plump, tall, short, happy, sad in bald.
             </div>
         </div>
@@ -29,10 +29,11 @@
 <div class="container.fluid">
     <div class="col-lg-6" style="text-align: center;">
         <img src="{% static 'svg/lesson1/he_she_it/man_happy.svg' %}" type="svg" style="height:35vh;margin-top: 10vh;">
-        <div class="inst" >
+        <div class="inst">
             <div class="msg jenny slo" style="margin-left: 25%;">
                 He is
-                <input class=textarea onchange="solution(this,['happy','short'])" style="border-color:#6282B7;background-color: transparent;"/>
+                <input class=textarea onchange="solution(this,['happy','short'])"
+                    style="border-color:#6282B7;background-color: transparent;" />.
             </div>
         </div>
     </div>
@@ -41,7 +42,8 @@
         <div class="inst">
             <div class="msg jenny slo" style="margin-left: 25%;">
                 She is
-                <input class=textarea onchange="solution(this,['sad','short'])" style="border-color:#6282B7;background-color: transparent;"/>
+                <input class=textarea onchange="solution(this,['sad','short'])"
+                    style="border-color:#6282B7;background-color: transparent;" />.
             </div>
         </div>
     </div>

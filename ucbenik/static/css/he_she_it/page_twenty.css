@@ -11,9 +11,11 @@ img {
 #jenny {
     width: 80%;
 }
-#character{
+
+#character {
     width: 80%;
 }
+
 #avatar {
     width: 90%
 }
@@ -37,7 +39,7 @@ img {
     border-radius: 4%/25%;
 }
 
-.row > .msg {
+.row>.msg {
     width: 100%;
     padding-left: 10%
 }
@@ -50,13 +52,13 @@ img {
     padding-top: 6%;
 }
 
-.inst > .slo {
+.inst>.slo {
     background-color: #e4e3e8;
 }
 
 .items {
-  min-height: 10%;
-  margin-left: 2% !important;
+    min-height: 10%;
+    margin-left: 2% !important;
 }
 
 .container {
@@ -64,16 +66,16 @@ img {
     margin-top: 2.5% !important;
 }
 
-.column  {
-  min-height: 35vh;
+.column {
+    min-height: 35vh;
 }
 
 .left {
-  float: left;
+    float: left;
 }
 
 .right {
-  float: right;
+    float: right;
 }
 
 .help-table {
@@ -81,7 +83,7 @@ img {
     float: left;
     margin-top: 10%;
     margin-left: 5%;
-}  
+}
 
 .tip {
     width: 48% !important;
@@ -105,7 +107,7 @@ img {
     position: absolute;
     margin-top: 5%;
     z-index: 2;
-    display:none;
+    display: none;
 }
 
 #redo_b {
@@ -122,15 +124,17 @@ img {
 }
 
 input {
-   background-color: transparent;
+    background-color: transparent;
 }
 
 .correct {
-    color:#00A881
+    color: #00A881;
+    background-color: #6699CC !important;
 }
 
 .incorrect {
-    color: #F15D2A
+    color: #F15D2A;
+    background-color: #6699CC !important;
 }
 
 .in {
