@@ -1,11 +1,11 @@
 var solutions = {
     "I am not": "I'm not",
-    "You are not": "You're not",
-    "We are not": "We're not",
-    "He is not": "He's not",
-    "She is not": "She's not",
-    "It is not": "It's not",
-    "They are not": "They're not"
+    "You are not": "You aren't",
+    "We are not": "We aren't",
+    "He is not": "He isn't",
+    "She is not": "She isn't",
+    "It is not": "It isn't",
+    "They are not": "They aren't"
 }
 
 function redo(e) {
