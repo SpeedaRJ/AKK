@@ -1,5 +1,5 @@
 let colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "grey", "white", "brown", "gold", "silver"];
-let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90", "#EF509C", "#231F20", "#85837D", "#F8F8F8", "#653614", "#FBAD18", "#aaa9ad"];
+let hex_codes = ["#EE202E", "#F26524", "#F7ED38", "#099E43", "#3097C3", "#7A2A90", "#EF509C", "#231F20", "#85837D", "#F8F8F8", "#653614", "#FBAD18", "#AAA9AD"];
 
 function toOrigin1(el) {
     var origin = document.getElementById('drag-origin');
